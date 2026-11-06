@@ -1,0 +1,236 @@
+{
+  "_comment": "Shop generator settings. These are ITEM-currency (ticket) prices baked into the catalog; gold prices + currency choice live in scripts/acore_settings.lua. Edit, then run tools/gen_shop_catalog.py",
+  "includeFactionMounts": false,
+  "includeFactionPets": true,
+  "prices": {
+    "pet": 50,
+    "mountCommon": 100,
+    "mountEpic": 100
+  },
+  "toys": [
+    {
+      "item": 5462,
+      "count": 1,
+      "name": "Dartol's Rod of Transformation",
+      "cost": 25
+    },
+    {
+      "item": 37254,
+      "count": 1,
+      "name": "Super Simian Sphere",
+      "cost": 50
+    },
+    {
+      "item": 1973,
+      "count": 1,
+      "name": "Orb of Deception",
+      "cost": 50
+    },
+    {
+      "item": 6657,
+      "count": 1,
+      "name": "Savory Deviate Delight",
+      "cost": 2
+    },
+    {
+      "item": 20557,
+      "count": 1,
+      "name": "Halloween Treat",
+      "cost": 2
+    },
+    {
+      "item": 8529,
+      "count": 1,
+      "name": "Noggenfogger Elixir",
+      "cost": 2
+    },
+    {
+      "item": 20413,
+      "count": 1,
+      "name": "Halloween Wand",
+      "cost": 2
+    },
+    {
+      "item": 23705,
+      "count": 1,
+      "name": "Tabard of Flame",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 23709,
+      "count": 1,
+      "name": "Tabard of Frost",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38312,
+      "count": 1,
+      "name": "Tabard of Brilliance",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38313,
+      "count": 1,
+      "name": "Tabard of Fury",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38309,
+      "count": 1,
+      "name": "Tabard of Nature",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38310,
+      "count": 1,
+      "name": "Tabard of the Arcane",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38311,
+      "count": 1,
+      "name": "Tabard of the Void",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 45037,
+      "count": 1,
+      "name": "Epic Purple Shirt",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 34499,
+      "count": 1,
+      "name": "Paper Flying Machine Kit",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 33219,
+      "count": 1,
+      "name": "Goblin Gumbo Kettle",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 33223,
+      "count": 1,
+      "name": "Fishing Chair",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38578,
+      "count": 1,
+      "name": "The Flag of Ownership",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 45063,
+      "count": 1,
+      "name": "Foam Sword Rack",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38301,
+      "count": 1,
+      "name": "D.I.S.C.O.",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 38233,
+      "count": 1,
+      "name": "Path of Illidan",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 35223,
+      "count": 1,
+      "name": "Papa Hummel's Old-Fashioned Pet Biscuit",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 45047,
+      "count": 1,
+      "name": "Sandbox Tiger",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 23716,
+      "count": 1,
+      "name": "Carved Ogre Idol",
+      "cost": 15,
+      "_note": "TCG toy/cosmetic, unobtainable"
+    },
+    {
+      "item": 35227,
+      "count": 1,
+      "name": "Goblin Weather Machine - Prototype 01-B",
+      "cost": 25,
+      "_note": "TCG toy, unobtainable"
+    }
+  ],
+  "extraItems": [
+    23720
+  ],
+  "excludeNames": {
+    "holiday (obtainable during the event)": [
+      "Brewfest Kodo",
+      "Great Brewfest Kodo",
+      "Broom",
+      "Horseman's Reins",
+      "Sinister Squashling",
+      "Big Love Rocket"
+    ],
+    "craftable (profession)": [
+      "Swift Mooncloth Carpet",
+      "Swift Spellfire Carpet"
+    ],
+    "obtainable in game (boss drop / vendor) - verify": [
+      "Reins of the Azure Drake",
+      "Amani War Bear",
+      "Reins of the Black War Mammoth",
+      "Sea Turtle"
+    ]
+  },
+  "services": [
+    {
+      "key": "rename",
+      "name": "Character Rename",
+      "icon": "INV_Scroll_03",
+      "message": "Log out to the character selection screen: you will be asked to choose a new name."
+    },
+    {
+      "key": "customize",
+      "name": "Appearance Change",
+      "icon": "INV_Misc_Note_01",
+      "message": "Log out to the character selection screen: you will be able to change your appearance."
+    },
+    {
+      "key": "race",
+      "name": "Race Change",
+      "icon": "Spell_Holy_PrayerOfSpirit",
+      "message": "Log out to the character selection screen: you will be able to change your race."
+    },
+    {
+      "key": "faction",
+      "name": "Faction Change",
+      "icon": "INV_BannerPVP_01",
+      "message": "Log out to the character selection screen: you will be able to change your faction."
+    }
+  ]
+}

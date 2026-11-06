@@ -1,0 +1,9224 @@
+{
+"world\\generic\\passivedoodads\\postboxes\\postboxgnome.m2": [
+0.574,
+0.004,
+0.741,
+0.61
+],
+"world\\generic\\human\\passive doodads\\chairs\\generalchairloend01.m2": [
+1.422,
+0.27,
+0.118
+],
+"world\\generic\\human\\passive doodads\\chairs\\generalmedchair01.m2": [
+1.131,
+0.251,
+0.229
+],
+"world\\generic\\human\\passive doodads\\benches\\innbench.m2": [
+0.6,
+0.064,
+0.276
+],
+"world\\azeroth\\elwynn\\passivedoodads\\campfire\\elwynncampfire.m2": [
+1.147,
+-0.033,
+0.309
+],
+"world\\generic\\human\\passive doodads\\buckets\\bucket.m2": [
+1.151,
+0.057,
+-0.02,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\braziers\\dwarvenbrazier02.m2": [
+0.574,
+0.018,
+0.916
+],
+"world\\azeroth\\elwynn\\passivedoodads\\anvil\\anvil.m2": [
+0.974,
+0.006,
+0.137,
+0.61
+],
+"world\\environment\\doodad\\generaldoodads\\helpwantedposter\\helpwantedposter.m2": [
+0.496,
+0.004,
+0.236
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_trench_c_long.m2": [
+0.143,
+0.03,
+1.749
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_trench_c_tall.m2": [
+0.352,
+-0.076,
+1.442,
+0.61
+],
+"world\\environment\\doodad\\carnival\\carnivalrailing.m2": [
+0.265,
+-0.114,
+0.014
+],
+"world\\generic\\pvp\\upperdeck\\ud_pvptaunt.m2": [
+0.913,
+0.663,
+0.312,
+0.61
+],
+"world\\goober\\g_hangingskeleton_01.m2": [
+1.112,
+-0.465,
+0.079
+],
+"world\\generic\\passivedoodads\\halloween\\hangingskulllight01.m2": [
+1.446,
+-0.001,
+-0.106
+],
+"world\\generic\\passivedoodads\\halloween\\hangingskulllight02.m2": [
+0.745,
+-0.033,
+-0.513
+],
+"world\\generic\\pvp\\ctfflags\\neutralctfflag.m2": [
+0.574,
+0.073,
+0.825
+],
+"world\\azeroth\\duskwood\\passivedoodads\\fence\\rockwallrubble.m2": [
+1.101,
+0.02,
+0.345,
+0.943
+],
+"world\\azeroth\\redridge\\passivedoodads\\rowboat\\rowboat01.m2": [
+0.348,
+0.099,
+0.238
+],
+"world\\expansion01\\doodads\\shattrath\\activedoodads\\events\\shattrathsouptent.m2": [
+0.194,
+-0.03,
+1.03,
+0.525
+],
+"world\\environment\\doodad\\carnival\\souvenireshop.m2": [
+0.143,
+-0.856,
+2.205,
+-2.752
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\passivedoodads\\banners\\hellfire_banner_typewide.m2": [
+0.804,
+-0.11,
+-0.072
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_alchemy_table.m2": [
+0.439,
+0.053,
+1.512,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\tradeskill\\ak_alchemyset01.m2": [
+0.574,
+-0.075,
+0.964,
+0.61
+],
+"world\\goober\\g_alchemyset01.m2": [
+1.449,
+0.001,
+0.553,
+0.61
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_anvil_01.m2": [
+1.238,
+0.012,
+0.27
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\anvil\\nox_anvil.m2": [
+0.236,
+-0.047,
+0.591
+],
+"world\\expansion01\\doodads\\generic\\ogre\\chair\\om_chair_01.m2": [
+0.931,
+-0.078,
+0.251,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\tuskarr\\forge\\ts_anvil_01.m2": [
+1.114,
+-0.039,
+0.249
+],
+"world\\expansion02\\doodads\\generic\\wolvar\\wolvar_anvil.m2": [
+1.266,
+-0.07,
+-0.079
+],
+"world\\expansion02\\doodads\\generic\\wolvar\\wolvar_cookpot.m2": [
+0.574,
+0.081,
+1.158
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_anvil.m2": [
+0.69,
+0.231,
+0.369
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\smeltingweapons\\smeltingweapons.m2": [
+0.754,
+0.048,
+0.03
+],
+"world\\expansion02\\doodads\\generic\\tuskarr\\forge\\ts_forge_01.m2": [
+0.489,
+0.048,
+0.952,
+0.499
+],
+"world\\goober\\g_brazier01.m2": [
+1.027,
+-0.017,
+0.857,
+0.405
+],
+"world\\khazmodan\\blackrock\\activedoodads\\anvil\\darkironanvil.m2": [
+0.325,
+-0.024,
+0.951
+],
+"world\\goober\\g_water_barrel_01.m2": [
+0.721,
+-0.028,
+0.366
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\sack01.m2": [
+1.266,
+-0.02,
+0.025
+],
+"world\\azeroth\\duskwood\\passivedoodads\\coffin\\coffin.m2": [
+1.05,
+-0.104,
+0.167
+],
+"world\\lordaeron\\alteracmountains\\passivedoodads\\fruitbuckets\\alteracfruitbucket01.m2": [
+1.567,
+0.007,
+0.025
+],
+"world\\generic\\passivedoodads\\barrel\\barrel01.m2": [
+1.101,
+0.052,
+0.071
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\barrel02.m2": [
+1.101,
+0.066,
+0.013
+],
+"world\\generic\\passivedoodads\\thanksgiving\\g_indiancorn_basket.m2": [
+1.051,
+0.009,
+0.006
+],
+"world\\azeroth\\karazahn\\passivedoodads\\brokencart\\kn_brokencart02.m2": [
+0.341,
+0.401,
+1.2,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_meatwagon_01_broken.m2": [
+0.143,
+0.092,
+1.754,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_wagon_02_broken.m2": [
+0.283,
+0.147,
+0.671
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_crate.m2": [
+1.225,
+-0.005,
+0.128
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_jewelcrafting.m2": [
+0.7,
+0.007,
+-0.15,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\coffinlid\\coffinlid.m2": [
+1.052,
+-0.091,
+0.222
+],
+"world\\generic\\passivedoodads\\crate01\\crate01.m2": [
+1.218,
+0.005,
+0.076
+],
+"world\\generic\\passivedoodads\\crate02\\crate02.m2": [
+1.29,
+0.028,
+0.072,
+0.61
+],
+"world\\environment\\doodad\\carnival\\carni_wagon01.m2": [
+0.098,
+0.268,
+2.906,
+0.61
+],
+"world\\environment\\doodad\\carnival\\carni_wagon_empty01.m2": [
+0.089,
+0.104,
+1.38,
+0.61
+],
+"world\\generic\\passivedoodads\\tugofwar\\tugofwar_reddustbag01.m2": [
+1.101,
+-0.01,
+0.033
+],
+"world\\environment\\doodad\\carnival\\haybail01.m2": [
+0.65,
+-0.214,
+0.375
+],
+"world\\environment\\doodad\\carnival\\haybail02.m2": [
+0.685,
+-0.016,
+0.263
+],
+"world\\generic\\passivedoodads\\floatingdebris\\floatingbarrel01.m2": [
+1.177,
+0.059,
+-0.142
+],
+"world\\generic\\passivedoodads\\fruits\\fruitbowl_mixed.m2": [
+1.428,
+-0.007,
+0.015
+],
+"world\\expansion01\\doodads\\bladesedge\\trees\\bladesedgecrater01.m2": [
+0.067,
+-0.341,
+1.406,
+0.61
+],
+"world\\goober\\g_crate01.m2": [
+0.719,
+0.451,
+0.789,
+0.61
+],
+"world\\generic\\passivedoodads\\fruits\\fruitbowl_empty.m2": [
+0.83,
+-0.032,
+-0.02
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_wagon_02.m2": [
+0.284,
+-0.089,
+1.291
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\hay\\vr_straw_large_01.m2": [
+0.143,
+0.056,
+-0.241,
+0.61
+],
+"world\\goober\\g_water_buckets_02.m2": [
+1.473,
+0.033,
+-0.023
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_wo_hay.m2": [
+0.371,
+0.007,
+1.58,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\twilighttablet\\twilighttabletlower.m2": [
+0.472,
+-0.054,
+-0.013
+],
+"world\\dungeon\\cavernsoftime\\passivedoodads\\hourglass\\cot_hourglass_redo.m2": [
+0.543,
+0.26,
+66.513,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\rug\\vr_rug_long_01.m2": [
+0.143,
+0.341,
+0.413,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_engineering.m2": [
+0.28,
+-0.64,
+-0.947,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\tables\\karazahntablebig.m2": [
+0.465,
+0.013,
+0.532
+],
+"world\\azeroth\\karazahn\\passivedoodads\\tables\\karazahntablesmall.m2": [
+0.582,
+-0.079,
+0.471
+],
+"world\\kalimdor\\wailingcaverns\\passivedoodads\\fangdruids\\wc_bedstone.m2": [
+0.6,
+-0.003,
+0.268
+],
+"world\\kalimdor\\silithus\\passivedoodads\\twilighttablet\\twilighttabletupper.m2": [
+0.738,
+0.403,
+0.295
+],
+"world\\azeroth\\duskwood\\passivedoodads\\bush\\pumpkinpatch01.m2": [
+0.306,
+0.474,
+0.666,
+0.61
+],
+"world\\generic\\passivedoodads\\diadelosmuertos\\diadelosmuertos_candyskull_01.m2": [
+1.054,
+0.01,
+0.142
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_wreathfloating.m2": [
+1.169,
+0.051,
+0.199
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineswreathfloating.m2": [
+1.101,
+-0.019,
+0.436,
+0.61
+],
+"world\\goober\\g_candybucket_01.m2": [
+1.025,
+-0.003,
+0.309,
+1.31
+],
+"world\\goober\\g_pumpkin_01.m2": [
+0.943,
+0.005,
+0.32,
+1.847
+],
+"world\\goober\\g_pumpkin_02.m2": [
+0.931,
+-0.055,
+0.39,
+1.958
+],
+"world\\goober\\g_pumpkin_03.m2": [
+0.94,
+-0.007,
+0.319,
+1.984
+],
+"world\\generic\\passivedoodads\\christmas\\g_xmaswreath.m2": [
+0.327,
+0.062,
+-0.237
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfeststreamers_nonanimated.m2": [
+0.735,
+0.002,
+0.097
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_streamers.m2": [
+0.368,
+0.062,
+-0.372,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesstreamers.m2": [
+0.77,
+-0.031,
+-0.703
+],
+"world\\generic\\passivedoodads\\christmas\\xmas_lights.m2": [
+0.811,
+0.04,
+-0.133
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfeststreamersx3_nonanimated.m2": [
+0.253,
+0.038,
+0.406
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_streamersx3.m2": [
+0.277,
+0.011,
+-0.386
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesstreamersx3.m2": [
+0.262,
+0.014,
+-0.524
+],
+"world\\generic\\passivedoodads\\christmas\\xmas_lightsx3.m2": [
+0.249,
+0.081,
+0.005
+],
+"world\\khazmodan\\blackrock\\activedoodads\\altarritual\\blackrockaltarritual.m2": [
+0.894,
+-0.016,
+0.308,
+0.311
+],
+"world\\generic\\passivedoodads\\christmas\\mistletoe02.m2": [
+1.091,
+0.013,
+-0.383,
+0.559
+],
+"world\\azeroth\\duskwood\\passivedoodads\\bush\\pumpkin01.m2": [
+0.574,
+0.867,
+0.352,
+1.421
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfestwreath01.m2": [
+0.574,
+-0.044,
+0.854,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineswreath01.m2": [
+0.97,
+-0.036,
+0.514
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_crate.m2": [
+1.214,
+-0.012,
+0.151
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinescrate.m2": [
+1.225,
+-0.02,
+0.143
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift01.m2": [
+1.151,
+0.043,
+0.071
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift02.m2": [
+1.054,
+-0.035,
+0.201,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift03.m2": [
+1.462,
+0.026,
+0.132
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift04.m2": [
+1.151,
+-0.015,
+0.019
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift05.m2": [
+1.013,
+-0.065,
+0.177,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmasgift06.m2": [
+1.151,
+0.027,
+0.077
+],
+"world\\azeroth\\karazahn\\passivedoodads\\bonfire\\karazahnbonfire01.m2": [
+0.143,
+-0.396,
+1.372,
+0.61
+],
+"world\\generic\\human\\passive doodads\\fire\\undeadcampfire.m2": [
+1.813,
+0.024,
+0.22
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\cooking\\vr_cookpot_01.m2": [
+0.43,
+0.187,
+1.029,
+0.371
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_floating_light_01.m2": [
+0.987,
+-0.806,
+-0.009,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\bonfire\\karazahnbonfireblue01.m2": [
+0.465,
+-0.15,
+1.197
+],
+"world\\expansion02\\doodads\\grizzlyhills\\trappers\\trapper_potbellystove_01.m2": [
+0.574,
+0.034,
+0.826,
+0.61
+],
+"world\\generic\\passivedoodads\\fruits\\fruitbowl_apples.m2": [
+1.428,
+-0.009,
+0.07
+],
+"world\\expansion02\\doodads\\generic\\skulls\\skull_protodragon.m2": [
+0.439,
+0.231,
+1.115,
+0.627
+],
+"world\\goober\\g_cage02.m2": [
+0.468,
+0.873,
+1.25,
+0.61
+],
+"world\\khazmodan\\wetlands\\passivedoodads\\dragonbones\\dragonbonesbody.m2": [
+0.143,
+-0.162,
+2.197,
+0.533
+],
+"world\\expansion02\\doodads\\icecrown\\frozen\\icecrown_frozenwurm_01.m2": [
+0.073,
+0.221,
+-4.85,
+0.61
+],
+"world\\goober\\g_cagebase.m2": [
+0.542,
+-0.016,
+0.192
+],
+"world\\goober\\g_cage.m2": [
+0.377,
+0.751,
+1.305,
+0.61
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonsitting02.m2": [
+1.013,
+0.031,
+0.071
+],
+"world\\goober\\g_cage03.m2": [
+0.303,
+0.805,
+1.533,
+0.61
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonlaying01.m2": [
+0.888,
+0.115,
+0.066,
+0.61
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonlaying02.m2": [
+1.013,
+-0.049,
+0.034
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonlaying03.m2": [
+1.077,
+-0.038,
+-0.046
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack01mithril.m2": [
+0.865,
+-0.029,
+0.23
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack01copper.m2": [
+0.858,
+-0.027,
+0.237
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack01iron.m2": [
+0.865,
+-0.029,
+0.23
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack01truesilver.m2": [
+0.858,
+-0.028,
+0.236
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack02copper.m2": [
+0.865,
+0.095,
+0.174
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack02iron.m2": [
+0.867,
+0.128,
+0.172
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack02mithril.m2": [
+0.866,
+0.065,
+0.305
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbarstack02truesilver.m2": [
+0.866,
+0.065,
+0.305
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\cage\\vr_cage_top.m2": [
+0.383,
+-0.917,
+1.526
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_skullpile_01.m2": [
+1.346,
+0.048,
+0.051,
+0.098
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\cage\\vr_cage_base.m2": [
+0.467,
+0.012,
+0.317
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_yoggthoritebar_stack_01.m2": [
+1.024,
+-0.022,
+0.2
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\scrolls\\uldamanscroll03.m2": [
+0.517,
+-0.064,
+0.214
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonsitting01.m2": [
+0.993,
+-0.019,
+0.018
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonsitting04.m2": [
+1.205,
+0.104,
+-0.117
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\cage\\vr_cage_02.m2": [
+0.28,
+-1.19,
+1.546,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_skullpile_02.m2": [
+1.006,
+-0.06,
+0.26
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\plants\\swampsorrowroot02.m2": [
+0.384,
+0.299,
+1.523
+],
+"world\\generic\\activedoodads\\bushes\\berrybush01.m2": [
+0.458,
+-0.294,
+0.652,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_bench01.m2": [
+0.613,
+0.148,
+0.443
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_bench02.m2": [
+0.65,
+0.145,
+0.266
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_chair01.m2": [
+1.507,
+0.343,
+-0.116
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_chair_02.m2": [
+1.479,
+0.193,
+-0.029
+],
+"world\\expansion02\\doodads\\ulduar\\ul_thronebase.m2": [
+0.574,
+0.072,
+0.777,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\blackwingthrone\\blackwinglair_throne.m2": [
+0.262,
+0.019,
+1.343
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_04.m2": [
+0.067,
+-0.72,
+10.665,
+1.335
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_06.m2": [
+0.089,
+0.815,
+17.187,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_03.m2": [
+0.255,
+-0.365,
+30.07,
+-5.867
+],
+"world\\expansion02\\doodads\\icecrown\\railing\\icecrown_railing01.m2": [
+0.512,
+-0.632,
+0.054,
+0.465
+],
+"world\\expansion01\\doodads\\zulaman\\throne\\eaglethrone01.m2": [
+0.364,
+0.083,
+1.57,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahn_quiraj_ossiriancrystal\\ahn_quiraj_ossiriancrystal.m2": [
+0.424,
+0.032,
+-0.125
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\lavaaltar\\lavaaltar.m2": [
+0.143,
+-0.587,
+0.466,
+0.61
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\anchors\\darkshoreanchor01.m2": [
+0.098,
+0.706,
+4.002
+],
+"world\\azeroth\\zulgurub\\activedoodads\\voodoopile\\voodoopile01.m2": [
+1.388,
+-0.108,
+0.738
+],
+"world\\expansion02\\doodads\\scholazar\\sholazar_crystal_07.m2": [
+0.559,
+-0.015,
+0.819,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\totem\\ak_totem01.m2": [
+0.938,
+0.055,
+0.234,
+0.61
+],
+"world\\expansion01\\doodads\\silvermyst\\crystals\\silvermystcrystal01_orange.m2": [
+0.68,
+0.015,
+0.311
+],
+"world\\expansion01\\doodads\\silvermyst\\crystals\\silvermystcrystal03_orange.m2": [
+0.557,
+-0.136,
+0.584
+],
+"world\\expansion01\\doodads\\silvermyst\\crystals\\silvermystcrystalsmall01_orange.m2": [
+0.574,
+-0.034,
+0.841,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\tombs\\tombstone07.m2": [
+1.308,
+0.016,
+0.082
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_crystal_spike_01.m2": [
+0.811,
+0.279,
+0.357
+],
+"world\\kalimdor\\ungoro\\passivedoodads\\crystals\\ungorocrystal_red02.m2": [
+0.972,
+0.139,
+0.142
+],
+"world\\kalimdor\\ungoro\\passivedoodads\\crystals\\ungorocrystal_yellow01.m2": [
+1.134,
+0.065,
+0.111
+],
+"world\\expansion02\\doodads\\nexus\\nexus_dragonorb_01.m2": [
+1.151,
+-0.239,
+0.362,
+0.61
+],
+"world\\generic\\murloc\\passive doodads\\pearl\\greatpearl_01.m2": [
+0.83,
+0.062,
+0.136,
+0.61
+],
+"world\\expansion01\\doodads\\shattrath\\passivedoodads\\battlemasterpedestal\\battlemasterpedestal.m2": [
+1.251,
+-0.002,
+-0.146
+],
+"world\\expansion01\\doodads\\zulaman\\statues\\eaglestatue01.m2": [
+0.512,
+0.056,
+1.169,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\statue\\bfd_statuenagapriestess.m2": [
+0.574,
+0.179,
+0.958,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_crystal_masterbase.m2": [
+0.143,
+2.274,
+0.744,
+-1.25
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_commcrystal_base02.m2": [
+0.709,
+0.2,
+0.576
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_commcrystal_base01.m2": [
+1.246,
+-0.002,
+0.182
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_warningrock03.m2": [
+0.352,
+0.055,
+1.076,
+0.61
+],
+"world\\goober\\g_runeblue02.m2": [
+1.512,
+0.002,
+0.238
+],
+"world\\expansion01\\doodads\\terokkar\\bomb\\be_arcanebomb_orb.m2": [
+1.05,
+-0.008,
+0.355,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\weapons\\vr_bm_ sword_01.m2": [
+0.512,
+-0.005,
+1.045
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\cannon\\bu_cannon_base.m2": [
+0.345,
+0.184,
+0.589
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_weaponrack2.m2": [
+0.398,
+0.02,
+1.438,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\shield\\vr_crestshield_02.m2": [
+0.956,
+0.254,
+-0.152,
+0.601
+],
+"world\\lordaeron\\arathi\\activedoodads\\bramblestaff\\bramblestaff.m2": [
+0.574,
+-0.032,
+0.77
+],
+"world\\expansion02\\doodads\\ulduar\\ul_titanenergy_02.m2": [
+1.259,
+0.004,
+0.34
+],
+"world\\goober\\g_kruskspear.m2": [
+0.525,
+-0.275,
+0.85,
+1.506
+],
+"world\\generic\\human\\passive doodads\\doghouses\\doghouse.m2": [
+0.737,
+0.009,
+0.569
+],
+"world\\generic\\nightelf\\passive doodads\\wallhangings\\elfwallhanging09.m2": [
+0.574,
+0.085,
+0.859
+],
+"world\\azeroth\\elwynn\\passivedoodads\\elwynnfences\\elwynnwoodfence01.m2": [
+0.574,
+0.444,
+0.825,
+0.61
+],
+"world\\generic\\human\\passive doodads\\clothing\\hangingcloakred.m2": [
+1.424,
+0.153,
+-0.033
+],
+"world\\generic\\buildings\\humantentlarge\\humantentlarge.m2": [
+0.13,
+-0.045,
+2.098,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\wreckedrowboat\\wreckedrowboat.m2": [
+0.498,
+0.205,
+0.627
+],
+"world\\generic\\buildings\\humantentmedium\\humantentmedium.m2": [
+0.143,
+0.093,
+2.072,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanneralliance_static_wall.m2": [
+0.765,
+-0.121,
+-0.918,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\stormwindlionbanner.m2": [
+0.143,
+0.129,
+1.933
+],
+"world\\expansion02\\doodads\\generic\\irondwarf\\id_anvil.m2": [
+0.689,
+0.066,
+0.229
+],
+"world\\generic\\human\\passive doodads\\braziers\\stormwindbrazier01.m2": [
+1.025,
+0.093,
+1.002
+],
+"world\\expansion01\\doodads\\generic\\draenei\\blacksmith\\dr_anvil_01.m2": [
+1.172,
+-0.206,
+0.154
+],
+"world\\generic\\human\\passive doodads\\cauldrons\\cauldron.m2": [
+1.175,
+0.0,
+0.106
+],
+"world\\expansion01\\doodads\\generic\\draenei\\cookpots\\dr_cookpot_01.m2": [
+1.368,
+-0.018,
+0.208
+],
+"world\\expansion01\\doodads\\generic\\draenei\\blacksmith\\dr_forge_01.m2": [
+0.525,
+-0.062,
+0.969,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\lavasteam\\forgelavab.m2": [
+0.143,
+-2.102,
+-6.282
+],
+"world\\azeroth\\elwynn\\buildings\\distillery\\distillery.m2": [
+0.303,
+-0.459,
+1.381,
+0.525
+],
+"world\\generic\\dwarf\\passive doodads\\tables\\readingtable01.m2": [
+0.525,
+-0.064,
+0.794,
+2.675
+],
+"world\\generic\\human\\passive doodads\\tables\\bloodytable3.m2": [
+0.466,
+-0.021,
+0.415
+],
+"world\\goober\\g_crate02.m2": [
+1.337,
+-0.021,
+0.24
+],
+"world\\generic\\passivedoodads\\weaponcrates\\weaponcratealliancesword.m2": [
+1.105,
+-0.08,
+0.166
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_bags.m2": [
+0.574,
+-0.049,
+0.836,
+0.61
+],
+"world\\generic\\human\\passive doodads\\beerkegs\\beerkeg01.m2": [
+1.304,
+0.083,
+0.197
+],
+"world\\generic\\dwarf\\passive doodads\\excavationwaterwagon\\excavationwaterwagon.m2": [
+0.231,
+-0.382,
+1.59,
+0.61
+],
+"world\\generic\\human\\passive doodads\\food\\goldfruitbowl01.m2": [
+1.101,
+0.023,
+-0.096
+],
+"world\\azeroth\\westfall\\passivedoodads\\brokencart\\brokencart.m2": [
+0.35,
+-0.046,
+0.269,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\kegs\\darkironkegbroken01.m2": [
+0.292,
+-0.282,
+0.892,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\kegs\\darkironkegbroken02.m2": [
+0.347,
+0.166,
+1.227,
+0.61
+],
+"world\\generic\\passivedoodads\\cratesfirstaid\\cratealliancefirstaid01.m2": [
+1.214,
+-0.012,
+0.141
+],
+"world\\generic\\human\\passive doodads\\lumberpiles\\deadminelumberpilesmall.m2": [
+0.79,
+-0.063,
+0.229
+],
+"world\\generic\\human\\passive doodads\\beerkegs\\beerkeg01_nocollide.m2": [
+1.304,
+0.083,
+0.197
+],
+"world\\generic\\nightelf\\passive doodads\\crates\\elfcrate01.m2": [
+0.867,
+0.023,
+0.218
+],
+"world\\generic\\human\\passive doodads\\footlockers\\duskwoodfootlocker01.m2": [
+0.92,
+0.017,
+0.032
+],
+"world\\generic\\gnome\\passive doodads\\buckets\\gnomebucket01.m2": [
+1.101,
+0.048,
+0.047
+],
+"world\\generic\\gnome\\passive doodads\\buckets\\gnomebucket02.m2": [
+1.177,
+-0.035,
+0.136,
+0.747
+],
+"world\\azeroth\\elwynn\\passivedoodads\\haystacks\\haystack01.m2": [
+0.92,
+-0.026,
+0.134,
+0.61
+],
+"world\\dungeon\\goldshireinn\\innbarrel\\innbarrel.m2": [
+1.154,
+0.007,
+0.182
+],
+"world\\generic\\human\\passive doodads\\beerkegs\\beerkeg02.m2": [
+1.382,
+-0.029,
+-0.006
+],
+"world\\generic\\human\\passive doodads\\firewood\\firewoodpile03.m2": [
+1.392,
+0.089,
+0.066
+],
+"world\\expansion02\\doodads\\generic\\human\\crates\\crategrainplagued_01.m2": [
+1.236,
+-0.019,
+0.484
+],
+"world\\generic\\dwarf\\passive doodads\\platters\\plattergoldornate02.m2": [
+1.077,
+-0.018,
+-0.151,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\waterbasin\\waterbasin.m2": [
+0.997,
+-0.006,
+0.219
+],
+"world\\generic\\human\\passive doodads\\food\\roastboarplatter.m2": [
+0.865,
+-0.111,
+0.289
+],
+"world\\generic\\human\\passive doodads\\crates\\stormwindcrate01.m2": [
+1.214,
+-0.012,
+0.151
+],
+"world\\generic\\human\\passive doodads\\sacks\\sackherbsstranglekelp01.m2": [
+1.582,
+0.037,
+-0.05
+],
+"world\\azeroth\\westfall\\passivedoodads\\westfall wagon\\westfallwagon01.m2": [
+0.215,
+0.185,
+0.868
+],
+"world\\expansion02\\doodads\\generic\\human\\crates\\crategrainnormal_01.m2": [
+1.236,
+-0.013,
+0.132
+],
+"world\\generic\\human\\passive doodads\\crates\\crategrain01.m2": [
+1.241,
+-0.002,
+0.111
+],
+"world\\generic\\human\\passive doodads\\bookshelves\\duskwoodbookshelf02.m2": [
+0.776,
+-0.023,
+0.431
+],
+"world\\generic\\human\\passive doodads\\beds\\bunkbed01.m2": [
+0.307,
+0.035,
+1.517,
+0.61
+],
+"world\\generic\\human\\passive doodads\\tables\\inntable.m2": [
+0.466,
+-0.021,
+0.4
+],
+"world\\generic\\human\\passive doodads\\wardrobe\\duskwoodwardrobe02.m2": [
+0.538,
+-0.117,
+0.784,
+0.61
+],
+"world\\generic\\human\\passive doodads\\shopcounter\\duskwoodshopcounter.m2": [
+0.581,
+-0.038,
+0.316
+],
+"world\\generic\\human\\passive doodads\\tables\\duskwoodtable01.m2": [
+0.453,
+-0.02,
+0.514
+],
+"world\\generic\\dwarf\\passive doodads\\tables\\dwarventableornate01.m2": [
+0.485,
+0.012,
+0.277
+],
+"world\\generic\\dwarf\\passive doodads\\tables\\dwarventablesimple05.m2": [
+0.481,
+0.036,
+0.301
+],
+"world\\generic\\dwarf\\passive doodads\\tables\\dwarventablesmall.m2": [
+0.594,
+-0.079,
+0.284
+],
+"world\\generic\\nightelf\\passive doodads\\tables\\elvenwoodentable01.m2": [
+0.528,
+-0.052,
+0.821,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\furniture\\gnometable05.m2": [
+0.859,
+-0.042,
+0.216
+],
+"world\\generic\\gnome\\passive doodads\\furniture\\gnometable01.m2": [
+0.803,
+0.012,
+0.244,
+0.61
+],
+"world\\generic\\human\\passive doodads\\tables\\inntabletiny.m2": [
+0.961,
+-0.008,
+0.237
+],
+"world\\azeroth\\elwynn\\passivedoodads\\tables\\roundtable\\roundtable.m2": [
+0.981,
+0.009,
+0.158
+],
+"world\\generic\\human\\passive doodads\\tables\\inntablesmall.m2": [
+0.769,
+-0.021,
+0.245
+],
+"world\\generic\\gnome\\passive doodads\\gnomemachine\\gnomemachine04.m2": [
+0.5,
+-0.087,
+0.886,
+0.525
+],
+"world\\generic\\human\\passive doodads\\rugs\\stormwindrug02.m2": [
+0.76,
+-0.062,
+0.037
+],
+"world\\generic\\human\\passive doodads\\rugs\\stormwindrug01.m2": [
+0.599,
+-0.01,
+0.024
+],
+"world\\expansion02\\doodads\\generic\\human\\clocks\\cuckooclock_01.m2": [
+1.101,
+-0.022,
+-0.25
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopfireworksbarrel.m2": [
+1.054,
+-0.038,
+0.25,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\tavernstuff\\alekegfoot.m2": [
+0.98,
+-0.006,
+0.162
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowerswreath02.m2": [
+0.904,
+-0.001,
+-0.096
+],
+"world\\generic\\human\\passive doodads\\candelabras\\generalcandelabra01.m2": [
+1.593,
+0.025,
+-0.088
+],
+"world\\generic\\human\\passive doodads\\lanterns\\generallantern01.m2": [
+1.538,
+0.001,
+-0.108
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\hotcoals\\hotcoals.m2": [
+0.107,
+-0.026,
+0.06,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearlantern_alliance_hanging.m2": [
+1.113,
+0.051,
+-0.316
+],
+"world\\generic\\human\\passive doodads\\stoves\\potbellystovewall.m2": [
+0.574,
+0.085,
+0.782,
+0.61
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrolla02.m2": [
+1.151,
+0.036,
+-0.135
+],
+"world\\generic\\human\\passive doodads\\meat\\bloodymeat01.m2": [
+1.117,
+-0.011,
+0.032
+],
+"world\\generic\\human\\passive doodads\\food\\bread01.m2": [
+1.125,
+0.175,
+-0.047
+],
+"world\\generic\\human\\passive doodads\\globes\\globe01.m2": [
+1.303,
+-0.05,
+0.078
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrollmap.m2": [
+1.033,
+-0.006,
+-0.054
+],
+"world\\generic\\human\\passive doodads\\meat\\bloodymeat02.m2": [
+1.101,
+-0.041,
+0.268,
+0.61
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrollb02.m2": [
+1.177,
+-0.041,
+0.067
+],
+"world\\generic\\human\\passive doodads\\books\\booklargeopen01.m2": [
+1.18,
+-0.071,
+0.14
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowerswreath01.m2": [
+0.955,
+-0.06,
+0.032
+],
+"world\\generic\\human\\passive doodads\\benches\\stormwindbench01.m2": [
+0.772,
+0.214,
+0.266
+],
+"world\\generic\\human\\passive doodads\\pews\\generalchurchpew01.m2": [
+0.43,
+0.172,
+0.784
+],
+"world\\generic\\darkirondwarf\\passive doodads\\chairs\\darkironchair02.m2": [
+0.961,
+0.081,
+0.177
+],
+"world\\generic\\darkirondwarf\\passive doodads\\chairs\\darkironchair03.m2": [
+1.101,
+0.133,
+0.101
+],
+"world\\expansion01\\doodads\\generic\\draenei\\bench\\dr_bench_01.m2": [
+0.592,
+0.149,
+0.307
+],
+"world\\generic\\human\\passive doodads\\chairs\\generalchairhighend01.m2": [
+0.574,
+0.064,
+0.859,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\chairs\\darkironchair01.m2": [
+0.574,
+0.06,
+0.873,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\chairs\\darkironchairbroken01.m2": [
+0.574,
+0.016,
+0.79,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\ironforgechair_ornate01.m2": [
+0.489,
+0.01,
+1.376,
+0.559
+],
+"world\\generic\\gnome\\passive doodads\\furniture\\gnomechair02.m2": [
+1.478,
+0.045,
+0.034
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\dwarvenchair05.m2": [
+0.91,
+0.15,
+0.574
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\dwarvenchair04.m2": [
+0.949,
+0.152,
+0.318
+],
+"world\\generic\\gnome\\passive doodads\\furniture\\gnomechair01.m2": [
+1.331,
+-0.057,
+0.038
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\dwarvenhighendchair.m2": [
+1.128,
+0.323,
+0.285
+],
+"world\\generic\\darkirondwarf\\passive doodads\\throne\\darkironthrone.m2": [
+0.28,
+-0.026,
+-0.254
+],
+"world\\generic\\nightelf\\passive doodads\\furniture\\elvenstonestool01.m2": [
+1.033,
+0.14,
+0.035,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\dwarvenchair03.m2": [
+0.928,
+0.091,
+0.333
+],
+"world\\generic\\dwarf\\passive doodads\\chairs\\dwarvenchair02.m2": [
+0.905,
+0.039,
+0.439
+],
+"world\\generic\\gnome\\passive doodads\\furniture\\gnomebenchsittable.m2": [
+0.874,
+0.126,
+0.352
+],
+"world\\expansion01\\doodads\\bloodmyst\\crystals\\bloodmystcrystal01.m2": [
+0.697,
+0.024,
+0.286
+],
+"world\\generic\\human\\passive doodads\\altars\\altar02.m2": [
+0.493,
+0.046,
+0.36,
+0.943
+],
+"world\\expansion01\\doodads\\hellfirepeninsula\\gravestones\\hellfire_gravestones_alliance_01.m2": [
+0.574,
+-0.011,
+0.584,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\tombstones\\tombstone03.m2": [
+1.207,
+0.023,
+0.162
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\nightelfruins03.m2": [
+0.693,
+-0.069,
+0.589,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\tombstones\\tombstone01.m2": [
+0.912,
+0.052,
+0.417
+],
+"world\\generic\\human\\passive doodads\\rugs\\generalbearskinrug01.m2": [
+0.358,
+0.006,
+0.444
+],
+"world\\expansion01\\doodads\\theexodar\\passivedoodads\\crystal\\crystal_corrupted.m2": [
+0.143,
+-0.101,
+1.207,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\fountains\\elvenfountain.m2": [
+0.478,
+-0.037,
+1.094,
+0.61
+],
+"world\\generic\\human\\passive doodads\\oildrums\\oildrum01.m2": [
+0.538,
+0.002,
+0.847,
+0.61
+],
+"world\\generic\\human\\passive doodads\\altars\\altar01.m2": [
+0.497,
+0.034,
+0.364
+],
+"world\\generic\\human\\passive doodads\\armor\\armormailhangingbluelong.m2": [
+1.101,
+-0.046,
+0.091,
+0.61
+],
+"world\\generic\\human\\passive doodads\\armor\\armorstand.m2": [
+1.195,
+0.005,
+0.159
+],
+"world\\generic\\human\\passive doodads\\armor\\armorstandmailcoifblue.m2": [
+1.174,
+0.024,
+0.174
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladeshield1\\battlegladeshield1.m2": [
+0.779,
+-0.2,
+-0.034
+],
+"world\\azeroth\\elwynn\\passivedoodads\\catapult\\catapult.m2": [
+0.222,
+0.062,
+1.566
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_mailarmor.m2": [
+0.574,
+0.02,
+0.803,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_shields.m2": [
+0.574,
+0.085,
+0.803,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_staves.m2": [
+0.574,
+-0.076,
+0.793,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weaponracks\\generalweaponrack01.m2": [
+0.552,
+0.087,
+0.841,
+0.61
+],
+"world\\generic\\passivedoodads\\weaponcrates\\weaponcrateallianceswordopen.m2": [
+1.115,
+-0.067,
+0.191,
+0.636
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent02.m2": [
+0.143,
+-0.054,
+1.746
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent03.m2": [
+0.143,
+-0.552,
+1.569
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent06.m2": [
+0.19,
+0.302,
+1.677
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\pennants\\tournament_pennant_troll_low.m2": [
+0.574,
+-0.01,
+0.7
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbannerhorde_static_wall.m2": [
+0.765,
+-0.062,
+-0.825,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\tables\\be_table_large01.m2": [
+0.6,
+-0.036,
+0.38
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\gloomweed\\gloomweed01.m2": [
+1.395,
+0.058,
+0.192,
+2.009
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\orcanvilstoneburningsteppes\\orcanvilstoneburningsteppes.m2": [
+0.68,
+-0.05,
+0.122
+],
+"world\\generic\\orc\\passive doodads\\tablecooker\\orctablecooker01.m2": [
+0.762,
+0.024,
+0.377,
+0.772
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\orcfoundrypit\\orcsmallfoundrypit.m2": [
+1.082,
+-0.043,
+0.385
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\forge\\be_forge.m2": [
+0.469,
+-0.045,
+1.569,
+0.909
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\loom\\be_loom_01.m2": [
+1.234,
+0.017,
+0.048,
+0.559
+],
+"world\\generic\\orc\\passive doodads\\tablecooker\\orctablecooker01fire.m2": [
+0.756,
+0.024,
+0.398
+],
+"world\\generic\\tauren\\passive doodads\\sacks\\taurensack02.m2": [
+0.993,
+0.104,
+0.269,
+0.61
+],
+"world\\expansion02\\doodads\\wintertauren\\wt_rug_01.m2": [
+0.437,
+0.019,
+0.117,
+0.516
+],
+"world\\generic\\orc\\passive doodads\\jugs\\orcjug02.m2": [
+1.439,
+-0.007,
+-0.046
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_general.m2": [
+0.43,
+0.08,
+1.385,
+0.61
+],
+"world\\generic\\passivedoodads\\cratesfirstaid\\cratehordefirstaid01.m2": [
+0.842,
+-0.011,
+0.447
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguebarrel.m2": [
+1.013,
+-0.022,
+0.025,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguebarrelempty.m2": [
+1.013,
+-0.011,
+0.076,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orccrate06.m2": [
+0.885,
+-0.046,
+0.345
+],
+"world\\generic\\tauren\\passive doodads\\baskets\\largebasket03.m2": [
+0.985,
+-0.007,
+0.389
+],
+"world\\generic\\undead\\passive doodads\\meatwagonpieces\\meatwagonclaw.m2": [
+1.241,
+-0.01,
+0.271,
+0.32
+],
+"world\\generic\\undead\\passive doodads\\meatwagonpieces\\meatwagonroller.m2": [
+0.557,
+0.022,
+0.732
+],
+"world\\generic\\undead\\passive doodads\\meatwagonpieces\\meatwagonwheel.m2": [
+0.574,
+-0.055,
+0.739,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orcbarrel03.m2": [
+0.987,
+-0.022,
+0.337
+],
+"world\\generic\\orc\\passive doodads\\jugs\\orcjug01.m2": [
+1.404,
+0.141,
+-0.009
+],
+"world\\generic\\orc\\passive doodads\\wagons\\orcwagon03.m2": [
+0.259,
+-0.035,
+1.786
+],
+"world\\generic\\tauren\\passive doodads\\baskets\\smallbasket01.m2": [
+0.844,
+-0.046,
+0.136,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_food.m2": [
+0.422,
+-0.035,
+1.278,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\taurenrugs\\taurenrug04.m2": [
+0.709,
+-0.016,
+0.101
+],
+"world\\generic\\tauren\\passive doodads\\taurenrugs\\taurenrug03.m2": [
+0.804,
+-0.024,
+0.081
+],
+"world\\generic\\orc\\passive doodads\\tables\\orctable01.m2": [
+1.027,
+-0.109,
+-0.088
+],
+"world\\generic\\tauren\\passive doodads\\taurenrugs\\taurenrug02.m2": [
+0.811,
+-0.037,
+0.073
+],
+"world\\generic\\tauren\\passive doodads\\taurenrugs\\taurenrug01.m2": [
+0.811,
+-0.037,
+0.062
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_chemistryset_02.m2": [
+0.574,
+0.073,
+0.765,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_chemistryset_03.m2": [
+0.552,
+-0.243,
+0.959,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_chemistryset_04.m2": [
+0.478,
+0.076,
+0.991,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\campfire\\be_campfire02.m2": [
+1.055,
+-0.035,
+0.972
+],
+"world\\generic\\orc\\passive doodads\\braziers\\smallbrazier01.m2": [
+0.574,
+0.03,
+0.838,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_food.m2": [
+0.468,
+0.084,
+1.172,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\smallbrazierpurple01.m2": [
+0.988,
+0.005,
+0.569
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\campfire\\be_campfire01.m2": [
+1.067,
+-0.01,
+0.785
+],
+"world\\expansion02\\doodads\\generic\\northrend fires\\northrendgeneraltorch02.m2": [
+0.574,
+0.032,
+1.03,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\tallbrazier01.m2": [
+0.468,
+0.039,
+1.052,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\firepits\\largefirepit01.m2": [
+0.674,
+-0.0,
+1.096
+],
+"world\\generic\\passivedoodads\\lights\\freestandingtorch01.m2": [
+0.574,
+0.018,
+0.733,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\generaltorch01.m2": [
+0.478,
+-0.103,
+0.971,
+0.61
+],
+"world\\goober\\g_brazierorcblue.m2": [
+0.574,
+-0.052,
+1.025,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearlantern_horde_hanging.m2": [
+0.684,
+-0.083,
+-0.716,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\meatwagonpieces\\meatwagongrill.m2": [
+0.385,
+-0.083,
+0.323
+],
+"world\\generic\\orc\\passive doodads\\firepits\\smallfirepit01.m2": [
+0.574,
+0.012,
+1.066,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\smallbraziernoomni01.m2": [
+0.574,
+0.08,
+0.946,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\cages\\plaugelandscage01_activebase.m2": [
+1.233,
+-0.025,
+-0.163,
+0.917
+],
+"world\\generic\\tauren\\passive doodads\\animalcages\\animalcage01.m2": [
+0.574,
+-0.061,
+0.874,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\animalcages\\animalcage02.m2": [
+0.574,
+-0.071,
+0.739,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\animalcages\\animalcage03.m2": [
+0.859,
+-0.001,
+0.412
+],
+"world\\generic\\tauren\\passive doodads\\animalcages\\animalcage04.m2": [
+0.574,
+0.017,
+0.905
+],
+"world\\generic\\orc\\passive doodads\\meatracks\\rawmeatrack01.m2": [
+0.512,
+0.013,
+1.396,
+0.61
+],
+"world\\kalimdor\\orgrimmar\\passivedoodads\\maptable\\hordemaptable_outland.m2": [
+0.259,
+0.121,
+1.575
+],
+"world\\generic\\troll\\passive doodads\\trollskullpile\\trollskullpile.m2": [
+0.938,
+-0.118,
+0.29,
+0.61
+],
+"world\\kalimdor\\orgrimmar\\passivedoodads\\maptable\\hordemaptable.m2": [
+0.257,
+0.116,
+1.583
+],
+"world\\generic\\human\\passive doodads\\benches\\shadowfangbench02.m2": [
+0.918,
+0.091,
+0.249
+],
+"world\\generic\\tauren\\passive doodads\\chairs\\taurenlogchair02.m2": [
+0.467,
+0.083,
+0.1
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\benches\\be_bench01.m2": [
+0.377,
+-0.004,
+1.043
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\chairs\\be_chair01.m2": [
+1.234,
+0.178,
+0.257
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\chairs\\be_chair02.m2": [
+0.574,
+0.234,
+0.864
+],
+"world\\generic\\orc\\passive doodads\\tables\\orcbench01.m2": [
+0.297,
+0.09,
+0.231
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\tables\\be_table_small01.m2": [
+0.974,
+-0.055,
+0.078,
+0.61
+],
+"world\\expansion01\\doodads\\zulaman\\ruins\\trollruins_zulaman_06.m2": [
+0.331,
+-0.109,
+1.329,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\voodoostuff\\voodoodrum03.m2": [
+1.054,
+-0.043,
+-0.039
+],
+"world\\generic\\orc\\passive doodads\\voodoostuff\\voodoodrum01.m2": [
+0.888,
+0.136,
+0.219,
+0.61
+],
+"world\\generic\\passivedoodads\\weaponcrates\\weaponcratehordeaxe.m2": [
+0.892,
+-0.016,
+0.18,
+2.283
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_axe.m2": [
+0.997,
+-0.042,
+0.236
+],
+"world\\generic\\passivedoodads\\weapons\\hammer_pvphorde_a_01.m2": [
+0.993,
+-0.365,
+0.032
+],
+"world\\generic\\passivedoodads\\weaponcrates\\weaponcratehordeaxeopen.m2": [
+0.884,
+-0.03,
+0.254,
+0.636
+],
+"world\\generic\\passivedoodads\\weapons\\shield_pvphorde.m2": [
+1.266,
+0.115,
+-0.185
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_shield.m2": [
+1.011,
+-0.055,
+0.225
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_armory.m2": [
+0.458,
+0.046,
+1.175,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_weapons.m2": [
+0.449,
+0.03,
+1.197,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\auraredshort.m2": [
+1.3,
+-0.015,
+0.49
+],
+"world\\expansion02\\doodads\\howlingfjord\\firefx\\burntground01.m2": [
+0.912,
+-0.018,
+0.282,
+0.61
+],
+"world\\generic\\passivedoodads\\floatingdebris\\floatingboardsburning01.m2": [
+0.43,
+0.01,
+0.414
+],
+"world\\generic\\activedoodads\\chest02\\chest02.m2": [
+1.646,
+-0.017,
+0.145,
+0.61
+],
+"world\\generic\\activedoodads\\chest04\\chest04.m2": [
+1.493,
+0.025,
+0.164
+],
+"world\\skillactivated\\containers\\treasurechest01.m2": [
+0.794,
+-0.316,
+0.297
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineswreathhanging.m2": [
+0.357,
+0.037,
+0.015
+],
+"world\\environment\\doodad\\generaldoodads\\elementalrifts\\firerift.m2": [
+0.191,
+0.014,
+0.976
+],
+"world\\expansion02\\doodads\\scholazar\\hatchwindow.m2": [
+1.25,
+-0.001,
+-0.003,
+0.61
+],
+"world\\generic\\passivedoodads\\testball\\testball.m2": [
+1.721,
+-0.001,
+-0.081
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahnqirajsandtrap.m2": [
+0.308,
+0.414,
+1.225
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_mining.m2": [
+0.368,
+-0.28,
+-0.659,
+0.61
+],
+"world\\goober\\g_epicbrazieryellow.m2": [
+0.765,
+-0.036,
+0.949,
+0.61
+],
+"world\\expansion01\\doodads\\netherstorm\\dirt\\nethergravedirtmound01.m2": [
+0.413,
+-0.016,
+0.321
+],
+"world\\generic\\human\\passive doodads\\fire\\undeadfiresmall.m2": [
+1.315,
+-0.053,
+0.149
+],
+"world\\goober\\g_netablet.m2": [
+1.04,
+0.058,
+0.054,
+0.619
+],
+"world\\expansion01\\doodads\\bladesedge\\ogrila\\ogrilacrystals\\ogrila_crystal01.m2": [
+0.29,
+-0.028,
+1.083,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\demonwing\\activedoodads\\summoning_power_room\\hellfire_dw_summonpower.m2": [
+0.143,
+0.609,
+0.686
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\books\\uldamanbook03.m2": [
+0.449,
+-0.853,
+0.235,
+0.61
+],
+"world\\generic\\passivedoodads\\babies\\baby_dw.m2": [
+1.053,
+-0.027,
+0.32
+],
+"world\\generic\\passivedoodads\\babies\\baby_ne.m2": [
+1.378,
+-0.006,
+-0.161,
+0.61
+],
+"world\\generic\\passivedoodads\\babies\\baby_or.m2": [
+1.144,
+0.083,
+0.041,
+0.61
+],
+"world\\generic\\passivedoodads\\babies\\baby_tr.m2": [
+0.983,
+-0.02,
+0.182
+],
+"world\\expansion02\\doodads\\generic\\barbershop\\barbershop_polewall.m2": [
+0.935,
+0.1,
+0.407,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\snowpiles\\borean_snowpile_02.m2": [
+0.181,
+-0.038,
+0.687,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\orangegroundfog.m2": [
+0.143,
+-0.414,
+0.093
+],
+"world\\expansion02\\doodads\\ulduar\\ul_sigil03.m2": [
+0.358,
+-0.164,
+-1.177,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_plaguebomb_orange.m2": [
+1.05,
+-0.064,
+2.465
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\magnataur_ribcage01.m2": [
+0.143,
+0.043,
+0.788
+],
+"world\\goober\\g_crateanimal.m2": [
+0.719,
+0.434,
+0.823,
+0.61
+],
+"world\\expansion03\\doodads\\twilighthammer\\altar\\twilightshammer_altar01.m2": [
+0.273,
+-0.005,
+0.597
+],
+"world\\kalimdor\\thousandneedles\\passivedoodads\\wyverneggs\\wyverneggs02.m2": [
+1.125,
+-0.066,
+0.058,
+0.61
+],
+"world\\generic\\pvp\\runes\\pvp_rune_invis.m2": [
+1.077,
+-0.005,
+-0.211,
+0.61
+],
+"world\\expansion02\\doodads\\azjol-nerub\\saronite\\saronite_node_01.m2": [
+0.955,
+0.067,
+0.344,
+0.61
+],
+"world\\goober\\g_scourgerunecirclecrystal.m2": [
+0.141,
+-0.06,
+-0.09,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurayellowshort.m2": [
+1.28,
+-0.003,
+0.469
+],
+"world\\lordaeron\\alteracmountains\\passivedoodads\\fruitbuckets\\alteracfruitbucket04.m2": [
+0.808,
+0.024,
+0.576,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_swirl_orb_cloud.m2": [
+0.143,
+0.149,
+-0.192
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_bank.m2": [
+0.19,
+-0.4,
+-2.255,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_informationcenter.m2": [
+0.191,
+-0.392,
+-2.273,
+0.61
+],
+"world\\generic\\passivedoodads\\brewfest\\beerfest_molemachine.m2": [
+0.119,
+-0.191,
+-2.379,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\blackrockportraits\\bankportraitplate.m2": [
+2.421,
+0.36,
+0.214,
+0.61
+],
+"world\\goober\\g_jewelblack.m2": [
+1.154,
+0.219,
+-0.285,
+0.61
+],
+"world\\goober\\g_demoniccirclesummon_base.m2": [
+0.489,
+-0.074,
+0.147,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\crate\\et_crate01off.m2": [
+1.493,
+0.056,
+-0.065,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\dragonkinnests\\dragonkinnest01.m2": [
+0.264,
+-0.197,
+-0.24,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\dragonkinnests\\dragonkinnest02.m2": [
+0.352,
+-0.379,
+0.397,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\dragonkinnests\\dragonkinnest03.m2": [
+0.352,
+-0.164,
+0.354,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_crystal_base.m2": [
+0.447,
+-0.02,
+1.263,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\ahnqirajglow\\quirajglow.m2": [
+0.656,
+-0.105,
+0.206
+],
+"world\\goober\\g_essencedistiller.m2": [
+0.157,
+-0.01,
+1.679,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\stoneflags\\borean_flag_05.m2": [
+0.539,
+-0.016,
+1.148,
+0.61
+],
+"world\\expansion02\\doodads\\rubysanctum\\reddragonshrine_tree04_burned_anim.m2": [
+0.191,
+-0.087,
+21.956,
+0.695
+],
+"world\\expansion02\\doodads\\azjol-nerub\\saronite\\saronite_node_01_pos.m2": [
+1.179,
+0.207,
+0.114,
+0.61
+],
+"world\\goober\\g_arcaneprison_01.m2": [
+0.398,
+0.067,
+0.836
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\crate\\et_crate01.m2": [
+1.329,
+0.013,
+0.144,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_purple_bossroom.m2": [
+0.715,
+0.001,
+-0.235
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\cage\\et_cagebase.m2": [
+1.033,
+0.016,
+0.046,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\lightfx\\zuldrak_blue_fire.m2": [
+0.188,
+0.01,
+1.957,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\grainsacks\\kn_grainsack02.m2": [
+0.877,
+0.004,
+0.195
+],
+"world\\goober\\g_spirittotem.m2": [
+0.307,
+0.046,
+1.643
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_firstaid.m2": [
+0.253,
+0.048,
+-1.515,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\flamecircle.m2": [
+0.143,
+0.014,
+0.887
+],
+"world\\generic\\passivedoodads\\floatingdebris\\floatingcoffin01.m2": [
+0.766,
+-0.086,
+0.029,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_hexagon_floor.m2": [
+0.073,
+0.003,
+-0.015,
+0.61
+],
+"world\\kalimdor\\winterspring\\passivedoodads\\frostsaberrock\\winterspringfrostsaberrock.m2": [
+0.19,
+0.026,
+0.14
+],
+"world\\expansion02\\doodads\\stormpeaks\\iceshards\\frostgianticeshard04.m2": [
+0.247,
+0.016,
+1.011
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_frostglow.m2": [
+0.637,
+-0.057,
+-0.189,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_icecliff_06.m2": [
+0.143,
+0.014,
+0.146
+],
+"world\\generic\\passivedoodads\\engineering\\spring.m2": [
+0.546,
+0.097,
+0.702,
+0.61
+],
+"world\\goober\\g_witchhat_01.m2": [
+0.484,
+0.036,
+1.212,
+0.61
+],
+"world\\kalimdor\\ungoro\\passivedoodads\\trexfootprint\\trexfootprint.m2": [
+1.089,
+0.108,
+0.12,
+0.61
+],
+"world\\generic\\pvp\\collisionwall\\collisionwallpvp01.m2": [
+0.143,
+0.014,
+-0.016
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_generalgoods.m2": [
+0.19,
+-0.306,
+-2.452,
+0.61
+],
+"world\\skillactivated\\tradeskillnodes\\gold_miningnode_01.m2": [
+0.234,
+-0.207,
+0.637
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\golemparts\\cannongolemarm.m2": [
+0.903,
+0.047,
+0.339,
+0.798
+],
+"world\\expansion02\\doodads\\ulduar\\ul_sigil02.m2": [
+0.398,
+-0.149,
+-3.029
+],
+"world\\azeroth\\zulgurub\\passivedoodads\\heart\\heartofhakkar.m2": [
+0.961,
+-1.896,
+0.424,
+0.61
+],
+"world\\generic\\activedoodads\\instanceportal\\summon_ritual.m2": [
+0.187,
+-0.019,
+1.971,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\nest\\ak_nest01.m2": [
+0.235,
+-0.111,
+0.816
+],
+"world\\environment\\doodad\\anquiraj\\fireflies\\hive_fireflies_01.m2": [
+0.143,
+-0.137,
+1.539,
+0.61
+],
+"world\\kalimdor\\dragoncave\\passivedoodads\\blackdragoneggs\\blackdragonegg03.m2": [
+0.859,
+-0.006,
+0.262,
+-0.183
+],
+"world\\dungeon\\scarletmonastery\\passivedoodads\\statues\\statuehmpriest.m2": [
+0.834,
+0.04,
+0.353,
+0.61
+],
+"world\\goober\\g_iceblock.m2": [
+0.422,
+-0.141,
+-1.935,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_icerock_02.m2": [
+0.589,
+0.074,
+0.647,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_icerock_03.m2": [
+0.334,
+0.087,
+1.622
+],
+"world\\expansion02\\doodads\\nexus\\nexus_dragonegg_01.m2": [
+0.765,
+0.025,
+0.846,
+0.61
+],
+"world\\expansion02\\doodads\\nexus\\nexus_dragonegg_02.m2": [
+0.764,
+-0.16,
+0.907,
+0.61
+],
+"world\\environment\\doodad\\naxxramas\\icyrune01.m2": [
+1.57,
+0.054,
+-0.105,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\signs\\vr_signpost_sign_01.m2": [
+0.866,
+0.023,
+0.146,
+0.67
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\signs\\ruinedsign01.m2": [
+0.187,
+0.145,
+-1.008,
+0.61
+],
+"world\\generic\\passivedoodads\\bleachers\\bleacherswood01.m2": [
+0.241,
+0.009,
+1.21
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_armorshop.m2": [
+0.329,
+-0.553,
+-2.259,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_wisplarge.m2": [
+1.325,
+0.881,
+1.54
+],
+"world\\expansion02\\doodads\\dragonblight\\bd_lavafall01.m2": [
+0.199,
+0.607,
+0.728
+],
+"world\\expansion02\\doodads\\dragonblight\\bd_lavafall03.m2": [
+0.195,
+0.275,
+1.034
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_leatherworking.m2": [
+0.371,
+-0.062,
+-1.448
+],
+"world\\generic\\passivedoodads\\particleemitters\\greygroundfog.m2": [
+0.765,
+0.607,
+0.741
+],
+"world\\expansion01\\doodads\\auchindoun\\passivedoodads\\bridge_fx\\auchindoun_bridge_fx.m2": [
+0.143,
+0.014,
+0.146
+],
+"world\\generic\\passivedoodads\\christmas\\lunarnewyear_lights.m2": [
+0.56,
+-0.098,
+-0.242,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\lunarnewyear_lightsx3.m2": [
+0.143,
+0.014,
+-0.102
+],
+"world\\generic\\passivedoodads\\christmas\\xmas_lights_broken3x.m2": [
+0.191,
+-0.062,
+0.005,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmas_lights_broken.m2": [
+0.594,
+0.066,
+0.106
+],
+"world\\generic\\passivedoodads\\particleemitters\\sunkenflame01.m2": [
+1.688,
+-0.118,
+-0.109,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_petshop.m2": [
+0.253,
+-0.407,
+-2.24,
+0.61
+],
+"world\\goober\\g_manarift.m2": [
+0.241,
+0.015,
+-0.043
+],
+"world\\goober\\g_runeblue01.m2": [
+0.858,
+-0.108,
+-0.365,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\bushes\\barrensbush02.m2": [
+0.279,
+-0.032,
+1.813,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_wispmed.m2": [
+1.055,
+0.102,
+0.691
+],
+"world\\generic\\passivedoodads\\particleemitters\\greengroundfog.m2": [
+0.287,
+-0.674,
+-1.032
+],
+"world\\azeroth\\duskwood\\passivedoodads\\irongate\\gatepost.m2": [
+0.765,
+-0.047,
+0.62,
+2.291
+],
+"world\\goober\\g_pulsatingplant.m2": [
+0.993,
+-0.045,
+0.315,
+0.61
+],
+"world\\generic\\activedoodads\\christmas\\snowballmound01.m2": [
+0.946,
+-0.096,
+0.042,
+0.61
+],
+"world\\goober\\g_necropolis.m2": [
+0.05,
+0.468,
+-0.876,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_forsale_01.m2": [
+1.398,
+-0.006,
+0.159
+],
+"world\\expansion02\\doodads\\nexus\\nexus_magicorb_blue_01.m2": [
+0.191,
+0.014,
+0.146
+],
+"world\\expansion02\\doodads\\nexus\\nexus_sigil_blue_01.m2": [
+0.143,
+0.014,
+0.321
+],
+"world\\expansion02\\doodads\\nexus\\nexus_sigil_blue_02.m2": [
+0.143,
+0.014,
+0.305
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\sack01_01\\sack01_01.m2": [
+1.534,
+0.001,
+-0.073,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_cheeseshop.m2": [
+0.191,
+-0.325,
+-2.381,
+0.61
+],
+"world\\lordaeron\\scholomance\\passivedoodads\\crystalball\\scholomancecrystalball01.m2": [
+0.478,
+0.557,
+0.883,
+0.61
+],
+"world\\lordaeron\\plagueland\\activedoodads\\dolly\\infesteddollywhole.m2": [
+1.534,
+-0.44,
+0.297,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_maraudon.m2": [
+0.143,
+-0.038,
+2.056,
+0.61
+],
+"world\\expansion02\\doodads\\stratholme_past\\ld_grainsack01.m2": [
+1.646,
+-0.093,
+0.284,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_shattrath.m2": [
+0.143,
+0.028,
+2.734,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_dalaran.m2": [
+0.191,
+-0.17,
+1.925,
+0.61
+],
+"world\\expansion01\\doodads\\terokkar\\crystal\\terokkarcrystal03.m2": [
+0.408,
+-0.222,
+1.267,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_sigil05.m2": [
+0.342,
+-0.387,
+-0.663,
+0.61
+],
+"world\\kalimdor\\stonetalon\\activedoodads\\tree\\sapling01.m2": [
+2.078,
+0.027,
+0.698
+],
+"world\\expansion02\\doodads\\ulduar\\ul_sigil04.m2": [
+0.545,
+-0.2,
+-1.965
+],
+"world\\azeroth\\karazahn\\passivedoodads\\rubble\\karazahnrockrubble02.m2": [
+0.8,
+0.134,
+0.298
+],
+"world\\generic\\passivedoodads\\christmas\\xmasropelinepole.m2": [
+1.424,
+-0.183,
+0.017,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_vehiclerepairbay_01.m2": [
+0.143,
+-0.011,
+1.694,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\sandworm\\sandworm_rockbase.m2": [
+0.72,
+-0.011,
+0.031
+],
+"world\\expansion02\\doodads\\scholazar\\waspkit\\wasp_smallhive01.m2": [
+0.143,
+0.287,
+-1.769,
+0.021
+],
+"world\\expansion01\\doodads\\generic\\fishfrenzy\\fishfrenzy.m2": [
+0.411,
+0.159,
+-0.082
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\magicdevices\\shadowcouncil_magicdevice01.m2": [
+1.042,
+0.03,
+0.329
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\magicdevices\\shadowcouncil_magicdevice02.m2": [
+0.768,
+-0.142,
+0.551,
+0.61
+],
+"world\\dungeon\\cave\\passivedoodads\\crystals\\caveminecrystalformation02.m2": [
+1.488,
+-0.123,
+-0.054,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirepeninsula\\lamppost\\dr_signpost_sign_ancient.m2": [
+1.543,
+-0.509,
+-0.103,
+0.789
+],
+"world\\generic\\passive doodads\\shoutbox\\shoutbox_generic.m2": [
+0.187,
+1.031,
+-1.143,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_enchanting.m2": [
+0.386,
+0.287,
+-1.422,
+0.064
+],
+"world\\expansion02\\doodads\\zuldrak\\skyvortex\\zuldrak_skyvortex.m2": [
+0.143,
+-0.007,
+-1.17
+],
+"world\\azeroth\\duskwood\\passivedoodads\\tombs\\dirtmound01.m2": [
+0.906,
+-0.034,
+0.351,
+0.61
+],
+"world\\kalimdor\\dragoncave\\passivedoodads\\blackdragoneggs\\blackdragonegg01.m2": [
+1.603,
+0.062,
+-0.077,
+0.781
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_wispsmall.m2": [
+0.812,
+-0.164,
+0.029
+],
+"world\\expansion01\\doodads\\generic\\ogre\\spikes\\om_iron_spike_02.m2": [
+0.978,
+-0.017,
+0.416
+],
+"world\\azeroth\\bootybay\\passivedoodad\\fishingbox\\fishingbox.m2": [
+1.054,
+0.062,
+-0.001,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\quest\\vr_sack_02_q.m2": [
+1.387,
+-0.001,
+-0.023,
+0.61
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_fishschool_shipwreck.m2": [
+0.3,
+-0.152,
+-0.019
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_tailoring.m2": [
+0.334,
+-0.337,
+-1.5,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\kodoeggs\\kodoegg01.m2": [
+0.765,
+0.006,
+0.669,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\archerytargets\\archerytargethuman01.m2": [
+0.765,
+0.092,
+0.818,
+0.61
+],
+"world\\dungeon\\cavernsoftime\\passivedoodads\\darkportal\\cot_portalparticles.m2": [
+0.191,
+0.014,
+0.146
+],
+"world\\generic\\passivedoodads\\particleemitters\\auragreenshort.m2": [
+0.977,
+-0.026,
+0.492
+],
+"world\\azeroth\\duskwood\\passivedoodads\\tombs\\tombstone05.m2": [
+1.028,
+-0.184,
+0.354,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\naga\\ark\\na_ark.m2": [
+0.395,
+0.043,
+0.585
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_weaponshop.m2": [
+0.253,
+-0.471,
+-2.375,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\books\\uldamanbook01.m2": [
+0.515,
+-0.162,
+-0.101
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_tavern.m2": [
+0.23,
+-0.358,
+-2.499,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_rangedweaponshop.m2": [
+0.191,
+-0.291,
+-2.566,
+0.781
+],
+"world\\expansion01\\doodads\\shadowmoon\\markofkael\\markofkael.m2": [
+0.495,
+-0.074,
+1.524,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_staveswands.m2": [
+0.19,
+-0.258,
+-2.396,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_inscription.m2": [
+0.19,
+-0.22,
+-0.582,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\bonfire\\karazahnbonfire02.m2": [
+0.143,
+-0.488,
+1.29,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_toyshop.m2": [
+0.191,
+-0.3,
+-2.49,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\tombs\\tombstonemonument02.m2": [
+0.624,
+-0.16,
+1.053,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\scarecrow\\ak_scarecrow01.m2": [
+0.422,
+0.06,
+1.155,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\tuskarr\\ts_fishinghook_hook.m2": [
+1.087,
+0.051,
+0.14,
+0.439
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\pentagramdirt\\pentagramdirt.m2": [
+0.522,
+0.095,
+0.224
+],
+"world\\khazmodan\\badlands\\passivedoodads\\rune\\pentagramdirtbadlands.m2": [
+0.516,
+0.095,
+0.223
+],
+"world\\expansion02\\doodads\\crystalsongforest\\bubble\\camouflagebubble_crystalsong.m2": [
+0.191,
+0.014,
+0.146
+],
+"world\\expansion02\\doodads\\grizzlyhills\\trappers\\trappersignpost_sign.m2": [
+1.5,
+0.014,
+0.005,
+0.098
+],
+"world\\dungeon\\scarletmonastery\\passivedoodads\\statues\\statuedmmountainking.m2": [
+1.323,
+0.018,
+0.095,
+0.61
+],
+"world\\goober\\g_camerashake01.m2": [
+0.703,
+0.073,
+0.763,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_wispsmallgreen.m2": [
+0.658,
+-0.006,
+0.035,
+0.61
+],
+"world\\environment\\doodad\\generaldoodads\\elementalrifts\\waterrift.m2": [
+0.191,
+0.014,
+0.976
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\ruins\\darkshorerock01.m2": [
+0.259,
+-0.3,
+1.472,
+0.61
+],
+"world\\goober\\g_scroll01.m2": [
+1.501,
+-0.36,
+-0.108,
+0.61
+],
+"world\\expansion01\\doodads\\zangar\\signposts\\zangarsignpostpointer01.m2": [
+0.965,
+-0.67,
+0.334,
+-0.679
+],
+"world\\expansion02\\doodads\\generic\\wolvar\\wolvar_spikes01.m2": [
+0.191,
+-1.813,
+1.337,
+1.566
+],
+"world\\expansion01\\doodads\\terokkar\\bushes\\terokkarbush01.m2": [
+0.872,
+-0.003,
+0.438
+],
+"world\\kalimdor\\barrens\\passivedoodads\\bushes\\barrensbush03.m2": [
+0.62,
+-0.374,
+0.38,
+2.009
+],
+"world\\khazmodan\\lochmodan\\passivedoodads\\trees\\lochtallgrass05.m2": [
+0.128,
+0.211,
+0.878,
+0.61
+],
+"world\\khazmodan\\lochmodan\\passivedoodads\\trees\\lochtallgrass07.m2": [
+0.191,
+0.048,
+1.487,
+0.61
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\plants\\swampofsorrowlilypad02.m2": [
+1.245,
+-0.023,
+-0.513,
+0.61
+],
+"world\\dreaming\\passivedoodads\\trees\\emeralddreamfountaintree01.m2": [
+0.143,
+0.014,
+0.146
+],
+"world\\dreaming\\passivedoodads\\trees\\emeralddreamfountaintree05.m2": [
+0.19,
+0.002,
+0.17
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurablueshort.m2": [
+0.986,
+-0.031,
+0.468
+],
+"world\\expansion01\\doodads\\bladesedge\\ogrila\\ogrilacrystals\\ogrila_crystal03.m2": [
+0.223,
+-0.144,
+0.094
+],
+"world\\kalimdor\\diremaul\\activedoodads\\crystalcorrupter\\corruptedcrystalshard_blue.m2": [
+4.219,
+-0.216,
+-0.182,
+0.61
+],
+"world\\environment\\doodad\\carnival\\carni_cannontarget.m2": [
+0.107,
+-0.361,
+0.423,
+0.772
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\signposts\\ironforgesignpostpointer.m2": [
+1.151,
+-0.269,
+-0.026,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\magicalimplements\\nemagicimplement09.m2": [
+0.574,
+-0.076,
+1.069,
+0.892
+],
+"world\\generic\\human\\passive doodads\\crates\\replacecrate01.m2": [
+0.904,
+-0.025,
+0.003,
+0.61
+],
+"world\\generic\\human\\passive doodads\\crates\\replacecrate02.m2": [
+1.234,
+0.033,
+-0.125,
+0.61
+],
+"world\\generic\\human\\passive doodads\\benches\\duskwoodbench.m2": [
+0.443,
+0.048,
+0.295
+],
+"world\\generic\\dwarf\\passive doodads\\targets\\targetogre01.m2": [
+0.552,
+0.046,
+1.814
+],
+"world\\generic\\human\\passive doodads\\books\\bookmediumopen01.m2": [
+1.205,
+-0.023,
+-0.073,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\excavationbarrierplank\\excavationbarrierplank.m2": [
+0.143,
+0.053,
+0.887
+],
+"world\\generic\\human\\passive doodads\\books\\booklargeopen03.m2": [
+0.896,
+-0.05,
+-0.035,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_alchemist.m2": [
+0.574,
+-0.03,
+0.82,
+0.61
+],
+"world\\generic\\human\\passive doodads\\vials\\vialsbottles.m2": [
+0.938,
+-0.051,
+0.539
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humanalchemistsign.m2": [
+0.574,
+-0.12,
+1.058,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level05.m2": [
+0.143,
+-1.004,
+-2.74,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level06.m2": [
+0.143,
+0.448,
+-4.414,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\food_level02.m2": [
+0.188,
+-0.416,
+1.831,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\food_level03.m2": [
+0.187,
+0.055,
+2.686,
+0.61
+],
+"world\\generic\\human\\passive doodads\\ballandchain\\ballandchain01.m2": [
+1.033,
+0.247,
+-0.054,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\barriers\\nd_human_barrier_end.m2": [
+0.162,
+0.306,
+0.352,
+0.456
+],
+"world\\expansion02\\doodads\\generic\\human\\barriers\\nd_human_barrier.m2": [
+0.143,
+0.014,
+0.223,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humanblacksmithsign.m2": [
+0.768,
+-0.189,
+1.001,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\gears&levers\\gnomesmallgear.m2": [
+0.927,
+-0.095,
+0.012,
+0.499
+],
+"world\\generic\\nightelf\\passive doodads\\stonerunes\\kalidarstonerune03.m2": [
+0.489,
+0.136,
+1.376,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\corpses\\darkirondwarfcorpse01.m2": [
+1.36,
+-0.018,
+0.153,
+1.207
+],
+"world\\generic\\darkirondwarf\\passive doodads\\corpses\\darkirondwarfcorpse04.m2": [
+1.332,
+-0.179,
+-0.096,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\screens\\ne_screen01.m2": [
+0.449,
+-0.018,
+0.969,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_cooking.m2": [
+0.782,
+0.042,
+0.686,
+0.61
+],
+"world\\generic\\human\\passive doodads\\haypiles\\shadowfanghaypile02.m2": [
+0.739,
+0.105,
+-0.051
+],
+"world\\generic\\human\\passive doodads\\haypiles\\shadowfanghaypile01.m2": [
+0.834,
+0.025,
+0.229
+],
+"world\\generic\\human\\passive doodads\\cargoboxes\\deadminecargoboxes.m2": [
+0.908,
+0.138,
+0.384
+],
+"world\\generic\\gnome\\passive doodads\\rocketplatform\\gnomerocketplatform_01.m2": [
+0.398,
+0.133,
+0.562,
+1.054
+],
+"world\\expansion01\\doodads\\generic\\draenei\\holo\\dr_draenei_holorunes03.m2": [
+0.518,
+-0.061,
+0.228
+],
+"world\\expansion01\\doodads\\generic\\draenei\\holo\\dr_draenei_holorunes02.m2": [
+0.329,
+-0.005,
+0.197
+],
+"world\\expansion01\\doodads\\generic\\draenei\\holo\\dr_draenei_holorunes01.m2": [
+0.444,
+0.018,
+0.221
+],
+"world\\expansion01\\doodads\\generic\\draenei\\machines\\dr_machineparts01.m2": [
+1.449,
+0.051,
+0.104,
+0.61
+],
+"world\\expansion01\\doodads\\auchindoun\\passivedoodads\\spirit_fx\\draenei_spirit_red.m2": [
+1.688,
+-0.014,
+0.123,
+-0.021
+],
+"world\\generic\\human\\passive doodads\\crates\\graincrate01.m2": [
+1.023,
+0.022,
+0.384,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\irondwarf\\id_signpost_sign.m2": [
+1.2,
+-0.445,
+-0.246,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_dw.m2": [
+1.034,
+-0.065,
+0.078,
+0.61
+],
+"world\\expansion01\\doodads\\theexodar\\passivedoodads\\naaru_core\\exodar_narucore_fx.m2": [
+0.143,
+-0.402,
+-0.255
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_enchanting.m2": [
+0.574,
+-0.019,
+0.929,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\signposts\\gnomestreetsign01.m2": [
+1.607,
+0.196,
+0.131,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\eyeofazora\\eyeofazora.m2": [
+1.033,
+0.038,
+0.477,
+0.729
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_firstaid.m2": [
+0.765,
+-0.022,
+0.778,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_fletcher.m2": [
+0.762,
+-0.004,
+0.771,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\farmdoor01test.m2": [
+0.439,
+-0.74,
+0.383,
+1.131
+],
+"world\\goober\\g_gnometerminal.m2": [
+0.633,
+-0.34,
+0.172
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_general.m2": [
+0.574,
+-0.013,
+0.803,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_gn.m2": [
+0.92,
+0.007,
+-0.012,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_noblehouse.m2": [
+0.783,
+0.028,
+0.64,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshoppowderkegopen.m2": [
+1.125,
+0.024,
+0.225,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\hazardlights\\gnomehazardlightred_02.m2": [
+1.824,
+-0.057,
+-0.043,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\holo\\dr_draenei_holorunes01_big.m2": [
+0.046,
+0.028,
+0.535,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\margolreaverhorn\\margolreaverhorn.m2": [
+0.775,
+-0.028,
+0.605,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_hu.m2": [
+0.974,
+-0.083,
+-0.008,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_tavern.m2": [
+0.574,
+-0.089,
+0.845,
+0.61
+],
+"world\\generic\\human\\passive doodads\\cannonballstack\\deadminecannonballstack.m2": [
+0.681,
+-0.005,
+0.443
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_tailor.m2": [
+0.575,
+-0.063,
+0.911,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\tempestkeep\\factoryenergycube.m2": [
+1.125,
+-0.101,
+-0.034,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\tempestkeep\\factoryenergycube_3x3.m2": [
+0.575,
+0.053,
+0.9
+],
+"world\\generic\\human\\passive doodads\\books\\bookmediumopen05.m2": [
+1.646,
+0.058,
+-0.14,
+0.61
+],
+"world\\generic\\human\\passive doodads\\posters\\missingposter01.m2": [
+0.675,
+0.017,
+-0.04
+],
+"world\\generic\\gnome\\passive doodads\\parts\\gnomesteelplate04.m2": [
+0.834,
+0.036,
+0.024
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humanboathousesign.m2": [
+0.762,
+-0.091,
+0.702,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_ne.m2": [
+0.704,
+-0.031,
+-0.046,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\stonerunes\\kalidarstonerune01.m2": [
+0.321,
+0.221,
+1.029,
+-0.03
+],
+"world\\generic\\nightelf\\passive doodads\\stonerunes\\kalidarstonerune02.m2": [
+0.283,
+-0.182,
+1.48
+],
+"world\\expansion02\\doodads\\generic\\irondwarf\\id_pillarbase.m2": [
+0.396,
+-0.019,
+1.105
+],
+"world\\generic\\darkirondwarf\\passive doodads\\workbenches\\darkironworkbench01.m2": [
+0.503,
+0.018,
+0.309
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_stormwind.m2": [
+0.247,
+-0.001,
+1.161
+],
+"world\\generic\\gnome\\passive doodads\\tools\\gnometool02.m2": [
+1.475,
+-0.039,
+-0.178,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_clotharmor.m2": [
+0.762,
+-0.067,
+0.756,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\shovel\\shovel.m2": [
+1.498,
+0.033,
+-0.131
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\genericposts\\genericsmallsignpost01.m2": [
+1.101,
+-0.078,
+-0.038,
+0.61
+],
+"world\\generic\\human\\passive doodads\\woodenstairs\\woodenstairs02.m2": [
+0.191,
+-0.417,
+1.978,
+-1.003
+],
+"world\\generic\\nightelf\\passive doodads\\steppingstones\\steppingstone01.m2": [
+0.684,
+0.06,
+0.008,
+0.61
+],
+"world\\generic\\human\\passive doodads\\crates\\replacecrate03.m2": [
+1.232,
+0.013,
+0.099,
+0.61
+],
+"world\\generic\\human\\passive doodads\\scaffold\\stormwindscaffold_01.m2": [
+0.042,
+0.89,
+1.888,
+0.311
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humanbanksign.m2": [
+0.775,
+-0.11,
+0.808,
+0.61
+],
+"world\\expansion01\\doodads\\bloodmyst\\be_portal\\bloodmyst_be_portal.m2": [
+0.143,
+0.014,
+0.146
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humantannersign.m2": [
+0.887,
+-0.11,
+0.653,
+0.61
+],
+"world\\generic\\pvp\\teleporters\\bg_teleporter_alliance_base.m2": [
+0.539,
+-0.014,
+0.23
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humanbaitandtacklesign.m2": [
+0.574,
+-0.148,
+1.1,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humaninnsign.m2": [
+0.574,
+-0.162,
+1.142,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmediumopen02.m2": [
+1.624,
+0.05,
+-0.145,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\woodplanks\\darkironwoodplanks07.m2": [
+0.666,
+0.327,
+0.001,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\signs\\dr_signpost_sign01.m2": [
+1.534,
+-0.37,
+-0.1,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\cavekobolddangersign.m2": [
+0.977,
+-0.018,
+0.229,
+0.61
+],
+"world\\generic\\passivedoodads\\weapons\\bow_crossbow_pvpalliance_a_01.m2": [
+1.072,
+-0.234,
+-0.097,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_weaponsmith.m2": [
+0.574,
+-0.086,
+0.912,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguebarrelbroken02.m2": [
+1.013,
+-0.03,
+0.056,
+0.61
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\doomweed\\doomweed01.m2": [
+1.077,
+0.146,
+0.059
+],
+"world\\generic\\tauren\\passive doodads\\drums\\taurendrummed01.m2": [
+0.836,
+-0.014,
+0.435,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_bank.m2": [
+0.468,
+-0.003,
+1.29,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_alchemist.m2": [
+0.429,
+-0.122,
+1.286,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_sword.m2": [
+1.01,
+-0.019,
+0.196
+],
+"world\\generic\\orc\\passive doodads\\banners\\ogrebannerboar.m2": [
+0.717,
+-0.126,
+0.726,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signposts\\taurensignpostpointer01.m2": [
+1.094,
+-0.086,
+0.013,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\banners\\ogrebannertiger.m2": [
+0.489,
+-0.196,
+1.192,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_generalshop.m2": [
+0.977,
+-0.258,
+0.223,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\controlpanel\\goblincontrolpanel.m2": [
+0.528,
+0.128,
+0.791,
+0.61
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\bodies\\bodyshrouded.m2": [
+1.084,
+-0.056,
+0.107,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_engineering.m2": [
+0.85,
+-0.209,
+0.501,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_magicshop.m2": [
+0.392,
+-0.021,
+1.338,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\beach\\borean_deadorca_01.m2": [
+0.108,
+-0.349,
+1.541,
+0.977
+],
+"world\\generic\\orc\\passive doodads\\burntoutposts\\burntoutpost04.m2": [
+0.143,
+-1.846,
+1.513,
+1.771
+],
+"world\\generic\\orc\\passive doodads\\wyvernnests\\wyvernnest02.m2": [
+0.235,
+-0.111,
+0.816
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_book.m2": [
+0.758,
+-0.229,
+0.439,
+0.61
+],
+"world\\generic\\passivedoodads\\deathskeletons\\taurenmaledeathskeleton.m2": [
+0.795,
+-0.725,
+0.015,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_sc.m2": [
+0.992,
+-0.047,
+-0.059,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orcbarrel04.m2": [
+0.522,
+0.055,
+0.696,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_magicshop.m2": [
+0.422,
+-0.029,
+1.299,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ancientorc\\signposts\\ao_signpostpointer01.m2": [
+1.054,
+-0.441,
+-0.079,
+-1.028
+],
+"world\\generic\\orc\\passive doodads\\rugs\\furrug01.m2": [
+1.177,
+-0.027,
+-0.024,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_herbalist.m2": [
+0.43,
+0.038,
+1.259,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_blacksmith.m2": [
+0.43,
+-0.04,
+1.352,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_tailor.m2": [
+0.872,
+-0.232,
+0.392,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_tailor.m2": [
+0.61,
+-0.045,
+1.057,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\taurenwallscrolls\\taurenwallscroll02blue.m2": [
+0.574,
+-0.035,
+0.938,
+0.337
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_or.m2": [
+0.833,
+0.087,
+0.004,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\weapons\\orcaxe02.m2": [
+1.2,
+-0.056,
+0.164,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\bottles\\orcbottle01.m2": [
+1.159,
+-0.02,
+0.089,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\orcsleepmats\\orcsleepmat03.m2": [
+0.39,
+0.07,
+-0.112,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_fletcher.m2": [
+0.478,
+-0.097,
+1.24,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_general.m2": [
+0.468,
+-0.011,
+1.315,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_helm.m2": [
+0.845,
+-0.22,
+0.368,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_ogrimmar.m2": [
+0.143,
+0.183,
+1.869,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orccrate09.m2": [
+0.845,
+-0.013,
+0.452
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orccrate10.m2": [
+0.775,
+0.016,
+0.451,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orccrate07.m2": [
+0.748,
+0.009,
+0.245
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_blacksmith.m2": [
+0.458,
+-0.01,
+1.143,
+0.61
+],
+"world\\kalimdor\\tanaris\\passivedoodads\\goblin\\go_large_rocket_2.m2": [
+1.291,
+-0.029,
+0.242,
+2.923
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_bank.m2": [
+0.755,
+-0.181,
+0.409,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblinmachinery\\goblinweathervane.m2": [
+0.614,
+-0.592,
+0.073,
+0.61
+],
+"world\\generic\\human\\passive doodads\\haypiles\\darkhaypilemedium01.m2": [
+0.143,
+-0.271,
+0.124,
+1.02
+],
+"world\\generic\\undead\\passive doodads\\undercitysignposts\\undercitysignpostpointer.m2": [
+0.566,
+0.001,
+1.054,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_alchemy.m2": [
+0.758,
+-0.103,
+0.28,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_tavern.m2": [
+0.755,
+-0.181,
+0.35,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_magicshop.m2": [
+0.191,
+-0.347,
+-2.448,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\taurenwallscrolls\\taurenwallscroll01blue.m2": [
+0.877,
+0.03,
+0.497,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_alchemist.m2": [
+0.637,
+-0.1,
+1.023,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_poison.m2": [
+0.755,
+-0.19,
+0.384,
+0.61
+],
+"world\\expansion01\\doodads\\ghostlands\\signpost\\be_signpost_sign_ghostlands.m2": [
+1.177,
+0.238,
+-0.262,
+0.61
+],
+"world\\kalimdor\\durotar\\passivedoodads\\rocks\\durotarrock02.m2": [
+0.045,
+0.41,
+1.377,
+1.933
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\graves\\tirisfallgravedirtmound01.m2": [
+0.524,
+-0.003,
+0.221
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_ta.m2": [
+0.747,
+0.055,
+0.077
+],
+"world\\expansion01\\doodads\\eversong\\signpost\\be_signpost_sign_eversong.m2": [
+1.177,
+0.364,
+-0.085,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_bank.m2": [
+0.43,
+-0.033,
+1.385,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_fletcher.m2": [
+0.434,
+-0.092,
+1.411,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\hordebanners\\hordebanner02.m2": [
+0.143,
+0.052,
+2.287,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyear_heroportrait_tr.m2": [
+0.767,
+-0.013,
+0.017,
+0.61
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\uthershrine\\uthershrinepedestal.m2": [
+0.873,
+-0.024,
+0.161,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signposts\\orcsignpostpointer03.m2": [
+0.844,
+-0.21,
+-0.504,
+0.738
+],
+"world\\generic\\bloodelf\\passive doodads\\be_signpostsign_wood_01.m2": [
+1.151,
+-0.192,
+-0.126,
+2.735
+],
+"world\\expansion02\\doodads\\generic\\northrend fires\\northrendgeneraltorch01.m2": [
+0.574,
+-0.115,
+0.855,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\watertroughs\\watertroughsmall01.m2": [
+0.627,
+0.1,
+0.174
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_bread.m2": [
+0.754,
+-0.183,
+0.517,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\signs\\orcsign_herbalist.m2": [
+0.468,
+-0.149,
+1.176,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\plants\\wailingplantpurple01.m2": [
+0.57,
+-0.434,
+0.446
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\shopsigns\\be_signs_staff.m2": [
+0.755,
+-0.161,
+0.308,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_armory.m2": [
+0.43,
+-0.01,
+1.402,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signs\\taurensign_weapons.m2": [
+0.422,
+-0.02,
+1.354,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_undercity_01.m2": [
+0.52,
+-1.522,
+1.301,
+-0.533
+],
+"world\\generic\\human\\passive doodads\\gryphonroost\\gryphonroost01.m2": [
+0.239,
+-0.028,
+2.085
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\bonfire\\orcbonfire.m2": [
+0.239,
+-0.137,
+2.674
+],
+"world\\generic\\dwarf\\passive doodads\\powderkegs\\powderkeg01.m2": [
+1.332,
+-0.045,
+0.148,
+0.593
+],
+"world\\environment\\doodad\\carnival\\animaltrainer.m2": [
+0.218,
+-2.16,
+9.072,
+-2.684
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\argentcrusade_banner01_nocoll.m2": [
+0.239,
+0.001,
+2.078
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\argentcrusade_banner01.m2": [
+0.239,
+-0.009,
+2.145
+],
+"world\\khazmodan\\wetlands\\passivedoodads\\blackrockbanners\\blackrockclanbanner01.m2": [
+0.24,
+0.109,
+3.794,
+2.752
+],
+"world\\khazmodan\\wetlands\\passivedoodads\\dragonmawgates\\dragonmawbanner.m2": [
+0.198,
+-0.294,
+7.626,
+2.905
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_trench_c_medium.m2": [
+0.239,
+-0.156,
+1.836
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_banner_01.m2": [
+0.239,
+0.007,
+2.128
+],
+"world\\environment\\doodad\\carnival\\carnival_banner01.m2": [
+0.239,
+0.015,
+2.46
+],
+"world\\expansion02\\doodads\\generic\\ebonblade\\ebonblade_banner02_nocollision.m2": [
+0.239,
+-0.018,
+2.035
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbannerneutralpost.m2": [
+0.239,
+0.002,
+2.698
+],
+"world\\environment\\doodad\\carnival\\foodvendor.m2": [
+0.135,
+-0.926,
+2.686,
+-3.341
+],
+"world\\expansion03\\doodads\\twilighthammer\\magicaldevices\\twilightshammer_magicaldevice_04air.m2": [
+1.489,
+0.001,
+-0.054,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\banners\\shadowcouncil_banner02.m2": [
+0.239,
+-0.046,
+3.343
+],
+"world\\kalimdor\\azshara\\passivedoodads\\nagaflags\\nagaflag01.m2": [
+0.449,
+-0.383,
+1.27
+],
+"world\\goober\\g_pirateflag_01.m2": [
+0.239,
+1.37,
+1.761
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\banners\\plaugelandsbanner01.m2": [
+0.239,
+0.032,
+2.586
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\tents\\shadowcouncil_tent01.m2": [
+0.164,
+0.032,
+4.146,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\tents\\shadowcouncil_tent02.m2": [
+0.164,
+0.071,
+4.059,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\sunshatter\\banner\\sunshatter_banner03.m2": [
+0.239,
+-0.016,
+2.105
+],
+"world\\expansion02\\doodads\\generic\\ebonblade\\ebonblade_banner01.m2": [
+0.239,
+0.016,
+2.041
+],
+"world\\expansion02\\doodads\\generic\\ebonblade\\ebonblade_banner02.m2": [
+0.239,
+-0.026,
+2.085
+],
+"world\\environment\\doodad\\carnival\\ticketmaster.m2": [
+0.198,
+-1.496,
+9.324,
+-5.201
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\banner\\vr_banner_01.m2": [
+0.218,
+-0.039,
+7.377,
+0.61
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_alchemyset_01.m2": [
+0.239,
+0.435,
+1.921
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_alchemyset_03.m2": [
+0.239,
+0.396,
+2.093
+],
+"world\\expansion02\\doodads\\generic\\tuskar\\misc\\ts_tarp_02.m2": [
+0.135,
+0.646,
+2.084,
+0.943
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_gem_blue_01.m2": [
+1.863,
+-0.01,
+0.191,
+0.627
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_forge_01.m2": [
+0.466,
+0.473,
+1.905
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_runeforge_01.m2": [
+0.218,
+0.256,
+4.441,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_runeforge_02.m2": [
+0.24,
+0.088,
+4.415,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\duskwoodhaystack\\duskwoodhaystack.m2": [
+0.239,
+0.242,
+2.545
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_wagon.m2": [
+0.084,
+-0.028,
+2.612,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\sack02.m2": [
+1.954,
+-0.042,
+-0.045,
+0.61
+],
+"world\\goober\\g_water_buckets_01.m2": [
+1.534,
+0.017,
+-0.133
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_surgicaltable_02.m2": [
+0.46,
+-0.058,
+1.491,
+0.61
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_banner01.m2": [
+0.239,
+-0.03,
+3.26,
+0.61
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_beervendor.m2": [
+0.123,
+-0.248,
+4.362,
+0.61
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_opentent.m2": [
+0.164,
+0.111,
+4.156,
+0.61
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_wagon_full.m2": [
+0.112,
+0.072,
+4.067,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesribbon02.m2": [
+0.239,
+0.024,
+1.795
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_ribbon02.m2": [
+0.239,
+-0.055,
+2.004
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesribbon01.m2": [
+0.239,
+-0.074,
+1.844
+],
+"world\\generic\\passivedoodads\\christmas\\mistletoe.m2": [
+2.571,
+0.011,
+0.217,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineumbrella_01.m2": [
+0.239,
+-1.313,
+1.683
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_brazier_01.m2": [
+0.588,
+0.091,
+1.581,
+0.61
+],
+"world\\goober\\g_xmastree.m2": [
+0.239,
+-0.087,
+1.991
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineswreath01huge.m2": [
+0.239,
+-0.027,
+2.873
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_brazier_02.m2": [
+2.812,
+-0.04,
+-0.35,
+0.61
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_brazier_02.m2": [
+1.582,
+0.005,
+-0.175
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesplant.m2": [
+1.489,
+0.021,
+-0.052
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesarc.m2": [
+0.239,
+-0.03,
+1.844
+],
+"world\\generic\\passivedoodads\\christmas\\xmasstocking01.m2": [
+2.812,
+-0.004,
+0.391,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmasstocking02.m2": [
+2.571,
+-0.077,
+0.312,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmasstocking03.m2": [
+3.333,
+-0.207,
+0.473,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_brazier2.m2": [
+0.676,
+-0.066,
+1.486,
+0.61
+],
+"world\\goober\\g_bonfire.m2": [
+0.239,
+0.065,
+2.759
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_brazer_nocollision.m2": [
+0.608,
+0.075,
+1.352,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\candle01.m2": [
+2.812,
+0.01,
+-0.043,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\candle02.m2": [
+2.817,
+0.012,
+-0.018
+],
+"world\\generic\\passivedoodads\\lights\\candle03.m2": [
+3.719,
+-0.018,
+-0.007,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\candleblack01.m2": [
+1.875,
+-0.076,
+0.098
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_candle_group02.m2": [
+2.597,
+0.036,
+0.013,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\brazier\\vr_brazier_01_blue.m2": [
+0.239,
+0.008,
+2.068
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\cages\\plaugelandscage01.m2": [
+0.239,
+0.014,
+1.865
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbars01copper.m2": [
+2.727,
+-0.118,
+0.006,
+0.61
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbars01iron.m2": [
+3.103,
+-0.01,
+-0.085,
+0.61
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbars01mithril.m2": [
+3.0,
+-0.08,
+-0.19,
+0.61
+],
+"world\\generic\\passivedoodads\\metalbars\\metalbars01truesilver.m2": [
+3.103,
+-0.005,
+-0.11,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_yoggthoritebar_01.m2": [
+1.649,
+-0.036,
+-0.161,
+0.61
+],
+"world\\generic\\passivedoodads\\skeletons\\lightskeletonsitting03.m2": [
+1.298,
+0.121,
+0.018,
+0.61
+],
+"world\\azeroth\\theblastedlands\\passivedoodads\\bones\\blastedlandsbonepile02.m2": [
+1.824,
+-0.03,
+-0.003,
+0.158
+],
+"world\\azeroth\\theblastedlands\\passivedoodads\\bones\\blastedlandsspine01.m2": [
+2.25,
+-0.21,
+0.199,
+0.892
+],
+"world\\dreaming\\passivedoodads\\flowers\\dnrdreamspinningflower01.m2": [
+0.18,
+4.139,
+15.2,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\chairs\\vr_chair_01.m2": [
+0.239,
+0.076,
+2.84
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_chair_01.m2": [
+2.916,
+0.232,
+0.183,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_02.m2": [
+0.135,
+0.078,
+11.352,
+0.61
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_01.m2": [
+0.135,
+0.389,
+7.917,
+0.55
+],
+"world\\expansion02\\doodads\\dragonblight\\dragonblight_iceshard_05.m2": [
+0.198,
+0.358,
+5.175,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\cd\\cd_altar_02.m2": [
+0.552,
+-0.009,
+1.515,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\crystalcorrupter\\corruptedcrystalshard.m2": [
+5.625,
+-0.162,
+-0.123,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\oracle\\o_crystal_01.m2": [
+2.597,
+-0.018,
+-0.034,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\titan\\ti_resurrection_on_01.m2": [
+0.565,
+-0.338,
+26.695,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\pedestals\\karazahnpedestals02.m2": [
+0.239,
+-0.064,
+2.29
+],
+"world\\expansion02\\doodads\\furbolgs\\fb_totem02_snow.m2": [
+0.239,
+-0.078,
+3.043,
+-0.457
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\ruins\\bu_oblisk_01.m2": [
+0.239,
+0.006,
+2.24,
+0.747
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_melon.m2": [
+1.489,
+0.003,
+-0.04,
+2.701
+],
+"world\\goober\\g_jewelred.m2": [
+1.275,
+-0.03,
+0.359
+],
+"world\\expansion03\\doodads\\twilighthammer\\magicaldevices\\twilightshammer_magicaldevice_04fire.m2": [
+1.446,
+0.07,
+-0.019,
+0.61
+],
+"world\\generic\\murloc\\passive doodads\\altars\\murlocaltar_01.m2": [
+0.239,
+0.311,
+2.046,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_crystal_formation_03.m2": [
+0.264,
+-1.396,
+29.957,
+0.798
+],
+"world\\kalimdor\\silithus\\passivedoodads\\ruins\\silithusruinsobelisk03.m2": [
+0.164,
+0.495,
+7.748,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\boats\\transport_vrykul_medium_doodad.m2": [
+0.112,
+0.235,
+19.74,
+1.105
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_helm_deepdivehelm_space.m2": [
+2.817,
+-0.061,
+0.418,
+0.61
+],
+"world\\generic\\passivedoodads\\plaque\\plaquebronze02.m2": [
+2.94,
+0.004,
+-0.279,
+0.61
+],
+"world\\khazmodan\\badlands\\passivedoodads\\questblade\\questbladebadlands.m2": [
+1.266,
+0.006,
+-0.098
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_weaponrack1.m2": [
+0.239,
+0.138,
+2.023,
+0.456
+],
+"world\\goober\\g_bookopenmediumbrown.m2": [
+2.032,
+-0.256,
+0.123,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\flags\\alliance_banner_01.m2": [
+0.239,
+-0.026,
+2.47
+],
+"world\\expansion02\\doodads\\generic\\human\\tents\\hu_tent02.m2": [
+0.239,
+-0.156,
+2.291
+],
+"world\\generic\\human\\passive doodads\\banners\\bannerargentdawn.m2": [
+0.239,
+-0.043,
+1.851
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_alliance_standing.m2": [
+0.239,
+0.642,
+3.079
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanneralliancestatusbar2min.m2": [
+0.239,
+-0.004,
+3.51,
+0.704
+],
+"world\\generic\\dwarf\\passive doodads\\excavationtentpavillion\\excavationtentpavillion.m2": [
+0.163,
+0.013,
+2.494,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_nelf02.m2": [
+0.239,
+-0.041,
+2.157
+],
+"world\\expansion01\\doodads\\generic\\draenei\\banner\\dr_banner01.m2": [
+0.491,
+-0.048,
+1.349,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\elwynnfences\\elwynnfencesimple.m2": [
+0.732,
+1.172,
+0.242
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_draenei02.m2": [
+0.454,
+0.02,
+1.588
+],
+"world\\azeroth\\westfall\\passivedoodads\\outhouse\\outhouse.m2": [
+0.289,
+-0.079,
+2.103,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\sunshatter\\banner\\sunshatter_banner01.m2": [
+0.239,
+0.007,
+2.369
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_human02.m2": [
+0.239,
+-0.01,
+2.571
+],
+"world\\generic\\human\\passive doodads\\banners\\allianceveteranbanner02.m2": [
+0.239,
+-0.096,
+2.543
+],
+"world\\generic\\dwarf\\passive doodads\\excavationtents\\excavationtent02.m2": [
+0.148,
+0.044,
+1.726,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\irondwarf\\id_forge.m2": [
+0.239,
+0.661,
+1.821,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_dwarf02.m2": [
+0.239,
+-0.03,
+2.251
+],
+"world\\khazmodan\\blackrock\\activedoodads\\anvil\\darkironforge.m2": [
+0.18,
+4.196,
+0.745
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\greatforge\\thegreatanvil.m2": [
+0.239,
+-0.075,
+2.268,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bottles\\bottle01.m2": [
+1.808,
+0.01,
+0.035
+],
+"world\\generic\\human\\passive doodads\\bottles\\bottlesmoke.m2": [
+1.298,
+0.038,
+-0.012
+],
+"world\\generic\\gnome\\passive doodads\\gnomerocketcarts\\gnomerocketcart.m2": [
+0.239,
+0.189,
+2.916
+],
+"world\\azeroth\\elwynn\\passivedoodads\\jars\\jar01.m2": [
+1.808,
+-0.039,
+-0.065
+],
+"world\\azeroth\\elwynn\\passivedoodads\\jugs\\jug01.m2": [
+1.688,
+0.018,
+-0.002
+],
+"world\\azeroth\\elwynn\\passivedoodads\\jugs\\jug02.m2": [
+2.41,
+0.041,
+-0.237,
+0.61
+],
+"world\\generic\\human\\passive doodads\\peasantlumber\\peasantlumber01.m2": [
+1.446,
+-0.061,
+0.085
+],
+"world\\expansion01\\doodads\\generic\\draenei\\bowls\\dr_bowl_01.m2": [
+2.415,
+-0.035,
+-0.202,
+0.61
+],
+"world\\generic\\human\\passive doodads\\cups\\metalcup03.m2": [
+1.266,
+0.006,
+0.065,
+-0.525
+],
+"world\\dungeon\\goldshireinn\\innbedcanopy\\innbedcanopy.m2": [
+0.239,
+0.039,
+2.026,
+2.137
+],
+"world\\generic\\human\\passive doodads\\mugs\\goldgoblet01.m2": [
+1.332,
+-0.003,
+-0.29
+],
+"world\\azeroth\\westfall\\passivedoodads\\westfall stable\\westfallstable01.m2": [
+0.164,
+-1.188,
+3.165,
+0.934
+],
+"world\\generic\\human\\passive doodads\\bookshelves\\duskwoodbookshelf01.m2": [
+0.239,
+0.046,
+1.819
+],
+"world\\generic\\human\\passive doodads\\firewood\\firewoodpile01.m2": [
+0.815,
+0.059,
+1.226,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearlantern_alliance_standing.m2": [
+0.239,
+-0.806,
+2.191
+],
+"world\\generic\\human\\passive doodads\\stoves\\potbellystove.m2": [
+0.512,
+0.083,
+1.634
+],
+"world\\generic\\human\\passive doodads\\dolls\\ragdoll_05.m2": [
+1.332,
+-0.07,
+0.048
+],
+"world\\generic\\human\\passive doodads\\bookstacks\\generalbookstackshort01.m2": [
+2.25,
+0.238,
+-0.29,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\woodsignpostworn01.m2": [
+0.239,
+-0.068,
+2.004,
+0.721
+],
+"world\\generic\\human\\passive doodads\\dolls\\ragdoll_03.m2": [
+1.332,
+-0.087,
+0.116
+],
+"world\\generic\\human\\passive doodads\\signposts\\woodsignpostnice01.m2": [
+0.239,
+-0.021,
+2.145
+],
+"world\\generic\\human\\passive doodads\\dolls\\ragdoll01.m2": [
+1.298,
+-0.009,
+0.118
+],
+"world\\generic\\human\\passive doodads\\dolls\\ragdoll_04.m2": [
+1.332,
+-0.053,
+0.149
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrollb01.m2": [
+2.564,
+-0.165,
+0.099,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bookstacks\\generalbookstacktall01.m2": [
+1.446,
+0.247,
+0.02
+],
+"world\\generic\\human\\passive doodads\\dolls\\ragdoll_02.m2": [
+1.332,
+-0.036,
+0.199
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnflower01.m2": [
+1.489,
+0.196,
+-0.034
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowersbunch01.m2": [
+2.07,
+-0.073,
+0.007,
+0.61
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowersbunch02.m2": [
+2.119,
+-0.192,
+-0.064,
+0.61
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowersbunch03.m2": [
+2.119,
+0.003,
+0.063,
+0.61
+],
+"world\\generic\\human\\passive doodads\\flowers\\flowersbunch04.m2": [
+2.113,
+-0.108,
+-0.089,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\westfallchair\\westfallchair.m2": [
+1.633,
+0.127,
+-0.153
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_pear.m2": [
+1.808,
+-0.014,
+-0.049,
+1.31
+],
+"world\\kalimdor\\ashenvale\\passivedoodads\\satyrtotem\\ashensatyrtotem05.m2": [
+0.198,
+0.126,
+5.918,
+0.61
+],
+"world\\kalimdor\\ashenvale\\passivedoodads\\shrines\\neshrinesatyr.m2": [
+0.18,
+-0.01,
+11.443,
+1.054
+],
+"world\\expansion01\\doodads\\ghostlands\\moonstone\\ghostlands_moonstone.m2": [
+0.063,
+0.111,
+4.632,
+0.61
+],
+"world\\generic\\human\\passive doodads\\armor\\armorbreastplatetrim.m2": [
+2.365,
+-0.293,
+0.03,
+0.61
+],
+"world\\generic\\human\\passive doodads\\armor\\armorleathershirtbrown.m2": [
+2.032,
+0.024,
+0.059,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\wallsword01.m2": [
+0.974,
+0.024,
+-0.305
+],
+"world\\generic\\dwarf\\passive doodads\\tools\\mallet01.m2": [
+2.415,
+0.219,
+-0.218,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humansword02.m2": [
+1.054,
+0.062,
+-0.096
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladesword\\battlegladesword.m2": [
+1.125,
+0.078,
+-0.078
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humanmace02.m2": [
+2.812,
+-0.503,
+0.307,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_shield.m2": [
+0.239,
+-0.051,
+2.007
+],
+"world\\generic\\passivedoodads\\weapons\\shield_pvpalliance.m2": [
+1.985,
+-0.239,
+-0.115,
+1.429
+],
+"world\\generic\\human\\passive doodads\\armor\\armorbreastplategreen.m2": [
+2.15,
+-0.013,
+-0.087,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\hammerquest01\\hammerquest01.m2": [
+1.582,
+0.071,
+0.002
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_banner01.m2": [
+0.239,
+-0.018,
+1.991
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_tent2.m2": [
+0.18,
+-0.145,
+4.667,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\excavationtents\\excavationtent01.m2": [
+0.239,
+0.039,
+2.095,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_horde_standing.m2": [
+0.239,
+0.788,
+3.027
+],
+"world\\generic\\orc\\passive doodads\\banners\\clanbanner05.m2": [
+0.239,
+-0.088,
+2.741
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\banners\\be_banner03.m2": [
+0.239,
+-0.034,
+1.818
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\banners\\be_banner02.m2": [
+0.239,
+0.001,
+2.056
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent01.m2": [
+0.239,
+-1.327,
+1.897,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent04.m2": [
+0.239,
+-0.062,
+2.018,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent05.m2": [
+0.239,
+0.679,
+1.691,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblintents\\goblintent07.m2": [
+0.239,
+-0.12,
+2.174,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\banners\\clanbanner.m2": [
+0.239,
+0.045,
+2.744
+],
+"world\\generic\\orc\\passive doodads\\tents\\orctent02.m2": [
+0.18,
+0.122,
+2.286,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\tents\\durotarorctent01.m2": [
+0.239,
+0.217,
+2.715
+],
+"world\\generic\\orc\\passive doodads\\tents\\durotarorctent02.m2": [
+0.239,
+-0.204,
+2.461,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\tents\\orctent01.m2": [
+0.149,
+0.098,
+4.202,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_horde02.m2": [
+0.239,
+-0.016,
+2.218,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_trolls02.m2": [
+0.239,
+-0.152,
+2.207
+],
+"world\\generic\\orc\\passive doodads\\orcfence\\orcfence.m2": [
+0.239,
+0.297,
+1.979,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\orcfence\\orcfencepost.m2": [
+0.239,
+0.181,
+2.055
+],
+"world\\expansion02\\doodads\\generic\\sunshatter\\banner\\sunshatter_banner02.m2": [
+0.239,
+-0.001,
+2.314
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_bloodelf02.m2": [
+0.239,
+-0.079,
+1.994
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_tauren02.m2": [
+0.239,
+-0.066,
+2.308
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_fk02.m2": [
+0.239,
+-0.077,
+1.674
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\cookpot\\be_cookpot01.m2": [
+1.162,
+0.017,
+0.996
+],
+"world\\generic\\undead\\passive doodads\\undeadalchemytable\\undead_alchemy_table.m2": [
+0.432,
+0.106,
+1.578
+],
+"world\\expansion01\\doodads\\zulaman\\ruins\\trollruins_zulaman_07.m2": [
+0.239,
+-0.011,
+1.89
+],
+"world\\generic\\goblin\\passivedoodads\\goblintntwagon\\goblinwagontnt_01.m2": [
+0.239,
+-0.163,
+2.508
+],
+"world\\generic\\orc\\passive doodads\\bowls\\bowlwood02.m2": [
+3.6,
+0.004,
+-0.309,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_wagon02.m2": [
+0.239,
+-0.03,
+1.811,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc01.m2": [
+2.328,
+0.017,
+-0.183,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc02.m2": [
+2.117,
+-0.004,
+-0.117,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc05.m2": [
+1.688,
+-0.063,
+-0.185
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc06.m2": [
+1.688,
+0.01,
+-0.059
+],
+"world\\generic\\undead\\passive doodads\\meatwagonpieces\\meatwagonbody.m2": [
+0.239,
+0.025,
+2.349,
+0.345
+],
+"world\\generic\\orc\\passive doodads\\wagons\\orcwagon02.m2": [
+0.149,
+-0.708,
+3.866
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguewagon_empty.m2": [
+0.164,
+-0.151,
+5.196,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\bonfire\\orcbonfireoff.m2": [
+0.239,
+-0.186,
+2.399,
+0.755
+],
+"world\\azeroth\\karazahn\\passivedoodads\\bookshelves\\karazahnbookshelfsmall.m2": [
+0.239,
+0.0,
+2.029
+],
+"world\\expansion01\\doodads\\generic\\draenei\\lampposts\\dr_lamppost_01.m2": [
+0.52,
+0.136,
+1.564,
+0.61
+],
+"world\\generic\\ogre\\passive doodads\\torches\\ogrewalltorchpurple.m2": [
+0.472,
+-0.096,
+1.487
+],
+"world\\generic\\orc\\passive doodads\\braziers\\mediumbrazier01.m2": [
+0.505,
+0.049,
+1.318,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\mediumbraziernoomni01.m2": [
+0.239,
+-0.015,
+1.837
+],
+"world\\generic\\tauren\\passive doodads\\lampposts\\taurenlamppost.m2": [
+0.764,
+-0.991,
+1.13,
+-1.4
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearlantern_horde_standing.m2": [
+0.239,
+-0.514,
+2.65
+],
+"world\\generic\\orc\\passive doodads\\braziers\\mediumbrazierpurple01.m2": [
+0.512,
+-0.01,
+1.351,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\torch\\shadowcouncil_torch.m2": [
+0.505,
+-0.013,
+1.397
+],
+"world\\generic\\passivedoodads\\lights\\freestandingtorch04_hugeblue.m2": [
+0.64,
+-0.008,
+1.007,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\meatracks\\smokedmeatrack01.m2": [
+0.239,
+0.063,
+2.141
+],
+"world\\expansion01\\doodads\\zulaman\\tablet\\foresttrolltablet.m2": [
+0.239,
+0.03,
+2.003
+],
+"world\\generic\\human\\passive doodads\\books\\book_troll_03.m2": [
+1.985,
+0.021,
+-0.135,
+0.61
+],
+"world\\kalimdor\\durotar\\passivedoodads\\bushes\\durotarbush02.m2": [
+0.398,
+-0.049,
+1.53
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\chairs\\be_chair04.m2": [
+0.56,
+-0.067,
+1.208,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\chairs\\be_chair03.m2": [
+0.56,
+0.222,
+1.268,
+0.61
+],
+"world\\generic\\troll\\passive doodads\\trolltablets\\trolltablet.m2": [
+0.239,
+0.03,
+1.902
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\trolldrum\\trollruinsdrum01.m2": [
+0.239,
+0.029,
+2.023,
+1.113
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\trollruinsgong\\trollruinsgong03.m2": [
+0.239,
+-0.017,
+2.109
+],
+"world\\generic\\orc\\passive doodads\\statues\\hellscreammonument_01.m2": [
+0.135,
+0.303,
+5.515,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\demoncrystals\\be_demoncrystal_02.m2": [
+0.239,
+-0.018,
+1.941
+],
+"world\\generic\\tauren\\passive doodads\\drums\\taurendrumgiant01.m2": [
+0.239,
+0.035,
+1.853,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\banners\\clanbanner01.m2": [
+0.239,
+-0.046,
+2.682
+],
+"world\\generic\\orc\\passive doodads\\shields\\orcshield02.m2": [
+1.745,
+0.029,
+-0.384
+],
+"world\\generic\\orc\\passive doodads\\weapons\\orcspear03.m2": [
+0.64,
+-0.046,
+0.706,
+0.61
+],
+"world\\goober\\g_barrelexplode.m2": [
+2.177,
+-0.026,
+0.05,
+0.61
+],
+"world\\generic\\activedoodads\\instanceportal\\temporal_displacement.m2": [
+0.676,
+0.047,
+1.735
+],
+"world\\expansion01\\doodads\\bladesedge\\ogrila\\ogrilacrystals\\ogrila_crystal02.m2": [
+0.285,
+0.091,
+2.354,
+0.644
+],
+"world\\goober\\g_booktraplightgood.m2": [
+1.948,
+-0.437,
+0.978,
+0.619
+],
+"world\\generic\\passivedoodads\\babies\\baby_gn.m2": [
+1.838,
+0.069,
+-0.077,
+0.61
+],
+"world\\generic\\passivedoodads\\babies\\baby_hu.m2": [
+1.731,
+-0.004,
+-0.187,
+0.61
+],
+"world\\generic\\passivedoodads\\babies\\baby_ta.m2": [
+1.205,
+0.019,
+0.034,
+0.61
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_bananabunch.m2": [
+2.129,
+0.147,
+0.041,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\deathwingexperiments\\blackrockbloodmachine02.m2": [
+0.239,
+0.461,
+2.115,
+0.61
+],
+"world\\kalimdor\\dragoncave\\passivedoodads\\charredbodies\\charredbody03.m2": [
+1.266,
+-0.045,
+0.423,
+0.61
+],
+"world\\goober\\g_bookopenmediumgreen.m2": [
+1.257,
+-0.38,
+0.835,
+0.61
+],
+"world\\expansion01\\doodads\\netherstorm\\collectortubes\\collectortubes_straight_states.m2": [
+0.605,
+-0.389,
+0.261
+],
+"world\\generic\\human\\passive doodads\\books\\book_troll_01.m2": [
+3.75,
+-0.072,
+-0.152,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurablue.m2": [
+0.956,
+-0.041,
+2.204
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_platform.m2": [
+0.063,
+-0.04,
+5.118,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_stairs.m2": [
+0.123,
+-0.125,
+6.54,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_gem_purple_01.m2": [
+1.916,
+-0.09,
+0.237,
+0.61
+],
+"world\\nodxt\\generic\\passivedoodads\\volumetriclights\\uthershrinelightbeam.m2": [
+0.466,
+0.068,
+2.784,
+0.61
+],
+"world\\goober\\g_ghost_01.m2": [
+0.239,
+-0.21,
+3.114,
+0.61
+],
+"world\\goober\\g_jewelblue.m2": [
+0.958,
+-0.021,
+0.797,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\ogreheadpike\\ogreheadpike.m2": [
+0.527,
+-0.095,
+1.084,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\museumgem\\museumgem01.m2": [
+1.646,
+0.03,
+0.115,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\holograms\\hologram_voidwalker.m2": [
+0.508,
+-0.13,
+1.292,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\tombs\\tombstonemonument01.m2": [
+0.32,
+0.261,
+2.277,
+0.61
+],
+"world\\generic\\passivedoodads\\plaque\\plaquestone01.m2": [
+2.008,
+-0.055,
+-0.163,
+0.61
+],
+"item\\objectcomponents\\weapon\\mace_1h_ulduarraidnotskinable_d_01.m2": [
+1.298,
+-0.177,
+0.0,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\generator\\bu_generator_01.m2": [
+0.319,
+-0.032,
+2.268,
+-0.661
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\fences\\burningsteppesfence.m2": [
+0.976,
+0.791,
+-0.017,
+0.61
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\ruins\\darkshoreruinwall05.m2": [
+0.218,
+-0.208,
+2.742,
+0.644
+],
+"world\\generic\\activedoodads\\instanceportal\\instanceportal_green.m2": [
+0.239,
+-0.112,
+2.328,
+0.61
+],
+"world\\dreaming\\passivedoodads\\dreamcatchers\\emeralddreamcatcher04.m2": [
+0.239,
+-0.338,
+2.274,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\portal\\et_portal01.m2": [
+0.319,
+0.048,
+2.367,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\frostgiant\\frostgiant_frostorbbroken01.m2": [
+0.319,
+0.014,
+0.146
+],
+"world\\expansion02\\doodads\\generic\\frostgiant\\frostgiant_frostorb01.m2": [
+0.239,
+0.014,
+0.163
+],
+"world\\goober\\g_fishingbobber.m2": [
+1.411,
+-0.005,
+-0.009,
+0.61
+],
+"world\\generic\\ogre\\passive doodads\\poodad\\poodad01.m2": [
+2.148,
+-0.115,
+0.303,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rrh_forest.m2": [
+0.123,
+0.322,
+11.743,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rrh_house.m2": [
+0.239,
+-0.187,
+1.044
+],
+"world\\goober\\g_booktraplightevil.m2": [
+2.597,
+-0.023,
+0.726,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\inscription\\inscription_scroll_rolledpindouble01.m2": [
+3.491,
+-0.027,
+-0.186,
+0.61
+],
+"world\\goober\\g_bookopenmediumred.m2": [
+2.459,
+-0.321,
+0.121,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rj_stars.m2": [
+0.239,
+1.164,
+9.192,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rj_balcony.m2": [
+0.239,
+0.167,
+0.423
+],
+"world\\generic\\passivedoodads\\christmas\\xmasropeline.m2": [
+0.779,
+1.088,
+0.116,
+0.61
+],
+"world\\goober\\g_mapmarkerscourge.m2": [
+1.985,
+0.041,
+0.066,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurared.m2": [
+0.956,
+0.0,
+2.188
+],
+"world\\expansion01\\doodads\\generic\\shadowcouncil\\banners\\shadowcouncil_banner01.m2": [
+0.319,
+0.662,
+1.837,
+-0.44
+],
+"world\\skillactivated\\tradeskillnodes\\bush_sansam.m2": [
+2.24,
+0.148,
+-0.287,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurayellow.m2": [
+1.275,
+-0.046,
+2.184
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\hangingscourge\\scourgebodyhangingfemale01.m2": [
+0.763,
+-0.3,
+-0.833,
+0.61
+],
+"world\\azeroth\\deadwindpass\\passivedoodads\\hangingbodies\\deadwindhangingbody01.m2": [
+0.466,
+-0.146,
+1.737,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\hangingscourge\\scourgebodyhangingfemale02.m2": [
+0.996,
+-0.287,
+-0.609,
+0.61
+],
+"world\\azeroth\\deadwindpass\\passivedoodads\\hangingbodies\\deadwindhangingbody02.m2": [
+0.693,
+-0.027,
+1.201,
+0.61
+],
+"world\\generic\\pvp\\runes\\pvp_rune_speed_icon.m2": [
+1.211,
+-0.049,
+0.169,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\lamppost\\et_lamppost01.m2": [
+0.669,
+-0.137,
+1.084,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_brazier01.m2": [
+0.724,
+-0.086,
+1.383,
+0.61
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\waterhuts\\waterhut01.m2": [
+0.239,
+-0.733,
+0.964
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\waterhuts\\waterhut02.m2": [
+0.319,
+0.063,
+1.069
+],
+"world\\generic\\activedoodads\\instanceportal\\instanceportal.m2": [
+0.454,
+-0.081,
+1.464
+],
+"world\\khazmodan\\blackrock\\activedoodads\\seal\\blackrockseal.m2": [
+1.011,
+0.112,
+0.396,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\tradeskill\\jewelcrafting\\jewelcraft_gemcut_01.m2": [
+1.676,
+0.093,
+-0.065,
+0.61
+],
+"world\\goober\\g_bookopenmediumblue.m2": [
+2.619,
+-0.344,
+0.779
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\lichcontainer01.m2": [
+0.834,
+-0.059,
+1.298,
+0.61
+],
+"world\\goober\\g_bookopenmediumblack.m2": [
+1.275,
+-0.342,
+1.118,
+0.61
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_banana.m2": [
+1.878,
+0.022,
+0.023,
+0.985
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\crates\\vr_bm_wood_01.m2": [
+0.148,
+-0.01,
+3.105,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_walllight01.m2": [
+1.534,
+-0.083,
+0.228,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_trench_p_bracer.m2": [
+1.708,
+-0.05,
+-0.059,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazan_wo_brickroad.m2": [
+0.319,
+0.291,
+5.215,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_sigil01.m2": [
+0.319,
+-1.108,
+-1.103
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\ak_alchemybottle02.m2": [
+1.661,
+-0.045,
+0.23,
+0.61
+],
+"world\\expansion01\\doodads\\terokkar\\trees\\terokkartreesapling.m2": [
+0.319,
+-0.097,
+2.193,
+1.506
+],
+"world\\expansion01\\doodads\\terokkar\\trees\\terokkartreelarge.m2": [
+0.239,
+-0.137,
+19.42,
+2.069
+],
+"world\\expansion01\\doodads\\terokkar\\trees\\terokkartreemedium.m2": [
+0.148,
+0.642,
+6.255,
+0.61
+],
+"world\\goober\\g_xposter.m2": [
+2.109,
+-0.018,
+-0.098,
+0.627
+],
+"world\\generic\\passivedoodads\\diadelosmuertos\\diadelosmuertos_vaseflowers_01.m2": [
+1.582,
+-0.171,
+-0.142,
+0.61
+],
+"world\\generic\\doodads\\fishing\\chair\\fishingchair.m2": [
+0.239,
+-0.921,
+1.851,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_obelisk2.m2": [
+0.198,
+0.009,
+9.704,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanneralliancebw.m2": [
+0.413,
+0.034,
+1.113
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_alchemy.m2": [
+0.239,
+-0.025,
+1.84,
+0.61
+],
+"world\\generic\\human\\passive doodads\\archerytargets\\stormwindarcherytarget01.m2": [
+0.239,
+0.07,
+2.156,
+0.61
+],
+"world\\goober\\g_mapmarkeralliance.m2": [
+2.03,
+0.051,
+-0.059,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopammoboxblueblock.m2": [
+2.445,
+0.004,
+-0.059,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level01.m2": [
+0.164,
+-0.291,
+2.705,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level01.m2": [
+0.092,
+-2.733,
+2.586,
+-0.397
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\food_level04.m2": [
+0.239,
+0.264,
+3.756,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\food_level06.m2": [
+0.676,
+2.149,
+2.017
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_bank.m2": [
+0.239,
+0.067,
+1.991,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\holybanner01.m2": [
+0.319,
+-0.086,
+2.981,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_cooking.m2": [
+0.239,
+-0.017,
+1.873,
+0.61
+],
+"world\\generic\\human\\passive doodads\\deadminepowderkeg\\deadminepowderkeg.m2": [
+1.808,
+-0.056,
+-0.186,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\dwarvenbanner01.m2": [
+0.318,
+-0.051,
+2.672,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_book.m2": [
+0.32,
+-0.003,
+1.925,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_engineering.m2": [
+0.318,
+0.045,
+1.848,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\lights\\gnomemaintenancelight01.m2": [
+1.688,
+-0.076,
+-0.137,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\hazardlights\\gnomehazardlightred.m2": [
+1.258,
+-1.143,
+0.133,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_generalshop.m2": [
+0.239,
+0.168,
+1.965,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\dynamite\\gunshopdynamitebundle.m2": [
+1.745,
+0.037,
+-0.148,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_staff.m2": [
+0.288,
+0.054,
+1.839,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\powderkegs\\powderkegfused.m2": [
+1.332,
+-0.078,
+-0.104,
+0.61
+],
+"world\\generic\\human\\passive doodads\\food&utensils\\haunch.m2": [
+1.824,
+-0.185,
+-0.136,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_bow.m2": [
+0.239,
+-0.059,
+1.949,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_tavern.m2": [
+0.239,
+-0.067,
+1.999,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\tools\\lunchbox01.m2": [
+1.368,
+-0.048,
+0.048,
+0.892
+],
+"world\\expansion02\\doodads\\isleofconquest\\isleofconquest_portal_niche_alliance_01.m2": [
+0.18,
+-0.055,
+2.291,
+-0.337
+],
+"world\\generic\\human\\passive doodads\\books\\inscription_bookofpower_01.m2": [
+2.453,
+-0.014,
+0.074,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\magicbanner01.m2": [
+0.239,
+-0.088,
+2.973,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\cliffrocks\\elwynncliffrock01.m2": [
+0.111,
+0.208,
+5.763,
+5.474
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_anvil.m2": [
+0.319,
+0.042,
+1.924,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\corpses\\darkirondwarfcorpse02.m2": [
+1.739,
+-0.127,
+-0.003,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\corpses\\darkirondwarfcorpse03.m2": [
+1.919,
+-0.276,
+-0.038,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\warriorbanner01.m2": [
+0.318,
+0.011,
+2.811,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_dwarf_02.m2": [
+2.78,
+0.018,
+-0.203,
+0.61
+],
+"world\\generic\\human\\passive doodads\\food&utensils\\kitchenknife.m2": [
+2.658,
+-0.243,
+-0.188,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\crimsonbanner01.m2": [
+0.239,
+0.063,
+0.887
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_herbalism.m2": [
+0.318,
+0.092,
+0.917
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_axes.m2": [
+0.239,
+0.017,
+1.882,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium05.m2": [
+1.808,
+0.01,
+-0.124,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_dwarf_01.m2": [
+0.289,
+-0.293,
+2.657,
+0.61
+],
+"world\\generic\\human\\passive doodads\\goblets\\goblet02.m2": [
+2.561,
+0.027,
+-0.323,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_tailor.m2": [
+0.239,
+0.042,
+1.932,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\generalbook01.m2": [
+1.708,
+0.061,
+-0.087,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\nightelf01.m2": [
+0.319,
+0.088,
+2.729,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_dwarf_04.m2": [
+2.5,
+-0.009,
+-0.192,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signposts\\dwarvensignpostpointer01.m2": [
+1.275,
+0.432,
+0.167,
+-0.807
+],
+"world\\generic\\dwarf\\passive doodads\\steins\\dwarvenstein02.m2": [
+1.844,
+-0.089,
+-0.124,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\gnomemachine\\gnomemachine06.m2": [
+0.239,
+0.141,
+2.678,
+4.544
+],
+"world\\generic\\gnome\\passive doodads\\tools\\gnometool03.m2": [
+1.951,
+-0.088,
+-0.048,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_helm.m2": [
+0.239,
+-0.009,
+2.016,
+0.61
+],
+"world\\expansion01\\doodads\\shattrath\\passivedoodads\\holy_energy_fx\\shattrath_draenei_holy_fx.m2": [
+0.239,
+0.376,
+3.875,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnseaweed01\\elwynnseaweed01.m2": [
+0.239,
+0.061,
+2.064,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\shopsigns\\dr_signs_swords.m2": [
+0.239,
+0.033,
+1.84,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbannerhordebw.m2": [
+0.239,
+0.101,
+1.063
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguebarrelbroken01.m2": [
+1.534,
+0.001,
+-0.133,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\deathwingexperiments\\blackrockbloodmachine04.m2": [
+0.239,
+-0.196,
+3.116,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal01.m2": [
+0.239,
+-0.912,
+1.044
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal02.m2": [
+0.575,
+-1.138,
+0.619
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal03.m2": [
+0.239,
+-0.784,
+1.044
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal05.m2": [
+0.425,
+-1.504,
+0.854
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food01.m2": [
+0.262,
+0.921,
+1.878,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food05.m2": [
+0.239,
+0.834,
+1.057
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food06.m2": [
+0.318,
+0.783,
+0.837
+],
+"world\\expansion01\\doodads\\generic\\ancientorc\\banners\\ao_banner01.m2": [
+0.239,
+0.111,
+3.384,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\voodoostuff\\bubblingbowl02.m2": [
+1.923,
+-0.035,
+0.11,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\taurentotem02.m2": [
+0.313,
+0.13,
+15.909,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\taurentotem01.m2": [
+0.239,
+-0.154,
+13.956,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\taurentotem03.m2": [
+0.315,
+0.127,
+14.594,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\demoncrystals\\be_demoncrystal_01.m2": [
+0.239,
+-0.024,
+2.181,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_signpost_sign.m2": [
+2.812,
+-0.138,
+0.009,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\bottles\\be_bottle04.m2": [
+2.264,
+-0.035,
+-0.288,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\taurentotem09.m2": [
+0.18,
+0.073,
+7.774,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblinshreddersuit\\goblinshreddersuit02.m2": [
+0.239,
+-0.315,
+1.975,
+0.61
+],
+"world\\goober\\g_mapmarkerhorde.m2": [
+1.824,
+0.052,
+-0.106,
+0.61
+],
+"world\\expansion02\\doodads\\wintertauren\\wt_roadsign.m2": [
+1.55,
+-0.032,
+-0.11,
+0.61
+],
+"world\\expansion02\\doodads\\isleofconquest\\isleofconquest_portal_niche_horde_01.m2": [
+0.218,
+0.007,
+2.183,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_chemistrytube_01.m2": [
+2.025,
+-0.068,
+-0.126,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\forsakenbanner\\forsakenbanner01.m2": [
+0.32,
+-0.091,
+2.515,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\banners\\clanbanner06.m2": [
+0.239,
+0.003,
+2.92,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\banners\\clanbanner07warsong.m2": [
+0.239,
+0.001,
+2.878,
+0.61
+],
+"world\\goober\\g_booktraparm.m2": [
+1.948,
+-0.218,
+0.785,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_large02.m2": [
+1.489,
+-0.079,
+0.041,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\trolldungeonserpentstatue\\trolldungeonserpentstatue.m2": [
+0.239,
+0.023,
+2.243,
+0.61
+],
+"world\\generic\\goblin\\passivedoodads\\goblinshreddersuit\\goblinshreddersuit01.m2": [
+0.239,
+0.055,
+2.516,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_medium01.m2": [
+2.327,
+-0.093,
+-0.029,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_chemistryset_05.m2": [
+0.319,
+-0.108,
+1.601,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\trollruins\\zuldrak_stoneface_01.m2": [
+0.163,
+0.385,
+6.294,
+0.61
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_pavilion_01.m2": [
+0.216,
+0.002,
+7.508,
+0.661
+],
+"world\\environment\\doodad\\carnival\\carnietent_small01.m2": [
+0.238,
+0.159,
+10.411,
+0.61
+],
+"world\\environment\\doodad\\carnival\\fortuneteller.m2": [
+0.216,
+-1.285,
+9.803,
+2.155
+],
+"world\\environment\\doodad\\carnival\\coketent.m2": [
+0.288,
+-1.131,
+9.353
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\banner\\vr_sea_banner_01.m2": [
+0.288,
+-0.084,
+4.942
+],
+"world\\azeroth\\bootybay\\passivedoodad\\sharkmodels\\sharkmodel01.m2": [
+0.348,
+0.051,
+8.54,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\anvil\\vr_anvil_glow_01.m2": [
+0.179,
+-0.045,
+3.236
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_forge_03.m2": [
+0.383,
+1.921,
+2.35
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\anvil\\vr_anvil_cold_01.m2": [
+0.162,
+-0.098,
+3.358
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_banner02.m2": [
+0.262,
+3.208,
+4.138
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_foodtent.m2": [
+0.238,
+-0.007,
+9.317
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_candle_01.m2": [
+3.913,
+-0.035,
+-0.286,
+0.61
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_candle_02.m2": [
+2.935,
+-0.069,
+-0.152,
+0.619
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentineswreathhanginghuge.m2": [
+0.262,
+0.287,
+12.365,
+-0.082
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfestwreathhanginghuge.m2": [
+0.216,
+-0.034,
+12.939,
+0.072
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_wreathhanginghuge.m2": [
+0.288,
+0.126,
+11.193
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_ribbon01huge.m2": [
+0.238,
+0.061,
+7.399,
+0.61
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_ribbon01huge.m2": [
+0.288,
+-0.02,
+6.547,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinesribbon01huge.m2": [
+0.262,
+0.01,
+6.932,
+0.61
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_ribbon02.m2": [
+0.383,
+0.07,
+2.251
+],
+"world\\generic\\passivedoodads\\oktoberfest\\beerfest_brazier_03.m2": [
+3.842,
+0.05,
+-0.148,
+0.61
+],
+"world\\generic\\passivedoodads\\summerfestival\\summerfest_brazier_03.m2": [
+4.737,
+-0.013,
+-0.358,
+0.61
+],
+"world\\generic\\passivedoodads\\valentinesday\\valentinescandle.m2": [
+5.294,
+-0.114,
+-0.421,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_brazier_01.m2": [
+0.197,
+-0.331,
+6.05,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock01.m2": [
+0.238,
+0.015,
+4.387,
+0.9
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_candle01.m2": [
+3.287,
+-0.08,
+-0.391,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_candle04.m2": [
+1.924,
+0.021,
+-0.09,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_candle_group01.m2": [
+2.673,
+0.056,
+0.02,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\highelf\\he_banner_01.m2": [
+0.288,
+-0.22,
+3.521,
+0.03
+],
+"world\\expansion02\\doodads\\valgrade\\valgrade_fire\\valgarde_fire.m2": [
+0.747,
+-0.504,
+2.581,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\refuse\\bone01.m2": [
+3.175,
+-0.098,
+-0.023,
+0.559
+],
+"world\\azeroth\\theblastedlands\\passivedoodads\\bones\\blastedlandsskull02.m2": [
+2.431,
+-0.057,
+-0.117,
+-0.056
+],
+"world\\azeroth\\theblastedlands\\passivedoodads\\bones\\blastedlandsbonepile03.m2": [
+2.117,
+-0.25,
+0.001,
+0.61
+],
+"world\\azeroth\\theblastedlands\\passivedoodads\\bones\\blastedlandsskull01.m2": [
+3.235,
+-0.07,
+-0.178,
+0.055
+],
+"world\\dreaming\\passivedoodads\\flowers\\dnrdreampurpleflower02.m2": [
+0.383,
+0.788,
+5.287
+],
+"world\\dreaming\\passivedoodads\\flowers\\dnrdreamdroopingflower02.m2": [
+0.238,
+3.076,
+5.977,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\throne\\kelthuzad_throne.m2": [
+0.262,
+0.158,
+8.716,
+0.712
+],
+"world\\kalimdor\\silithus\\passivedoodads\\gong\\silithidgong.m2": [
+0.238,
+0.085,
+4.029,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingpurplecrystal01.m2": [
+0.317,
+-0.311,
+4.551
+],
+"world\\expansion01\\doodads\\generic\\tradeskill\\jewelcrafting\\jewelcraft_figurine02.m2": [
+4.091,
+0.158,
+-0.342,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\lava\\icecrown_lavaman_chained.m2": [
+0.134,
+-0.842,
+8.922
+],
+"world\\expansion02\\doodads\\icecrown\\lava\\icecrown_lavaman_unchained.m2": [
+0.163,
+-0.672,
+9.095
+],
+"world\\expansion02\\doodads\\generic\\sunshatter\\banner\\sunshatter_monument.m2": [
+0.262,
+0.256,
+4.79
+],
+"world\\generic\\passivedoodads\\eastereggs\\easteregg01.m2": [
+2.199,
+0.012,
+-0.082,
+0.61
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_orange.m2": [
+2.717,
+-0.011,
+-0.13,
+0.021
+],
+"world\\generic\\passivedoodads\\shamanstone\\shamanstone01.m2": [
+0.238,
+0.761,
+10.132,
+1.062
+],
+"world\\generic\\passivedoodads\\fruits\\fruit_apple.m2": [
+2.674,
+0.053,
+-0.2,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanner_state_flaga_plaguelands.m2": [
+0.383,
+3.392,
+1.525
+],
+"world\\generic\\human\\passive doodads\\flagpole\\flagpole01.m2": [
+0.216,
+0.039,
+4.489
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_alliance_hanging.m2": [
+0.383,
+-0.006,
+2.871
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_alliance_hanging02.m2": [
+0.383,
+-0.002,
+3.173
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\banners\\tournament_banner_gnome02.m2": [
+0.383,
+0.018,
+2.73
+],
+"world\\generic\\nightelf\\passive doodads\\tent\\nightelfsingletent02.m2": [
+0.288,
+0.107,
+4.61,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\lavasteam\\forgelavaa.m2": [
+0.288,
+1.522,
+-13.438,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_herbalist.m2": [
+0.383,
+0.225,
+3.937,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_misc.m2": [
+0.383,
+0.138,
+3.939,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bottles\\greenbottle02.m2": [
+2.661,
+0.012,
+-0.009,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bottles\\greenbottle01.m2": [
+3.373,
+0.101,
+-0.078,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gypsywagons\\stormwindgypsywagon01.m2": [
+0.238,
+1.392,
+2.65
+],
+"world\\azeroth\\elwynn\\passivedoodads\\jars\\jar02.m2": [
+2.54,
+0.046,
+-0.256,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\jars\\jar03.m2": [
+2.309,
+-0.021,
+-0.157,
+0.61
+],
+"world\\generic\\human\\passive doodads\\mugs\\mug02.m2": [
+1.735,
+-0.044,
+-0.032,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmastree_largealliance01white.m2": [
+0.349,
+-0.094,
+10.654,
+1.284
+],
+"world\\generic\\passivedoodads\\christmas\\xmastree_largealliance01.m2": [
+0.262,
+-0.081,
+10.979,
+0.61
+],
+"world\\generic\\passivedoodads\\christmas\\xmastree_mediumalliance01.m2": [
+0.262,
+0.115,
+6.214
+],
+"world\\generic\\human\\passive doodads\\food&utensils\\turkeyleg.m2": [
+2.309,
+-0.237,
+0.022,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\florist01.m2": [
+0.288,
+-0.007,
+3.956,
+0.61
+],
+"world\\expansion01\\doodads\\bloodmyst\\crystals\\bloodmystcrystalaparatus01.m2": [
+0.076,
+-2.862,
+5.971
+],
+"world\\expansion01\\doodads\\bloodmyst\\crystals\\bloodmystcrystalfloating01.m2": [
+0.238,
+-0.075,
+4.66
+],
+"world\\expansion02\\doodads\\generic\\gnome\\gnome_radiation_bomb_01.m2": [
+0.238,
+1.29,
+6.035,
+0.619
+],
+"world\\generic\\human\\passive doodads\\armor\\armorhelmtrim.m2": [
+2.624,
+-0.125,
+0.453,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_armory.m2": [
+0.383,
+0.13,
+3.867,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopmortarshell.m2": [
+2.309,
+0.032,
+-0.093,
+1.113
+],
+"world\\generic\\human\\passive doodads\\signs\\fletchershop01.m2": [
+0.288,
+0.181,
+4.069,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humanmace01.m2": [
+3.977,
+-0.118,
+0.037,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_horde_hanging.m2": [
+0.383,
+0.014,
+3.008
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\lunarnewyearbanner_horde_hanging02.m2": [
+0.383,
+-0.009,
+2.751
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\banners\\be_banner01.m2": [
+0.288,
+-0.256,
+3.445
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_tent01.m2": [
+0.179,
+-0.095,
+5.331
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_tent04.m2": [
+0.238,
+0.018,
+3.765
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\orctents\\orctent.m2": [
+0.238,
+-0.205,
+3.159
+],
+"world\\generic\\orc\\passive doodads\\orcbellows\\orcbellow.m2": [
+0.288,
+-0.099,
+3.595
+],
+"world\\azeroth\\westfall\\passivedoodads\\utensils\\bowl.m2": [
+3.105,
+0.012,
+-0.149,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_bags.m2": [
+0.383,
+-0.062,
+3.692
+],
+"world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguewagon.m2": [
+0.111,
+0.997,
+9.931,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc03.m2": [
+2.717,
+-0.046,
+-0.226,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\jars\\jarorc04.m2": [
+2.988,
+0.035,
+-0.234,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\meatwagon\\meatwagon.m2": [
+0.216,
+-0.142,
+3.019
+],
+"world\\generic\\passivedoodads\\christmas\\xmastree_mediumhorde01.m2": [
+0.262,
+0.183,
+6.331,
+3.307
+],
+"world\\generic\\passivedoodads\\christmas\\xmastree_largehorde01.m2": [
+0.261,
+-0.206,
+11.031,
+2.607
+],
+"world\\expansion02\\doodads\\zuldrak\\trollruins\\it_brazier02.m2": [
+0.163,
+-0.006,
+6.076,
+1.745
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\bonfire\\orcbonfire_blue.m2": [
+0.383,
+-0.066,
+2.988
+],
+"world\\azeroth\\westfall\\passivedoodads\\cages\\hangingcage02.m2": [
+0.383,
+-0.041,
+2.559
+],
+"world\\kalimdor\\orgrimmar\\passivedoodads\\thralls_throne.m2": [
+0.288,
+0.118,
+3.499
+],
+"world\\generic\\tauren\\passive doodads\\totems\\grimtotem02.m2": [
+0.216,
+0.174,
+11.882,
+0.525
+],
+"world\\azeroth\\zulgurub\\passivedoodads\\battotem\\trollbattotem.m2": [
+0.216,
+-0.463,
+6.891,
+1.6
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_fletcher.m2": [
+0.383,
+0.048,
+3.683
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_armory.m2": [
+0.383,
+0.022,
+3.658
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_staves.m2": [
+0.383,
+-0.087,
+3.7
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\satyrbanners\\mrdnsatyrbanner03.m2": [
+0.51,
+0.014,
+0.223
+],
+"world\\environment\\doodad\\carnival\\targetpractice.m2": [
+0.51,
+0.014,
+0.369
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\deathwingexperiments\\blackrockbloodmachine01.m2": [
+0.324,
+0.435,
+3.19,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_blighter_broken.m2": [
+0.383,
+0.386,
+0.7
+],
+"world\\nodxt\\generic\\passivedoodads\\volumetriclights\\st_lightshaft.m2": [
+0.383,
+0.014,
+-0.569
+],
+"world\\dungeon\\cavernsoftime\\passivedoodads\\portal\\cot_portalfx.m2": [
+0.383,
+0.912,
+25.286,
+0.397
+],
+"world\\environment\\doodad\\carnival\\carnival_banner02.m2": [
+0.238,
+3.196,
+4.39,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_eyeofacherus_02.m2": [
+0.199,
+-0.024,
+3.906,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\felreaver\\bu_felreaver_01.m2": [
+0.162,
+4.517,
+6.684,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurabluehuge.m2": [
+0.383,
+-0.062,
+15.346,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\ak_alchemybottle01.m2": [
+3.074,
+0.004,
+-0.045,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\ak_alchemybottle03.m2": [
+2.415,
+0.03,
+-0.089,
+0.61
+],
+"world\\generic\\passivedoodads\\plaque\\plaquesilver01.m2": [
+2.54,
+-0.077,
+-0.165,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\lava\\icecrown_lavaman_sit.m2": [
+0.197,
+-0.293,
+3.18,
+0.61
+],
+"world\\goober\\g_witchbroom_01.m2": [
+0.327,
+0.059,
+2.947,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\teleporter\\bu_teleporter_01.m2": [
+0.197,
+0.108,
+5.191,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\geysers\\borean_geyser_01.m2": [
+0.383,
+-0.389,
+0.601
+],
+"world\\wmo\\kalimdor\\collidabledoodads\\darkshore\\giantseaturtle01\\giantseaturtle01.wmo": [
+4.5,
+-0.066,
+-6.47
+],
+"world\\wmo\\kalimdor\\collidabledoodads\\darkshore\\giantseaturtle02\\giantseaturtle02.wmo": [
+5.87,
+-0.076,
+2.331
+],
+"world\\wmo\\azeroth\\buildings\\guardtower\\guardtower.wmo": [
+4.5,
+-0.161,
+-6.47
+],
+"world\\generic\\passivedoodads\\feathers\\featherbigblue.m2": [
+3.43,
+-0.217,
+-0.024,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\tradeskill\\jewelcrafting\\jewelcraft_gemcut_03.m2": [
+3.193,
+-0.027,
+-0.219,
+0.61
+],
+"world\\wmo\\azeroth\\collidable doodads\\stranglethorn\\holdingpen\\holdingpenbamboo.wmo": [
+4.5,
+-0.066,
+-6.47
+],
+"world\\goober\\g_impbottle.m2": [
+1.295,
+0.02,
+0.174,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\auraredhuge.m2": [
+0.512,
+0.014,
+0.743
+],
+"world\\wmo\\kalimdor\\collidabledoodads\\stonetalon\\landingpad\\landingpad01.wmo": [
+4.5,
+-0.066,
+-6.47
+],
+"world\\generic\\passivedoodads\\particleemitters\\auragreen.m2": [
+1.28,
+-0.062,
+1.505
+],
+"world\\expansion01\\doodads\\coilfang\\activedoodads\\elevator\\cf_elevatorplatform_small.m2": [
+0.134,
+0.008,
+2.945,
+0.61
+],
+"world\\generic\\activedoodads\\meetingstones\\meetingstone01.m2": [
+0.216,
+-0.074,
+4.308,
+0.61
+],
+"world\\wmo\\dungeon\\md_goldmine\\md_goldmine_1room.wmo": [
+5.921,
+-0.171,
+2.362
+],
+"world\\wmo\\transports\\vrykulboats\\transport_vrykul_large.wmo": [
+4.5,
+-0.161,
+-6.47
+],
+"world\\azeroth\\bootybay\\passivedoodad\\deadfish\\fishdeadblue.m2": [
+3.074,
+-0.013,
+-0.167,
+2.334
+],
+"world\\azeroth\\bootybay\\passivedoodad\\deadfish\\fishdeadgreen.m2": [
+3.074,
+0.075,
+-0.055,
+0.61
+],
+"world\\generic\\passivedoodads\\feathers\\featherbigred.m2": [
+3.75,
+-0.252,
+-0.211,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\inscription\\inscription_scroll_sealed02.m2": [
+2.794,
+-0.077,
+-0.204,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rj_moon.m2": [
+0.383,
+0.014,
+0.337
+],
+"world\\nodxt\\detail\\tifshl01.m2": [
+2.94,
+-0.141,
+-0.101,
+0.61
+],
+"world\\wmo\\transports\\icebreaker\\transport_icebreaker_ship.wmo": [
+6.027,
+-0.066,
+2.409
+],
+"world\\expansion02\\doodads\\generic\\northrend_shoulder_02.m2": [
+10.449,
+1.257,
+1.84
+],
+"world\\expansion01\\doodads\\coilfang\\passivedoodads\\cages\\cf_groundcage.m2": [
+0.178,
+-0.076,
+5.771,
+2.359
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\smallportcullis.m2": [
+0.179,
+-0.005,
+8.13,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\statues\\zuldrak_statue_serpent_01.m2": [
+0.135,
+0.132,
+5.271,
+0.61
+],
+"world\\wmo\\transports\\transport_ship\\transportship.wmo": [
+4.5,
+-0.066,
+-6.47
+],
+"world\\wmo\\transports\\passengership\\transportship_a.wmo": [
+5.921,
+-0.017,
+2.402
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingredcrystalbroken02.m2": [
+0.262,
+0.457,
+3.715,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingredcrystalbroken03.m2": [
+0.383,
+0.327,
+2.507,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingredcrystalbroken01.m2": [
+0.238,
+-0.256,
+4.546,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\lights\\vr_standinglight_snow_blue_01.m2": [
+0.288,
+-0.186,
+4.212,
+0.277
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\burialmound\\vr_burialmound_01.m2": [
+0.162,
+1.882,
+7.338,
+-0.423
+],
+"world\\expansion01\\doodads\\shattrath\\passivedoodads\\central_energy_fx\\shattrath_narru_energy_fx.m2": [
+0.383,
+-0.066,
+4.125,
+0.61
+],
+"world\\goober\\g_holylightwell.m2": [
+0.659,
+-0.283,
+0.786
+],
+"world\\wmo\\transports\\transport_zeppelin\\transport_zeppelin.wmo": [
+5.819,
+-0.168,
+2.301
+],
+"world\\azeroth\\karazahn\\passivedoodads\\theater\\karazahn_rrh_tree.m2": [
+0.216,
+-0.041,
+4.789,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\steamtank\\ironforgesteamtank.m2": [
+0.148,
+-0.129,
+5.404,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmall01.m2": [
+3.553,
+-0.173,
+-0.219,
+0.61
+],
+"world\\generic\\passivedoodads\\plaque\\plaquebronze01.m2": [
+2.324,
+0.01,
+-0.008,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopammoboxblue.m2": [
+4.051,
+0.002,
+0.182,
+1.762
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopammoboxred.m2": [
+5.318,
+0.012,
+1.725
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopammoboxredblock.m2": [
+2.205,
+-0.113,
+-0.014,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level03.m2": [
+0.163,
+5.99,
+-0.321,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level02.m2": [
+0.68,
+-26.23,
+-1.074,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level04.m2": [
+0.503,
+-14.65,
+1.934,
+1.31
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\food_level05.m2": [
+0.512,
+0.741,
+3.474,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_magicshop.m2": [
+0.383,
+0.141,
+3.786,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_alchemist.m2": [
+0.383,
+0.083,
+3.896,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_tavern.m2": [
+0.421,
+0.087,
+3.769,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\visitorscenter01.m2": [
+0.218,
+-0.065,
+4.457,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_human_01.m2": [
+2.536,
+-0.036,
+-0.115,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\tailor01.m2": [
+0.289,
+0.091,
+4.142,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\generalstore01.m2": [
+0.263,
+0.072,
+4.339,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\excavationstake\\excavationstake.m2": [
+4.267,
+0.113,
+-0.33,
+0.491
+],
+"world\\generic\\human\\passive doodads\\food\\fishplatter01.m2": [
+0.944,
+0.277,
+1.246,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\signpost\\hu_signpost_sign_northrend.m2": [
+4.109,
+-0.379,
+-0.295
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_generalgoods.m2": [
+0.262,
+0.184,
+4.3,
+0.61
+],
+"world\\goober\\g_flarealliance.m2": [
+0.499,
+0.016,
+0.568
+],
+"world\\generic\\human\\passive doodads\\signs\\wineshopsign01.m2": [
+0.262,
+0.018,
+4.171,
+0.695
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_gunsmith.m2": [
+0.383,
+0.092,
+3.896,
+1.028
+],
+"world\\generic\\human\\passive doodads\\signs\\bakershop01.m2": [
+0.261,
+0.03,
+4.135,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_human_02.m2": [
+3.553,
+-0.144,
+-0.207,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopbomb.m2": [
+3.553,
+0.079,
+-0.382,
+0.61
+],
+"world\\generic\\human\\passive doodads\\gunshop\\gunshopdynamite.m2": [
+2.327,
+0.001,
+-0.307,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\lighthousebeam\\lighthouseeffect.m2": [
+0.49,
+0.654,
+2.371,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_tailor.m2": [
+0.288,
+0.089,
+4.165,
+0.61
+],
+"world\\wmo\\kalimdor\\buildings\\nightelfmoonwell\\nightelfmoonwellornate.wmo": [
+5.87,
+-0.052,
+2.361
+],
+"world\\generic\\human\\passive doodads\\signs\\tavern01.m2": [
+0.261,
+-0.09,
+4.418,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\armorershop01.m2": [
+0.261,
+0.056,
+4.355,
+0.61
+],
+"world\\wmo\\playerhousing\\human\\humanlevelonetest.wmo": [
+6.081,
+-0.164,
+2.506
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanneralliance.m2": [
+0.383,
+-0.007,
+0.637
+],
+"world\\generic\\nightelf\\passive doodads\\banners\\nightelftreebanner02.m2": [
+0.517,
+0.014,
+0.478
+],
+"world\\generic\\human\\passive doodads\\signs\\alchemistsshop01.m2": [
+0.262,
+0.072,
+4.231,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\gnomemachine\\gnomemachine03.m2": [
+0.254,
+-1.268,
+4.941,
+1.643
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\gnomesign_engineer.m2": [
+0.317,
+0.052,
+4.165,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_daggers.m2": [
+0.383,
+0.125,
+4.03,
+0.61
+],
+"world\\wmo\\azeroth\\buildings\\stormwind\\stormwind.wmo": [
+6.0,
+-0.161,
+-6.47
+],
+"world\\generic\\human\\passive doodads\\signs\\bank01.m2": [
+0.238,
+-0.014,
+4.221,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\spike\\spike.m2": [
+2.117,
+-0.047,
+-0.171,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_bakery.m2": [
+0.383,
+0.11,
+3.923,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\cheeseshop01.m2": [
+0.262,
+0.004,
+4.121,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_fireworks.m2": [
+0.383,
+0.201,
+3.929,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_weaponry.m2": [
+0.288,
+0.098,
+4.126,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_fishing.m2": [
+0.383,
+0.134,
+3.938,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmall02.m2": [
+4.737,
+0.138,
+-0.428,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\candles\\ne_candle01.m2": [
+3.97,
+-0.018,
+-0.113,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\signs\\dwarfsign_firstaid.m2": [
+0.383,
+0.1,
+4.139,
+0.61
+],
+"world\\expansion01\\doodads\\bloodmyst\\powercore\\bloodmyst_powercore.m2": [
+0.383,
+0.199,
+11.564,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signs\\weaponsmithshop01.m2": [
+0.317,
+0.011,
+3.934,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbanner_state_flagh_plaguelands.m2": [
+0.383,
+2.68,
+1.592,
+0.337
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_alchemist.m2": [
+0.383,
+0.014,
+3.767,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\deathwingexperiments\\blackrockbloodvile.m2": [
+0.216,
+0.033,
+6.046,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal04.m2": [
+0.383,
+-0.068,
+0.239
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food02.m2": [
+0.667,
+0.605,
+2.277,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food03.m2": [
+0.512,
+0.036,
+1.052
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_food04.m2": [
+0.645,
+-0.963,
+2.586,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_bank.m2": [
+0.335,
+0.069,
+4.11,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_misc.m2": [
+0.262,
+-0.023,
+4.199,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_blacksmith.m2": [
+0.348,
+-0.101,
+4.057,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_cook.m2": [
+0.284,
+-0.033,
+4.186,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_general.m2": [
+0.318,
+-0.026,
+4.28,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_small01.m2": [
+2.789,
+-0.033,
+-0.035,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_herbalist.m2": [
+0.288,
+-0.055,
+4.165,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_miner.m2": [
+0.331,
+0.104,
+4.284,
+0.61
+],
+"world\\wmo\\kalimdor\\buildings\\orctower\\orctower.wmo": [
+6.0,
+-0.066,
+-6.47
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_poison.m2": [
+0.262,
+-0.02,
+4.285,
+0.61
+],
+"world\\generic\\pvp\\battlefieldbanners\\battlefieldbannerhorde.m2": [
+0.383,
+0.09,
+3.133,
+0.61
+],
+"world\\goober\\g_goblinteleporter.m2": [
+0.317,
+0.115,
+3.828,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_tailor.m2": [
+0.288,
+0.019,
+4.055,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sign_alchemy.m2": [
+0.254,
+-0.038,
+4.764,
+0.61
+],
+"world\\goober\\g_mummytroll.m2": [
+0.896,
+-0.239,
+1.408,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\food\\be_meat01.m2": [
+3.381,
+-0.021,
+0.027,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\hordebanners\\hordebanner04.m2": [
+0.383,
+-0.343,
+13.185,
+1.506
+],
+"world\\generic\\orc\\passive doodads\\hordebanners\\hordebanner03.m2": [
+0.262,
+-0.212,
+6.271,
+1.506
+],
+"world\\generic\\undead\\passive doodads\\signs\\undeadsign_weapons.m2": [
+0.35,
+0.001,
+3.938,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\refuse\\bone02.m2": [
+2.334,
+0.147,
+0.016,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladeskullorc1\\battlegladeskullorc1.m2": [
+3.76,
+-0.009,
+-0.379,
+0.61
+],
+"world\\goober\\g_relicnefigurine.m2": [
+3.107,
+0.022,
+-0.104,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\inscription\\inscription_inkbottle_green03.m2": [
+1.753,
+-0.043,
+-0.024,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\inscription\\inscription_inkbottle_purple02.m2": [
+1.754,
+-0.033,
+-0.062,
+0.61
+],
+"world\\generic\\human\\passive doodads\\mugs\\mug01.m2": [
+1.754,
+-0.093,
+-0.015,
+0.61
+],
+"world\\generic\\human\\passive doodads\\mugs\\mugfoam01.m2": [
+1.929,
+-0.082,
+-0.049,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladeskullhuman1\\battlegladeskullhuman1.m2": [
+3.418,
+-0.022,
+-0.261,
+0.61
+],
+"world\\expansion01\\doodads\\ghostlands\\skulls\\swath_skull.m2": [
+3.76,
+-0.033,
+-0.194,
+1.318
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_statueantonidas_plaque.m2": [
+3.412,
+0.007,
+-0.248,
+0.61
+],
+"world\\goober\\g_relicnesphere.m2": [
+1.921,
+-0.044,
+-0.06,
+-1.011
+],
+"world\\expansion01\\doodads\\auchindoun\\passivedoodads\\bridge_fx\\auchindoun_bridge_spirits_flying.m2": [
+0.169,
+0.218,
+20.399,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\luckymoneyenvelope_01.m2": [
+6.044,
+-0.067,
+-0.197,
+0.61
+],
+"world\\nodxt\\detail\\tifshl02.m2": [
+4.569,
+-0.201,
+-0.252,
+0.226
+],
+"world\\nodxt\\detail\\tifshl03.m2": [
+4.549,
+-0.075,
+0.072,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurapurpleshort.m2": [
+0.675,
+-0.012,
+0.787
+],
+"world\\kalimdor\\mulgore\\passivedoodads\\pinecone\\pinecone.m2": [
+1.751,
+-0.099,
+-0.202,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\signs\\ruinedsign02.m2": [
+0.299,
+0.012,
+0.026,
+0.61
+],
+"world\\goober\\g_soundobject.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurablueverytall.m2": [
+0.225,
+0.134,
+1.796,
+0.61
+],
+"world\\nodxt\\generic\\passivedoodads\\volumetriclights\\cot_lightshafta.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\critter\\bats\\bat01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\critter\\bats\\bat02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\particleemitters\\bubbles01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\particleemitters\\blacksmith_smoke.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\collision\\collision_pcsize.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\pvp\\fires\\lowpolyfire.m2": [
+0.304,
+-0.037,
+0.105
+],
+"world\\goober\\g_runegroundblue01.m2": [
+0.225,
+-0.067,
+2.299,
+0.61
+],
+"world\\generic\\pvp\\fires\\lowpolyfireanim.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\expansion01\\doodads\\netherstorm\\float_particles\\netherstorm_particles.m2": [
+0.299,
+0.012,
+-0.073
+],
+"world\\generic\\passivedoodads\\particleemitters\\druidwisp01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\goober\\g_hologrambasetanaris.m2": [
+0.362,
+-0.031,
+9.5,
+0.61
+],
+"world\\goober\\g_flyingmachine.m2": [
+0.248,
+-0.093,
+6.03,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\signs\\ruinedsign03.m2": [
+0.288,
+0.947,
+-6.414,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\shrineaurablue.m2": [
+0.384,
+-0.053,
+5.552,
+0.61
+],
+"world\\dungeon\\cavernsoftime\\passivedoodads\\portal\\cot_portal01.m2": [
+0.397,
+0.084,
+0.113
+],
+"world\\generic\\passivedoodads\\particleemitters\\feralaslightblue.m2": [
+0.225,
+-0.352,
+9.448,
+0.61
+],
+"world\\expansion02\\doodads\\howlingfjord\\fog\\hfjord_fog_01.m2": [
+0.299,
+-0.012,
+-0.061
+],
+"world\\generic\\passivedoodads\\particleemitters\\steam04.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurapurple.m2": [
+0.288,
+-0.111,
+1.524,
+0.61
+],
+"world\\expansion01\\doodads\\shadowmoon\\rune\\shadowmoon_rune1.m2": [
+0.301,
+-0.012,
+4.023,
+0.61
+],
+"world\\expansion02\\doodads\\stratholme_past\\ld_stratholme_clothingline01.m2": [
+0.243,
+3.833,
+0.787,
+-1.037
+],
+"world\\environment\\doodad\\carnival\\shoutbox.m2": [
+0.23,
+0.993,
+4.598,
+-0.312
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\smoke\\ashtreesmoke01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\borean_redplant_burningpile_03.m2": [
+0.73,
+0.203,
+3.916,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\borean_redplant_burningpile_01.m2": [
+0.482,
+-0.22,
+4.93,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\borean_redplant_burningpile_02.m2": [
+0.642,
+-0.296,
+1.974,
+0.61
+],
+"world\\expansion01\\doodads\\coilfang\\passivedoodads\\steam\\coilfang_steam.m2": [
+0.225,
+0.0,
+1.628,
+0.61
+],
+"world\\goober\\g_runegroundpurple01.m2": [
+0.301,
+-0.022,
+2.154,
+0.61
+],
+"world\\goober\\g_runegroundgreen01.m2": [
+0.225,
+-0.092,
+2.224,
+0.61
+],
+"world\\goober\\g_booktrapeye.m2": [
+1.665,
+-0.019,
+2.204,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\warlockcircle\\warlockmountritualcircle01b.m2": [
+0.883,
+-0.127,
+3.071,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\warlockcircle\\warlockmountritualcircle01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\flyinginsects\\flyingsmallinsects.m2": [
+0.399,
+-0.502,
+1.071,
+0.61
+],
+"world\\generic\\passivedoodads\\diadelosmuertos\\diadelosmuertos_graveflowers_01.m2": [
+1.832,
+0.034,
+-0.091,
+0.61
+],
+"world\\kalimdor\\darkshore\\activedoodads\\illidancrystal\\illidancrystal01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\particleemitters\\auraredverytall.m2": [
+0.225,
+-0.143,
+5.882,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurayellowverytall.m2": [
+0.225,
+-0.101,
+4.363,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\lanterns\\nightelflantern02.m2": [
+0.225,
+0.025,
+4.17,
+0.61
+],
+"world\\generic\\human\\passive doodads\\braziers\\humanbraziercorrupt.m2": [
+0.301,
+-0.059,
+2.733,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\cloth_level04.m2": [
+0.105,
+0.767,
+2.978,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level03.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level05.m2": [
+0.225,
+-12.226,
+0.831,
+0.747
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\metals_level06.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\herbs_level02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\herbs_level03.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\herbs_level04.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\herbs_level06.m2": [
+0.397,
+0.364,
+0.001
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level03.m2": [
+0.296,
+-0.011,
+-0.051
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level04.m2": [
+0.291,
+0.001,
+-0.053
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level05.m2": [
+0.301,
+0.024,
+-0.016
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\leather_level06.m2": [
+0.301,
+0.012,
+-0.027
+],
+"world\\generic\\human\\passive doodads\\signposts\\woodsignpointerworn01.m2": [
+0.522,
+0.134,
+2.258,
+-0.158
+],
+"world\\generic\\nightelf\\passive doodads\\signposts\\nightelfsignpostpointer01.m2": [
+0.691,
+0.873,
+2.048,
+-0.508
+],
+"world\\expansion01\\doodads\\generic\\draenei\\draenei_wreckage\\draenei_wreckage_frame.m2": [
+0.095,
+5.642,
+-3.207,
+-1.242
+],
+"world\\generic\\gnome\\passive doodads\\lights\\gnomestructuralspotlight02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\nightelf\\passive doodads\\signposts\\nightelfsignpostpointer02.m2": [
+0.768,
+0.783,
+1.94,
+-1.097
+],
+"world\\expansion01\\doodads\\generic\\draenei\\holographicstand\\dr_holographic_stand.m2": [
+0.531,
+-0.027,
+2.818,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\woodsignpointernice01.m2": [
+0.225,
+0.101,
+3.457,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\humansignpostpointer03.m2": [
+0.225,
+0.688,
+3.356,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\stonesignpointer01.m2": [
+0.225,
+0.285,
+2.92,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\humansignpostpointer01.m2": [
+0.587,
+1.05,
+2.096,
+-0.644
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\powerorb\\bloodelf_powerorb_red.m2": [
+0.225,
+-0.361,
+8.634,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_cloth02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_cloth03.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_cloth04.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_cloth05.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_cloth06.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_metal06.m2": [
+0.299,
+-0.012,
+-0.017
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_herbs01.m2": [
+0.388,
+0.007,
+0.636,
+0.61
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_herbs03.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_herbs04.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_herbs05.m2": [
+0.299,
+0.012,
+-0.017
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_furs01.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_furs02.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_furs03.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_furs04.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\generic\\passivedoodads\\ahnqiraj\\horde_furs06.m2": [
+0.288,
+-0.01,
+-0.076
+],
+"world\\generic\\passivedoodads\\particleemitters\\lavasmokeemitter.m2": [
+0.301,
+-0.953,
+10.638,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\doors\\diremaulbossforcefield.m2": [
+0.225,
+0.0,
+0.0
+],
+"world\\expansion02\\doodads\\rubysanctum\\rubysanctum_door_03.m2": [
+0.225,
+-0.277,
+4.187,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\wyvernroost\\wyvernroost01.m2": [
+0.296,
+-0.015,
+3.545,
+0.61
+],
+"world\\generic\\human\\passive doodads\\food\\breadfrenchhalf.m2": [
+10.0,
+0.386,
+-0.091
+],
+"world\\generic\\human\\passive doodads\\food\\breadfrench01.m2": [
+5.946,
+-0.017,
+0.094
+],
+"world\\khazmodan\\blackrock\\activedoodads\\arenaflag\\arenaflag.m2": [
+0.5,
+0.0,
+-0.48,
+0.61
+],
+"world\\skillactivated\\tradeskillenablers\\blacksmithforge.m2": [
+0.5,
+0.0,
+-0.575,
+0.61
+],
+"world\\generic\\passivedoodads\\traps\\spellobject_invisibletrap.m2": [
+1.583,
+0.0,
+1.0,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_throne_02.m2": [
+0.12,
+17.403,
+23.789,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_fountain_01.m2": [
+0.5,
+-3.382,
+-62.688,
+0.61
+],
+"world\\goober\\g_cannon01.m2": [
+0.5,
+-0.017,
+-0.03,
+0.61
+],
+"world\\goober\\g_mortar.m2": [
+1.732,
+0.0,
+0.134,
+0.61
+],
+"world\\generic\\human\\passive doodads\\armor\\armorleatherhelmbrown.m2": [
+5.946,
+0.0,
+-1.5,
+0.61
+],
+"world\\kalimdor\\orgrimmar\\passivedoodads\\orgrimmarbonfire\\orgrimmarbonfire01.m2": [
+0.364,
+0.123,
+12.039,
+0.61
+],
+"world\\goober\\g_braziertroll.m2": [
+0.594,
+0.435,
+4.871,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\braziers\\bu_brazier_01.m2": [
+0.878,
+0.067,
+2.384,
+-0.346
+],
+"world\\generic\\orc\\passive doodads\\voodoostuff\\skullcandle01.m2": [
+3.509,
+0.389,
+10.345,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\bonfire\\bonfirenorthrend_01.m2": [
+0.644,
+-0.09,
+11.509,
+-0.465
+],
+"world\\expansion01\\doodads\\generic\\tradeskill\\jewelcrafting\\jewelcraft_grinder01.m2": [
+0.632,
+-0.034,
+3.856,
+0.61
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_alchemycauldron_white.m2": [
+1.747,
+-0.197,
+2.832,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\demonwing\\passivedoodads\\dw_braizer\\hellfire_dw_floorbraizer.m2": [
+0.542,
+0.814,
+16.245,
+-0.149
+],
+"world\\expansion02\\doodads\\generic\\wolvar\\wolvar_forge.m2": [
+1.419,
+0.68,
+2.795,
+1.062
+],
+"world\\skillactivated\\tradeskillenablers\\tradeskill_alchemycauldron_red.m2": [
+1.588,
+-0.671,
+2.838,
+0.61
+],
+"world\\expansion02\\doodads\\rubysanctum\\rubysanctum_door_02.m2": [
+0.05,
+3.491,
+9.794,
+0.61
+],
+"world\\azeroth\\deadmines\\passivedoodads\\lavasink.m2": [
+0.891,
+0.193,
+2.834,
+0.61
+],
+"world\\generic\\passivedoodads\\halloween\\burningwickerman01.m2": [
+0.839,
+-1.337,
+14.72,
+0.61
+],
+"world\\goober\\g_fireworklauncher01.m2": [
+0.924,
+-0.079,
+3.136,
+0.61
+],
+"world\\expansion02\\doodads\\rubysanctum\\rubysanctum_door_04.m2": [
+0.05,
+-0.042,
+15.174,
+0.61
+],
+"world\\generic\\human\\passive doodads\\braziers\\humanbraziermagic.m2": [
+0.712,
+0.056,
+2.576,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\forgebonfire\\forgebonfire.m2": [
+0.601,
+0.482,
+5.926,
+0.61
+],
+"world\\kalimdor\\diremaul\\passivedoodads\\ogrecampfires\\ogrecampfire01.m2": [
+0.144,
+-0.395,
+10.678,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ogre\\forge\\om_forge_01.m2": [
+0.446,
+1.322,
+2.688,
+-0.295
+],
+"world\\goober\\g_tentburninator.m2": [
+0.232,
+0.019,
+3.952,
+0.61
+],
+"world\\kalimdor\\winterspring\\activedoodads\\altar\\winterspringaltar01.m2": [
+0.613,
+-0.017,
+2.475,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\bonfire\\bonfirenorthrend_01blue.m2": [
+0.644,
+-0.052,
+10.968,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\lampposts\\orcbrazier_lightpostbarrens.m2": [
+0.343,
+0.06,
+3.284,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\kilns\\taurenkiln01.m2": [
+0.245,
+0.067,
+3.551,
+-0.056
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_brazier2_orange.m2": [
+1.122,
+-0.025,
+1.929,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\tuskarr\\incenseburner\\ts_incenseburner_01.m2": [
+0.321,
+0.218,
+4.661,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_warningrock02_hibatch.m2": [
+0.377,
+-0.109,
+4.467,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\orcpvpbonfirelarge.m2": [
+0.2,
+0.378,
+18.112,
+0.61
+],
+"spells\\icecrownraid_arthas_precipice_phase2_quad2.m2": [
+0.05,
+-3.684,
+-8.767,
+0.61
+],
+"world\\expansion02\\doodads\\rubysanctum\\rubysanctum_door_01.m2": [
+0.082,
+1.04,
+6.773,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ogre\\fires\\om_campfire_01.m2": [
+0.878,
+0.018,
+2.132,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\glyphedcrystal.m2": [
+1.261,
+-0.055,
+0.788,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\trollruins\\zuldrak_incense_01.m2": [
+0.507,
+-0.107,
+13.212,
+0.61
+],
+"world\\khazmodan\\blackrock\\activedoodads\\darkironbrazier\\darkironbrazier.m2": [
+0.649,
+0.025,
+4.274,
+0.61
+],
+"world\\skillactivated\\tradeskillnodes\\bush_firebloom.m2": [
+1.1,
+-0.025,
+0.177,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonpuffballred.m2": [
+0.513,
+-0.079,
+0.835,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\lavasplashparticle.m2": [
+0.003,
+-0.569,
+0.448,
+0.61
+],
+"creature\\spells\\landmine01.m2": [
+1.1,
+0.05,
+-0.872,
+0.61
+],
+"world\\goober\\g_gnomesparklematic.m2": [
+0.621,
+-1.304,
+1.784,
+0.61
+],
+"world\\skillactivated\\tradeskillnodes\\bush_flamecap.m2": [
+1.1,
+-0.084,
+0.286,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\lavashrine\\lavashrine01.m2": [
+0.218,
+-0.011,
+3.935,
+0.738
+],
+"world\\generic\\activedoodads\\instanceportal\\instanceportal_red.m2": [
+0.319,
+0.092,
+2.446,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonspewertreebosscolor.m2": [
+0.112,
+-0.802,
+-6.889,
+0.61
+],
+"world\\generic\\human\\passive doodads\\valvesteam\\deadminevalvesteam01.m2": [
+1.1,
+-0.101,
+-0.452,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\auraredtall.m2": [
+0.564,
+-0.096,
+2.74,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\amethystcrystal02.m2": [
+0.826,
+0.221,
+0.309,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_darnassus.m2": [
+0.467,
+0.0,
+1.368,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\amethystcrystal04.m2": [
+0.424,
+0.179,
+1.81,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\lavapillar\\lavapillar01.m2": [
+0.198,
+-0.073,
+2.951,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\naxxramas_frostwyrm_birth.m2": [
+0.319,
+1.672,
+6.741,
+1.847
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_ironforge.m2": [
+0.513,
+0.007,
+1.293,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_undercity.m2": [
+0.564,
+-0.036,
+1.344,
+0.61
+],
+"world\\kalimdor\\onyxiaslair\\lavatraps\\onyziaslairlavatrapmirror.m2": [
+0.29,
+-0.985,
+2.187,
+0.456
+],
+"world\\azeroth\\westfall\\passivedoodads\\detail\\westfalldriftwood.m2": [
+0.467,
+0.265,
+0.327,
+0.61
+],
+"world\\kalimdor\\diremaul\\passivedoodads\\vortex\\diremaulmagicvortex.m2": [
+1.0,
+0.002,
+0.009,
+0.61
+],
+"world\\generic\\activedoodads\\spellportals\\mageportal_thunderbluff.m2": [
+0.513,
+-0.084,
+1.34,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\diamondcrystal02.m2": [
+0.751,
+0.046,
+0.586,
+0.61
+],
+"world\\generic\\dwarf\\active doodads\\doors\\dwarventunnelportcullis.m2": [
+0.176,
+0.038,
+5.601,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_red.m2": [
+1.1,
+0.235,
+11.379,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_yellow.m2": [
+1.1,
+0.185,
+12.411,
+0.61
+],
+"world\\generic\\ogre\\activedoodads\\ogrehead\\glowingogrehead.m2": [
+0.564,
+0.196,
+1.986,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\rubycrystal04.m2": [
+0.386,
+0.107,
+2.033,
+0.61
+],
+"world\\generic\\pvp\\warsong\\orcctfflagplaceglow.m2": [
+1.1,
+6.285,
+21.516,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonsporetree.m2": [
+0.218,
+-0.203,
+3.989,
+0.61
+],
+"world\\kalimdor\\mauradon\\activedoodads\\button\\maraudonstaffcreator.m2": [
+0.164,
+0.206,
+2.868,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\amethystcrystal01.m2": [
+0.683,
+-0.005,
+0.55,
+0.61
+],
+"world\\kalimdor\\winterspring\\passivedoodads\\frozenwaterfalls\\frozenwaterfall02.m2": [
+0.239,
+2.271,
+3.843,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\diamondcrystal01.m2": [
+0.564,
+-0.017,
+1.078,
+0.61
+],
+"world\\kalimdor\\onyxiaslair\\lavatraps\\onyziaslairlavatrap.m2": [
+0.239,
+0.6,
+1.561,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\steamtank\\ruinedsteamtankaxle01.m2": [
+0.513,
+0.148,
+0.124,
+0.559
+],
+"world\\expansion01\\doodads\\sunwell\\passivedoodads\\sunwell\\sunwell_fx.m2": [
+1.1,
+-0.972,
+5.15,
+0.61
+],
+"world\\generic\\human\\passive doodads\\valvesteam\\deadminevalvesteam02.m2": [
+1.1,
+-0.159,
+-3.431,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\maraudoncrystalred01.m2": [
+0.29,
+-0.341,
+0.613,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\rubycrystal02.m2": [
+0.621,
+0.023,
+0.691,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonspewertree.m2": [
+0.319,
+-0.85,
+-6.686,
+1.335
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\amethystcrystal03.m2": [
+0.621,
+0.063,
+0.706,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\rubycrystal07.m2": [
+0.564,
+-0.092,
+1.067,
+0.61
+],
+"world\\generic\\human\\passive doodads\\catapultruins\\catapultbeam.m2": [
+0.751,
+0.819,
+0.42,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\sporelight\\sporelight01.m2": [
+0.467,
+-0.045,
+1.655,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirepeninsula\\curb\\hellfire_fireparticle.m2": [
+4.074,
+0.092,
+10.131,
+0.61
+],
+"world\\skillactivated\\tradeskillnodes\\bush_stardust.m2": [
+0.285,
+0.126,
+4.98,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\feralaslightgreen.m2": [
+0.062,
+0.327,
+7.242,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\humansignpostpointer04.m2": [
+1.317,
+0.269,
+0.586,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurawhiteverytall_v2.m2": [
+0.05,
+1.158,
+12.032,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\rubycrystal01.m2": [
+0.555,
+0.149,
+0.914,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\shadowfangfog01.m2": [
+0.051,
+0.386,
+1.715,
+0.61
+],
+"world\\generic\\passivedoodads\\darkportals\\darkportal01.m2": [
+0.05,
+0.503,
+3.405,
+0.61
+],
+"world\\generic\\human\\passive doodads\\signposts\\humansignpostpointer05.m2": [
+1.317,
+0.562,
+0.091,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirepeninsula\\firewall\\hellfire_firewall_01.m2": [
+1.1,
+0.856,
+9.734,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\satyrfloorbraziers\\satyrfloorbrazierpurple01.m2": [
+0.519,
+-0.71,
+4.401,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\passivedoodads\\prisonfx\\tk_lightning_fx_helix_room.m2": [
+0.05,
+-0.05,
+5.368,
+0.61
+],
+"world\\expansion01\\doodads\\theexodar\\passivedoodads\\paladin_energy_fx\\exodar_paladin_shrine_energyfx.m2": [
+0.05,
+0.31,
+14.182,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurayellowtall.m2": [
+0.324,
+0.042,
+3.199,
+0.61
+],
+"world\\goober\\g_soundportal.m2": [
+21.436,
+-0.047,
+-0.126,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\waterfall\\stranglethornwaterfall01.m2": [
+0.252,
+-0.109,
+3.633,
+0.61
+],
+"world\\azeroth\\burningsteppes\\activedoodads\\darkironnode\\darkironnodeparticlerock.m2": [
+1.366,
+-0.05,
+0.147,
+0.61
+],
+"world\\goober\\g_fireworklauncher02.m2": [
+1.605,
+2.027,
+11.168,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\blastedlandslightningbolt01.m2": [
+0.05,
+-0.235,
+1.245,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\moonwelllight\\moonwelllight.m2": [
+0.146,
+-0.092,
+9.366,
+0.738
+],
+"world\\kalimdor\\onyxiaslair\\lavatraps\\onyziaslairlavasplash.m2": [
+0.46,
+0.147,
+7.864,
+0.619
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\spores\\maraudonspore01.m2": [
+0.129,
+0.722,
+4.177,
+0.61
+],
+"world\\environment\\doodad\\anquiraj\\sandwaterfall\\hive_sand.m2": [
+0.13,
+-0.05,
+1.71,
+0.61
+],
+"world\\kalimdor\\orgrimmar\\activedoodads\\arena\\org_arena_red_fence.m2": [
+0.095,
+-0.025,
+-0.151,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_orange.m2": [
+0.182,
+-0.352,
+-6.364,
+0.61
+],
+"world\\expansion01\\doodads\\shadowmoon\\smoke\\burningash02.m2": [
+1.477,
+1.653,
+1.319,
+0.61
+],
+"world\\goober\\g_warlockmeetingportal.m2": [
+0.393,
+-0.101,
+-0.792,
+3.144
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\mushrooms\\maraudonshroom01.m2": [
+0.134,
+-0.099,
+5.261,
+1.028
+],
+"world\\generic\\activedoodads\\mageportals\\stormwindmageportal01.m2": [
+0.06,
+-0.168,
+12.717,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirepeninsula\\darkportal\\hellfire_darkportal_fx.m2": [
+0.05,
+0.873,
+16.14,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonmushroomlight01.m2": [
+0.05,
+0.277,
+3.936,
+0.61
+],
+"world\\generic\\passivedoodads\\band\\final_stage.m2": [
+0.29,
+0.227,
+22.148,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\auragreentall.m2": [
+0.324,
+-0.008,
+3.032,
+0.61
+],
+"world\\nodxt\\generic\\passivedoodads\\volumetriclights\\darnassislightshaft.m2": [
+0.05,
+0.193,
+6.384,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\feralaslightyellow.m2": [
+0.062,
+0.713,
+7.359,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\satyrfloorbraziers\\satyrfloorbrazierblue01.m2": [
+0.472,
+0.036,
+4.491,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\corruptedplants\\maraudonmushroomlight02.m2": [
+0.209,
+0.153,
+42.538,
+0.61
+],
+"world\\expansion02\\doodads\\nexus\\nexus_blueenergywell.m2": [
+0.169,
+0.025,
+9.859,
+0.61
+],
+"world\\expansion01\\doodads\\theexodar\\passivedoodads\\sky_portal\\exodar_sky_portal.m2": [
+0.05,
+-0.109,
+5.018,
+0.61
+],
+"world\\expansion01\\doodads\\netherstorm\\crackeffects\\netherstormcracksmoke01.m2": [
+0.921,
+0.042,
+8.078,
+0.61
+],
+"spells\\instancenewportal_green_skull.m2": [
+0.234,
+-0.109,
+2.537,
+0.61
+],
+"spells\\creature_spellportallarge_red.m2": [
+0.184,
+-0.126,
+3.294,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\flyswarms.m2": [
+4.314,
+-0.336,
+-0.912,
+0.61
+],
+"world\\environment\\doodad\\anquiraj\\lightshaft\\hive_lightshaft01.m2": [
+0.05,
+-0.109,
+5.93,
+0.61
+],
+"world\\expansion01\\doodads\\coilfang\\passivedoodads\\lights\\coilfang_orb.m2": [
+0.929,
+0.056,
+0.114,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock05.m2": [
+0.187,
+0.117,
+5.041,
+1.796
+],
+"world\\expansion02\\doodads\\nexus\\nexus_library_mainfx.m2": [
+0.05,
+-0.621,
+17.703,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\fogbox.m2": [
+0.146,
+0.022,
+0.287,
+0.61
+],
+"spells\\creature_spellportallarge_lightred.m2": [
+0.159,
+0.117,
+4.223,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\warlockcircle\\warlockmountritualcircle01a.m2": [
+1.467,
+0.008,
+2.852,
+0.61
+],
+"world\\goober\\g_sporemushroom.m2": [
+0.83,
+-0.99,
+-15.436,
+-1.31
+],
+"world\\kalimdor\\orgrimmar\\activedoodads\\arena\\org_arena_yellow_fence.m2": [
+0.095,
+0.008,
+-0.159,
+0.61
+],
+"world\\expansion01\\doodads\\shattrath\\passivedoodads\\lighting\\ancient_d_braizer_blue_shortsmoke.m2": [
+0.39,
+1.647,
+1.609,
+0.61
+],
+"spells\\instancenewportal_purple.m2": [
+0.248,
+-0.059,
+2.451,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_castingcircle_01.m2": [
+0.171,
+-0.185,
+17.172,
+0.61
+],
+"world\\goober\\darkironkegshotgun.m2": [
+0.383,
+-5.043,
+0.243,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurabluetall.m2": [
+0.324,
+-0.034,
+3.778,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\diamondcrystal03.m2": [
+1.667,
+0.0,
+0.267,
+0.61
+],
+"world\\generic\\bloodelf\\passive doodads\\be_fencepost_001.m2": [
+0.791,
+0.008,
+0.766,
+0.61
+],
+"world\\expansion02\\doodads\\howlingfjord\\firefx\\burntstonetreesmoke_vfx.m2": [
+0.056,
+0.109,
+10.835,
+0.61
+],
+"world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_top_zero.m2": [
+0.183,
+-0.025,
+2.927,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\outlanddemonglow.m2": [
+5.481,
+6.764,
+219.101,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scarletonslaught\\scarleto_brazier_smoker.m2": [
+0.344,
+0.68,
+15.99,
+2.795
+],
+"world\\generic\\passivedoodads\\particleemitters\\aurapurpleverytall.m2": [
+0.184,
+-0.008,
+6.387,
+0.61
+],
+"world\\nodxt\\generic\\passivedoodads\\volumetriclights\\ld_lightshaft02.m2": [
+0.06,
+-0.117,
+10.438,
+0.61
+],
+"world\\generic\\passivedoodads\\tugofwar\\tugofwar_redspicegeyser.m2": [
+0.56,
+0.898,
+8.93,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock06.m2": [
+0.179,
+-0.915,
+4.646,
+0.781
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock02.m2": [
+0.179,
+0.049,
+3.627,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock03.m2": [
+0.129,
+0.646,
+1.933,
+0.508
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\rubycrystallarge01.m2": [
+0.31,
+-0.092,
+-0.256,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\mushrooms\\maraudonmushroomspikey02.m2": [
+0.066,
+0.696,
+17.136,
+0.61
+],
+"world\\generic\\human\\passive doodads\\smokestack\\smokestack.m2": [
+0.073,
+-1.309,
+17.23,
+0.61
+],
+"world\\generic\\activedoodads\\instanceportal\\instanceportal_purpledifficulty.m2": [
+0.249,
+-0.017,
+2.162,
+0.61
+],
+"world\\kalimdor\\mauradon\\passivedoodads\\crystals\\amethystcrystal06.m2": [
+0.238,
+-0.134,
+1.933,
+0.61
+],
+"world\\expansion01\\doodads\\shadowmoon\\rune\\shadowmoon_rune2.m2": [
+0.357,
+0.025,
+4.041,
+0.61
+]
+}

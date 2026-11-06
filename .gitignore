@@ -1,0 +1,16 @@
+DEVNOTES.md
+build-logs/
+cache/
+release/
+local/
+dist/
+claude_tools/
+scratch/
+luac.out
+# dev-only experiments and probes
+tools/experiments/
+tools/modeltest/
+tools/wotlk_garrison_admin_blankprobe/
+# built binaries (source is kept)
+tools/conncheck.exe
+tools/conncheck-linux

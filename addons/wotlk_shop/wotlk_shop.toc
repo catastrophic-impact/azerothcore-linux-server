@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: Shop
+## Notes: In-game shop paid with Darkmoon Faire Prize Tickets
+## Dependencies: AcoreLib
+## SavedVariables: WotlkShopDB
+## Version: 0.3
+Catalog.lua
+WotlkShop.lua

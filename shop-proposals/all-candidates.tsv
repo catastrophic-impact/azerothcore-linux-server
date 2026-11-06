@@ -1,0 +1,500 @@
+mount	33809	Amani War Bear	4	43688	drop		-1	0
+mount	12351	Arctic Wolf	4	16081	vendor	HORDE-only	690	0
+mount	47179	Argent Charger	4	66906	vendor	any	-1	0
+mount	45725	Argent Hippogryph	4	63844	vendor	both	-1	0
+mount	47180	Argent Warhorse	4	67466	vendor	any	-1	0
+mount	44690	Armored Blue Wind Rider	4	61230	vendor	any	690	1
+mount	44689	Armored Snowy Gryphon	4	61229	vendor	any	1101	2
+mount	32458	Ashes of Al'ar	4	40192	drop		-1	0
+mount	38576	Big Battle Bear	4	51412			-1	0
+mount	49282	Big Battle Bear	4	51412	drop		-1	0
+mount	43599	Big Blizzard Bear	3	483			32767	0
+mount	50250	Big Love Rocket	4	483	drop		-1	0
+mount	18243	Black Battlestrider	4	22719	vendor	ALLIANCE-only	1101	2
+mount	29465	Black Battlestrider	4	22719			1101	0
+mount	29221	Black Hawkstrider	3	35022	vendor	HORDE-only	690	0
+mount	21176	Black Qiraji Resonating Crystal	5	483	quest		-1	0
+mount	13328	Black Ram	4	17461	vendor	ALLIANCE-only	1101	0
+mount	46308	Black Skeletal Horse	3	64977	vendor	HORDE-only	690	0
+mount	2411	Black Stallion	3	470	vendor	ALLIANCE-only	1101	0
+mount	29466	Black War Kodo	4	22718			690	0
+mount	18247	Black War Kodo	4	22718	vendor	HORDE-only	690	1
+mount	18244	Black War Ram	4	22720	vendor	ALLIANCE-only	1101	2
+mount	29467	Black War Ram	4	22720			1101	0
+mount	18246	Black War Raptor	4	22721	vendor	HORDE-only	690	1
+mount	18241	Black War Steed	4	22717	vendor	ALLIANCE-only	1101	2
+mount	29468	Black War Steed Bridle	4	22717			1101	0
+mount	18242	Black War Tiger	4	22723	vendor	ALLIANCE-only	1101	2
+mount	18245	Black War Wolf	4	22724	vendor	HORDE-only	690	1
+mount	54069	Blazing Hippogryph	4	74856			-1	0
+mount	44843	Blue Dragonhawk Mount	4	61996	achieve		-1	2
+mount	29220	Blue Hawkstrider	3	35020	vendor	HORDE-only	690	0
+mount	8595	Blue Mechanostrider	3	10969	vendor	ALLIANCE-only	1101	0
+mount	21218	Blue Qiraji Resonating Crystal	3	25953	drop		-1	0
+mount	32319	Blue Riding Nether Ray	4	39803	vendor	any	-1	0
+mount	13332	Blue Skeletal Horse	3	17463	vendor	HORDE-only	690	0
+mount	46101	Blue Skeletal Warhorse	4	0			690	0
+mount	25475	Blue Windrider	3	32244	vendor	any	690	1
+mount	37827	Brewfest Kodo	3	49378			-1	8192
+mount	33976	Brewfest Ram	3	43899	vendor	both	-1	0
+mount	28481	Brown Elekk	3	34406	vendor	ALLIANCE-only	1101	0
+mount	5656	Brown Horse	3	458	vendor	ALLIANCE-only	1101	0
+mount	15290	Brown Kodo	3	18990	vendor	HORDE-only	690	0
+mount	5872	Brown Ram	3	6899	vendor	ALLIANCE-only	1101	0
+mount	13333	Brown Skeletal Horse	3	17464	vendor	HORDE-only	690	0
+mount	5668	Brown Wolf	3	6654	vendor	HORDE-only	690	0
+mount	43516	Brutal Nether Drake	4	58615	drop		-1	0
+mount	54811	Celestial Steed	4	483			32767	0
+mount	33999	Cenarion War Hippogryph	4	43927	vendor	any	-1	0
+mount	5655	Chestnut Mare	3	6648	vendor	ALLIANCE-only	1101	0
+mount	49098	Crusader's Black Warhorse	4	68188	achieve		690	1
+mount	49096	Crusader's White Warhorse	4	68187	achieve		1101	2
+mount	45593	Darkspear Raptor	4	63635	vendor	HORDE-only	690	0
+mount	45591	Darnassian Nightsaber	4	63637	vendor	ALLIANCE-only	1101	0
+mount	46708	Deadly Gladiator's Frost Wyrm	4	64927	drop		-1	0
+mount	13335	Deathcharger	3	17481	drop		-1	0
+mount	5665	Dire Wolf	3	6653	vendor	HORDE-only	690	0
+mount	25471	Ebon Gryphon	3	32239	vendor	any	1101	2
+mount	8588	Emerald Raptor	3	8395	vendor	HORDE-only	690	0
+mount	45590	Exodar Elekk	4	63639	vendor	ALLIANCE-only	1101	0
+mount	30480	Fiery Warhorse's Reins	4	36702	drop		-1	0
+mount	13325	Fluorescent Green Mechanostrider	3	17458			1101	0
+mount	33176	Flying Broom	3	42667	drop		-1	0
+mount	44554	Flying Carpet	3	61451			32767	0
+mount	34060	Flying Machine Control	3	44153			32767	0
+mount	45597	Forsaken Warhorse	4	63643	vendor	HORDE-only	690	0
+mount	13329	Frost Ram	4	17460	vendor	ALLIANCE-only	1101	0
+mount	12302	Frostsaber	4	16056	vendor	ALLIANCE-only	1101	0
+mount	19029	Frostwolf Howler	4	23509	vendor	HORDE-only	-1	1
+mount	54797	Frosty Flying Carpet	4	75596			-1	0
+mount	46171	Furious Gladiator's Frost Wyrm	4	65439	drop		-1	0
+mount	45589	Gnomeregan Mechanostrider	4	63638	vendor	ALLIANCE-only	1101	0
+mount	29744	Gray Elekk	3	35710	vendor	ALLIANCE-only	1101	0
+mount	15277	Gray Kodo	3	18989	vendor	HORDE-only	690	0
+mount	5864	Gray Ram	3	6777	vendor	ALLIANCE-only	1101	0
+mount	29745	Great Blue Elekk	4	35713	vendor	ALLIANCE-only	1101	0
+mount	37828	Great Brewfest Kodo	4	49379	drop		-1	0
+mount	18794	Great Brown Kodo	4	23249	quest,vendor	HORDE-only	690	0
+mount	28482	Great Elite Elekk	4	34407			2098253	8192
+mount	18795	Great Gray Kodo	4	23248	quest,vendor	HORDE-only	690	0
+mount	29746	Great Green Elekk	4	35712	vendor	ALLIANCE-only	1101	0
+mount	29747	Great Purple Elekk	4	35714	vendor	ALLIANCE-only	1101	0
+mount	46756	Great Red Elekk	4	65637	vendor	ALLIANCE-only	1101	6
+mount	46745	Great Red Elekk	4	65637	vendor	ALLIANCE-only	1101	4
+mount	18793	Great White Kodo	4	23247	quest,vendor	HORDE-only	690	0
+mount	15292	Green Kodo	4	18991	vendor	HORDE-only	690	0
+mount	13321	Green Mechanostrider	3	17453	vendor	ALLIANCE-only	1101	0
+mount	21323	Green Qiraji Resonating Crystal	3	26056	drop		-1	0
+mount	32314	Green Riding Nether Ray	4	39798	vendor	any	-1	0
+mount	13334	Green Skeletal Warhorse	4	17465	vendor	HORDE-only	690	0
+mount	25476	Green Windrider	3	32245	vendor	any	690	1
+mount	29469	Horn of the Black War Wolf	4	22724			690	0
+mount	46099	Horn of the Black Wolf	3	64658	vendor	HORDE-only	690	0
+mount	13327	Icy Blue Mechanostrider Mod A	4	17459	vendor	ALLIANCE-only	1101	0
+mount	50818	Invincible's Reins	4	483	drop		32767	0
+mount	45586	Ironforge Ram	4	63636	vendor	ALLIANCE-only	1101	0
+mount	13317	Ivory Raptor	4	17450	vendor	HORDE-only	690	0
+mount	44221	Loaned Gryphon Reins	1	64749			-1	2
+mount	44229	Loaned Wind Rider Reins	1	64762			-1	1
+mount	37011	Magic Broom	3	47977	drop		-1	0
+mount	49290	Magic Rooster Egg	4	65917			-1	0
+mount	46778	Magic Rooster Egg	4	65917			-1	0
+mount	44558	Magnificent Flying Carpet	4	61309			-1	0
+mount	41508	Mechano-hog	4	483			690	1
+mount	44413	Mekgineer's Chopper	4	483			1101	2
+mount	34092	Merciless Nether Drake	4	44744			-1	0
+mount	45693	Mimiron's Head	4	63796	drop		-1	0
+mount	8586	Mottled Red Raptor	4	16084	vendor	HORDE-only	690	0
+mount	12303	Nightsaber	4	16055	vendor	ALLIANCE-only	1101	0
+mount	27819	NPC Equip 27819	0	0			-1	0
+mount	27853	NPC Equip 27853	0	0			-1	0
+mount	38690	NPC Equip 38690	0	0			-1	0
+mount	43957	NPC Equip 43957	0	0			-1	0
+mount	43960	NPC Equip 43960	0	0			-1	0
+mount	43965	NPC Equip 43965	0	0			-1	0
+mount	44079	NPC Equip 44079	0	0			-1	0
+mount	44085	NPC Equip 44085	0	0			-1	0
+mount	44857	NPC Equip 44857	0	0			-1	0
+mount	44885	NPC Equip 44885	0	0			-1	0
+mount	47101	Ochre Skeletal Warhorse	4	66846	vendor	HORDE-only	690	0
+mount	45595	Orgrimmar Wolf	4	63640	vendor	HORDE-only	690	0
+mount	12354	Palomino	4	16082	vendor	ALLIANCE-only	1101	0
+mount	2414	Pinto	3	472	vendor	ALLIANCE-only	1101	0
+mount	40777	Polar Bear Harness	4	483			-1	8192
+mount	12325	Primal Leopard	3	16058			2098253	8192
+mount	29743	Purple Elekk	3	35711	vendor	ALLIANCE-only	1101	0
+mount	29222	Purple Hawkstrider	3	35018	vendor	HORDE-only	690	0
+mount	13323	Purple Mechanostrider	3	17455			2098253	8192
+mount	32316	Purple Riding Nether Ray	4	39801	vendor	any	-1	0
+mount	18791	Purple Skeletal Warhorse	4	23246	vendor	HORDE-only	690	0
+mount	46815	Quel'dorei Steed	4	66090	vendor	ALLIANCE-only	1101	2
+mount	13324	Red and Blue Mechanostrider	3	17456			2098253	8192
+mount	44842	Red Dragonhawk Mount	4	61997	achieve		-1	1
+mount	28927	Red Hawkstrider	3	34795	vendor	HORDE-only	690	0
+mount	8563	Red Mechanostrider	3	10873	vendor	ALLIANCE-only	1101	0
+mount	21321	Red Qiraji Resonating Crystal	3	26054	drop		-1	0
+mount	32317	Red Riding Nether Ray	4	39800	vendor	any	-1	0
+mount	13331	Red Skeletal Horse	3	17462	vendor	HORDE-only	690	0
+mount	18248	Red Skeletal Warhorse	4	22722	vendor	HORDE-only	690	1
+mount	29470	Red Skeletal Warhorse	4	22722			690	0
+mount	12330	Red Wolf	4	16080	vendor	HORDE-only	690	0
+mount	44178	Reins of the Albino Drake	4	60025	achieve		-1	0
+mount	44225	Reins of the Armored Brown Bear	4	60114	vendor	any	1101	2
+mount	44226	Reins of the Armored Brown Bear	4	60116	vendor	any	690	1
+mount	43952	Reins of the Azure Drake	4	59567	drop		-1	0
+mount	32858	Reins of the Azure Netherwing Drake	4	41514	quest,vendor	any	-1	0
+mount	43986	Reins of the Black Drake	4	59650	drop		-1	0
+mount	43964	Reins of the Black Polar Bear	4	59572			-1	8192
+mount	44164	Reins of the Black Proto-Drake	4	59976	achieve		-1	0
+mount	44223	Reins of the Black War Bear	4	60118	achieve		1101	2
+mount	44224	Reins of the Black War Bear	4	60119	achieve		690	1
+mount	35906	Reins of the Black War Elekk	4	48027	vendor	ALLIANCE-only	1101	0
+mount	44077	Reins of the Black War Mammoth	4	59788	vendor	HORDE-only	690	0
+mount	43956	Reins of the Black War Mammoth	4	59785	vendor	ALLIANCE-only	1101	0
+mount	29471	Reins of the Black War Tiger	4	22723			1101	0
+mount	51954	Reins of the Bloodbathed Frostbrood Vanquisher	4	72808	achieve		-1	0
+mount	43953	Reins of the Blue Drake	4	59568	drop		-1	0
+mount	44151	Reins of the Blue Proto-Drake	4	59996	drop		-1	0
+mount	43951	Reins of the Bronze Drake	4	59569	drop		-1	0
+mount	43963	Reins of the Brown Polar Bear	4	59573			-1	8192
+mount	32859	Reins of the Cobalt Netherwing Drake	4	41515	quest,vendor	any	-1	0
+mount	31829	Reins of the Cobalt Riding Talbuk	4	39315	vendor	HORDE-only	690	0
+mount	31830	Reins of the Cobalt Riding Talbuk	4	39315	vendor	ALLIANCE-only	1101	0
+mount	29227	Reins of the Cobalt War Talbuk	4	34896	vendor	ALLIANCE-only	1101	0
+mount	29102	Reins of the Cobalt War Talbuk	4	34896	vendor	HORDE-only	690	0
+mount	52200	Reins of the Crimson Deathcharger	4	483	quest		-1	0
+mount	28915	Reins of the Dark Riding Talbuk	4	39316	vendor	both	32767	0
+mount	29228	Reins of the Dark War Talbuk	4	34790	vendor	both	32767	0
+mount	44083	Reins of the Grand Black War Mammoth	4	61467	drop		690	1
+mount	43959	Reins of the Grand Black War Mammoth	4	61465	drop		1101	2
+mount	43961	Reins of the Grand Ice Mammoth	4	61470	vendor	any	1101	2
+mount	44086	Reins of the Grand Ice Mammoth	4	61469	vendor	any	690	1
+mount	44707	Reins of the Green Proto-Drake	4	61294	drop		-1	0
+mount	43958	Reins of the Ice Mammoth	4	59799	vendor	any	1101	2
+mount	44080	Reins of the Ice Mammoth	4	59797	vendor	any	690	1
+mount	51955	Reins of the Icebound Frostbrood Vanquisher	4	72807	achieve		-1	0
+mount	45801	Reins of the Ironbound Proto-Drake	4	63956	achieve		-1	0
+mount	32857	Reins of the Onyx Netherwing Drake	4	41513	quest,vendor	any	-1	0
+mount	49636	Reins of the Onyxian Drake	4	69395	drop		-1	0
+mount	44175	Reins of the Plagued Proto-Drake	4	60021	achieve		-1	0
+mount	32860	Reins of the Purple Netherwing Drake	4	41516	quest,vendor	any	-1	0
+mount	32768	Reins of the Raven Lord	4	41252	drop		-1	0
+mount	43955	Reins of the Red Drake	4	59570	vendor	any	-1	0
+mount	44160	Reins of the Red Proto-Drake	4	59961	achieve		-1	0
+mount	45802	Reins of the Rusted Proto-Drake	4	63963	achieve		-1	0
+mount	31831	Reins of the Silver Riding Talbuk	4	39317	vendor	HORDE-only	690	0
+mount	31832	Reins of the Silver Riding Talbuk	4	39317	vendor	ALLIANCE-only	1101	0
+mount	29229	Reins of the Silver War Talbuk	4	34898	vendor	ALLIANCE-only	1101	0
+mount	29104	Reins of the Silver War Talbuk	4	34898	vendor	HORDE-only	690	0
+mount	49283	Reins of the Spectral Tiger	3	42776	drop		-1	0
+mount	33224	Reins of the Spectral Tiger	3	42776			-1	0
+mount	49284	Reins of the Swift Spectral Tiger	4	42777	drop		2147483647	0
+mount	33225	Reins of the Swift Spectral Tiger	4	42777			2147483647	0
+mount	31833	Reins of the Tan Riding Talbuk	4	39318	vendor	HORDE-only	690	0
+mount	31834	Reins of the Tan Riding Talbuk	4	39318	vendor	ALLIANCE-only	1101	0
+mount	29105	Reins of the Tan War Talbuk	4	34899	vendor	HORDE-only	690	0
+mount	29230	Reins of the Tan War Talbuk	4	34899	vendor	ALLIANCE-only	1101	0
+mount	44168	Reins of the Time-Lost Proto-Drake	4	60002	drop		-1	0
+mount	44234	Reins of the Traveler's Tundra Mammoth	4	61447	vendor	any	690	1
+mount	44235	Reins of the Traveler's Tundra Mammoth	4	61425	vendor	any	1101	2
+mount	43954	Reins of the Twilight Drake	4	59571	drop		-1	0
+mount	32861	Reins of the Veridian Netherwing Drake	4	41517	quest,vendor	any	-1	0
+mount	32862	Reins of the Violet Netherwing Drake	4	41518	quest,vendor	any	-1	0
+mount	44177	Reins of the Violet Proto-Drake	4	60024	achieve		-1	0
+mount	43962	Reins of the White Polar Bear	4	54753	drop		-1	0
+mount	31835	Reins of the White Riding Talbuk	4	39319	vendor	HORDE-only	690	1
+mount	31836	Reins of the White Riding Talbuk	4	39319	vendor	ALLIANCE-only	1101	2
+mount	29103	Reins of the White War Talbuk	4	34897	vendor	HORDE-only	690	1
+mount	29231	Reins of the White War Talbuk	4	34897	vendor	ALLIANCE-only	1101	2
+mount	44231	Reins of the Wooly Mammoth	4	59793	vendor	any	690	1
+mount	44230	Reins of the Wooly Mammoth	4	59791	vendor	any	1101	2
+mount	47840	Relentless Gladiator's Frost Wyrm	4	67336	drop		-1	0
+mount	46109	Sea Turtle	3	64731	drop		-1	0
+mount	46813	Silver Covenant Hippogryph	4	66087	vendor	ALLIANCE-only	-1	2
+mount	32318	Silver Riding Nether Ray	4	39802	vendor	any	-1	0
+mount	45596	Silvermoon Hawkstrider	4	63642	vendor	HORDE-only	690	0
+mount	25472	Snowy Gryphon	3	32240	vendor	any	1101	2
+mount	8632	Spotted Frostsaber	3	10789	vendor	ALLIANCE-only	1101	0
+mount	19030	Stormpike Battle Charger	4	23510	vendor	ALLIANCE-only	-1	2
+mount	45125	Stormwind Steed	4	63232	vendor	ALLIANCE-only	1101	0
+mount	47100	Striped Dawnsaber	3	66847	vendor	ALLIANCE-only	1101	0
+mount	8631	Striped Frostsaber	3	8394	vendor	ALLIANCE-only	1101	0
+mount	8629	Striped Nightsaber	3	10793	vendor	ALLIANCE-only	1101	0
+mount	46814	Sunreaver Dragonhawk	4	66088	vendor	HORDE-only	-1	1
+mount	46816	Sunreaver Hawkstrider	4	66091	vendor	HORDE-only	690	1
+mount	49044	Swift Alliance Steed	4	68057	drop		1101	2
+mount	25473	Swift Blue Gryphon	4	32242	vendor	any	1101	2
+mount	18788	Swift Blue Raptor	4	23241	quest,vendor	HORDE-only	690	0
+mount	33977	Swift Brewfest Ram	4	43900	drop,vendor	both	-1	0
+mount	18786	Swift Brown Ram	4	23238	quest,vendor	ALLIANCE-only	1101	0
+mount	18777	Swift Brown Steed	4	23229	quest,vendor	ALLIANCE-only	1101	0
+mount	18796	Swift Brown Wolf	4	23250	quest,vendor	HORDE-only	690	0
+mount	46749	Swift Burgundy Wolf	4	65646	vendor	HORDE-only	690	4
+mount	46757	Swift Burgundy Wolf	4	65646			690	5
+mount	18768	Swift Dawnsaber	4	23220			2098253	8192
+mount	44557	Swift Ebonweave Carpet	4	60975			-1	0
+mount	33182	Swift Flying Broom	4	42668			-1	0
+mount	39303	Swift Flying Carpet	4	60969			-1	0
+mount	18766	Swift Frostsaber	4	23221	quest,vendor	ALLIANCE-only	1101	0
+mount	18787	Swift Gray Ram	4	23239	quest,vendor	ALLIANCE-only	1101	0
+mount	46752	Swift Gray Steed	4	65640	vendor	ALLIANCE-only	1101	4
+mount	46758	Swift Gray Steed	4	65640	vendor	ALLIANCE-only	1101	6
+mount	18798	Swift Gray Wolf	4	23252	quest,vendor	HORDE-only	690	0
+mount	25528	Swift Green Gryphon	4	32290	vendor	any	1101	2
+mount	29223	Swift Green Hawkstrider	4	35025	vendor	HORDE-only	690	0
+mount	18772	Swift Green Mechanostrider	4	23225	quest,vendor	ALLIANCE-only	1101	0
+mount	25531	Swift Green Windrider	4	32295	vendor	any	690	1
+mount	49046	Swift Horde Wolf	4	68056	drop		690	1
+mount	33184	Swift Magic Broom	4	42668			-1	0
+mount	18767	Swift Mistsaber	4	23219	quest,vendor	ALLIANCE-only	1101	0
+mount	44555	Swift Mooncloth Carpet	4	61442			-1	0
+mount	46744	Swift Moonsaber	4	65638	vendor	ALLIANCE-only	1101	4
+mount	46759	Swift Moonsaber	4	65638	vendor	ALLIANCE-only	1101	6
+mount	30609	Swift Nether Drake	4	37015			-1	0
+mount	18789	Swift Olive Raptor	4	23242	quest,vendor	HORDE-only	690	0
+mount	18790	Swift Orange Raptor	4	23243	quest,vendor	HORDE-only	690	0
+mount	18776	Swift Palomino	4	23227	quest,vendor	ALLIANCE-only	1101	0
+mount	28936	Swift Pink Hawkstrider	4	33660	vendor	HORDE-only	690	0
+mount	25529	Swift Purple Gryphon	4	32292	vendor	any	1101	2
+mount	29224	Swift Purple Hawkstrider	4	35027	vendor	HORDE-only	690	0
+mount	46743	Swift Purple Raptor	4	65644	vendor	HORDE-only	690	4
+mount	46760	Swift Purple Raptor	4	65644	vendor	HORDE-only	690	5
+mount	25533	Swift Purple Windrider	4	32297	vendor	any	690	1
+mount	19872	Swift Razzashi Raptor	4	24242	drop		-1	0
+mount	25527	Swift Red Gryphon	4	32289	vendor	any	1101	2
+mount	46761	Swift Red Hawkstrider	4	65639	vendor	HORDE-only	690	5
+mount	46751	Swift Red Hawkstrider	4	65639	vendor	HORDE-only	690	4
+mount	25477	Swift Red Windrider	4	32246	vendor	any	690	1
+mount	44556	Swift Spellfire Carpet	4	61446			-1	0
+mount	18902	Swift Stormsaber	4	23338	quest,vendor	ALLIANCE-only	1101	0
+mount	18797	Swift Timber Wolf	4	23251	quest,vendor	HORDE-only	690	0
+mount	46748	Swift Violet Ram	4	65643	vendor	ALLIANCE-only	1101	4
+mount	46762	Swift Violet Ram	4	65643	vendor	ALLIANCE-only	1101	6
+mount	34129	Swift Warstrider	4	35028	vendor	HORDE-only	690	0
+mount	35513	Swift White Hawkstrider	4	46628	drop		-1	0
+mount	18773	Swift White Mechanostrider	4	23223	quest,vendor	ALLIANCE-only	1101	0
+mount	18785	Swift White Ram	4	23240	quest,vendor	ALLIANCE-only	1101	0
+mount	18778	Swift White Steed	4	23228	quest,vendor	ALLIANCE-only	1101	0
+mount	18774	Swift Yellow Mechanostrider	4	23222	quest,vendor	ALLIANCE-only	1101	0
+mount	25532	Swift Yellow Windrider	4	32296	vendor	any	690	1
+mount	37719	Swift Zhevra	4	49322			-1	0
+mount	19902	Swift Zulian Tiger	4	24252	drop		-1	0
+mount	12326	Tawny Sabercat	3	16059			2098253	8192
+mount	25474	Tawny Windrider	3	32243	vendor	any	690	1
+mount	15293	Teal Kodo	4	18992	vendor	HORDE-only	690	0
+mount	37012	The Horseman's Reins	4	483	drop		32767	0
+mount	45592	Thunder Bluff Kodo	4	63641	vendor	HORDE-only	690	0
+mount	1132	Timber Wolf	3	580	vendor	HORDE-only	690	0
+mount	34061	Turbo-Charged Flying Machine Control	4	44151			32767	0
+mount	46763	Turbostrider	4	65642	vendor	ALLIANCE-only	1101	6
+mount	46747	Turbostrider	4	65642	vendor	ALLIANCE-only	1101	4
+mount	8591	Turquoise Raptor	3	10796	vendor	HORDE-only	690	0
+mount	13322	Unpainted Mechanostrider	3	17454	vendor	ALLIANCE-only	1101	0
+mount	37676	Vengeful Nether Drake	4	49193	drop		-1	0
+mount	8592	Violet Raptor	3	10799	vendor	HORDE-only	690	0
+mount	29472	Whistle of the Black War Raptor	4	22721			690	0
+mount	46102	Whistle of the Venomhide Ravasaur	4	64659	quest		690	1
+mount	46100	White Kodo	3	64657	vendor	HORDE-only	690	0
+mount	13326	White Mechanostrider Mod A	4	15779	vendor	ALLIANCE-only	1101	0
+mount	5873	White Ram	3	6898	vendor	ALLIANCE-only	1101	0
+mount	46764	White Skeletal Warhorse	4	65645	vendor	HORDE-only	690	5
+mount	46746	White Skeletal Warhorse	4	65645	vendor	HORDE-only	690	4
+mount	12353	White Stallion	4	16083	vendor	ALLIANCE-only	1101	0
+mount	40775	Winged Steed of the Ebon Blade	4	483	vendor	any	2147483647	0
+mount	13086	Winterspring Frostsaber	3	17229	vendor	ALLIANCE-only	1101	2
+mount	54068	Wooly White Rhino	4	74918			-1	0
+mount	50435	Wrathful Gladiator's Frost Wyrm	4	71810	drop		-1	0
+mount	49285	X-51 Nether-Rocket	3	46197	drop		-1	0
+mount	35225	X-51 Nether-Rocket	3	46197			-1	0
+mount	35226	X-51 Nether-Rocket X-TREME	4	46199			-1	0
+mount	49286	X-51 Nether-Rocket X-TREME	4	46199	drop		-1	0
+mount	54860	X-53 Touring Rocket	4	75973			-1	0
+mount	21324	Yellow Qiraji Resonating Crystal	3	26055	drop		-1	0
+pet	19450	A Jubling's Tiny Home	1	23811			-1	0
+pet	44972	Alarming Clockbot (NOT IN USE)	3	62514			-1	8192
+pet	44822	Albino Snake	1	10713	vendor	any	-1	0
+pet	44984	Ammen Vale Lashling	3	62562	vendor	ALLIANCE-only	-1	0
+pet	11023	Ancona Chicken	1	10685	vendor	any	-1	0
+pet	45022	Argent Gruntling	3	62746	quest		-1	1
+pet	44998	Argent Squire	3	62609	quest		-1	2
+pet	34535	Azure Whelpling	1	10696	drop		-1	0
+pet	44819	Baby Blizzard Bear	1	61855			-1	0
+pet	39148	Baby Coralshell Turtle	1	0			-1	8192
+pet	21168	Baby Shark	1	25849			-1	0
+pet	32588	Banana Charm	3	40549	drop		-1	0
+pet	10360	Black Kingsnake	1	10714	vendor	HORDE-only	-1	0
+pet	54436	Blue Clockwork Rocket Bot	3	75134	vendor	any	-1	0
+pet	29958	Blue Dragonhawk Hatchling	1	36031	vendor	any	-1	0
+pet	29901	Blue Moth Egg	1	35907	vendor	ALLIANCE-only	-1	0
+pet	20371	Blue Murloc Egg	1	24696	quest		-1	0
+pet	29364	Brown Rabbit Crate	1	35239	quest,vendor	any	-1	0
+pet	10361	Brown Snake	1	10716	vendor	HORDE-only	-1	0
+pet	46398	Calico Cat	1	65358	vendor	any	-1	0
+pet	29960	Captured Firefly	1	36034	drop		-1	0
+pet	23083	Captured Flame	1	28871	quest,vendor	both	-1	0
+pet	8491	Cat Carrier (Black Tabby)	1	10675	drop		-1	0
+pet	8485	Cat Carrier (Bombay)	1	10673	vendor	ALLIANCE-only	-1	0
+pet	8486	Cat Carrier (Cornish Rex)	1	10674	vendor	ALLIANCE-only	-1	0
+pet	11903	Cat Carrier (Corrupted Kitten)	1	15648			-1	8192
+pet	8487	Cat Carrier (Orange Tabby)	1	10676	vendor	ALLIANCE-only	-1	0
+pet	8490	Cat Carrier (Siamese)	1	10677	drop,vendor	any	-1	0
+pet	8488	Cat Carrier (Silver Tabby)	1	10678	vendor	ALLIANCE-only	-1	0
+pet	8489	Cat Carrier (White Kitten)	1	10679	vendor	ALLIANCE-only	-1	0
+pet	54810	Celestial Dragon	3	75613			-1	8192
+pet	11110	Chicken Egg	1	13548	drop		-1	0
+pet	35350	Chuck's Bucket	3	46426	drop		-1	0
+pet	34425	Clockwork Rocket Bot	3	54187			-1	0
+pet	39898	Cobra Hatchling	1	61351	drop		-1	0
+pet	10393	Cockroach	1	10688	vendor	any	-1	0
+pet	37298	Competitor's Souvenir	3	48408			-1	0
+pet	49646	Core Hound Pup	3	69452			-1	0
+pet	10392	Crimson Snake	1	10717	vendor	any	-1	0
+pet	46545	Curious Oracle Hatchling	3	65381	drop		-1	0
+pet	46544	Curious Wolvar Pup	3	65382	drop		-1	0
+pet	10822	Dark Whelpling	1	10695	drop		-1	0
+pet	48112	Darting Hatchling	1	67413	drop		-1	0
+pet	48114	Deviate Hatchling	1	67414	drop		-1	0
+pet	13584	Diablo Stone	1	17708	quest		-1	0
+pet	20769	Disgusting Oozeling	1	25162	drop		-1	0
+pet	34493	Dragon Kite	4	45127	drop		-1	0
+pet	44970	Dun Morogh Cub	3	62508	vendor	ALLIANCE-only	-1	0
+pet	44973	Durotar Scorpion	3	62513	vendor	HORDE-only	-1	0
+pet	44974	Elwynn Lamb	3	62516	vendor	ALLIANCE-only	-1	0
+pet	44982	Enchanted Broom	3	62564	vendor	HORDE-only	-1	0
+pet	48527	Enchanted Onyx	3	67527			-1	8192
+pet	32465	Fortune Coin	3	40319			-1	139264
+pet	32498	Fortune Coin	3	40405			-1	0
+pet	39286	Frosty's Collar	3	52615			-1	0
+pet	39973	Ghostly Skull	3	53316	vendor	any	-1	0
+pet	43698	Giant Sewer Rat	3	59250	drop		-1	0
+pet	35227	Goblin Weather Machine - Prototype 01-B	4	46203			-1	0
+pet	8500	Great Horned Owl	1	10707	vendor	ALLIANCE-only	-1	0
+pet	19055	Green Dragon Orb	1	23531			-1	0
+pet	49662	Gryphon Hatchling	3	69535			-1	0
+pet	48116	Gundrak Hatchling	1	67415	drop		-1	0
+pet	8501	Hawk Owl	1	10706	vendor	ALLIANCE-only	-1	0
+pet	46802	Heavy Murloc Egg	3	66030			-1	0
+pet	23713	Hippogryph Hatchling	1	30156			-1	0
+pet	44738	Kirin Tor Familiar	3	61472			-1	0
+pet	48118	Leaping Hatchling	1	67416	drop		-1	0
+pet	15996	Lifelike Mechanical Toad	1	19772			-1	0
+pet	49693	Lil' Phylactery	3	69677			-1	0
+pet	11826	Lil' Smoky	1	15049			-1	0
+pet	54847	Lil' XT	3	75906			-1	0
+pet	44841	Little Fawn's Salt Lick	3	483	achieve		-1	0
+pet	46831	Macabre Marionette	1	66175	quest		-1	0
+pet	27445	Magical Crawdad Box	1	33050			-1	0
+pet	29363	Mana Wyrmling	1	35156	vendor	any	-1	0
+pet	10398	Mechanical Chicken	1	12243	quest		-1	0
+pet	4401	Mechanical Squirrel Box	1	4055			-1	0
+pet	45002	Mechanopeep	3	62674	vendor	ALLIANCE-only	-1	0
+pet	56806	Mini Thor	3	78381			-1	0
+pet	33993	Mojo	3	43918			-1	0
+pet	33818	Muckbreath's Bucket	3	43698	drop		-1	0
+pet	44980	Mulgore Hatchling	3	62542	vendor	HORDE-only	-1	0
+pet	45180	Murkimus' Little Spear	3	63318			-1	0
+pet	54857	Murkimus' Little Spear	3	75936			-1	8192
+pet	46892	Murkimus' Tiny Spear	3	63318			-1	8192
+pet	38628	Nether Ray Fry	3	51716	vendor	any	-1	0
+pet	25535	Netherwhelp's Collar	3	32298			-1	0
+pet	28326	NPC Equip 28326	0	0			-1	0
+pet	33817	NPC Equip 33817	0	0			-1	0
+pet	34495	NPC Equip 34495	0	0			-1	0
+pet	38234	NPC Equip 38234	0	0			-1	0
+pet	38299	NPC Equip 38299	0	0			-1	0
+pet	38612	NPC Equip 38612	0	0			-1	0
+pet	40355	NPC Equip 40355	0	0			-1	0
+pet	44823	NPC Equip 44823	0	0			-1	0
+pet	44824	NPC Equip 44824	0	0			-1	0
+pet	44825	NPC Equip 44825	0	0			-1	0
+pet	44826	NPC Equip 44826	0	0			-1	0
+pet	44827	NPC Equip 44827	0	0			-1	0
+pet	44828	NPC Equip 44828	0	0			-1	0
+pet	44829	NPC Equip 44829	0	0			-1	0
+pet	46890	NPC Equip 46890	0	0			-1	0
+pet	46891	NPC Equip 46891	0	0			-1	0
+pet	46894	NPC Equip 46894	0	0			-1	0
+pet	49659	NPC Equip 49659	0	0			-1	0
+pet	49660	NPC Equip 49660	0	0			-1	0
+pet	49664	NPC Equip 49664	0	0			-1	0
+pet	49911	NPC Equip 49911	0	0			-1	0
+pet	50151	NPC Equip 50151	0	0			-1	0
+pet	44723	Nurtured Penguin Egg	3	483	vendor	any	-1	0
+pet	48120	Obsidian Hatchling	1	67417	vendor	any	-1	0
+pet	49362	Onyxian Whelpling	1	69002			-1	0
+pet	20651	Orange Murloc Egg	1	25018	quest		-1	139264
+pet	13583	Panda Collar	1	17707	quest		-1	0
+pet	49665	Pandaren Monk	3	69541			-1	0
+pet	8496	Parrot Cage (Cockatiel)	1	10680	vendor	any	-1	0
+pet	8492	Parrot Cage (Green Wing Macaw)	1	10683	drop		-1	0
+pet	8494	Parrot Cage (Hyacinth Macaw)	1	10682	drop		-1	0
+pet	8495	Parrot Cage (Senegal)	1	10684	vendor	any	-1	0
+pet	43517	Penguin Egg	3	61357			-1	0
+pet	49912	Perky Pug	3	70613	achieve		-1	0
+pet	11825	Pet Bombling	1	15048			-1	0
+pet	13342	Pet Fish	1	0			-1	0
+pet	13343	Pet Stone	1	0			-1	0
+pet	35504	Phoenix Hatchling	3	46599	drop		-1	0
+pet	23007	Piglet's Collar	1	28739	quest		-1	0
+pet	22114	Pink Murloc Egg	1	27241	quest		-1	0
+pet	46707	Pint-Sized Pink Pachyderm	3	44369	vendor	both	-1	0
+pet	22781	Polar Bear Collar	1	28505	quest		-1	0
+pet	10394	Prairie Dog Whistle	1	10709	vendor	HORDE-only	-1	0
+pet	44721	Proto-Drake Whelp	1	61350	drop		-1	0
+pet	8497	Rabbit Crate (Snowshoe)	1	10711	vendor	ALLIANCE-only	-1	0
+pet	23015	Rat Cage	1	28740	quest		-1	0
+pet	48122	Ravasaur Hatchling	1	67418	drop		-1	0
+pet	48124	Razormaw Hatchling	1	67419	drop		-1	0
+pet	48126	Razzashi Hatchling	1	67420	drop		-1	0
+pet	19054	Red Dragon Orb	1	23530			-1	0
+pet	29956	Red Dragonhawk Hatchling	1	36028	vendor	HORDE-only	-1	0
+pet	29902	Red Moth Egg	1	35909	vendor	any	-1	0
+pet	44820	Red Ribbon Pet Leash	1	61856	vendor	any	-1	0
+pet	40653	Reeking Pet Carrier	3	483	achieve		-1	0
+pet	34492	Rocket Chicken	3	45125			-1	0
+pet	37460	Rope Pet Leash	1	48722	vendor	any	-1	0
+pet	45606	Sen'jin Fetish	3	63712	vendor	HORDE-only	-1	0
+pet	46821	Shimmering Wyrmling	3	66096	vendor	HORDE-only	-1	1
+pet	46820	Shimmering Wyrmling	3	66096	vendor	ALLIANCE-only	-1	2
+pet	29957	Silver Dragonhawk Hatchling	1	36029	vendor	HORDE-only	-1	0
+pet	34519	Silver Pig Coin	3	45175			-1	0
+pet	22200	Silver Shafted Arrow	1	27662	quest,vendor	any	-1	0
+pet	33154	Sinister Squashling	3	42609	drop		-1	0
+pet	35349	Snarly's Bucket	3	46425	drop		-1	0
+pet	38050	Soul-Trader Beacon	3	49964	drop		-1	0
+pet	49343	Spectral Tiger Cub	3	68810			-1	0
+pet	11474	Sprite Darter Egg	1	15067	drop		-1	0
+pet	44983	Strand Crawler	3	62561	drop		-1	0
+pet	44965	Teldrassil Sproutling	3	483	vendor	ALLIANCE-only	-1	0
+pet	39896	Tickbird Hatchling	1	61348	drop		-1	0
+pet	8499	Tiny Crimson Whelpling	1	10697	drop		-1	0
+pet	8498	Tiny Emerald Whelpling	1	10698	drop		-1	0
+pet	34478	Tiny Sporebat	3	45082	vendor	any	-1	0
+pet	44971	Tirisfal Batling	3	62510	vendor	HORDE-only	-1	0
+pet	33816	Toothy's Bucket	3	43697	drop		-1	0
+pet	50446	Toxic Wasteling	3	71840	drop		-1	0
+pet	21277	Tranquil Mechanical Yeti	1	26010			-1	0
+pet	11026	Tree Frog Box	1	10704	vendor	any	-1	0
+pet	22235	Truesilver Shafted Arrow	1	27570	drop,vendor	any	-1	0
+pet	23002	Turtle Box	1	28738	quest		-1	0
+pet	18963	Turtle Egg (Albino)	1	0			-1	0
+pet	18965	Turtle Egg (Hawksbill)	1	0			-1	0
+pet	18966	Turtle Egg (Leatherback)	1	0			-1	0
+pet	18964	Turtle Egg (Loggerhead)	1	23429			-1	0
+pet	18967	Turtle Egg (Olive)	1	0			-1	0
+pet	49287	Tuskarr Kite	4	68767			-1	0
+pet	39656	Tyrael's Hilt	3	53082			-1	0
+pet	19462	Unhatched Jubling Egg	1	23851	quest		-1	0
+pet	41133	Unhatched Mr. Chilly	3	55068			-1	0
+pet	38658	Vampiric Batling	3	51851	drop		-1	0
+pet	46767	Warbot Ignition Key	3	65682			-1	0
+pet	29904	White Moth Egg	1	35911	vendor	ALLIANCE-only	-1	0
+pet	22780	White Murloc Egg	1	28487	quest		-1	139264
+pet	39899	White Tickbird Hatchling	1	61349	drop		-1	0
+pet	23712	White Tiger Cub	1	30152			-1	0
+pet	49663	Wind Rider Cub	3	69536			-1	0
+pet	32233	Wolpertinger's Tankard	3	39709	quest,vendor	both	-1	0
+pet	11027	Wood Frog Box	1	10703	vendor	any	-1	0
+pet	45942	XS-001 Constructor Bot	1	64351			-1	0
+pet	29903	Yellow Moth Egg	1	35910	vendor	ALLIANCE-only	-1	0
+pet	13582	Zergling Leash	1	17709	quest		-1	0

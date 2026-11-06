@@ -1,0 +1,79 @@
+include	kind	item	name	quality	teachSpell	sources	vendorFactions	allowableRace
+Y	mount	38576	Big Battle Bear	4	51412			-1
+Y	mount	43599	Big Blizzard Bear	3	483			32767
+Y	mount	29465	Black Battlestrider	4	22719			1101
+Y	mount	29466	Black War Kodo	4	22718			690
+Y	mount	29467	Black War Ram	4	22720			1101
+Y	mount	29468	Black War Steed Bridle	4	22717			1101
+Y	mount	54069	Blazing Hippogryph	4	74856			-1
+Y	mount	46101	Blue Skeletal Warhorse	4	0			690
+Y	mount	37827	Brewfest Kodo	3	49378			-1
+Y	mount	54811	Celestial Steed	4	483			32767
+Y	mount	13325	Fluorescent Green Mechanostrider	3	17458			1101
+Y	mount	28482	Great Elite Elekk	4	34407			2098253
+Y	mount	29469	Horn of the Black War Wolf	4	22724			690
+Y	mount	49290	Magic Rooster Egg	4	65917			-1
+Y	mount	46778	Magic Rooster Egg	4	65917			-1
+Y	mount	40777	Polar Bear Harness	4	483			-1
+Y	mount	12325	Primal Leopard	3	16058			2098253
+Y	mount	13323	Purple Mechanostrider	3	17455			2098253
+Y	mount	13324	Red and Blue Mechanostrider	3	17456			2098253
+Y	mount	29470	Red Skeletal Warhorse	4	22722			690
+Y	mount	43964	Reins of the Black Polar Bear	4	59572			-1
+Y	mount	29471	Reins of the Black War Tiger	4	22723			1101
+Y	mount	43963	Reins of the Brown Polar Bear	4	59573			-1
+Y	mount	33224	Reins of the Spectral Tiger	3	42776			-1
+Y	mount	33225	Reins of the Swift Spectral Tiger	4	42777			2147483647
+Y	mount	46757	Swift Burgundy Wolf	4	65646			690
+Y	mount	18768	Swift Dawnsaber	4	23220			2098253
+Y	mount	33182	Swift Flying Broom	4	42668			-1
+Y	mount	39303	Swift Flying Carpet	4	60969			-1
+Y	mount	33184	Swift Magic Broom	4	42668			-1
+Y	mount	30609	Swift Nether Drake	4	37015			-1
+Y	mount	37719	Swift Zhevra	4	49322			-1
+Y	mount	12326	Tawny Sabercat	3	16059			2098253
+Y	mount	29472	Whistle of the Black War Raptor	4	22721			690
+Y	mount	54068	Wooly White Rhino	4	74918			-1
+Y	mount	35225	X-51 Nether-Rocket	3	46197			-1
+Y	mount	35226	X-51 Nether-Rocket X-TREME	4	46199			-1
+Y	mount	54860	X-53 Touring Rocket	4	75973			-1
+Y	pet	44819	Baby Blizzard Bear	1	61855			-1
+Y	pet	39148	Baby Coralshell Turtle	1	0			-1
+Y	pet	21168	Baby Shark	1	25849			-1
+Y	pet	11903	Cat Carrier (Corrupted Kitten)	1	15648			-1
+Y	pet	54810	Celestial Dragon	3	75613			-1
+Y	pet	34425	Clockwork Rocket Bot	3	54187			-1
+Y	pet	37298	Competitor's Souvenir	3	48408			-1
+Y	pet	49646	Core Hound Pup	3	69452			-1
+Y	pet	48527	Enchanted Onyx	3	67527			-1
+Y	pet	32465	Fortune Coin	3	40319			-1
+Y	pet	35227	Goblin Weather Machine - Prototype 01-B	4	46203			-1
+Y	pet	19055	Green Dragon Orb	1	23531			-1
+Y	pet	49662	Gryphon Hatchling	3	69535			-1
+Y	pet	46802	Heavy Murloc Egg	3	66030			-1
+Y	pet	23713	Hippogryph Hatchling	1	30156			-1
+Y	pet	49693	Lil' Phylactery	3	69677			-1
+Y	pet	54847	Lil' XT	3	75906			-1
+Y	pet	56806	Mini Thor	3	78381			-1
+Y	pet	45180	Murkimus' Little Spear	3	63318			-1
+Y	pet	54857	Murkimus' Little Spear	3	75936			-1
+Y	pet	46892	Murkimus' Tiny Spear	3	63318			-1
+Y	pet	49362	Onyxian Whelpling	1	69002			-1
+Y	pet	49665	Pandaren Monk	3	69541			-1
+Y	pet	43517	Penguin Egg	3	61357			-1
+Y	pet	13342	Pet Fish	1	0			-1
+Y	pet	13343	Pet Stone	1	0			-1
+Y	pet	19054	Red Dragon Orb	1	23530			-1
+Y	pet	34492	Rocket Chicken	3	45125			-1
+Y	pet	34519	Silver Pig Coin	3	45175			-1
+Y	pet	49343	Spectral Tiger Cub	3	68810			-1
+Y	pet	18963	Turtle Egg (Albino)	1	0			-1
+Y	pet	18965	Turtle Egg (Hawksbill)	1	0			-1
+Y	pet	18966	Turtle Egg (Leatherback)	1	0			-1
+Y	pet	18964	Turtle Egg (Loggerhead)	1	23429			-1
+Y	pet	18967	Turtle Egg (Olive)	1	0			-1
+Y	pet	49287	Tuskarr Kite	4	68767			-1
+Y	pet	41133	Unhatched Mr. Chilly	3	55068			-1
+Y	pet	46767	Warbot Ignition Key	3	65682			-1
+Y	pet	23712	White Tiger Cub	1	30152			-1
+Y	pet	49663	Wind Rider Cub	3	69536			-1

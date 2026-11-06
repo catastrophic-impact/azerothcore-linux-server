@@ -1,0 +1,15 @@
+diff --git a/src/common/Configuration/Config.cpp b/src/common/Configuration/Config.cpp
+index 79c58af..d533747 100644
+--- a/src/common/Configuration/Config.cpp
++++ b/src/common/Configuration/Config.cpp
+@@ -708,7 +708,9 @@ std::string const ConfigMgr::GetConfigPath()
+ #if AC_PLATFORM == AC_PLATFORM_WINDOWS
+     return "configs/";
+ #else
+-    return std::string(_CONF_DIR) + "/";
++    // portable patch: module confs live next to the -c config file, not a compiled-in path
++    auto pos = _filename.find_last_of("/\\");
++    return pos == std::string::npos ? std::string("./") : _filename.substr(0, pos + 1);
+ #endif
+ }
+ 

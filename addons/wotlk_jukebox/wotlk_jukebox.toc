@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: Jukebox
+## Notes: Play any of the game's music. Repeat, shuffle, favorites. In a garrison, the Jukebox NPC plays a song for everyone inside. /jukebox
+## Dependencies: AcoreLib
+## SavedVariables: WotlkJukeboxDB
+## Version: 0.1
+Tracks.lua
+Jukebox.lua

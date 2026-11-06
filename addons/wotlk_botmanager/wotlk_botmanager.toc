@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: Bot Manager
+## Notes: Summon and manage companion bots (Playerbots) for your group. /bots
+## Dependencies: AcoreLib
+## SavedVariables: WotlkBotsDB
+## Version: 0.2
+BotManager.lua

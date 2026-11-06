@@ -1,0 +1,25 @@
+AzerothCore Linux portable server - changes (tl;dr)
+
+v0.1 (first working version)
+- Portable AzerothCore build (Playerbot fork) + modules: playerbots, autobalance, ale (Lua), ah-bot-plus, dungeon-clear, rndbot-buffs, gm-realmfirst-fix, transmog, individual-progression. Modules pinned in modules.lock.
+- Everything runs from one folder: bundled MySQL 8.4, client data, libs. Config lives next to the binaries.
+- Core patch: module configs are read from the -c config folder (patches/portable-config-path.patch); bundled OpenSSL legacy provider (needed by the client protocol).
+- Admin TUI (acore-admin, Go): start/safe stop, live logs, DB backup/restore (full / player data, auto safety snapshot, import old dumps), realmlist editor, module toggle + rebuild with undo.
+- One-script installer (install.sh): builds in an Ubuntu 22.04 distrobox, assembles the portable folder, first-boot DB setup, accounts from a local file.
+- Config overrides (config-overrides/) re-applied to stock configs on every install/rebuild.
+- Lua (ALE) scripts: addon<->server messaging layer, Darkmoon ticket rewards from all instance bosses, shop server, creature-cache priming for 3D previews, Bot Manager.
+- Addons: AcoreLib (messaging), wotlk_shop (Forgotten Pets/Mounts, Toys, free Services; 3D previews), wotlk_botmanager (companion bots, smart Fill Group).
+- Shop catalog generated from the database + client data (reachable-source analysis finds items that cannot be obtained anymore).
+
+v0.2
+- Single-file installer: tools/package-installer.sh builds dist/acore-install.sh (self-extracting; downloads cached next to it). Installer can pause so you can edit module settings before the first boot (--no-configure to skip).
+- Owner settings file (lua_scripts/acore_settings.lua): shop currency (item or gold) and prices, dungeon reward item (or off), free hearthstone after dungeons, dungeon teleporter NPC, garrisons on/off. Never overwritten by the installer.
+- Dungeon teleporter NPC (generic "Chromie", no quests): all dungeons/raids, destinations checked against the game's own exit data; Naxxramas Wrath + Classic 40.
+- Garrisons (housing, Northshire Abbey proof of concept): portal, own phase, placeable trainers / auctioneer / banker / guild vault / mailbox, Menagerie (roaming pets), Jukebox NPC; visitors via group; scripts never leave orphan spawns.
+- Jukebox addon: ~1000 game tracks with real lengths, favorites, shuffle, repeat; in a garrison the NPC plays music for everyone inside.
+- Admin TUI: open module settings folder, build client addon patch archive (zip/tar.gz), custom SQL applied on every start, confs are kept across rebuilds.
+- Custom database content lives in custom-sql/ (applied by the TUI on every start), not in core update folders.
+- Garrison admin: "Show Removed" / "Show Unsorted" checkboxes (off by default). Players never see Removed or Unsorted items; anything of theirs still placed in those categories is deleted at login.
+- Garrison: placed objects that vanish after their open/close animation (self-closing doors) are respawned after the animation; delay comes from the door's own data.
+- Admin TUI: quit asks for confirmation and safely stops the servers first; new Accounts tab (add / delete / GM level / password); "Reset to fresh install" (Server tab, key R) restores the install-time master snapshot (backups/fresh).
+- Installer: asks which optional components to install (Garrison + Jukebox, Shop, Bot Manager, Timewalking; all on by default; --no-<name> flags, --yes for no questions), an optional server name, and player accounts; creates the master snapshot before any accounts exist.

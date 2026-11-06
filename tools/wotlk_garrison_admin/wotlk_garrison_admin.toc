@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: Garrison Admin
+## Notes: ADMIN ONLY (not shipped to players). /garrison admin : fit previews, rotate, recategorise, flag for removal.
+## Dependencies: wotlk_garrison
+## Version: 0.1
+## SavedVariables: WotlkGarrisonAdmin
+FixList.lua
+AutoFit.lua
+Admin.lua

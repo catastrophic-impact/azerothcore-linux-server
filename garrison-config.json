@@ -1,0 +1,514 @@
+{
+ "_comment": "Garrison placeable catalog. kind = stored key (do not rename once players placed it). Run tools/gen_garrison_catalog.py (needs MySQL up + data/dbc) to regenerate scripts/garrison_catalog.lua and addons/wotlk_garrison/Catalog.lua.",
+ "tabs": {
+  "npcs": [
+   "Class Trainers",
+   "Finance",
+   "Profession Trainers",
+   "Services",
+   "Supplies"
+  ],
+  "objects": [
+   "Seating",
+   "Lighting & Fire",
+   "Crates & Storage",
+   "Crafting Stations",
+   "Furniture",
+   "Banners & Tents",
+   "Statues & Monuments",
+   "Nature",
+   "Holiday",
+   "Weapons & Armor",
+   "Misc"
+  ]
+ },
+ "items": [
+  {
+   "kind": "warrior",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 5480,
+   "icon": "INV_Sword_27"
+  },
+  {
+   "kind": "paladin",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 5492,
+   "icon": "Spell_Holy_SealOfMight"
+  },
+  {
+   "kind": "hunter",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 5515,
+   "icon": "INV_Weapon_Bow_07"
+  },
+  {
+   "kind": "rogue",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 917,
+   "icon": "INV_ThrowingKnife_04"
+  },
+  {
+   "kind": "priest",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 377,
+   "icon": "Spell_Holy_PowerWordShield"
+  },
+  {
+   "kind": "shaman",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 17204,
+   "icon": "Spell_Nature_BloodLust"
+  },
+  {
+   "kind": "mage",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 5497,
+   "icon": "INV_Staff_13"
+  },
+  {
+   "kind": "warlock",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 461,
+   "icon": "Spell_Shadow_Metamorphosis"
+  },
+  {
+   "kind": "druid",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 5506,
+   "icon": "Ability_Druid_Maul"
+  },
+  {
+   "kind": "deathknight",
+   "tab": "npcs",
+   "category": "Class Trainers",
+   "t": "c",
+   "entry": 29196,
+   "name": "Death Knight Trainer",
+   "icon": "Spell_Deathknight_ClassIcon"
+  },
+  {
+   "kind": "auction",
+   "tab": "npcs",
+   "category": "Finance",
+   "t": "c",
+   "entry": 8719,
+   "name": "Auctioneer",
+   "icon": "INV_Misc_Coin_01"
+  },
+  {
+   "kind": "bank",
+   "tab": "npcs",
+   "category": "Finance",
+   "t": "c",
+   "entry": 29530,
+   "name": "Banker",
+   "icon": "INV_Misc_Coin_02"
+  },
+  {
+   "kind": "npc28703",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28703,
+   "icon": "Trade_Alchemy"
+  },
+  {
+   "kind": "npc28694",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28694,
+   "icon": "Trade_BlackSmithing"
+  },
+  {
+   "kind": "npc28693",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28693,
+   "icon": "Trade_Engraving"
+  },
+  {
+   "kind": "npc28697",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28697,
+   "icon": "Trade_Engineering"
+  },
+  {
+   "kind": "npc28704",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28704,
+   "icon": "Trade_Herbalism"
+  },
+  {
+   "kind": "npc28702",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28702,
+   "icon": "INV_Inscription_Tradeskill01"
+  },
+  {
+   "kind": "npc28701",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28701,
+   "icon": "INV_Misc_Gem_01"
+  },
+  {
+   "kind": "npc28700",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28700,
+   "icon": "Trade_LeatherWorking"
+  },
+  {
+   "kind": "npc28698",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28698,
+   "icon": "Trade_Mining"
+  },
+  {
+   "kind": "npc28696",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28696,
+   "icon": "INV_Misc_Pelt_Wolf_01"
+  },
+  {
+   "kind": "npc28699",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28699,
+   "icon": "Trade_Tailoring"
+  },
+  {
+   "kind": "npc28706",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28706,
+   "icon": "Spell_Holy_SealOfSacrifice"
+  },
+  {
+   "kind": "npc29631",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29631,
+   "icon": "INV_Misc_Food_15"
+  },
+  {
+   "kind": "npc28742",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 28742,
+   "icon": "Trade_Fishing"
+  },
+  {
+   "kind": "npc29505",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29505,
+   "icon": "INV_Sword_01"
+  },
+  {
+   "kind": "npc29506",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29506,
+   "icon": "INV_Chest_Plate06"
+  },
+  {
+   "kind": "npc29507",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29507,
+   "icon": "INV_Misc_Pelt_Bear_03"
+  },
+  {
+   "kind": "npc29508",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29508,
+   "icon": "INV_Misc_MonsterScales_05"
+  },
+  {
+   "kind": "npc29509",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29509,
+   "icon": "INV_Misc_Pelt_Wolf_01"
+  },
+  {
+   "kind": "npc29513",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29513,
+   "icon": "INV_Misc_Bomb_08"
+  },
+  {
+   "kind": "npc29514",
+   "tab": "npcs",
+   "category": "Profession Trainers",
+   "t": "c",
+   "entry": 29514,
+   "icon": "INV_Gizmo_01"
+  },
+  {
+   "kind": "menagerie",
+   "tab": "npcs",
+   "category": "Services",
+   "t": "c",
+   "entry": 900003,
+   "icon": "INV_Box_PetCarrier_01"
+  },
+  {
+   "kind": "jukebox",
+   "tab": "npcs",
+   "category": "Services",
+   "t": "c",
+   "entry": 900004,
+   "icon": "INV_Misc_Note_01"
+  },
+  {
+   "kind": "transmog",
+   "tab": "npcs",
+   "category": "Services",
+   "t": "c",
+   "entry": 190010,
+   "icon": "INV_Chest_Cloth_17"
+  },
+  {
+   "kind": "guildvault",
+   "tab": "objects",
+   "category": "Crates & Storage",
+   "t": "g",
+   "entry": 187290,
+   "name": "Guild Vault"
+  },
+  {
+   "kind": "mailbox",
+   "tab": "objects",
+   "category": "Crates & Storage",
+   "t": "g",
+   "entry": 186230,
+   "name": "Mailbox"
+  },
+  {
+   "kind": "teleporter",
+   "tab": "npcs",
+   "category": "Services",
+   "t": "c",
+   "entry": 900001,
+   "name": "Dungeon Teleporter",
+   "icon": "Spell_Arcane_PortalDalaran"
+  },
+  {
+   "kind": "gryphonroost",
+   "tab": "objects",
+   "category": "Misc",
+   "t": "g",
+   "entry": 182254,
+   "name": "Gryphon Roost",
+   "multi": true
+  },
+  {
+   "kind": "supply_general",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 1285,
+   "name": "General Goods & Bags (Thurman)",
+   "icon": "INV_Misc_Bag_10"
+  },
+  {
+   "kind": "supply_trade",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 1286,
+   "name": "Trade Supplies (Edna)",
+   "icon": "INV_Misc_Gear_02"
+  },
+  {
+   "kind": "supply_outland_food",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 19572,
+   "name": "Food & Drink: Outland",
+   "icon": "INV_Drink_05"
+  },
+  {
+   "kind": "supply_outland_ammo",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 19574,
+   "name": "Ammo: Outland",
+   "icon": "INV_Misc_Food_15"
+  },
+  {
+   "kind": "supply_northrend_food",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 32478,
+   "name": "Food & Drink: Northrend",
+   "icon": "INV_Misc_Food_55"
+  },
+  {
+   "kind": "supply_northrend_ammo",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 31025,
+   "name": "Ammo: Northrend",
+   "icon": "INV_Misc_Food_15"
+  },
+  {
+   "kind": "supply_northrend_trade",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 32477,
+   "name": "General & Trade: Northrend",
+   "icon": "INV_Misc_Gear_01"
+  },
+  {
+   "kind": "supply_drinks",
+   "tab": "npcs",
+   "category": "Supplies",
+   "t": "c",
+   "entry": 2366,
+   "name": "Drinks: Levels 25 & 45 (Kelly)",
+   "icon": "INV_Drink_05"
+  },
+  {
+   "kind": "chair_wood",
+   "tab": "objects",
+   "category": "Seating",
+   "t": "g",
+   "entry": 2413,
+   "name": "Wooden Chair",
+   "multi": true
+  },
+  {
+   "kind": "chair_high",
+   "tab": "objects",
+   "category": "Seating",
+   "t": "g",
+   "entry": 2489,
+   "name": "High Back Chair",
+   "multi": true
+  },
+  {
+   "kind": "bench_wood",
+   "tab": "objects",
+   "category": "Seating",
+   "t": "g",
+   "entry": 24538,
+   "name": "Wooden Bench",
+   "multi": true
+  },
+  {
+   "kind": "campfire",
+   "tab": "objects",
+   "category": "Lighting & Fire",
+   "t": "g",
+   "entry": 1927,
+   "name": "Campfire",
+   "multi": true
+  },
+  {
+   "kind": "bonfire",
+   "tab": "objects",
+   "category": "Lighting & Fire",
+   "t": "g",
+   "entry": 50910,
+   "name": "Bonfire",
+   "multi": true
+  },
+  {
+   "kind": "barrel_powder",
+   "tab": "objects",
+   "category": "Crates & Storage",
+   "t": "g",
+   "entry": 1670,
+   "name": "Barrel of Powder",
+   "multi": true
+  },
+  {
+   "kind": "bucket",
+   "tab": "objects",
+   "category": "Crates & Storage",
+   "t": "g",
+   "entry": 2696,
+   "name": "Bucket",
+   "multi": true
+  },
+  {
+   "kind": "forge",
+   "tab": "objects",
+   "category": "Crafting Stations",
+   "t": "g",
+   "entry": 1743,
+   "name": "Forge",
+   "multi": true
+  },
+  {
+   "kind": "anvil",
+   "tab": "objects",
+   "category": "Crafting Stations",
+   "t": "g",
+   "entry": 1744,
+   "name": "Anvil",
+   "multi": true
+  },
+  {
+   "kind": "cauldron",
+   "tab": "objects",
+   "category": "Crafting Stations",
+   "t": "g",
+   "entry": 19522,
+   "name": "Cauldron",
+   "multi": true
+  }
+ ]
+}

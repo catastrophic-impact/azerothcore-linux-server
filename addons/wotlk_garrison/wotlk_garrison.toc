@@ -1,0 +1,13 @@
+## Interface: 30300
+## Title: Garrison
+## Notes: Place NPCs and objects in your garrison. /garrison
+## Dependencies: AcoreLib
+## Version: 0.4
+## SavedVariables: WotlkGarrisonDB
+Catalog.lua
+Core.lua
+Preview.lua
+Placed.lua
+PlaceMode.lua
+List.lua
+Frame.lua

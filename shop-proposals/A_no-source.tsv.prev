@@ -1,0 +1,126 @@
+include	kind	item	name	quality	teachSpell	sources	vendorFactions	allowableRace	note
+Y	mount	33809	Amani War Bear	4	43688			-1	only-UNREACHABLE-sources
+Y	mount	38576	Big Battle Bear	4	51412			-1	
+Y	mount	49282	Big Battle Bear	4	51412			-1	only-UNREACHABLE-sources
+N	mount	50250	Big Love Rocket	4	71342			-1	holiday (obtainable during the event)
+Y	mount	29465	Black Battlestrider	4	22719			1101	
+Y	mount	29466	Black War Kodo	4	22718			690	
+Y	mount	29467	Black War Ram	4	22720			1101	
+Y	mount	29468	Black War Steed Bridle	4	22717			1101	
+Y	mount	54069	Blazing Hippogryph	4	74856			-1	
+N	mount	37827	Brewfest Kodo	3	49378			-1	holiday (obtainable during the event)
+Y	mount	54811	Celestial Steed	4	75614			32767	
+Y	mount	13325	Fluorescent Green Mechanostrider	3	17458			1101	
+N	mount	33176	Flying Broom	3	42667			-1	holiday (obtainable during the event)
+Y	mount	12327	Golden Sabercat	3	16060			2098253	
+N	mount	37828	Great Brewfest Kodo	4	49379			-1	holiday (obtainable during the event)
+Y	mount	28482	Great Elite Elekk	4	34407			2098253	
+Y	mount	29469	Horn of the Black War Wolf	4	22724			690	
+N	mount	37011	Magic Broom	3	47977			-1	holiday (obtainable during the event)
+Y	mount	46778	Magic Rooster Egg	4	65917			-1	
+Y	mount	49290	Magic Rooster Egg	4	65917			-1	
+Y	mount	34092	Merciless Nether Drake	4	44744			-1	only-UNREACHABLE-sources
+Y	mount	40777	Polar Bear Harness	4	54753			-1	
+Y	mount	12325	Primal Leopard	3	16058			2098253	
+Y	mount	13323	Purple Mechanostrider	3	17455			2098253	
+Y	mount	13324	Red and Blue Mechanostrider	3	17456			2098253	
+Y	mount	29470	Red Skeletal Warhorse	4	22722			690	
+Y	mount	43952	Reins of the Azure Drake	4	59567			-1	only-UNREACHABLE-sources
+Y	mount	43964	Reins of the Black Polar Bear	4	59572			-1	
+Y	mount	43956	Reins of the Black War Mammoth	4	59785			1101	only-UNREACHABLE-sources
+Y	mount	44077	Reins of the Black War Mammoth	4	59788			690	only-UNREACHABLE-sources
+Y	mount	29471	Reins of the Black War Tiger	4	22723			1101	
+Y	mount	43963	Reins of the Brown Polar Bear	4	59573			-1	
+Y	mount	44707	Reins of the Green Proto-Drake	4	61294			-1	only-UNREACHABLE-sources
+Y	mount	33224	Reins of the Spectral Tiger	3	42776			-1	
+Y	mount	49283	Reins of the Spectral Tiger	3	42776			-1	only-UNREACHABLE-sources
+Y	mount	33225	Reins of the Swift Spectral Tiger	4	42777			2147483647	
+Y	mount	49284	Reins of the Swift Spectral Tiger	4	42777			2147483647	only-UNREACHABLE-sources
+Y	mount	43962	Reins of the White Polar Bear	4	54753			-1	only-UNREACHABLE-sources
+Y	mount	23720	Riding Turtle	1	30174			32767	only-UNREACHABLE-sources
+Y	mount	46109	Sea Turtle	3	64731			-1	only-UNREACHABLE-sources
+Y	mount	49044	Swift Alliance Steed	4	68057			1101	only-UNREACHABLE-sources
+Y	mount	46757	Swift Burgundy Wolf	4	65646			690	
+Y	mount	18768	Swift Dawnsaber	4	23220			2098253	
+N	mount	33182	Swift Flying Broom	4	42668			-1	holiday (obtainable during the event)
+Y	mount	49046	Swift Horde Wolf	4	68056			690	only-UNREACHABLE-sources
+N	mount	33184	Swift Magic Broom	4	42668			-1	holiday (obtainable during the event)
+N	mount	44555	Swift Mooncloth Carpet	4	61442			-1	craftable (profession)
+Y	mount	30609	Swift Nether Drake	4	37015			-1	
+N	mount	44556	Swift Spellfire Carpet	4	61446			-1	craftable (profession)
+Y	mount	37719	Swift Zhevra	4	49322			-1	
+Y	mount	12326	Tawny Sabercat	3	16059			2098253	
+N	mount	37012	The Horseman's Reins	4	48025			32767	holiday (obtainable during the event)
+Y	mount	29472	Whistle of the Black War Raptor	4	22721			690	
+Y	mount	54068	Wooly White Rhino	4	74918			-1	
+Y	mount	35225	X-51 Nether-Rocket	3	46197			-1	
+Y	mount	49285	X-51 Nether-Rocket	3	46197			-1	only-UNREACHABLE-sources
+Y	mount	35226	X-51 Nether-Rocket X-TREME	4	46199			-1	
+Y	mount	49286	X-51 Nether-Rocket X-TREME	4	46199			-1	only-UNREACHABLE-sources
+Y	mount	54860	X-53 Touring Rocket	4	75973			-1	
+Y	pet	19450	A Jubling's Tiny Home	1	23811			-1	
+Y	pet	21168	Baby Shark	1	25849			-1	
+Y	pet	32588	Banana Charm	3	40549			-1	only-UNREACHABLE-sources
+Y	pet	20371	Blue Murloc Egg	1	24696			-1	only-UNREACHABLE-sources
+Y	pet	11903	Cat Carrier (Corrupted Kitten)	1	15648			-1	
+Y	pet	54810	Celestial Dragon	3	75613			-1	
+Y	pet	11110	Chicken Egg	1	13548			-1	only-UNREACHABLE-sources
+Y	pet	35350	Chuck's Bucket	3	46426			-1	only-UNREACHABLE-sources
+Y	pet	34425	Clockwork Rocket Bot	3	54187			-1	
+Y	pet	39898	Cobra Hatchling	1	61351			-1	only-UNREACHABLE-sources
+Y	pet	37298	Competitor's Souvenir	3	48408			-1	
+Y	pet	49646	Core Hound Pup	3	69452			-1	
+Y	pet	13584	Diablo Stone	1	17708			-1	only-UNREACHABLE-sources
+Y	pet	34493	Dragon Kite	4	45127			-1	only-UNREACHABLE-sources
+Y	pet	48527	Enchanted Onyx	3	67527			-1	
+Y	pet	32465	Fortune Coin	3	40319			-1	
+Y	pet	32498	Fortune Coin	3	40405			-1	
+Y	pet	39286	Frosty's Collar	3	52615			-1	
+Y	pet	43698	Giant Sewer Rat	3	59250			-1	only-UNREACHABLE-sources
+Y	pet	37297	Gold Medallion	3	48406			-1	
+Y	pet	34518	Golden Pig Coin	3	45174			-1	
+Y	pet	19055	Green Dragon Orb	1	23531			-1	
+Y	pet	49662	Gryphon Hatchling	3	69535			-1	
+Y	pet	46802	Heavy Murloc Egg	3	66030			-1	
+Y	pet	23713	Hippogryph Hatchling	1	30156			-1	
+Y	pet	44738	Kirin Tor Familiar	3	61472			-1	
+Y	pet	49693	Lil' Phylactery	3	69677			-1	
+Y	pet	54847	Lil' XT	3	75906			-1	
+Y	pet	27445	Magical Crawdad Box	1	33050			-1	
+Y	pet	56806	Mini Thor	3	78381			-1	
+Y	pet	33993	Mojo	3	43918			-1	
+Y	pet	33818	Muckbreath's Bucket	3	43698			-1	only-UNREACHABLE-sources
+Y	pet	45180	Murkimus' Little Spear	3	63318			-1	
+Y	pet	54857	Murkimus' Little Spear	3	75936			-1	
+Y	pet	46892	Murkimus' Tiny Spear	3	63318			-1	
+Y	pet	25535	Netherwhelp's Collar	3	32298			-1	
+Y	pet	49362	Onyxian Whelpling	1	69002			-1	
+Y	pet	20651	Orange Murloc Egg	1	25018			-1	only-UNREACHABLE-sources
+Y	pet	13583	Panda Collar	1	17707			-1	only-UNREACHABLE-sources
+Y	pet	49665	Pandaren Monk	3	69541			-1	
+Y	pet	43517	Penguin Egg	3	61357			-1	
+Y	pet	22114	Pink Murloc Egg	1	27241			-1	only-UNREACHABLE-sources
+Y	pet	22781	Polar Bear Collar	1	28505			-1	only-UNREACHABLE-sources
+Y	pet	44721	Proto-Drake Whelp	1	61350			-1	only-UNREACHABLE-sources
+Y	pet	19054	Red Dragon Orb	1	23530			-1	
+Y	pet	34492	Rocket Chicken	3	45125			-1	
+Y	pet	34519	Silver Pig Coin	3	45175			-1	
+N	pet	33154	Sinister Squashling	3	42609			-1	holiday (obtainable during the event)
+Y	pet	35349	Snarly's Bucket	3	46425			-1	only-UNREACHABLE-sources
+Y	pet	38050	Soul-Trader Beacon	3	49964			-1	only-UNREACHABLE-sources
+Y	pet	49343	Spectral Tiger Cub	3	68810			-1	
+Y	pet	44983	Strand Crawler	3	62561			-1	only-UNREACHABLE-sources
+Y	pet	39896	Tickbird Hatchling	1	61348			-1	only-UNREACHABLE-sources
+Y	pet	33816	Toothy's Bucket	3	43697			-1	only-UNREACHABLE-sources
+Y	pet	50446	Toxic Wasteling	3	71840			-1	only-UNREACHABLE-sources
+Y	pet	18964	Turtle Egg (Loggerhead)	1	23429			-1	
+Y	pet	49287	Tuskarr Kite	4	68767			-1	
+Y	pet	39656	Tyrael's Hilt	3	53082			-1	
+Y	pet	41133	Unhatched Mr. Chilly	3	55068			-1	
+Y	pet	46767	Warbot Ignition Key	3	65682			-1	
+Y	pet	22780	White Murloc Egg	1	28487			-1	only-UNREACHABLE-sources
+Y	pet	39899	White Tickbird Hatchling	1	61349			-1	only-UNREACHABLE-sources
+Y	pet	23712	White Tiger Cub	1	30152			-1	
+Y	pet	49663	Wind Rider Cub	3	69536			-1	
+Y	pet	45942	XS-001 Constructor Bot	1	64351			-1	
+Y	pet	13582	Zergling Leash	1	17709			-1	only-UNREACHABLE-sources
