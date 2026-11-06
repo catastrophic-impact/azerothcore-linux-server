@@ -16,6 +16,7 @@ esac; }
 comp_files() { case "$1" in
   garrison)    echo "script scripts/garrison.lua"; echo "script scripts/garrison_catalog.lua"; echo "script scripts/garrison_anims.lua"
                for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts; do echo "sql custom-sql/$f.sql"; done
+               echo "sql custom-sql/001_chromie_teleporter_npc.sql"   # the garrison catalog lists the Dungeon Teleporter NPC (900001); without this row placing it fails
                echo "addon addons/wotlk_garrison"; echo "addon tools/wotlk_garrison_admin";;
   jukebox)     echo "addon addons/wotlk_jukebox";;
   shop)        echo "script scripts/shop_server.lua"; echo "script scripts/shop_catalog.lua"; echo "script scripts/shop_prime.lua"; echo "addon addons/wotlk_shop";;
