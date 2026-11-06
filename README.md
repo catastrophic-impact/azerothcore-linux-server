@@ -62,6 +62,40 @@ You need an AzerothCore server with [mod-ale](https://github.com/azerothcore/mod
 
 Settings live in `scripts/acore_settings.lua`.
 
+## Get the newest addons (client side)
+
+The addons are updated often. You can take the latest version straight from this repo at any time, without reinstalling the server:
+
+1. **Download:** on GitHub press **Code → Download ZIP** and unzip it (or `git clone` / `git pull` if you use git).
+2. **Copy** the folders you want from the `addons/` folder into your WoW client's `Interface/AddOns` folder:
+   - `AcoreLib` (always needed)
+   - `wotlk_garrison`, `wotlk_jukebox`, `wotlk_shop`, `wotlk_botmanager` (only the ones your server uses)
+   - `tools/wotlk_garrison_admin` is the garrison admin tool, for GM accounts only
+3. **Load them:** after updating an addon, type `/reload` in game. After adding a new addon or an addon whose `.toc` changed, log out fully and back in. At the character screen, check **AddOns** and make sure they are enabled.
+
+## Updating without rebuilding the server
+
+You never need to rebuild or reinstall to get newer addons. Update the **client addons** (above) and the matching **server scripts**, because the two talk to each other and should stay on the same version.
+
+Download the repo, then in your server folder:
+
+1. Copy the scripts for the pieces you use from the repo's `scripts/` into the server's `lua_scripts/` folder:
+
+   | Piece | Scripts |
+   |---|---|
+   | Always | `acore_msg.lua` |
+   | Garrison (and Jukebox) | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` |
+   | Shop | `shop_server.lua`, `shop_catalog.lua`, `shop_prime.lua` |
+   | Bot Manager | `bot_manager.lua` |
+   | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
+
+   **Do not overwrite `acore_settings.lua`**: it holds your own settings. Check the repo's version for new options and add them by hand.
+2. If there are new files in `custom-sql/`, copy them to the server's `custom-sql/` folder. The TUI applies them on every start (they are safe to re-run).
+3. Restart the servers from the TUI (Server tab: `x` to stop, then `s`). For small changes to the non-garrison scripts, `reload ale` in the world console (`:`) is enough, but after a garrison update restart.
+4. Update the client addons (copy, then `/reload` or relog).
+
+Tip: take a backup first (TUI Backups tab, `b`).
+
 ## Layout
 
 `scripts/` server-side ALE Lua · `addons/` client addons · `custom-sql/` database content · `tui/` admin TUI (Go) · `tools/` generators and installer parts · `config-overrides/` server tuning · `patches/` core patches · `modules.lock` pinned versions.
