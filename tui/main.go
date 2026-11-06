@@ -285,6 +285,39 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 		if s == "p" {
 			return m, m.startOp("building client patch archive", func() (string, error) { return buildClientPatch() })
 		}
+		if s == "l" {
+			if !m.st.MySQL {
+				m.setFlash("start MySQL first (Server tab) to save the address", true)
+				return m, nil
+			}
+			m.realm[0].SetValue("127.0.0.1")
+			m.realm[1].SetValue("127.0.0.1")
+			return m, m.startOp("saving realmlist", func() (string, error) {
+				msg, err := saveRealm("127.0.0.1", "127.0.0.1")
+				return msg + " - localhost: only this computer can connect", err
+			})
+		}
+		if s == "d" {
+			ips := detectLAN()
+			if len(ips) == 0 {
+				m.setFlash("no LAN address found (is this machine on a network?)", true)
+				return m, nil
+			}
+			if !m.st.MySQL {
+				m.setFlash("start MySQL first (Server tab) to save the address", true)
+				return m, nil
+			}
+			m.realm[1].SetValue(ips[0])
+			extra := ""
+			if len(ips) > 1 {
+				extra = " (other addresses found: " + strings.Join(ips[1:], ", ") + ")"
+			}
+			a := strings.TrimSpace(m.realm[0].Value())
+			return m, m.startOp("saving realmlist", func() (string, error) {
+				msg, err := saveRealm(a, ips[0])
+				return msg + ": LAN address " + ips[0] + extra, err
+			})
+		}
 		if s == "e" || s == "enter" {
 			m.rfoc = 0
 			m.realm[0].Focus()
@@ -359,19 +392,24 @@ func (m model) configKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			m.setFlash("start MySQL first", true)
 			return m, nil
 		}
-		return m, m.startOp("saving realmlist", func() (string, error) {
-			for _, x := range []string{a, l} {
-				if x == "" || strings.ContainsAny(x, "'\";` ") {
-					return "", fmt.Errorf("invalid address %q", x)
-				}
-			}
-			_, err := sql(fmt.Sprintf("update acore_auth.realmlist set address='%s', localaddress='%s' where id=1", a, l))
-			return "realmlist saved (no restart needed)", err
-		})
+		return m, m.startOp("saving realmlist", func() (string, error) { return saveRealm(a, l) })
 	}
 	var c tea.Cmd
 	m.realm[m.rfoc], c = m.realm[m.rfoc].Update(k)
 	return m, c
+}
+
+func saveRealm(a, l string) (string, error) {
+	if a == "" {
+		a = l // no public address set yet: use the LAN one so the realm is reachable at all
+	}
+	for _, x := range []string{a, l} {
+		if x == "" || strings.ContainsAny(x, "'\";` ") {
+			return "", fmt.Errorf("invalid address %q", x)
+		}
+	}
+	_, err := sql(fmt.Sprintf("update acore_auth.realmlist set address='%s', localaddress='%s' where id=1", a, l))
+	return "realmlist saved (no restart needed)", err
 }
 
 func (m model) backupKey(s string) (tea.Model, tea.Cmd) {
@@ -563,7 +601,7 @@ func (m model) viewConfig() string {
 	b.WriteString("  Realmlist (what the client connects to; ports 3724 + 8085 must be forwarded for internet play)\n\n")
 	b.WriteString("  Public address : " + m.realm[0].View() + "\n")
 	b.WriteString("  LAN address    : " + m.realm[1].View() + "\n\n")
-	b.WriteString(cDim.Render("  [e] edit   [tab] switch field   [enter] save   [esc] cancel") + "\n\n")
+	b.WriteString(cDim.Render("  [l] localhost (127.0.0.1) only   [d] detect + save LAN address   [e] edit   [tab] switch field   [enter] save   [esc] cancel") + "\n\n")
 	b.WriteString("  Client addons/patch: [p] build archive (zip + tar.gz in client-patch/) to unpack into any WoW client folder\n")
 	b.WriteString(cDim.Render("  Owner settings (shop currency/prices, dungeon rewards, teleporter NPC): lua_scripts/acore_settings.lua  (apply: console 'reload ale')") + "\n")
 	if !m.st.MySQL {

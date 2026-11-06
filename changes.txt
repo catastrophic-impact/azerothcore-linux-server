@@ -23,3 +23,4 @@ v0.2
 - Garrison: placed objects that vanish after their open/close animation (self-closing doors) are respawned after the animation; delay comes from the door's own data.
 - Admin TUI: quit asks for confirmation and safely stops the servers first; new Accounts tab (add / delete / GM level / password); "Reset to fresh install" (Server tab, key R) restores the install-time master snapshot (backups/fresh).
 - Installer: asks which optional components to install (Garrison + Jukebox, Shop, Bot Manager, Timewalking; all on by default; --no-<name> flags, --yes for no questions), an optional server name, and player accounts; creates the master snapshot before any accounts exist.
+- Admin TUI (Config tab): [d] detects this machine's LAN address and saves it to the realmlist (local only, no internet lookup); [l] sets localhost (127.0.0.1).
