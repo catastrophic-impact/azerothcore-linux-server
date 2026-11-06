@@ -48,7 +48,7 @@ local function Apply()   -- push the admin's decisions into the live catalog, so
         e.name = DB.names[e.kind] or e.defname
         e.defcat = e.defcat or e.cat   -- the category the catalog was generated with
         e.cat = DB.categories[e.kind] or e.defcat
-        e.hidden = (e.cat == "Removed" or e.cat == "Unsorted") or nil
+        e.hidden = (e.hid == 1 or e.cat == "Removed" or e.cat == "Unsorted") or nil   -- hid == 1: the server does not know this item yet (until the next import + generate), so players cannot place it
         e.baseprice = e.baseprice or e.price or 0   -- the price the catalog was generated with
         e.price = DB.prices.items[e.kind] or DB.prices.cats[e.cat] or e.baseprice   -- category Removed = the review shelf: players never see it
         local f = e.model and e.model ~= "" and DB.fit[Norm(e.model)]

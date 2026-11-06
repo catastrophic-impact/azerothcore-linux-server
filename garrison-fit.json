@@ -93,7 +93,7 @@
 1.101,
 0.02,
 0.345,
-0.943
+2.581
 ],
 "world\\azeroth\\redridge\\passivedoodads\\rowboat\\rowboat01.m2": [
 0.348,
@@ -201,7 +201,8 @@
 "world\\generic\\passivedoodads\\furniture\\containers\\sack01.m2": [
 1.266,
 -0.02,
-0.025
+0.025,
+0.61
 ],
 "world\\azeroth\\duskwood\\passivedoodads\\coffin\\coffin.m2": [
 1.05,
@@ -243,7 +244,8 @@
 "world\\expansion02\\doodads\\generic\\scourge\\sc_wagon_02_broken.m2": [
 0.283,
 0.147,
-0.671
+0.671,
+0.499
 ],
 "world\\generic\\passivedoodads\\summerfestival\\summerfest_crate.m2": [
 1.225,
@@ -287,7 +289,8 @@
 "world\\generic\\passivedoodads\\tugofwar\\tugofwar_reddustbag01.m2": [
 1.101,
 -0.01,
-0.033
+0.033,
+0.61
 ],
 "world\\environment\\doodad\\carnival\\haybail01.m2": [
 0.65,
@@ -335,7 +338,7 @@
 0.143,
 0.056,
 -0.241,
-0.61
+1.361
 ],
 "world\\goober\\g_water_buckets_02.m2": [
 1.473,
@@ -1121,7 +1124,7 @@
 0.35,
 -0.046,
 0.269,
-0.61
+0.192
 ],
 "world\\generic\\darkirondwarf\\passive doodads\\kegs\\darkironkegbroken01.m2": [
 0.292,
@@ -1163,7 +1166,8 @@
 "world\\generic\\gnome\\passive doodads\\buckets\\gnomebucket01.m2": [
 1.101,
 0.048,
-0.047
+0.047,
+1.173
 ],
 "world\\generic\\gnome\\passive doodads\\buckets\\gnomebucket02.m2": [
 1.177,
@@ -1402,9 +1406,10 @@
 0.078
 ],
 "world\\generic\\human\\passive doodads\\scrolls\\scrollmap.m2": [
-1.033,
--0.006,
--0.054
+1.664,
+-0.009,
+0.025,
+0.61
 ],
 "world\\generic\\human\\passive doodads\\meat\\bloodymeat02.m2": [
 1.101,
@@ -2127,8 +2132,8 @@
 ],
 "world\\expansion02\\doodads\\scholazar\\hatchwindow.m2": [
 1.25,
--0.001,
--0.003,
+-0.11,
+0.307,
 0.61
 ],
 "world\\generic\\passivedoodads\\testball\\testball.m2": [
@@ -2373,7 +2378,7 @@
 0.539,
 -0.016,
 1.148,
-0.61
+1.446
 ],
 "world\\expansion02\\doodads\\rubysanctum\\reddragonshrine_tree04_burned_anim.m2": [
 0.191,
@@ -2518,7 +2523,7 @@
 0.961,
 -1.896,
 0.424,
-0.61
+0.03
 ],
 "world\\generic\\activedoodads\\instanceportal\\summon_ritual.m2": [
 0.187,
@@ -3334,7 +3339,7 @@
 0.398,
 0.133,
 0.562,
-1.054
+2.368
 ],
 "world\\expansion01\\doodads\\generic\\draenei\\holo\\dr_draenei_holorunes03.m2": [
 0.518,
@@ -4106,7 +4111,8 @@
 "world\\generic\\human\\passive doodads\\gryphonroost\\gryphonroost01.m2": [
 0.239,
 -0.028,
-2.085
+2.085,
+0.491
 ],
 "world\\azeroth\\burningsteppes\\passivedoodads\\bonfire\\orcbonfire.m2": [
 0.239,
@@ -4959,8 +4965,8 @@
 ],
 "world\\expansion01\\doodads\\ghostlands\\moonstone\\ghostlands_moonstone.m2": [
 0.063,
-0.111,
-4.632,
+-0.023,
+4.8,
 0.61
 ],
 "world\\generic\\human\\passive doodads\\armor\\armorbreastplatetrim.m2": [
@@ -5173,7 +5179,8 @@
 "world\\generic\\goblin\\passivedoodads\\goblintntwagon\\goblinwagontnt_01.m2": [
 0.239,
 -0.163,
-2.508
+2.508,
+2.598
 ],
 "world\\generic\\orc\\passive doodads\\bowls\\bowlwood02.m2": [
 3.6,
@@ -5218,7 +5225,8 @@
 "world\\generic\\orc\\passive doodads\\wagons\\orcwagon02.m2": [
 0.149,
 -0.708,
-3.866
+3.866,
+0.815
 ],
 "world\\expansion02\\doodads\\generic\\forsaken\\fk_plaguewagon_empty.m2": [
 0.164,
@@ -5454,13 +5462,13 @@
 0.063,
 -0.04,
 5.118,
-0.61
+-0.934
 ],
 "world\\expansion02\\doodads\\generic\\scourge\\sc_stairs.m2": [
 0.123,
 -0.125,
 6.54,
-0.61
+0.866
 ],
 "world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_gem_purple_01.m2": [
 1.916,
@@ -6111,7 +6119,7 @@
 0.239,
 0.141,
 2.678,
-4.544
+5.585
 ],
 "world\\generic\\gnome\\passive doodads\\tools\\gnometool03.m2": [
 1.951,
@@ -6476,9 +6484,9 @@
 0.61
 ],
 "world\\azeroth\\burningsteppes\\passivedoodads\\rocks\\lavarock01.m2": [
-0.238,
-0.015,
-4.387,
+0.262,
+0.014,
+4.637,
 0.9
 ],
 "world\\expansion02\\doodads\\boreantundra\\magnatauritems\\snobold_candle01.m2": [
@@ -6930,9 +6938,9 @@
 ],
 "world\\environment\\doodad\\carnival\\carnival_banner02.m2": [
 0.238,
-3.196,
-4.39,
-0.61
+2.978,
+4.373,
+0.141
 ],
 "world\\expansion02\\doodads\\generic\\scourge\\sc_eyeofacherus_02.m2": [
 0.199,
@@ -7129,7 +7137,7 @@
 0.135,
 0.132,
 5.271,
-0.61
+0.576
 ],
 "world\\wmo\\transports\\transport_ship\\transportship.wmo": [
 4.5,
@@ -8250,10 +8258,10 @@
 0.094
 ],
 "world\\khazmodan\\blackrock\\activedoodads\\arenaflag\\arenaflag.m2": [
-0.5,
-0.0,
--0.48,
-0.61
+2.297,
+0.079,
+20.984,
+0.021
 ],
 "world\\skillactivated\\tradeskillenablers\\blacksmithforge.m2": [
 0.5,
@@ -8271,7 +8279,7 @@
 0.12,
 17.403,
 23.789,
-0.61
+0.798
 ],
 "world\\expansion02\\doodads\\dalaran\\dalaran_fountain_01.m2": [
 0.5,
@@ -8641,8 +8649,8 @@
 ],
 "world\\generic\\dwarf\\active doodads\\doors\\dwarventunnelportcullis.m2": [
 0.176,
-0.038,
-5.601,
+0.03,
+6.029,
 0.61
 ],
 "world\\lordaeron\\stratholme\\passivedoodads\\fx\\nox_portal_red.m2": [
@@ -9219,6 +9227,3282 @@
 0.357,
 0.025,
 4.041,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\elevator\\icecrown_elevator.m2": [
+0.12,
+-0.047,
+0.081,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\burninggiantwheel\\burninggiantwheel.m2": [
+0.064,
+0.101,
+7.845,
+0.789
+],
+"world\\generic\\gnome\\passive doodads\\gears&levers\\gnomebiggear.m2": [
+0.422,
+-0.06,
+0.003,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\doors\\blackrockhugedoorsmechanism.m2": [
+0.101,
+0.227,
+14.513,
+0.61
+],
+"world\\azeroth\\zulgurub\\activedoodads\\doors\\zulgurubforcefield.m2": [
+0.232,
+-0.084,
+0.391,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_war_machine_pipe.m2": [
+0.314,
+1.67,
+3.255,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\factory_door\\tk_factory_door.m2": [
+0.1,
+0.034,
+6.365,
+0.61
+],
+"world\\generic\\human\\passive doodads\\stormwind\\stormwinddoor.m2": [
+0.448,
+2.761,
+1.621,
+0.61
+],
+"world\\kalimdor\\razorfen\\activedoodads\\razorfendoors\\razorfendoor04.m2": [
+0.173,
+0.638,
+3.371,
+0.61
+],
+"world\\generic\\gnome\\activedoodads\\gnomemachine\\gnomemachine.m2": [
+0.168,
+0.822,
+1.872,
+1.113
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\portcullis\\vr_portcullis.m2": [
+0.277,
+0.24,
+17.429,
+0.61
+],
+"world\\generic\\passivedoodads\\weapons\\hammer_maul_b_02.m2": [
+1.57,
+-0.2,
+0.523,
+0.61
+],
+"world\\goober\\g_relicnecat.m2": [
+3.143,
+0.042,
+-0.172,
+0.61
+],
+"world\\goober\\g_dragoneggprismatic01.m2": [
+0.827,
+-0.034,
+0.651,
+0.61
+],
+"world\\goober\\g_relicnecup.m2": [
+3.665,
+0.039,
+-0.274,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahn_qiraj_doorrunes.m2": [
+0.113,
+-0.655,
+15.483,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_chessroomdoors.m2": [
+0.193,
+0.039,
+0.924,
+0.61
+],
+"world\\lordaeron\\arathi\\passivedoodads\\bushes\\arathiplant01.m2": [
+0.455,
+0.301,
+0.97,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_medium02.m2": [
+2.239,
+0.045,
+0.094,
+0.61
+],
+"world\\kalimdor\\desolace\\passivedoodads\\kodogravebones\\kodograve06.m2": [
+0.282,
+0.459,
+1.475,
+-0.405
+],
+"world\\outland\\passivedoodads\\rubble\\outlandrubble01.m2": [
+0.212,
+0.091,
+1.85,
+0.61
+],
+"creature\\crystalportal\\crystalportal.m2": [
+0.634,
+-0.024,
+1.181,
+0.61
+],
+"world\\kalimdor\\azshara\\seaplants\\coraltree01_06\\coraltree01_06.m2": [
+0.109,
+1.279,
+6.192,
+0.61
+],
+"world\\goober\\g_scryingbowl.m2": [
+5.238,
+0.034,
+-0.053,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_lightning_pillar_collision.m2": [
+0.476,
+0.117,
+-2.427,
+0.61
+],
+"world\\generic\\human\\passive doodads\\logmachines\\logmachine01.m2": [
+0.109,
+0.388,
+6.323,
+0.61
+],
+"world\\generic\\human\\passive doodads\\mugs\\stein01.m2": [
+2.802,
+0.052,
+-0.159,
+0.61
+],
+"world\\environment\\doodad\\winterspringgrove\\crackedice\\cracked_ice01.m2": [
+0.257,
+0.327,
+-0.719,
+0.61
+],
+"item\\objectcomponents\\weapon\\sword_1h_queldelar_d_01.m2": [
+1.229,
+-0.31,
+0.018,
+0.764
+],
+"world\\expansion02\\doodads\\icecrown\\tubes\\icecrown_greentubes.m2": [
+0.193,
+7.803,
+11.446,
+0.61
+],
+"world\\kalimdor\\felwood\\activedoodads\\illidancrystal\\illidancrystal02.m2": [
+1.542,
+-1.384,
+4.141,
+0.269
+],
+"world\\goober\\g_gongrfd.m2": [
+0.31,
+0.455,
+9.606,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\raid_windows\\tk_raid_windows_tall.m2": [
+0.026,
+0.158,
+10.918,
+0.473
+],
+"world\\goober\\g_minecar.m2": [
+0.806,
+0.025,
+0.365,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\excavationbarrierpole\\excavationbarrierpole.m2": [
+0.159,
+-0.013,
+9.381,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\wingsigils\\wingsigil_red.m2": [
+0.31,
+0.487,
+0.826,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\mailbox\\draeneipostbox.m2": [
+0.818,
+-0.151,
+1.036,
+0.61
+],
+"world\\goober\\g_dragoneggfreeze.m2": [
+0.5,
+-0.084,
+-1.822,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\valve\\icecrown_valve.m2": [
+2.105,
+-0.25,
+-0.249,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\crystalforge\\et_crystalforgecontroller.m2": [
+0.932,
+-0.43,
+0.347,
+0.61
+],
+"world\\dungeon\\cavernsoftime\\activedoodads\\cavernsoftimedoor\\caverndoor.m2": [
+0.123,
+-1.389,
+25.962,
+0.636
+],
+"world\\generic\\ogre\\passive doodads\\ogrebackpacks\\ogrebackpack01.m2": [
+0.5,
+-0.034,
+1.738,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\rocks\\westfallboulder02.m2": [
+0.109,
+-0.687,
+2.812,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\demonwing\\activedoodads\\doors\\hellfire_dw_prisondoor.m2": [
+0.193,
+-0.481,
+-0.228,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\trees\\plaguelandmushroom04.m2": [
+0.546,
+0.032,
+0.672,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\dressers\\ne_dresser01.m2": [
+0.709,
+-0.04,
+0.674,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\gemminecar02\\gemminecar02.m2": [
+0.739,
+-0.01,
+0.74,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_colddoor_01.m2": [
+0.5,
+-6.335,
+16.784,
+0.61
+],
+"world\\expansion02\\doodads\\wintertauren\\wt_basket_03.m2": [
+1.302,
+-0.092,
+-0.288,
+0.61
+],
+"world\\khazmodan\\wetlands\\passivedoodads\\dragoneggs\\dragonegg01.m2": [
+0.767,
+-0.218,
+0.47,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxorc.m2": [
+0.85,
+-0.07,
+0.509,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_goblin_01.m2": [
+1.014,
+-0.025,
+0.404,
+2.445
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladeshield3\\battlegladeshield3.m2": [
+1.477,
+-0.076,
+0.169,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\wantedposters\\wantedposterframed01.m2": [
+0.53,
+0.101,
+0.182,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\doors\\blackrockdoors01.m2": [
+0.278,
+-0.117,
+3.937,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingpurplecrystalbroken02.m2": [
+0.257,
+0.377,
+3.53,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\arcane_boss_pod\\tk_boss_pod.m2": [
+0.05,
+-0.386,
+18.849,
+1.31
+],
+"world\\expansion02\\doodads\\draktheron\\doors\\dt_bigdoor.m2": [
+0.154,
+-0.084,
+8.51,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\altar\\icecrown_frostmourne_altar.m2": [
+0.455,
+0.117,
+1.015,
+0.61
+],
+"world\\kalimdor\\azshara\\activedoodads\\arcanecrystal\\arcanecrystal.m2": [
+0.257,
+0.067,
+5.527,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\argent_web_door_01.m2": [
+0.5,
+2.979,
+5.714,
+0.61
+],
+"world\\goober\\g_book01_black.m2": [
+3.03,
+0.073,
+0.267,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladebanner2\\battlegladebanner2.m2": [
+1.019,
+-0.092,
+0.462,
+0.61
+],
+"world\\kalimdor\\mauradon\\activedoodads\\doors\\stone_door01.m2": [
+0.152,
+-0.025,
+5.297,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\zigguratdoor.m2": [
+0.234,
+-0.529,
+6.085,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\pottery\\elvenpottery01.m2": [
+0.681,
+0.011,
+0.804,
+0.61
+],
+"world\\kalimdor\\hyjal\\activedoodads\\doors\\hyjalgate.m2": [
+0.149,
+0.0,
+3.07,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahnportcullis.m2": [
+0.31,
+-0.034,
+5.992,
+0.61
+],
+"world\\generic\\activedoodads\\doors\\giantportcullis\\giantportcullisflatbottom01.m2": [
+0.227,
+-0.101,
+5.757,
+0.61
+],
+"world\\generic\\activedoodads\\rocks\\gemrock01.m2": [
+0.376,
+0.699,
+1.095,
+0.61
+],
+"world\\goober\\g_ghosttrap.m2": [
+0.5,
+-0.05,
+2.487,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\undeadwroughtgate01.m2": [
+0.317,
+-0.076,
+1.388,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_guildvault_01.m2": [
+0.293,
+-0.076,
+-0.255,
+0.61
+],
+"spells\\instanceportal_green_25man.m2": [
+0.5,
+0.126,
+1.88,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\parts\\gnomescrew05.m2": [
+1.234,
+0.043,
+0.108,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\arcane_doors\\tk_arcane_door_horiz.m2": [
+0.077,
+-0.462,
+6.033,
+-1.387
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_web_large.m2": [
+0.05,
+0.26,
+-2.167,
+1.267
+],
+"world\\generic\\passivedoodads\\deathskeletons\\humanmaledeathskeleton.m2": [
+0.834,
+-0.148,
+0.073,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxtauren.m2": [
+0.694,
+0.05,
+0.724,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\deathwingexperiments\\wallmountedvial02.m2": [
+0.212,
+-0.143,
+9.906,
+0.61
+],
+"world\\khazmodan\\blackrock\\activedoodads\\statuethaurissan\\statuedarkironthaurissanhammer.m2": [
+0.8,
+0.411,
+3.372,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\genericwroughtgate01.m2": [
+0.317,
+-0.034,
+1.396,
+0.61
+],
+"world\\goober\\g_book01_blue.m2": [
+2.277,
+-0.004,
+0.223,
+0.61
+],
+"world\\generic\\passive doodads\\wantedposters\\newwantedposter04.m2": [
+1.036,
+-0.106,
+0.457,
+0.61
+],
+"world\\generic\\passivedoodads\\plainrune\\plainrune.m2": [
+0.175,
+-0.06,
+5.049,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\doors\\diremaulsmallinstancedoor.m2": [
+0.197,
+-0.059,
+4.39,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_silverrmdoor02.m2": [
+0.312,
+1.737,
+2.576,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahn_qiraj_doorroots.m2": [
+0.09,
+0.076,
+12.899,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\stoneflags\\borean_flag_04.m2": [
+0.83,
+-0.159,
+0.743,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_lamppost01.m2": [
+0.22,
+-0.151,
+4.627,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazhan_red_curtain.m2": [
+0.496,
+-1.301,
+54.776,
+0.687
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\wallshield03.m2": [
+2.095,
+-0.008,
+0.018,
+0.61
+],
+"world\\generic\\activedoodads\\trollchest\\trollchest.m2": [
+1.878,
+-0.231,
+0.13,
+0.61
+],
+"world\\generic\\human\\passive doodads\\cauldrons\\cauldronempty.m2": [
+0.744,
+-0.143,
+0.3,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orcbarrel01.m2": [
+1.425,
+-0.021,
+0.152,
+0.61
+],
+"world\\outland\\passivedoodads\\monument\\outlandmonolith.m2": [
+0.282,
+0.368,
+6.036,
+1.318
+],
+"world\\goober\\g_eggalien.m2": [
+1.242,
+-0.78,
+-4.346,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\burned_totem01.m2": [
+0.193,
+0.259,
+11.318,
+0.61
+],
+"world\\expansion01\\doodads\\auchindoun\\passivedoodads\\coffin\\ancient_d_coffin.m2": [
+0.113,
+-0.109,
+2.893,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnrock1\\elwynnrock1.m2": [
+3.252,
+0.009,
+0.397,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\titanvase01.m2": [
+0.679,
+-0.025,
+0.96,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\braziers\\tallbraziernoomni01.m2": [
+0.53,
+-0.051,
+0.993,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_axe_pillar_collision.m2": [
+0.476,
+-0.05,
+-2.137,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\firecrackerstring_blue01.m2": [
+0.613,
+0.26,
+-1.389,
+-0.26
+],
+"world\\generic\\undead\\passive doodads\\lordaeronbrazier\\lordaeronbrazier01.m2": [
+0.948,
+0.017,
+0.085,
+0.61
+],
+"world\\kalimdor\\darkshore\\giantseaturtle\\giantseaturtle03.m2": [
+0.282,
+0.827,
+1.732,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_tauren_01.m2": [
+0.248,
+-0.034,
+4.125,
+0.61
+],
+"world\\azeroth\\stranglethorn\\activedoodads\\cages\\cage03.m2": [
+0.374,
+0.1,
+1.187,
+0.61
+],
+"world\\kalimdor\\ashenvale\\passivedoodads\\bush\\ashenvaleplantstardust.m2": [
+0.339,
+0.059,
+5.568,
+1.284
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_web_boss.m2": [
+0.113,
+-0.291,
+0.378,
+-0.559
+],
+"world\\generic\\passivedoodads\\treasurepiles\\goldpilesmall01.m2": [
+1.134,
+0.076,
+0.111,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\wyvernroost\\wyvernroost_ruined.m2": [
+0.427,
+-0.152,
+1.155,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\tent\\nightelfsingletent01.m2": [
+0.257,
+0.517,
+4.928,
+0.61
+],
+"spells\\sword_1h_queldelar_d_01_spell.m2": [
+1.229,
+-0.21,
+-0.049,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\northrend human mailbox dodad\\final\\hu_mailbox.m2": [
+0.574,
+-0.101,
+0.837,
+2.078
+],
+"world\\generic\\passivedoodads\\weapons\\skullspear01.m2": [
+0.721,
+0.008,
+1.01,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\raptoreggs\\wailingcavernsraptoreggs03.m2": [
+3.607,
+-0.042,
+-0.518,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\doors\\darkironportcullis.m2": [
+0.585,
+0.017,
+1.746,
+0.61
+],
+"world\\generic\\human\\passive doodads\\beds\\duskwoodbed.m2": [
+0.31,
+0.034,
+0.735,
+2.146
+],
+"world\\generic\\human\\passive doodads\\sacks\\sackherbsstack01.m2": [
+0.786,
+0.269,
+0.276,
+0.61
+],
+"world\\goober\\g_buttonbigred.m2": [
+2.009,
+-0.153,
+-0.01,
+0.61
+],
+"world\\kalimdor\\stonetalon\\activedoodads\\tree\\g_sapling01.m2": [
+1.618,
+0.025,
+0.513,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxnightelf.m2": [
+0.794,
+-0.084,
+0.627,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\furniture\\westfallbed01.m2": [
+0.712,
+0.0,
+0.587,
+1.054
+],
+"world\\generic\\gnome\\passive doodads\\parts\\gnomesteelplate03.m2": [
+0.797,
+-0.076,
+-0.099,
+0.61
+],
+"world\\generic\\passivedoodads\\duelingflag\\duelingflag.m2": [
+0.606,
+-0.617,
+7.715,
+0.61
+],
+"world\\kalimdor\\wailingcaverns\\passivedoodads\\stickbundles\\wc_stickbundle01.m2": [
+0.657,
+-0.034,
+1.078,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\arakkoa\\crystalball\\ak_crystalball02.m2": [
+1.366,
+-0.017,
+0.105,
+0.61
+],
+"world\\khazmodan\\blackrock\\activedoodads\\statuethaurissan\\statuedarkironthaurissan.m2": [
+0.31,
+0.018,
+2.6,
+0.61
+],
+"world\\generic\\passivedoodads\\weapons\\hammer_pvpalliance_a_01.m2": [
+1.366,
+-0.344,
+0.069,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmall04.m2": [
+2.957,
+-0.04,
+-0.02,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_stagedoor.m2": [
+0.38,
+0.076,
+0.042,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\bloodofheroes\\bloodofheroes.m2": [
+0.5,
+0.076,
+0.486,
+0.61
+],
+"world\\environment\\doodad\\generaldoodads\\package\\horde_package01.m2": [
+1.501,
+-0.13,
+0.115,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_human_04.m2": [
+3.444,
+-0.026,
+0.011,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\books\\uldamanbook02.m2": [
+0.621,
+-0.009,
+0.363,
+0.61
+],
+"world\\generic\\human\\passive doodads\\drapery\\drapery01.m2": [
+0.342,
+0.17,
+2.484,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_blooddoor_01.m2": [
+0.5,
+-3.231,
+3.644,
+0.61
+],
+"world\\generic\\human\\passive doodads\\valves\\deadminevalve.m2": [
+2.315,
+-0.191,
+-0.036,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmallopen04.m2": [
+2.424,
+-0.02,
+0.124,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\battlegladebanner1\\battlegladebanner1.m2": [
+0.961,
+0.034,
+0.526,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\tools\\toolbox01.m2": [
+1.913,
+0.0,
+0.186,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium03.m2": [
+2.07,
+-0.007,
+-0.119,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\slimejars\\slimejar02.m2": [
+2.525,
+-0.013,
+0.235,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\deadseamonster\\deadseamonster.m2": [
+0.074,
+2.23,
+4.661,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\plants\\plaguelandpuffs01.m2": [
+0.471,
+0.03,
+1.035,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_troll_02.m2": [
+2.627,
+-0.022,
+0.147,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmediumopen03.m2": [
+1.67,
+-0.039,
+0.176,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\fires\\vr_forgefire_01.m2": [
+0.05,
+0.0,
+0.687,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\lampposts\\barrenslamppost01.m2": [
+0.472,
+0.133,
+2.792,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\statue\\lionstatue.m2": [
+0.175,
+-0.217,
+5.578,
+-0.908
+],
+"world\\generic\\human\\passive doodads\\banners\\stormwindgriffonbanner01.m2": [
+0.257,
+0.006,
+2.839,
+0.61
+],
+"world\\kalimdor\\darkshore\\giantseaturtle\\giantseaturtle04.m2": [
+0.257,
+0.712,
+0.435,
+-0.465
+],
+"world\\generic\\human\\passive doodads\\cloth\\clothspoolredlow.m2": [
+5.464,
+-0.01,
+-0.152,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\warlockshrine\\warlockshrine.m2": [
+0.596,
+0.066,
+0.762,
+0.61
+],
+"world\\generic\\human\\passive doodads\\artwork\\painting13.m2": [
+0.769,
+-0.059,
+0.018,
+0.61
+],
+"world\\generic\\quilboar\\passive doodads\\leantos\\razorfen leanto03.m2": [
+0.413,
+-0.021,
+2.186,
+0.96
+],
+"world\\outland\\passivedoodads\\rocks\\floatingrocklarge01.m2": [
+0.132,
+-0.48,
+21.213,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\tavernstuff\\grainsacs02.m2": [
+1.073,
+-0.025,
+0.348,
+0.61
+],
+"world\\kalimdor\\desolace\\passivedoodads\\kodogravebones\\bannercentaur01.m2": [
+0.8,
+0.529,
+18.321,
+0.61
+],
+"world\\generic\\passivedoodads\\feathers\\featherbigbrown.m2": [
+2.651,
+-0.05,
+0.009,
+0.61
+],
+"world\\azeroth\\elwynn\\activedoodads\\abbeybell\\nsabbeybell.m2": [
+0.282,
+1.271,
+10.905,
+0.61
+],
+"world\\goober\\g_barrel.m2": [
+1.518,
+0.014,
+0.296,
+0.61
+],
+"world\\dungeon\\cave\\passivedoodads\\crystals\\caveminecrystalformation07.m2": [
+0.696,
+-0.092,
+0.937,
+0.61
+],
+"world\\generic\\pvp\\warsong\\warsonggulch_orc_door01.m2": [
+0.243,
+-1.032,
+2.512,
+0.61
+],
+"world\\expansion01\\doodads\\silvermoon\\flowers\\silvermoonflower01.m2": [
+3.188,
+0.0,
+-0.02,
+0.26
+],
+"world\\generic\\human\\passive doodads\\statues\\utherstatue.m2": [
+0.359,
+-0.875,
+5.86,
+0.61
+],
+"world\\goober\\g_hologramdwarf.m2": [
+0.527,
+-0.066,
+8.658,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\parts\\gnomescrew06.m2": [
+0.651,
+0.011,
+0.434,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\factory_door\\tk_factory_door_vert.m2": [
+0.1,
+-0.025,
+5.972,
+0.149
+],
+"world\\generic\\nightelf\\passive doodads\\totems\\nightelfwarningtotem_03.m2": [
+0.257,
+-0.145,
+2.919,
+-0.132
+],
+"world\\generic\\passivedoodads\\eastereggs\\easteregg05.m2": [
+2.239,
+0.033,
+0.008,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_lockpicking.m2": [
+0.924,
+0.0,
+0.61,
+0.61
+],
+"world\\goober\\g_freezingtrap.m2": [
+1.899,
+0.114,
+1.942,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\grimtotem03.m2": [
+0.212,
+0.452,
+10.727,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\titanvase02.m2": [
+0.679,
+0.0,
+0.679,
+0.61
+],
+"world\\generic\\activedoodads\\chests\\chestactive01.m2": [
+0.884,
+0.012,
+1.174,
+0.61
+],
+"world\\generic\\passivedoodads\\eastereggs\\easteregg04.m2": [
+2.036,
+-0.042,
+0.031,
+0.61
+],
+"world\\generic\\passivedoodads\\eastereggs\\easteregg03.m2": [
+2.463,
+0.055,
+-0.069,
+0.61
+],
+"world\\generic\\passivedoodads\\eastereggs\\easteregg02.m2": [
+2.463,
+0.093,
+0.029,
+0.61
+],
+"world\\generic\\passivedoodads\\bleachers\\bleacherseat1c.m2": [
+1.802,
+0.092,
+-0.048,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\mausoleum\\duskwoodmausoleum.m2": [
+0.132,
+0.432,
+10.894,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\voodoostuff\\bubblingbowl01.m2": [
+1.62,
+-0.026,
+0.15,
+0.61
+],
+"world\\azeroth\\stranglethorn\\buildings\\trollwatchtower\\trollwatchtower.m2": [
+0.193,
+0.122,
+7.736,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\freestandingtorch04_huge.m2": [
+0.733,
+-0.027,
+1.93,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\nd_human_gate_closed_collision.m2": [
+0.12,
+-0.29,
+-18.109,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_portcullis.m2": [
+0.221,
+0.216,
+13.012,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_diningdoors.m2": [
+0.313,
+0.042,
+0.059,
+0.61
+],
+"world\\generic\\darkirondwarf\\active doodads\\runes\\darkirondwarfrune_b.m2": [
+0.625,
+0.0,
+0.875,
+-0.021
+],
+"world\\khazmodan\\wetlands\\passivedoodads\\dragoneggs\\dragonegg02.m2": [
+1.263,
+0.022,
+0.32,
+0.61
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\gazeebo\\darkshoregazeebo.m2": [
+0.212,
+0.255,
+9.088,
+0.61
+],
+"world\\dungeon\\cave\\passivedoodads\\crystals\\caveminecrystalformation06.m2": [
+0.586,
+0.101,
+0.626,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\newelfruin01.m2": [
+0.159,
+0.558,
+10.295,
+-0.039
+],
+"world\\expansion02\\doodads\\icecrown\\elevator\\icecrown_elevator02.m2": [
+0.082,
+0.196,
+-0.304,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\lampposts\\orcbrazierlamppost01.m2": [
+0.5,
+-0.059,
+3.15,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\bushes\\barrensbush01.m2": [
+0.233,
+0.288,
+4.027,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_bloodelf_01.m2": [
+0.375,
+0.034,
+1.594,
+3.349
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxhuman.m2": [
+0.64,
+-0.059,
+0.552,
+0.61
+],
+"world\\expansion01\\doodads\\pvp\\activedoodads\\doors\\pvp_lordaeron_door.m2": [
+0.162,
+-0.15,
+8.685,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\windbreaks\\taurenwindbreak01.m2": [
+0.168,
+6.709,
+5.078,
+-0.909
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_lampwall01.m2": [
+0.601,
+-0.008,
+0.178,
+0.61
+],
+"world\\kalimdor\\mulgore\\passivedoodads\\rocks\\mullgorerock02.m2": [
+0.145,
+0.166,
+5.414,
+0.61
+],
+"world\\generic\\human\\passive doodads\\buckets\\cavekoboldbucket.m2": [
+2.264,
+-0.044,
+-0.147,
+0.61
+],
+"world\\goober\\g_dragoneggblack.m2": [
+1.3,
+-0.084,
+-3.316,
+0.61
+],
+"world\\generic\\passivedoodads\\furniture\\containers\\titanchest.m2": [
+0.376,
+0.103,
+1.285,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booklarge01.m2": [
+1.554,
+0.004,
+0.096,
+0.61
+],
+"world\\expansion02\\doodads\\scholazar\\sholazar_crystal_03.m2": [
+1.009,
+0.076,
+0.496,
+0.61
+],
+"world\\generic\\passivedoodads\\ships\\shipramps\\shipramp_horde_01.m2": [
+0.193,
+-0.313,
+2.858,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\trees\\ironforgetree01.m2": [
+0.159,
+3.645,
+9.241,
+0.61
+],
+"world\\goober\\g_book01_red.m2": [
+2.277,
+0.024,
+0.305,
+0.61
+],
+"world\\generic\\passivedoodads\\bleachers\\bleacherseat1d.m2": [
+1.152,
+0.218,
+0.096,
+0.61
+],
+"world\\generic\\satyr\\passive doodads\\container\\satyrcontainer02.m2": [
+1.618,
+-0.076,
+0.222,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmallopen02.m2": [
+3.548,
+-0.008,
+-0.128,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\trees\\burningmidtree02.m2": [
+0.176,
+-2.767,
+5.79,
+0.61
+],
+"world\\generic\\horde\\chest\\hordechest_01.m2": [
+0.978,
+-0.05,
+0.529,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\newelfruin03.m2": [
+0.282,
+-0.503,
+10.171,
+1.259
+],
+"world\\expansion01\\doodads\\sunwell\\passivedoodads\\sunwell\\sunwellraid_gate_01.m2": [
+0.27,
+-0.21,
+-0.01,
+0.354
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\crystalcreatures\\crystallizedhuman01.m2": [
+1.183,
+0.151,
+0.084,
+0.61
+],
+"world\\azeroth\\burningsteppes\\activedoodads\\darkironnode\\darkironnode.m2": [
+0.447,
+4.555,
+7.879,
+0.567
+],
+"world\\generic\\orc\\passive doodads\\raptoreggs\\wailingcavernsraptoreggs04.m2": [
+1.63,
+-0.092,
+-0.237,
+0.61
+],
+"world\\scale\\humanmalescale.m2": [
+1.089,
+0.092,
+0.328,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_prisondoor_03.m2": [
+0.051,
+0.008,
+7.54,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booklarge03.m2": [
+1.333,
+0.0,
+0.125,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\steppingstones\\steppingstone02.m2": [
+1.158,
+0.092,
+0.029,
+0.61
+],
+"world\\generic\\passivedoodads\\lights\\candelabratallwall01.m2": [
+0.663,
+-0.008,
+0.949,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\pvpwalls\\azsharataurnwallpvp_01.m2": [
+0.257,
+-0.199,
+2.259,
+0.03
+],
+"world\\generic\\gnome\\passive doodads\\parts\\gnomesteelplate01.m2": [
+0.505,
+-0.068,
+0.097,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\skeleton\\battlegladeskullhumandark.m2": [
+4.467,
+0.018,
+-0.074,
+-0.081
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_draenei_01.m2": [
+0.429,
+0.436,
+1.627,
+0.61
+],
+"world\\expansion02\\doodads\\nexus\\nexus_cage_active_01.m2": [
+0.322,
+-0.058,
+1.358,
+1.676
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\harpoon\\vr_harpoon_02.m2": [
+0.233,
+-0.256,
+2.424,
+1.694
+],
+"world\\goober\\g_eggspider.m2": [
+2.2,
+-0.042,
+-4.902,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booklarge02.m2": [
+1.574,
+-0.028,
+-0.043,
+0.61
+],
+"world\\kalimdor\\durotar\\passivedoodads\\bushes\\durotarbush01.m2": [
+0.643,
+-0.034,
+1.272,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\inscription\\inscription_scroll_rolledblank.m2": [
+3.235,
+-0.101,
+0.053,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\bush\\elwynnbush09.m2": [
+0.376,
+-0.036,
+1.776,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humansword01.m2": [
+1.467,
+-0.101,
+-0.024,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\bush\\elwynnbush08.m2": [
+0.767,
+-0.246,
+0.416,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\bush\\elwynnbush05.m2": [
+0.233,
+0.446,
+1.269,
+0.61
+],
+"world\\azeroth\\burningsteppes\\passivedoodads\\orctoolrackburningsteppes\\orctoolrackburningsteppes.m2": [
+0.483,
+0.271,
+1.055,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxtroll.m2": [
+0.837,
+-0.101,
+0.668,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_door_01.m2": [
+0.233,
+0.1,
+17.486,
+0.61
+],
+"world\\generic\\passivedoodads\\bindstone\\newbindstone.m2": [
+0.257,
+-0.024,
+4.272,
+0.61
+],
+"world\\expansion01\\doodads\\coilfang\\activedoodads\\energytower\\coilfang towers e_particle.m2": [
+0.05,
+-0.31,
+10.049,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\doors\\blackrockirondoor01.m2": [
+0.2,
+0.159,
+6.808,
+0.61
+],
+"world\\generic\\underwater\\passivedoodads\\plants\\plant04.m2": [
+0.681,
+-0.176,
+0.746,
+0.61
+],
+"creature\\goblin_cannon\\goblin_cannon.m2": [
+0.5,
+-0.302,
+-1.121,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\wantedposters\\wantedposterwood01.m2": [
+1.913,
+-0.034,
+-0.165,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\murals\\darkironmural03.m2": [
+0.257,
+0.631,
+3.707,
+0.61
+],
+"world\\generic\\human\\passive doodads\\armor\\armorbreastplateblue.m2": [
+2.036,
+0.001,
+0.196,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\argentcrusade_brick_02.m2": [
+0.494,
+0.022,
+1.16,
+0.61
+],
+"world\\generic\\passivedoodads\\gallows\\gallows01.m2": [
+0.159,
+1.903,
+3.094,
+0.61
+],
+"world\\generic\\human\\passive doodads\\catapultruins\\catapultball01.m2": [
+0.806,
+0.091,
+0.079,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\bush\\elwynnbush01.m2": [
+0.212,
+-1.023,
+1.821,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_commnicationcrystal_01.m2": [
+0.719,
+-0.101,
+2.501,
+0.61
+],
+"world\\azeroth\\elwynn\\buildings\\goldmine\\goldmine.m2": [
+0.257,
+0.113,
+2.339,
+0.183
+],
+"world\\generic\\pvp\\teleporters\\bg_teleporter_gunship_alliance_01.m2": [
+0.5,
+-0.059,
+5.73,
+0.61
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\plants\\swampsorrowplant02.m2": [
+0.549,
+-0.326,
+0.629,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\raptoreggs\\wailingcavernsraptoreggs02.m2": [
+3.005,
+-0.86,
+-0.414,
+2.001
+],
+"world\\kalimdor\\tanaris\\activedoodads\\trollgate\\tanaristrollgate.m2": [
+0.224,
+-0.092,
+3.032,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_gnomewing_door_01.m2": [
+0.5,
+1.292,
+9.485,
+0.61
+],
+"world\\generic\\human\\passive doodads\\statues\\statuekhadgar.m2": [
+0.255,
+0.955,
+15.38,
+0.61
+],
+"world\\generic\\pvp\\teleporters\\bg_teleporter_horde_01.m2": [
+0.5,
+1.72,
+9.656,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_commnicationcrystal_03.m2": [
+0.273,
+-0.05,
+3.57,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\wantedposters\\wantedposterscroll01.m2": [
+1.1,
+-0.042,
+0.522,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnmushroom01\\elwynnmushroom01.m2": [
+1.864,
+0.017,
+-0.009,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_ulduar_doors01.m2": [
+0.066,
+-0.185,
+14.733,
+1.566
+],
+"world\\generic\\human\\passive doodads\\books\\bookmediumopen04.m2": [
+2.444,
+-0.034,
+-0.12,
+0.61
+],
+"world\\kalimdor\\felwood\\passivedoodads\\plantsquest\\windblossom02.m2": [
+1.866,
+-0.004,
+4.868,
+0.61
+],
+"world\\generic\\human\\passive doodads\\banners\\bluelorderonbanner.m2": [
+0.619,
+-0.162,
+0.624,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_door_04.m2": [
+0.175,
+-0.382,
+24.963,
+0.61
+],
+"item\\objectcomponents\\weapon\\hammer_2h_pvpalliance_a_01.m2": [
+1.366,
+-0.201,
+0.278,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\serpentstatue02\\serpentstatue02.m2": [
+0.376,
+0.026,
+1.943,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\detail\\westfalldandilion.m2": [
+3.143,
+0.042,
+-0.417,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\hu_portcullis.m2": [
+0.202,
+-0.042,
+5.361,
+0.61
+],
+"world\\kalimdor\\onyxiaslair\\doors\\onyxiasgate01.m2": [
+0.1,
+-0.109,
+1.74,
+0.61
+],
+"world\\goober\\g_gravebursttanaris.m2": [
+0.327,
+0.409,
+4.498,
+0.738
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\rocks\\plaguelandrock05.m2": [
+0.313,
+-0.141,
+0.544,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_spider.m2": [
+0.267,
+-0.359,
+9.882,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_bloodprince_door_01.m2": [
+0.5,
+-3.541,
+-4.291,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_orc_01.m2": [
+0.369,
+0.151,
+1.613,
+0.61
+],
+"world\\goober\\g_hologramtrogg.m2": [
+1.275,
+-0.035,
+7.608,
+0.61
+],
+"world\\goober\\g_gnomemailbox.m2": [
+0.574,
+0.016,
+0.9,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_plague.m2": [
+0.263,
+0.122,
+13.692,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\baskets\\smallbasket03.m2": [
+1.545,
+-0.055,
+0.106,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\tombstones\\tombstone02.m2": [
+0.763,
+-0.019,
+0.608,
+0.61
+],
+"world\\generic\\gnome\\passive doodads\\tools\\gnometool04.m2": [
+1.945,
+0.06,
+-0.027,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\rocks\\westfallboulder01.m2": [
+0.109,
+0.095,
+5.414,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynndetailrocks\\elwynndetailrock01.m2": [
+2.431,
+-0.021,
+0.116,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\windbreaks\\taurenwindbreak03.m2": [
+0.213,
+8.104,
+10.977,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium07.m2": [
+2.755,
+-0.129,
+0.103,
+0.61
+],
+"world\\generic\\centaur\\passive doodads\\centaurtents\\centaurtent01.m2": [
+0.193,
+-0.185,
+4.741,
+0.61
+],
+"world\\kalimdor\\orgrimmar\\passivedoodads\\doors\\orgrimmardoor.m2": [
+0.249,
+-0.034,
+6.825,
+0.61
+],
+"world\\expansion01\\doodads\\zulaman\\doors\\zulaman_winddoor.m2": [
+0.178,
+0.092,
+2.904,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\crates\\darkironcrate01.m2": [
+0.419,
+-0.142,
+0.642,
+0.61
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrollb03.m2": [
+1.998,
+-0.029,
+0.184,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\argentcrusade\\argentcrusade_monsterdoor.m2": [
+0.099,
+-0.083,
+4.707,
+0.61
+],
+"spells\\instanceportal_green_10man.m2": [
+0.455,
+0.056,
+1.796,
+0.61
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\seamonstercarcass\\darkshoreseamonster01.m2": [
+0.099,
+3.645,
+6.331,
+0.61
+],
+"world\\environment\\doodad\\carnival\\carni_cannon.m2": [
+0.269,
+-0.646,
+6.559,
+0.397
+],
+"world\\generic\\orc\\passive doodads\\barrelsandcrates\\orccratebroken01.m2": [
+1.028,
+-0.117,
+0.349,
+0.61
+],
+"world\\generic\\human\\passive doodads\\clothing\\foldedpantsgrey.m2": [
+3.241,
+-0.074,
+0.355,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\sewer\\dalaransewer_arenawaterfall.m2": [
+0.052,
+0.0,
+-3.722,
+0.61
+],
+"world\\kalimdor\\azshara\\seaplants\\coral03_01\\coral03_01.m2": [
+0.31,
+-1.11,
+2.233,
+0.61
+],
+"world\\generic\\activedoodads\\doors\\uldamandoors\\uldamandoor01.m2": [
+0.312,
+-0.152,
+20.448,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\dwarfcorpse\\corpseskeletondwarf.m2": [
+1.35,
+0.025,
+-0.11,
+0.61
+],
+"world\\kalimdor\\kalidar\\passivedoodads\\kalidarroots\\kalidarroots04.m2": [
+0.332,
+0.107,
+2.217,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\taurenwaterpump\\waterpump.m2": [
+0.193,
+0.544,
+7.662,
+0.61
+],
+"world\\kalimdor\\felwood\\passivedoodads\\felwoodmushrooms\\felwoodmushroomanim.m2": [
+0.462,
+-0.081,
+1.005,
+0.61
+],
+"world\\lordaeron\\tirisfalglade\\passivedoodads\\graves\\tirisfallgravedirtmound02.m2": [
+0.659,
+0.0,
+0.009,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\icewall\\icecrown_icewall.m2": [
+0.5,
+-0.873,
+21.674,
+0.61
+],
+"world\\kalimdor\\buildings\\desolace\\centaurhornmouthpiece.m2": [
+4.49,
+0.05,
+0.032,
+0.567
+],
+"world\\azeroth\\elwynn\\passivedoodads\\skeleton\\battlegladeboneshumandark.m2": [
+1.679,
+-0.092,
+0.102,
+0.61
+],
+"world\\generic\\human\\passive doodads\\anchor\\deadmineanchor.m2": [
+0.233,
+0.365,
+3.099,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\tables\\dwarventableornate04.m2": [
+0.815,
+-0.014,
+0.153,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\lanterns\\nightelflantern01.m2": [
+0.971,
+-0.067,
+0.436,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\trollshrine\\stranglethorntikihead.m2": [
+0.376,
+-0.094,
+1.845,
+0.448
+],
+"world\\generic\\darkirondwarf\\passive doodads\\murals\\darkironmural01.m2": [
+0.376,
+0.231,
+2.09,
+0.61
+],
+"world\\generic\\passivedoodads\\lunarnewyear\\firecrackerstring_red01.m2": [
+0.613,
+-0.671,
+-1.129,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium01.m2": [
+2.755,
+0.008,
+-0.36,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bookshelves\\duskwoodbookshelf03.m2": [
+0.617,
+-0.028,
+0.977,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\tuskarr\\mailbox\\ts_mailbox_01.m2": [
+0.618,
+0.126,
+1.092,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\crates\\darkironcrate02.m2": [
+0.461,
+-0.116,
+0.749,
+0.61
+],
+"world\\outland\\passivedoodads\\plants\\outlandplant03.m2": [
+0.342,
+0.072,
+1.985,
+0.61
+],
+"world\\goober\\g_torch01.m2": [
+0.905,
+-0.021,
+0.759,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\scrolls\\uldamanscroll01.m2": [
+1.176,
+-0.143,
+0.08,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\hitchingposts\\taurenhitchingpost.m2": [
+0.441,
+0.006,
+1.389,
+0.61
+],
+"world\\goober\\g_booktrapfire.m2": [
+2.583,
+-0.116,
+1.253,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\azrelfruin02.m2": [
+0.282,
+0.15,
+11.502,
+0.61
+],
+"world\\goober\\g_frosttrap.m2": [
+2.2,
+0.495,
+1.597,
+0.61
+],
+"world\\goober\\g_barrelred.m2": [
+1.67,
+0.434,
+1.369,
+0.61
+],
+"world\\goober\\g_gnomemultibox.m2": [
+0.574,
+0.099,
+0.765,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booklargeopen02.m2": [
+1.93,
+0.092,
+0.197,
+0.61
+],
+"world\\khazmodan\\blackrock\\activedoodads\\safe\\darkironsafe.m2": [
+0.696,
+0.739,
+0.538,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\arcane_doors\\tk_arcane_door_vert.m2": [
+0.112,
+-0.16,
+7.276,
+-1.66
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxundead.m2": [
+0.62,
+-0.076,
+1.103,
+0.61
+],
+"world\\generic\\human\\passive doodads\\scrolls\\scrolla03.m2": [
+1.574,
+-0.062,
+0.179,
+0.61
+],
+"world\\generic\\human\\passive doodads\\clothing\\foldershirtgreen.m2": [
+3.774,
+0.083,
+0.222,
+0.61
+],
+"world\\generic\\human\\passive doodads\\tables\\bloodytable1.m2": [
+0.503,
+-0.044,
+0.715,
+0.61
+],
+"world\\generic\\passivedoodads\\particleemitters\\auraredverytall_v2.m2": [
+0.5,
+-0.806,
+22.719,
+0.61
+],
+"spells\\instanceportal_green_25man_heroic.m2": [
+0.5,
+0.176,
+1.578,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\wardrobe\\wardrobedwarvenornate03.m2": [
+0.655,
+-0.025,
+1.026,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazhan_observe_door.m2": [
+0.32,
+-0.259,
+10.716,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_secretroomdoor.m2": [
+0.389,
+-2.981,
+17.088,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\raid_door\\tk_raid_door.m2": [
+0.091,
+-0.21,
+3.488,
+0.61
+],
+"world\\goober\\g_chesttitan.m2": [
+0.342,
+-0.105,
+1.339,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\signposts\\taurensignpostpointer02.m2": [
+0.8,
+1.729,
+3.41,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_door_02left.m2": [
+0.257,
+-9.254,
+14.923,
+1.011
+],
+"world\\lordaeron\\arathi\\passivedoodads\\trees\\arathitree04.m2": [
+0.175,
+0.395,
+7.457,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\wardrobe\\wardrobedwarvenaverage01.m2": [
+0.492,
+-0.068,
+1.153,
+0.61
+],
+"world\\goober\\g_explosivetrap.m2": [
+2.2,
+0.05,
+1.032,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahn_qiraj_doorplug.m2": [
+0.05,
+-0.101,
+10.469,
+0.61
+],
+"world\\kalimdor\\thousandneedles\\passivedoodads\\wyverneggs\\wyverneggs01.m2": [
+1.328,
+0.041,
+0.173,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\shadowfangdoor02.m2": [
+0.266,
+0.05,
+3.443,
+0.61
+],
+"world\\kalimdor\\kalidar\\passivedoodads\\felpinecone\\felpinecone.m2": [
+4.783,
+0.008,
+0.168,
+0.61
+],
+"world\\outland\\passivedoodads\\plants\\outlandplant04.m2": [
+0.5,
+-0.143,
+1.378,
+0.61
+],
+"world\\lordaeron\\arathi\\passivedoodads\\rocks\\arathirock01.m2": [
+0.31,
+-0.19,
+2.668,
+0.61
+],
+"world\\goober\\g_bellship.m2": [
+0.254,
+-0.069,
+2.081,
+0.695
+],
+"world\\generic\\orc\\passive doodads\\braziers\\blackrockorccampfire.m2": [
+0.452,
+-0.214,
+2.206,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_nightelf_01.m2": [
+0.24,
+0.039,
+5.229,
+-0.013
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\nox_door_abom_mini.m2": [
+0.276,
+-0.148,
+11.624,
+2.556
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\floatingredcrystal01.m2": [
+0.212,
+-0.265,
+4.728,
+0.61
+],
+"world\\generic\\undead\\passive doodads\\undercityworm\\undercitymonsterbirth.m2": [
+0.5,
+0.067,
+2.45,
+0.337
+],
+"world\\azeroth\\stranglethorn\\activedoodads\\holdingpen\\holdingpen.m2": [
+0.12,
+-0.052,
+2.999,
+0.482
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_pillar.m2": [
+0.164,
+-0.036,
+-0.347,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humanhammer02.m2": [
+1.56,
+-0.512,
+0.186,
+0.61
+],
+"world\\kalimdor\\ungoro\\passivedoodads\\rocks\\ungororock06.m2": [
+0.12,
+0.62,
+6.32,
+0.61
+],
+"world\\goober\\g_torchlever.m2": [
+1.384,
+0.478,
+0.444,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_pillar_collision.m2": [
+0.24,
+0.008,
+-4.79,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\postboxdestroyed\\stratholmepostboxruined.m2": [
+0.712,
+0.126,
+0.986,
+0.61
+],
+"world\\khazmodan\\blackrock\\activedoodads\\chalice\\blackrockchalice.m2": [
+1.423,
+0.098,
+6.302,
+0.61
+],
+"world\\expansion01\\doodads\\tempestkeep\\activedoodads\\arcane_pod\\tk_prison_cell.m2": [
+0.092,
+-0.378,
+-2.322,
+1.293
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_blighter.m2": [
+0.217,
+-0.193,
+1.744,
+0.61
+],
+"world\\goober\\g_bookopenmedium06.m2": [
+3.438,
+-0.487,
+-0.116,
+0.61
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humanhammer01.m2": [
+2.245,
+-0.235,
+0.222,
+0.61
+],
+"world\\azeroth\\zulgurub\\activedoodads\\maindoor\\zulgurubmaindoor.m2": [
+0.147,
+-0.26,
+7.21,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_ivory_pillar_collision.m2": [
+0.24,
+0.243,
+-4.898,
+0.61
+],
+"world\\generic\\pirate\\passive doodads\\piratelandmarks\\piratelandmark.m2": [
+0.257,
+0.257,
+3.506,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\wroughtirondoor.m2": [
+0.267,
+0.076,
+3.368,
+0.61
+],
+"world\\goober\\g_bookopenmedium07.m2": [
+2.583,
+-0.305,
+0.278,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_portcullis_02.m2": [
+0.376,
+-0.019,
+8.701,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_grate_01.m2": [
+0.342,
+-5.798,
+16.717,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnrock2\\elwynnrock2.m2": [
+4.681,
+0.092,
+-0.058,
+0.61
+],
+"world\\azeroth\\sunkentemple\\passivedoodads\\serpentaltar\\serpentaltar.m2": [
+0.5,
+0.034,
+1.235,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\wroughtirondoor02.m2": [
+0.283,
+0.084,
+3.279,
+0.61
+],
+"world\\generic\\human\\activedoodads\\shadowfang\\wizardssphere.m2": [
+0.221,
+0.168,
+7.591,
+0.61
+],
+"world\\expansion02\\doodads\\nexus\\nexus_cage_active_door_01.m2": [
+0.705,
+-1.846,
+0.984,
+1.199
+],
+"world\\expansion01\\doodads\\pvp\\activedoodads\\doors\\pvp_ogre_door_front.m2": [
+0.178,
+-0.023,
+14.251,
+0.61
+],
+"world\\expansion01\\doodads\\blacktemple\\activedoodads\\doors\\bt_gate.m2": [
+0.075,
+-0.101,
+-1.252,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\lab items\\icecrown_labtable_03_potions.m2": [
+0.233,
+-0.045,
+8.346,
+-0.525
+],
+"world\\goober\\g_mausoleumseal.m2": [
+0.385,
+-0.034,
+4.213,
+0.61
+],
+"world\\goober\\g_book01_green.m2": [
+2.277,
+-0.06,
+0.22,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\pottery\\elvenpottery02.m2": [
+0.927,
+-0.087,
+0.226,
+0.61
+],
+"world\\goober\\g_gongtroll01.m2": [
+0.342,
+-0.079,
+1.768,
+0.61
+],
+"world\\kalimdor\\durotar\\passivedoodads\\bushes\\cactusapple01.m2": [
+0.8,
+-0.109,
+0.554,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_lighting_door02.m2": [
+0.5,
+1.343,
+3.198,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\straw\\duskwoodstraw02.m2": [
+0.636,
+0.092,
+0.558,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\trolldungeonpottery\\trolldungeonpottery01.m2": [
+1.377,
+0.008,
+0.092,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\vrykul\\portcullis\\vr_portculliswithchain.m2": [
+0.721,
+-0.314,
+31.766,
+0.61
+],
+"world\\generic\\passivedoodads\\guildbank\\guildvault_human_01.m2": [
+0.285,
+-0.05,
+2.656,
+0.61
+],
+"world\\kalimdor\\felwood\\passivedoodads\\plantsquest\\windblossom01.m2": [
+1.447,
+-0.05,
+6.316,
+0.61
+],
+"world\\generic\\pvp\\teleporters\\bg_teleporter_alliance_01.m2": [
+0.5,
+-0.352,
+10.749,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\raptoreggs\\wailingcavernsraptoreggs01.m2": [
+2.16,
+-0.132,
+-0.123,
+0.61
+],
+"world\\expansion01\\doodads\\blacktemple\\activedoodads\\doors\\bt_commondoor.m2": [
+0.158,
+-0.067,
+4.958,
+0.61
+],
+"world\\kalimdor\\felwood\\passivedoodads\\plantsquest\\songflower02.m2": [
+2.418,
+-0.025,
+-0.302,
+0.61
+],
+"world\\khazmodan\\ironforge\\passivedoodads\\slimejars\\slimejar01.m2": [
+2.041,
+-0.017,
+0.061,
+0.61
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\gemminecar01\\gemminecar01.m2": [
+0.742,
+0.166,
+0.597,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_portcullis_01.m2": [
+0.342,
+0.138,
+3.66,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\platinumdisk\\platinumdisk.m2": [
+0.342,
+0.532,
+1.345,
+1.199
+],
+"world\\azeroth\\stranglethorn\\passivedoodads\\crystalcreatures\\crystallizedtroll01.m2": [
+0.858,
+-0.104,
+0.576,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_train_turnaround.m2": [
+0.5,
+-0.042,
+4.028,
+0.311
+],
+"world\\goober\\g_immolationtrap.m2": [
+2.2,
+0.42,
+1.049,
+0.61
+],
+"world\\dungeon\\cave\\passivedoodads\\crystals\\caveminecrystalformation04.m2": [
+2.484,
+0.072,
+-0.545,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\crates\\karazahncrate02.m2": [
+1.102,
+-0.035,
+0.168,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynndetailrocks\\elwynndetailrock02.m2": [
+3.13,
+-0.112,
+-0.095,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\monumentrock\\monumentrock.m2": [
+0.12,
+0.114,
+5.331,
+0.61
+],
+"world\\azeroth\\karazahn\\passivedoodads\\grainsacks\\kn_grainsack01.m2": [
+1.467,
+0.067,
+-0.074,
+0.61
+],
+"world\\azeroth\\deadwindpass\\passivedoodads\\trees\\deadwindpassmidtree02.m2": [
+0.193,
+1.131,
+9.792,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\highelf\\he_banner_02.m2": [
+0.5,
+-0.042,
+1.602,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\broom\\be_mop01.m2": [
+0.528,
+1.398,
+1.408,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxbloodelf.m2": [
+0.913,
+-0.084,
+0.55,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\tailoring\\clothes\\orcpants01.m2": [
+2.391,
+-0.126,
+0.218,
+0.61
+],
+"world\\generic\\human\\passivedoodads\\prisoncell\\prisoncell01.m2": [
+0.109,
+1.863,
+1.642,
+0.61
+],
+"world\\generic\\passivedoodads\\ships\\shipramps\\shipramp_alliance_01.m2": [
+0.233,
+-0.623,
+2.463,
+-1.429
+],
+"world\\expansion02\\doodads\\zuldrak\\gundrak\\gundrak_underwaterhatch_door.m2": [
+0.132,
+-0.042,
+-3.934,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\shadowfangdoor01.m2": [
+0.437,
+1.938,
+2.04,
+0.61
+],
+"world\\lordaeron\\stratholme\\activedoodads\\doors\\largeportcullis.m2": [
+0.084,
+0.0,
+7.905,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\burninglegion\\crystalforge\\bu_crystalforgecontroller.m2": [
+0.83,
+0.076,
+0.928,
+1.156
+],
+"world\\goober\\g_book01_brown.m2": [
+2.504,
+-0.023,
+0.275,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxhumannorthrend.m2": [
+0.701,
+-0.059,
+0.533,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\signs\\shop\\humaninnsignpost.m2": [
+0.537,
+0.352,
+1.332,
+0.61
+],
+"world\\goober\\g_fissure.m2": [
+0.479,
+0.016,
+5.004,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\draenei\\mailbox\\dalaranpostbox.m2": [
+0.611,
+0.025,
+1.19,
+0.61
+],
+"world\\expansion01\\doodads\\auchindoun\\passivedoodads\\doors\\auchindoun_door_swinging.m2": [
+0.188,
+0.087,
+11.987,
+0.61
+],
+"world\\kalimdor\\silithus\\passivedoodads\\crystals\\silithus_commnicationcrystal_02.m2": [
+0.426,
+-0.017,
+3.29,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\crate\\westfallcrate.m2": [
+1.438,
+-0.034,
+-0.064,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\azrelfruin03.m2": [
+0.282,
+-0.479,
+10.064,
+0.61
+],
+"world\\kalimdor\\diremaul\\activedoodads\\lightcrystal\\diremaulcrystalgenerator.m2": [
+0.282,
+0.045,
+13.349,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\mausoleum\\mausoleumactivedoors.m2": [
+0.407,
+0.05,
+2.348,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\haystacks\\plaguelandhaystack.m2": [
+0.31,
+0.259,
+2.487,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_welcome.m2": [
+0.924,
+0.042,
+0.602,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_small02.m2": [
+3.339,
+-0.102,
+0.142,
+0.61
+],
+"world\\generic\\passivedoodads\\postboxes\\postboxdwarf.m2": [
+0.787,
+-0.03,
+0.53,
+0.61
+],
+"world\\generic\\human\\passive doodads\\cloth\\clothspoolyellow.m2": [
+4.516,
+0.056,
+-0.458,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\minecart\\elwynnminecart.m2": [
+0.31,
+-0.569,
+1.331,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\mounds\\barrenstermitemound01.m2": [
+0.373,
+5.565,
+1.924,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\decorations\\zuldrak_alter.m2": [
+0.26,
+-0.403,
+2.167,
+1.062
+],
+"world\\generic\\human\\passive doodads\\weapons&armor\\humanstaff02.m2": [
+1.158,
+-0.017,
+0.043,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium04.m2": [
+2.755,
+-0.01,
+-0.124,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_axe_pillar.m2": [
+0.317,
+-0.001,
+0.18,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\ic_citadel_chest.m2": [
+0.83,
+-0.067,
+1.073,
+0.61
+],
+"world\\generic\\human\\passive doodads\\spidereggssack\\spidereggsack04.m2": [
+0.826,
+0.001,
+0.513,
+0.823
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium02.m2": [
+1.882,
+-0.03,
+0.048,
+0.61
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\plants\\swampsorrowplant01.m2": [
+0.31,
+-0.071,
+1.54,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\detail\\duskwoodcatails01\\duskwoodcatails01.m2": [
+1.457,
+-0.084,
+0.14,
+0.61
+],
+"spells\\banish_chest_dark.m2": [
+0.738,
+0.092,
+0.194,
+0.61
+],
+"world\\generic\\underwater\\passivedoodads\\plants\\plant07.m2": [
+0.618,
+-0.252,
+1.101,
+0.61
+],
+"world\\generic\\human\\activedoodads\\doors\\portcullisactive.m2": [
+0.497,
+-0.134,
+1.629,
+0.61
+],
+"world\\lordaeron\\plagueland\\passivedoodads\\bushes\\plaguelandwesternbush02.m2": [
+0.566,
+0.411,
+1.357,
+0.61
+],
+"world\\goober\\g_explodingballista.m2": [
+0.236,
+-0.269,
+0.972,
+0.61
+],
+"world\\azeroth\\bootybay\\passivedoodad\\harpoons\\harpoon01.m2": [
+0.965,
+-0.336,
+0.027,
+0.61
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_sewerdoor_01.m2": [
+0.261,
+0.017,
+-0.661,
+0.61
+],
+"world\\azeroth\\westfall\\passivedoodads\\barrel\\westfallbarrel01.m2": [
+1.518,
+-0.076,
+-0.105,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\scourge\\sc_crate_01.m2": [
+0.855,
+-0.089,
+0.189,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_ulduar_doors03.m2": [
+0.257,
+-0.606,
+5.481,
+0.61
+],
+"world\\expansion02\\doodads\\azjol-nerub\\azjol_door_small_01.m2": [
+0.282,
+0.01,
+0.796,
+0.61
+],
+"world\\kalimdor\\blackfathom\\passivedoodads\\braziers\\bfd_nagabrazier.m2": [
+3.385,
+-0.084,
+-0.011,
+0.61
+],
+"world\\lordaeron\\silverpine\\passivedoodads\\bushes\\silverpinebush01.m2": [
+0.376,
+-0.163,
+0.963,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_lightning_pillar.m2": [
+0.288,
+-0.129,
+0.27,
+0.61
+],
+"world\\generic\\human\\passive doodads\\lumberpiles\\deadminelumberpilelarge.m2": [
+0.653,
+-0.176,
+0.5,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\bush\\elwynnbush07.m2": [
+0.376,
+-0.216,
+1.385,
+0.61
+],
+"world\\expansion02\\doodads\\boreantundra\\alliancestatue\\statue_varianwynn.m2": [
+0.87,
+-0.044,
+0.586,
+0.61
+],
+"world\\generic\\passivedoodads\\plainrune\\runestone.m2": [
+0.193,
+-0.065,
+5.164,
+0.61
+],
+"world\\azeroth\\elwynn\\buildings\\humanguardtower\\humanguardtower.m2": [
+0.257,
+-0.08,
+13.087,
+0.61
+],
+"world\\generic\\darkirondwarf\\passive doodads\\murals\\darkironmural02.m2": [
+0.376,
+0.642,
+1.907,
+0.61
+],
+"world\\generic\\passivedoodads\\deathskeletons\\trollfemaledeathskeleton.m2": [
+0.806,
+-0.336,
+-0.01,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\grimtotem01.m2": [
+0.342,
+-0.569,
+16.156,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\gundrak\\gundrak_short_door.m2": [
+0.142,
+-0.218,
+-1.983,
+0.61
+],
+"world\\azeroth\\westfall\\buildings\\shed\\westfallshed.m2": [
+0.257,
+0.034,
+2.028,
+0.61
+],
+"world\\generic\\centaur\\passive doodads\\centaurtents\\centaurtent02.m2": [
+0.174,
+-0.171,
+9.625,
+0.337
+],
+"world\\generic\\passivedoodads\\deathskeletons\\bloodelfmaledeathskeleton.m2": [
+1.915,
+0.484,
+-0.005,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\activedoodads\\raid_fx\\raid_column_fx.m2": [
+0.108,
+-2.005,
+2.642,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\doors\\blackrockdoorsingle.m2": [
+0.474,
+0.0,
+-0.1,
+0.61
+],
+"world\\generic\\human\\passive doodads\\planterboxes\\stormwindwindowplanterempty.m2": [
+0.376,
+-0.115,
+-0.27,
+0.61
+],
+"world\\generic\\human\\passive doodads\\bookshelves\\abbeyshelf01.m2": [
+0.342,
+0.003,
+2.044,
+1.037
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahnqirajdoor01.m2": [
+0.142,
+-0.05,
+12.05,
+-0.013
+],
+"world\\generic\\passivedoodads\\weapons\\axe_northrend_c_03.m2": [
+1.606,
+-0.378,
+0.136,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmallopen01.m2": [
+2.424,
+-0.038,
+0.16,
+0.61
+],
+"world\\generic\\dwarf\\passive doodads\\museum\\fossil01.m2": [
+0.714,
+-0.168,
+0.268,
+0.61
+],
+"world\\goober\\g_book01.m2": [
+2.755,
+0.061,
+0.102,
+0.61
+],
+"world\\kalimdor\\barrens\\passivedoodads\\mounds\\barrenstermitemound04.m2": [
+0.212,
+-0.467,
+1.599,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\cliffrocks\\elwynncliffrock02.m2": [
+0.12,
+-0.701,
+2.859,
+0.61
+],
+"world\\azeroth\\karazahn\\activedoodads\\karazahn_secretdoor.m2": [
+0.14,
+0.017,
+5.37,
+1.25
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_large05.m2": [
+1.732,
+-0.101,
+0.066,
+0.61
+],
+"world\\khazmodan\\blackrock\\passivedoodads\\warchiefshead\\warchiefrendshead.m2": [
+0.767,
+-0.177,
+0.709,
+-0.499
+],
+"world\\generic\\activedoodads\\doors\\sunkentempledoors\\sunktemple_portcullis.m2": [
+0.143,
+0.544,
+21.165,
+-0.935
+],
+"world\\generic\\human\\passive doodads\\books\\book_dwarf_01.m2": [
+2.587,
+-0.035,
+0.095,
+0.61
+],
+"world\\goober\\g_graveburst.m2": [
+0.579,
+-0.179,
+4.764,
+0.61
+],
+"world\\generic\\human\\passive doodads\\mugs\\goldgobletfilled01.m2": [
+1.747,
+0.016,
+-0.16,
+0.61
+],
+"world\\generic\\passivedoodads\\misc\\minecars\\caveminecarwrecked01.m2": [
+0.78,
+-0.02,
+0.328,
+0.61
+],
+"world\\azeroth\\swamposorrow\\passivedoodads\\plants\\swampsorrowroot03.m2": [
+0.5,
+0.445,
+1.282,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\ic_citadel_mouthdoor01.m2": [
+0.05,
+-0.134,
+6.694,
+0.61
+],
+"world\\generic\\passive doodads\\arenaelevators\\org_arena_ivory_pillar.m2": [
+0.164,
+-0.072,
+-0.023,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\doors\\icecrown_roostportcullis_01.m2": [
+0.159,
+0.252,
+18.728,
+-0.056
+],
+"world\\expansion02\\doodads\\generic\\highelf\\he_banner_03.m2": [
+0.5,
+-0.067,
+1.496,
+0.61
+],
+"world\\kalimdor\\azshara\\seaplants\\barnaclerock01_04\\barnaclerock01_04.m2": [
+0.376,
+0.118,
+1.429,
+0.61
+],
+"world\\expansion02\\doodads\\icecrown\\cavein\\icecrown_cavein.m2": [
+2.2,
+-0.031,
+0.033,
+-0.167
+],
+"world\\outland\\passivedoodads\\mushrooms\\outland_big_shroom02.m2": [
+0.063,
+1.032,
+14.775,
+1.361
+],
+"world\\expansion02\\doodads\\dalaran\\dalaran_prisondoor_05.m2": [
+0.1,
+0.193,
+10.415,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\detail\\elwynnflower02.m2": [
+1.998,
+0.112,
+-0.073,
+0.61
+],
+"world\\expansion02\\doodads\\ulduar\\ul_button_control_unit.m2": [
+0.268,
+-0.596,
+0.225,
+0.61
+],
+"world\\azeroth\\elwynn\\buildings\\humanwatchtower\\humanwatchtower.m2": [
+0.233,
+-1.8,
+17.122,
+0.61
+],
+"world\\generic\\tauren\\passive doodads\\totems\\grimtotem04.m2": [
+0.282,
+0.326,
+12.486,
+0.61
+],
+"world\\expansion02\\doodads\\generic\\human\\nd_human_gate_closedfx_door.m2": [
+0.159,
+0.023,
+18.295,
+0.61
+],
+"world\\kalimdor\\ashenvale\\passivedoodads\\shrines\\neshrine.m2": [
+0.159,
+-0.022,
+7.542,
+0.61
+],
+"world\\generic\\alliance\\chest\\alliancechest_01.m2": [
+1.038,
+0.025,
+0.769,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\ethereal\\cage\\et_cage.m2": [
+0.434,
+-0.028,
+1.023,
+0.61
+],
+"world\\kalimdor\\ungoro\\passivedoodads\\crystals\\ungorocrystalpylon01.m2": [
+1.242,
+-1.047,
+31.951,
+0.977
+],
+"world\\generic\\nightelf\\passive doodads\\signs\\nightelfsign_poisons.m2": [
+0.924,
+-0.042,
+0.518,
+0.61
+],
+"world\\generic\\passivedoodads\\bleachers\\bleacherseat1b.m2": [
+1.489,
+0.01,
+0.083,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\paintings\\painting01.m2": [
+0.376,
+0.016,
+2.068,
+0.61
+],
+"world\\generic\\pvp\\teleporters\\bg_teleporter_gunship_horde_01.m2": [
+0.5,
+-0.176,
+5.436,
+0.61
+],
+"world\\generic\\passivedoodads\\bleachers\\bleacherseat1a.m2": [
+1.152,
+0.21,
+0.054,
+0.61
+],
+"world\\expansion02\\doodads\\wintergrasp\\wg_keep_door01_collision.m2": [
+0.5,
+0.0,
+0.0,
+0.61
+],
+"world\\goober\\g_keg.m2": [
+0.548,
+0.118,
+1.229,
+0.61
+],
+"spells\\spellobject_bomb.m2": [
+4.174,
+0.065,
+1.208,
+0.61
+],
+"world\\generic\\passive doodads\\wantedposters\\newwantedposter01.m2": [
+0.652,
+-0.065,
+0.746,
+0.61
+],
+"world\\goober\\g_stonesofbinding.m2": [
+2.732,
+0.147,
+9.142,
+0.61
+],
+"world\\generic\\orc\\passive doodads\\lampposts\\orcbrazierstreetlamp.m2": [
+0.5,
+0.008,
+2.653,
+0.61
+],
+"world\\goober\\g_watermelon.m2": [
+1.033,
+-0.227,
+0.154,
+0.61
+],
+"world\\azeroth\\elwynn\\passivedoodads\\cliffrocks\\elwynncliffrock04.m2": [
+0.068,
+-0.796,
+-0.698,
+0.61
+],
+"world\\goober\\g_ghosttrapchest.m2": [
+0.5,
+0.025,
+1.68,
+0.61
+],
+"world\\expansion01\\doodads\\hellfirecitadel\\activedoodads\\doors\\hf_mag_door.m2": [
+0.216,
+-0.204,
+16.267,
+0.61
+],
+"world\\expansion02\\doodads\\zuldrak\\gundrak\\gundrak_fence_door.m2": [
+0.105,
+-0.008,
+0.052,
+0.61
+],
+"spells\\instanceportal_green_10man_heroic.m2": [
+0.342,
+-0.017,
+2.292,
+0.61
+],
+"world\\kalimdor\\silithus\\activedoodads\\ahnqirajdoor\\ahnqirajdoor02.m2": [
+0.05,
+-0.495,
+-17.894,
+0.61
+],
+"world\\generic\\nightelf\\passive doodads\\ruins\\nightelfruins04.m2": [
+0.282,
+-0.008,
+2.766,
+0.61
+],
+"world\\khazmodan\\uldaman\\passivedoodads\\paintings\\painting02.m2": [
+0.354,
+0.05,
+1.819,
+0.61
+],
+"world\\expansion01\\doodads\\generic\\bloodelf\\books\\be_book_large01.m2": [
+2.102,
+-0.097,
+-0.018,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmallopen05.m2": [
+3.226,
+0.028,
+0.031,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\bookmedium06.m2": [
+2.755,
+-0.051,
+-0.048,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmall03.m2": [
+3.252,
+0.055,
+-0.132,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmall05.m2": [
+3.252,
+-0.036,
+-0.066,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\booksmallopen03.m2": [
+2.666,
+0.006,
+0.177,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_dwarf_03.m2": [
+2.683,
+-0.101,
+0.052,
+0.61
+],
+"world\\generic\\human\\passive doodads\\books\\book_human_03.m2": [
+2.846,
+-0.054,
+0.109,
 0.61
 ]
 }
