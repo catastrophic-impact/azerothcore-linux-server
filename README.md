@@ -16,6 +16,22 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
 
+## What the installer builds
+
+AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-wotlk)) plus these modules, pinned to exact versions in `modules.lock`. Each can be turned off later in the TUI's Modules tab.
+
+| Module | Purpose |
+|---|---|
+| [mod-ale](https://github.com/azerothcore/mod-ale) | Lua scripting engine (ALE); runs all of our server-side scripts |
+| [mod-playerbots](https://github.com/mod-playerbots/mod-playerbots) | Random and companion bots that play like real players |
+| [mod-individual-progression](https://github.com/ZhengPeiRu21/mod-individual-progression) | Per-player progression through the expansion tiers |
+| [mod-autobalance](https://github.com/azerothcore/mod-autobalance) | Scales instance difficulty to the group |
+| [mod-transmog](https://github.com/azerothcore/mod-transmog) | Transmogrification NPC |
+| [mod-ah-bot-plus](https://github.com/NathanHandley/mod-ah-bot-plus) | Auction house bot |
+| [mod-dungeon-clear](https://github.com/jrad7/mod-dungeon-clear) | Autonomous dungeon-clearing mode for tank bots |
+| [mod-rndbot-buffs](https://github.com/Rockhopper1776/mod-rndbot-buffs) | Idle bots buff nearby real players |
+| [mod-gm-realmfirst-fix](https://github.com/Haeniken/mod-gm-realmfirst-fix) | Stops GM accounts from earning Realm First achievements |
+
 ## Install the full server (Linux)
 
 Needs `distrobox`, `git`, `curl` and podman or docker.
