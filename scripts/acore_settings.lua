@@ -23,7 +23,12 @@ return {
     --   (saved permanently; move with .npc move, remove by targeting her and typing .npc delete; face her with .npc set o)
     -- Then: restart the server or console `reload ale`.
     dungeonTeleporter = { npc = 900001 },
-    -- Garrisons (housing). Proof of concept: one location (Northshire Abbey), every account gets a garrison automatically.
-    garrison = { enabled = true, debug = false, maxPets = 5, markerSeconds = 30,
+    -- Garrisons (housing): players pick one of the locations in scripts/garrison.lua at the portal (Stormwind Mage Tower).
+    garrison = { enabled = true, debug = false,
+                 -- price of claiming a garrison at the portal (every pick, also when switching; abandoning refunds nothing). currency = "free" | "gold" | "item"; amount = gold or item count; item = item id
+                 cost = { currency = "free", item = 0, amount = 0 },
+                 -- perks inside a garrison: instantLogout = /logout is instant (like an inn); rested = rested XP builds up (restedRate 1.0 = the core's inn speed)
+                 perks = { instantLogout = true, rested = true, restedRate = 1.0 },
+                 maxPets = 5, markerSeconds = 30,
                  currency = "free", currencyItem = 0 },   -- currency = "free" | "gold" | "item"; currencyItem = item id paid in when currency = "item". Prices come from the catalog (category default + per-item override, set in the admin tool)   -- maxPets = companions roaming at once   -- debug = true adds [garrison:debug] lines to the server log
 }

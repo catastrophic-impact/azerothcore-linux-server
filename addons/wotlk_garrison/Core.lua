@@ -7,7 +7,7 @@ WotlkGarrison = WotlkGarrison or {}
 local G = WotlkGarrison
 local C = WotlkGarrisonCatalog
 G.C = C
-for _, e in ipairs(C.items) do if e.hid == 1 then e.hidden = true end end   -- categories Removed + Unsorted: in the catalog for the admin tool, never shown to players
+for _, e in ipairs(C.items) do if e.hid == 1 then e.hidden = true end end   -- categories Removed + Unsorted: hidden from players (the admin tool, if loaded, can show them to a GM character)
 
 G.ROW_H, G.ROW_N = 26, 14
 -- UI state. tab = "npcs" | "objects" | "placed"; selected = a catalog entry (or a placed-list entry on the Placed tab)

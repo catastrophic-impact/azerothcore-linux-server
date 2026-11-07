@@ -3067,9 +3067,9 @@
 0.61
 ],
 "world\\goober\\g_camerashake01.m2": [
-0.703,
-0.073,
-0.763,
+0.639,
+0.069,
+0.774,
 0.61
 ],
 "world\\kalimdor\\blackfathom\\passivedoodads\\lights\\bfd_wispsmallgreen.m2": [
@@ -12504,5 +12504,29 @@
 -0.054,
 0.109,
 0.61
+],
+"world\\kalimdor\\darkshore\\passivedoodads\\docks\\darkshoredock01.m2": [
+0.082,
+-0.474,
+3.323,
+0.61
+],
+"world\\azeroth\\duskwood\\passivedoodads\\farm\\duskwood_human_farm_closed.m2": [
+0.175,
+-0.028,
+7.51,
+0.61
+],
+"world\\environment\\doodad\\carnival\\darkmoonfaireposter.m2": [
+0.455,
+-0.041,
+2.33,
+0.61
+],
+"world\\azeroth\\redridge\\passivedoodads\\farm\\redridge_human_farm_closed.m2": [
+0.159,
+-0.206,
+8.345,
+-4.595
 ]
 }

@@ -31,11 +31,9 @@ yn(){ local a; read -r -p "$1 [Y/n] " a; case "$a" in n|N|no|NO) return 1;; *) r
 if [ "$INTERACTIVE" = 1 ]; then
   say "Optional components (all on by default; press Enter to keep, n to skip)"
   for c in $COMPONENTS; do
-    [ "$c" = jukebox ] && [ "$ENABLE_garrison" != 1 ] && { ENABLE_jukebox=0; continue; }   # needs Garrison
     eval "cur=\$ENABLE_$c"; [ "$cur" = 1 ] || continue   # already switched off by a --no-... flag
     yn "  $(comp_desc "$c")?" || eval "ENABLE_$c=0"
   done
-  [ "$ENABLE_garrison" != 1 ] && ENABLE_jukebox=0
   read -r -p "Server name for the welcome message (Enter = generic message): " SERVER_NAME
   say "Player accounts (a fresh server has none; you can also add more later in the admin TUI, Accounts tab)"
   while yn "Create a player account now?"; do

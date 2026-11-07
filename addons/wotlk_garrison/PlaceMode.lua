@@ -1,5 +1,5 @@
 -- Placement mode (client half): a small bar replaces the big window while the server shows a solid "ghost" of the item in front of you.
--- Enter = place, Esc = cancel (override bindings, only while the mode runs), buttons for turn / nearer / further. Server: garrison.lua "placement mode".
+-- Enter = place, Esc = cancel (override bindings, only while the mode runs), buttons for turn / nearer / further / up / down. Server: garrison.lua "placement mode".
 -- Safety: bindings are always cleared when the mode ends, the bar hides, you log out / zone, or the server stops answering (no "pbeat" for 6 s).
 local G = WotlkGarrison
 local st, ui = G.st, G.ui
@@ -21,7 +21,7 @@ end
 
 local function Build()
     local bar = CreateFrame("Frame", "WotlkGarrisonPlaceBar", UIParent)
-    bar:SetSize(420, 96); bar:SetPoint("BOTTOM", 0, 140); bar:SetFrameStrata("DIALOG"); bar:EnableMouse(true)
+    bar:SetSize(528, 96); bar:SetPoint("BOTTOM", 0, 140); bar:SetFrameStrata("DIALOG"); bar:EnableMouse(true)
     bar:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", tile = true, tileSize = 32, edgeSize = 24, insets = { left = 6, right = 6, top = 6, bottom = 6 } })
     AcoreLib.Solid(bar, 9)
     bar.title = bar:CreateFontString(nil, "OVERLAY", "GameFontNormal"); bar.title:SetPoint("TOP", 0, -12)
@@ -37,9 +37,21 @@ local function Build()
     B("Turn R", 56, 230, function() AcoreLib.Send("house", "prot", "15") end)
     B("Nearer", 56, 296, function() AcoreLib.Send("house", "pdist", "-1") end)
     B("Further", 56, 356, function() AcoreLib.Send("house", "pdist", "1") end)
+    B("Up", 40, 422, function() AcoreLib.Send("house", "pup", "0.5") end)      -- height above the ground
+    B("Down", 48, 466, function() AcoreLib.Send("house", "pup", "-0.5") end)
     bar:SetScript("OnHide", function(self) ClearOverrideBindings(self) end)
+    local stillSince, sent, lastFace
     bar:SetScript("OnUpdate", function()
-        if PM.active and GetTime() - beat > 6 then PM.End(true, "Placement ended (no answer from the server).") end   -- watchdog: never stay stuck
+        if not PM.active then stillSince, sent = nil, false; return end
+        if GetTime() - beat > 6 then PM.End(true, "Placement ended (no answer from the server).") return end   -- watchdog: never stay stuck
+        -- the moment the character has stood still (not walking, not turning) for 0.2 s, tell the server so the preview appears at once
+        local face = GetPlayerFacing and GetPlayerFacing() or 0
+        if GetUnitSpeed("player") > 0 or (lastFace and math.abs(face - lastFace) > 0.01) then stillSince, sent = nil, false
+        else
+            stillSince = stillSince or GetTime()
+            if not sent and GetTime() - stillSince > 0.2 then sent = true; AcoreLib.Send("house", "pstill", "") end
+        end
+        lastFace = face
     end)
     bar:Hide(); ui.pmBar = bar
 end

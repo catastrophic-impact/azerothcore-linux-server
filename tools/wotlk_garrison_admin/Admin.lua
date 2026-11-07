@@ -48,12 +48,13 @@ local function Apply()   -- push the admin's decisions into the live catalog, so
         e.name = DB.names[e.kind] or e.defname
         e.defcat = e.defcat or e.cat   -- the category the catalog was generated with
         e.cat = DB.categories[e.kind] or e.defcat
-        e.hidden = (e.hid == 1 or e.cat == "Removed" or e.cat == "Unsorted") or nil   -- hid == 1: the server does not know this item yet (until the next import + generate), so players cannot place it
+        e.hidden = ((e.cat == "Removed" and not showRemoved) or (e.cat == "Unsorted" and not showUnsorted)) or nil   -- the two admin checkboxes decide whether this character sees Removed / Unsorted in /garrison too (the server lets only GM accounts place them)
         e.baseprice = e.baseprice or e.price or 0   -- the price the catalog was generated with
         e.price = DB.prices.items[e.kind] or DB.prices.cats[e.cat] or e.baseprice   -- category Removed = the review shelf: players never see it
         local f = e.model and e.model ~= "" and DB.fit[Norm(e.model)]
         if f then e.vs, e.vy, e.vz, e.vr = f[1], f[2], f[3], f[4] end
     end
+    if WotlkGarrison and WotlkGarrison.Refresh then pcall(WotlkGarrison.Refresh) end   -- redraw an open /garrison window
 end
 local ev = CreateFrame("Frame"); ev:RegisterEvent("PLAYER_LOGIN"); ev:SetScript("OnEvent", function() Init(); Apply() end)
 
@@ -386,6 +387,7 @@ local function Build()
         c:SetChecked(get()); c:SetScript("OnClick", function(self) set(self:GetChecked() and true or false) end); return c
     end
     local function Toggled()   -- a hidden category/mode can no longer be selected
+        Apply()
         if catFilter and Hidden(catFilter) then catFilter = nil end
         if mode == 3 and not showRemoved then mode = 1 end
         mb:SetText(MODES[mode]); Refresh(); CatText()
@@ -410,7 +412,7 @@ end
 function WotlkGarrisonOpenAdmin()
     if not DB then Init() end
     if not fx then Build() end
-    showRemoved, showUnsorted = false, false; fx.chkRemoved:SetChecked(false); fx.chkUnsorted:SetChecked(false)   -- off every time
+    showRemoved, showUnsorted = false, false; fx.chkRemoved:SetChecked(false); fx.chkUnsorted:SetChecked(false); Apply()   -- off every time
     if mode == 3 then mode = 1; fx.modeBtn:SetText(MODES[mode]) end
     if catFilter and Hidden(catFilter) then catFilter = nil end
     Refresh(); fx:Show()

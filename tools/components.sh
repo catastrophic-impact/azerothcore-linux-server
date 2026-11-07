@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Optional server components: which scripts / SQL / client addons belong to which one. Sourced by install.sh (not run on its own).
 # To add a component: add its name to COMPONENTS, a description in comp_desc, and its files in comp_files.
-# All components default to ON. Jukebox needs Garrison (its server code lives in garrison.lua).
+# All components default to ON. Jukebox works on its own (/jukebox plays for you only); with Garrison on too, the Jukebox NPC plays for everyone inside a garrison (server part: garrison_jukebox.lua).
 COMPONENTS="garrison jukebox shop bots timewalking"
 
 comp_desc() { case "$1" in
-  garrison)    echo "Garrison (player housing in Northshire, decor catalog, pets; includes the admin tool for GM accounts)";;
-  jukebox)     echo "Jukebox (music addon + jukebox NPC for your garrison)";;
+  garrison)    echo "Garrison (player housing at the Stormwind Mage Tower portal, decor catalog, pets; includes the admin tool for GM accounts)";;
+  jukebox)     echo "Jukebox (music addon: /jukebox; with Garrison also a jukebox NPC for your garrison)";;
   shop)        echo "Shop (pets / mounts / toys / services addon)";;
   bots)        echo "Bot Manager (addon to build companion bot parties)";;
   timewalking) echo "Timewalking (Dungeon Teleporter NPC, extra boss rewards + XP, Hearthstone reset in dungeons)";;
@@ -15,10 +15,11 @@ esac; }
 # one line per file: "<kind> <path relative to the project>"   kind = script | sql | addon (addon = a folder copied into client-addons/)
 comp_files() { case "$1" in
   garrison)    echo "script scripts/garrison.lua"; echo "script scripts/garrison_catalog.lua"; echo "script scripts/garrison_anims.lua"
-               for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts; do echo "sql custom-sql/$f.sql"; done
+               for f in config items economy store locations spawn session portal placement ghost menagerie props perks gm; do echo "script scripts/garrison_$f.lua"; done
+               for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts 012_decor_buildings; do echo "sql custom-sql/$f.sql"; done
                echo "sql custom-sql/001_chromie_teleporter_npc.sql"   # the garrison catalog lists the Dungeon Teleporter NPC (900001); without this row placing it fails
                echo "addon addons/wotlk_garrison"; echo "addon tools/wotlk_garrison_admin";;
-  jukebox)     echo "addon addons/wotlk_jukebox";;
+  jukebox)     echo "addon addons/wotlk_jukebox"; echo "script scripts/garrison_jukebox.lua";;   # the script is inert without the garrison scripts
   shop)        echo "script scripts/shop_server.lua"; echo "script scripts/shop_catalog.lua"; echo "script scripts/shop_prime.lua"; echo "addon addons/wotlk_shop";;
   bots)        echo "script scripts/bot_manager.lua"; echo "addon addons/wotlk_botmanager";;
   timewalking) echo "script scripts/dungeon_teleporter.lua"; echo "script scripts/darkmoon_tickets.lua"; echo "sql custom-sql/001_chromie_teleporter_npc.sql";;

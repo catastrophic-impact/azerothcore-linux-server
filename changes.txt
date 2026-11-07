@@ -24,3 +24,18 @@ v0.2
 - Admin TUI: quit asks for confirmation and safely stops the servers first; new Accounts tab (add / delete / GM level / password); "Reset to fresh install" (Server tab, key R) restores the install-time master snapshot (backups/fresh).
 - Installer: asks which optional components to install (Garrison + Jukebox, Shop, Bot Manager, Timewalking; all on by default; --no-<name> flags, --yes for no questions), an optional server name, and player accounts; creates the master snapshot before any accounts exist.
 - Admin TUI (Config tab): [d] detects this machine's LAN address and saves it to the realmlist (local only, no internet lookup); [l] sets localhost (127.0.0.1).
+- Garrison placement: the preview now appears about 0.2 s after you stop (the client tells the server the moment you stand still) instead of about 1 s.
+Housing experiments: whole buildings (WMO) added to the garrison catalog as Unsorted (admin only).
+Garrison: the portal now stands at the Stormwind Mage Tower. Players pick one garrison location (Northshire Abbey or Arathi Shore), optional price in acore_settings.lua (garrison.cost, default free), can abandon it (everything placed is lost) and pick another. Leaving a garrison's area returns you to the Mage Tower. /garrison only opens inside your own garrison; /garrison admin needs GM level 3 (also needed to place Removed/Unsorted items).
+Garrison: 'You are leaving your garrison' Leave/Stay prompt; fixed entering a garrison from the Mage Tower (the area check could send you straight back); the radius ring comes back when you re-enter; 71 more props (Unsorted) from the mod-warband-camp prop list.
+Garrison code split into 15 parts (garrison_<name>.lua); locations are now data in the world DB (.garrison addloc); instant logout + rested XP inside a garrison; Up/Down in placement mode; safer database handling (no cleanups at load).
+Jukebox: works on its own (installer no longer ties it to Garrison); Arathi Shore area set from the radius1-10 teles; .garrison phase + phase checks in the log.
+Garrison areas can be any shape (polygon of corner points, .garrison addpoint / poly); Arathi Shore now follows your radius1-10 points; the radius preview draws the border near you and follows you.
+Radius preview: markers keep a fixed height (1.5 yd) above the ground, and above the water surface over water.
+Radius preview: over water every marker now hangs at the same height above the (flat) water surface.
+Radius preview: markers over deep water no longer jump to the player's height.
+Radius preview: one water level per location (also covers water the map data misses), live height report in the log and with .garrison markers.
+Garrison: running on after the leave prompt now forces you out (20 yards past the border); Exit Garrison button in the garrison window.
+Garrison: leaving the area is now a 5 second on-screen countdown (walk back in to cancel); no more Leave/Stay prompt.
+Fixed the Exit Garrison button (its confirm dialog had been removed by mistake); added tools/lint_addons.py.
+New garrison location Fenris Isle (gar6, 14-corner area over a lake); border markers handle several water levels in one area; .garrison rename.

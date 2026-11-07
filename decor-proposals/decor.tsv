@@ -372,8 +372,6 @@ Y	Neutral	Misc	Generic Cage Top	200300	676	5	1	4	G_Cage.m2	Falcon Cage; Murloc C
 R	Neutral	Removed	Generic Hoofprint	187272	520	5	0.6	1	TRexFootprint.m2		World\Kalimdor\UnGoro\PassiveDoodads\TrexFootprint\TRexFootprint.m2	
 R	Neutral	Misc	Geyser	186941	7544	5	1	1	Borean_Geyser_01.m2		World\Expansion02\Doodads\BoreanTundra\Geysers\Borean_Geyser_01.m2	
 N	Neutral	Misc	Ghost Gate	180322	6391	5	2	1	CollisionWallPvP01.m2		World\Generic\PVP\CollisionWall\CollisionWallPvP01.m2	
-N	Neutral	Misc	Giant Sea Turtle	20820	3534	5	1	1	GiantSeaTurtle01.wmo		World\wmo\Kalimdor\CollidableDoodads\Darkshore\GiantSeaTurtle01\GiantSeaTurtle01.wmo	
-N	Neutral	Misc	Giant Turtle	20821	3531	5	1	1	GiantSeaTurtle02.wmo		World\wmo\Kalimdor\CollidableDoodads\Darkshore\GiantSeaTurtle02\GiantSeaTurtle02.wmo	
 R	Neutral	Misc	Gizmond's Flying Machine	186558	330	5	1	2	G_FlyingMachine.m2	Airman Skyhopper's Flying Machine	World\Goober\G_FlyingMachine.m2	
 R	Neutral	Misc	Glorious Goods	191676	8140	5	0.68	2	DALARAN_SIGN_GENERALGOODS.m2	Curiosities & Moore	WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_SIGN_GENERALGOODS.m2	
 R	Neutral	Misc	Glowing Soulgem	19862	404	5	1.5	1	G_RelicNESphere.m2		World\Goober\G_RelicNESphere.m2	name-filtered
@@ -382,7 +380,6 @@ R	Neutral	Removed	Golem Arm	188186	7731	5	1	1	CannonGolemArm.m2		World\KhazModan
 R	Neutral	Misc	Goodman's General Store	175467	3672	5	1	6	RUINEDSIGN03.m2	Doodad_RuinedSign05; Doodad_RuinedSign06; G & R's Restful Nook	WORLD\LORDAERON\STRATHOLME\PASSIVEDOODADS\SIGNS\RUINEDSIGN03.m2	
 R	Neutral	Misc	Gor'tesh's Lopped Off Head	160839	3081	8	1	2	OgreHeadPike.m2	Mounted Boulder'mok Head	World\Azeroth\BurningSteppes\PassiveDoodads\OgreHeadPike\OgreHeadPike.m2	
 R	Neutral	Misc	Green Moon Sigil	192687	8314	5	1	2	UL_Sigil02.m2	TOI Sigil 2	World\Expansion02\Doodads\Ulduar\UL_Sigil02.m2	
-N	Neutral	Misc	Guard Tower	20816	628	5	1	1	GuardTower.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower.wmo	
 R	Neutral	Misc	Harpy Tail Feather	188494	3651	5	0.85	1	FeatherBigBlue.m2		World\Generic\PassiveDoodads\Feathers\FeatherBigBlue.m2	
 Y	Neutral	Misc	Headhunter Skull	2371	226	5	1	2	BlastedLandsSkull02.m2	Boiled Skull	World\Azeroth\TheBlastedlands\PassiveDoodads\Bones\BlastedLandsSkull02.m2	
 R	Neutral	Removed	Heart of Fury	185125	3511	5	1	1	MuseumGem01.m2		World\KhazModan\Blackrock\PassiveDoodads\MuseumGem\MuseumGem01.m2	
@@ -391,7 +388,6 @@ R	Neutral	Misc	Heart of the Ancients	190596	7075	5	1.5	2	JewelCraft_GemCut_03.m2
 R	Neutral	Misc	Hellfire Quest - Rune of Spite Closed 2	185190	1327	5	5	4	Summon_Ritual.m2	Bly's Escape Portal; Gul'dan's Portal; Ritual Mob spawn portal	World\Generic\ActiveDoodads\InstancePortal\Summon_Ritual.m2	name-filtered
 R	Neutral	Misc	Hippogryph Nest	186805	7523	5	1	3	AK_Nest01.m2	Condor Nest; Fjord Hawk Nest	World\Expansion01\Doodads\Generic\Arakkoa\Nest\AK_Nest01.m2	
 R	Neutral	Misc	Hive Fireflies 01	210341	6667	5	1	1	Hive_Fireflies_01.m2		World\ENVIRONMENT\DOODAD\ANQUIRAJ\Fireflies\Hive_Fireflies_01.m2	
-N	Neutral	Misc	Holding Pen	20817	2170	5	1	1	HoldingPenBamboo.wmo		World\wmo\Azeroth\Collidable Doodads\Stranglethorn\HoldingPen\HoldingPenBamboo.wmo	
 R	Neutral	Removed	Holy Spring Well	19483	9483	5	1	1	blackdragonegg03.m2		world\kalimdor\dragoncave\passivedoodads\blackdragoneggs\blackdragonegg03.m2	
 R	Neutral	Removed	Horatio Montgomery, M.D.	124374	1527	9	1	1	statueHMpriest.m2		World\Dungeon\ScarletMonastery\PassiveDoodads\Statues\statueHMpriest.m2	
 Y	Neutral	Misc	Huge Sitting Skeleton 02	185457	7309	5	4	2	lightSkeletonSitting02.m2	Sitting Skeleton 02	World\Generic\PassiveDoodads\Skeletons\lightSkeletonSitting02.m2	
@@ -414,7 +410,6 @@ R	Neutral	Removed	Krolmir	192492	9022	5	10	1	mace_1h_ulduarraidnotskinable_d_01.
 R	Neutral	Misc	L70ETC Bleachers	186393	6725	5	1	1	BleachersWood01.m2		World\Generic\PassiveDoodads\Bleachers\BleachersWood01.m2	
 R	Neutral	Misc	L70ETC Stage	186300	7437	5	1	1	final_stage.m2		World\Generic\PassiveDoodads\Band\final_stage.m2	
 R	Neutral	Misc	Lair Exit	211035	4713	5	0.2	1	COT_portal01.m2		World\Dungeon\CavernsOfTime\PassiveDoodads\Portal\COT_portal01.m2	
-N	Neutral	Misc	Landing Pad	20822	2410	5	1	1	LandingPad01.wmo		World\wmo\Kalimdor\CollidableDoodads\Stonetalon\LandingPad\LandingPad01.wmo	
 R	Neutral	Misc	Langrom's Leather & Links	191675	8139	5	0.68	2	DALARAN_SIGN_ARMORSHOP.m2	The Threads of Fate	WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_SIGN_ARMORSHOP.m2	
 R	Neutral	Misc	Large Wisp	19540	428	5	1	1	BFD_WispLarge.m2		World\Kalimdor\Blackfathom\PassiveDoodads\Lights\BFD_WispLarge.m2	
 R	Neutral	Misc	Lava	191854	8200	8	0.51	7	BD_LAVAFALL01.m2		WORLD\EXPANSION02\DOODADS\DRAGONBLIGHT\BD_LAVAFALL01.m2	
@@ -458,7 +453,6 @@ Y	Neutral	Misc	MetalBarStack02Mithril	180586	6454	5	1	1	MetalBarStack02Mithril.m
 Y	Neutral	Misc	MetalBarStack02Truesilver	180597	6464	5	1	1	MetalBarStack02Truesilver.m2		World\Generic\PassiveDoodads\MetalBars\MetalBarStack02Truesilver.m2	
 R	Neutral	Misc	Metzen's Fencing	180742	6526	5	1	1	BurningSteppesFence.m2		World\Azeroth\BurningSteppes\PassiveDoodads\Fences\BurningSteppesFence.m2	
 R	Neutral	Misc	Miblon's Door	164729	3676	5	1	1	DarkshoreRuinWall05.m2		World\Kalimdor\Darkshore\PassiveDoodads\Ruins\DarkshoreRuinWall05.m2	
-N	Neutral	Misc	Mine	20811	649	5	1	1	MD_Goldmine_1Room.wmo		World\wmo\Dungeon\MD_Goldmine\MD_Goldmine_1Room.wmo	
 R	Neutral	Misc	Mist of the Ancient Mariner	187707	7644	5	1	1	HFjord_Fog_01.m2		World\Expansion02\Doodads\HowlingFjord\Fog\HFjord_Fog_01.m2	
 R	Neutral	Misc	Molten Core Instance Portal	181623	6450	5	5	1	InstancePortal_Green.m2		World\Generic\ActiveDoodads\InstancePortal\InstancePortal_Green.m2	name-filtered
 R	Neutral	Misc	Monestary Hall Door	19587	437	5	1	1	Steam04.m2		World\Generic\PassiveDoodads\ParticleEmitters\Steam04.m2	
@@ -1061,7 +1055,6 @@ R	Alliance	Removed	Military Ranks of the Horde & Alliance	179707	5851	9	1	1	Book
 R	Alliance	Misc	Mining & Smithing	183862	7099	5	1	2	DR_SIGNS_ANVIL.m2	Jewelcrafting	WORLD\EXPANSION01\DOODADS\GENERIC\DRAENEI\SHOPSIGNS\DR_SIGNS_ANVIL.m2	
 R	Alliance	Misc	Missing: Corporal Keeshan	1726	156	9	1	1	MissingPoster01.m2		World\Generic\Human\Passive Doodads\Posters\MissingPoster01.m2	
 R	Alliance	Misc	Moon Well	186218	7417	8	1.13	1	MOONWELLLIGHT.m2		WORLD\GENERIC\NIGHTELF\PASSIVE DOODADS\MOONWELLLIGHT\MOONWELLLIGHT.m2	
-N	Alliance	Misc	Moon Well 2	20819	368	5	1	1	NightElfMoonWellOrnate.wmo		World\wmo\Kalimdor\Buildings\NightElfMoonWell\NightElfMoonWellOrnate.wmo	
 R	Alliance	Removed	Mutilated Dark Iron Remains	153158	2611	5	1	1	DarkIronDwarfCorpse02.m2		World\Generic\DarkIronDwarf\Passive Doodads\Corpses\DarkIronDwarfCorpse02.m2	
 R	Alliance	Removed	Mutilated Dark Iron Remains	153159	2612	5	1	1	DarkIronDwarfCorpse03.m2		World\Generic\DarkIronDwarf\Passive Doodads\Corpses\DarkIronDwarfCorpse03.m2	
 R	Alliance	Removed	Mysterious Wreckage	194155	7643	9	0.61	1	GnomeSteelPlate04.m2		World\Generic\Gnome\Passive Doodads\Parts\GnomeSteelPlate04.m2	
@@ -1075,7 +1068,6 @@ R	Alliance	Removed	One Truth in Undeath	191655	8135	9	1	1	Book_Dwarf_02.m2		Worl
 R	Alliance	Misc	Pig and Whistle Tavern	2152	538	5	1	11	Tavern01.m2	Doodad_Tavern01; Doodad_Tavern02; Doodad_Tavern03	World\Generic\Human\Passive Doodads\Signs\Tavern01.m2	
 R	Alliance	Misc	Plate-n-Chain	56898	718	5	0.39	14	ARMORERSHOP01.m2	D&L's Armor Emporium; Deep South Tannery; Doodad_ArmorerShop01	WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\ARMORERSHOP01.m2	
 R	Alliance	Misc	Platform	190023	7854	5	0.7	2	ID_PillarBase.m2		World\Expansion02\Doodads\Generic\IronDwarf\ID_PillarBase.m2	
-N	Alliance	Misc	Player Housing	20823	467	5	1	1	HumanLevelOneTest.wmo		World\wmo\PlayerHousing\Human\HumanLevelOneTest.wmo	
 R	Alliance	Misc	Porta-pew	190740	7993	7	0.5	1	DarkIronWorkbench01.m2		World\Generic\DarkIronDwarf\Passive Doodads\WorkBenches\DarkIronWorkbench01.m2	
 R	Alliance	Misc	Portal to Stormwind	193956	4396	5	2	1	MagePortal_Stormwind.m2		World\Generic\ActiveDoodads\SpellPortals\MagePortal_Stormwind.m2	name-filtered
 R	Alliance	Removed	Poster Knife	190353	7871	5	0.5	1	KitchenKnife.m2		World\Generic\Human\Passive Doodads\Food&Utensils\KitchenKnife.m2	
@@ -1106,7 +1098,6 @@ Y	Alliance	Misc	Starsong Scroll	180910	190	5	1	1	ScrollB02.m2		World\Generic\Hum
 R	Alliance	Removed	Stone of Shy-Rotam	103819	362	8	3	2	SteppingStone01.m2		World\Generic\NightElf\Passive Doodads\SteppingStones\SteppingStone01.m2	
 R	Alliance	Misc	Stoneblade's	142874	2027	5	1	1	DWARFSIGN_DAGGERS.m2		WORLD\GENERIC\DWARF\PASSIVE DOODADS\SIGNS\DWARFSIGN_DAGGERS.m2	
 R	Alliance	Misc	Stormpike Supplies	178807	287	5	1	1	ReplaceCrate03.m2		World\Generic\Human\Passive Doodads\Crates\ReplaceCrate03.m2	
-N	Alliance	Misc	Stormwind City	20827	471	5	1	1	Stormwind.wmo		World\wmo\Azeroth\Buildings\Stormwind\Stormwind.wmo	
 R	Alliance	Misc	Stormwind Counting House	2145	7719	5	1	2	BANK01.m2	Doodad_Bank01	WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\BANK01.m2	
 R	Alliance	Misc	Stormwind Scaffolding	190571	7947	5	1	1	StormwindScaffold_01.m2		World\Generic\Human\Passive Doodads\Scaffold\StormwindScaffold_01.m2	
 R	Alliance	Misc	Strahnbrad	2023	203	5	1	9	HumanSignPostPointer05.m2	Alterac City; Andorhal; Hillsbrad Foothills	World\Generic\Human\Passive Doodads\SignPosts\HumanSignPostPointer05.m2	
@@ -1464,7 +1455,6 @@ Y	Horde	Misc	Meat Rack	176461	4351	8	1	1	RAWMEATRACK01.m2		WORLD\GENERIC\ORC\PAS
 R	Horde	Misc	Mining	58620	744	5	1	1	UNDEADSIGN_MINER.m2		WORLD\GENERIC\UNDEAD\PASSIVE DOODADS\SIGNS\UNDEADSIGN_MINER.m2	
 R	Horde	Misc	Mists of Dawn	177207	4672	9	2.22	3	TAURENWALLSCROLL02BLUE.m2	Hatred of the Centaur; The White Stag and the Moon	WORLD\GENERIC\TAUREN\PASSIVE DOODADS\TAURENWALLSCROLLS\TAURENWALLSCROLL02BLUE.m2	
 R	Horde	Misc	Orc Hero Portrait	180759	6532	5	1	1	LunarNewYear_HeroPortrait_Or.m2		World\Generic\PassiveDoodads\LunarNewYear\LunarNewYear_HeroPortrait_Or.m2	
-N	Horde	Misc	Orc Tower	20812	629	5	1	2	OrcTower.wmo		World\wmo\Kalimdor\Buildings\OrcTower\OrcTower.wmo	
 R	Horde	Removed	orcaxe01	193695	8494	5	1	1	ORCAXE02.m2		WORLD\GENERIC\ORC\PASSIVE DOODADS\WEAPONS\ORCAXE02.m2	
 R	Horde	Removed	Orcish Grog	186280	665	5	0.3	4	OrcBottle01.m2	Frostwolf Supplies; Grom's Orc Tribute; Morag's Brew	World\Generic\Orc\Passive Doodads\Bottles\OrcBottle01.m2	
 R	Horde	Misc	orcsleepmat01	193684	8491	5	1.5	4	ORCSLEEPMAT03.m2	Doodad_orcsleepmat02; Doodad_orcsleepmat03; Doodad_orcsleepmat04	WORLD\AZEROTH\BURNINGSTEPPES\PASSIVEDOODADS\ORCSLEEPMATS\ORCSLEEPMAT03.m2	
@@ -3417,3 +3407,204 @@ R	Neutral	Removed	Bank01 Sign	940003	175	5	1	1	BANK01.m2		WORLD\GENERIC\HUMAN\PA
 R	Neutral	Removed	Generalstore01 Sign	940004	176	5	1	1	GENERALSTORE01.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\GENERALSTORE01.m2	pass6
 R	Neutral	Removed	Visitorscenter01 Sign	940005	177	5	1	1	VISITORSCENTER01.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\VISITORSCENTER01.m2	pass6
 R	Neutral	Removed	Tavern01 Sign	940006	180	5	1	1	TAVERN01.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\TAVERN01.m2	pass6
+Y	Neutral	Unsorted	TEST House	20668	467	14	1	1	HumanLevelOneTest.wmo		World\wmo\PlayerHousing\Human\HumanLevelOneTest.wmo	building (WMO)
+Y	Neutral	Unsorted	Night Elf Moon Well	20818	4691	5	1	1	DSNightElfMoonWellOrnate.wmo		World\wmo\Kalimdor\Buildings\NightElfMoonWell\DSNightElfMoonWellOrnate.wmo	building (WMO)
+Y	Neutral	Unsorted	Kl Onyxias Lair	950001	5631	5	1	1	KL_OnyxiasLair.wmo		<empty>\KL_OnyxiasLair.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Egg Layer Boss	950002	6906	5	1	1	40ManEggLayerBoss.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManEggLayerBoss.wmo	building (WMO)
+Y	Neutral	Unsorted	Humantank02	950003	7019	5	1	1	humantank02.wmo		World\wmo\Outland\HumanTank\humantank02.wmo	building (WMO)
+Y	Neutral	Unsorted	Humantank01	950004	7020	5	1	1	humantank01.wmo		World\wmo\Outland\HumanTank\humantank01.wmo	building (WMO)
+Y	Neutral	Unsorted	1000Needles Bridge	950005	7051	5	1	1	1000NeedlesBridge.wmo		World\wmo\Kalimdor\CollidableDoodads\ThousandNeedles\Bridge\1000NeedlesBridge.wmo	building (WMO)
+Y	Neutral	Unsorted	Hellfire Human Seigetower	950006	7129	5	1	1	hellfire_human_seigetower.wmo		World\wmo\Dungeon\MD_gorge\hellfire_human_seigetower.wmo	building (WMO)
+Y	Neutral	Unsorted	Orc Barracks	950007	7165	5	1	1	OrcBarracks.wmo		World\wmo\Kalimdor\Buildings\OrcBarracks\OrcBarracks.wmo	building (WMO)
+Y	Neutral	Unsorted	God Altar	950008	7246	5	1	1	God_Altar.wmo		World\wmo\Lorderon\Buildings\ZulAman\FTrollTemples\God_Altar.wmo	building (WMO)
+Y	Neutral	Unsorted	Terokkar Trees01	950009	7280	5	1	1	Terokkar_trees01.wmo		World\wmo\Dungeon\Terokkar_trees\Terokkar_trees01.wmo	building (WMO)
+Y	Neutral	Unsorted	Terokkar Tree Micro	950010	7281	5	1	1	Terokkar_tree_micro.wmo		World\wmo\Dungeon\Terokkar_trees\Terokkar_tree_micro.wmo	building (WMO)
+Y	Neutral	Unsorted	War2Darkportal	950011	7402	5	1	1	war2darkportal.wmo		World\wmo\Outland\DarkPortal\war2darkportal.wmo	building (WMO)
+Y	Neutral	Unsorted	Final Stage	950012	7424	5	1	1	final_stage.wmo		World\wmo\band\final_stage.wmo	building (WMO)
+Y	Neutral	Unsorted	Redridge Chapel	950013	7428	5	1	1	RedridgeChapel.wmo		World\wmo\Azeroth\Buildings\Chapel\RedridgeChapel.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Human Farm	950014	7432	5	1	1	Duskwood_human_farm.wmo		World\wmo\Azeroth\Buildings\Duskwood_human_farm\Duskwood_human_farm.wmo	building (WMO)
+Y	Neutral	Unsorted	Griffon Aviary	950015	7433	5	1	1	GriffonAviary.wmo		World\wmo\Azeroth\Buildings\GriffonAviary\GriffonAviary.wmo	building (WMO)
+Y	Neutral	Unsorted	Lumber Mill	950016	7434	5	1	1	LumberMill.wmo		World\wmo\Azeroth\Buildings\LumberMill\LumberMill.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Farm Houseburnt	950017	7436	5	1	1	DuskwoodFarmHouseburnt.wmo		World\wmo\Azeroth\Buildings\Duskwood_Human_Farm_Burnt\DuskwoodFarmHouseburnt.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Chapel	950018	7449	5	1	1	DuskwoodChapel.wmo		World\wmo\Azeroth\Buildings\Chapel\DuskwoodChapel.wmo	building (WMO)
+Y	Neutral	Unsorted	Chapel	950019	7450	5	1	1	Chapel.wmo		World\wmo\Azeroth\Buildings\Chapel\Chapel.wmo	building (WMO)
+Y	Neutral	Unsorted	Dsnight Elf Druid Tower	950020	7458	5	1	1	DSNightElfDruidTower.wmo		World\wmo\Kalimdor\Buildings\NightElfDruidTower\DSNightElfDruidTower.wmo	building (WMO)
+Y	Neutral	Unsorted	Thebroken House01	950021	7461	5	1	1	Thebroken_house01.wmo		World\wmo\Outland\BrokenBuildings\Thebroken_house01.wmo	building (WMO)
+Y	Neutral	Unsorted	Ruinedhumanguardtower01	950022	7462	5	1	1	ruinedhumanguardtower01.wmo		World\wmo\Azeroth\Buildings\GuardTower_Ruined\ruinedhumanguardtower01.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Human Two Story	950023	7463	5	1	1	Duskwood_HumanTwoStory.wmo		World\wmo\Azeroth\Buildings\Duskwood_HumanTwoStory\Duskwood_HumanTwoStory.wmo	building (WMO)
+Y	Neutral	Unsorted	West Fall Farm Houseburnt	950024	7464	5	1	1	WestFallFarmHouseburnt.wmo		World\wmo\Azeroth\Buildings\Westfall_human_farm_Burnt\WestFallFarmHouseburnt.wmo	building (WMO)
+Y	Neutral	Unsorted	Westfall Human Farm	950025	7465	5	1	1	Westfall_human_farm.wmo		World\wmo\Azeroth\Buildings\Westfall_human_farm\Westfall_human_farm.wmo	building (WMO)
+Y	Neutral	Unsorted	Orc Zeppelin House	950026	7466	5	1	1	OrcZeppelinHouse.wmo		World\wmo\Kalimdor\Buildings\OrcZeppelinHouse\OrcZeppelinHouse.wmo	building (WMO)
+Y	Neutral	Unsorted	Giant Totem	950027	7474	5	1	1	GiantTotem.wmo		World\wmo\Kalimdor\ThunderBluff\GiantTotem.wmo	building (WMO)
+Y	Neutral	Unsorted	Bridge Big White	950028	7475	5	1	1	BridgeBigWhite.wmo		World\wmo\Lorderon\Buildings\Wetlands\BridgeBigWhite\BridgeBigWhite.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Army General	950029	7505	5	1	1	40ManArmyGeneral.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManArmyGeneral.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower Damaged	950030	7540	5	1	1	GuardTower_damaged.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_damaged.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower Destroyed	950031	7541	5	1	1	GuardTower_destroyed.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_destroyed.wmo	building (WMO)
+Y	Neutral	Unsorted	Pirateship	950032	7552	5	1	1	Pirateship.wmo		World\wmo\Dungeon\MD_Pirateship\Pirateship.wmo	building (WMO)
+Y	Neutral	Unsorted	Pirateship No Cannons	950033	7555	5	1	1	Pirateship_NoCannons.wmo		World\wmo\Dungeon\MD_Pirateship\Pirateship_NoCannons.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower Intact	950034	7595	5	1	1	GuardTower_intact.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_intact.wmo	building (WMO)
+Y	Neutral	Unsorted	Quiraj Tower03	950035	7630	5	1	1	QuirajTower03.wmo		World\wmo\Kalimdor\CollidableDoodads\Silithus\QuirajTower03.wmo	building (WMO)
+Y	Neutral	Unsorted	Outland Draeni Hut 1	950036	7667	5	1	1	outland_draeni_hut_1.wmo		World\Outland\PassiveDoodads\DraeniBuildings\outland_draeni_hut_1.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Blacksmith	950037	7668	5	1	1	Duskwood_Blacksmith.wmo		World\wmo\Azeroth\Buildings\Duskwood_Blacksmith\Duskwood_Blacksmith.wmo	building (WMO)
+Y	Neutral	Unsorted	40Mans Silithid Hall	950038	7669	5	1	1	40MansSilithidHall.wmo		World\wmo\Dungeon\KL_AhnQiraj\40MansSilithidHall.wmo	building (WMO)
+Y	Neutral	Unsorted	Abandoned Orc Great Hall	950039	7670	5	1	1	AbandonedOrcGreatHall.wmo		World\wmo\Kalimdor\Buildings\OrcGreatHall\AbandonedOrcGreatHall.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Main Boss East	950040	7671	5	1	1	40ManMainBossEast.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManMainBossEast.wmo	building (WMO)
+Y	Neutral	Unsorted	Abandoned Orc Barracks	950041	7672	5	1	1	AbandonedOrcBarracks.wmo		World\wmo\Kalimdor\Buildings\OrcBarracks\AbandonedOrcBarracks.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Main Boss2	950042	7673	5	1	1	40ManMainBoss2.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManMainBoss2.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Enterance	950043	7674	5	1	1	40ManEnterance.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManEnterance.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Main Boss1	950044	7675	5	1	1	40ManMainBoss1.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManMainBoss1.wmo	building (WMO)
+Y	Neutral	Unsorted	Abandoned Orc Blacksmith	950045	7676	5	1	1	AbandonedOrcBlacksmith.wmo		World\wmo\Kalimdor\Buildings\OrcBlacksmith\AbandonedOrcBlacksmith.wmo	building (WMO)
+Y	Neutral	Unsorted	Abandoned Orc Kennel	950046	7677	5	1	1	AbandonedOrcKennel.wmo		World\wmo\Kalimdor\Buildings\OrcKennel\AbandonedOrcKennel.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Small Dock01	950047	7708	5	1	1	RedRidgeSmallDock01.wmo		World\wmo\Azeroth\Collidable Doodads\Redridge\RedridgeDocks\RedRidgeSmallDock01.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Winter Tauren Smoke Hut Destroyed	950048	7806	5	1	1	ND_WinterTauren_SmokeHut_Destroyed.wmo		World\wmo\Northrend\Buildings\WinterTauren\ND_WinterTauren_SmokeHut_Destroyed.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Winter Tauren Smoke Hut	950049	7807	5	1	1	ND_WinterTauren_SmokeHut.wmo		World\wmo\Northrend\Buildings\WinterTauren\ND_WinterTauren_SmokeHut\ND_WinterTauren_SmokeHut.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower Damaged Construction	950050	7808	5	1	1	GuardTower_damaged_construction.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_damaged_construction.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower Destroyed Construction	950051	7809	5	1	1	GuardTower_destroyed_construction.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_destroyed_construction.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human House02	950052	7832	5	1	1	ND_Human_House02.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_House02\ND_Human_House02.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Destruction02	950053	7833	5	1	1	ND_Human_Destruction02.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Destruction02\ND_Human_Destruction02.wmo	building (WMO)
+Y	Neutral	Unsorted	Old Strat Farm	950054	7847	5	1	1	OldStrat_farm.wmo		World\wmo\buildings\OldStrat_farm.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Gate01D	950055	7855	5	1	1	WG_Gate01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Gate01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall01D	950056	7874	5	1	1	WG_Wall01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower01D	950057	7875	5	1	1	WG_Tower01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall01	950058	7877	5	1	1	WG_Wall01.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall01.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower01	950059	7878	5	1	1	WG_Tower01.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower01.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall01C	950060	7897	5	1	1	WG_Wall01C.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower02D	950061	7898	5	1	1	WG_Tower02D.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower02D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Bridge02D	950062	7899	5	1	1	WG_Bridge02D.wmo		World\wmo\Northrend\Wintergrasp\WG_Bridge02D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower02	950063	7900	5	1	1	WG_Tower02.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower02.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Bridge02	950064	7901	5	1	1	WG_Bridge02.wmo		World\wmo\Northrend\Wintergrasp\WG_Bridge02.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Gate01	950065	7906	5	1	1	WG_Gate01.wmo		World\wmo\Northrend\Wintergrasp\WG_Gate01.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall02D	950066	7908	5	1	1	WG_Wall02D.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall02D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall02	950067	7909	5	1	1	WG_Wall02.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall02.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall03	950068	7910	5	1	1	WG_Wall03.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall03.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall End Damaged	950069	7912	5	1	1	ND_Human_Wall_End_damaged.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall\ND_Human_Wall_End_damaged.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall Damaged	950070	7913	5	1	1	ND_Human_Wall_damaged.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall\ND_Human_Wall_damaged.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall	950071	7914	5	1	1	ND_Human_Wall.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall\ND_Human_Wall.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall End	950072	7915	5	1	1	ND_Human_Wall_End.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall\ND_Human_Wall_End.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Bridge01D	950073	7990	5	1	1	WG_Bridge01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Bridge01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Bridge01	950074	7995	5	1	1	WG_Bridge01.wmo		World\wmo\Northrend\Wintergrasp\WG_Bridge01.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Human Farm	950075	8010	5	1	1	RedRidge_human_farm.wmo		World\wmo\Azeroth\Buildings\RedRidge_human_farm\RedRidge_human_farm.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Stable	950076	8011	5	1	1	RedRidge_Stable.wmo		World\wmo\Azeroth\Buildings\RedRidge_Stable\RedRidge_Stable.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Lumbermill	950077	8012	5	1	1	RedRidge_Lumbermill.wmo		World\wmo\Azeroth\Buildings\RedRidge_Lumbermill\RedRidge_Lumbermill.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Barn	950078	8013	5	1	1	RedRidge_Barn.wmo		World\wmo\Azeroth\Buildings\RedRidge_Barn\RedRidge_Barn.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Barn	950079	8014	5	1	1	Duskwood_Barn.wmo		World\wmo\Azeroth\Buildings\Duskwood_Barn\Duskwood_Barn.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Lumbermill	950080	8015	5	1	1	Duskwood_Lumbermill.wmo		World\wmo\Azeroth\Buildings\Duskwood_Lumbermill\Duskwood_Lumbermill.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Stable	950081	8016	5	1	1	Duskwood_Stable.wmo		World\wmo\Azeroth\Buildings\Duskwood_Stable\Duskwood_Stable.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Barn Closed	950082	8017	5	1	1	Duskwood_Barn_Closed.wmo		World\wmo\Azeroth\Buildings\Duskwood_Barn\Duskwood_Barn_Closed.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Barn Closed	950083	8018	5	1	1	RedRidge_Barn_Closed.wmo		World\wmo\Azeroth\Buildings\RedRidge_Barn\RedRidge_Barn_Closed.wmo	building (WMO)
+Y	Neutral	Unsorted	Red Ridge Human Farm Closed	950084	8019	5	1	1	RedRidge_human_farm_closed.wmo		World\wmo\Azeroth\Buildings\RedRidge_human_farm\RedRidge_human_farm_closed.wmo	building (WMO)
+Y	Neutral	Unsorted	Duskwood Human Farm Closed	950085	8020	5	1	1	Duskwood_human_farm_closed.wmo		World\wmo\Azeroth\Buildings\Duskwood_human_farm\Duskwood_human_farm_closed.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Keep Door01	950086	8165	5	1	1	wg_keep_door01.wmo		world\wmo\northrend\wintergrasp\wg_keep_door01.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Keep Door01C	950087	8166	5	1	1	WG_Keep_Door01C.wmo		World\wmo\Northrend\Wintergrasp\WG_Keep_Door01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Keep Door01D	950088	8167	5	1	1	WG_Keep_Door01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Keep_Door01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Bridge02C	950089	8168	5	1	1	WG_Bridge02C.wmo		World\wmo\Northrend\Wintergrasp\WG_Bridge02C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower02C	950090	8169	5	1	1	WG_Tower02C.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower02C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Tower01C	950091	8173	5	1	1	WG_Tower01C.wmo		World\wmo\Northrend\Wintergrasp\WG_Tower01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Wall02C	950092	8186	5	1	1	WG_Wall02C.wmo		World\wmo\Northrend\Wintergrasp\WG_Wall02C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Gate01C	950093	8198	5	1	1	WG_Gate01C.wmo		World\wmo\Northrend\Wintergrasp\WG_Gate01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Siege01	950094	8208	5	1	1	wg_siege01.wmo		world\wmo\northrend\wintergrasp\wg_siege01.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Siege01C	950095	8209	5	1	1	WG_Siege01C.wmo		World\wmo\Northrend\Wintergrasp\WG_Siege01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Wg Siege01D	950096	8210	5	1	1	WG_Siege01D.wmo		World\wmo\Northrend\Wintergrasp\WG_Siege01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall End Small Damaged02	950097	8246	5	1	1	ND_Human_Wall_End_Small_damaged02.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall_Small\ND_Human_Wall_End_Small_damaged02.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall Small Damaged02	950098	8249	5	1	1	ND_Human_Wall_Small_damaged02.wmo		World\wmo\Northrend\Buildings\Human\ND_Human_Wall_Small\ND_Human_Wall_Small_damaged02.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall End Small02	950099	8250	5	1	1	nd_human_wall_end_small02.wmo		world\wmo\northrend\buildings\human\nd_human_wall\nd_human_wall_end_small02.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Wall Small02	950100	8251	5	1	1	nd_human_wall_small02.wmo		world\wmo\northrend\buildings\human\nd_human_wall_small\nd_human_wall_small02.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Horde Gunship	950101	8253	5	1	1	ND_HordeGunship.wmo		World\wmo\Northrend\Buildings\WinterOrc\ND_HordeGunship.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Alliance Gunship	950102	8254	5	1	1	ND_AllianceGunship.wmo		World\wmo\Northrend\Buildings\Human\ND_AllianceGunship.wmo	building (WMO)
+Y	Neutral	Unsorted	Sp Roc Nest01	950103	8282	5	1	1	SP_RocNest01.wmo		World\wmo\Northrend\Stormpeaks\Nests\SP_RocNest01.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Tower Open	950104	8335	5	1	1	nd_human_tower_open.wmo		world\wmo\northrend\buildings\human\nd_human_tower_open.wmo	building (WMO)
+Y	Neutral	Unsorted	Nexus Raid Floating Platform D	950105	8386	5	1	1	Nexus_Raid_Floating_platform_D.wmo		World\wmo\Dungeon\Nexus\Platforms\Nexus_Raid_Floating_platform_D.wmo	building (WMO)
+Y	Neutral	Unsorted	Nexus Raid Floating Platform	950106	8387	5	1	1	nexus_raid_floating_platform.wmo		world\wmo\dungeon\nexus\platforms\nexus_raid_floating_platform.wmo	building (WMO)
+Y	Neutral	Unsorted	Dsexcavationplatform	950107	8459	5	1	1	dsexcavationplatform.wmo		world\wmo\kalimdor\collidabledoodads\darkshore\darkshoreexcavation\dsexcavationplatform.wmo	building (WMO)
+Y	Neutral	Unsorted	Stormpeaks Irongiant 01	950108	8523	5	1	1	stormpeaks_irongiant_01.wmo		world\wmo\northrend\stormpeaks\irongiant\stormpeaks_irongiant_01.wmo	building (WMO)
+Y	Neutral	Unsorted	Ulduar Tower01C	950109	8584	5	1	1	Ulduar_Tower01C.wmo		World\wmo\Dungeon\Ulduar\Ulduar_Tower01C.wmo	building (WMO)
+Y	Neutral	Unsorted	Ulduar Tower01D	950110	8585	5	1	1	Ulduar_Tower01D.wmo		World\wmo\Dungeon\Ulduar\Ulduar_Tower01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Ulduar Tower01	950111	8590	5	1	1	ulduar_tower01.wmo		world\wmo\dungeon\ulduar\ulduar_tower01.wmo	building (WMO)
+Y	Neutral	Unsorted	Ulduar Building01D	950112	8591	5	1	1	Ulduar_Building01D.wmo		World\wmo\Dungeon\Ulduar\Ulduar_Building01D.wmo	building (WMO)
+Y	Neutral	Unsorted	Ulduar Building01	950113	8593	5	1	1	ulduar_building01.wmo		world\wmo\dungeon\ulduar\ulduar_building01.wmo	building (WMO)
+Y	Neutral	Unsorted	40Man Court Yard	950114	8596	5	1	1	40ManCourtYard.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManCourtYard.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Argentcrusadestage	950115	8975	5	1	1	nd_argentcrusadestage.wmo		world\wmo\northrend\buildings\human\nd_human_construction01\nd_argentcrusadestage.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Winterorc Wall Gate	950116	8996	5	1	1	nd_winterorc_wall_gate.wmo		world\wmo\northrend\buildings\winterorc\nd_winterorc_walls\nd_winterorc_wall_gate.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Human Gate Closed	950117	8997	5	1	1	nd_human_gate_closed.wmo		world\wmo\northrend\buildings\human\gate\nd_human_gate_closed.wmo	building (WMO)
+Y	Neutral	Unsorted	Nd Winterorc Walld	950118	8998	5	1	1	nd_winterorc_walld.wmo		world\wmo\northrend\buildings\winterorc\nd_winterorc_walls\nd_winterorc_walld.wmo	building (WMO)
+Y	Neutral	Unsorted	Moon Well 2	20819	368	5	1	1	NightElfMoonWellOrnate.wmo		World\wmo\Kalimdor\Buildings\NightElfMoonWell\NightElfMoonWellOrnate.wmo	building (WMO)
+Y	Neutral	Unsorted	Stormwind City	20827	471	5	1	1	Stormwind.wmo		World\wmo\Azeroth\Buildings\Stormwind\Stormwind.wmo	building (WMO)
+Y	Neutral	Unsorted	Guard Tower	20816	628	5	1	1	GuardTower.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower.wmo	building (WMO)
+Y	Neutral	Unsorted	Orc Tower	20812	629	5	1	1	OrcTower.wmo		World\wmo\Kalimdor\Buildings\OrcTower\OrcTower.wmo	building (WMO)
+Y	Neutral	Unsorted	Mine	20811	649	5	1	1	MD_Goldmine_1Room.wmo		World\wmo\Dungeon\MD_Goldmine\MD_Goldmine_1Room.wmo	building (WMO)
+Y	Neutral	Unsorted	Holding Pen	20817	2170	5	1	1	HoldingPenBamboo.wmo		World\wmo\Azeroth\Collidable Doodads\Stranglethorn\HoldingPen\HoldingPenBamboo.wmo	building (WMO)
+Y	Neutral	Unsorted	Landing Pad	20822	2410	5	1	1	LandingPad01.wmo		World\wmo\Kalimdor\CollidableDoodads\Stonetalon\LandingPad\LandingPad01.wmo	building (WMO)
+Y	Neutral	Unsorted	Giant Turtle	20821	3531	5	1	1	GiantSeaTurtle02.wmo		World\wmo\Kalimdor\CollidableDoodads\Darkshore\GiantSeaTurtle02\GiantSeaTurtle02.wmo	building (WMO)
+Y	Neutral	Unsorted	Giant Sea Turtle	20820	3534	5	1	1	GiantSeaTurtle01.wmo		World\wmo\Kalimdor\CollidableDoodads\Darkshore\GiantSeaTurtle01\GiantSeaTurtle01.wmo	building (WMO)
+Y	Neutral	Unsorted	Horde Tent	201886	8397	5	1	1	orctent02.mdx		world\generic\orc\passive doodads\tents\orctent02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Excavation Canopy Tent	210286	6738	5	1	1	ExcavationTentPavillion.mdx		World\Generic\Dwarf\Passive Doodads\ExcavationTentPavillion\ExcavationTentPavillion.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Bonfire	180434	6411	5	1	1	KarazahnBonFire01.mdx		World\Azeroth\Karazahn\PassiveDoodads\Bonfire\KarazahnBonFire01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Blue Fire Bonfire	181289	680	5	1	1	ORCBONFIRE_BLUE.MDX		WORLD\AZEROTH\BURNINGSTEPPES\PASSIVEDOODADS\BONFIRE\ORCBONFIRE_BLUE.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orc Bonfire	184866	200	5	1	1	OrcBonFire.mdx		World\Azeroth\BurningSteppes\PassiveDoodads\Bonfire\OrcBonFire.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Large Soulfire Pit	16395	398	5	1	1	UndeadFireLarge.mdx		World\Generic\Human\Passive Doodads\Fire\UndeadFireLarge.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Table	181075	221	5	1	1	INNTABLE.MDX		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\TABLES\INNTABLE.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Dalaran Chair	192842	8204	5	1	1	DALARAN_CHAIR_02.MDX		WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_CHAIR_02.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Duskwood Bench	193522	682	5	1	1	DuskwoodBench.mdx		World\Generic\Human\Passive Doodads\Benches\DuskwoodBench.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Chieftain Throne	188481	7744	5	1	1	thralls_throne.mdx		World\Kalimdor\Orgrimmar\PassiveDoodads\thralls_throne.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Stormwind Rug	180334	6360	5	1	1	StormwindRug02.mdx		World\Generic\Human\Passive Doodads\Rugs\StormwindRug02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Carved Oak Table	183994	234	5	1	1	DuskwoodTable01.mdx		World\Generic\Human\Passive Doodads\Tables\DuskwoodTable01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Blood Elf Table	182093	6916	5	1	1	BE_table_small01.mdx		World\Expansion01\Doodads\Generic\BloodElf\Tables\BE_table_small01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Barrel	180779	288	5	1	1	Barrel02.mdx		World\Generic\PassiveDoodads\Furniture\Containers\Barrel02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orc Crate	184856	1988	5	1	1	OrcCrate10.mdx		World\Generic\Orc\Passive Doodads\BarrelsandCrates\OrcCrate10.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Plague Barrel	193414	7470	5	1	1	FK_PlagueBarrel.mdx		World\Expansion02\Doodads\Generic\Forsaken\FK_PlagueBarrel.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Broken Barrel	190881	9	5	1	1	BrokenBarrel02.mdx		World\Generic\PassiveDoodads\Barrel\BrokenBarrel02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Reinforced Cargo Crate	184854	285	5	1	1	ReplaceCrate01.mdx		World\Generic\Human\Passive Doodads\Crates\ReplaceCrate01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Wagon	188696	3678	5	1	1	WestfallWagon01.mdx		World\Azeroth\Westfall\PassiveDoodads\Westfall Wagon\WestfallWagon01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Wood Pile	190687	1248	5	1	1	PeasantLumber01.mdx		World\Generic\Human\Passive Doodads\PeasantLumber\PeasantLumber01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Wheelbarrow	190859	215	5	1	1	CAVEMINEWHEELBARROW01.MDX		WORLD\GENERIC\PASSIVEDOODADS\MISC\WHEELBARROW\CAVEMINEWHEELBARROW01.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Dwarf Target Dummy	193157	7048	5	1	1	ArcheryTargetDwarf01.mdx		World\Generic\Tauren\Passive Doodads\ArcheryTargets\ArcheryTargetDwarf01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Wooden Rowboat	190230	124	5	1	1	RowBoat01.mdx		World\Azeroth\RedRidge\PassiveDoodads\RowBoat\RowBoat01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Anvil	201771	273	5	1	1	Tradeskill_Anvil_01.mdx		World\SkillActivated\TradeskillEnablers\Tradeskill_Anvil_01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Forge Coals	201773	667	5	1	1	FORGEBONFIRE.MDX		WORLD\GENERIC\DWARF\PASSIVE DOODADS\FORGEBONFIRE\FORGEBONFIRE.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Weapon Rack	183269	130	5	1	1	GeneralWeaponrack01.mdx		World\Generic\Human\Passive Doodads\WeaponRacks\GeneralWeaponrack01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Blacksmith Toolbox	193151	317	5	1	1	Toolbox01.mdx		World\Generic\Dwarf\Passive Doodads\Tools\Toolbox01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Cemetery Portcullis Gate	187912	3614	5	1	1	SMALLPORTCULLIS.MDX		WORLD\LORDAERON\STRATHOLME\ACTIVEDOODADS\DOORS\SMALLPORTCULLIS.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orc Palisade Wall	19423	9423	5	1	1	orcfence.mdx		world\generic\orc\passive doodads\orcfence\orcfence.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Heavy Defensive Ground Spike	193415	7266	5	1	1	Spike.mdx		World\Azeroth\Elwynn\PassiveDoodads\Spike\Spike.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Alliance Banner	192252	5651	5	1	1	BattlefieldBannerAlliance.mdx		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAlliance.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Horde Banner	192254	5652	5	1	1	BattlefieldBannerHorde.mdx		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHorde.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Stormwind Banner	194274	8623	5	1	1	tournament_banner_human02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_human02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orgrimmar Banner	194278	8621	5	1	1	tournament_banner_horde02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_horde02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Ironforge Banner	194277	8620	5	1	1	tournament_banner_dwarf02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_dwarf02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Darnassus Banner	194282	8616	5	1	1	tournament_banner_nelf02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_nelf02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Gnomeregan Banner	194279	8619	5	1	1	tournament_banner_gnome02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_gnome02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Exodar Banner	194280	8617	5	1	1	tournament_banner_draenei02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_draenei02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Thunder Bluff Banner	194283	8624	5	1	1	tournament_banner_tauren02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_tauren02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Undercity Banner	194276	8618	5	1	1	tournament_banner_fk02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_fk02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Silvermoon Banner	194275	8622	5	1	1	tournament_banner_bloodelf02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_bloodelf02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Sen'jin Banner	194281	8615	5	1	1	tournament_banner_trolls02.mdx		world\expansion02\doodads\generic\argentcrusade\banners\tournament_banner_trolls02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Shattered Sun Banner	187123	7617	5	1	1	Sunshatter_Banner01.mdx		World\Expansion02\Doodads\Generic\Sunshatter\Banner\Sunshatter_Banner01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Candle	1558	100	5	1	1	Candle01.mdx		World\Generic\PassiveDoodads\Lights\Candle01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Candelabra	2697	240	5	1	1	GeneralCandelabra01.mdx		World\Generic\Human\Passive Doodads\Candelabras\GeneralCandelabra01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Standing Torch	180043	4094	5	1	1	FreestandingTorch01.mdx		World\Generic\PassiveDoodads\Lights\FreestandingTorch01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Fel Torch	185003	7255	5	1	1	ShadowCouncil_Torch.mdx		World\Expansion01\Doodads\Generic\ShadowCouncil\Torch\ShadowCouncil_Torch.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Grain Sack	195197	5471	5	1	1	KN_GrainSack02.mdx		World\Azeroth\Karazahn\PassiveDoodads\GrainSacks\KN_GrainSack02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Roast Game Haunch	2332	224	5	1	1	Haunch.mdx		World\Generic\Human\Passive Doodads\Food&Utensils\Haunch.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Oven Baked Hearth Bread	2562	229	5	1	1	bread01.mdx		World\Generic\Human\Passive Doodads\Food\bread01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orcish Flagon Bottle	33360	665	5	1	1	OrcBottle01.mdx		World\Generic\Orc\Passive Doodads\Bottles\OrcBottle01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Hanging Hunt Carcass	188429	14	5	1	1	BloodyMeat01.mdx		World\Generic\Human\Passive Doodads\Meat\BloodyMeat01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Mounted Ogre Trophy Head	185294	3081	5	1	1	OgreHeadPike.mdx		World\Azeroth\BurningSteppes\PassiveDoodads\OgreHeadPike\OgreHeadPike.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Reinforced Beast Cage	194120	4154	5	1	1	G_Cage03.mdx		World\Goober\G_Cage03.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Musty Coffin	190948	7225	5	1	1	Coffin.mdx		World\Azeroth\Duskwood\PassiveDoodads\Coffin\Coffin.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Voodoo Skull Pile	190214	6393	5	1	1	VoodooPile01.mdx		World\Azeroth\ZulGurub\ActiveDoodads\VoodooPile\VoodooPile01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Ancient Blasted Bone Pile	180225	6329	5	1	1	BlastedLandsBonePile03.mdx		World\Azeroth\TheBlastedlands\PassiveDoodads\Bones\BlastedLandsBonePile03.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Sack of Gold	180660	6484	5	1	1	Sack01_01.mdx		World\Azeroth\Stranglethorn\PassiveDoodads\Sack01_01\Sack01_01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Grave	211065	20	5	1	1	DirtMound01.mdx		World\Azeroth\Duskwood\PassiveDoodads\Tombs\DirtMound01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Human Skeleton	176745	4451	5	1	1	lightSkeletonLaying01.mdx		World\Generic\PassiveDoodads\Skeletons\lightSkeletonLaying01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Open Spellbook	152098	254	5	1	1	BookMediumOpen01.mdx		World\Generic\Human\Passive Doodads\Books\BookMediumOpen01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Goblin Weather Vane	177746	2911	5	1	1	GoblinWeatherVane.mdx		World\Generic\Goblin\PassiveDoodads\GoblinMachinery\GoblinWeatherVane.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Flower Bouquet	180210	6313	5	1	1	FlowersBunch04.mdx		World\Generic\Human\Passive Doodads\Flowers\FlowersBunch04.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Wild Fern	178908	369	5	1	1	SwampSorrowPlant02.mdx		World\Azeroth\SwampOSorrow\PassiveDoodads\Plants\SwampSorrowPlant02.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Camp Pine Tree	178557	5315	5	1	1	XmasTree_MediumAlliance01.mdx		World\Generic\PassiveDoodads\Christmas\XmasTree_MediumAlliance01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Festive Conifer Tree	187190	5253	5	1	1	XmasTree_LargeAlliance01.mdx		World\Generic\PassiveDoodads\Christmas\XmasTree_LargeAlliance01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Forsaken Alchemy Bench	176561	4391	5	1	1	undead_alchemy_table.mdx		World\Generic\Undead\Passive Doodads\UndeadAlchemyTable\undead_alchemy_table.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Apothecary Chemistry Set	190689	7094	5	1	1	AK_ALCHEMYSET01.MDX		WORLD\EXPANSION01\DOODADS\GENERIC\ARAKKOA\TRADESKILL\AK_ALCHEMYSET01.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Herb Sacks	184798	7224	5	1	1	SackHerbsStranglekelp01.mdx		World\Generic\Human\Passive Doodads\Sacks\SackHerbsStranglekelp01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Apprentice Alchemy Station	192547	8109	5	1	1	SC_ALCHEMY_TABLE.MDX		WORLD\EXPANSION02\DOODADS\GENERIC\SCOURGE\SC_ALCHEMY_TABLE.MDX	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Orc War Pavilion	191784	8184	5	1	1	orctent01.mdx		World\Generic\Orc\Passive Doodads\Tents\orctent01.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Grand Festival Arch	181086	6655	5	1	1	ValentinesArc.mdx		World\Generic\PassiveDoodads\ValentinesDay\ValentinesArc.mdx	from mod-warband-camp prop list (ids only)

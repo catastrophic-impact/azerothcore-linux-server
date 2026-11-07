@@ -10,8 +10,8 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 
 | Piece | What it is |
 |---|---|
-| **Garrison** | Your own phased garrison (Northshire Abbey): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
-| **Jukebox** | ~1000 game tracks, favorites, shuffle; in a garrison the jukebox NPC plays music for everyone inside. (Needs Garrison.) |
+| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; more locations can be added in game with `.garrison addloc`): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
+| **Jukebox** | ~1000 game tracks, favorites, shuffle; works on its own with `/jukebox` (plays for you only); with Garrison installed too, the jukebox NPC plays music for everyone inside a garrison. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
@@ -84,7 +84,8 @@ Download the repo, then in your server folder:
    | Piece | Scripts |
    |---|---|
    | Always | `acore_msg.lua` |
-   | Garrison (and Jukebox) | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` |
+   | Garrison | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` and every `garrison_<name>.lua` (config, items, economy, store, locations, spawn, session, portal, placement, ghost, menagerie, props, perks, gm) |
+   | Jukebox in a garrison | `garrison_jukebox.lua` (the addon alone needs no server script) |
    | Shop | `shop_server.lua`, `shop_catalog.lua`, `shop_prime.lua` |
    | Bot Manager | `bot_manager.lua` |
    | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
