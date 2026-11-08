@@ -1,6 +1,6 @@
 -- Garrison module 5/14: WHERE garrisons are, and which phase bits they may use.
 --  * Locations live in the WORLD database (table garrison_location, created here, seeded with the two built-in ones) so adding one needs no code:
---      stand where players should appear and type   .garrison addloc <name>      (GM level 3; then .garrison radius N / .garrison center to tune it)
+--      stand where players should appear and type   .garrison addloc <name>      (GM level 3; then shape it with .garrison poly or addpoint)
 --    New locations show up at the portal after   .garrison reload   (garrisons that are already open are not touched).
 --  * Shape: a circle (cx, cy, radius) or, when it has 3+ boundary points, a polygon (world table garrison_location_point). Everything that
 --    asks "is this spot inside?" calls L.Inside(loc, x, y); for a polygon cx, cy, radius are DERIVED (middle and farthest corner) and only
@@ -17,7 +17,7 @@ return function(G)
     -- seeded when the table is empty (a fresh install): id, name, map, cx, cy, radius, arrival x, y, z, o, corner points of the area (nil = circle)
     local DEFAULTS = {
         { 1, "Northshire Abbey", 0, -8940.0, -115.0, 119.0, -9036.052, -55.42181, 89.495094, 6.0482984,
-          { { -9031.6, 8 }, { -9049, -101.8 }, { -9124.6, -193.8 }, { -8980.2, -341.6 }, { -8795.1, -400.6 }, { -8677.9, -199 }, { -8663.6, -44.9 }, { -8880.7, 21.6 }, { -8952.4, -3.7 }, { -9031.5, 12.5 } } },
+          { { -9031.57, 7.96 }, { -9048.98, -101.79 }, { -9124.59, -193.84 }, { -8980.17, -341.57 }, { -8795.14, -400.64 }, { -8677.91, -199.0 }, { -8663.63, -44.88 }, { -8880.75, 21.58 }, { -8952.43, -3.68 }, { -9031.49, 12.5 } } },
         { 2, "Arathi Shore", 0, -1777.2, -4121.4, 276.0, -1860.9, -4148.67, 9.61398, 3.23143,
           { { -1569.75, -4232.62 }, { -1679.4, -4320.1 }, { -1784.83, -4309.21 }, { -1863.12, -4261.71 }, { -1955.67, -4199.95 }, { -2017.11, -4109.82 }, { -2024.02, -4022.91 }, { -1911.01, -4033.95 }, { -1831.35, -4044.2 }, { -1530.37, -4220.01 } } },
         { 3, "Fenris Isle", 0, 885.9, 583.0, 347.8, 949.49, 689.13, 59.74, 3.169,

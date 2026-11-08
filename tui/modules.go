@@ -16,7 +16,7 @@ import (
 )
 
 // Modules live as source folders in modules/<name>/. modules.json records desired (enabled) vs built state.
-// Applying changes = auto full DB backup -> rebuild in the build distrobox -> install -> regenerate confs.
+// Applying changes = (optional backup, asked first) -> rebuild in the build distrobox -> install -> regenerate confs.
 
 type ModEntry struct {
 	Name    string `json:"name"`
@@ -141,9 +141,15 @@ func (m model) modsKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 		}
 		switch mode {
 		case mmApply:
-			return m, m.startOp("rebuilding with module changes", func() (string, error) { return applyModules() })
+			return m.askBackup("Rebuild with module changes?", "Adding/removing modules can leave data behind in the databases.", "modules", true,
+				"rebuilding with module changes", func(snap string) (string, error) {
+					return withServersStopped(10, true, func() (string, error) { return applyModules(snap) })
+				})
 		case mmUndo:
-			return m, m.startOp("undoing last module change", func() (string, error) { return undoModules() })
+			return m.askBackup("Undo last module change?", "Rebuilds the previous module set"+map[bool]string{true: " and RESTORES the databases from the backup taken before it", false: " (databases are not touched: no backup was taken then)"}[ms.man.LastSnapshot != ""]+".", "undo-modules", false,
+				"undoing last module change", func(string) (string, error) {
+					return withServersStopped(10, true, func() (string, error) { return undoModules() })
+				})
 		case mmRemove:
 			name := ms.man.Mods[ms.cur].Name
 			return m, m.startOp("removing "+name, func() (string, error) { return removeModule(name) })
@@ -181,7 +187,7 @@ func (m model) modsKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			m.setFlash("no changes to apply (toggle modules with space first)", false)
 		}
 	case "u":
-		if ms.man.LastSnapshot != "" {
+		if ms.man.LastSnapshot != "" || len(ms.man.PrevEnabled) > 0 {
 			ms.mode = mmUndo
 		} else {
 			m.setFlash("nothing to undo yet", false)
@@ -207,7 +213,6 @@ func (m model) modsKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 func (m model) viewModules() string {
 	ms := m.mods
 	var b strings.Builder
-	b.WriteString(cDim.Render("  [space] enable/disable   [enter] apply changes (backup + rebuild)   [a] add by git URL   [x] remove   [u] undo last apply") + "\n")
 	b.WriteString(cDim.Render("  [o] open module settings folder (etc/modules)   [l] open lua_scripts folder (acore_settings.lua)") + "\n")
 	b.WriteString(cDim.Render("  C++ modules are compiled in, so changes need a rebuild (a few minutes with cache). Lua scripts in lua_scripts/ need no rebuild.") + "\n\n")
 	if ms.mode == mmAdd {
@@ -242,7 +247,7 @@ func (m model) viewModules() string {
 	}
 	switch ms.mode {
 	case mmApply:
-		b.WriteString("\n" + cWarn.Render("  Apply: servers must be stopped. A FULL database backup is taken first, then the server is rebuilt. Continue? [y]") + "\n")
+		b.WriteString("\n" + cWarn.Render("  Apply: running servers are stopped safely first and restarted after. You are asked about a database backup next, then the server is rebuilt. Continue? [y]") + "\n")
 	case mmUndo:
 		b.WriteString("\n" + cWarn.Render("  Undo: restores the databases from before the last apply AND rebuilds the previous module set. Continue? [y]") + "\n")
 	case mmRemove:
@@ -361,7 +366,7 @@ func runRebuild() error {
 	c := exec.Command("distrobox", "enter", buildBox(), "--", "bash", p("tools", "rebuild.sh"), root)
 	c.Stdout, c.Stderr = lf, lf
 	if err := c.Run(); err != nil {
-		return fmt.Errorf("rebuild failed - see logs/rebuild.log (%v). Press [u] to undo and restore the backup", err)
+		return fmt.Errorf("rebuild failed - see logs/rebuild.log (%v). Press [u] to undo (restores the backup if you made one)", err)
 	}
 	return nil
 }
@@ -374,7 +379,8 @@ func guard() error {
 	return nil
 }
 
-func applyModules() (string, error) {
+// applyModules: snap is the name of a backup the user chose to create first ("" = none).
+func applyModules(snap string) (string, error) {
 	if err := guard(); err != nil {
 		return "", err
 	}
@@ -388,10 +394,6 @@ func applyModules() (string, error) {
 	}
 	if err := startMySQL(); err != nil {
 		return "", err
-	}
-	snap, err := makeBackup("full", "pre-modules")
-	if err != nil {
-		return "", fmt.Errorf("backup failed, nothing changed: %w", err)
 	}
 	var prev []string
 	for _, e := range man.Mods {
@@ -418,7 +420,11 @@ func applyModules() (string, error) {
 	if err := applyOverrides(); err != nil {
 		return "", err
 	}
-	return "rebuilt OK. Backup before change: " + snap + ". Start the servers to load the new set.", nil
+	note := "no backup was taken"
+	if snap != "" {
+		note = "backup before change: " + snap
+	}
+	return "rebuilt OK (" + note + "). Start the servers to load the new set.", nil
 }
 
 func undoModules() (string, error) {
@@ -426,7 +432,7 @@ func undoModules() (string, error) {
 		return "", err
 	}
 	man := loadManifest()
-	if man.LastSnapshot == "" {
+	if man.LastSnapshot == "" && len(man.PrevEnabled) == 0 {
 		return "", errors.New("nothing to undo")
 	}
 	if err := startMySQL(); err != nil {
@@ -441,8 +447,10 @@ func undoModules() (string, error) {
 	}
 	snap := man.LastSnapshot
 	dbs := backupKinds["full"]
-	if _, err := restoreBackup(snap, dbs); err != nil {
-		return "", fmt.Errorf("db restore failed: %w", err)
+	if snap != "" {
+		if _, err := restoreBackup(snap, dbs); err != nil {
+			return "", fmt.Errorf("db restore failed: %w", err)
+		}
 	}
 	if err := writeLists(man); err != nil {
 		return "", err
@@ -459,6 +467,9 @@ func undoModules() (string, error) {
 	man.LastSnapshot = ""
 	if err := man.save(); err != nil {
 		return "", err
+	}
+	if snap == "" {
+		return "undone: previous modules rebuilt (databases were NOT restored: no backup was taken before that change)", applyOverrides()
 	}
 	return "undone: databases restored from " + snap + " and previous modules rebuilt", applyOverrides()
 }

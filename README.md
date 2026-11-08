@@ -10,7 +10,7 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 
 | Piece | What it is |
 |---|---|
-| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; more locations can be added in game with `.garrison addloc`): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
+| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
 | **Jukebox** | ~1000 game tracks, favorites, shuffle; works on its own with `/jukebox` (plays for you only); with Garrison installed too, the jukebox NPC plays music for everyone inside a garrison. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
@@ -40,16 +40,17 @@ Needs `distrobox`, `git`, `curl` and podman or docker.
 git clone <this repo> && cd <repo> && ./install.sh
 ```
 
-It asks which components to install (all **on** by default), an optional server name, and the player accounts to create, then builds everything inside an Ubuntu 22.04 distrobox and writes a **self-contained server folder** (nothing is written to your home or `~/.config`). Unattended: `--yes`, with `--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking` to leave things out, `--accounts FILE` (lines of `name password gmlevel`).
+It asks which components to install (all **on** by default), whether to use our **recommended settings** (XP x4, 300 playerbots, active auction bot, faster skills/reputation, relaxed instances) or plain AzerothCore defaults (`--stock-settings`), an optional server name, and the player accounts to create, then builds everything inside an Ubuntu 22.04 distrobox and writes a **self-contained server folder** (nothing is written to your home or `~/.config`). Unattended: `--yes`, with `--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking` to leave things out, `--accounts FILE` (lines of `name password gmlevel`).
 
 Run the admin TUI from the server folder: `./acore-admin`
 
-- **Server** start / safe stop, world console, **reset to fresh install** (restores the install-time master snapshot after a confirmation).
-- **Accounts** add / delete / GM level / password.
-- **Backups**, **Modules** (toggle + rebuild), **Logs**, **Config**.
-- Quit (`q`) asks for confirmation and stops the servers safely first.
+- **Server** status dashboard (services, uptime, characters online, disk), start / safe stop, **reset to fresh install**. **Output** shows the game server's live text and takes console commands (`:`).
+- **Logs** with scrolling (wheel / arrows), filter (`/`) and errors-only (`e`). **Debug** switches the individual log files on or off (Playerbots.log is off by default), clears `mysqld.log`, and has two garrison maintenance actions.
+- **Accounts** add / delete / GM level / password, search, online status. **Config** realmlist and client patch. **Modules** toggle + rebuild.
+- **Backups**: the only automatic backup is the install-time **master** (`backups/fresh`, pinned at the top, cannot be deleted in the TUI). Restore, reset and module changes ask "create a backup first?"; running servers are stopped safely (with an in-game countdown) and started again for you.
+- Press `?` for the key list. Tabs are clickable. Quit (`q`) asks for confirmation and stops the servers safely first.
 
-Copy the folders in `client-addons/` into your client's `Interface/AddOns`.
+Copy the folders in `client-addons/` into your client's `Interface/AddOns`. The garrison portal and the garrison jukebox NPC only work for players who have the matching addon installed (each addon tells the server it is present when you enter the world; after installing one, `/reload`).
 
 ## Use the addons on your own server
 

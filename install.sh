@@ -3,17 +3,17 @@
 # Builds everything inside an Ubuntu 22.04 distrobox (home under ~/boxes), then produces a self-contained
 # server folder next to where you ran this. The server folder never touches your home or ~/.config.
 # usage: ./install.sh [--dest DIR] [--box NAME] [--clean-box] [--accounts FILE] [--no-configure] [--yes]
-#                     [--no-garrison] [--no-jukebox] [--no-shop] [--no-bots] [--no-timewalking]   (--yes = no questions, all defaults)
+#                     [--stock-settings] [--no-garrison] [--no-jukebox] [--no-shop] [--no-bots] [--no-timewalking]   (--yes = no questions, all defaults)
 set -euo pipefail
 HERE="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 DEST="$PWD/azerothcore-server"; BOX="acore-box"; CLEAN=0; ACCTS="$HERE/local/accounts.txt"; CONFIGURE=1; ASSUME_YES=0
-ENABLE_garrison=1; ENABLE_jukebox=1; ENABLE_shop=1; ENABLE_bots=1; ENABLE_timewalking=1
+ENABLE_garrison=1; ENABLE_jukebox=1; ENABLE_shop=1; ENABLE_bots=1; ENABLE_timewalking=1; SETTINGS=recommended
 SERVER_NAME=""; NEWACCTS=()   # NEWACCTS entries: "name<TAB>password<TAB>gmlevel" (kept in memory only, never written to disk)
 source "$HERE/tools/components.sh"
 while [ $# -gt 0 ]; do case "$1" in
   --dest) DEST="$(readlink -m "$2")"; shift 2;; --box) BOX="$2"; shift 2;;
   --clean-box) CLEAN=1; shift;; --accounts) ACCTS="$2"; shift 2;; --no-configure) CONFIGURE=0; shift;;
-  --yes) ASSUME_YES=1; shift;; --no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking) eval "ENABLE_${1#--no-}=0"; shift;;
+  --yes) ASSUME_YES=1; shift;; --stock-settings) SETTINGS=stock; shift;; --no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking) eval "ENABLE_${1#--no-}=0"; shift;;
   *) echo "unknown option $1"; exit 1;; esac; done
 CACHE="${ACORE_CACHE:-$HERE/cache}"; BOXHOME="$HOME/boxes/$BOX"
 MYSQL_URL="https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.7-linux-glibc2.28-x86_64.tar.xz"
@@ -34,6 +34,10 @@ if [ "$INTERACTIVE" = 1 ]; then
     eval "cur=\$ENABLE_$c"; [ "$cur" = 1 ] || continue   # already switched off by a --no-... flag
     yn "  $(comp_desc "$c")?" || eval "ENABLE_$c=0"
   done
+  say "Server settings"
+  echo "  recommended = our tuning (XP x4, 300 playerbots, auction bot active, faster skills/reputation, relaxed instances and battlegrounds)"
+  echo "  stock       = plain AzerothCore defaults (portable paths and database settings are always applied)"
+  read -r -p "Use the recommended settings? [Y/n] " a; case "$a" in n|N|no|NO) SETTINGS=stock;; esac
   read -r -p "Server name for the welcome message (Enter = generic message): " SERVER_NAME
   say "Player accounts (a fresh server has none; you can also add more later in the admin TUI, Accounts tab)"
   while yn "Create a player account now?"; do
@@ -43,6 +47,7 @@ if [ "$INTERACTIVE" = 1 ]; then
     [ -n "$ap" ] && [ "${#ap}" -le 16 ] && [[ "$ap" != *[[:space:]\'\"\;]* ]] && NEWACCTS+=("$an"$'\t'"$ap"$'\t'"$al") || echo "  invalid password (1-16 characters, no spaces or quotes), skipped"
   done
 fi
+echo "settings: $SETTINGS"
 echo "components: $(for c in $COMPONENTS; do eval "[ \$ENABLE_$c = 1 ]" && printf '%s ' "$c"; done)"
 
 mkdir -p "$CACHE" "$DEST"/{bin,etc/modules,libs,config,logs,backups,database,modules,lua_scripts,tools,patches,config-overrides,source}
@@ -120,6 +125,7 @@ A="$DEST/acore-admin"; cd "$DEST"
 if [ -n "$SERVER_NAME" ] && [[ "$SERVER_NAME" != *[\"\\\&\|]* ]]; then
   sed -i "s|^PlayerStart.String = .*|PlayerStart.String = \"Welcome to $SERVER_NAME!\"|" "$DEST/config-overrides/worldserver.conf"
 fi
+echo "settings=$SETTINGS" > "$DEST/config/settings.conf"
 "$A" confs
 if [ "$CONFIGURE" = 1 ] && [ -t 0 ]; then
   say "Module settings (optional, best done BEFORE the first login)"

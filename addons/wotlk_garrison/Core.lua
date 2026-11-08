@@ -4,6 +4,7 @@
 --   Frame.lua    main window, server messages, /garrison
 -- Server side: scripts/garrison.lua (module "house").
 WotlkGarrison = WotlkGarrison or {}
+AcoreLib.Announce("garrison")   -- tells the server this client has the addon (the portal refuses players without it)
 local G = WotlkGarrison
 local C = WotlkGarrisonCatalog
 G.C = C

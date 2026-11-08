@@ -14,3 +14,4 @@ tools/wotlk_garrison_admin_blankprobe/
 # built binaries (source is kept)
 tools/conncheck.exe
 tools/conncheck-linux
+install-test/

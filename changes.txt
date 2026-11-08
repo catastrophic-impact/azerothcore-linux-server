@@ -4,7 +4,7 @@ v0.1 (first working version)
 - Portable AzerothCore build (Playerbot fork) + modules: playerbots, autobalance, ale (Lua), ah-bot-plus, dungeon-clear, rndbot-buffs, gm-realmfirst-fix, transmog, individual-progression. Modules pinned in modules.lock.
 - Everything runs from one folder: bundled MySQL 8.4, client data, libs. Config lives next to the binaries.
 - Core patch: module configs are read from the -c config folder (patches/portable-config-path.patch); bundled OpenSSL legacy provider (needed by the client protocol).
-- Admin TUI (acore-admin, Go): start/safe stop, live logs, DB backup/restore (full / player data, auto safety snapshot, import old dumps), realmlist editor, module toggle + rebuild with undo.
+- Admin TUI (acore-admin, Go): start/safe stop, live logs, DB backup/restore (full / player data, import old dumps; the only automatic backup is the install-time master, which the TUI cannot delete), realmlist editor, module toggle + rebuild with undo.
 - One-script installer (install.sh): builds in an Ubuntu 22.04 distrobox, assembles the portable folder, first-boot DB setup, accounts from a local file.
 - Config overrides (config-overrides/) re-applied to stock configs on every install/rebuild.
 - Lua (ALE) scripts: addon<->server messaging layer, Darkmoon ticket rewards from all instance bosses, shop server, creature-cache priming for 3D previews, Bot Manager.
@@ -39,3 +39,5 @@ Garrison: running on after the leave prompt now forces you out (20 yards past th
 Garrison: leaving the area is now a 5 second on-screen countdown (walk back in to cancel); no more Leave/Stay prompt.
 Fixed the Exit Garrison button (its confirm dialog had been removed by mistake); added tools/lint_addons.py.
 New garrison location Fenris Isle (gar6, 14-corner area over a lake); border markers handle several water levels in one area; .garrison rename.
+Admin TUI: new Server dashboard (status, uptime, characters online, disk), themed layout, spinner/toasts, ? help, clickable tabs, log filter/errors-only/pause, account search + online status. New Debug tab (switch Playerbots/Server/Errors/Auth log files; Playerbots.log off by default; clear mysqld.log, auto-trimmed at start). Debug tab also has two garrison maintenance actions (empty all garrison data; remove data of deleted accounts), each asking about a backup first. Restore, reset, module apply/undo and component-off now ask "create a backup first?" instead of making automatic backups; the install-time master stays the only automatic one and cannot be deleted in the TUI.
+Installer: choose "recommended settings" (our tuning: XP x4, 300 playerbots, auction bot active, rates...) or plain AzerothCore defaults (--stock-settings). Portable paths and database settings are always applied. config-overrides/ = required, config-overrides/recommended/ = tuning; the choice is stored in config/settings.conf.

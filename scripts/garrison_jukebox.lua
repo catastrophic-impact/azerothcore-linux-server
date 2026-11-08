@@ -14,6 +14,11 @@ return function(G)
     end
 
     RegisterCreatureGossipEvent(JUKE_NPC, 1, function(event, player, creature)
+        if not Msg.Has(player, "jukebox") then
+            Say(player, "You need the Jukebox addon to use the jukebox. Install it, then /reload.")
+            player:GossipComplete()
+            return true
+        end
         player:GossipClearMenu()
         player:GossipMenuAddItem(6, "Choose music for the garrison", 0, 1, false)
         player:GossipMenuAddItem(0, "Stop the music", 0, 2, false)

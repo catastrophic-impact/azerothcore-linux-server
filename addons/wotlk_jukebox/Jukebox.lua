@@ -1,6 +1,7 @@
 -- Jukebox: browse the game's music by group/area, play, repeat/shuffle/random, favorites.
 -- Personal mode (/jukebox): plays only for you. Garrison mode (opened from the Jukebox NPC inside a garrison): your pick is sent to the
 -- server, which plays it for everyone inside that garrison (server side: scripts/garrison_jukebox.lua, optional; the addon works without it). Track data: Tracks.lua (generated).
+AcoreLib.Announce("jukebox")   -- tells the server this client has the addon (the garrison Jukebox NPC needs it)
 local T = WotlkJukeboxTracks
 local ROW_H, ROWS = 22, 17
 local title

@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"os"
 	"path/filepath"
 )
@@ -36,29 +35,21 @@ func snapshotFresh() error {
 }
 
 // resetServer stops the game and auth servers (MySQL stays up), then restores every database from the master snapshot.
-// A safety snapshot of the current state is taken first by restoreBackup, so a reset can itself be undone from the Backups tab.
+// No automatic backup: the TUI asks the user whether to create one first.
 func resetServer() (string, error) {
 	if !haveFresh() {
-		return "", errors.New("no master snapshot found (backups/fresh): this server was not installed with one")
+		return "", errors.New("cannot find the master backup (backups/fresh): this server has no fresh-install snapshot, so it cannot be reset")
 	}
-	if err := startMySQL(); err != nil {
-		return "", err
-	}
-	if err := stopWorld(5); err != nil {
-		return "", err
-	}
-	if err := stopAuth(); err != nil {
-		return "", err
-	}
-	var dbs []string
-	for _, b := range listBackups() {
-		if b.Name == freshSet {
-			dbs = b.Dbs
+	return withServersStopped(5, true, func() (string, error) {
+		var dbs []string
+		for _, b := range listBackups() {
+			if b.Name == freshSet {
+				dbs = b.Dbs
+			}
 		}
-	}
-	safety, err := restoreBackup(freshSet, dbs)
-	if err != nil {
-		return "", err
-	}
-	return fmt.Sprintf("server reset to fresh install (previous state saved as %s). Start the servers, then create accounts on the Accounts tab.", safety), nil
+		if _, err := restoreBackup(freshSet, dbs); err != nil {
+			return "", err
+		}
+		return "server reset to fresh install; create accounts on the Accounts tab.", nil
+	})
 }

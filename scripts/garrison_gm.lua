@@ -1,7 +1,7 @@
--- Garrison module 14/14 (part 2): GM chat commands (.garrison ...). GM level 2+ for the tuning commands, 3+ for the ones that create or reload locations.
---   .garrison locs | info | phase | markers | status | purge | center | radius <yards> | arrive | rename <name> | addloc <name> | reload
+-- Garrison module 14/14 (part 2): GM chat commands (.garrison ...). GM level 2+ for the inspection commands, 3+ for the ones that create or reload locations.
+--   .garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload
 --   shape (GM level 3): addpoint | delpoint | points | poly <tele name prefix> | circle      (a garrison area is a circle, or a polygon of 3+ points)
--- info/center/radius/arrive act on the garrison you stand in, else on the nearest location on this map.
+-- info/rename act on the garrison you stand in, else on the nearest location on this map.
 return function(G)
     local Say, Loc, active, inside, store = G.Say, G.locations.Get, G.active, G.inside, G.store
 
@@ -62,7 +62,7 @@ return function(G)
             if cmd == "reload" then G.locations.Reload(); Say(player, "Locations reloaded; garrisons that are open keep their old settings until they close."); return false end
             if arg == "" then Say(player, "Usage: .garrison addloc <name>   (stand where players should appear)"); return false end
             local l = G.locations.Add(arg, player:GetMapId(), player:GetX(), player:GetY(), player:GetZ(), player:GetO())
-            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Tune it with .garrison radius N / center / arrive. It shows at the portal at once.")
+            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Shape it with .garrison poly or addpoint. It shows at the portal at once.")
             return false
         end
         local loc = Target(player)
@@ -99,14 +99,12 @@ return function(G)
             Describe(player, loc)
             return false
         end
-        if cmd == "center" then loc.cx, loc.cy = player:GetX(), player:GetY()
-        elseif cmd == "radius" and tonumber(arg) then loc.radius = tonumber(arg); G.locations.SetPoints(loc, nil)   -- a radius means a circle again
-        elseif cmd == "rename" then
+        -- (.garrison center / radius / arrive were removed on purpose: every player shares a location's area, so it is only changed together with the developer)
+        if cmd == "rename" then
             if rank < 3 or arg == "" then Say(player, "Usage (GM level 3): .garrison rename <new name>"); return false end
             loc.name = arg
-        elseif cmd == "arrive" then loc.portal = { x = player:GetX(), y = player:GetY(), z = player:GetZ(), o = player:GetO() }
         elseif cmd ~= "info" then
-            Say(player, ".garrison locs | info | phase | markers | status | purge | center | radius <yards> | arrive | rename <name> | addloc <name> | reload | addpoint | delpoint | points | poly <prefix> | circle"); return false
+            Say(player, ".garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload | addpoint | delpoint | points | poly <prefix> | circle"); return false
         end
         if cmd ~= "info" then G.locations.Save(loc) end
         Describe(player, loc)

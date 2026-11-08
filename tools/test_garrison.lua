@@ -152,8 +152,16 @@ check(ok and res == true, "garrison.lua installs all parts" .. (ok and "" or (":
 if not (ok and res == true) then os.exit(1) end
 
 local p = NewPlayer(1, 5, "Tester")
+ACORE.Msg.handlers["core|hello"](p, "garrison,jukebox")   -- the client has our addons (the portal and Enter refuse players without them)
 local OnHello, OnSelect = handlers.gossipGo["900002:1"], handlers.gossipGo["900002:2"]
 check(OnHello and OnSelect, "portal gossip registered")
+
+-- a client without the addon gets no menu and cannot enter (the hello handshake)
+local q = NewPlayer(2, 6, "NoAddon")
+OnHello(1, q, {})
+check(#q.menu == 0, "portal shows no menu to a player without the Garrison addon")
+ACORE_G.Enter(q, 6, 1)
+check(q.phase == 1 and not ACORE_G.inside[q.guid], "Enter refuses a player without the Garrison addon")
 
 -- claim
 OnHello(1, p, {}); local claims = {}

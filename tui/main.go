@@ -6,6 +6,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/charmbracelet/bubbles/spinner"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -23,15 +24,17 @@ var (
 	cOK     = lipgloss.NewStyle().Foreground(lipgloss.Color("42"))
 )
 
-var tabNames = []string{"Server", "Logs", "Backups", "Modules", "Config", "Accounts"}
+var tabNames = []string{"Server", "Output", "Logs", "Backups", "Modules", "Config", "Accounts", "Debug"}
 
 const (
 	tServer = iota
+	tOutput
 	tLogs
 	tBackups
 	tModules
 	tConfig
 	tAccounts
+	tDebug
 )
 
 type tickMsg time.Time
@@ -50,6 +53,8 @@ const (
 	mConfirmDelete
 	mConfirmQuit
 	mConfirmReset
+	mLogFilter
+	mAskBackup
 )
 
 type model struct {
@@ -60,8 +65,13 @@ type model struct {
 	quitting bool // set while the shutdown started by 'quit' is running; the TUI exits when it finishes
 	flash    string
 	flashE   bool
+	spin     spinner.Model
+	tickN    int
+	stats    Stats
 
 	worldTail []string
+	worldUp   bool // the world server finished loading ("ready")
+	logScroll int  // lines scrolled back from the end of the log (0 = follow)
 	logFiles  []string
 	logIdx    int
 	logLines  []string
@@ -74,6 +84,13 @@ type model struct {
 
 	mods modState
 	acct acctState
+	dbg  debugState
+	help bool
+	ask  askState
+
+	logFilter  string
+	logErrOnly bool
+	logPaused  bool
 
 	realm [2]textinput.Model
 	rfoc  int
@@ -91,12 +108,14 @@ func newModel() model {
 	}
 	m.realm[0].Placeholder = "public IP or DDNS name (internet players)"
 	m.realm[1].Placeholder = "LAN IP (local players)"
+	m.spin = spinner.New(spinner.WithSpinner(spinner.MiniDot))
+	m.spin.Style = lipgloss.NewStyle().Foreground(lipgloss.Color("0"))
 	m.mods = newModState()
 	m.acct = newAcctState()
 	return m
 }
 
-func (m model) Init() tea.Cmd { return tea.Batch(tick(), refreshCmd()) }
+func (m model) Init() tea.Cmd { return tea.Batch(tick(), statsCmd()) }
 
 func tick() tea.Cmd {
 	return tea.Tick(1500*time.Millisecond, func(t time.Time) tea.Msg { return tickMsg(t) })
@@ -117,7 +136,7 @@ func (m *model) startOp(label string, f func() (string, error)) tea.Cmd {
 		return nil
 	}
 	m.busy = label
-	return run(label, f)
+	return tea.Batch(run(label, f), m.spin.Tick)
 }
 
 func (m *model) setFlash(s string, e bool) { m.flash, m.flashE = s, e }
@@ -126,16 +145,37 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch v := msg.(type) {
 	case tea.WindowSizeMsg:
 		m.w, m.h = v.Width, v.Height
+	case statsMsg:
+		m.stats = Stats(v)
+		return m, nil
+	case spinner.TickMsg:
+		if m.busy == "" {
+			return m, nil
+		}
+		var c tea.Cmd
+		m.spin, c = m.spin.Update(v)
+		return m, c
 	case tickMsg:
 		m.st = status()
-		if m.tab == tServer {
-			m.worldTail = tailFile(p("logs", "world.out"), max(5, m.h-18))
+		m.tickN++
+		if !m.st.World {
+			m.worldUp = false
+		} else if !m.worldUp {
+			m.worldUp = worldReady()
+		}
+		if m.tab == tOutput {
+			m.worldTail = tailFile(p("logs", "world.out"), max(5, m.h-10))
 		}
 		if m.tab == tModules && m.busy != "" {
 			m.mods.tickLog(m.h)
 		}
 		if m.tab == tLogs {
-			m.logLines = tailFile(p("logs", m.logFiles[m.logIdx]), max(5, m.h-8))
+			if !m.logPaused && m.logScroll == 0 {
+				m.logLines = m.readLog()
+			}
+		}
+		if m.tickN%3 == 1 {
+			return m, tea.Batch(tick(), statsCmd())
 		}
 		return m, tick()
 	case opDone:
@@ -163,6 +203,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, nil
 	case tea.KeyMsg:
 		return m.onKey(v)
+	case tea.MouseMsg:
+		return m.onMouse(v)
 	}
 	return m, nil
 }
@@ -178,13 +220,25 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			m.setFlash("reset cancelled", false)
 			return m, nil
 		}
-		return m, m.startOp("resetting server to fresh install", resetServer)
+		if !haveFresh() {
+			m.setFlash("cannot find the master backup (backups/fresh): nothing to reset to", true)
+			return m, nil
+		}
+		return m.askBackup("Reset to fresh install?", "Replaces ALL accounts, characters, garrisons and bots.", "reset", false,
+			"resetting server to fresh install", func(string) (string, error) { return resetServer() })
+	}
+	if m.mode == mAskBackup {
+		return m.askKey(s)
+	}
+	if m.help {
+		m.help = false
+		return m, nil
 	}
 	if s == "ctrl+c" {
 		return m.askQuit()
 	}
 	// text-entry modes capture keys
-	if m.mode == mConsole || m.mode == mBackupLabel {
+	if m.mode == mConsole || m.mode == mBackupLabel || m.mode == mLogFilter {
 		switch s {
 		case "esc":
 			m.mode = mNone
@@ -195,6 +249,10 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			m.input.Blur()
 			mode := m.mode
 			m.mode = mNone
+			if mode == mLogFilter {
+				m.logFilter = val
+				m.logLines = m.readLog()
+			}
 			if mode == mConsole && val != "" {
 				if err := worldCmd(val); err != nil {
 					m.setFlash(err.Error(), true)
@@ -229,6 +287,9 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 		return m.confirmKey(s)
 	}
 	switch s {
+	case "?":
+		m.help = true
+		return m, nil
 	case "q":
 		return m.askQuit()
 	case "tab", "right":
@@ -237,7 +298,7 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 	case "shift+tab", "left":
 		m.tab = (m.tab + len(tabNames) - 1) % len(tabNames)
 		return m.onTab()
-	case "1", "2", "3", "4", "5", "6":
+	case "1", "2", "3", "4", "5", "6", "7", "8":
 		m.tab = int(s[0] - '1')
 		return m.onTab()
 	}
@@ -257,7 +318,9 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			return m, nil
 		case "m":
 			return m, m.startOp("starting MySQL", func() (string, error) { return "MySQL running", startMySQL() })
-		case ":":
+		}
+	case tOutput:
+		if s == ":" {
 			if !m.st.World {
 				m.setFlash("worldserver not running", true)
 				return m, nil
@@ -269,18 +332,42 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 		}
 	case tLogs:
 		switch s {
-		case "[", "up":
+		case "[":
 			m.logIdx = (m.logIdx + len(m.logFiles) - 1) % len(m.logFiles)
-		case "]", "down":
+			m.logScroll = 0
+		case "]":
 			m.logIdx = (m.logIdx + 1) % len(m.logFiles)
+			m.logScroll = 0
+		case "up", "k":
+			m.logScroll += 3
+		case "down", "j":
+			m.logScroll = max(0, m.logScroll-3)
+		case "pgup":
+			m.logScroll += max(5, m.h-12)
+		case "pgdown":
+			m.logScroll = max(0, m.logScroll-max(5, m.h-12))
+		case "end", "G":
+			m.logScroll = 0
+		case "/":
+			m.mode = mLogFilter
+			m.input.SetValue(m.logFilter)
+			m.input.Prompt = "filter: "
+			m.input.Focus()
+			return m, textinput.Blink
+		case "e":
+			m.logErrOnly = !m.logErrOnly
+		case " ":
+			m.logPaused = !m.logPaused
 		}
-		m.logLines = tailFile(p("logs", m.logFiles[m.logIdx]), max(5, m.h-8))
+		m.logLines = m.readLog()
 	case tBackups:
 		return m.backupKey(s)
 	case tModules:
 		return m.modsKey(k)
 	case tAccounts:
 		return m.acctKey(k)
+	case tDebug:
+		return m.debugKey(k)
 	case tConfig:
 		if s == "p" {
 			return m, m.startOp("building client patch archive", func() (string, error) { return buildClientPatch() })
@@ -433,7 +520,9 @@ func (m model) backupKey(s string) (tea.Model, tea.Cmd) {
 			m.mode = mConfirmRestore
 		}
 	case "d":
-		if len(m.backups) > 0 {
+		if len(m.backups) > 0 && m.backups[m.bcur].Name == freshSet {
+			m.setFlash("the master backup is protected and cannot be deleted here", true)
+		} else if len(m.backups) > 0 {
 			m.mode = mConfirmDelete
 		}
 	case "r":
@@ -469,58 +558,71 @@ func (m model) confirmKey(s string) (tea.Model, tea.Cmd) {
 		m.setFlash("restore cancelled", false)
 		return m, nil
 	}
-	return m, m.startOp("restoring "+b.Name, func() (string, error) {
-		safety, err := restoreBackup(b.Name, dbs)
-		if err != nil {
-			return "", err
-		}
-		return fmt.Sprintf("restored %s (previous state saved as %s)", strings.Join(dbs, ","), safety), nil
-	})
+	return m.askBackup("Restore "+b.Name+"?", "Replaces the current "+strings.Join(shorten(dbs), ", ")+" database(s).", "restore", false,
+		"restoring "+b.Name, func(string) (string, error) {
+			return withServersStopped(10, true, func() (string, error) {
+				if _, err := restoreBackup(b.Name, dbs); err != nil {
+					return "", err
+				}
+				return "restored " + strings.Join(dbs, ","), nil
+			})
+		})
 }
 
 func (m model) View() string {
-	var b strings.Builder
-	b.WriteString(cTitle.Render("AzerothCore Admin") + "  ")
-	for i, n := range tabNames {
-		st := cTabOff
-		if i == m.tab {
-			st = cTabOn
+	head := m.header() + "\n\n"
+	var body strings.Builder
+	if m.help {
+		body.WriteString(m.helpView() + "\n")
+	} else {
+		switch m.tab {
+		case tServer:
+			body.WriteString(m.viewServer())
+		case tOutput:
+			body.WriteString(m.viewOutput())
+		case tLogs:
+			body.WriteString(m.viewLogs())
+		case tBackups:
+			body.WriteString(m.viewBackups())
+		case tModules:
+			body.WriteString(m.viewModules())
+		case tConfig:
+			body.WriteString(m.viewConfig())
+		case tAccounts:
+			body.WriteString(m.viewAccounts())
+		case tDebug:
+			body.WriteString(m.viewDebug())
 		}
-		b.WriteString(st.Render(fmt.Sprintf("%d %s", i+1, n)))
 	}
-	b.WriteString("\n\n")
-	switch m.tab {
-	case tServer:
-		b.WriteString(m.viewServer())
-	case tLogs:
-		b.WriteString(m.viewLogs())
-	case tBackups:
-		b.WriteString(m.viewBackups())
-	case tModules:
-		b.WriteString(m.viewModules())
-	case tConfig:
-		b.WriteString(m.viewConfig())
-	case tAccounts:
-		b.WriteString(m.viewAccounts())
-	}
-	b.WriteString("\n")
+	var tail strings.Builder
+	tail.WriteString("\n")
 	if m.mode == mConfirmQuit {
-		b.WriteString(cWarn.Render("Quit? This safely STOPS the game server, auth server and MySQL first (world is saved; ~10 seconds).") + "  " + cTitle.Render("y") + " = quit and stop, any other key = stay\n")
+		tail.WriteString(confirmBox("Quit and stop the server?", "Safely stops the game server, auth server and MySQL first\n(world is saved, about 10 seconds).", sKey.Render("y")+" quit and stop    "+cDim.Render("any other key: stay")) + "\n")
+	}
+	if m.mode == mAskBackup {
+		tail.WriteString(confirmBox(m.ask.title, m.ask.body+"\n\nCreate a backup first?", sKey.Render("y")+" backup, then continue    "+sKey.Render("n")+" continue WITHOUT a backup    "+cDim.Render("any other key: cancel")) + "\n")
 	}
 	if m.mode == mConfirmReset {
-		b.WriteString(cWarn.Render("RESET TO FRESH INSTALL? This stops the servers and REPLACES all accounts, characters, garrisons and bots with the install-time state. A safety backup is made first.") + "  " + cTitle.Render("y") + " = reset, any other key = cancel\n")
+		tail.WriteString(confirmBox("Reset to fresh install?", "Stops the servers and REPLACES all accounts, characters,\ngarrisons and bots with the install-time state.\nYou are asked whether to create a backup first.", sKey.Render("y")+" reset    "+cDim.Render("any other key: cancel")) + "\n")
 	}
-	if m.busy != "" {
-		b.WriteString(cTitle.Render("⏳ " + m.busy + "..."))
-	} else if m.flash != "" {
-		if m.flashE {
-			b.WriteString(cWarn.Render("✗ " + m.flash))
-		} else {
-			b.WriteString(cOK.Render("✓ " + m.flash))
+	tail.WriteString(m.statusLine() + "\n")
+	tail.WriteString(m.footer())
+
+	// The screen is exactly m.h lines: the header and footer always stay, only the body is cut. Otherwise a tall body scrolls the
+	// header off the top of the terminal.
+	out := body.String()
+	if m.h > 0 {
+		avail := m.h - strings.Count(head, "\n") - strings.Count(tail.String(), "\n") - 1
+		lines := strings.Split(strings.TrimRight(out, "\n"), "\n")
+		if avail < 1 {
+			avail = 1
 		}
+		if len(lines) > avail {
+			lines = lines[:avail]
+		}
+		out = strings.Join(lines, "\n") + "\n"
 	}
-	b.WriteString("\n" + cDim.Render("q / Ctrl+C: quit (stops the server first, asks to confirm)   tab / 1-6: switch screens"))
-	return b.String()
+	return head + out + tail.String()
 }
 
 func dot(on bool) string {
@@ -530,16 +632,54 @@ func dot(on bool) string {
 	return cOff.Render("○ stopped")
 }
 
+// viewServer: status only. The scrolling output of the game server lives on the Output tab.
 func (m model) viewServer() string {
 	var b strings.Builder
-	fmt.Fprintf(&b, "  MySQL   %s\n  Auth    %s\n  World   %s\n\n", dot(m.st.MySQL), dot(m.st.Auth), dot(m.st.World))
-	b.WriteString(cDim.Render("  [s] start all   [x] safe stop all (10s in-game countdown, saves world)   [m] MySQL only   [:] world console   [R] reset to fresh install") + "\n\n")
+	b.WriteString(m.viewServerDash() + "\n")
+	b.WriteString("  " + m.summary() + "\n\n")
+	b.WriteString(cDim.Render("  The game server's text output is on the Output tab (2); log files are on Logs (3).") + "\n")
+	return b.String()
+}
+
+// worldState: stopped | starting | running | stopping
+func (m model) worldState() string {
+	switch {
+	case !m.st.World:
+		return "stopped"
+	case strings.Contains(m.busy, "shutdown") || strings.Contains(m.busy, "shutting down") || strings.Contains(m.busy, "resetting"):
+		return "stopping"
+	case !m.worldUp:
+		return "starting"
+	}
+	return "running"
+}
+
+// summary: one plain sentence about the whole server.
+func (m model) summary() string {
+	switch m.worldState() {
+	case "starting":
+		return cTitle.Render("Server is starting…") + cDim.Render("  the world is loading (usually 1-2 minutes); you can connect when it says running")
+	case "stopping":
+		return cTitle.Render("Server is stopping…") + cDim.Render("  saving the world")
+	case "running":
+		return cOn.Render("Server is running") + cDim.Render("  players can connect")
+	}
+	if m.st.MySQL || m.st.Auth {
+		return cWarn.Render("Game server is stopped") + cDim.Render("  (database or login service still up)")
+	}
+	return cOff.Render("Server is stopped")
+}
+
+func (m model) viewOutput() string {
+	var b strings.Builder
 	if m.mode == mConsole {
 		b.WriteString("  " + m.input.View() + "\n")
+	} else {
+		b.WriteString(cDim.Render("  Live output of the game server (world.out). Press : to send a console command.") + "\n")
 	}
 	b.WriteString(cDim.Render("  ── world output ──") + "\n")
 	for _, l := range m.worldTail {
-		b.WriteString("  " + truncate(l, m.w-4) + "\n")
+		b.WriteString("  " + colorLine(truncate(l, m.w-4)) + "\n")
 	}
 	return b.String()
 }
@@ -554,25 +694,49 @@ func (m model) viewLogs() string {
 			b.WriteString(cTabOff.Render(f))
 		}
 	}
-	b.WriteString("\n" + cDim.Render("  [ / ] or ↑/↓ switch log") + "\n\n")
+	var st []string
+	if m.logFilter != "" {
+		st = append(st, "filter \""+m.logFilter+"\"")
+	}
+	if m.logErrOnly {
+		st = append(st, "errors+warnings only")
+	}
+	if m.logScroll > 0 {
+		st = append(st, cWarn.Render(fmt.Sprintf("scrolled back %d lines (End = follow)", m.logScroll)))
+	} else if m.logPaused {
+		st = append(st, cWarn.Render("PAUSED"))
+	} else {
+		st = append(st, cOn.Render("following"))
+	}
+	b.WriteString("\n  " + cDim.Render(strings.Join(st, "  ·  ")) + "\n")
+	if m.mode == mLogFilter {
+		b.WriteString("  " + m.input.View() + cDim.Render("  (enter = apply, empty = clear, esc = cancel)") + "\n")
+	}
+	b.WriteString("\n")
 	for _, l := range m.logLines {
-		b.WriteString("  " + truncate(l, m.w-4) + "\n")
+		b.WriteString("  " + colorLine(truncate(l, m.w-4)) + "\n")
 	}
 	return b.String()
 }
 
 func (m model) viewBackups() string {
 	var b strings.Builder
-	b.WriteString(cDim.Render("  [b] full backup   [p] player-data backup (no world db)   [enter] restore   [d] delete   [r] refresh") + "\n")
 	b.WriteString(cDim.Render("  Drop old dumps into backups/<any-folder>/<dbname>.sql(.gz) to import them from here.") + "\n\n")
 	if m.mode == mBackupLabel {
 		b.WriteString("  " + m.input.View() + "\n\n")
 	}
+	if !haveFresh() {
+		b.WriteString(cWarn.Render("  🔒 MASTER (fresh install)  not found: cannot find the master backup (backups/fresh), so Reset is unavailable") + "\n")
+	}
 	if len(m.backups) == 0 {
-		b.WriteString("  (no backups yet)\n")
+		b.WriteString("  (no other backups yet)\n")
 	}
 	for i, bs := range m.backups {
-		line := fmt.Sprintf("  %-44s %9s  %s", bs.Name, human(bs.Size), strings.Join(shorten(bs.Dbs), ","))
+		name := bs.Name
+		if bs.Name == freshSet {
+			name = "🔒 MASTER (fresh install, protected)"
+		}
+		line := fmt.Sprintf("  %-44s %9s  %s", name, human(bs.Size), strings.Join(shorten(bs.Dbs), ","))
 		if i == m.bcur {
 			line = cSel.Render(line)
 		}
@@ -580,10 +744,9 @@ func (m model) viewBackups() string {
 	}
 	switch m.mode {
 	case mConfirmRestore:
-		b.WriteString("\n" + cWarn.Render("  Restore REPLACES current databases (a safety snapshot is taken first; servers must be stopped).") +
-			"\n  [a] all databases in set   [p] player data only   [any other key] cancel\n")
+		b.WriteString("\n" + confirmBox("Restore this backup?", "REPLACES the current databases (you are asked about a backup next).\nRunning servers are stopped safely first (in-game countdown) and started again after.", sKey.Render("a")+" all databases in set    "+sKey.Render("p")+" player data only    "+cDim.Render("any other key: cancel")) + "\n")
 	case mConfirmDelete:
-		b.WriteString("\n" + cWarn.Render("  Delete this backup permanently? [y] yes / any key cancel") + "\n")
+		b.WriteString("\n" + confirmBox("Delete this backup?", "It is removed permanently.", sKey.Render("y")+" delete    "+cDim.Render("any other key: cancel")) + "\n")
 	}
 	return b.String()
 }
@@ -630,8 +793,122 @@ func main() {
 	if runCLI(os.Args[1:]) {
 		return
 	}
-	if _, err := tea.NewProgram(newModel(), tea.WithAltScreen()).Run(); err != nil {
+	if _, err := tea.NewProgram(newModel(), tea.WithAltScreen(), tea.WithMouseCellMotion()).Run(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+func lineLevel(l string) int {
+	u := strings.ToUpper(l)
+	switch {
+	case strings.Contains(u, "ERROR") || strings.Contains(u, "FATAL") || strings.Contains(u, "CRASH"):
+		return 2
+	case strings.Contains(u, "WARN"):
+		return 1
+	}
+	return 0
+}
+
+func colorLine(l string) string {
+	switch lineLevel(l) {
+	case 2:
+		return cOff.Render(l)
+	case 1:
+		return lipgloss.NewStyle().Foreground(lipgloss.Color("221")).Render(l)
+	}
+	return l
+}
+
+// readLog tails the selected log (more than fits, so filtering still fills the screen), then filters.
+func (m model) readLog() []string {
+	n := max(5, m.h-12)
+	scroll := max(0, m.logScroll)
+	var raw []string
+	if m.logFilter == "" && !m.logErrOnly {
+		raw = tailFile(p("logs", m.logFiles[m.logIdx]), n+scroll)
+	} else {
+		all := tailFile(p("logs", m.logFiles[m.logIdx]), 3000)
+		f := strings.ToLower(m.logFilter)
+		for _, l := range all {
+			if f != "" && !strings.Contains(strings.ToLower(l), f) {
+				continue
+			}
+			if m.logErrOnly && lineLevel(l) == 0 {
+				continue
+			}
+			raw = append(raw, l)
+		}
+		if len(raw) == 0 {
+			return []string{"(no matching lines in the last 3000)"}
+		}
+	}
+	end := len(raw) - scroll
+	if end < 1 {
+		end = min(len(raw), 1)
+	}
+	start := max(0, end-n)
+	return raw[start:end]
+}
+
+func (m model) onMouse(v tea.MouseMsg) (tea.Model, tea.Cmd) {
+	if m.mode != mNone || m.help || m.mods.capturing() || m.acct.capturing() {
+		return m, nil
+	}
+	switch {
+	case v.Button == tea.MouseButtonLeft && v.Action == tea.MouseActionPress && v.Y == 0:
+		if i := m.tabAt(v.X); i >= 0 && i != m.tab {
+			m.tab = i
+			return m.onTab()
+		}
+	case v.Button == tea.MouseButtonWheelUp:
+		return m.onKey(tea.KeyMsg{Type: tea.KeyUp})
+	case v.Button == tea.MouseButtonWheelDown:
+		return m.onKey(tea.KeyMsg{Type: tea.KeyDown})
+	}
+	return m, nil
+}
+
+// ---- "create a backup first?" prompt shared by every risky action (restore, reset, module apply/undo, component off) ----
+type askState struct {
+	title, body, label string
+	wantSnap           bool // action stores the backup name (module apply, for Undo)
+	opLabel            string
+	run                func(snap string) (string, error)
+}
+
+func (m model) askBackup(title, body, label string, wantSnap bool, opLabel string, run func(snap string) (string, error)) (tea.Model, tea.Cmd) {
+	m.mode = mAskBackup
+	m.ask = askState{title, body, label, wantSnap, opLabel, run}
+	return m, nil
+}
+
+func (m model) askKey(s string) (tea.Model, tea.Cmd) {
+	a := m.ask
+	m.mode = mNone
+	switch s {
+	case "y", "n":
+	default:
+		m.setFlash("cancelled", false)
+		return m, nil
+	}
+	backup := s == "y"
+	return m, m.startOp(a.opLabel, func() (string, error) {
+		snap := ""
+		if backup {
+			if err := startMySQL(); err != nil {
+				return "", err
+			}
+			n, err := makeBackup("full", "before-"+a.label)
+			if err != nil {
+				return "", fmt.Errorf("backup failed, nothing changed: %w", err)
+			}
+			snap = n
+		}
+		msg, err := a.run(snap)
+		if err == nil && snap != "" {
+			msg += " (backup: " + snap + ")"
+		}
+		return msg, err
+	})
 }

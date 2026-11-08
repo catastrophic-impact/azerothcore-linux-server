@@ -105,6 +105,7 @@ func startMySQL() error {
 			return fmt.Errorf("mysql init: %v: %s", err, tail(string(out), 300))
 		}
 	}
+	_ = trimLog(p("logs", "mysqld.log"), 5<<20, 512<<10)
 	lf, _ := os.OpenFile(p("logs", "mysqld.log"), os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0o644)
 	c := exec.Command(p("mysql", "bin", "mysqld"), "--defaults-file="+p("config", "my.cnf"), "--datadir="+p("database"), "--basedir="+p("mysql"),
 		"--socket="+sock(), "--pid-file="+p("config", "mysqld.pid"))
@@ -242,6 +243,37 @@ func stopAll(delay int) error {
 func freshDB() bool {
 	out, err := sql("select count(*) from information_schema.tables where table_schema='acore_world'")
 	return err == nil && strings.TrimSpace(out) == "0"
+}
+
+// withServersStopped runs f with the game and login servers down and MySQL up, so risky jobs (restore, reset, rebuild) need no manual
+// stop/start. If the servers were running they get a countdown + safe stop first (players see it in game) and are started again afterwards,
+// but only when f succeeded: after a failed job the database may be half done and should be looked at, not served to players.
+func withServersStopped(delay int, restart bool, f func() (string, error)) (string, error) {
+	was := status()
+	if was.World {
+		if err := stopWorld(delay); err != nil {
+			return "", fmt.Errorf("could not stop the game server: %w", err)
+		}
+	}
+	if was.Auth {
+		if err := stopAuth(); err != nil {
+			return "", fmt.Errorf("could not stop the login server: %w", err)
+		}
+	}
+	if err := startMySQL(); err != nil {
+		return "", err
+	}
+	msg, err := f()
+	if err != nil {
+		return msg, err
+	}
+	if restart && (was.World || was.Auth) {
+		if err := startAll(); err != nil {
+			return msg, fmt.Errorf("%s - but the servers did not restart: %w", msg, err)
+		}
+		msg += " Servers restarted (the world takes a minute or two to load)."
+	}
+	return msg, nil
 }
 
 func worldReady() bool {

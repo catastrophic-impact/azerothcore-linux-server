@@ -15,10 +15,11 @@ import (
 // Needs MySQL (to list) and the worldserver (to change). Hidden from the list: the playerbot accounts (RNDBOT*); AHBOT can't be deleted.
 
 type acctRow struct {
-	ID    string
-	Name  string
-	GM    string
-	Chars string
+	ID     string
+	Name   string
+	GM     string
+	Chars  string
+	Online bool
 }
 
 type acctMode int
@@ -31,6 +32,7 @@ const (
 	amSetLevel
 	amSetPass
 	amDelete
+	amSearch
 )
 
 type acctState struct {
@@ -41,6 +43,7 @@ type acctState struct {
 	in      textinput.Model
 	newUser string
 	newPass string
+	filter  string
 }
 
 var acctNameRe = regexp.MustCompile(`^[A-Za-z0-9_]{1,17}$`)
@@ -59,15 +62,15 @@ func (s *acctState) refresh() {
 	if !status().MySQL {
 		return
 	}
-	out, err := sql("SELECT a.id, a.username, COALESCE(MAX(x.gmlevel),0), (SELECT COUNT(*) FROM acore_characters.characters c WHERE c.account=a.id) " +
-		"FROM acore_auth.account a LEFT JOIN acore_auth.account_access x ON x.id=a.id WHERE a.username NOT LIKE 'RNDBOT%' GROUP BY a.id, a.username ORDER BY a.id")
+	out, err := sql("SELECT a.id, a.username, COALESCE(MAX(x.gmlevel),0), a.online, (SELECT COUNT(*) FROM acore_characters.characters c WHERE c.account=a.id) " +
+		"FROM acore_auth.account a LEFT JOIN acore_auth.account_access x ON x.id=a.id WHERE a.username NOT LIKE 'RNDBOT%' GROUP BY a.id, a.username, a.online ORDER BY a.id")
 	if err != nil {
 		return
 	}
 	for _, l := range strings.Split(out, "\n") {
 		f := strings.Split(l, "\t")
-		if len(f) == 4 {
-			s.rows = append(s.rows, acctRow{f[0], f[1], f[2], f[3]})
+		if len(f) == 5 {
+			s.rows = append(s.rows, acctRow{f[0], f[1], f[2], f[4], f[3] != "0"})
 		}
 	}
 	if n, err := sql("SELECT COUNT(*) FROM acore_auth.account WHERE username LIKE 'RNDBOT%'"); err == nil {
@@ -78,9 +81,22 @@ func (s *acctState) refresh() {
 	}
 }
 
+func (s acctState) visible() []acctRow {
+	if s.filter == "" {
+		return s.rows
+	}
+	var o []acctRow
+	for _, r := range s.rows {
+		if strings.Contains(strings.ToLower(r.Name), strings.ToLower(s.filter)) {
+			o = append(o, r)
+		}
+	}
+	return o
+}
+
 func (m model) acctSel() (acctRow, bool) {
-	if m.acct.cur < len(m.acct.rows) {
-		return m.acct.rows[m.acct.cur], true
+	if v := m.acct.visible(); m.acct.cur < len(v) {
+		return v[m.acct.cur], true
 	}
 	return acctRow{}, false
 }
@@ -138,6 +154,13 @@ func (m model) acctKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			a.in.Blur()
 			return m, nil
 		case "enter":
+			if a.mode == amSearch {
+				a.filter = strings.TrimSpace(a.in.Value())
+				a.mode = amNone
+				a.in.Blur()
+				a.cur = 0
+				return m, nil
+			}
 			return m.acctSubmit(strings.TrimSpace(a.in.Value()))
 		}
 		var c tea.Cmd
@@ -150,9 +173,11 @@ func (m model) acctKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			a.cur--
 		}
 	case "down", "j":
-		if a.cur < len(a.rows)-1 {
+		if a.cur < len(a.visible())-1 {
 			a.cur++
 		}
+	case "/":
+		return m.acctPrompt(amSearch, "search: ", false)
 	case "r":
 		a.refresh()
 	case "n", "g", "p", "d":
@@ -258,14 +283,20 @@ func (m model) acctSubmit(v string) (tea.Model, tea.Cmd) {
 
 func (m model) viewAccounts() string {
 	var b strings.Builder
-	b.WriteString(cDim.Render("  [n] new account   [d] delete   [g] set GM level   [p] change password   [r] refresh   (needs servers running)") + "\n\n")
 	if !m.st.MySQL {
 		b.WriteString("  MySQL is stopped: start it on the Server tab to list accounts.\n")
 		return b.String()
 	}
-	fmt.Fprintf(&b, "  %-5s %-20s %-10s %s\n", "id", "account", "GM level", "characters")
-	for i, r := range m.acct.rows {
-		line := fmt.Sprintf("  %-5s %-20s %-10s %s", r.ID, r.Name, r.GM, r.Chars)
+	if m.acct.filter != "" {
+		b.WriteString(cDim.Render("  search: \""+m.acct.filter+"\"  (/ then empty to clear)") + "\n")
+	}
+	fmt.Fprintf(&b, "  %-5s %-20s %-10s %-11s %s\n", "id", "account", "GM level", "characters", "status")
+	for i, r := range m.acct.visible() {
+		st := cDim.Render("offline")
+		if r.Online {
+			st = cOn.Render("● online")
+		}
+		line := fmt.Sprintf("  %-5s %-20s %-10s %-11s %s", r.ID, r.Name, r.GM, r.Chars, st)
 		if i == m.acct.cur {
 			line = cSel.Render(line)
 		}
@@ -278,7 +309,7 @@ func (m model) viewAccounts() string {
 	switch {
 	case m.acct.mode == amDelete:
 		if sel, ok := m.acctSel(); ok {
-			b.WriteString("\n  " + cWarn.Render("Delete account "+sel.Name+" and ALL its characters?") + "  " + cTitle.Render("y") + " = delete, any other key = cancel\n")
+			b.WriteString("\n" + confirmBox("Delete account "+sel.Name+"?", "ALL its characters are deleted with it.", sKey.Render("y")+" delete    "+cDim.Render("any other key: cancel")) + "\n")
 		}
 	case m.acct.capturing():
 		b.WriteString("\n  " + m.acct.in.View() + "   " + cDim.Render("(enter = ok, esc = cancel)") + "\n")

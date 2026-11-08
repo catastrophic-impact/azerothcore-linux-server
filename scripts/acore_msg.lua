@@ -53,6 +53,25 @@ end
 
 RegisterServerEvent(30, OnAddonMessage)   -- ADDON_EVENT_ON_MESSAGE
 
+-- Addon handshake (client: AcoreLib.Announce). Msg.Has(player, "garrison") = this client said it has that addon. Forgotten on logout.
+-- After a script reload the record is empty, so every real player is asked to say hello again.
+local HAS = {}
+function Msg.Has(player, name)
+    local h = player and HAS[player:GetGUIDLow()]
+    return h ~= nil and h[name] == true
+end
+Msg.On("core", "hello", function(player, payload)
+    local t = {}
+    for n in tostring(payload or ""):gmatch("[%w_]+") do t[n] = true end
+    HAS[player:GetGUIDLow()] = t
+end)
+RegisterPlayerEvent(4, function(event, player) HAS[player:GetGUIDLow()] = nil end)   -- logout
+CreateLuaEvent(function()
+    for _, p in pairs(GetPlayersInWorld() or {}) do
+        if p and not p:IsBot() then Msg.Send(p, "core", "who", "") end
+    end
+end, 3000, 1)
+
 Msg.On("core", "ping", function(player, payload) Msg.Send(player, "core", "pong", payload) end)
 print("[ACORE.Msg] messaging layer loaded")
 return Msg

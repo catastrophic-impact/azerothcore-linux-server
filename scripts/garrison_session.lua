@@ -30,6 +30,10 @@ return function(G)
 
     local StartPoll
     local function Enter(player, owner, locId)
+        if not Msg.Has(player, "garrison") then   -- every way into a garrison goes through here (portal home / visit)
+            Say(player, "You need the Garrison addon to use garrisons. Install it, then /reload.")
+            return
+        end
         local loc = Loc(locId)
         if not loc then Say(player, "That garrison location is not available."); return end
         local g = player:GetGUIDLow()

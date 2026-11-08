@@ -11,6 +11,11 @@ return function(G)
 
     local function OnHello(event, player, go)
         dbg("hello", player:GetName(), "inside=" .. tostring(inside[player:GetGUIDLow()]))
+        if not Msg.Has(player, "garrison") then   -- no addon: no menu at all (nothing to claim, nothing to enter)
+            Say(player, "You need the Garrison addon to use garrisons. Install it, then /reload.")
+            player:GossipComplete()
+            return true
+        end
         local account = player:GetAccountId()
         local mine = OWNER[account]
         player:GossipClearMenu()

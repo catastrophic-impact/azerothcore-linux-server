@@ -64,7 +64,12 @@ func listBackups() []BackupSet {
 		sort.Strings(bs.Dbs)
 		out = append(out, bs)
 	}
-	sort.Slice(out, func(i, j int) bool { return out[i].Time.After(out[j].Time) })
+	sort.Slice(out, func(i, j int) bool {
+		if (out[i].Name == freshSet) != (out[j].Name == freshSet) {
+			return out[i].Name == freshSet // the install-time master is always pinned to the top
+		}
+		return out[i].Time.After(out[j].Time)
+	})
 	return out
 }
 
@@ -146,7 +151,7 @@ func dumpDB(db, outPath string) error {
 	return os.Rename(outPath+".part", outPath)
 }
 
-// restoreBackup replaces the chosen databases. World must be stopped. A safety snapshot is taken first.
+// restoreBackup replaces the chosen databases. World must be stopped. No automatic snapshot: callers (the TUI) ask the user first.
 func restoreBackup(set string, dbs []string) (string, error) {
 	st := status()
 	if st.World || st.Auth {
@@ -172,10 +177,7 @@ func restoreBackup(set string, dbs []string) (string, error) {
 			return "", fmt.Errorf("%s: backup unreadable: %w", db, err)
 		}
 	}
-	safety, err := makeBackup("full", "pre-restore")
-	if err != nil {
-		return "", fmt.Errorf("safety snapshot failed, aborting: %w", err)
-	}
+	safety := ""
 	for _, db := range dbs {
 		if _, err := sql("DROP DATABASE IF EXISTS " + db); err != nil {
 			return safety, err
@@ -184,7 +186,7 @@ func restoreBackup(set string, dbs []string) (string, error) {
 			return safety, err
 		}
 		if err := importFile(files[db], db); err != nil {
-			return safety, fmt.Errorf("%s: %w (safety snapshot: %s)", db, err, safety)
+			return safety, fmt.Errorf("%s: %w", db, err)
 		}
 	}
 	return safety, ensureDBs()

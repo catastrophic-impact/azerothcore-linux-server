@@ -82,7 +82,8 @@ func runCLI(args []string) bool {
 		var safety string
 		safety, err = restoreBackup(args[1], dbs)
 		if err == nil {
-			fmt.Println("restored; safety snapshot:", safety)
+			_ = safety
+			fmt.Println("restored (no automatic backup is taken; create one first if you need it)")
 		}
 	case "console": // console <worldserver command...>
 		err = worldCmd(strings.Join(args[1:], " "))
@@ -117,7 +118,7 @@ func runCLI(args []string) bool {
 		var msg string
 		switch sub {
 		case "apply":
-			msg, err = applyModules()
+			msg, err = applyModules("")
 		case "undo":
 			msg, err = undoModules()
 		case "enable", "disable":
