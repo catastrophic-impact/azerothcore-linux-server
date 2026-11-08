@@ -46,3 +46,4 @@ Garrison window: subcategories (name a category Parent > Child, e.g. Holiday > W
 .garrison (or .garrison help) lists every GM option; unknown options point to it.
 Garrison entry: the player is phased first and teleported 0.4 s later (the phase is re-checked and re-applied), so no more seeing/aggroing normal-world mobs on arrival. Logging out inside a garrison saves your position as the portal room, so the next login starts there.
 New addon wotlk_minimap (Minimap Drawer): one movable minimap button that opens a drawer with all other minimap icons (not zoom/calendar), plus launchers for Garrison, Jukebox, Bot Manager and Shop. /mmd list | ignore | unignore | reset. Client-only.
+Garrison: three more starting locations on a fresh install - Lost Rigger Cove, Sen'jin Village and Darkshore Troll Village (Darkshore landing corrected so you no longer fall through the floor).
