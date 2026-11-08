@@ -57,7 +57,26 @@ return function(G)
         local d = math.sqrt(dx * dx + dy * dy)
         local ex, ey = p.x, p.y
         if d >= 1 then ex, ey = p.x + dx / d * math.min(cfg.arriveDist, d), p.y + dy / d * math.min(cfg.arriveDist, d) end
-        player:Teleport(loc.map, ex, ey, p.z + 1, p.o)
+        -- Phase first, jump a moment later: the phase change must be settled (server and client) before the player moves, so the
+        -- destination is built already in the garrison phase. The jump re-checks the phase and sets it again if it did not stick.
+        local tpGuid, tpBit = player:GetGUID(), h.bit
+        CreateLuaEvent(function()
+            local pl = GetPlayerByGUID(tpGuid)
+            if not pl or inside[pl:GetGUIDLow()] ~= owner then return end
+            if pl:GetPhaseMask() ~= tpBit then pl:SetPhaseMask(tpBit, true) end
+            pl:Teleport(loc.map, ex, ey, p.z + 1, p.o)
+        end, 400, 1)
+        -- A teleport can drop the phase while the player lands, so mobs of the normal world show (and aggro) for a moment.
+        -- Do not wait for the once-a-second check: re-apply the phase several times in the first second after the jump.
+        local guid, bit = player:GetGUID(), h.bit
+        for _, ms in ipairs({ 500, 650, 900, 1200, 1600 }) do
+            CreateLuaEvent(function()
+                local pl = GetPlayerByGUID(guid)
+                if pl and inside[pl:GetGUIDLow()] == owner and pl:GetMapId() == loc.map and pl:GetPhaseMask() ~= bit then
+                    pl:SetPhaseMask(bit, true)
+                end
+            end, ms, 1)
+        end
         G.Fire("enter", player, h, owner)
         StartPoll()
     end
@@ -139,7 +158,21 @@ return function(G)
     -- ---- login / logout / map change ----
     RegisterPlayerEvent(4, function(event, player)   -- logout: remember it so the next login puts you at the portal, not in the middle of the valley
         local g = player:GetGUIDLow()
-        if inside[g] then store.MarkLogout(g) end
+        if inside[g] then
+            store.MarkLogout(g)
+            local full = player:GetGUID()
+            -- Save the character's position as the portal room instead of the garrison, so the next login starts there and never
+            -- shows the garrison's normal-world mobs. The game saves the character right after this event, so the rewrite waits
+            -- until the save is done (and only runs if the character is still offline).
+            for _, ms in ipairs({ 1500, 5000 }) do
+                CreateLuaEvent(function()
+                    if not GetPlayerByGUID(full) then
+                        CharDBExecute(string.format("UPDATE characters SET map=%d, position_x=%f, position_y=%f, position_z=%f, orientation=%f WHERE guid=%d AND online=0",
+                            hub.map, hub.x, hub.y, hub.z + 1, hub.o, g))
+                    end
+                end, ms, 1)
+            end
+        end
         Leave(g, player, "logout")
     end)
     RegisterPlayerEvent(3, function(event, player)   -- login (phase always starts at 1)
@@ -148,16 +181,19 @@ return function(G)
         G.Fire("login", player, was)
         if not was then return end
         local guid = player:GetGUID()
-        CreateLuaEvent(function()
+        local atHub = player:GetMapId() == hub.map and math.abs(player:GetX() - hub.x) < 60 and math.abs(player:GetY() - hub.y) < 60
+        if atHub then Say(player, "You logged out inside your garrison; welcome back to the portal."); return end   -- the logout already moved the saved position here
+        CreateLuaEvent(function()   -- fallback (crash, or the rewrite did not run): move out of the garrison now
             local p = GetPlayerByGUID(guid)
             if p then SendToHub(p); Say(p, "You logged out inside your garrison; welcome back to the portal.") end
-        end, 2000, 1)
+        end, 300, 1)
     end)
     RegisterPlayerEvent(28, function(event, player)   -- map change
         local g = player:GetGUIDLow()
         local owner = inside[g]
         local loc = owner and active[owner] and Loc(active[owner].loc)
-        if loc and player:GetMapId() ~= loc.map then Leave(g, player, "away") end
+        if loc and player:GetMapId() ~= loc.map then Leave(g, player, "away")
+        elseif loc and arriving[g] and player:GetPhaseMask() ~= active[owner].bit then player:SetPhaseMask(active[owner].bit, true) end   -- landed on a new map: phase at once
     end)
     G.HealStrays = function()   -- called by garrison.lua once everything is installed (after a script reload)
         for _, p in pairs(GetPlayersInWorld() or {}) do

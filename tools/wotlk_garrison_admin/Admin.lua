@@ -170,7 +170,7 @@ local pick
 local function PickList(anchor, labels, current, onPick)
     local VIS, RH, PW2 = 14, 22, 220
     if not pick then
-        pick = CreateFrame("Frame", nil, UIParent); pick:SetAllPoints(UIParent); pick:SetFrameStrata("FULLSCREEN_DIALOG"); pick:EnableMouse(true); pick:Hide()
+        pick = CreateFrame("Frame", nil, UIParent); pick:SetAllPoints(UIParent); pick:SetFrameStrata("TOOLTIP"); pick:EnableMouse(true); pick:Hide()   -- above the Categories panel (FULLSCREEN_DIALOG), otherwise its list opens underneath it
         pick:SetScript("OnMouseDown", function(self) self:Hide() end)   -- click outside = close
         local box = CreateFrame("Frame", nil, pick); pick.box = box; box:EnableMouse(true); box:EnableMouseWheel(true)
         box:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", tile = true, tileSize = 32, edgeSize = 24, insets = { left = 6, right = 6, top = 6, bottom = 6 } })
@@ -203,6 +203,24 @@ local function PickList(anchor, labels, current, onPick)
     pick.Render(); pick:Show()
 end
 
+-- "Holiday>Winter Veil" / "holiday  >  Winter Veil" -> "Holiday > Winter Veil": a category with a parent shows as a subcategory in the players' window (one level)
+local function NormCat(v)
+    v = (v or ""):gsub("%s*>%s*", " > ")
+    local a, b = v:match("^(.-) > (.*)$")
+    if a then
+        b = b:gsub(" > ", " ")   -- only one level
+        if a == "" or b == "" then return a .. b end
+        return a .. " > " .. b
+    end
+    return v
+end
+
+local function SplitCat(name)   -- "Holiday > Winter Veil" -> "Holiday", "Winter Veil"; a plain name -> name, nil
+    local a, b = name:match("^(.-) > (.+)$")
+    if a and a ~= "" then return a, b end
+    return name, nil
+end
+
 local function BuildCatPanel()
     local W, MAXROWS = 420, 12   -- MAXROWS = visible rows; the list scrolls
     local p = CreateFrame("Frame", nil, fx)
@@ -230,7 +248,7 @@ local function BuildCatPanel()
         r.del = B("x", 300, function() local k = r.idx; DB.prices.cats[DB.cats[k]] = nil; MoveItems(DB.cats[k], UNSORTED); table.remove(DB.cats, k); Render() end)
         r.n = r:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall"); r.n:SetPoint("LEFT", 338, 0)
         r.eb:SetScript("OnEnterPressed", function(self)
-            local new, old = Trim(self:GetText()), DB.cats[r.idx]
+            local new, old = NormCat(Trim(self:GetText())), DB.cats[r.idx]
             local dup = false; for _, c in ipairs(DB.cats) do if c:lower() == new:lower() and c ~= old then dup = true end end
             if new ~= "" and new ~= old and not dup then MoveItems(old, new); DB.cats[r.idx] = new; DB.prices.cats[new] = DB.prices.cats[old]; DB.prices.cats[old] = nil; Apply() end
             self:ClearFocus(); Render()
@@ -249,12 +267,14 @@ local function BuildCatPanel()
             if name then
                 local fixed = name == UNSORTED or name == REMOVED
                 r.idx = offset + i; r.eb:SetText(name); r.eb:SetCursorPosition(0)
+                local child = not fixed and select(2, SplitCat(name)) ~= nil   -- subcategories are drawn indented under their parent
+                r.eb:ClearAllPoints(); r.eb:SetPoint("LEFT", child and 26 or 8, 0); r.eb:SetWidth(child and 132 or 150)
                 if fixed then r.eb:ClearFocus(); r.eb:EnableMouse(false); r.eb:SetTextColor(0.6, 0.6, 0.6) else r.eb:EnableMouse(true); r.eb:SetTextColor(1, 1, 1) end
                 for _, b in ipairs({ r.up, r.dn, r.del }) do if fixed then b:Hide() else b:Show() end end
                 if r.idx == 1 then r.up:Disable() else r.up:Enable() end
                 if r.idx == #DB.cats - 2 then r.dn:Disable() else r.dn:Enable() end
                 if name == REMOVED then r.pb:Hide() else r.pb:Show(); if not r.pb:HasFocus() then r.pb:SetText(tostring(DB.prices.cats[name] or 0)); r.pb:SetCursorPosition(0) end end
-                r.n:SetText(ItemsIn(name)); r:Show()
+                local cnt = ItemsIn(name); r.n:SetText(cnt == 0 and "|cffff8080empty|r" or cnt); r:Show()
             else r:Hide() end
         end
     end
@@ -264,13 +284,34 @@ local function BuildCatPanel()
     sb:SetScript("OnValueChanged", function(self, v) v = math.floor(v + 0.5); if v ~= offset then offset = v; Render() end end)
     p:EnableMouseWheel(true)
     p:SetScript("OnMouseWheel", function(self, d) sb:SetValue(math.max(0, math.min(#DB.cats - MAXROWS, offset - d))) end)
-    local hint = p:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall"); hint:SetPoint("BOTTOM", 0, 58); hint:SetWidth(W - 40); hint:SetJustifyH("CENTER")
-    hint:SetText("Rename: edit the name, Enter.  Box after the name = default price of its items.  Deleting moves items to Unsorted.")
-    local add = CreateFrame("EditBox", nil, p, "InputBoxTemplate"); add:SetSize(200, 20); add:SetPoint("BOTTOMLEFT", 30, 24); add:SetAutoFocus(false)
+    local hint = p:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall"); hint:SetPoint("BOTTOM", 0, 76); hint:SetWidth(W - 40); hint:SetJustifyH("CENTER")
+    hint:SetText("Rename: edit the name, Enter.  Box after the name = default price of its items.  Deleting moves items to Unsorted.\nPlayers only see a category once it holds items (\"empty\" ones stay hidden).")
+    -- add a category or a subcategory: choose where it goes, type the name, Add
+    local parent   -- nil = top level; else the name of the parent the new category goes under
+    local pbtn = CreateFrame("Button", nil, p, "UIPanelButtonTemplate"); pbtn:SetSize(260, 22); pbtn:SetPoint("BOTTOMLEFT", 30, 50)
+    local function ParentText() pbtn:SetText("Add under: " .. (parent or "(top level)")) end
+    ParentText()
+    pbtn:SetScript("OnClick", function(self)
+        local L, seen = { "(top level)" }, {}
+        for _, c in ipairs(DB.cats) do
+            if c ~= UNSORTED and c ~= REMOVED then local pp = SplitCat(c); if not seen[pp] then seen[pp] = true; L[#L + 1] = pp end end
+        end
+        PickList(self, L, parent or "(top level)", function(name) parent = (name ~= "(top level)") and name or nil; ParentText() end)
+    end)
+    local add = CreateFrame("EditBox", nil, p, "InputBoxTemplate"); add:SetSize(200, 20); add:SetPoint("BOTTOMLEFT", 36, 24); add:SetAutoFocus(false)
     local function DoAdd()
         local v = Trim(add:GetText())
-        for _, c in ipairs(DB.cats) do if c:lower() == v:lower() then v = "" end end
-        if v ~= "" then table.insert(DB.cats, #DB.cats - 1, v); add:SetText(""); add:ClearFocus(); offset = math.max(0, #DB.cats - MAXROWS); Render() end
+        if v == "" then return end
+        local full
+        if parent then full = parent .. " > " .. (v:gsub("%s*>%s*", " ")) else full = NormCat(v) end
+        for _, c in ipairs(DB.cats) do if c:lower() == full:lower() then return end end   -- already exists
+        local at = #DB.cats - 1                                  -- before the pinned Unsorted / Removed
+        if parent then                                           -- right after the parent's last entry, so the family stays together
+            for k, c in ipairs(DB.cats) do if c ~= UNSORTED and c ~= REMOVED and SplitCat(c) == parent then at = k end end
+            if at ~= #DB.cats - 1 then at = at + 1 end
+        end
+        table.insert(DB.cats, at, full)
+        add:SetText(""); add:ClearFocus(); offset = math.max(0, math.min(at - 1, #DB.cats - MAXROWS)); Apply(); Render()
     end
     add:SetScript("OnEnterPressed", DoAdd)
     local ab = CreateFrame("Button", nil, p, "UIPanelButtonTemplate"); ab:SetSize(70, 22); ab:SetPoint("LEFT", add, "RIGHT", 12, 0); ab:SetText("Add"); ab:SetScript("OnClick", DoAdd)

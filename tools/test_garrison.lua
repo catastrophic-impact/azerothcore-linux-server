@@ -139,9 +139,9 @@ local function NewPlayer(guid, acct, name)
     players[guid] = p
     return p
 end
-local function land(p) if p.tele then p.map, p.x, p.y, p.z, p.o = p.tele[1], p.tele[2], p.tele[3], p.tele[4], p.tele[5]; p.tele = nil end end
+local function fireTimers(delay) for _, t in ipairs(timers) do if not t.dead and t.delay == delay then if t.reps == 1 then t.dead = true end; t.fn() end end end
+local function land(p) fireTimers(400); if p.tele then p.map, p.x, p.y, p.z, p.o = p.tele[1], p.tele[2], p.tele[3], p.tele[4], p.tele[5]; p.tele = nil end end
 local function poll() for _, t in ipairs(timers) do if not t.dead and t.delay == 1000 then t.fn() end end end
-local function fireTimers(delay) for _, t in ipairs(timers) do if not t.dead and t.delay == delay then t.fn() end end end
 local function msgs(p, pat) local n = 0; for _, m in ipairs(sent[p.guid] or {}) do if m:find(pat, 1, true) then n = n + 1 end end; return n end
 local function Msg() return ACORE.Msg end
 
@@ -175,7 +175,7 @@ check(enter and enter.text:find("Arathi"), "after claiming, the portal offers to
 -- enter: the area check must NOT throw the player out while the teleport has not landed
 OnSelect(1, p, {}, 0, 1)
 check(p.phase ~= 1, "entering sets the garrison phase bit (" .. tostring(p.phase) .. ")")
-check(p.tele and math.abs(p.tele[2] - -1860.9) < 25, "teleport goes to the Arathi arrival point")
+fireTimers(400); check(p.tele and math.abs(p.tele[2] - -1860.9) < 25, "teleport goes to the Arathi arrival point")
 check(p.flags ~= 0, "instant-logout flag set inside")
 poll(); poll()
 check(p.phase ~= 1, "area check leaves a player alone while the teleport is still on its way")

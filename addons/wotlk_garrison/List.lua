@@ -81,17 +81,34 @@ local function RefreshCategories()
     for _, name in ipairs(G.TabDef(st.tab).cats) do   -- categories with nothing in them (e.g. an empty Unsorted) are not shown
         for _, e in ipairs(C.items) do if e.tab == st.tab and e.cat == name and not e.hidden then names[#names + 1] = name; break end end
     end
-    for i, name in ipairs(names) do
+    -- subcategories ("Holiday > Winter Veil"): a parent is a toggle row, its children show indented while it is open
+    st.open = st.open or {}
+    if st.cat ~= st.lastCat then   -- the category changed (tab switch, search, first open): make sure its parent is expanded
+        st.lastCat = st.cat
+        local p, c = G.SplitCat(st.cat or "")
+        if c then st.open[p] = true end
+    end
+    local rowsData = G.CategoryRows(names, st.open)
+    local curParent = G.SplitCat(st.cat or "")
+    for i, row in ipairs(rowsData) do
         local b = catBtns[i]
         if not b then
-            b = CreateFrame("Button", nil, ui.catContent, "UIPanelButtonTemplate"); b:SetSize(142, 28)
-            b:SetPoint("TOPLEFT", 2, -(i - 1) * 31); catBtns[i] = b
+            b = CreateFrame("Button", nil, ui.catContent, "UIPanelButtonTemplate"); catBtns[i] = b
         end
-        b:SetText(name); b:Show()
-        b:SetScript("OnClick", function() st.cat = name; G.Refresh() end)
-        if name == st.cat then b:LockHighlight() else b:UnlockHighlight() end
+        b:ClearAllPoints(); b:SetSize(row.indent and 126 or 142, 28); b:SetPoint("TOPLEFT", row.indent and 18 or 2, -(i - 1) * 31)
+        b:SetText(row.label); b:Show()
+        b:SetScript("OnClick", function()
+            if row.parent then
+                st.open[row.parent] = not st.open[row.parent]
+                if st.open[row.parent] then st.cat = row.cat end   -- opening a parent shows its own items, or its first child
+            else st.cat = row.cat end
+            G.Refresh()
+        end)
+        local on
+        if row.parent then on = (curParent == row.parent) else on = (row.cat == st.cat) end
+        if on then b:LockHighlight() else b:UnlockHighlight() end
     end
-    ui.catContent:SetHeight(math.max(#names * 31, 1))   -- more categories than fit: the list scrolls (wheel or the bar)
+    ui.catContent:SetHeight(math.max(#rowsData * 31, 1))   -- more categories than fit: the list scrolls (wheel or the bar)
     if shown ~= st.tab then shown = st.tab; ui.catScroll:SetVerticalScroll(0) end
 end
 

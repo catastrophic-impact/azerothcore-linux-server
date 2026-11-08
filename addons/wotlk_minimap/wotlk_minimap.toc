@@ -1,0 +1,6 @@
+## Interface: 30300
+## Title: Minimap Drawer
+## Notes: One movable minimap button that opens a drawer holding all the other minimap icons (except zoom and calendar). /mmd
+## SavedVariables: WotlkMinimapDB
+## Version: 0.1
+Minimap.lua

@@ -6,6 +6,26 @@ return function(G)
     local Say, Loc, active, inside, store = G.Say, G.locations.Get, G.active, G.inside, G.store
     local pending = {}   -- location id -> outline points collected by .garrison addpoint but not saved yet (fewer than 3)
 
+    local HELP = {
+        "|cffffd100Garrison commands|r  (.garrison <option>)",
+        "  |cff66ccffLooking around|r (GM level 2)",
+        "  locs - list all garrison locations",
+        "  info - details of the garrison you stand in (or the nearest location on this map)",
+        "  points - the outline points of that location",
+        "  status - open garrisons, occupants, tracked objects",
+        "  phase - your phase vs the garrison's phase bit",
+        "  markers - report on the border markers (Show garrison radius)",
+        "  purge - remove every garrison spawn, everyone inside is moved out",
+        "  |cff66ccffMaking and shaping locations|r (GM level 3)",
+        "  addloc <name> - new location where you stand (players arrive here)",
+        "  addpoint - add your spot as the next outline point (3 or more; walk the border in order)",
+        "  delpoint - remove the last outline point",
+        "  clearpoints - remove all outline points of the location",
+        "  rename <name> - rename the location",
+        "  reload - reload the locations from the database",
+        "  help - this list",
+    }
+
     local function Target(player)
         local h = active[inside[player:GetGUIDLow()] or -1]
         if h and Loc(h.loc) then return Loc(h.loc) end
@@ -63,7 +83,11 @@ return function(G)
             if cmd == "reload" then G.locations.Reload(); Say(player, "Locations reloaded; garrisons that are open keep their old settings until they close."); return false end
             if arg == "" then Say(player, "Usage: .garrison addloc <name>   (stand where players should appear)"); return false end
             local l = G.locations.Add(arg, player:GetMapId(), player:GetX(), player:GetY(), player:GetZ(), player:GetO())
-            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Walk the border and use .garrison addpoint along the border, in order (3 or more). It shows at the portal at once.")
+            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Walk the border and use .garrison addpoint at each spot, in order (3 or more). It shows at the portal at once.")
+            return false
+        end
+        if cmd == "" or cmd == "help" then   -- the command list needs no location
+            for _, l in ipairs(HELP) do Say(player, l) end
             return false
         end
         local loc = Target(player)
@@ -107,7 +131,7 @@ return function(G)
             if rank < 3 or arg == "" then Say(player, "Usage (GM level 3): .garrison rename <new name>"); return false end
             loc.name = arg
         elseif cmd ~= "info" then
-            Say(player, ".garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload | addpoint | delpoint | points | clearpoints"); return false
+            Say(player, "Unknown option '" .. cmd .. "'. Type .garrison help for the list."); return false
         end
         if cmd ~= "info" then G.locations.Save(loc) end
         Describe(player, loc)

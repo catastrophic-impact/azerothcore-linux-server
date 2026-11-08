@@ -32,6 +32,38 @@ function G.PriceText(e)
     return " - " .. e.price .. " x " .. (name or ("item " .. st.currencyItem))
 end
 
+-- Subcategories (one level): a category named "Holiday > Winter Veil" is the child "Winter Veil" of the parent "Holiday". Nothing else in the
+-- catalog, the saved admin data or the server knows about it: it is only a naming convention that the category column groups on.
+function G.SplitCat(name)
+    local parent, child = name:match("^(.-) > (.+)$")
+    if parent and parent ~= "" then return parent, child end
+    return name, nil
+end
+
+-- Rows of the category column. names = the visible category names in order, open = { [parent] = true } for expanded parents.
+-- A parent with children is a toggle row ("+ Holiday" / "- Holiday") that selects its own items too when there are any ("Holiday" itself).
+-- Row fields: label, cat (the category this row selects), parent (set on a toggle row), indent (a child row).
+function G.CategoryRows(names, open)
+    local groups, order = {}, {}
+    for _, name in ipairs(names) do
+        local p, c = G.SplitCat(name)
+        local g = groups[p]
+        if not g then g = { kids = {} }; groups[p] = g; order[#order + 1] = p end
+        if c then g.kids[#g.kids + 1] = { cat = name, label = c } else g.direct = name end
+    end
+    local rows = {}
+    for _, p in ipairs(order) do
+        local g = groups[p]
+        if #g.kids == 0 then
+            rows[#rows + 1] = { label = p, cat = g.direct }
+        else
+            rows[#rows + 1] = { label = (open[p] and "- " or "+ ") .. p, parent = p, cat = g.direct or g.kids[1].cat }
+            if open[p] then for _, k in ipairs(g.kids) do rows[#rows + 1] = { label = k.label, cat = k.cat, indent = true } end end
+        end
+    end
+    return rows
+end
+
 function G.Request() AcoreLib.Send("house", "list", "") end
 function G.TabDef(key) for _, t in ipairs(C.tabs) do if t.key == key then return t end end end
 function G.ItemByKind(kind) for _, e in ipairs(C.items) do if e.kind == kind then return e end end end
