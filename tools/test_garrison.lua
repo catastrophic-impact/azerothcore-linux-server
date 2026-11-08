@@ -288,6 +288,27 @@ for i, s in ipairs(sqlLog) do
 end
 check(last_data_delete > 0 and last_owner_delete > last_data_delete, "abandon removes the data BEFORE the ownership row")
 
+-- GM area commands on a brand-new location: addloc, addpoint x3 (saved only at the 3rd), points, clearpoints
+do
+    local function cmd(text) for _, fn in ipairs(handlers.player[42]) do fn(42, p, text) end end
+    local keep = { p.gm, p.x, p.y }
+    p.gm = 3; p.x, p.y = 9000, 9000
+    cmd("garrison addloc TestPlace")
+    local nl; for _, l in ipairs(ACORE_G.locations.List()) do if l.name == "TestPlace" then nl = l end end
+    check(nl ~= nil, "addloc creates a location")
+    if nl then
+        cmd("garrison addpoint"); p.x = 9100; cmd("garrison addpoint")
+        check(nl.points == nil, "two points are not saved yet")
+        p.y = 9100; cmd("garrison addpoint")
+        check(nl.points and #nl.points == 3, "the third addpoint saves the area (3 points)")
+        p.x = 9000; cmd("garrison addpoint")
+        check(nl.points and #nl.points == 4, "further addpoints append a point")
+        cmd("garrison clearpoints")
+        check(nl.points == nil, "clearpoints returns the location to a circle")
+    end
+    p.gm, p.x, p.y = keep[1], keep[2], keep[3]
+end
+
 -- no SQL may contain an unquoted/unfilled value
 for _, s in ipairs(sqlLog) do
     if s:find("nil") or s:find("%%d") or s:find("%%s") then check(false, "bad SQL: " .. s) end

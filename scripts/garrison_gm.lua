@@ -1,9 +1,10 @@
 -- Garrison module 14/14 (part 2): GM chat commands (.garrison ...). GM level 2+ for the inspection commands, 3+ for the ones that create or reload locations.
 --   .garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload
---   shape (GM level 3): addpoint | delpoint | points | poly <tele name prefix> | circle      (a garrison area is a circle, or a polygon of 3+ points)
+--   shape (GM level 3): addpoint | delpoint | points | clearpoints      (an area is a outline of 3+ points traced in order; a brand-new location is a temporary circle until it has 3)
 -- info/rename act on the garrison you stand in, else on the nearest location on this map.
 return function(G)
     local Say, Loc, active, inside, store = G.Say, G.locations.Get, G.active, G.inside, G.store
+    local pending = {}   -- location id -> outline points collected by .garrison addpoint but not saved yet (fewer than 3)
 
     local function Target(player)
         local h = active[inside[player:GetGUIDLow()] or -1]
@@ -20,7 +21,7 @@ return function(G)
     local function Describe(player, loc)
         local dx, dy = player:GetX() - loc.cx, player:GetY() - loc.cy
         Say(player, string.format("[%d] %s: map %d, %s, middle %.1f, %.1f, farthest %.1f, arrival %.1f, %.1f, %.1f, you are %s, %.1f from the middle",
-            loc.id, loc.name, loc.map, loc.points and (#loc.points .. "-corner polygon") or "circle", loc.cx, loc.cy, loc.radius, loc.portal.x, loc.portal.y, loc.portal.z,
+            loc.id, loc.name, loc.map, loc.points and (#loc.points .. "-point outline") or "circle", loc.cx, loc.cy, loc.radius, loc.portal.x, loc.portal.y, loc.portal.z,
             G.locations.Inside(loc, player:GetX(), player:GetY()) and "inside" or "outside", math.sqrt(dx * dx + dy * dy)))
     end
 
@@ -62,37 +63,39 @@ return function(G)
             if cmd == "reload" then G.locations.Reload(); Say(player, "Locations reloaded; garrisons that are open keep their old settings until they close."); return false end
             if arg == "" then Say(player, "Usage: .garrison addloc <name>   (stand where players should appear)"); return false end
             local l = G.locations.Add(arg, player:GetMapId(), player:GetX(), player:GetY(), player:GetZ(), player:GetO())
-            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Shape it with .garrison poly or addpoint. It shows at the portal at once.")
+            Say(player, "Added location " .. l.id .. " '" .. l.name .. "' (radius 100). Walk the border and use .garrison addpoint along the border, in order (3 or more). It shows at the portal at once.")
             return false
         end
         local loc = Target(player)
         if not loc then Say(player, "No garrison location on this map."); return false end
-        local shape = cmd == "addpoint" or cmd == "delpoint" or cmd == "points" or cmd == "poly" or cmd == "circle"
+        local shape = cmd == "addpoint" or cmd == "delpoint" or cmd == "points" or cmd == "clearpoints"
         if shape then
             if rank < 3 and cmd ~= "points" then Say(player, "That needs GM level 3."); return false end
-            local pts = loc.points
+            -- outline points are collected here until there are 3 (an area needs at least 3); from then on they are saved at once
+            local pts = loc.points or pending[loc.id]
             if cmd == "points" then
-                Say(player, loc.name .. ": " .. (pts and (#pts .. " corner points") or "a circle"))
+                Say(player, loc.name .. ": " .. (loc.points and (#loc.points .. " outline points (saved)") or (pending[loc.id] and (#pending[loc.id] .. " outline points collected, not saved yet (need 3)") or "no outline points yet (temporary circle)")))
                 for i, p in ipairs(pts or {}) do Say(player, string.format("  %d: %.1f, %.1f", i, p[1], p[2])) end
                 return false
-            elseif cmd == "circle" then G.locations.SetPoints(loc, nil)
+            elseif cmd == "clearpoints" then
+                pending[loc.id] = nil
+                G.locations.SetPoints(loc, nil)
+                Say(player, loc.name .. ": all outline points removed. The area is a temporary circle until you add 3 or more points (.garrison addpoint).")
             elseif cmd == "addpoint" then
-                pts = pts or {}; pts[#pts + 1] = { player:GetX(), player:GetY() }
-                G.locations.SetPoints(loc, pts)   -- fewer than 3 points: kept as a circle until the third arrives
-                if #pts < 3 then loc.points = nil; Say(player, "Point " .. #pts .. " noted, but not saved yet: it needs 3 or more (walk around the border and repeat).") ; return false end
-            elseif cmd == "delpoint" then
-                if not pts then Say(player, "No points."); return false end
-                table.remove(pts); G.locations.SetPoints(loc, pts)
-            elseif cmd == "poly" then
-                if arg == "" then Say(player, "Usage: .garrison poly <tele name prefix>   e.g. teles radius1, radius2, ... -> .garrison poly radius"); return false end
-                local list = {}
-                for i = 1, 200 do
-                    local q = WorldDBQuery(string.format("SELECT map, position_x, position_y FROM game_tele WHERE name='%s%d'", arg:gsub("[^%w_]", ""), i))
-                    if not q then break end
-                    if q:GetUInt32(0) == loc.map then list[#list + 1] = { q:GetFloat(1), q:GetFloat(2) } end
+                local list = loc.points or pending[loc.id] or {}
+                list[#list + 1] = { player:GetX(), player:GetY() }
+                if loc.points or #list >= 3 then
+                    pending[loc.id] = nil
+                    G.locations.SetPoints(loc, list)
+                else
+                    pending[loc.id] = list
+                    Say(player, "Point " .. #list .. " noted (not saved yet: an outline needs 3 or more). Walk along the border to the next spot and repeat; the last point joins back to the first.")
+                    return false
                 end
-                if #list < 3 then Say(player, "Found only " .. #list .. " teles named " .. arg .. "1, " .. arg .. "2, ... on this map (need 3).") ; return false end
-                G.locations.SetPoints(loc, list)
+            elseif cmd == "delpoint" then
+                if not pts or #pts == 0 then Say(player, "No points."); return false end
+                table.remove(pts)
+                if loc.points then G.locations.SetPoints(loc, pts) else pending[loc.id] = pts end   -- below 3 points a saved area becomes a circle again
             end
             if loc.points and not G.locations.Inside(loc, loc.portal.x, loc.portal.y) then Say(player, "|cffff8080Warning: the arrival point is outside this area.|r") end
             G.locations.Save(loc)
@@ -104,7 +107,7 @@ return function(G)
             if rank < 3 or arg == "" then Say(player, "Usage (GM level 3): .garrison rename <new name>"); return false end
             loc.name = arg
         elseif cmd ~= "info" then
-            Say(player, ".garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload | addpoint | delpoint | points | poly <prefix> | circle"); return false
+            Say(player, ".garrison locs | info | phase | markers | status | purge | rename <name> | addloc <name> | reload | addpoint | delpoint | points | clearpoints"); return false
         end
         if cmd ~= "info" then G.locations.Save(loc) end
         Describe(player, loc)

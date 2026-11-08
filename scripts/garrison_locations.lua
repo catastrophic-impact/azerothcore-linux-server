@@ -1,11 +1,11 @@
 -- Garrison module 5/14: WHERE garrisons are, and which phase bits they may use.
 --  * Locations live in the WORLD database (table garrison_location, created here, seeded with the two built-in ones) so adding one needs no code:
---      stand where players should appear and type   .garrison addloc <name>      (GM level 3; then shape it with .garrison poly or addpoint)
+--      stand where players should appear and type   .garrison addloc <name>      (GM level 3; then walk the border with .garrison addpoint along the border, in order)
 --    New locations show up at the portal after   .garrison reload   (garrisons that are already open are not touched).
 --  * Shape: a circle (cx, cy, radius) or, when it has 3+ boundary points, a polygon (world table garrison_location_point). Everything that
---    asks "is this spot inside?" calls L.Inside(loc, x, y); for a polygon cx, cy, radius are DERIVED (middle and farthest corner) and only
+--    asks "is this spot inside?" calls L.Inside(loc, x, y); for a polygon cx, cy, radius are DERIVED (middle and farthest outline point) and only
 --    used as a bounding circle (visibility range of the entry check, nearest-location lookup).
---      .garrison addpoint (append your spot) | delpoint | points | poly <tele name prefix, e.g. radius> | circle
+--      .garrison addpoint (append your spot) | delpoint | points | clearpoints
 --  * An owner whose location row is missing keeps their data; the portal just treats them as having no garrison until the row is back.
 --  * Phase bits: every bit not used by a stock creature/gameobject spawn on the location's map (scanned from the world database).
 --    Bits are handed out per location (see garrison_session.lua), so far-apart garrisons can share one.
@@ -14,7 +14,7 @@ return function(G)
     G.locations = L
     local byId = {}
 
-    -- seeded when the table is empty (a fresh install): id, name, map, cx, cy, radius, arrival x, y, z, o, corner points of the area (nil = circle)
+    -- seeded when the table is empty (a fresh install): id, name, map, cx, cy, radius, arrival x, y, z, o, outline points of the area (nil = circle)
     local DEFAULTS = {
         { 1, "Northshire Abbey", 0, -8940.0, -115.0, 119.0, -9036.052, -55.42181, 89.495094, 6.0482984,
           { { -9031.57, 7.96 }, { -9048.98, -101.79 }, { -9124.59, -193.84 }, { -8980.17, -341.57 }, { -8795.14, -400.64 }, { -8677.91, -199.0 }, { -8663.63, -44.88 }, { -8880.75, 21.58 }, { -8952.43, -3.68 }, { -9031.49, 12.5 } } },
@@ -42,7 +42,7 @@ return function(G)
         end
     end
 
-    local function Bounds(l)   -- polygon: derive the bounding circle from the corners
+    local function Bounds(l)   -- polygon: derive the bounding circle from the outline points
         local pts = l.points
         if not pts or #pts < 3 then return end
         local sx, sy = 0, 0

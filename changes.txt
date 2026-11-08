@@ -30,7 +30,7 @@ Garrison: the portal now stands at the Stormwind Mage Tower. Players pick one ga
 Garrison: 'You are leaving your garrison' Leave/Stay prompt; fixed entering a garrison from the Mage Tower (the area check could send you straight back); the radius ring comes back when you re-enter; 71 more props (Unsorted) from the mod-warband-camp prop list.
 Garrison code split into 15 parts (garrison_<name>.lua); locations are now data in the world DB (.garrison addloc); instant logout + rested XP inside a garrison; Up/Down in placement mode; safer database handling (no cleanups at load).
 Jukebox: works on its own (installer no longer ties it to Garrison); Arathi Shore area set from the radius1-10 teles; .garrison phase + phase checks in the log.
-Garrison areas can be any shape (polygon of corner points, .garrison addpoint / poly); Arathi Shore now follows your radius1-10 points; the radius preview draws the border near you and follows you.
+Garrison areas can be any shape (an outline of points, .garrison addpoint); Arathi Shore now follows your radius1-10 points; the radius preview draws the border near you and follows you.
 Radius preview: markers keep a fixed height (1.5 yd) above the ground, and above the water surface over water.
 Radius preview: over water every marker now hangs at the same height above the (flat) water surface.
 Radius preview: markers over deep water no longer jump to the player's height.
@@ -38,6 +38,6 @@ Radius preview: one water level per location (also covers water the map data mis
 Garrison: running on after the leave prompt now forces you out (20 yards past the border); Exit Garrison button in the garrison window.
 Garrison: leaving the area is now a 5 second on-screen countdown (walk back in to cancel); no more Leave/Stay prompt.
 Fixed the Exit Garrison button (its confirm dialog had been removed by mistake); added tools/lint_addons.py.
-New garrison location Fenris Isle (gar6, 14-corner area over a lake); border markers handle several water levels in one area; .garrison rename.
+New garrison location Fenris Isle (gar6, 14-point outline over a lake); border markers handle several water levels in one area; .garrison rename.
 Admin TUI: new Server dashboard (status, uptime, characters online, disk), themed layout, spinner/toasts, ? help, clickable tabs, log filter/errors-only/pause, account search + online status. New Debug tab (switch Playerbots/Server/Errors/Auth log files; Playerbots.log off by default; clear mysqld.log, auto-trimmed at start). Debug tab also has two garrison maintenance actions (empty all garrison data; remove data of deleted accounts), each asking about a backup first. Restore, reset, module apply/undo and component-off now ask "create a backup first?" instead of making automatic backups; the install-time master stays the only automatic one and cannot be deleted in the TUI.
 Installer: choose "recommended settings" (our tuning: XP x4, 300 playerbots, auction bot active, rates...) or plain AzerothCore defaults (--stock-settings). Portable paths and database settings are always applied. config-overrides/ = required, config-overrides/recommended/ = tuning; the choice is stored in config/settings.conf.
