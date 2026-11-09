@@ -62,7 +62,7 @@ bx '[ -x ~/go-sdk/bin/go ] || { V=$(curl -s "https://go.dev/dl/?mode=json" | gre
 say "2/9 core source (vendored in deps/core, pinned by modules.lock)"
 [ -f "$HERE/deps/core/CMakeLists.txt" ] || { echo "deps/core is missing - re-clone the repo."; exit 1; }
 CORE_SHA=$(awk '$1=="core"{print substr($2,1,10)}' "$HERE/modules.lock")
-bx "mkdir -p ~/src/azerothcore-wotlk && rsync -a --delete --exclude=/build '$HERE/deps/core/' ~/src/azerothcore-wotlk/ && echo core $CORE_SHA (vendored)" \
+bx "mkdir -p ~/src/azerothcore-wotlk && rsync -a --delete --exclude=/build '$HERE/deps/core/' ~/src/azerothcore-wotlk/ && echo core $CORE_SHA vendored" \
   || { echo "Could not copy deps/core into the build box."; exit 1; }
 
 say "3/9 module sources -> $DEST/modules (no git history; pinned)"
