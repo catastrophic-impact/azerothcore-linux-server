@@ -26,7 +26,7 @@ AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-
 | [mod-playerbots](https://github.com/mod-playerbots/mod-playerbots) | Random and companion bots that play like real players |
 | [mod-individual-progression](https://github.com/ZhengPeiRu21/mod-individual-progression) | Per-player progression through the expansion tiers |
 | [mod-autobalance](https://github.com/azerothcore/mod-autobalance) | Scales instance difficulty to the group |
-| [mod-transmog](https://github.com/azerothcore/mod-transmog) | Transmogrification NPC |
+| [mod-transmog-plus](https://github.com/Stefan2102/mod-transmog-plus) | Slot-based transmogrification (NPC + optional addon) |
 | [mod-ah-bot-plus](https://github.com/NathanHandley/mod-ah-bot-plus) | Auction house bot |
 | [mod-dungeon-clear](https://github.com/jrad7/mod-dungeon-clear) | Autonomous dungeon-clearing mode for tank bots |
 | [mod-rndbot-buffs](https://github.com/Rockhopper1776/mod-rndbot-buffs) | Idle bots buff nearby real players |
@@ -71,6 +71,7 @@ The addons are updated often. You can take the latest version straight from this
 2. **Copy** the folders you want from the `addons/` folder into your WoW client's `Interface/AddOns` folder:
    - `AcoreLib` (always needed)
    - `wotlk_garrison`, `wotlk_jukebox`, `wotlk_shop`, `wotlk_botmanager` (only the ones your server uses)
+   - `Transmog` (optional): the transmog window for the Warpweaver NPC; without it players get the normal NPC menu. Its UI comes from the mod-transmog-plus project (AGPL-3.0, see `addons/Transmog/LICENSE`)
    - `tools/wotlk_garrison_admin` is the garrison admin tool, for GM accounts only
 3. **Load them:** after updating an addon, type `/reload` in game. After adding a new addon or an addon whose `.toc` changed, log out fully and back in. At the character screen, check **AddOns** and make sure they are enabled.
 

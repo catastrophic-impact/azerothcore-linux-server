@@ -1,0 +1,14 @@
+diff --git a/modules/mod-transmog-plus/src/TransmogPlayerScript.cpp b/modules/mod-transmog-plus/src/TransmogPlayerScript.cpp
+--- a/modules/mod-transmog-plus/src/TransmogPlayerScript.cpp
++++ b/modules/mod-transmog-plus/src/TransmogPlayerScript.cpp
+@@ -52,6 +52,10 @@
+         if (!item)
+             return;
+ 
++        // portable patch: bots (headless sessions) must not fill the account collection
++        if (player->GetSession()->IsHeadless())
++            return;
++
+         ItemTemplate const* itemTemplate = item->GetTemplate();
+         if (itemTemplate->Class != ITEM_CLASS_ARMOR && itemTemplate->Class != ITEM_CLASS_WEAPON)
+             return;
