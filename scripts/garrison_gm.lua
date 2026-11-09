@@ -13,6 +13,7 @@ return function(G)
         "  info - details of the garrison you stand in (or the nearest location on this map)",
         "  points - the outline points of that location",
         "  status - open garrisons, occupants, tracked objects",
+        "  decor - decor count of the garrison you stand in: in memory (what the limit uses) vs the database",
         "  phase - your phase vs the garrison's phase bit",
         "  markers - report on the border markers (Show garrison radius)",
         "  purge - remove every garrison spawn, everyone inside is moved out",
@@ -70,6 +71,21 @@ return function(G)
             for _, h in pairs(active) do gar = gar + 1; occ = occ + h.n; sp = sp + #h.spawned; pets = pets + #h.pets end
             Say(player, string.format("open garrisons %d, occupants %d, tracked NPCs/objects %d, pets %d, registry rows %d (should equal tracked), last audit removed %d",
                 gar, occ, sp, pets, store.CountSpawns(), G.LastAudit()))
+            return false
+        elseif cmd == "decor" then   -- what the placement limit counts, against what is stored
+            local owner = inside[player:GetGUIDLow()]
+            local h = owner and active[owner]
+            if not h then Say(player, "Stand inside a garrison first."); return false end
+            local mem, perKind, spawnedDecor = 0, {}, 0
+            for _, r in pairs(h.decor) do mem = mem + 1; perKind[r.kind] = (perKind[r.kind] or 0) + 1 end
+            for _, sp in ipairs(h.spawned) do if sp.did then spawnedDecor = spawnedDecor + 1 end end
+            local top, topN = "-", 0
+            for k, n in pairs(perKind) do if n > topN then top, topN = k, n end end
+            local rows = store.LoadDecor(owner, h.loc)
+            local unknown = 0
+            for _, r in ipairs(rows) do if not G.BY_KIND[r.kind] then unknown = unknown + 1 end end
+            Say(player, string.format("decor in memory (the limit counts this): %d of %d; spawned in the world: %d; most of one item: %s x%d (limit %d); database rows: %d (%d of an unknown kind: stored, not counted)",
+                mem, G.cfg.maxDecor, spawnedDecor, top, topN, G.cfg.maxPerKind, #rows, unknown))
             return false
         elseif cmd == "purge" then
             Say(player, "Purge: removing every garrison spawn. Everyone inside is moved out first.")

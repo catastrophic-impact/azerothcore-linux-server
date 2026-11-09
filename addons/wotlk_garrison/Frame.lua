@@ -42,6 +42,7 @@ local function Build()
     G.BuildPad(frame)
     local previewBg = G.BuildPreview(frame)
     G.BuildActions(frame, previewBg)
+    G.BuildCurate(frame)
     frame:SetScript("OnHide", G.Unmark)
     frame:Hide()
 end
@@ -52,7 +53,7 @@ AcoreLib.On("house", "head", function(p)
     if not st.inHome and G.HideLeaveWarning then G.HideLeaveWarning() end
     if G.wantOpen then   -- /garrison asked the server where we are: open only inside our own garrison
         G.wantOpen = false
-        if st.inHome then
+        if st.inHome or st.curator then   -- a curator (GM 3+) may open the window anywhere: sorting needs no garrison
             if not ui.frame then Build() end
             G.Refresh(); ui.frame:Show()
             if not st.primed then AcoreLib.Send("house", "prime", "") end   -- the server primes the client's creature-model cache for NPC previews

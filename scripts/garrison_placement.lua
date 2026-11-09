@@ -50,6 +50,7 @@ return function(G)
     Msg.On("house", "list", function(player)
         -- the client has the static catalog; we only tell it whether you are home and which kinds are placed (chunked: ~240 char limit)
         local h = MyHouse(player)
+        if G.curate then G.curate.Hello(player) end   -- curator right + catalog revision (before "head": the client may open the window from it)
         Msg.Send(player, "house", "head", h and "1" or "0")
         Msg.Send(player, "house", "cur", cfg.currency .. "," .. cfg.currencyItem)
         if not h then return end

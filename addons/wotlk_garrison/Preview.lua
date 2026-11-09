@@ -63,6 +63,14 @@ function G.FitModel(model, e)
     model:SetRotation(e.vr or DEFAULT_ROT)
 end
 
+-- the view as drawn right now (curator "Save view"): scale, sideways, up, turn - or nil for a creature / nothing
+function G.CurrentView()
+    local e = view.e
+    if not e or (e.npc and e.npc > 0) or not e.model or e.model == "" then return nil end
+    local sc, vy, vz = ViewOf(e, view.zoom, view.panX, view.panZ)
+    return sc, vy, vz, view.rot
+end
+
 local function Zoom(f) view.zoom = math.max(0.3, math.min(4, view.zoom * f)); ApplyView() end
 
 function G.BuildPreview(frame)

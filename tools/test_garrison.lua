@@ -111,6 +111,7 @@ local function NewPlayer(guid, acct, name)
     function p:IsInCombat() return false end
     function p:IsGM() return false end
     function p:GetGMRank() return self.gm end
+    function p:IsBot() return false end
     function p:GetGroup() return nil end
     function p:GetMapId() return self.map end
     function p:GetX() return self.x end
@@ -266,6 +267,24 @@ Msg().handlers["house|dplace"](p, kind)
 local inserted = false
 for _, s in ipairs(sqlLog) do if s:find("INSERT INTO dc_garrison_decor") and s:find("'" .. kind .. "'") then inserted = true end end
 check(inserted, "dplace writes the decor row to the database")
+do   -- the per-item limit, then "Remove all decor" must free the slots
+    local function lastRes() local t = sent[p.guid] or {}; for i = #t, 1, -1 do if t[i]:find("^house|res|") then return t[i] end end end
+    for i = 1, 12 do Msg().handlers["house|dplace"](p, kind) end
+    check((lastRes() or ""):find("already have") ~= nil, "the 11th copy of one item is refused (" .. tostring(lastRes()) .. ")")
+    Msg().handlers["house|dclear"](p, "")
+    Msg().handlers["house|dplace"](p, kind)
+    check((lastRes() or ""):find("^house|res|Placed") ~= nil, "after Remove all decor you can place again (" .. tostring(lastRes()) .. ")")
+end
+do   -- an Unsorted / Removed item (hid): a GM 3 can place it, anyone else is refused
+    local function lastRes() local t = sent[p.guid] or {}; for i = #t, 1, -1 do if t[i]:find("^house|res|") then return t[i] end end end
+    local hidKind; for _, c in ipairs(cat) do if c.multi and c.hid and c.cat == "Unsorted" then hidKind = c.kind; break end end
+    local keep = p.gm
+    p.gm = 3; Msg().handlers["house|dplace"](p, hidKind)
+    check((lastRes() or ""):find("^house|res|Placed") ~= nil, "a GM 3 can place an Unsorted item (" .. tostring(lastRes()) .. ")")
+    p.gm = 0; Msg().handlers["house|dplace"](p, hidKind)
+    check((lastRes() or ""):find("Unknown decor item") ~= nil, "a normal player cannot place an Unsorted item (" .. tostring(lastRes()) .. ")")
+    p.gm = keep
+end
 Msg().handlers["house|pstart"](p, kind)
 check(msgs(p, "house|pstart") >= 1, "placement mode starts")
 Msg().handlers["house|pup"](p, "1"); Msg().handlers["house|pcancel"](p, "")
@@ -307,6 +326,48 @@ do
         check(nl.points == nil, "clearpoints returns the location to a circle")
     end
     p.gm, p.x, p.y = keep[1], keep[2], keep[3]
+end
+
+-- curator operations (scripts/garrison_curate.lua): category / name / price overrides, hid, category list edits, GM-only
+do
+    local on = function(a) return Msg().handlers["house|" .. a] end
+    local G = ACORE_G
+    local def; for _, c in ipairs(G.CATALOG) do if c.obj and c.basecat ~= "Removed" and c.basecat ~= "Unsorted" then def = c; break end end
+    check(def ~= nil, "catalog has curatable decor")
+    if def then
+        local keep = p.gm
+        p.gm = 0; on("ciset")(p, def.kind .. "~Removed~~")
+        check(def.cat == def.basecat, "a non-GM cannot curate")
+        p.gm = 3
+        on("ciset")(p, def.kind .. "~Removed~Renamed Thing~7")
+        check(def.cat == "Removed" and def.hid == true, "moving to Removed hides the item from players")
+        check(def.name == "Renamed Thing" and def.price == 7, "name and price overrides apply")
+        on("ciset")(p, def.kind .. "~" .. def.basecat .. "~~")
+        check(def.cat == def.basecat and not def.hid and def.name == def.basename, "back to the base category clears the overrides")
+        on("ccadd")(p, "Curated Test")
+        local function Has(n) for _, c in ipairs(G.curate.cats or {}) do if c.name == n then return true end end end
+        check(Has("Curated Test"), "category added")
+        on("ccadd")(p, "Aaa First"); on("ccadd")(p, "Aaa First > Zed"); on("ccadd")(p, "Aaa First > bee")
+        local at = {}; for i, c in ipairs(G.curate.cats) do at[c.name] = i end
+        check(at["Aaa First"] == 1 and at["Aaa First > bee"] == 2 and at["Aaa First > Zed"] == 3, "categories sort alphabetically, subcategories after their parent")
+        local last = G.curate.cats[#G.curate.cats]
+        check(last.name == "Removed" and G.curate.cats[#G.curate.cats - 1].name == "Unsorted", "Unsorted and Removed stay last")
+        on("ciset")(p, def.kind .. "~Curated Test~~")
+        on("ccren")(p, "Curated Test~Curated Renamed")
+        check(def.cat == "Curated Renamed" and Has("Curated Renamed") and not Has("Curated Test"), "renaming a category moves its items")
+        on("ccprice")(p, "Curated Renamed~9")
+        check(def.price == 9, "category price applies to its items")
+        on("ccdel")(p, "Curated Renamed")
+        check(def.cat == "Unsorted" and def.hid == true and not Has("Curated Renamed"), "deleting a category sends its items to Unsorted")
+        on("ccren")(p, "Unsorted~Foo")
+        check(Has("Unsorted") and not Has("Foo"), "Unsorted cannot be renamed")
+        on("ciset")(p, def.kind .. "~~~")
+        on("cfset")(p, "world\\test\\thing.m2~1.5~0.1~0.2~0.61")
+        check(G.curate.fit["world\\test\\thing.m2"] ~= nil, "a view fit is stored")
+        on("cfclr")(p, "world\\test\\thing.m2")
+        check(G.curate.fit["world\\test\\thing.m2"] == nil, "a view fit is cleared")
+        p.gm = keep
+    end
 end
 
 -- no SQL may contain an unquoted/unfilled value

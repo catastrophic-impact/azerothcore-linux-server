@@ -38,6 +38,7 @@ function G.Select(e)
     if st.tab == "placed" and e then G.Mark() else G.Unmark() end
     for _, r in ipairs(rows) do if r:IsShown() then if r.entry == e then r.sel:Show() else r.sel:Hide() end end end
     for _, c in ipairs(cells) do if c.entry and c.entry == e then c.sel:Show() else c.sel:Hide() end end
+    if G.CurRefresh then G.CurRefresh() end   -- curator controls follow the selection
 end
 
 -- the list for the current tab. Placed tab = what the server says is placed (decor instances first, then single-instance kinds)
@@ -63,11 +64,13 @@ local function BuildList()
         end
     else
         local q = (st.query or ""):lower()
+        local kk = st.tab .. "|" .. (st.cat or "")
+        if kk ~= st.keepKey then st.keepKey = kk; st.keep = {} end   -- items moved out of the category being browsed stay listed (greyed) until you change category
         for _, e in ipairs(C.items) do
-            if e.tab == st.tab and not e.hidden then   -- hidden = flagged for removal in the admin tool
+            if e.tab == st.tab and (not e.hidden or st.keep[e.kind]) then   -- hidden = Removed / Unsorted for players
                 if q ~= "" then   -- a search looks through the whole tab, not only the open category
-                    if e.name:lower():find(q, 1, true) or (e.detail or ""):lower():find(q, 1, true) or e.cat:lower():find(q, 1, true) then list[#list + 1] = e end
-                elseif e.cat == st.cat then list[#list + 1] = e end
+                    if st.keep[e.kind] or e.name:lower():find(q, 1, true) or (e.detail or ""):lower():find(q, 1, true) or e.cat:lower():find(q, 1, true) then list[#list + 1] = e end
+                elseif e.cat == st.cat or st.keep[e.kind] then list[#list + 1] = e end
             end
         end
     end
@@ -79,7 +82,10 @@ local function RefreshCategories()
     ui.pad:Hide(); ui.catScroll:Show()
     local names = {}
     for _, name in ipairs(G.TabDef(st.tab).cats) do   -- categories with nothing in them (e.g. an empty Unsorted) are not shown
-        for _, e in ipairs(C.items) do if e.tab == st.tab and e.cat == name and not e.hidden then names[#names + 1] = name; break end end
+        if G.CuratorOn() and st.tab == "objects" then names[#names + 1] = name   -- a curator sees empty categories too (to send things there)
+        else
+            for _, e in ipairs(C.items) do if e.tab == st.tab and e.cat == name and not e.hidden then names[#names + 1] = name; break end end
+        end
     end
     -- subcategories ("Holiday > Winter Veil"): a parent is a toggle row, its children show indented while it is open
     st.open = st.open or {}
@@ -97,7 +103,12 @@ local function RefreshCategories()
         end
         b:ClearAllPoints(); b:SetSize(row.indent and 126 or 142, 28); b:SetPoint("TOPLEFT", row.indent and 18 or 2, -(i - 1) * 31)
         b:SetText(row.label); b:Show()
-        b:SetScript("OnClick", function()
+        b:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        b:SetScript("OnClick", function(_, btn)
+            if btn == "RightButton" then   -- curator: the category menu (pin, add, rename, move, price, delete)
+                if G.CuratorOn() and st.tab == "objects" then G.CatMenu(row.parent or row.cat) end
+                return
+            end
             if row.parent then
                 st.open[row.parent] = not st.open[row.parent]
                 if st.open[row.parent] then st.cat = row.cat end   -- opening a parent shows its own items, or its first child
@@ -128,7 +139,7 @@ end
 function G.Refresh()
     if not ui.frame then return end
     ui.statusText:SetText(st.inHome and "|cff00ff00You are in your garrison: stand where you want it, then Place.|r"
-                                     or "|cffff6060Enter your garrison through the portal to place things.|r")
+                                     or (G.CuratorOn() and "|cffffd100Curator mode: sorting works anywhere; placing needs your garrison.|r" or "|cffff6060Enter your garrison through the portal to place things.|r"))
     for key, b in pairs(ui.tabBtns) do if key == st.tab then b:LockHighlight() else b:UnlockHighlight() end end
     RefreshCategories(); BuildList()
     if st.tab == "placed" then   -- keep the selection across rebuilds (the list is rebuilt on every server message)
@@ -158,6 +169,7 @@ function G.Refresh()
         G.RenderGrid(list)
     end
     UpdateButtons()
+    if G.CurRefresh then G.CurRefresh() end
 end
 
 -- ---- grid: 3 x 3 live previews per page (replaces the list on the NPCs / Objects tabs) ----
@@ -166,9 +178,14 @@ local function Mark(e)   -- small text in the corner: how many are placed
     if e.multi == 1 then local n = st.decorCount[e.kind] or 0; return n > 0 and ("|cff00ff00x" .. n .. "|r") or "" end
     return st.placed[e.kind] and "|cff00ff00placed|r" or ""
 end
+local function CellLabel(c, e)   -- an item a curator moved away stays in the list, greyed, with its new category
+    local moved = st.keep[e.kind] and e.cat ~= st.cat and (st.query or "") == ""
+    c.label:SetText(moved and ("|cff808080" .. e.name .. " -> " .. e.cat .. "|r") or e.name)
+    c.bg:SetAlpha(moved and 0.45 or 1)
+end
 local function FillCell(c, e)
     c.entry = e
-    c.label:SetText(e.name); c.mark:SetText(Mark(e))
+    CellLabel(c, e); c.mark:SetText(Mark(e))
     c.nm:Hide(); c.om:Hide(); c.icon:Hide(); c.note:SetText("")
     -- creatures and objects use SEPARATE model frames: a humanoid NPC leaves its appearance behind in a frame that is reused for an object
     if e.npc > 0 then
@@ -187,12 +204,24 @@ function G.RenderGrid(items)
     local g = ui.grid; if not g then return end
     g:Show()
     local base = st.tab .. "|" .. (st.cat or "") .. "|" .. (st.query or "")
-    if base ~= lastBase then lastBase, page = base, 1 end   -- a different tab / category / search starts at page 1
     local pages = math.max(1, math.ceil(#items / GRID_N))
+    local mem = WotlkGarrisonDB and WotlkGarrisonDB.pages
+    if base ~= lastBase then   -- a different tab / category / search: back to where you were in that category (the first item of the page you left), else page 1
+        lastBase, page = base, 1
+        local r = mem and mem[base]
+        if r and (st.query or "") == "" then
+            for i, x in ipairs(items) do if x.kind == r[2] then page = math.ceil(i / GRID_N); r = nil; break end end
+            if r then page = math.min(r[1] or 1, pages) end
+        end
+    end
     if page > pages then page = pages end
     if page < 1 then page = 1 end
+    if (st.query or "") == "" and items[(page - 1) * GRID_N + 1] then
+        WotlkGarrisonDB = WotlkGarrisonDB or {}; WotlkGarrisonDB.pages = WotlkGarrisonDB.pages or {}
+        WotlkGarrisonDB.pages[base] = { page, items[(page - 1) * GRID_N + 1].kind }
+    end
     g.pageText:SetText(string.format("Page %d / %d   (%d items)", page, pages, #items))
-    local key = base .. "|" .. page .. "|" .. (st.primed and 1 or 0) .. "|" .. #items
+    local key = base .. "|" .. page .. "|" .. (st.primed and 1 or 0) .. "|" .. #items .. "|" .. (st.rv or 0)
     if key ~= lastKey then   -- models are only (re)loaded when the page content changed, not on every server message
         lastKey = key
         for i = 1, GRID_N do
@@ -202,10 +231,31 @@ function G.RenderGrid(items)
     end
     for i = 1, GRID_N do   -- cheap updates every time: placed marks and the selection frame
         local c = cells[i]
-        if c.entry then c.mark:SetText(Mark(c.entry)); if st.selected == c.entry then c.sel:Show() else c.sel:Hide() end end
+        if c.entry then CellLabel(c, c.entry); c.mark:SetText(Mark(c.entry)); if st.selected == c.entry then c.sel:Show() else c.sel:Hide() end end
     end
 end
 function G.GridPage(d) page = math.max(1, page + d); lastKey = nil; G.Refresh() end   -- the upper limit is clamped in RenderGrid
+function G.InvalidateGrid() lastKey = nil; G.Refresh() end   -- reload the models of the visible page (a view was changed)
+-- show an item: select it and turn to its page
+function G.GoTo(e)
+    for i, x in ipairs(list) do
+        if x == e then
+            local np = math.ceil(i / GRID_N)
+            if np ~= page then page = np; lastKey = nil end
+            break
+        end
+    end
+    G.Refresh(); G.Select(e)
+end
+-- curator auto-advance: select the next item after e that was not moved away (the page turns when needed)
+function G.AdvanceFrom(e)
+    local idx
+    for i, x in ipairs(list) do if x == e then idx = i; break end end
+    local nxt
+    if idx then for j = idx + 1, #list do if not st.keep[list[j].kind] then nxt = j; break end end end
+    if nxt then G.GoTo(list[nxt])
+    else G.Refresh(); G.SetMsg("End of this list.", 1, 0.82, 0) end
+end
 
 function G.BuildGrid(frame)
     local g = CreateFrame("Frame", nil, frame); ui.grid = g
@@ -276,6 +326,7 @@ function G.BuildActions(frame, previewBg)   -- Place / Remove under the preview
     WotlkGarrisonDB = WotlkGarrisonDB or {}
     local pv = CreateFrame("CheckButton", nil, frame, "UICheckButtonTemplate"); pv:SetSize(24, 24); pv:SetPoint("TOPLEFT", remove, "BOTTOMLEFT", 0, -4)
     local pvl = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); pvl:SetPoint("LEFT", pv, "RIGHT", 2, 0); pvl:SetText("Preview before placing (Enter)")
+    ui.pvCheck = pv
     pv:SetChecked(WotlkGarrisonDB.preview and true or false)
     pv:SetScript("OnClick", function(self) WotlkGarrisonDB.preview = self:GetChecked() and true or false end)
     place:SetScript("OnClick", function()

@@ -10,4 +10,5 @@ Preview.lua
 Placed.lua
 PlaceMode.lua
 List.lua
+Curate.lua
 Frame.lua
