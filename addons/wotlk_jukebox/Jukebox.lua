@@ -119,7 +119,7 @@ end
 local function PlayLocal(tr, source)
     playing, elapsed, playSource, advanceWait = tr, 0, source or "personal", 0
     D("PlayMusic", tr.name, source or "personal")
-    PlayMusic(tr.path)
+    pcall(PlayMusic, tr.path)   -- a missing client file is silent in 3.3.5, but never let a bad path raise an error
     UpdateNow()
 end
 
@@ -200,7 +200,7 @@ ticker:SetScript("OnUpdate", function(_, dt)
     if advanceWait > 0 then advanceWait = advanceWait - dt end
     if zoneFix > 0 then   -- the game's zone music cut the song: start it again from the beginning (the client cannot resume mid-song)
         zoneFix = zoneFix - dt
-        if zoneFix <= 0 then zoneFix = 0; elapsed = 0; D("zoneFix replay", playing.name); PlayMusic(playing.path) end
+        if zoneFix <= 0 then zoneFix = 0; elapsed = 0; D("zoneFix replay", playing.name); pcall(PlayMusic, playing.path) end
     end
     if bar then bar:SetValue(math.min(elapsed, playing.dur)) end
     if timeText then timeText:SetText(Fmt(math.min(elapsed, playing.dur)) .. " / " .. Fmt(playing.dur)) end

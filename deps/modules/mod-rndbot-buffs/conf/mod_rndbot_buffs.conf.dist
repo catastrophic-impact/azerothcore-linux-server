@@ -1,0 +1,79 @@
+#
+# mod-rndbot-buffs
+#
+
+#
+#    RndbotBuffs.Enable
+#        Enable nearby-player buffing by random playerbots.
+#        Default: 1
+#
+RndbotBuffs.Enable = 1
+
+#
+#    RndbotBuffs.CheckIntervalMs
+#        How often each rndbot looks for a player to buff.
+#        The module casts at most one buff per check.
+#        Minimum: 1000
+#        Default: 5000
+#
+RndbotBuffs.CheckIntervalMs = 5000
+
+#
+#    RndbotBuffs.Radius
+#        Maximum search range in yards.
+#        Range: 5-100
+#        Default: 30
+#
+RndbotBuffs.Radius = 30
+
+#
+#    RndbotBuffs.MinimumManaPct
+#        Do not start a courtesy buff below this mana percentage.
+#        PlayerbotAI still performs its normal spell-cost checks.
+#        Range: 0-100
+#        Default: 35
+#
+RndbotBuffs.MinimumManaPct = 35
+
+#
+#    RndbotBuffs.SameFactionOnly
+#        Only buff players on the rndbot's faction.
+#        Default: 1
+#
+RndbotBuffs.SameFactionOnly = 1
+
+#
+#    RndbotBuffs.SkipPlayersInCombat
+#        Avoid buffing players who are fighting. This also keeps the rndbot
+#        from being pulled into combat by assisting them.
+#        Default: 1
+#
+RndbotBuffs.SkipPlayersInCombat = 1
+
+#
+#    RndbotBuffs.SkipBattlegrounds
+#        Disable courtesy buffs in battlegrounds and arenas.
+#        Default: 1
+#
+RndbotBuffs.SkipBattlegrounds = 1
+
+#
+#    RndbotBuffs.Classes.*
+#        Enable supported class buff sets.
+#        Priest: Power Word: Fortitude, Divine Spirit, Shadow Protection
+#        Mage: Arcane Intellect
+#        Druid: Mark of the Wild, Thorns
+#        Paladin: Kings, or role-appropriate Wisdom/Might
+#        Default: 1
+#
+RndbotBuffs.Classes.Priest = 1
+RndbotBuffs.Classes.Mage = 1
+RndbotBuffs.Classes.Druid = 1
+RndbotBuffs.Classes.Paladin = 1
+
+#
+#    RndbotBuffs.Debug
+#        Log successful courtesy buffs to the playerbots debug log.
+#        Default: 0
+#
+RndbotBuffs.Debug = 0

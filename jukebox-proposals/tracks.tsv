@@ -1200,3 +1200,18 @@ Y	ZoneMusic	ZulDrak	Music_Temp_93	14860	ZD_Rhunok_Intro01.mp3	Sound\Music\ZoneMu
 Y	ZoneMusic	ZulDrak	Music_Temp_93	14860	ZD_Rhunok_Intro02.mp3	Sound\Music\ZoneMusic\ZulDrak\ZD_Rhunok_Intro02.mp3
 Y	ZoneMusic	ZulDrak	Music_Temp_93	14860	ZD_Sseratus_Intro01.mp3	Sound\Music\ZoneMusic\ZulDrak\ZD_Sseratus_Intro01.mp3
 Y	ZoneMusic	ZulDrak	Music_Temp_93	14860	ZD_Sseratus_Intro02.mp3	Sound\Music\ZoneMusic\ZulDrak\ZD_Sseratus_Intro02.mp3
+Y	WorldEvents		(unlisted in SoundEntries)		darkmoonfaire_1.mp3	sound\music\worldevents\darkmoonfaire_1.mp3
+Y	WorldEvents		(unlisted in SoundEntries)		darkmoonfaire_3.mp3	sound\music\worldevents\darkmoonfaire_3.mp3
+Y	WorldEvents		(unlisted in SoundEntries)		darkmoonfaire_4.mp3	sound\music\worldevents\darkmoonfaire_4.mp3
+Y	ZoneMusic	Naxxramas	(unlisted in SoundEntries)		naxxramashubbase1.mp3	sound\music\zonemusic\naxxramas\naxxramashubbase1.mp3
+Y	ZoneMusic	Naxxramas	(unlisted in SoundEntries)		naxxramashubbase2.mp3	sound\music\zonemusic\naxxramas\naxxramashubbase2.mp3
+Y	ZoneMusic	OutlandGeneral	(unlisted in SoundEntries)		ol_hordebasewalkuni01.mp3	sound\music\zonemusic\outlandgeneral\ol_hordebasewalkuni01.mp3
+Y	ZoneMusic	OutlandGeneral	(unlisted in SoundEntries)		ol_hordebasewalkuni02.mp3	sound\music\zonemusic\outlandgeneral\ol_hordebasewalkuni02.mp3
+Y	ZoneMusic	Sunwell	(unlisted in SoundEntries)		sw_sunwellflybyuni01.mp3	sound\music\zonemusic\sunwell\sw_sunwellflybyuni01.mp3
+Y	ZoneMusic	tavernalliance	(unlisted in SoundEntries)		tavernalliance01.mp3	sound\music\zonemusic\tavernalliance\tavernalliance01.mp3
+Y	ZoneMusic	tavernalliance	(unlisted in SoundEntries)		tavernalliance02.mp3	sound\music\zonemusic\tavernalliance\tavernalliance02.mp3
+Y	ZoneMusic	TempestKeep	(unlisted in SoundEntries)		tk_tempestkeep_amb_22.mp3	sound\music\zonemusic\tempestkeep\tk_tempestkeep_amb_22.mp3
+Y	ZoneMusic	ulduarraidext	(unlisted in SoundEntries)		ur_ulduarraidextintro05.mp3	sound\music\zonemusic\ulduarraidext\ur_ulduarraidextintro05.mp3
+Y	ZoneMusic	ulduarraidext	(unlisted in SoundEntries)		ur_ulduarraidextintro08.mp3	sound\music\zonemusic\ulduarraidext\ur_ulduarraidextintro08.mp3
+Y	ZoneMusic	ulduarraidext	(unlisted in SoundEntries)		ur_ulduarraidextintro09.mp3	sound\music\zonemusic\ulduarraidext\ur_ulduarraidextintro09.mp3
+Y	ZoneMusic	ulduarraidext	(unlisted in SoundEntries)		ur_ulduarraidextwalk07.mp3	sound\music\zonemusic\ulduarraidext\ur_ulduarraidextwalk07.mp3

@@ -18,7 +18,7 @@ while [ $# -gt 0 ]; do case "$1" in
 CACHE="${ACORE_CACHE:-$HERE/cache}"; BOXHOME="$HOME/boxes/$BOX"
 MYSQL_URL="https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.7-linux-glibc2.28-x86_64.tar.xz"
 DATA_URL="https://github.com/wowgaming/client-data/releases/download/v20.0/Data.zip"
-CORE_URL="https://github.com/mod-playerbots/azerothcore-wotlk.git"; CORE_BRANCH="Playerbot"
+
 say(){ printf '\n\033[1;33m== %s\033[0m\n' "$*"; }
 bx(){ distrobox enter "$BOX" -- bash -c "$*"; }
 
@@ -56,14 +56,14 @@ say "1/9 build box '$BOX' (Ubuntu 22.04, home $BOXHOME)"
 if ! distrobox list 2>/dev/null | grep -qw "$BOX"; then
   mkdir -p "$BOXHOME"; distrobox create --yes --name "$BOX" --image ubuntu:22.04 --home "$BOXHOME"
 fi
-bx 'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq git cmake make gcc g++ clang libssl-dev zlib1g-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev libmysqlclient-dev wget curl p7zip-full unzip xz-utils libaio-dev numactl file pkg-config ccache >/dev/null'
+bx 'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq git rsync cmake make gcc g++ clang libssl-dev zlib1g-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev libmysqlclient-dev wget curl p7zip-full unzip xz-utils libaio-dev numactl file pkg-config ccache >/dev/null'
 bx '[ -x ~/go-sdk/bin/go ] || { V=$(curl -s "https://go.dev/dl/?mode=json" | grep -m1 -o "go[0-9.]*linux-amd64.tar.gz" ); curl -sL https://go.dev/dl/$V -o ~/go.tgz && mkdir -p ~/go-sdk && tar -xzf ~/go.tgz -C ~/go-sdk --strip-components=1 && rm ~/go.tgz; }; ~/go-sdk/bin/go version'
 
-say "2/9 core source (pinned by modules.lock when present)"
-LOCK="$HERE/modules.lock"; CORE_SHA=$(awk '$1=="core"{print $2}' "$LOCK" 2>/dev/null || true)
-bx "mkdir -p ~/src && cd ~/src && [ -d azerothcore-wotlk ] || { git init -q azerothcore-wotlk && git -C azerothcore-wotlk remote add origin $CORE_URL; }
-  cd azerothcore-wotlk && git fetch -q --depth 1 origin ${CORE_SHA:-$CORE_BRANCH} && git checkout -q -f FETCH_HEAD && git log -1 --format='core %h %cd'" \
-  || { echo "Could not fetch the core at the pinned commit (${CORE_SHA:-$CORE_BRANCH}) from $CORE_URL. The upstream repo or that commit may be gone: update the 'core' line in modules.lock."; exit 1; }
+say "2/9 core source (vendored in deps/core, pinned by modules.lock)"
+[ -f "$HERE/deps/core/CMakeLists.txt" ] || { echo "deps/core is missing - re-clone the repo."; exit 1; }
+CORE_SHA=$(awk '$1=="core"{print substr($2,1,10)}' "$HERE/modules.lock")
+bx "mkdir -p ~/src/azerothcore-wotlk && rsync -a --delete --exclude=/build '$HERE/deps/core/' ~/src/azerothcore-wotlk/ && echo core $CORE_SHA (vendored)" \
+  || { echo "Could not copy deps/core into the build box."; exit 1; }
 
 say "3/9 module sources -> $DEST/modules (no git history; pinned)"
 python3 - "$HERE" "$DEST" <<'PY'
@@ -77,14 +77,9 @@ old=json.load(open(mf)) if os.path.exists(mf) else None
 for m in mods:
     d=os.path.join(dest,'modules',m['name'])
     if os.path.isdir(d): continue
-    tmp=d+'.cloning'; shutil.rmtree(tmp,ignore_errors=True); os.makedirs(tmp)
-    run=lambda *a: subprocess.run(a,cwd=tmp,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
-    try:
-        run('git','init','-q'); run('git','remote','add','origin',m['url']); run('git','fetch','-q','--depth','1','origin',m['commit']); run('git','checkout','-q','FETCH_HEAD')
-    except subprocess.CalledProcessError:
-        shutil.rmtree(tmp,ignore_errors=True)
-        sys.exit('Could not fetch %s at pinned commit %s from %s. The upstream repo or that commit may be gone (or you are offline): update its line in modules.lock.' % (m['name'],m['commit'][:10],m['url']))
-    shutil.rmtree(os.path.join(tmp,'.git')); os.rename(tmp,d); print('  +',m['name'])
+    src=os.path.join(here,'deps','modules',m['name'])
+    if not os.path.isdir(src): sys.exit('deps/modules/%s is missing - re-clone the repo.' % m['name'])
+    shutil.copytree(src,d); print('  +',m['name'])
 if old is None: json.dump(dict(mods=mods,lastSnapshot='',prevEnabled=[]),open(mf,'w'),indent=1)
 names=[m['name'] for m in (old['mods'] if old else mods)]
 open(os.path.join(dest,'modules','all.txt'),'w').write('\n'.join(names)+'\n')

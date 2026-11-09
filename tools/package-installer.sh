@@ -5,7 +5,7 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"; cd "$HERE"
 mkdir -p dist
-tar czf dist/payload.tgz --exclude='*.pyc' install.sh modules.lock tools/rebuild.sh tools/components.sh tools/apply_overrides.py tools/wotlk_garrison_admin patches config-overrides scripts addons custom-sql \
+tar czf dist/payload.tgz --exclude='*.pyc' install.sh modules.lock tools/rebuild.sh tools/components.sh tools/apply_overrides.py tools/wotlk_garrison_admin patches config-overrides scripts addons custom-sql deps \
     tui/*.go tui/go.mod tui/go.sum
 cat > dist/acore-install.sh <<'STUB'
 #!/usr/bin/env bash

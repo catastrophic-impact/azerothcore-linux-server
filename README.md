@@ -18,7 +18,7 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 
 ## What the installer builds
 
-AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-wotlk)) plus these modules, pinned to exact versions in `modules.lock`. Each can be turned off later in the TUI's Modules tab.
+AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-wotlk)) plus these modules, vendored in `deps/` at the exact versions recorded in `modules.lock`. Each can be turned off later in the TUI's Modules tab.
 
 | Module | Purpose |
 |---|---|
@@ -105,4 +105,4 @@ Tip: take a backup first (TUI Backups tab, `b`).
 
 ## License
 
-Our code is GPL-3.0 (see [LICENSE](LICENSE)). AzerothCore, the Playerbot core and every module the installer downloads keep their own licenses and belong to their authors; the installer fetches them from their original repositories at pinned versions (`modules.lock`).
+Our code is GPL-3.0 (see [LICENSE](LICENSE)). AzerothCore, the Playerbot core and every module are vendored unmodified in `deps/` at the exact commits listed in `modules.lock`, so the install needs no upstream repositories. They keep their own licenses and belong to their authors: see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for the full credits. Our changes to them live in `patches/`. To update one deliberately: `tools/update-dep.sh <name> [commit]`.
