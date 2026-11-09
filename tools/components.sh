@@ -31,6 +31,7 @@ install_components() {
   mkdir -p "$dest/lua_scripts" "$dest/client-addons" "$dest/custom-sql" "$dest/config"
   cp -a "$src/scripts/acore_msg.lua" "$dest/lua_scripts/"; cp -n "$src/scripts/acore_settings.lua" "$dest/lua_scripts/"   # owner settings are never overwritten
   cp -a "$src/addons/AcoreLib" "$dest/client-addons/"
+  cp -a "$src/addons/Transmog" "$dest/client-addons/"   # optional transmog window for mod-transmog-plus (a core module, not a component)
   : > "$dest/config/components.conf"
   for c in $COMPONENTS; do
     local on; eval "on=\${ENABLE_$c:-1}"
