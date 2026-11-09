@@ -11,7 +11,7 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 | Piece | What it is |
 |---|---|
 | **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
-| **Jukebox** | ~1000 game tracks, favorites, shuffle; works on its own with `/jukebox` (plays for you only); with Garrison installed too, the jukebox NPC plays music for everyone inside a garrison. |
+| **Jukebox** | ~1000 game tracks, your own **playlists**, and **Play Random Songs**; works on its own with `/jukebox` (plays for you only). With Garrison installed too, the jukebox NPC plays music for everyone inside a garrison: guests can pick songs, and the garrison owner can set a **Default** song or playlist that plays by itself whenever nothing else is playing. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
@@ -26,7 +26,7 @@ AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-
 | [mod-playerbots](https://github.com/mod-playerbots/mod-playerbots) | Random and companion bots that play like real players |
 | [mod-individual-progression](https://github.com/ZhengPeiRu21/mod-individual-progression) | Per-player progression through the expansion tiers |
 | [mod-autobalance](https://github.com/azerothcore/mod-autobalance) | Scales instance difficulty to the group |
-| [mod-transmog-plus](https://github.com/Stefan2102/mod-transmog-plus) | Slot-based transmogrification (NPC + optional addon) |
+| [mod-transmog-plus](https://github.com/Stefan2102/mod-transmog-plus) | Slot-based transmogrification (NPC + optional addon). Our `patches/transmog-plus-skip-bots.patch` keeps playerbots from filling the account's appearance collection |
 | [mod-ah-bot-plus](https://github.com/NathanHandley/mod-ah-bot-plus) | Auction house bot |
 | [mod-dungeon-clear](https://github.com/jrad7/mod-dungeon-clear) | Autonomous dungeon-clearing mode for tank bots |
 | [mod-rndbot-buffs](https://github.com/Rockhopper1776/mod-rndbot-buffs) | Idle bots buff nearby real players |
