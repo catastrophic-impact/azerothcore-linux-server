@@ -15,7 +15,7 @@ esac; }
 # one line per file: "<kind> <path relative to the project>"   kind = script | sql | addon (addon = a folder copied into client-addons/)
 comp_files() { case "$1" in
   garrison)    echo "script scripts/garrison.lua"; echo "script scripts/garrison_catalog.lua"; echo "script scripts/garrison_anims.lua"
-               for f in config items economy store locations spawn session portal placement ghost menagerie props perks gm; do echo "script scripts/garrison_$f.lua"; done
+               for f in config items curate economy store locations spawn session portal placement ghost menagerie props perks gm; do echo "script scripts/garrison_$f.lua"; done
                for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts 012_decor_buildings; do echo "sql custom-sql/$f.sql"; done
                echo "sql custom-sql/001_chromie_teleporter_npc.sql"   # the garrison catalog lists the Dungeon Teleporter NPC (900001); without this row placing it fails
                echo "addon addons/wotlk_garrison"; echo "addon tools/wotlk_garrison_admin";;
@@ -32,6 +32,7 @@ install_components() {
   cp -a "$src/scripts/acore_msg.lua" "$dest/lua_scripts/"; cp -n "$src/scripts/acore_settings.lua" "$dest/lua_scripts/"   # owner settings are never overwritten
   cp -a "$src/addons/AcoreLib" "$dest/client-addons/"
   cp -a "$src/addons/Transmog" "$dest/client-addons/"   # optional transmog window for mod-transmog-plus (a core module, not a component)
+  cp -a "$src/addons/wotlk_minimap" "$dest/client-addons/"   # Minimap Drawer: client-only quality-of-life addon, always installed
   : > "$dest/config/components.conf"
   for c in $COMPONENTS; do
     local on; eval "on=\${ENABLE_$c:-1}"
