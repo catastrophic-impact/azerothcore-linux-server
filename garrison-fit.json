@@ -17166,5 +17166,155 @@
 0.014,
 2.674,
 0.61
+],
+"world\\\\azeroth\\\\karazahn\\\\passivedoodads\\\\burningbooks\\\\booksonfire.m2": [
+0.679,
+-0.114,
+2.21,
+0.61
+],
+"world\\\\environment\\\\doodad\\\\carnival\\\\targetpractice.m2": [
+0.153,
+-0.01,
+4.221,
+-0.047
+],
+"world\\\\expansion01\\\\doodads\\\\auchindoun\\\\passivedoodads\\\\bridge_fx\\\\auchindoun_bridge_fx.m2": [
+0.043,
+-0.387,
+0.577,
+0.61
+],
+"world\\\\expansion01\\\\doodads\\\\hellfirecitadel\\\\demonwing\\\\activedoodads\\\\summoning_power_room\\\\hellfire_dw_summonpower.m2": [
+0.062,
+6.274,
+-22.633,
+0.61
+],
+"world\\\\expansion01\\\\doodads\\\\netherstorm\\\\collectortubes\\\\collectortubes_straight_states.m2": [
+0.182,
+-32.316,
+21.341,
+0.277
+],
+"world\\\\expansion02\\\\doodads\\\\boreantundra\\\\geysers\\\\borean_geyser_01.m2": [
+0.219,
+-0.962,
+3.501,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\generic\\\\frostgiant\\\\frostgiant_frostorbbroken01.m2": [
+0.319,
+-0.583,
+0.502,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\generic\\\\inscription\\\\inscription_scroll_boxside.m2": [
+1.882,
+-0.134,
+-0.081,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\generic\\\\scourge\\\\sc_blighter2_green.m2": [
+0.16,
+0.13,
+1.913,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\generic\\\\scourge\\\\sc_plaguebomb_orange.m2": [
+0.69,
+0.043,
+0.952,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\ulduar\\\\ul_sigil02.m2": [
+0.398,
+-0.085,
+-1.5,
+0.61
+],
+"world\\\\expansion02\\\\doodads\\\\ulduar\\\\ul_swirl_orb_cloud.m2": [
+0.043,
+-1.669,
+2.026,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\aurablue.m2": [
+0.956,
+-0.027,
+0.967,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\auragreen.m2": [
+1.28,
+-0.062,
+0.68,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\aurapurple.m2": [
+0.504,
+0.012,
+1.179,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\aurapurpleverytall.m2": [
+0.322,
+0.135,
+5.731,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\auraredhuge.m2": [
+0.512,
+0.078,
+30.631,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\bubbles01.m2": [
+0.9,
+0.0,
+0.612,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\greengroundfog.m2": [
+0.086,
+-0.216,
+0.074,
+0.61
+],
+"world\\\\generic\\\\passivedoodads\\\\particleemitters\\\\lavasmokeemitterb.m2": [
+0.165,
+0.754,
+7.673,
+0.61
+],
+"world\\\\kalimdor\\\\silithus\\\\passivedoodads\\\\crystals\\\\silithus_commcrystal_base03.m2": [
+0.568,
+0.178,
+0.766,
+0.61
+],
+"world\\\\lordaeron\\\\stratholme\\\\passivedoodads\\\\fx\\\\nox_portal_purple_bossroom.m2": [
+0.715,
+0.108,
+8.064,
+0.61
+],
+"world\\\\nodxt\\\\generic\\\\passivedoodads\\\\volumetriclights\\\\cot_lightshafta.m2": [
+0.112,
+0.348,
+8.754,
+0.61
+],
+"world\\\\nodxt\\\\generic\\\\passivedoodads\\\\volumetriclights\\\\uthershrinelightbeam.m2": [
+0.266,
+0.01,
+9.186,
+0.61
+],
+"world\\\\outland\\\\passivedoodads\\\\floatingrubble\\\\outlandtowerfloatingrubble.m2": [
+0.376,
+6.134,
+35.067,
+0.61
 ]
 }
