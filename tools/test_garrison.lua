@@ -267,17 +267,17 @@ Msg().handlers["house|dplace"](p, kind)
 local inserted = false
 for _, s in ipairs(sqlLog) do if s:find("INSERT INTO dc_garrison_decor") and s:find("'" .. kind .. "'") then inserted = true end end
 check(inserted, "dplace writes the decor row to the database")
-do   -- the per-item limit, then "Remove all decor" must free the slots
+do   -- no per-item limit (only the total), and "Remove all decor" must work
     local function lastRes() local t = sent[p.guid] or {}; for i = #t, 1, -1 do if t[i]:find("^house|res|") then return t[i] end end end
     for i = 1, 12 do Msg().handlers["house|dplace"](p, kind) end
-    check((lastRes() or ""):find("already have") ~= nil, "the 11th copy of one item is refused (" .. tostring(lastRes()) .. ")")
+    check((lastRes() or ""):find("^house|res|Placed") ~= nil, "the 13th copy of one item is allowed: there is no per-item limit (" .. tostring(lastRes()) .. ")")
     Msg().handlers["house|dclear"](p, "")
     Msg().handlers["house|dplace"](p, kind)
     check((lastRes() or ""):find("^house|res|Placed") ~= nil, "after Remove all decor you can place again (" .. tostring(lastRes()) .. ")")
 end
 do   -- an Unsorted / Removed item (hid): a GM 3 can place it, anyone else is refused
     local function lastRes() local t = sent[p.guid] or {}; for i = #t, 1, -1 do if t[i]:find("^house|res|") then return t[i] end end end
-    local hidKind; for _, c in ipairs(cat) do if c.multi and c.hid and c.cat == "Unsorted" then hidKind = c.kind; break end end
+    local hidKind; for _, c in ipairs(cat) do if c.multi and c.hid and (c.cat == "Unsorted" or c.cat == "Removed") then hidKind = c.kind; break end end
     local keep = p.gm
     p.gm = 3; Msg().handlers["house|dplace"](p, hidKind)
     check((lastRes() or ""):find("^house|res|Placed") ~= nil, "a GM 3 can place an Unsorted item (" .. tostring(lastRes()) .. ")")

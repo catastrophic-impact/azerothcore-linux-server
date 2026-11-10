@@ -30,5 +30,6 @@ return {
                  -- perks inside a garrison: instantLogout = /logout is instant (like an inn); rested = rested XP builds up (restedRate 1.0 = the core's inn speed)
                  perks = { instantLogout = true, rested = true, restedRate = 1.0 },
                  maxPets = 5, markerSeconds = 30,
+                 maxDecor = 1000,    -- most decor pieces one garrison can hold (shown in the garrison window as placed/max). Every piece is a spawned object: very high values cost server and client performance
                  currency = "free", currencyItem = 0 },   -- currency = "free" | "gold" | "item"; currencyItem = item id paid in when currency = "item". Prices come from the catalog (category default + per-item override, set in the admin tool)   -- maxPets = companions roaming at once   -- debug = true adds [garrison:debug] lines to the server log
 }

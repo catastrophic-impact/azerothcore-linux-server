@@ -25,7 +25,7 @@ func applyCustomSQL() error {
 			return &sqlErr{filepath.Base(f), strings.TrimSpace(out)}
 		}
 	}
-	return nil
+	return applyTrainingSQL() // free-training switches (tui/training.go): prices follow config/training.conf on every start
 }
 
 type sqlErr struct{ file, msg string }

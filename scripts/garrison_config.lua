@@ -5,8 +5,7 @@ return function(G)
     local cost, perks = S.cost or {}, S.perks or {}
     local C = {
         debug = S.debug and true or false,
-        maxDecor = S.maxDecor or 100,            -- all decor in one garrison
-        maxPerKind = S.maxPerKind or 10,         -- of the same decor item
+        maxDecor = S.maxDecor or 1000,           -- all decor in one garrison (acore_settings.lua: garrison.maxDecor)
         maxPets = S.maxPets or 5,                -- pets out at once
         markerNpc = S.markerNpc or 900010,       -- custom-sql/007: "Garrison Marker"
         markerSpell = S.markerSpell or 1130,     -- Hunter's Mark

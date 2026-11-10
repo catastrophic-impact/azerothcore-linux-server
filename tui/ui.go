@@ -140,7 +140,7 @@ func tabHints(tab int) string {
 	case tModules:
 		return hint("space", "toggle", "↵", "apply", "a", "add", "x", "remove", "u", "undo")
 	case tBackups:
-		return hint("b", "full backup", "p", "player backup", "↵", "restore", "d", "delete", "r", "refresh")
+		return hint("b", "full backup", "p", "player backup", "↵", "restore", "d", "delete", "o", "browse folder", "r", "refresh")
 	case tDebug:
 		return hint("↑↓", "select", "space", "toggle", "c", "clear mysqld.log", "C", "empty disabled logs", "w", "empty garrison data", "o", "clean deleted accounts")
 	case tConfig:
@@ -205,10 +205,10 @@ func (m model) helpView() string {
 		{"Server", "s start · x safe stop · m MySQL · R reset"},
 		{"Output", ": send a console command to the game server"},
 		{"Logs", "[ ] pick log · ↑↓/wheel scroll · End follow · / filter · e errors+warnings only · space pause"},
-		{"Backups", "b full · p player · enter restore · d delete"},
+		{"Backups", "b full · p player · enter restore · d delete · o browse folder"},
 		{"Modules", "space toggle · enter apply · a add · x remove · u undo"},
 		{"Accounts", "n new · d delete · g GM level · p password · / search"},
-		{"Debug", "space toggle a log file · c clear mysqld.log"},
+		{"Options", "space toggle · c clear mysqld.log"},
 	}
 	var b strings.Builder
 	b.WriteString(sKey.Render("Keys") + "\n\n")

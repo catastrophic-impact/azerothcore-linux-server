@@ -24,7 +24,7 @@ var (
 	cOK     = lipgloss.NewStyle().Foreground(lipgloss.Color("42"))
 )
 
-var tabNames = []string{"Server", "Output", "Logs", "Backups", "Modules", "Config", "Accounts", "Debug"}
+var tabNames = []string{"Server", "Output", "Logs", "Backups", "Modules", "Config", "Accounts", "Options"}
 
 const (
 	tServer = iota
@@ -527,6 +527,13 @@ func (m model) backupKey(s string) (tea.Model, tea.Cmd) {
 		}
 	case "r":
 		m.backups = listBackups()
+	case "o": // browse the backups folder (created if it is missing)
+		_ = os.MkdirAll(backupDir(), 0o755)
+		if err := openFolder(backupDir()); err != nil {
+			m.setFlash(err.Error(), true)
+		} else {
+			m.setFlash("opened "+backupDir(), false)
+		}
 	}
 	return m, nil
 }
@@ -721,7 +728,7 @@ func (m model) viewLogs() string {
 
 func (m model) viewBackups() string {
 	var b strings.Builder
-	b.WriteString(cDim.Render("  Drop old dumps into backups/<any-folder>/<dbname>.sql(.gz) to import them from here.") + "\n\n")
+	b.WriteString(cDim.Render("  Drop old dumps into backups/<any-folder>/<dbname>.sql(.gz) to import them from here.   [o] browse the backups folder") + "\n\n")
 	if m.mode == mBackupLabel {
 		b.WriteString("  " + m.input.View() + "\n\n")
 	}

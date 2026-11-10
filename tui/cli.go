@@ -30,6 +30,21 @@ func runCLI(args []string) bool {
 		}
 	case "custom-sql": // apply custom-sql/*.sql now (needs MySQL up); also done automatically on every start
 		err = applyCustomSQL()
+	case "training": // training [class|riding on|off]: show or set the free-training switches
+		st := readTraining()
+		if len(args) == 3 && (args[1] == "class" || args[1] == "riding") && (args[2] == "on" || args[2] == "off") {
+			if args[1] == "class" {
+				st.Class = args[2] == "on"
+			} else {
+				st.Riding = args[2] == "on"
+			}
+			var msg string
+			if msg, err = setTraining(st); err == nil {
+				fmt.Println(msg)
+			}
+		} else {
+			fmt.Printf("class training free: %v, riding training free: %v\n", st.Class, st.Riding)
+		}
 	case "start-mysql":
 		err = startMySQL()
 	case "status":

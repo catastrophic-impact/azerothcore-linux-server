@@ -10,10 +10,11 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 
 | Piece | What it is |
 |---|---|
-| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of roaming pets, and ~900 decor objects with a preview-grid placement window. Includes an admin tool (GM accounts only) for fitting previews, naming, categories and prices. |
+| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of pets that hang out and stroll about, and thousands of decor objects with a preview-grid placement window. Decor per garrison is capped (default 1000, shown in the window as `Placed n/max`; set `maxDecor` in `acore_settings.lua`). Includes **Curator mode** (GM level 3+) to sort, rename, price and re-centre decor in game. |
 | **Jukebox** | ~1000 game tracks, your own **playlists**, and **Play Random Songs**; works on its own with `/jukebox` (plays for you only). With Garrison installed too, the jukebox NPC plays music for everyone inside a garrison: guests can pick songs, and the garrison owner can set a **Default** song or playlist that plays by itself whenever nothing else is playing. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
+| **Free training** | Optional TUI switches (Options tab, on by default) that make class-trainer spells and the riding skills cost no gold; levels and quests are unchanged and switching off restores the prices. Part of the TUI, not a script. |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
 
 ## What the installer builds
@@ -45,9 +46,9 @@ It asks which components to install (all **on** by default), whether to use our 
 Run the admin TUI from the server folder: `./acore-admin`
 
 - **Server** status dashboard (services, uptime, characters online, disk), start / safe stop, **reset to fresh install**. **Output** shows the game server's live text and takes console commands (`:`).
-- **Logs** with scrolling (wheel / arrows), filter (`/`) and errors-only (`e`). **Debug** switches the individual log files on or off (Playerbots.log is off by default), clears `mysqld.log`, and has two garrison maintenance actions.
+- **Logs** with scrolling (wheel / arrows), filter (`/`) and errors-only (`e`). **Options** has the **Free class training** and **Free riding training** switches (both on by default: only the gold price of class-trainer spells and of the riding skills drops to 0; levels, factions and quests are unchanged, and switching off restores the original prices), switches the individual log files on or off (Playerbots.log is off by default), clears `mysqld.log`, and has two garrison maintenance actions.
 - **Accounts** add / delete / GM level / password, search, online status. **Config** realmlist and client patch. **Modules** toggle + rebuild.
-- **Backups**: the only automatic backup is the install-time **master** (`backups/fresh`, pinned at the top, cannot be deleted in the TUI). Restore, reset and module changes ask "create a backup first?"; running servers are stopped safely (with an in-game countdown) and started again for you.
+- **Backups** (`o` opens the backups folder): the only automatic backup is the install-time **master** (`backups/fresh`, pinned at the top, cannot be deleted in the TUI). Restore, reset and module changes ask "create a backup first?"; running servers are stopped safely (with an in-game countdown) and started again for you.
 - Press `?` for the key list. Tabs are clickable. Quit (`q`) asks for confirmation and stops the servers safely first.
 
 Copy the folders in `client-addons/` into your client's `Interface/AddOns`. The garrison portal and the garrison jukebox NPC only work for players who have the matching addon installed (each addon tells the server it is present when you enter the world; after installing one, `/reload`).
@@ -61,7 +62,7 @@ You need an AzerothCore server with [mod-ale](https://github.com/azerothcore/mod
 3. Copy the matching folders from `addons/` (always `AcoreLib`; the garrison admin tool is `tools/wotlk_garrison_admin`) into each player's `Interface/AddOns`.
 4. Restart the server or run `reload ale`, then `/reload` in game.
 
-Settings live in `scripts/acore_settings.lua`.
+Settings live in `scripts/acore_settings.lua` (garrison options such as the decor limit `maxDecor` are in its `garrison` table).
 
 ## Get the newest addons (client side)
 

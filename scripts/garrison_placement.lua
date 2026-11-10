@@ -4,7 +4,7 @@ return function(G)
     local Msg, store, cfg, Say = G.Msg, G.store, G.cfg, G.Say
     local Loc, BY_KIND, MyHouse = G.locations.Get, G.BY_KIND, G.MyHouse
     local SpawnOne, DespawnKind, Charge, Refund, Money, CanPlace = G.SpawnOne, G.DespawnKind, G.Charge, G.Refund, G.Money, G.CanPlace
-    local MAX_DECOR, MAX_PER_KIND = cfg.maxDecor, cfg.maxPerKind
+    local MAX_DECOR = cfg.maxDecor
     local function Res(player, text) Msg.Send(player, "house", "res", text) end
 
     -- ---- helpers other modules use too ----
@@ -22,9 +22,8 @@ return function(G)
     local function InsideArea(loc, x, y) return G.locations.Inside(loc, x, y) end
     -- limits for one more decor item; returns nil when fine, else the message
     local function DecorLimit(h, kind)
-        local total, ofKind = CountDecor(h, kind)
+        local total = CountDecor(h, kind)
         if total >= MAX_DECOR then return "Garrison decor limit reached (" .. MAX_DECOR .. ")." end
-        if ofKind >= MAX_PER_KIND then return "You already have " .. MAX_PER_KIND .. " of those." end
     end
     -- shared by "dplace" (instant, 3 yards ahead) and placement mode ("pconfirm"): limits, price, row, spawn. Returns true when placed.
     local function PlaceDecorAt(player, h, owner, kind, def, x, y, z, o)
@@ -51,6 +50,7 @@ return function(G)
         -- the client has the static catalog; we only tell it whether you are home and which kinds are placed (chunked: ~240 char limit)
         local h = MyHouse(player)
         if G.curate then G.curate.Hello(player) end   -- curator right + catalog revision (before "head": the client may open the window from it)
+        Msg.Send(player, "house", "lim", cfg.maxDecor)   -- limits for the window (placed/max)
         Msg.Send(player, "house", "head", h and "1" or "0")
         Msg.Send(player, "house", "cur", cfg.currency .. "," .. cfg.currencyItem)
         if not h then return end

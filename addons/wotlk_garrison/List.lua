@@ -140,6 +140,11 @@ function G.Refresh()
     if not ui.frame then return end
     ui.statusText:SetText(st.inHome and "|cff00ff00You are in your garrison: stand where you want it, then Place.|r"
                                      or (G.CuratorOn() and "|cffffd100Curator mode: sorting works anywhere; placing needs your garrison.|r" or "|cffff6060Enter your garrison through the portal to place things.|r"))
+    if st.maxDecor then
+        local n = #st.decor
+        local col = n >= st.maxDecor and "|cffff4040" or (n >= st.maxDecor * 0.9 and "|cffffd100" or "|cffffffff")
+        ui.countText:SetText("Placed " .. col .. n .. "/" .. st.maxDecor .. "|r")
+    end
     for key, b in pairs(ui.tabBtns) do if key == st.tab then b:LockHighlight() else b:UnlockHighlight() end end
     RefreshCategories(); BuildList()
     if st.tab == "placed" then   -- keep the selection across rebuilds (the list is rebuilt on every server message)

@@ -96,6 +96,17 @@ func truncateLog(path string, keep int64) error {
 
 type debugState struct{ cur int }
 
+// the free-training switches shown above the log files (tui/training.go)
+type trainSwitch struct {
+	name, desc string
+	field      func(*trainingState) *bool
+}
+
+var trainSwitches = []trainSwitch{
+	{"Free class training", "class trainers cost nothing (all spells, ranks, Parry, Dual Wield, Mail/Plate, Mage portals)", func(s *trainingState) *bool { return &s.Class }},
+	{"Free riding training", "Apprentice to Cold Weather Flying cost nothing (levels unchanged; mounts not included)", func(s *trainingState) *bool { return &s.Riding }},
+}
+
 func (m model) debugKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 	switch k.String() {
 	case "up", "k":
@@ -103,11 +114,22 @@ func (m model) debugKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 			m.dbg.cur--
 		}
 	case "down", "j":
-		if m.dbg.cur < len(logToggles)-1 {
+		if m.dbg.cur < len(trainSwitches)+len(logToggles)-1 {
 			m.dbg.cur++
 		}
 	case " ", "enter":
-		t := logToggles[m.dbg.cur]
+		if m.dbg.cur < len(trainSwitches) {
+			sw := trainSwitches[m.dbg.cur]
+			st := readTraining()
+			*sw.field(&st) = !*sw.field(&st)
+			what := "OFF (original prices come back)"
+			if *sw.field(&st) {
+				what = "ON (training costs nothing)"
+			}
+			return m.askBackup(sw.name+" -> "+what, "Only gold prices change; level, faction and quest requirements stay. The original prices are kept\nin the database and restored when you switch it off. A running server reloads its trainers (no restart).\nTake a full database backup first?", "training-prices", false, "changing training prices",
+				func(string) (string, error) { return setTraining(st) })
+		}
+		t := logToggles[m.dbg.cur-len(trainSwitches)]
 		on := !logEnabled(t)
 		if err := setLog(t, on); err != nil {
 			m.setFlash(err.Error(), true)
@@ -160,7 +182,20 @@ func fileSize(name string) string {
 
 func (m model) viewDebug() string {
 	var b strings.Builder
-	b.WriteString("  Log files (written next to the console output in logs/). Changes apply after the next server restart.\n\n")
+	b.WriteString("  Training prices (apply at once; only the gold cost changes, requirements and quests stay).\n\n")
+	ts := readTraining()
+	for i, sw := range trainSwitches {
+		swc := cOff.Render("[ off ]")
+		if *sw.field(&ts) {
+			swc = cOn.Render("[ ON  ]")
+		}
+		line := fmt.Sprintf("  %s %-22s %s", swc, sw.name, cDim.Render(sw.desc))
+		if i == m.dbg.cur {
+			line = cSel.Render(line)
+		}
+		b.WriteString(line + "\n")
+	}
+	b.WriteString("\n  Log files (written next to the console output in logs/). Changes apply after the next server restart.\n\n")
 	for i, t := range logToggles {
 		on := logEnabled(t)
 		sw := cOff.Render("[ off ]")
@@ -168,7 +203,7 @@ func (m model) viewDebug() string {
 			sw = cOn.Render("[ ON  ]")
 		}
 		line := fmt.Sprintf("  %s %-16s %9s  %s", sw, t.name, fileSize(t.file), cDim.Render(t.desc))
-		if i == m.dbg.cur {
+		if i+len(trainSwitches) == m.dbg.cur {
 			line = cSel.Render(line)
 		}
 		b.WriteString(line + "\n")

@@ -4,9 +4,11 @@
 return function(G)
     local store, cfg, Say, Loc, active, inside = G.store, G.cfg, G.Say, G.locations.Get, G.active, G.inside
     local Reg, Unreg = G.Reg, G.Unreg
-    local PET_SPREAD, PET_WANDER = 7, 40
+    local PET_SPREAD, PET_WANDER = 7, 8   -- spawn spread / how far (yd) from the Menagerie a pet strolls
+    local REST_MIN, REST_MAX, STROLL_CHANCE, TICK_MS = 8, 30, 0.5, 2000   -- idle seconds between strolls; a pet may also just stay put
     local MEN_NPC = 900003
     math.randomseed(os.time())
+    local StartStroll   -- defined below (RollPets calls it)
 
     local function KnownPets(guidLow)
         local seen, list = {}, {}
@@ -39,14 +41,43 @@ return function(G)
             local ang, dist = math.random() * 6.2832, 1.5 + math.random() * PET_SPREAD
             local obj = PerformIngameSpawn(1, pool[i], loc.map, 0, row.x + math.cos(ang) * dist, row.y + math.sin(ang) * dist, row.z + 0.3, math.random() * 6.2832, false, 0, h.bit)
             if obj then
-                h.pets[#h.pets + 1] = { guid = obj:GetGUID(), low = obj:GetGUIDLow(), map = loc.map }   -- track first, configure after
+                h.pets[#h.pets + 1] = { guid = obj:GetGUID(), low = obj:GetGUIDLow(), map = loc.map, pet = true, nxt = os.time() + math.random(REST_MIN, REST_MAX) }   -- track first, configure after
                 Reg(obj, "c", loc.map)
                 obj:SetPhaseMask(h.bit, true)
                 obj:SetReactState(0)             -- passive
-                obj:MoveRandom(PET_WANDER)
+                StartStroll()
+                pcall(function() obj:SetWalk(true) end)   -- they amble, never run; they stand still until the stroll tick below sends them somewhere
             end
         end
     end
+    -- Pets hang out: one global timer; every pet rests 8-30 s, then (50%) strolls to a spot near the Menagerie at walking pace, then rests again.
+    local strollEv
+    local function StrollTick()
+        local now, any = os.time(), false
+        for _, h in pairs(active) do
+            local row = h.rows and h.rows["menagerie"]
+            for _, pet in ipairs(h.pets) do
+                if pet.pet then
+                    any = true
+                    if row and now >= pet.nxt then
+                        pet.nxt = now + math.random(REST_MIN, REST_MAX)
+                        if math.random() < STROLL_CHANCE then
+                            local map = GetMapById(pet.map, 0)
+                            local obj = map and map:GetWorldObject(pet.guid)
+                            if obj then
+                                local ang, dist = math.random() * 6.2832, 1.5 + math.random() * PET_WANDER   -- short, varied strolls
+                                local tx, ty, tz = row.x + math.cos(ang) * dist, row.y + math.sin(ang) * dist, obj:GetZ()
+                                pcall(function() obj:SetHomePosition(tx, ty, tz, obj:GetO()) end)   -- the new spot becomes "home": nothing pulls the pet back to where it spawned
+                                pcall(function() obj:MoveTo(1, tx, ty, tz, false) end)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        if not any and strollEv then RemoveEventById(strollEv); strollEv = nil end
+    end
+    function StartStroll() if not strollEv then strollEv = CreateLuaEvent(StrollTick, TICK_MS, 0) end end
     G.Menagerie.Roll, G.Menagerie.Clear = RollPets, DespawnPets
 
     G.OnEnter(function(player, h, owner) if player:GetAccountId() == owner then RollPets(h, owner, player:GetGUIDLow()) end end)   -- the owner phases in: fresh set of pets

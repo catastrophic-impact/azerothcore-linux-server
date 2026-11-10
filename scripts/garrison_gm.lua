@@ -84,8 +84,8 @@ return function(G)
             local rows = store.LoadDecor(owner, h.loc)
             local unknown = 0
             for _, r in ipairs(rows) do if not G.BY_KIND[r.kind] then unknown = unknown + 1 end end
-            Say(player, string.format("decor in memory (the limit counts this): %d of %d; spawned in the world: %d; most of one item: %s x%d (limit %d); database rows: %d (%d of an unknown kind: stored, not counted)",
-                mem, G.cfg.maxDecor, spawnedDecor, top, topN, G.cfg.maxPerKind, #rows, unknown))
+            Say(player, string.format("decor in memory (the limit counts this): %d of %d; spawned in the world: %d; most of one item: %s x%d; database rows: %d (%d of an unknown kind: stored, not counted)",
+                mem, G.cfg.maxDecor, spawnedDecor, top, topN, #rows, unknown))
             return false
         elseif cmd == "purge" then
             Say(player, "Purge: removing every garrison spawn. Everyone inside is moved out first.")
