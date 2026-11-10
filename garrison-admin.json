@@ -1599,7 +1599,7 @@
 "d912390": "Literature > Books",
 "d182266": "Misc",
 "d912300": "Buildings",
-"d950071": "Buildings",
+"d950071": "Unsorted",
 "d912375": "Removed",
 "d950065": "Removed",
 "d950037": "Removed",
@@ -3050,7 +3050,12 @@
 "d930003": "Lighting & Fire",
 "d930004": "Lighting & Fire",
 "d930005": "Lighting & Fire",
-"d965": "Effects"
+"d965": "Effects",
+"d181026": "Banners & Flags",
+"d195664": "Removed",
+"d960017": "Removed",
+"d960027": "Removed",
+"d960082": "Removed"
 },
 "names": {
 "d19404": "Burnt Giant Rug",
