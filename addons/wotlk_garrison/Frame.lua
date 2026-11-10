@@ -59,7 +59,7 @@ AcoreLib.On("house", "head", function(p)
             G.Refresh(); ui.frame:Show()
             if not st.primed then AcoreLib.Send("house", "prime", "") end   -- the server primes the client's creature-model cache for NPC previews
         else
-            DEFAULT_CHAT_FRAME:AddMessage("|cff66ccffGarrison:|r You can only open the garrison window inside your own garrison (use the portal at the Mage Tower).")
+            DEFAULT_CHAT_FRAME:AddMessage("|cff66ccffGarrison:|r You can only open the garrison window inside your own garrison (use a garrison portal: Stormwind Mage Tower or Orgrimmar).")
         end
         return
     end
@@ -68,7 +68,7 @@ AcoreLib.On("house", "head", function(p)
 end)
 -- "Exit Garrison" button: ask first, it teleports you out
 StaticPopupDialogs["WOTLKGARRISON_EXIT"] = {
-    text = "Leave your garrison and return to the Mage Tower?", button1 = "Leave", button2 = "Stay", timeout = 0, whileDead = 1, hideOnEscape = 1,
+    text = "Leave your garrison and return to the portal?", button1 = "Leave", button2 = "Stay", timeout = 0, whileDead = 1, hideOnEscape = 1,
     OnAccept = function() AcoreLib.Send("house", "exit", ""); if ui.frame then ui.frame:Hide() end end,
 }
 -- server: "you crossed the border": a big countdown in the middle of the screen; walking back in (or leaving) hides it. The server does the teleport.
@@ -78,7 +78,7 @@ warn.left, warn.total = 0, 0
 warn:SetScript("OnUpdate", function(self, elapsed)
     self.left = self.left - elapsed
     if self.left <= 0 then self:Hide(); return end
-    self.text:SetText(string.format("|cffff4040You are leaving your garrison|r\nReturning to the Mage Tower in |cffffffff%d|r - walk back inside to stay", math.ceil(self.left)))
+    self.text:SetText(string.format("|cffff4040You are leaving your garrison|r\nReturning to the portal in |cffffffff%d|r - walk back inside to stay", math.ceil(self.left)))
 end)
 function G.HideLeaveWarning() warn:Hide() end
 AcoreLib.On("house", "leaveask", function(p) warn.total = tonumber(p) or 5; warn.left = warn.total; warn:Show(); PlaySound("RaidWarning") end)

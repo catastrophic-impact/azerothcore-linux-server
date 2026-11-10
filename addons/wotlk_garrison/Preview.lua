@@ -41,12 +41,16 @@ function G.Preview(e)
         if not G.st.primed then ui.hint:SetText("Loading preview..."); ui.hint:Show(); return end
         ui.model:Show(); ui.model:ClearModel(); ui.model:SetCreature(e.npc)
         ApplyView()
+    elseif e.model:lower():match("%.wmo$") then   -- the preview widget cannot draw a whole-building WMO (checkered cube): show the picture rendered offline (tools/wmo_render.py), else say so
+        if G.wmoPic and G.wmoPic[e.kind] then
+            ui.iconTex:SetSize(200, 200); ui.iconTex:SetTexture("Interface\\AddOns\\wotlk_garrison\\wmo\\" .. e.kind); ui.iconTex:Show()
+        else ui.hint:SetText("(building: no preview here, place it to see it)"); ui.hint:Show() end
     elseif e.model ~= "" then
         ui.model:Show(); ui.model:ClearModel()
         if not pcall(ui.model.SetModel, ui.model, e.model) then ui.model:Hide(); ui.hint:SetText("(no preview for this object)"); ui.hint:Show() end
         ApplyView()
     elseif e.icon and e.icon ~= "" then
-        ui.iconTex:SetTexture("Interface\\Icons\\" .. e.icon); ui.iconTex:Show()
+        ui.iconTex:SetSize(128, 128); ui.iconTex:SetTexture("Interface\\Icons\\" .. e.icon); ui.iconTex:Show()
     else
         ui.hint:SetText("(no preview)"); ui.hint:Show()
     end

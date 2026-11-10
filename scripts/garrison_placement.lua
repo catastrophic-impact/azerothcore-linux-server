@@ -86,7 +86,7 @@ return function(G)
         DespawnKind(h, kind)    -- one of each kind: placing again moves it
         store.SaveObject(owner, h.loc, row)
         SpawnOne(h, row)
-        if kind == "menagerie" then G.Menagerie.Roll(h, owner, player:GetGUIDLow()) end
+        if kind == "menagerie" then G.Menagerie.Roll(h, owner, player) end
         Res(player, (old and "Moved: " or "Placed: ") .. def.name .. (row.paid > 0 and not old and (" (paid " .. Money(row.paid, row.pcur) .. ")") or ""))
     end)
 
@@ -142,7 +142,7 @@ return function(G)
             DespawnKind(h, id)
         end
         SpawnOne(h, row)
-        if id == "menagerie" then G.Menagerie.Roll(h, owner, player:GetGUIDLow()) end
+        if id == "menagerie" then G.Menagerie.Roll(h, owner, player) end
     end)
 
     Msg.On("house", "dremove", function(player, did)

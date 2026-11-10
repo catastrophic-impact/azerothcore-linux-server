@@ -196,11 +196,15 @@ local function FillCell(c, e)
     if e.npc > 0 then
         if not st.primed then c.note:SetText("loading...")
         else c.nm:Show(); c.nm:ClearModel(); c.nm:SetCreature(e.npc); G.FitModel(c.nm, e) end
+    elseif e.model:lower():match("%.wmo$") then   -- a whole building: the model frames cannot draw it, so show the picture rendered offline (WmoPreviews.lua / wmo/<kind>.blp)
+        if G.wmoPic and G.wmoPic[e.kind] then
+            c.icon:SetSize(CW - 6, CW - 6); c.icon:SetTexture(nil); c.icon:SetTexture("Interface\\AddOns\\wotlk_garrison\\wmo\\" .. e.kind); c.icon:Show()
+        else c.note:SetText("building") end
     elseif e.model ~= "" then
         c.om:Show(); c.om:ClearModel()
         if pcall(c.om.SetModel, c.om, e.model) then G.FitModel(c.om, e) else c.om:Hide(); c.note:SetText("no preview") end
     elseif e.icon and e.icon ~= "" then
-        c.icon:SetTexture("Interface\\Icons\\" .. e.icon); c.icon:Show()
+        c.icon:SetSize(56, 56); c.icon:SetTexture("Interface\\Icons\\" .. e.icon); c.icon:Show()
     else c.note:SetText("no preview") end
     c.bg:Show()
 end
@@ -231,7 +235,7 @@ function G.RenderGrid(items)
         lastKey = key
         for i = 1, GRID_N do
             local c, e = cells[i], items[(page - 1) * GRID_N + i]
-            if e then FillCell(c, e) else c.entry = nil; c.bg:Hide(); c.nm:Hide(); c.om:Hide(); c.label:SetText("") end   -- the label belongs to the grid, not the cell: clear it too
+            if e then FillCell(c, e) else c.entry = nil; c.bg:Hide(); c.nm:Hide(); c.om:Hide(); c.icon:Hide(); c.note:SetText(""); c.label:SetText("") end   -- the label belongs to the grid, not the cell: clear it too
         end
     end
     for i = 1, GRID_N do   -- cheap updates every time: placed marks and the selection frame

@@ -4,7 +4,8 @@
 -- A script reload forgets who is inside but players keep their phase: HealStrays() puts anyone left in one of our bits back to normal.
 return function(G)
     local Msg, store, cfg, Say, dbg = G.Msg, G.store, G.cfg, G.Say, G.dbg
-    local Loc, active, inside, hub = G.locations.Get, G.active, G.inside, G.cfg.hub
+    local Loc, active, inside = G.locations.Get, G.active, G.inside
+    local function HubFor(player) return player:GetTeam() == 1 and G.cfg.hubHorde or G.cfg.hub end   -- ALE GetTeam: 0 Alliance, 1 Horde
     local arriving = {}   -- player guidLow -> time until which "still outside the radius" is normal (the teleport has not landed yet)
     local asking = {}     -- player guidLow -> time at which an unanswered "leaving your garrison?" prompt counts as Leave
     local pollId = nil
@@ -26,7 +27,7 @@ return function(G)
         for _, m in pairs(grp:GetMembers()) do if m and m:IsBot() then return true end end
         return false
     end
-    local function SendToHub(player) player:Teleport(hub.map, hub.x, hub.y, hub.z + 1, hub.o) end
+    local function SendToHub(player) local hub = HubFor(player); player:Teleport(hub.map, hub.x, hub.y, hub.z + 1, hub.o) end
 
     local StartPoll
     local function Enter(player, owner, locId)
@@ -135,7 +136,7 @@ return function(G)
             asking[g] = now + cfg.leaveSeconds         -- first second outside: start the countdown (the client shows it), do not move the player yet
             Msg.Send(player, "house", "leaveask", tostring(cfg.leaveSeconds))
         elseif now >= asking[g] or G.locations.OutsideDistance(loc, player:GetX(), player:GetY()) > cfg.leaveLimit then   -- the countdown ran out, or kept running: out to the Mage Tower
-            Leave(g, player, "away"); SendToHub(player); Say(player, "You left the garrison area and were returned to the Mage Tower.")
+            Leave(g, player, "away"); SendToHub(player); Say(player, "You left the garrison area and were returned to the portal.")
         end
     end
     local function Poll()
@@ -152,7 +153,7 @@ return function(G)
     Msg.On("house", "exit", function(player)   -- the "Exit Garrison" button in the garrison window
         local g = player:GetGUIDLow()
         if not inside[g] then return end
-        Leave(g, player, "exit"); SendToHub(player); Say(player, "You left your garrison and were returned to the Mage Tower.")
+        Leave(g, player, "exit"); SendToHub(player); Say(player, "You left your garrison and were returned to the portal.")
     end)
 
     -- ---- login / logout / map change ----
@@ -161,6 +162,7 @@ return function(G)
         if inside[g] then
             store.MarkLogout(g)
             local full = player:GetGUID()
+            local hub = HubFor(player)   -- read now: the character is gone when the delayed rewrite runs
             -- Save the character's position as the portal room instead of the garrison, so the next login starts there and never
             -- shows the garrison's normal-world mobs. The game saves the character right after this event, so the rewrite waits
             -- until the save is done (and only runs if the character is still offline).
@@ -181,6 +183,7 @@ return function(G)
         G.Fire("login", player, was)
         if not was then return end
         local guid = player:GetGUID()
+        local hub = HubFor(player)
         local atHub = player:GetMapId() == hub.map and math.abs(player:GetX() - hub.x) < 60 and math.abs(player:GetY() - hub.y) < 60
         if atHub then Say(player, "You logged out inside your garrison; welcome back to the portal."); return end   -- the logout already moved the saved position here
         CreateLuaEvent(function()   -- fallback (crash, or the rewrite did not run): move out of the garrison now

@@ -10,12 +10,13 @@ return function(G)
     math.randomseed(os.time())
     local StartStroll   -- defined below (RollPets calls it)
 
-    local function KnownPets(guidLow)
+    -- Asks the live character (HasSpell), not the database: a pet learned a moment ago is only written to character_spell at the next save.
+    local function KnownPets(player)
         local seen, list = {}, {}
-        for _, spell in ipairs(store.KnownSpells(guidLow)) do
-            local npc = G.COMPANIONS[spell]
-            if npc and not seen[npc] then seen[npc] = true; list[#list + 1] = npc end
+        for spell, npc in pairs(G.COMPANIONS) do
+            if not seen[npc] and player:HasSpell(spell) then seen[npc] = true; list[#list + 1] = npc end
         end
+        table.sort(list)   -- stable before the shuffle
         return list
     end
 
@@ -30,11 +31,11 @@ return function(G)
         end
     end
 
-    local function RollPets(h, owner, guidLow, forceOn)
+    local function RollPets(h, owner, player, forceOn)   -- player = the owner's online character
         DespawnPets(h)
         local row = h.rows and h.rows["menagerie"]
         if not row or not (forceOn or store.GetRoam(owner, h.loc)) then return end   -- forceOn: the setting write is still queued, so do not re-read it
-        local pool = KnownPets(guidLow)
+        local pool = KnownPets(player)
         for i = #pool, 2, -1 do local j = math.random(i); pool[i], pool[j] = pool[j], pool[i] end
         local loc = Loc(h.loc)
         for i = 1, math.min(cfg.maxPets, #pool) do
@@ -80,7 +81,7 @@ return function(G)
     function StartStroll() if not strollEv then strollEv = CreateLuaEvent(StrollTick, TICK_MS, 0) end end
     G.Menagerie.Roll, G.Menagerie.Clear = RollPets, DespawnPets
 
-    G.OnEnter(function(player, h, owner) if player:GetAccountId() == owner then RollPets(h, owner, player:GetGUIDLow()) end end)   -- the owner phases in: fresh set of pets
+    G.OnEnter(function(player, h, owner) if player:GetAccountId() == owner then RollPets(h, owner, player) end end)   -- the owner phases in: fresh set of pets
     G.OnClose(function(h) DespawnPets(h) end)
 
     RegisterCreatureGossipEvent(MEN_NPC, 1, function(event, player, creature)
@@ -104,9 +105,9 @@ return function(G)
         local owner = inside[player:GetGUIDLow()]
         local h = owner and active[owner]
         if not h or owner ~= player:GetAccountId() or intid == 99 then return true end
-        if intid == 1 then store.SetRoam(owner, h.loc, true); RollPets(h, owner, player:GetGUIDLow(), true); Say(player, "Your pets are exploring the garrison.")
+        if intid == 1 then store.SetRoam(owner, h.loc, true); RollPets(h, owner, player, true); Say(player, "Your pets are exploring the garrison.")
         elseif intid == 2 then store.SetRoam(owner, h.loc, false); DespawnPets(h); Say(player, "Your pets are staying home.")
-        elseif intid == 3 then RollPets(h, owner, player:GetGUIDLow()); Say(player, "A new set of pets arrives.") end
+        elseif intid == 3 then RollPets(h, owner, player); Say(player, "A new set of pets arrives.") end
         return true
     end)
 end

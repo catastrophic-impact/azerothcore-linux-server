@@ -22,7 +22,7 @@ Y	Neutral	Banners & Tents	Food Tent	180031	6139	5	1	1	FoodVendor.m2		World\ENVIR
 Y	Neutral	Banners & Tents	Fortune Teller's Tent	180030	6138	5	1	1	FortuneTeller.m2		World\ENVIRONMENT\DOODAD\Carnival\FortuneTeller.m2	
 Y	Neutral	Banners & Tents	G HangingSkeleton 01	180410	6402	5	1	1	G_HangingSkeleton_01.m2		World\Goober\G_HangingSkeleton_01.m2	
 Y	Neutral	Banners & Tents	Hanging Body 2	19415	9415	5	1	1	twilightshammer_magicaldevice_04air.m2		world\expansion03\doodads\twilighthammer\magicaldevices\twilightshammer_magicaldevice_04air.m2	
-N	Neutral	Banners & Tents	Hanging, Short/Squat, Giant [PH]	181026	6622	5	2	1	MrdnSatyrBanner03.m2		World\Kalimdor\Mauradon\PassiveDoodads\SatyrBanners\MrdnSatyrBanner03.m2	name-filtered
+Y	Neutral	Unsorted	Hanging, Short/Squat, Giant [PH]	181026	6622	5	2	1	MrdnSatyrBanner03.m2		World\Kalimdor\Mauradon\PassiveDoodads\SatyrBanners\MrdnSatyrBanner03.m2	name-filtered
 Y	Neutral	Banners & Tents	HangingSkullLight01	180471	6417	5	1	1	HangingSkullLight01.m2		World\Generic\PassiveDoodads\Halloween\HangingSkullLight01.m2	
 Y	Neutral	Banners & Tents	HangingSkullLight02	180472	6418	5	1	1	HangingSkullLight02.m2		World\Generic\PassiveDoodads\Halloween\HangingSkullLight02.m2	
 Y	Neutral	Banners & Tents	iCoke Tent	181244	6703	5	1	1	CokeTent.m2		World\ENVIRONMENT\DOODAD\Carnival\CokeTent.m2	
@@ -122,7 +122,7 @@ Y	Neutral	Crates & Storage	Wagon	19419	9419	5	1	1	vr_straw_large_01.m2		world\ex
 Y	Neutral	Crates & Storage	Water Bucket	186614	7484	5	1	1	G_Water_Buckets_01.m2		World\Goober\G_Water_Buckets_01.m2	
 Y	Neutral	Crates & Storage	Water Buckets	186615	7485	5	1	1	G_Water_Buckets_02.m2		World\Goober\G_Water_Buckets_02.m2	
 Y	Neutral	Crates & Storage	Wizard of Oz Hay	183496	7065	5	1	1	Karazahn_WO_Hay.m2		World\Azeroth\Karazahn\PassiveDoodads\Theater\Karazahn_WO_Hay.m2	
-N	Neutral	Furniture	[DND] Collision Thanksgiving Table Size	195664	9076	5	1.8	1	g_thanksgivingtable_01_collision.m2		world\generic\passivedoodads\thanksgiving\g_thanksgivingtable_01_collision.m2	name-filtered
+Y	Neutral	Unsorted	[DND] Collision Thanksgiving Table Size	195664	9076	5	1.8	1	g_thanksgivingtable_01_collision.m2		world\generic\passivedoodads\thanksgiving\g_thanksgivingtable_01_collision.m2	name-filtered
 Y	Neutral	Furniture	Apprentice's Surgical Table	192548	8074	5	2	1	SC_SurgicalTable_02.m2		World\Expansion02\Doodads\Generic\Scourge\SC_SurgicalTable_02.m2	
 Y	Neutral	Furniture	Broken Tablet	186718	6419	8	2	2	TwilightTabletLower.m2	Twilight Tablet	World\Kalimdor\Silithus\PassiveDoodads\TwilightTablet\TwilightTabletLower.m2	
 Y	Neutral	Furniture	Hourglass	190686	7984	5	0.03	1	COT_HourGlass_redo.m2		World\Dungeon\CavernsOfTime\PassiveDoodads\HourGlass\COT_HourGlass_redo.m2	
@@ -261,7 +261,7 @@ Y	Neutral	Misc	Arathi Basin Bone02	180222	6327	5	2	2	Bone02.m2	Bone Witch's Bone
 R	Neutral	Misc	Archavon's Log	194356	7883	9	1	1	UldamanBook03.m2		World\KhazModan\Uldaman\PassiveDoodads\Books\UldamanBook03.m2	
 R	Neutral	Misc	Archmage Antonidas	193942	8507	9	6	1	Dalaran_StatueAntonidas_Plaque.m2		World\Expansion02\Doodads\Dalaran\Dalaran_StatueAntonidas_Plaque.m2	
 R	Neutral	Removed	Argent Tome	191312	430	5	2	1	G_BookTrapLightGood.m2		World\Goober\G_BookTrapLightGood.m2	
-N	Neutral	Misc	Atal'ai Light SMALL (DND)	148883	2473	5	3.5	4	AuraGreenVeryTall.m2	Atal'ai Light BIG (DND); Aura 1 - Linken; Terokkar Forest - Derelict Caravan - Quest - Chest Opened	World\Generic\PassiveDoodads\ParticleEmitters\AuraGreenVeryTall.m2	name-filtered
+Y	Neutral	Unsorted	Atal'ai Light SMALL (DND)	148883	2473	5	3.5	4	AuraGreenVeryTall.m2	Atal'ai Light BIG (DND); Aura 1 - Linken; Terokkar Forest - Derelict Caravan - Quest - Chest Opened	World\Generic\PassiveDoodads\ParticleEmitters\AuraGreenVeryTall.m2	name-filtered
 R	Neutral	Misc	Aura	183516	2232	5	3	1	AuraBlueVeryTall.m2		World\Generic\PassiveDoodads\ParticleEmitters\AuraBlueVeryTall.m2	name-filtered
 R	Neutral	Misc	Aura 2 - Linken	164827	3013	5	5	3	AuraGreenTall.m2	Legion Stone Aura; Zul's Aura	World\Generic\PassiveDoodads\ParticleEmitters\AuraGreenTall.m2	name-filtered
 R	Neutral	Removed	Baby dw	185505	7334	5	1	1	Baby_Dw.m2		World\Generic\PassiveDoodads\Babies\Baby_Dw.m2	
@@ -285,7 +285,7 @@ R	Neutral	Misc	Blood Device	190609	7960	5	0.5	2	BlackRockBloodMachine02.m2	Apoth
 R	Neutral	Misc	Blood Vat	190604	7959	5	1	1	BlackRockBloodMachine01.m2		World\KhazModan\Blackrock\PassiveDoodads\DeathWingExperiments\BlackRockBloodMachine01.m2	
 R	Neutral	Misc	Blue Moon Sigil	192689	8315	5	1	2	UL_Sigil03.m2	TOI Sigil 3	World\Expansion02\Doodads\Ulduar\UL_Sigil03.m2	
 R	Neutral	Misc	Bomb Stack Inactive	193401	8181	5	1	1	SC_PlagueBomb_Orange.m2		World\Expansion02\Doodads\Generic\Scourge\SC_PlagueBomb_Orange.m2	
-N	Neutral	Misc	Borean Tundra Test Ribcage	187262	7597	5	1	1	Magnataur_Ribcage01.m2		World\Expansion02\Doodads\BoreanTundra\MagnataurItems\Magnataur_Ribcage01.m2	name-filtered
+Y	Neutral	Unsorted	Borean Tundra Test Ribcage	187262	7597	5	1	1	Magnataur_Ribcage01.m2		World\Expansion02\Doodads\BoreanTundra\MagnataurItems\Magnataur_Ribcage01.m2	name-filtered
 R	Neutral	Misc	Box o' Squirrels	178304	528	5	1	2	G_CrateAnimal.m2		World\Goober\G_CrateAnimal.m2	
 R	Neutral	Misc	Bridge 4	19403	9403	5	1	1	twilightshammer_altar01.m2		world\expansion03\doodads\twilighthammer\altar\twilightshammer_altar01.m2	
 R	Neutral	Misc	Broken Plague Sprayer	190539	7937	5	1	1	SC_Blighter_Broken.m2		World\Expansion02\Doodads\Generic\Scourge\SC_Blighter_Broken.m2	
@@ -301,7 +301,7 @@ R	Neutral	Removed	Civil War in the Plaguelands	175761	559	9	1	14	G_BookOpenMediu
 R	Neutral	Removed	Cleansing Water Aura	106529	1268	5	30	1	AuraYellowShort.m2		World\Generic\PassiveDoodads\ParticleEmitters\AuraYellowShort.m2	name-filtered
 R	Neutral	Misc	Cluster Launcher	180772	6544	8	1	10	G_FireworkLauncher02.m2	Doodad_G_FireworkLauncher02; Doodad_G_FireworkLauncher03; Doodad_G_FireworkLauncher05	World\Goober\G_FireworkLauncher02.m2	
 R	Neutral	Misc	CollectorTubes straight states01	188062	7145	5	0.31537	1	COLLECTORTUBES_STRAIGHT_STATES.m2		WORLD\EXPANSION01\DOODADS\NETHERSTORM\COLLECTORTUBES\COLLECTORTUBES_STRAIGHT_STATES.m2	
-N	Neutral	Misc	Collision PC Size	188215	7735	5	1	1	Collision_PCSize.m2		World\Generic\Collision\Collision_PCSize.m2	
+Y	Neutral	Unsorted	Collision PC Size	188215	7735	5	1	1	Collision_PCSize.m2		World\Generic\Collision\Collision_PCSize.m2	n-to-unsorted
 R	Neutral	Misc	Consuming Flames	184743	5752	8	1.2	9	LowPolyFire.m2	Infernaling Summoner Visual; Ritual Bell Fizzle; Ritual Book Fizzle	World\Generic\PVP\Fires\LowPolyFire.m2	
 R	Neutral	Removed	Corpulous' Mess Hall Rules	191646	8131	9	1	2	Book_Troll_01.m2	Troll Book 1	World\Generic\Human\Passive Doodads\Books\Book_Troll_01.m2	
 R	Neutral	Removed	Cranberry Masher	195195	8965	5	0.5	1	alteracfruitbucket04.m2		world\lordaeron\alteracmountains\passivedoodads\fruitbuckets\alteracfruitbucket04.m2	
@@ -371,7 +371,7 @@ Y	Neutral	Misc	Generic Cage Bottom	200332	6651	5	1	7	G_CageBase.m2	Cage Base; Fa
 Y	Neutral	Misc	Generic Cage Top	200300	676	5	1	4	G_Cage.m2	Falcon Cage; Murloc Cage; Tor'gash's Cage	World\Goober\G_Cage.m2	
 R	Neutral	Removed	Generic Hoofprint	187272	520	5	0.6	1	TRexFootprint.m2		World\Kalimdor\UnGoro\PassiveDoodads\TrexFootprint\TRexFootprint.m2	
 R	Neutral	Misc	Geyser	186941	7544	5	1	1	Borean_Geyser_01.m2		World\Expansion02\Doodads\BoreanTundra\Geysers\Borean_Geyser_01.m2	
-N	Neutral	Misc	Ghost Gate	180322	6391	5	2	1	CollisionWallPvP01.m2		World\Generic\PVP\CollisionWall\CollisionWallPvP01.m2	
+Y	Neutral	Unsorted	Ghost Gate	180322	6391	5	2	1	CollisionWallPvP01.m2		World\Generic\PVP\CollisionWall\CollisionWallPvP01.m2	n-to-unsorted
 R	Neutral	Misc	Gizmond's Flying Machine	186558	330	5	1	2	G_FlyingMachine.m2	Airman Skyhopper's Flying Machine	World\Goober\G_FlyingMachine.m2	
 R	Neutral	Misc	Glorious Goods	191676	8140	5	0.68	2	DALARAN_SIGN_GENERALGOODS.m2	Curiosities & Moore	WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_SIGN_GENERALGOODS.m2	
 R	Neutral	Misc	Glowing Soulgem	19862	404	5	1.5	1	G_RelicNESphere.m2		World\Goober\G_RelicNESphere.m2	name-filtered
@@ -530,7 +530,7 @@ R	Neutral	Misc	Shandy's Clothesline	200297	9157	5	1.4	1	ld_stratholme_clothingli
 R	Neutral	Removed	Shards of Myzrael	2705	244	8	3.47	1	CaveMineCrystalFormation02.m2		World\Dungeon\Cave\PassiveDoodads\Crystals\CaveMineCrystalFormation02.m2	
 R	Neutral	Removed	Shattrath	182100	6917	5	1	38	DR_Signpost_Sign_ancient.m2	Allerian Stronghold; Auchindoun; Firewing Point	World\Expansion01\Doodads\HellfirePeninsula\lamppost\DR_Signpost_Sign_ancient.m2	
 N	Neutral	Misc	Ship, Icebreaker (Stormbreaker)	186239	7446	5	1	1	Transport_Icebreaker_ship.wmo		World\wmo\transports\icebreaker\Transport_Icebreaker_ship.wmo	
-N	Neutral	Misc	Shoulder [PH]	193198	8418	5	1	1	northrend_shoulder_02.m2		world\expansion02\doodads\generic\northrend_shoulder_02.m2	name-filtered
+Y	Neutral	Unsorted	Shoulder [PH]	193198	8418	5	1	1	northrend_shoulder_02.m2		world\expansion02\doodads\generic\northrend_shoulder_02.m2	name-filtered
 R	Neutral	Misc	Shoutbox	180044	6152	5	1	1	ShoutBox.m2		World\ENVIRONMENT\DOODAD\Carnival\ShoutBox.m2	
 R	Neutral	Misc	Shoutbox	186714	7507	5	1	1	ShoutBox_Generic.m2		World\Generic\Passive Doodads\Shoutbox\ShoutBox_Generic.m2	
 R	Neutral	Misc	Simon Game Aura Blue	185872	1310	5	1.5	11	AuraYellow.m2	Divination Scryer Aura; Shady Rest Glow; Shady Rest Glow (Large)	World\Generic\PassiveDoodads\ParticleEmitters\AuraYellow.m2	name-filtered
@@ -575,11 +575,11 @@ R	Neutral	Misc	Target	13952	395	5	1	1	ArcheryTargetHuman01.m2		World\Generic\Tau
 R	Neutral	Misc	Tear in the Nether	178484	5291	5	1	2	COT_portalparticles.m2	Legion Ring - Portal	World\Dungeon\CavernsOfTime\PassiveDoodads\DarkPortal\COT_portalparticles.m2	
 R	Neutral	Misc	Telestra Energy Well	188475	7788	5	1	1	Nexus_blueEnergywell.m2		World\Expansion02\Doodads\Nexus\Nexus_blueEnergywell.m2	name-filtered
 R	Neutral	Misc	Temple of Invention Orb	193589	8224	5	2	1	UL_Brazier01.m2		World\Expansion02\Doodads\Ulduar\UL_Brazier01.m2	
-N	Neutral	Misc	Temporary Spawned Murloc Hut 01	186742	7517	5	3	1	WaterHut01.m2		World\Azeroth\SwampOSorrow\PassiveDoodads\WaterHuts\WaterHut01.m2	name-filtered
-N	Neutral	Misc	Temporary Spawned Murloc Hut 02	186743	7518	5	3	1	WaterHut02.m2		World\Azeroth\SwampOSorrow\PassiveDoodads\WaterHuts\WaterHut02.m2	name-filtered
+Y	Neutral	Unsorted	Temporary Spawned Murloc Hut 01	186742	7517	5	3	1	WaterHut01.m2		World\Azeroth\SwampOSorrow\PassiveDoodads\WaterHuts\WaterHut01.m2	name-filtered
+Y	Neutral	Unsorted	Temporary Spawned Murloc Hut 02	186743	7518	5	3	1	WaterHut02.m2		World\Azeroth\SwampOSorrow\PassiveDoodads\WaterHuts\WaterHut02.m2	name-filtered
 R	Neutral	Removed	Terrordale Haunting Spirit	179747	3993	8	3	4	AuraGreenShort.m2	Ancient Egg Aura; Eye of the Citadel Aura; Green aura, short column	World\Generic\PassiveDoodads\ParticleEmitters\AuraGreenShort.m2	
 R	Neutral	Removed	TEST MARBLE	17148	399	9	1	6	TombStone05.m2	Black Knight's Grave; TEST BRONZE; TEST PARCHMENT	World\Azeroth\Duskwood\PassiveDoodads\Tombs\TombStone05.m2	name-filtered
-N	Neutral	Misc	Test Portal	188096	672	5	0.75	1	InstancePortal.m2		World\Generic\ActiveDoodads\InstancePortal\InstancePortal.m2	name-filtered
+Y	Neutral	Unsorted	Test Portal	188096	672	5	0.75	1	InstancePortal.m2		World\Generic\ActiveDoodads\InstancePortal\InstancePortal.m2	name-filtered
 N	Neutral	Misc	TEST SHIP	37200	3015	5	1	1	transportship.wmo		World\wmo\transports\transport_ship\transportship.wmo	name-filtered
 R	Neutral	Misc	The Ark of Ssslith	182082	6915	5	1	1	NA_Ark.m2		World\Expansion01\Doodads\Generic\Naga\Ark\NA_Ark.m2	
 R	Neutral	Misc	The Arsenal Absolute	191677	8141	5	0.68	1	DALARAN_SIGN_WEAPONSHOP.m2		WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_SIGN_WEAPONSHOP.m2	
@@ -612,7 +612,7 @@ R	Neutral	Removed	Venture Bay	188265	7753	5	1	68	TrapperSignpost_Sign.m2	Amberpi
 R	Neutral	Removed	Venture Co. Copter Pad	19594	367	8	4	5	Fruit_Banana.m2	Flame of Uzel; Shadowglen Moonwell; Venture Co. Wagon (Blue)	World\Generic\PassiveDoodads\Fruits\Fruit_Banana.m2	
 R	Neutral	Misc	vr bm wood 02	193678	8488	5	0.52	2	VR_BM_WOOD_01.m2	Doodad_vr_bm_wood_01	WORLD\EXPANSION02\DOODADS\GENERIC\VRYKUL\CRATES\VR_BM_WOOD_01.m2	
 R	Neutral	Misc	VR StandingLight Snow Blue	193566	8470	5	1	1	VR_StandingLight_Snow_Blue_01.m2		World\Expansion02\Doodads\Generic\Vrykul\Lights\VR_StandingLight_Snow_Blue_01.m2	
-N	Neutral	Misc	Vrykul Chains [PH]	186655	7491	5	1	1	VR_Elevator_Pulley.m2		World\Expansion02\Doodads\Generic\Vrykul\Elevator\VR_Elevator_Pulley.m2	name-filtered
+Y	Neutral	Unsorted	Vrykul Chains [PH]	186655	7491	5	1	1	VR_Elevator_Pulley.m2		World\Expansion02\Doodads\Generic\Vrykul\Elevator\VR_Elevator_Pulley.m2	name-filtered
 R	Neutral	Misc	Vrykul Hawk Roost	190222	7879	8	1	1	VR_BurialMound_01.m2		World\Expansion02\Doodads\Generic\Vrykul\BurialMound\VR_BurialMound_01.m2	
 R	Neutral	Removed	Wall Light	190664	7976	5	2	1	BFD_WallLight01.m2		World\Kalimdor\Blackfathom\PassiveDoodads\Lights\BFD_WallLight01.m2	
 R	Neutral	Removed	Wanted: Hemet Nesingwary, Enemy of Nature	187910	7664	9	3	1	statueDMmountainking.m2		World\Dungeon\ScarletMonastery\PassiveDoodads\Statues\statueDMmountainking.m2	
@@ -755,7 +755,7 @@ Y	Neutral	Weapons & Armor	The Staff of Storm's Fury	187385	1708	5	1	1	BrambleSta
 Y	Neutral	Weapons & Armor	Valduran's Shield	191510	8100	5	4	2	UL_TitanEnergy_02.m2	Energy Column	World\Expansion02\Doodads\Ulduar\UL_TitanEnergy_02.m2	
 Y	Neutral	Weapons & Armor	War of the Three Hammers	175739	560	9	1	11	G_BookOpenMediumBrown.m2	Archimonde's Return and the Flight to Kalimdor; Charge of the Dragonflights; Old Hatreds - The Colonization of Kalimdor	World\Goober\G_BookOpenMediumBrown.m2	
 Y	Neutral	Weapons & Armor	Wildkin Weapon (Spear)	181745	5994	5	0.75	3	G_KruskSpear.m2	Dragonflayer Harpoon; Message to the Wildhammer	World\Goober\G_KruskSpear.m2	
-N	Alliance	Banners & Tents	[PH] Alliance Graveyard Mid Pre-Banner BIG	179424	5653	5	1.5	1	BattlefieldBannerAllianceBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceBW.m2	name-filtered
+Y	Alliance	Unsorted	[PH] Alliance Graveyard Mid Pre-Banner BIG	179424	5653	5	1.5	1	BattlefieldBannerAllianceBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceBW.m2	name-filtered
 Y	Alliance	Banners & Tents	Alliance Banner	201869	8573	5	1	1	Alliance_Banner_01.m2		World\Expansion02\Doodads\Generic\Human\FLAGS\Alliance_Banner_01.m2	
 Y	Alliance	Banners & Tents	Alliance Flag	186862	7078	5	0.5	1	BattlefieldBanner_State_FlagA_Plaguelands.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBanner_State_FlagA_Plaguelands.m2	
 Y	Alliance	Banners & Tents	Alliance Flagpole	186861	625	5	1	3	FLAGPOLE01.m2	WotLK Light Flag Pole	WORLD\GENERIC\HUMAN\PASSIVE DOODADS\FLAGPOLE\FLAGPOLE01.m2	
@@ -901,7 +901,7 @@ Y	Alliance	Lighting & Fire	Potbelly Stove	3769	348	8	1.17	9	POTBELLYSTOVE.m2	Doo
 Y	Alliance	Lighting & Fire	Smoldering Brazier	191486	194	8	0.68	13	HumanBrazierMagic.m2	Brazier	World\Generic\Human\Passive Doodads\Braziers\HumanBrazierMagic.m2	
 Y	Alliance	Lighting & Fire	Stove	160411	679	8	1	38	POTBELLYSTOVEWALL.m2	Cooking Stove; Cookpot; Doodad_potbellystovewall01	WORLD\GENERIC\HUMAN\PASSIVE DOODADS\STOVES\POTBELLYSTOVEWALL.m2	
 R	Alliance	Misc	05Low	42080	682	7	1	19	DuskwoodBench.m2	01 low; 01Hi; 01Med	World\Generic\Human\Passive Doodads\Benches\DuskwoodBench.m2	
-N	Alliance	Misc	[DND] Target	186597	7477	5	1	1	TargetOgre01.m2		World\Generic\Dwarf\Passive Doodads\Targets\TargetOgre01.m2	name-filtered
+Y	Alliance	Unsorted	[DND] Target	186597	7477	5	1	1	TargetOgre01.m2		World\Generic\Dwarf\Passive Doodads\Targets\TargetOgre01.m2	name-filtered
 R	Alliance	Removed	A Treatise on Military Ranks	179706	254	9	1	2	BookMediumOpen01.m2	Magus Rimtori's Journal	World\Generic\Human\Passive Doodads\Books\BookMediumOpen01.m2	
 R	Alliance	Misc	A Zombie's Guide to Proper Nutrition	191662	7705	9	1	1	BookSmall01.m2		World\Generic\Human\Passive Doodads\Books\BookSmall01.m2	
 R	Alliance	Misc	Abandon hope, all ye who enter here.	177185	4651	5	0.21	2	ExcavationBarrierPlank.m2	Turn Back!	World\Generic\Dwarf\Passive Doodads\ExcavationBarrierPlank\ExcavationBarrierPlank.m2	
@@ -1189,7 +1189,7 @@ Y	Alliance	Statues & Monuments	Light Crystal	184307	7162	5	0.05	2	Crystal_Corrup
 Y	Alliance	Statues & Monuments	Lion Statue	19460	9460	5	1	1	gnome_radiation_bomb_01.m2		world\expansion02\doodads\generic\gnome\gnome_radiation_bomb_01.m2	
 Y	Alliance	Statues & Monuments	Magna Totem	187890	7660	5	0.2	1	AshenSatyrTotem05.m2		World\Kalimdor\Ashenvale\PassiveDoodads\SatyrTotem\AshenSatyrTotem05.m2	
 Y	Alliance	Statues & Monuments	Moonglade Fountain	185493	439	5	0.5	3	ElvenFountain.m2	Dire Pool; Wrathscale Fountain	World\Generic\NightElf\Passive Doodads\Fountains\ElvenFountain.m2	
-Y	Alliance	Statues & Monuments	Moonwell	177232	4691	8	0.3	2	DSNightElfMoonWellOrnate.wmo	Night Elf Moon Well	World\wmo\Kalimdor\Buildings\NightElfMoonWell\DSNightElfMoonWellOrnate.wmo	
+Y	Alliance	Statues & Monuments	Moonwell	970001	4691	14	0.3	2	DSNightElfMoonWellOrnate.wmo	Night Elf Moon Well	World\wmo\Kalimdor\Buildings\NightElfMoonWell\DSNightElfMoonWellOrnate.wmo	
 Y	Alliance	Statues & Monuments	Nazzivus Monument	182212	6931	5	1.23	1	NEShrineSatyr.m2		World\Kalimdor\Ashenvale\PassiveDoodads\Shrines\NEShrineSatyr.m2	
 Y	Alliance	Statues & Monuments	Night Elf Moon Crystal	181361	6749	5	1.87	1	ghostlands_moonstone.m2		World\Expansion01\Doodads\Ghostlands\moonstone\ghostlands_moonstone.m2	
 Y	Alliance	Statues & Monuments	oildrum01	193747	6904	5	0.86	4	oildrum01.m2	Doodad_oildrum02; Doodad_oildrum03; Oil Drum	World\Generic\Human\Passive Doodads\OilDrums\oildrum01.m2	
@@ -1224,7 +1224,7 @@ Y	Alliance	Weapons & Armor	Weapon Rack	188426	130	5	1	4	GeneralWeaponrack01.m2	G
 R	Alliance	Weapons & Armor	Weapons	92539	955	5	2	8	NIGHTELFSIGN_WEAPONSMITH.m2	Thrown Weapons; Two Handed Weapons	WORLD\GENERIC\NIGHTELF\PASSIVE DOODADS\SIGNS\NIGHTELFSIGN_WEAPONSMITH.m2	
 Y	Alliance	Weapons & Armor	WotLK Light Sword Crate	191134	8053	5	1	1	WeaponCrateAllianceSwordOpen.m2		World\Generic\PassiveDoodads\WeaponCrates\WeaponCrateAllianceSwordOpen.m2	
 Y	Alliance	Weapons & Armor	Zul'Aman - Dwarf Hammer	186623	1107	5	1	2	HammerQuest01.m2	The Lorehammer	World\KhazModan\Ironforge\PassiveDoodads\HammerQuest01\HammerQuest01.m2	
-N	Horde	Banners & Tents	[PH] Horde Graveyard Mid Pre-Banner BIG	179425	5654	5	1.5	1	BattlefieldBannerHordeBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeBW.m2	name-filtered
+Y	Horde	Unsorted	[PH] Horde Graveyard Mid Pre-Banner BIG	179425	5654	5	1.5	1	BattlefieldBannerHordeBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeBW.m2	name-filtered
 Y	Horde	Banners & Tents	Apothecary Banner	190670	7979	5	2	1	FK_Banner01.m2		World\Expansion02\Doodads\Generic\Forsaken\FK_Banner01.m2	
 Y	Horde	Banners & Tents	Apothecary Tent	190666	7978	5	1	2	SC_Tent2.m2	Main Apothecary Tent	World\Expansion02\Doodads\Generic\Scourge\SC_Tent2.m2	
 Y	Horde	Banners & Tents	Apothecary Zelana Tent	184696	7211	5	1	1	ExcavationTent01.m2		World\Generic\Dwarf\Passive Doodads\ExcavationTents\ExcavationTent01.m2	
@@ -3409,7 +3409,7 @@ R	Neutral	Removed	Visitorscenter01 Sign	940005	177	5	1	1	VISITORSCENTER01.m2		WO
 R	Neutral	Removed	Tavern01 Sign	940006	180	5	1	1	TAVERN01.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\SIGNS\TAVERN01.m2	pass6
 Y	Neutral	Unsorted	TEST House	20668	467	14	1	1	HumanLevelOneTest.wmo		World\wmo\PlayerHousing\Human\HumanLevelOneTest.wmo	building (WMO)
 Y	Neutral	Unsorted	Night Elf Moon Well	20818	4691	5	1	1	DSNightElfMoonWellOrnate.wmo		World\wmo\Kalimdor\Buildings\NightElfMoonWell\DSNightElfMoonWellOrnate.wmo	building (WMO)
-Y	Neutral	Unsorted	Kl Onyxias Lair	950001	5631	5	1	1	KL_OnyxiasLair.wmo		<empty>\KL_OnyxiasLair.wmo	building (WMO)
+N	Neutral	Unsorted	Kl Onyxias Lair	950001	5631	5	1	1	KL_OnyxiasLair.wmo		<empty>\KL_OnyxiasLair.wmo	building (WMO)
 Y	Neutral	Unsorted	40Man Egg Layer Boss	950002	6906	5	1	1	40ManEggLayerBoss.wmo		World\wmo\Dungeon\KL_AhnQiraj\40ManEggLayerBoss.wmo	building (WMO)
 Y	Neutral	Unsorted	Humantank02	950003	7019	5	1	1	humantank02.wmo		World\wmo\Outland\HumanTank\humantank02.wmo	building (WMO)
 Y	Neutral	Unsorted	Humantank01	950004	7020	5	1	1	humantank01.wmo		World\wmo\Outland\HumanTank\humantank01.wmo	building (WMO)
@@ -3420,7 +3420,7 @@ Y	Neutral	Unsorted	God Altar	950008	7246	5	1	1	God_Altar.wmo		World\wmo\Lorderon
 Y	Neutral	Unsorted	Terokkar Trees01	950009	7280	5	1	1	Terokkar_trees01.wmo		World\wmo\Dungeon\Terokkar_trees\Terokkar_trees01.wmo	building (WMO)
 Y	Neutral	Unsorted	Terokkar Tree Micro	950010	7281	5	1	1	Terokkar_tree_micro.wmo		World\wmo\Dungeon\Terokkar_trees\Terokkar_tree_micro.wmo	building (WMO)
 Y	Neutral	Unsorted	War2Darkportal	950011	7402	5	1	1	war2darkportal.wmo		World\wmo\Outland\DarkPortal\war2darkportal.wmo	building (WMO)
-Y	Neutral	Unsorted	Final Stage	950012	7424	5	1	1	final_stage.wmo		World\wmo\band\final_stage.wmo	building (WMO)
+N	Neutral	Unsorted	Final Stage	950012	7424	5	1	1	final_stage.wmo		World\wmo\band\final_stage.wmo	building (WMO)
 Y	Neutral	Unsorted	Redridge Chapel	950013	7428	5	1	1	RedridgeChapel.wmo		World\wmo\Azeroth\Buildings\Chapel\RedridgeChapel.wmo	building (WMO)
 Y	Neutral	Unsorted	Duskwood Human Farm	950014	7432	5	1	1	Duskwood_human_farm.wmo		World\wmo\Azeroth\Buildings\Duskwood_human_farm\Duskwood_human_farm.wmo	building (WMO)
 Y	Neutral	Unsorted	Griffon Aviary	950015	7433	5	1	1	GriffonAviary.wmo		World\wmo\Azeroth\Buildings\GriffonAviary\GriffonAviary.wmo	building (WMO)
@@ -3444,7 +3444,7 @@ Y	Neutral	Unsorted	Pirateship	950032	7552	5	1	1	Pirateship.wmo		World\wmo\Dungeo
 Y	Neutral	Unsorted	Pirateship No Cannons	950033	7555	5	1	1	Pirateship_NoCannons.wmo		World\wmo\Dungeon\MD_Pirateship\Pirateship_NoCannons.wmo	building (WMO)
 Y	Neutral	Unsorted	Guard Tower Intact	950034	7595	5	1	1	GuardTower_intact.wmo		World\wmo\Azeroth\Buildings\GuardTower\GuardTower_intact.wmo	building (WMO)
 Y	Neutral	Unsorted	Quiraj Tower03	950035	7630	5	1	1	QuirajTower03.wmo		World\wmo\Kalimdor\CollidableDoodads\Silithus\QuirajTower03.wmo	building (WMO)
-Y	Neutral	Unsorted	Outland Draeni Hut 1	950036	7667	5	1	1	outland_draeni_hut_1.wmo		World\Outland\PassiveDoodads\DraeniBuildings\outland_draeni_hut_1.wmo	building (WMO)
+N	Neutral	Unsorted	Outland Draeni Hut 1	950036	7667	5	1	1	outland_draeni_hut_1.wmo		World\Outland\PassiveDoodads\DraeniBuildings\outland_draeni_hut_1.wmo	building (WMO)
 Y	Neutral	Unsorted	Duskwood Blacksmith	950037	7668	5	1	1	Duskwood_Blacksmith.wmo		World\wmo\Azeroth\Buildings\Duskwood_Blacksmith\Duskwood_Blacksmith.wmo	building (WMO)
 Y	Neutral	Unsorted	40Mans Silithid Hall	950038	7669	5	1	1	40MansSilithidHall.wmo		World\wmo\Dungeon\KL_AhnQiraj\40MansSilithidHall.wmo	building (WMO)
 Y	Neutral	Unsorted	Abandoned Orc Great Hall	950039	7670	5	1	1	AbandonedOrcGreatHall.wmo		World\wmo\Kalimdor\Buildings\OrcGreatHall\AbandonedOrcGreatHall.wmo	building (WMO)
@@ -3608,3 +3608,220 @@ Y	Neutral	Unsorted	Herb Sacks	184798	7224	5	1	1	SackHerbsStranglekelp01.mdx		Wor
 Y	Neutral	Unsorted	Apprentice Alchemy Station	192547	8109	5	1	1	SC_ALCHEMY_TABLE.MDX		WORLD\EXPANSION02\DOODADS\GENERIC\SCOURGE\SC_ALCHEMY_TABLE.MDX	from mod-warband-camp prop list (ids only)
 Y	Neutral	Unsorted	Orc War Pavilion	191784	8184	5	1	1	orctent01.mdx		World\Generic\Orc\Passive Doodads\Tents\orctent01.mdx	from mod-warband-camp prop list (ids only)
 Y	Neutral	Unsorted	Grand Festival Arch	181086	6655	5	1	1	ValentinesArc.mdx		World\Generic\PassiveDoodads\ValentinesDay\ValentinesArc.mdx	from mod-warband-camp prop list (ids only)
+Y	Neutral	Unsorted	Bush Magebloom01	960001	268	5	1	1	Bush_Magebloom01.m2		World\SkillActivated\TradeskillNodes\Bush_Magebloom01.m2	pass8
+Y	Neutral	Unsorted	Bush Peacebloom01	960002	269	5	1	1	Bush_Peacebloom01.m2		World\SkillActivated\TradeskillNodes\Bush_Peacebloom01.m2	pass8
+Y	Neutral	Unsorted	Bush Silverleaf01	960003	270	5	1	1	Bush_Silverleaf01.m2		World\SkillActivated\TradeskillNodes\Bush_Silverleaf01.m2	pass8
+Y	Neutral	Unsorted	Bush Thornroot01	960004	271	5	1	1	Bush_Thornroot01.m2		World\SkillActivated\TradeskillNodes\Bush_Thornroot01.m2	pass8
+Y	Neutral	Unsorted	Bush Swiftthistle01	960005	272	5	1	1	Bush_Swiftthistle01.m2		World\SkillActivated\TradeskillNodes\Bush_Swiftthistle01.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Anvil 02	960006	274	5	1	1	Tradeskill_Anvil_02.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_Anvil_02.m2	pass8
+Y	Neutral	Unsorted	Engineering Autolathe 01	960007	304	5	1	1	Engineering_Autolathe_01.m2		World\SkillActivated\TradeskillEnablers\Engineering_Autolathe_01.m2	pass8
+Y	Neutral	Unsorted	Copper Miningnode 01	960008	310	5	1	1	copper_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\copper_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Iron Miningnode 01	960009	312	5	1	1	Iron_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Iron_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Mithril Miningnode 01	960010	313	5	1	1	mithril_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\mithril_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	True Silver Miningnode 01	960011	314	5	1	1	TrueSilver_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\TrueSilver_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Tin Miningnode 01	960012	315	5	1	1	tin_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\tin_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Bush Crownroyal01	960013	320	5	1	1	Bush_Crownroyal01.m2		World\SkillActivated\TradeskillNodes\Bush_Crownroyal01.m2	pass8
+Y	Neutral	Unsorted	Bush Gravemoss01	960014	357	5	1	1	Bush_Gravemoss01.m2		World\SkillActivated\TradeskillNodes\Bush_Gravemoss01.m2	pass8
+Y	Neutral	Unsorted	Bush Bruiseweed01	960015	358	5	1	1	Bush_Bruiseweed01.m2		World\SkillActivated\TradeskillNodes\Bush_Bruiseweed01.m2	pass8
+Y	Neutral	Unsorted	Bush Mushroom03	960016	359	5	1	1	Bush_Mushroom03.m2		World\SkillActivated\TradeskillNodes\Bush_Mushroom03.m2	pass8
+Y	Neutral	Unsorted	Elevatorcar	960017	360	5	1	1	ELEVATORCAR.m2		WORLD\KALIMDOR\MULGORE\PASSIVEDOODADS\THUNDERBLUFFELEVATOR\ELEVATORCAR.m2	pass8
+Y	Neutral	Unsorted	Bush Steelbloom01	960018	371	5	1	1	Bush_Steelbloom01.m2		World\SkillActivated\TradeskillNodes\Bush_Steelbloom01.m2	pass8
+Y	Neutral	Unsorted	Incendicite Miningnode 01	960019	384	5	1	1	Incendicite_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Incendicite_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Bush Mushroom02	960020	385	5	1	1	Bush_Mushroom02.m2		World\SkillActivated\TradeskillNodes\Bush_Mushroom02.m2	pass8
+Y	Neutral	Unsorted	Bush Mushroom01	960021	389	5	1	1	Bush_Mushroom01.m2		World\SkillActivated\TradeskillNodes\Bush_Mushroom01.m2	pass8
+Y	Neutral	Unsorted	Bush Snakebloom01	960022	390	5	1	1	Bush_Snakebloom01.m2		World\SkillActivated\TradeskillNodes\Bush_Snakebloom01.m2	pass8
+Y	Neutral	Unsorted	Deadminedoor01	960023	394	5	1	1	DEADMINEDOOR01.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\DEADMINEDOOR01.m2	pass8
+Y	Neutral	Unsorted	Deadminedoor02	960024	400	5	1	1	DEADMINEDOOR02.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\DEADMINEDOOR02.m2	pass8
+Y	Neutral	Unsorted	Bush Snakeroot	960025	414	5	1	1	Bush_Snakeroot.m2		World\SkillActivated\TradeskillNodes\Bush_Snakeroot.m2	pass8
+Y	Neutral	Unsorted	Doortest01	960026	421	5	1	1	doortest01.m2		World\Generic\PassiveDoodads\Doors\doortest01.m2	pass8
+Y	Neutral	Unsorted	Xyz	960027	432	5	1	1	xyz.m2		World\ArtTest\Boxtest\xyz.m2	pass8
+Y	Neutral	Unsorted	Monestarysecretdoor	960028	441	5	1	1	MONESTARYSECRETDOOR.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\MONESTARYSECRETDOOR.m2	pass8
+Y	Neutral	Unsorted	Monestarybossdoor	960029	443	5	1	1	MONESTARYBOSSDOOR.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\MONESTARYBOSSDOOR.m2	pass8
+Y	Neutral	Unsorted	Monestaryhalldoor	960030	444	5	1	1	MONESTARYHALLDOOR.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\MONESTARYHALLDOOR.m2	pass8
+Y	Neutral	Unsorted	Undeadelevator	960031	455	5	1	1	UNDEADELEVATOR.m2		WORLD\GENERIC\UNDEAD\PASSIVE DOODADS\UNDERCITYELEVATORS\UNDEADELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Bfd Brassdoors	960032	460	5	1	1	BFD_BRASSDOORS.m2		WORLD\GENERIC\NIGHTELF\ACTIVEDOODADS\DOORS\BFD_BRASSDOORS.m2	pass8
+Y	Neutral	Unsorted	Undeadelevatordoor	960033	462	5	1	1	UNDEADELEVATORDOOR.m2		WORLD\GENERIC\UNDEAD\PASSIVE DOODADS\UNDERCITYELEVATORS\UNDEADELEVATORDOOR.m2	pass8
+Y	Neutral	Unsorted	Storm Wind Wooden Dummy01	960034	518	5	1	1	StormWindWoodenDummy01.m2		World\Generic\Human\Passive Doodads\WoodenDummies\StormWindWoodenDummy01.m2	pass8
+Y	Neutral	Unsorted	Razorfenforcefield01	960035	523	5	1	1	RAZORFENFORCEFIELD01.m2		WORLD\GENERIC\QUILBOAR\ACTIVEDOODADS\DOORS\RAZORFENFORCEFIELD01.m2	pass8
+Y	Neutral	Unsorted	Ironforgeelevator	960036	561	5	1	1	IRONFORGEELEVATOR.m2		WORLD\KHAZMODAN\IRONFORGE\PASSIVEDOODADS\ELEVATORS\IRONFORGEELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Ironforgeelevatordoor	960037	562	5	1	1	IRONFORGEELEVATORDOOR.m2		WORLD\KHAZMODAN\IRONFORGE\PASSIVEDOODADS\ELEVATORS\IRONFORGEELEVATORDOOR.m2	pass8
+Y	Neutral	Unsorted	Bush Liferoot01	960038	677	5	1	1	Bush_liferoot01.m2		World\SkillActivated\TradeskillNodes\Bush_liferoot01.m2	pass8
+Y	Neutral	Unsorted	Bush Fadeleaf01	960039	697	5	1	1	Bush_Fadeleaf01.m2		World\SkillActivated\TradeskillNodes\Bush_Fadeleaf01.m2	pass8
+Y	Neutral	Unsorted	Bush Goldthorn01	960040	698	5	1	1	Bush_Goldthorn01.m2		World\SkillActivated\TradeskillNodes\Bush_Goldthorn01.m2	pass8
+Y	Neutral	Unsorted	Bush Wintersbite01	960041	699	5	1	1	Bush_wintersbite01.m2		World\SkillActivated\TradeskillNodes\Bush_wintersbite01.m2	pass8
+Y	Neutral	Unsorted	Bush Stranglekelp01	960042	700	5	1	1	Bush_Stranglekelp01.m2		World\SkillActivated\TradeskillNodes\Bush_Stranglekelp01.m2	pass8
+Y	Neutral	Unsorted	Bush Khadgarswhisker01	960043	701	5	1	1	Bush_Khadgarswhisker01.m2		World\SkillActivated\TradeskillNodes\Bush_Khadgarswhisker01.m2	pass8
+Y	Neutral	Unsorted	Silithid Miningnode 01	960044	767	5	1	1	Silithid_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Silithid_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Gnomeelevatorcar01	960045	807	5	1	1	GNOMEELEVATORCAR01.m2		WORLD\GENERIC\GNOME\PASSIVE DOODADS\ELEVATORPARTS\GNOMEELEVATORCAR01.m2	pass8
+Y	Neutral	Unsorted	Gnomeelevatorcar02	960046	808	5	1	1	GNOMEELEVATORCAR02.m2		WORLD\GENERIC\GNOME\PASSIVE DOODADS\ELEVATORPARTS\GNOMEELEVATORCAR02.m2	pass8
+Y	Neutral	Unsorted	Gnomeelevatorcar05	960047	827	5	1	1	GNOMEELEVATORCAR05.m2		WORLD\GENERIC\GNOME\PASSIVE DOODADS\ELEVATORPARTS\GNOMEELEVATORCAR05.m2	pass8
+Y	Neutral	Unsorted	Razorfendoor01	960048	847	5	1	1	RAZORFENDOOR01.m2		WORLD\KALIMDOR\RAZORFEN\ACTIVEDOODADS\RAZORFENDOORS\RAZORFENDOOR01.m2	pass8
+Y	Neutral	Unsorted	Razorfendoor02	960049	848	5	1	1	RAZORFENDOOR02.m2		WORLD\KALIMDOR\RAZORFEN\ACTIVEDOODADS\RAZORFENDOORS\RAZORFENDOOR02.m2	pass8
+Y	Neutral	Unsorted	Razorfendoor03	960050	849	5	1	1	RAZORFENDOOR03.m2		WORLD\KALIMDOR\RAZORFEN\ACTIVEDOODADS\RAZORFENDOORS\RAZORFENDOOR03.m2	pass8
+Y	Neutral	Unsorted	Razorfendoor05	960051	851	5	1	1	RAZORFENDOOR05.m2		WORLD\KALIMDOR\RAZORFEN\ACTIVEDOODADS\RAZORFENDOORS\RAZORFENDOOR05.m2	pass8
+Y	Neutral	Unsorted	Gnomeelevatorcar03	960052	852	5	1	1	GNOMEELEVATORCAR03.m2		WORLD\GENERIC\GNOME\PASSIVE DOODADS\ELEVATORPARTS\GNOMEELEVATORCAR03.m2	pass8
+Y	Neutral	Unsorted	Gnomeregandoor01	960053	907	5	1	1	GNOMEREGANDOOR01.m2		WORLD\GENERIC\ACTIVEDOODADS\DOORS\GNOMEREGANDOORS\GNOMEREGANDOOR01.m2	pass8
+Y	Neutral	Unsorted	Scarletcathedraldoor	960054	1207	5	1	1	SCARLETCATHEDRALDOOR.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\DOORS\SCARLETCATHEDRALDOOR.m2	pass8
+Y	Neutral	Unsorted	G Mausoleum Seal Trigger	960055	1212	5	1	1	G_MausoleumSealTrigger.m2		World\Goober\G_MausoleumSealTrigger.m2	pass8
+Y	Neutral	Unsorted	Gnomehutelevator	960056	1587	5	1	1	GNOMEHUTELEVATOR.m2		WORLD\GENERIC\GNOME\PASSIVE DOODADS\GNOMEMACHINERY\GNOMEHUTELEVATOR.m2	pass8
+Y	Neutral	Unsorted	G Cagedoorbamboo	960057	2127	5	1	1	G_CAGEDOORBAMBOO.m2		WORLD\GOOBER\G_CAGEDOORBAMBOO.m2	pass8
+Y	Neutral	Unsorted	G Voodootrollforcefield	960058	2290	5	1	1	G_VOODOOTROLLFORCEFIELD.m2		WORLD\GOOBER\G_VOODOOTROLLFORCEFIELD.m2	pass8
+Y	Neutral	Unsorted	Bush Arthas Tears	960059	2310	5	1	1	Bush_ArthasTears.m2		World\SkillActivated\TradeskillNodes\Bush_ArthasTears.m2	pass8
+Y	Neutral	Unsorted	Bush Blindweed	960060	2311	5	1	1	Bush_Blindweed.m2		World\SkillActivated\TradeskillNodes\Bush_Blindweed.m2	pass8
+Y	Neutral	Unsorted	Bush Groms Blood	960061	2313	5	1	1	Bush_GromsBlood.m2		World\SkillActivated\TradeskillNodes\Bush_GromsBlood.m2	pass8
+Y	Neutral	Unsorted	Bush Purple Lotus	960062	2314	5	1	1	Bush_PurpleLotus.m2		World\SkillActivated\TradeskillNodes\Bush_PurpleLotus.m2	pass8
+Y	Neutral	Unsorted	Bush Sungrass	960063	2315	5	1	1	Bush_Sungrass.m2		World\SkillActivated\TradeskillNodes\Bush_Sungrass.m2	pass8
+Y	Neutral	Unsorted	Burningsteppselevator	960064	2454	5	1	1	BURNINGSTEPPSELEVATOR.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\ELEVATORPARTS\BURNINGSTEPPSELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Blackrockhugedoorsmechanismlock	960065	2851	5	1	1	BLACKROCKHUGEDOORSMECHANISMLOCK.m2		WORLD\KHAZMODAN\BLACKROCK\PASSIVEDOODADS\DOORS\BLACKROCKHUGEDOORSMECHANISMLOCK.m2	pass8
+Y	Neutral	Unsorted	Blackrockhugedoorsportcullis	960066	2854	5	1	1	BLACKROCKHUGEDOORSPORTCULLIS.m2		WORLD\KHAZMODAN\BLACKROCK\PASSIVEDOODADS\DOORS\BLACKROCKHUGEDOORSPORTCULLIS.m2	pass8
+Y	Neutral	Unsorted	Blackrockvaultsecretdoor	960067	3077	5	1	1	BLACKROCKVAULTSECRETDOOR.m2		WORLD\KHAZMODAN\BLACKROCK\ACTIVEDOODADS\VAULT\BLACKROCKVAULTSECRETDOOR.m2	pass8
+Y	Neutral	Unsorted	Blackrockvaultspecialdoor	960068	3078	5	1	1	BLACKROCKVAULTSPECIALDOOR.m2		WORLD\KHAZMODAN\BLACKROCK\ACTIVEDOODADS\VAULT\BLACKROCKVAULTSPECIALDOOR.m2	pass8
+Y	Neutral	Unsorted	Maraudonspawnertree	960069	3912	5	1	1	MARAUDONSPAWNERTREE.m2		WORLD\KALIMDOR\MAURADON\PASSIVEDOODADS\CORRUPTEDPLANTS\MARAUDONSPAWNERTREE.m2	pass8
+Y	Neutral	Unsorted	Thorium Miningnode 01	960070	3951	5	1	1	Thorium_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Thorium_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Rich Thorium Miningnode 01	960071	3952	5	1	1	RichThorium_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\RichThorium_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Diremauldoor04	960072	4511	5	1	1	DIREMAULDOOR04.m2		WORLD\KALIMDOR\DIREMAUL\ACTIVEDOODADS\DOORS\DIREMAULDOOR04.m2	pass8
+Y	Neutral	Unsorted	Bush Plague Bloom	960073	4632	5	1	1	Bush_PlagueBloom.m2		World\SkillActivated\TradeskillNodes\Bush_PlagueBloom.m2	pass8
+Y	Neutral	Unsorted	Bush Mountain Silver Sage	960074	4633	5	1	1	Bush_MountainSilverSage.m2		World\SkillActivated\TradeskillNodes\Bush_MountainSilverSage.m2	pass8
+Y	Neutral	Unsorted	Bush Ice Cap	960075	4634	5	1	1	Bush_IceCap.m2		World\SkillActivated\TradeskillNodes\Bush_IceCap.m2	pass8
+Y	Neutral	Unsorted	Bush Dream Foil	960076	4635	5	1	1	Bush_DreamFoil.m2		World\SkillActivated\TradeskillNodes\Bush_DreamFoil.m2	pass8
+Y	Neutral	Unsorted	Bush Black Lotus	960077	4636	5	1	1	Bush_BlackLotus.m2		World\SkillActivated\TradeskillNodes\Bush_BlackLotus.m2	pass8
+Y	Neutral	Unsorted	Diremauldoor03	960078	4673	5	1	1	DIREMAULDOOR03.m2		WORLD\KALIMDOR\DIREMAUL\ACTIVEDOODADS\DOORS\DIREMAULDOOR03.m2	pass8
+Y	Neutral	Unsorted	Diremauldoor02	960079	4674	5	1	1	DIREMAULDOOR02.m2		WORLD\KALIMDOR\DIREMAUL\ACTIVEDOODADS\DOORS\DIREMAULDOOR02.m2	pass8
+Y	Neutral	Unsorted	General Wooden Dummy02	960080	5171	5	1	1	GeneralWoodenDummy02.m2		World\Generic\Human\Passive Doodads\WoodenDummies\GeneralWoodenDummy02.m2	pass8
+Y	Neutral	Unsorted	Centaurteleporter01	960081	5212	5	1	1	CENTAURTELEPORTER01.m2		WORLD\KALIMDOR\MAURADON\ACTIVEDOODADS\BUTTON\CENTAURTELEPORTER01.m2	pass8
+Y	Neutral	Unsorted	Gmchairloend01	960082	5551	5	1	1	GMCHAIRLOEND01.m2		WORLD\GENERIC\HUMAN\PASSIVE DOODADS\CHAIRS\GMCHAIRLOEND01.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Alliance Large	960083	5771	5	1	1	BattlefieldBannerAllianceLarge.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceLarge.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Alliance Large Bw	960084	5772	5	1	1	BattlefieldBannerAllianceLargeBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceLargeBW.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Horde Large	960085	5773	5	1	1	BattlefieldBannerHordeLarge.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeLarge.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Horde Large Bw	960086	5774	5	1	1	BattlefieldBannerHordeLargeBW.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeLargeBW.m2	pass8
+Y	Neutral	Unsorted	Alliance Ctfflag	960087	5912	5	1	1	AllianceCTFflag.m2		World\Generic\PVP\CTFflags\AllianceCTFflag.m2	pass8
+Y	Neutral	Unsorted	Horde Ctfflag	960088	5913	5	1	1	HordeCTFflag.m2		World\Generic\PVP\CTFflags\HordeCTFflag.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Neutral	960089	6211	5	1	1	BattlefieldBannerNeutral.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerNeutral.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Alliance Flag Only	960090	6251	5	1	1	BattlefieldBannerAllianceFlagOnly.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceFlagOnly.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Alliance Bwflag Only	960091	6252	5	1	1	BattlefieldBannerAllianceBWFlagOnly.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerAllianceBWFlagOnly.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Horde Flag Only	960092	6253	5	1	1	BattlefieldBannerHordeFlagOnly.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeFlagOnly.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Horde Bwflag Only	960093	6254	5	1	1	BattlefieldBannerHordeBWFlagOnly.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerHordeBWFlagOnly.m2	pass8
+Y	Neutral	Unsorted	Battlefield Banner Neutral Flag Only	960094	6271	5	1	1	BattlefieldBannerNeutralFlagOnly.m2		World\Generic\PVP\BattlefieldBanners\BattlefieldBannerNeutralFlagOnly.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School 01	960095	6291	5	1	1	Tradeskill_FishSchool_01.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_01.m2	pass8
+Y	Neutral	Unsorted	Instance Portal Collision	960096	6361	5	1	1	InstancePortalCollision.m2		World\Generic\ActiveDoodads\InstancePortal\InstancePortalCollision.m2	pass8
+Y	Neutral	Unsorted	Zulgurubpendoor	960097	6384	5	1	1	ZULGURUBPENDOOR.m2		WORLD\AZEROTH\ZULGURUB\ACTIVEDOODADS\DOORS\ZULGURUBPENDOOR.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School 03	960098	6435	5	1	1	Tradeskill_FishSchool_03.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_03.m2	pass8
+Y	Neutral	Unsorted	Be Teleporter 01	960099	6474	5	1	1	BE_Teleporter_01.m2		World\Expansion01\Doodads\Generic\BloodElf\Teleporter\BE_Teleporter_01.m2	pass8
+Y	Neutral	Unsorted	Be Scrying Orb	960100	6476	5	1	1	BE_ScryingOrb.m2		World\Expansion01\Doodads\Generic\BloodElf\ScryingOrb\BE_ScryingOrb.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School 02	960101	6482	5	1	1	Tradeskill_FishSchool_02.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_02.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School Oil	960102	6485	5	1	1	Tradeskill_FishSchool_Oil.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_Oil.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School Elemental Water	960103	6527	5	1	1	Tradeskill_FishSchool_ElementalWater.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_ElementalWater.m2	pass8
+Y	Neutral	Unsorted	Karazahn Bridgedoors	960104	6627	5	1	1	KARAZAHN_BRIDGEDOORS.m2		WORLD\AZEROTH\KARAZAHN\ACTIVEDOODADS\KARAZAHN_BRIDGEDOORS.m2	pass8
+Y	Neutral	Unsorted	Karazahn Diningruindoor	960105	6630	5	1	1	KARAZAHN_DININGRUINDOOR.m2		WORLD\AZEROTH\KARAZAHN\ACTIVEDOODADS\KARAZAHN_DININGRUINDOOR.m2	pass8
+Y	Neutral	Unsorted	Obsidian Miningnode 01	960106	6650	5	1	1	Obsidian_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Obsidian_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Nox Door Deathknight	960107	6672	5	1	1	NOX_DOOR_DEATHKNIGHT.m2		WORLD\LORDAERON\STRATHOLME\ACTIVEDOODADS\DOORS\NOX_DOOR_DEATHKNIGHT.m2	pass8
+Y	Neutral	Unsorted	Nox Door Abom	960108	6674	5	1	1	NOX_DOOR_ABOM.m2		WORLD\LORDAERON\STRATHOLME\ACTIVEDOODADS\DOORS\NOX_DOOR_ABOM.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fish School Eels Yellow	960109	6742	5	1	1	Tradeskill_FishSchool_EelsYellow.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_FishSchool_EelsYellow.m2	pass8
+Y	Neutral	Unsorted	Hellfire Bossdoor01	960110	6773	5	1	1	HELLFIRE_BOSSDOOR01.m2		WORLD\EXPANSION01\DOODADS\HELLFIRECITADEL\ACTIVEDOODADS\DOORS\HELLFIRE_BOSSDOOR01.m2	pass8
+Y	Neutral	Unsorted	Bush Blood Thistle	960111	6777	5	1	1	Bush_BloodThistle.m2		World\SkillActivated\TradeskillNodes\Bush_BloodThistle.m2	pass8
+Y	Neutral	Unsorted	Adamantium Miningnode 01	960112	6798	5	1	1	Adamantium_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Adamantium_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Fel Iron Miningnode 01	960113	6799	5	1	1	FelIron_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\FelIron_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Khorium Miningnode 01	960114	6800	5	1	1	Khorium_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Khorium_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Bush Spine Leaf	960115	6807	5	1	1	Bush_SpineLeaf.m2		World\SkillActivated\TradeskillNodes\Bush_SpineLeaf.m2	pass8
+Y	Neutral	Unsorted	Hellfire Dw Prisonentry	960116	6847	5	1	1	HELLFIRE_DW_PRISONENTRY.m2		WORLD\EXPANSION01\DOODADS\HELLFIRECITADEL\DEMONWING\PASSIVEDOODADS\DOORS\HELLFIRE_DW_PRISONENTRY.m2	pass8
+Y	Neutral	Unsorted	Hellfire Dw Celldoor	960117	6855	5	1	1	HELLFIRE_DW_CELLDOOR.m2		WORLD\EXPANSION01\DOODADS\HELLFIRECITADEL\DEMONWING\PASSIVEDOODADS\DOORS\HELLFIRE_DW_CELLDOOR.m2	pass8
+Y	Neutral	Unsorted	Hellfire Dw Summondoor	960118	6856	5	1	1	HELLFIRE_DW_SUMMONDOOR.m2		WORLD\EXPANSION01\DOODADS\HELLFIRECITADEL\DEMONWING\PASSIVEDOODADS\SUMMON_DOOR\HELLFIRE_DW_SUMMONDOOR.m2	pass8
+Y	Neutral	Unsorted	Hellfire Dw Summonroomdoor	960119	6865	5	1	1	HELLFIRE_DW_SUMMONROOMDOOR.m2		WORLD\EXPANSION01\DOODADS\HELLFIRECITADEL\DEMONWING\ACTIVEDOODADS\SUMMON_DOOR\HELLFIRE_DW_SUMMONROOMDOOR.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Alchemyset 02	960120	6900	5	1	1	TRADESKILL_ALCHEMYSET_02.m2		WORLD\SKILLACTIVATED\TRADESKILLENABLERS\TRADESKILL_ALCHEMYSET_02.m2	pass8
+Y	Neutral	Unsorted	Bush Manathistle	960121	6945	5	1	1	Bush_Manathistle.m2		World\SkillActivated\TradeskillNodes\Bush_Manathistle.m2	pass8
+Y	Neutral	Unsorted	Bush Nightmare Vine	960122	6946	5	1	1	Bush_NightmareVine.m2		World\SkillActivated\TradeskillNodes\Bush_NightmareVine.m2	pass8
+Y	Neutral	Unsorted	Bush Netherbloom	960123	6947	5	1	1	Bush_Netherbloom.m2		World\SkillActivated\TradeskillNodes\Bush_Netherbloom.m2	pass8
+Y	Neutral	Unsorted	Bush Dreamingglory	960124	6948	5	1	1	Bush_Dreamingglory.m2		World\SkillActivated\TradeskillNodes\Bush_Dreamingglory.m2	pass8
+Y	Neutral	Unsorted	Bush Ragveil	960125	6949	5	1	1	Bush_Ragveil.m2		World\SkillActivated\TradeskillNodes\Bush_Ragveil.m2	pass8
+Y	Neutral	Unsorted	Bush Ancient Lichen	960126	6967	5	1	1	Bush_AncientLichen.m2		World\SkillActivated\TradeskillNodes\Bush_AncientLichen.m2	pass8
+Y	Neutral	Unsorted	Bush Felweed	960127	6968	5	1	1	Bush_Felweed.m2		World\SkillActivated\TradeskillNodes\Bush_Felweed.m2	pass8
+Y	Neutral	Unsorted	Bush Terrocone	960128	6969	5	1	1	Bush_Terrocone.m2		World\SkillActivated\TradeskillNodes\Bush_Terrocone.m2	pass8
+Y	Neutral	Unsorted	Coilfang Pumpingdoor	960129	7014	5	1	1	COILFANG_PUMPINGDOOR.m2		WORLD\EXPANSION01\DOODADS\COILFANG\ACTIVEDOODADS\PUMPINGDOOR\COILFANG_PUMPINGDOOR.m2	pass8
+Y	Neutral	Unsorted	Ancdrae Elevatorpiece	960130	7026	5	1	1	ANCDRAE_ELEVATORPIECE.m2		WORLD\EXPANSION01\DOODADS\SHATTRATH\ACTIVEDOODADS\ELEVATOR\ANCDRAE_ELEVATORPIECE.m2	pass8
+Y	Neutral	Unsorted	Mushroombase Elevator	960131	7028	5	1	1	MUSHROOMBASE_ELEVATOR.m2		WORLD\EXPANSION01\DOODADS\ZANGAR\MUSHROOMBASE\MUSHROOMBASE_ELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Cf Elevatorplatform	960132	7043	5	1	1	CF_ELEVATORPLATFORM.m2		WORLD\EXPANSION01\DOODADS\COILFANG\ACTIVEDOODADS\ELEVATOR\CF_ELEVATORPLATFORM.m2	pass8
+Y	Neutral	Unsorted	Factoryelevator	960133	7077	5	1	1	FACTORYELEVATOR.m2		WORLD\EXPANSION01\DOODADS\GENERIC\DRAENEI\TEMPESTKEEP\FACTORYELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Be Scrying Orb Epic	960134	7150	5	1	1	BE_ScryingOrb_Epic.m2		World\Expansion01\Doodads\Generic\BloodElf\ScryingOrb\BE_ScryingOrb_Epic.m2	pass8
+Y	Neutral	Unsorted	Ancdrae Elevatorpiece Netherstorm	960135	7163	5	1	1	ANCDRAE_ELEVATORPIECE_NETHERSTORM.m2		WORLD\EXPANSION01\DOODADS\SHATTRATH\ACTIVEDOODADS\ELEVATOR\ANCDRAE_ELEVATORPIECE_NETHERSTORM.m2	pass8
+Y	Neutral	Unsorted	Dragon Bones Body No Collision	960136	7169	5	1	1	DragonBonesBody_noCollision.m2		World\KhazModan\Wetlands\PassiveDoodads\DragonBones\DragonBonesBody_noCollision.m2	pass8
+Y	Neutral	Unsorted	Blood Elf Power Orb Green	960137	7244	5	1	1	BloodElf_PowerOrb_Green.m2		World\Expansion01\Doodads\Generic\BloodElf\PowerOrb\BloodElf_PowerOrb_Green.m2	pass8
+Y	Neutral	Unsorted	Collision Wall Pv P01 Textured	960138	7299	5	1	1	CollisionWallPvP01_Textured.m2		World\Generic\PvP\CollisionWall\CollisionWallPvP01_Textured.m2	pass8
+Y	Neutral	Unsorted	Skeleton In A Jar	960139	7307	5	1	1	Skeleton_in_a_jar.m2		World\Lordaeron\Scholomance\PassiveDoodads\TestingTubes\Skeleton_in_a_jar.m2	pass8
+Y	Neutral	Unsorted	Moo Well Water Fx	960140	7331	5	1	1	MooWellWaterFX.m2		World\Kalimdor\Kalidar\PassiveDoodads\MoonWellWater\MooWellWaterFX.m2	pass8
+Y	Neutral	Unsorted	Dragon Bones Skull No Collision	960141	7354	5	1	1	DragonBonesSkull_noCollision.m2		World\KhazModan\Wetlands\PassiveDoodads\DragonBones\DragonBonesSkull_noCollision.m2	pass8
+Y	Neutral	Unsorted	Ancient Gem Miningnode 01	960142	7360	5	1	1	AncientGem_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\AncientGem_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Bt Illidan Door	960143	7387	5	1	1	BT_ILLIDAN_DOOR.m2		WORLD\EXPANSION01\DOODADS\BLACKTEMPLE\ACTIVEDOODADS\DOORS\BT_ILLIDAN_DOOR.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Alchemy Cauldron Blue	960144	7407	5	1	1	Tradeskill_AlchemyCauldron_Blue.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_AlchemyCauldron_Blue.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Alchemy Cauldron Green	960145	7410	5	1	1	Tradeskill_AlchemyCauldron_Green.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_AlchemyCauldron_Green.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Alchemy Cauldron Purple	960146	7411	5	1	1	Tradeskill_AlchemyCauldron_Purple.m2		World\SkillActivated\TradeskillEnablers\Tradeskill_AlchemyCauldron_Purple.m2	pass8
+Y	Neutral	Unsorted	Vr Elevator Gate	960147	7451	5	1	1	VR_ELEVATOR_GATE.m2		WORLD\EXPANSION02\DOODADS\GENERIC\VRYKUL\ELEVATOR\VR_ELEVATOR_GATE.m2	pass8
+Y	Neutral	Unsorted	Vr Elevator Lift	960148	7452	5	1	1	VR_ELEVATOR_LIFT.m2		WORLD\EXPANSION02\DOODADS\GENERIC\VRYKUL\ELEVATOR\VR_ELEVATOR_LIFT.m2	pass8
+Y	Neutral	Unsorted	Hf Elevator Gate	960149	7519	5	1	1	HF_ELEVATOR_GATE.m2		WORLD\EXPANSION02\DOODADS\HOWLINGFJORD\HF_ELEVATOR_GATE.m2	pass8
+Y	Neutral	Unsorted	Hf Elevator Lift 02	960150	7520	5	1	1	HF_ELEVATOR_LIFT_02.m2		WORLD\EXPANSION02\DOODADS\HOWLINGFJORD\HF_ELEVATOR_LIFT_02.m2	pass8
+Y	Neutral	Unsorted	Hf Elevator Lift	960151	7521	5	1	1	HF_ELEVATOR_LIFT.m2		WORLD\EXPANSION02\DOODADS\HOWLINGFJORD\HF_ELEVATOR_LIFT.m2	pass8
+Y	Neutral	Unsorted	Transport Tuskarr Turtle	960152	7634	5	1	1	Transport_Tuskarr_turtle.m2		World\Generic\PassiveDoodads\Ships\ShipAnimation\Transport_Tuskarr_turtle.m2	pass8
+Y	Neutral	Unsorted	Logrun Pumpelevator01	960153	7648	5	1	1	LOGRUN_PUMPELEVATOR01.m2		WORLD\EXPANSION02\DOODADS\GRIZZLYHILLS\VENTURECO\LOGRUN_PUMPELEVATOR01.m2	pass8
+Y	Neutral	Unsorted	Crashed Zeppelin Piece 03	960154	7699	5	1	1	CrashedZeppelinPiece_03.m2		World\Expansion02\Doodads\Generic\Zeppelin\CrashedZeppelinPiece_03.m2	pass8
+Y	Neutral	Unsorted	Crashed Zeppelin Piece 04	960155	7700	5	1	1	CrashedZeppelinPiece_04.m2		World\Expansion02\Doodads\Generic\Zeppelin\CrashedZeppelinPiece_04.m2	pass8
+Y	Neutral	Unsorted	Gray Stone01	960156	7750	5	1	1	GrayStone01.m2		World\Generic\PassiveDoodads\GrayStone\GrayStone01.m2	pass8
+Y	Neutral	Unsorted	G Gnome Terminal Collision	960157	7764	5	1	1	G_GnomeTerminal_Collision.m2		World\Goober\G_GnomeTerminal_Collision.m2	pass8
+Y	Neutral	Unsorted	Sunwell Bossforcefield	960158	7770	5	1	1	SUNWELL_BOSSFORCEFIELD.m2		WORLD\EXPANSION01\DOODADS\SUNWELL\PASSIVEDOODADS\SUNWELL\SUNWELL_BOSSFORCEFIELD.m2	pass8
+Y	Neutral	Unsorted	Nexus Elevator Basestructure 01	960159	7793	5	1	1	NEXUS_ELEVATOR_BASESTRUCTURE_01.m2		WORLD\EXPANSION02\DOODADS\NEXUS\NEXUS_ELEVATOR_BASESTRUCTURE_01.m2	pass8
+Y	Neutral	Unsorted	Id Elevator	960160	7794	5	1	1	ID_ELEVATOR.m2		WORLD\EXPANSION02\DOODADS\GENERIC\IRONDWARF\ID_ELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Orc Fortress Elevator01	960161	7797	5	1	1	ORC_FORTRESS_ELEVATOR01.m2		WORLD\EXPANSION02\DOODADS\GENERIC\WINTERORC\ORC_FORTRESS_ELEVATOR01.m2	pass8
+Y	Neutral	Unsorted	Sunwell Bosscollision01	960162	7798	5	1	1	SUNWELL_BOSSCOLLISION01.m2		WORLD\EXPANSION01\DOODADS\SUNWELL\PASSIVEDOODADS\SUNWELL\SUNWELL_BOSSCOLLISION01.m2	pass8
+Y	Neutral	Unsorted	Sunwell Bosscollision02	960163	7799	5	1	1	SUNWELL_BOSSCOLLISION02.m2		WORLD\EXPANSION01\DOODADS\SUNWELL\PASSIVEDOODADS\SUNWELL\SUNWELL_BOSSCOLLISION02.m2	pass8
+Y	Neutral	Unsorted	Yoggthorite Miningnode 01	960164	7804	5	1	1	Yoggthorite_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Yoggthorite_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Gundrak Trapdoor01	960165	7839	5	1	1	GUNDRAK_TRAPDOOR01.m2		WORLD\EXPANSION02\DOODADS\DRAKTHERON\TRAPDOORS\GUNDRAK_TRAPDOOR01.m2	pass8
+Y	Neutral	Unsorted	Bush Goldclover	960166	7844	5	1	1	Bush_Goldclover.m2		World\SkillActivated\TradeskillNodes\Bush_Goldclover.m2	pass8
+Y	Neutral	Unsorted	Bush Constrictorgrass	960167	7845	5	1	1	Bush_Constrictorgrass.m2		World\SkillActivated\TradeskillNodes\Bush_Constrictorgrass.m2	pass8
+Y	Neutral	Unsorted	Bush Tiger Lily	960168	7864	5	1	1	Bush_TigerLily.m2		World\SkillActivated\TradeskillNodes\Bush_TigerLily.m2	pass8
+Y	Neutral	Unsorted	Bush Talandras Rose	960169	7865	5	1	1	Bush_TalandrasRose.m2		World\SkillActivated\TradeskillNodes\Bush_TalandrasRose.m2	pass8
+Y	Neutral	Unsorted	Ic Citadel Door01	960170	7870	5	1	1	IC_CITADEL_DOOR01.m2		WORLD\EXPANSION02\DOODADS\ICECROWN\DOORS\IC_CITADEL_DOOR01.m2	pass8
+Y	Neutral	Unsorted	Cobalt Miningnode 01	960171	7881	5	1	1	Cobalt_Miningnode_01.m2		World\SkillActivated\TradeskillNodes\Cobalt_Miningnode_01.m2	pass8
+Y	Neutral	Unsorted	Org Arena Elevator	960172	7973	5	1	1	ORG_ARENA_ELEVATOR.m2		WORLD\GENERIC\PASSIVE DOODADS\ARENAELEVATORS\ORG_ARENA_ELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Ghoul In A Jar	960173	7999	5	1	1	Ghoul_in_a_jar.m2		World\Lordaeron\Scholomance\PassiveDoodads\TestingTubes\Ghoul_in_a_jar.m2	pass8
+Y	Neutral	Unsorted	Excavation Barrier02 Pv Pcollision	960174	8027	5	1	1	ExcavationBarrier02_PvPCollision.m2		World\Generic\Dwarf\Passive Doodads\ExcavationBarriers\ExcavationBarrier02_PvPCollision.m2	pass8
+Y	Neutral	Unsorted	Logrun Pumpelevator02	960175	8079	5	1	1	LOGRUN_PUMPELEVATOR02.m2		WORLD\EXPANSION02\DOODADS\GRIZZLYHILLS\VENTURECO\LOGRUN_PUMPELEVATOR02.m2	pass8
+Y	Neutral	Unsorted	Logrun Pumpelevator03	960176	8080	5	1	1	LOGRUN_PUMPELEVATOR03.m2		WORLD\EXPANSION02\DOODADS\GRIZZLYHILLS\VENTURECO\LOGRUN_PUMPELEVATOR03.m2	pass8
+Y	Neutral	Unsorted	Bush Evergreen Moss	960177	8084	5	1	1	Bush_EvergreenMoss.m2		World\SkillActivated\TradeskillNodes\Bush_EvergreenMoss.m2	pass8
+Y	Neutral	Unsorted	Bush Frozen Herb	960178	8085	5	1	1	Bush_FrozenHerb.m2		World\SkillActivated\TradeskillNodes\Bush_FrozenHerb.m2	pass8
+Y	Neutral	Unsorted	Bush Ice Thorn	960179	8086	5	1	1	Bush_IceThorn.m2		World\SkillActivated\TradeskillNodes\Bush_IceThorn.m2	pass8
+Y	Neutral	Unsorted	Bush Whisper Vine	960180	8087	5	1	1	Bush_WhisperVine.m2		World\SkillActivated\TradeskillNodes\Bush_WhisperVine.m2	pass8
+Y	Neutral	Unsorted	Bush Frost Lotus	960181	8088	5	1	1	Bush_FrostLotus.m2		World\SkillActivated\TradeskillNodes\Bush_FrostLotus.m2	pass8
+Y	Neutral	Unsorted	Dalaran Prisondoor 01	960182	8103	5	1	1	DALARAN_PRISONDOOR_01.m2		WORLD\EXPANSION02\DOODADS\DALARAN\DALARAN_PRISONDOOR_01.m2	pass8
+Y	Neutral	Unsorted	Gray Stone02	960183	8187	5	1	1	GrayStone02.m2		World\Generic\PassiveDoodads\GrayStone\GrayStone02.m2	pass8
+Y	Neutral	Unsorted	Org Arena Yellow Elevator	960184	8258	5	1	1	ORG_ARENA_YELLOW_ELEVATOR.m2		WORLD\GENERIC\PASSIVE DOODADS\ARENAELEVATORS\ORG_ARENA_YELLOW_ELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Azjol Door Boss 01	960185	8268	5	1	1	AZJOL_DOOR_BOSS_01.m2		WORLD\EXPANSION02\DOODADS\AZJOL-NERUB\AZJOL_DOOR_BOSS_01.m2	pass8
+Y	Neutral	Unsorted	Azjol Door Boss 02	960186	8269	5	1	1	AZJOL_DOOR_BOSS_02.m2		WORLD\EXPANSION02\DOODADS\AZJOL-NERUB\AZJOL_DOOR_BOSS_02.m2	pass8
+Y	Neutral	Unsorted	Azjol Door Boss 03	960187	8270	5	1	1	AZJOL_DOOR_BOSS_03.m2		WORLD\EXPANSION02\DOODADS\AZJOL-NERUB\AZJOL_DOOR_BOSS_03.m2	pass8
+Y	Neutral	Unsorted	Gundrak Elevator 01	960188	8277	5	1	1	GUNDRAK_ELEVATOR_01.m2		WORLD\EXPANSION02\DOODADS\ZULDRAK\GUNDRAK\GUNDRAK_ELEVATOR_01.m2	pass8
+Y	Neutral	Unsorted	Wg Siege Door	960189	8312	5	1	1	WG_SIEGE_DOOR.m2		WORLD\EXPANSION02\DOODADS\LAKEWINTERGRASP\WG_SIEGE_DOOR.m2	pass8
+Y	Neutral	Unsorted	Roast Boar Platter Nocollision	960190	8333	5	1	1	RoastBoarPlatter_nocollision.m2		World\Generic\Human\Passive Doodads\Food\RoastBoarPlatter_nocollision.m2	pass8
+Y	Neutral	Unsorted	Sc Blood Orb	960191	8365	5	1	1	SC_BloodOrb.m2		World\Expansion02\Doodads\Generic\Scourge\SC_BloodOrb.m2	pass8
+Y	Neutral	Unsorted	Ags Brasscannon	960192	8381	5	1	1	AGS_BRASSCANNON.m2		WORLD\EXPANSION02\DOODADS\ICECROWN\ALLIANCE_GUNSHIP\AGS_BRASSCANNON.m2	pass8
+Y	Neutral	Unsorted	Alliance Boat Gate Bg	960193	8411	5	1	1	ALLIANCE_BOAT_GATE_BG.m2		WORLD\GENERIC\HUMAN\ACTIVEDOODADS\GATE\ALLIANCE_BOAT_GATE_BG.m2	pass8
+Y	Neutral	Unsorted	Horde Boat Gate Bg	960194	8412	5	1	1	HORDE_BOAT_GATE_BG.m2		WORLD\GENERIC\HORDE\ACTIVEDOODADS\GATE\HORDE_BOAT_GATE_BG.m2	pass8
+Y	Neutral	Unsorted	Gundrak Trapdoor 02	960195	8413	5	1	1	GUNDRAK_TRAPDOOR_02.m2		WORLD\EXPANSION02\DOODADS\ZULDRAK\GUNDRAK\GUNDRAK_TRAPDOOR_02.m2	pass8
+Y	Neutral	Unsorted	Sp Roc Nest03Collision	960196	8440	5	1	1	SP_RocNest03collision.m2		World\Expansion02\Doodads\Stormpeaks\Rocs\SP_RocNest03collision.m2	pass8
+Y	Neutral	Unsorted	Be Barrel 01 No Collision	960197	8530	5	1	1	BE_Barrel_01_NoCollision.m2		World\Expansion01\Doodads\Generic\BloodElf\Barrel\BE_Barrel_01_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Elf Barrel01 No Collision	960198	8531	5	1	1	ElfBarrel01_NoCollision.m2		World\Generic\NightElf\Passive Doodads\Barrel\ElfBarrel01_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Be Bottle04 No Collision	960199	8532	5	1	1	BE_Bottle04_NoCollision.m2		World\Expansion01\Doodads\Generic\BloodElf\Bottles\BE_Bottle04_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Be Bottle03 No Collision	960200	8533	5	1	1	BE_Bottle03_NoCollision.m2		World\Expansion01\Doodads\Generic\BloodElf\Bottles\BE_Bottle03_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Bread01 No Collision	960201	8534	5	1	1	bread01_NoCollision.m2		World\Generic\Human\Passive Doodads\Food\bread01_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Cheese Wheel01 No Collision	960202	8535	5	1	1	CheeseWheel01_NoCollision.m2		World\Generic\Human\Passive Doodads\Food\CheeseWheel01_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Cheese Wheel Swiss01 No Collision	960203	8536	5	1	1	CheeseWheelSwiss01_NoCollision.m2		World\Generic\Human\Passive Doodads\Food\CheeseWheelSwiss01_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Firstaid No Collision	960204	8537	5	1	1	Firstaid_NoCollision.m2		World\EXPANSION02\DOODADS\GENERIC\FirstAid\Firstaid_NoCollision.m2	pass8
+Y	Neutral	Unsorted	Hordezepanimation	960205	8538	5	1	1	HORDEZEPANIMATION.m2		WORLD\GENERIC\PASSIVEDOODADS\SHIPS\HORDEZEPPELINANIMATION\HORDEZEPANIMATION.m2	pass8
+Y	Neutral	Unsorted	Ul Ulduar Trapdoor 02	960206	8546	5	1	1	UL_ULDUAR_TRAPDOOR_02.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_ULDUAR_TRAPDOOR_02.m2	pass8
+Y	Neutral	Unsorted	Ul Ulduar Trapdoor 01	960207	8547	5	1	1	UL_ULDUAR_TRAPDOOR_01.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_ULDUAR_TRAPDOOR_01.m2	pass8
+Y	Neutral	Unsorted	Ul Ulduar Doors05	960208	8571	5	1	1	UL_ULDUAR_DOORS05.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_ULDUAR_DOORS05.m2	pass8
+Y	Neutral	Unsorted	Ul Gnomewing Teleportpad	960209	8600	5	1	1	UL_GNOMEWING_TELEPORTPAD.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_GNOMEWING_TELEPORTPAD.m2	pass8
+Y	Neutral	Unsorted	Ul Gnomewing Torsoelevator	960210	8601	5	1	1	UL_GNOMEWING_TORSOELEVATOR.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_GNOMEWING_TORSOELEVATOR.m2	pass8
+Y	Neutral	Unsorted	Tradeskill Fishschool Red	960211	8610	5	1	1	tradeskill_fishschool_red.m2		world\skillactivated\tradeskillenablers\tradeskill_fishschool_red.m2	pass8
+Y	Neutral	Unsorted	Ul Teleportationpad	960212	8632	5	1	1	ul_teleportationpad.m2		world\expansion02\doodads\ulduar\ul_teleportationpad.m2	pass8
+Y	Neutral	Unsorted	Ulduarraid Gnomewing Transport Doodad	960213	8674	5	1	1	ULDUARRAID_GNOMEWING_TRANSPORT_DOODAD.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\ULDUARRAID_GNOMEWING_TRANSPORT_DOODAD.m2	pass8
+Y	Neutral	Unsorted	Ul Sigildoor 01	960214	8680	5	1	1	UL_SIGILDOOR_01.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_SIGILDOOR_01.m2	pass8
+Y	Neutral	Unsorted	Ul Sigildoor 02	960215	8710	5	1	1	UL_SIGILDOOR_02.m2		WORLD\EXPANSION02\DOODADS\ULDUAR\UL_SIGILDOOR_02.m2	pass8
+Y	Neutral	Unsorted	Sc Teleportpad2	960216	9194	5	1	1	sc_teleportpad2.m2		world\expansion02\doodads\generic\scourge\sc_teleportpad2.m2	pass8
+Y	Neutral	Unsorted	Sc Teleportpad3	960217	9295	5	1	1	SC_TELEPORTPAD3.m2		WORLD\EXPANSION02\DOODADS\GENERIC\SCOURGE\SC_TELEPORTPAD3.m2	pass8

@@ -38,7 +38,7 @@ return function(G)
         return basePrice[name]
     end
     local function IsCat(name) for _, n in ipairs(CatList()) do if n == name then return true end end; return false end
-    local function IsPinned(name) return name == PINNED[1] or name == PINNED[2] end
+    local function IsPinned(name) for _, n in ipairs(PINNED) do if n == name then return true end end return false end
     -- categories are always alphabetical (case-insensitive); a subcategory ("Parent > Child") follows its parent, also alphabetical; Unsorted, Removed last
     local function SortKey(n)
         local rank = n == "Removed" and 2 or (n == "Unsorted" and 1 or 0)
@@ -81,7 +81,14 @@ return function(G)
         q = CharDBQuery("SELECT model, vs, vy, vz, vr FROM dc_garrison_cur_fit")
         if q then repeat S.fit[q:GetString(0)] = { q:GetFloat(1), q:GetFloat(2), q:GetFloat(3), q:GetFloat(4) } until not q:NextRow() end
         q = CharDBQuery("SELECT name, price FROM dc_garrison_cur_cat ORDER BY seq")
-        if q then S.cats = {}; repeat S.cats[#S.cats + 1] = { name = q:GetString(0), price = q:GetUInt32(1) } until not q:NextRow() end
+        if q then
+            S.cats = {}; repeat S.cats[#S.cats + 1] = { name = q:GetString(0), price = q:GetUInt32(1) } until not q:NextRow()
+            for _, pn in ipairs(PINNED) do   -- a pinned category added by a later version (e.g. WMO) is appended to an older saved list
+                local have = false; for _, c in ipairs(S.cats) do if c.name == pn then have = true end end
+                if not have then S.cats[#S.cats + 1] = { name = pn, price = 0 } end
+            end
+            SortCats(S.cats)
+        end
         q = CharDBQuery("SELECT v FROM dc_garrison_cur_meta WHERE k='rev'")
         S.rev = q and q:GetUInt32(0) or 0
         ApplyAll()

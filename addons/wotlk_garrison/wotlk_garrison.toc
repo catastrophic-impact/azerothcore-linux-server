@@ -6,6 +6,7 @@
 ## SavedVariables: WotlkGarrisonDB
 Catalog.lua
 Core.lua
+WmoPreviews.lua
 Preview.lua
 Placed.lua
 PlaceMode.lua

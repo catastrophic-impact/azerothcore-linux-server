@@ -105,6 +105,8 @@ local function NewPlayer(guid, acct, name)
     function p:GetGUIDLow() return self.guid end
     function p:GetGUID() return self.guid end
     function p:GetAccountId() return self.acct end
+    function p:HasSpell() return false end
+    function p:GetTeam() return self.team or 0 end   -- 0 Alliance, 1 Horde
     function p:GetName() return self.name end
     function p:IsAlive() return true end
     function p:IsInWater() return false end
@@ -208,6 +210,13 @@ OnSelect(1, p, {}, 0, 1); land(p); poll()
 Msg().handlers["house|exit"](p, "")
 check(p.phase == 1 and p.tele and p.tele[2] == -8981.65, "Exit Garrison button: out to the Mage Tower")
 land(p)
+do   -- a Horde player leaving is sent to the Orgrimmar portal (.tele hportals), not to Stormwind
+    local keep = p.team; p.team = 1
+    OnSelect(1, p, {}, 0, 1); land(p); poll()
+    Msg().handlers["house|exit"](p, "")
+    check(p.tele and p.tele[1] == 1 and p.tele[2] == 1455.46, "Horde exit: out to the Orgrimmar portal")
+    p.team = keep; land(p)
+end
 
 
 -- polygon area + border preview

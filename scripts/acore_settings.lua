@@ -23,7 +23,7 @@ return {
     --   (saved permanently; move with .npc move, remove by targeting her and typing .npc delete; face her with .npc set o)
     -- Then: restart the server or console `reload ale`.
     dungeonTeleporter = { npc = 900001 },
-    -- Garrisons (housing): players pick one of the locations in scripts/garrison.lua at the portal (Stormwind Mage Tower).
+    -- Garrisons (housing): players pick one of the locations in scripts/garrison.lua at the portal (Stormwind Mage Tower or Orgrimmar).
     garrison = { enabled = true, debug = false,
                  -- price of claiming a garrison at the portal (every pick, also when switching; abandoning refunds nothing). currency = "free" | "gold" | "item"; amount = gold or item count; item = item id
                  cost = { currency = "free", item = 0, amount = 0 },

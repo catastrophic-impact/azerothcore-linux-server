@@ -12,12 +12,14 @@ return function(G)
         markerSeconds = S.markerSeconds or 30,
         currency = S.currency or "free",         -- price of placing things: "free" | "gold" | "item"
         currencyItem = S.currencyItem or 0,
-        portalEntry = 900002,                    -- the portal gameobject (custom-sql/002_garrison.sql)
+        portalEntry = 900002,                    -- the portal gameobject at the Stormwind Mage Tower (custom-sql/002_garrison.sql)
+        portalEntryHorde = 900003,               -- the same portal in Orgrimmar (.tele hportals), same menu: either faction may use either one
         -- where the portal stands and where players are sent when they leave a garrison (Stormwind, Mage Tower = .tele garportal)
-        hub = S.hub or { map = 0, x = -8981.65, y = 855.01, z = 29.621, o = 3.03693 },
+        hub = S.hub or { map = 0, x = -8981.65, y = 855.01, z = 29.621, o = 3.03693 },                 -- Alliance
+        hubHorde = S.hubHorde or { map = 1, x = 1455.46, y = -4220.69, z = 43.1861, o = 0.0887271 },   -- Horde (Orgrimmar, = .tele hportals)
         arriveDist = 20,                         -- yards from the portal point towards the center where you appear
         arriveGrace = 10,                        -- seconds the area check ignores a player whose teleport has not landed yet
-        leaveSeconds = S.leaveSeconds or 5,      -- countdown after you cross the border: walk back in before it ends or you are sent to the Mage Tower
+        leaveSeconds = S.leaveSeconds or 5,      -- countdown after you cross the border: walk back in before it ends or you are sent back to your faction's portal
         leaveLimit = S.leaveLimit or 20,         -- ...and how many yards past the border you may get during the countdown before you are sent out at once
         claim = { currency = cost.currency or "free", item = cost.item or 0, amount = cost.amount or 0 },   -- price of claiming a garrison
         perks = {                                -- inside a garrison: instant /logout (like an inn) and rested XP

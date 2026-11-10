@@ -1,4 +1,4 @@
--- Garrison module 8/14: the portal NPC-object (Stormwind Mage Tower). A player without a garrison picks one of the enabled locations
+-- Garrison module 8/14: the portal NPC-object (Stormwind Mage Tower for Alliance, Orgrimmar for Horde; same menu, either faction may use either). A player without a garrison picks one of the enabled locations
 -- (price: acore_settings garrison.cost); a player with one can enter it, visit a group member's, or abandon it (everything placed is lost, no refund).
 -- Ownership is one location per account (dc_garrison_owner, cached in G.owners).
 return function(G)
@@ -90,6 +90,8 @@ return function(G)
         end
         return true
     end
-    RegisterGameObjectGossipEvent(cfg.portalEntry, 1, OnHello)
-    RegisterGameObjectGossipEvent(cfg.portalEntry, 2, OnSelect)
+    for _, entry in ipairs({ cfg.portalEntry, cfg.portalEntryHorde }) do
+        RegisterGameObjectGossipEvent(entry, 1, OnHello)
+        RegisterGameObjectGossipEvent(entry, 2, OnSelect)
+    end
 end

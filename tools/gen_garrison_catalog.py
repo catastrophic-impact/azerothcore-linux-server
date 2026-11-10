@@ -2,7 +2,7 @@
 """Generate the garrison catalog (server Lua + addon Lua) from garrison-config.json.
 Names come from the world DB; object preview models come from GameObjectDisplayInfo.dbc (<release>/data/dbc).
 usage: gen_garrison_catalog.py [release_dir]      env: ACORE_PREFIX (e.g. 'flatpak-spawn --host')"""
-import json, os, struct, subprocess, sys
+import json, os, re, struct, subprocess, sys
 proj = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 rel = sys.argv[1] if len(sys.argv) > 1 else os.path.join(proj, 'release')
 cfg = json.load(open(os.path.join(proj, 'garrison-config.json')))
@@ -14,7 +14,11 @@ if os.path.exists(_sheet):
         _c = _l.split('\t')
         if len(_c) < 6 or _c[0].strip().upper() not in ('Y', 'R') or int(_c[4]) in have: continue
         _cat = 'Removed' if _c[0].strip().upper() == 'R' else (_c[2].strip() or 'Decor')   # R = on the review shelf: category Removed, hidden from players
-        cfg['items'].append(dict(kind='d%s' % _c[4], tab='objects', category=_cat, t='g', entry=int(_c[4]), name=_c[3].strip(), multi=True, theme=_c[1].strip(), fx=((len(_c) > 12 and _c[12] == 'pass4') or (len(_c) > 11 and _c[11].lower().endswith('.wmo')))))
+        _nm = _c[3].strip()
+        if len(_c) > 11 and _c[6].strip() == '14' and _c[11].strip():   # stock type-14 names do not match their models ("Goldmine" = a pair of folded pants): name them after the model file
+            _b = re.sub(r'\.(m2|mdx|mdl|wmo)$', '', _c[11].replace('\\', '/').split('/')[-1], flags=re.I).replace('_', ' ')
+            _nm = re.sub(r'\s+', ' ', re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', _b)).strip().title()
+        cfg['items'].append(dict(kind='d%s' % _c[4], tab='objects', category=_cat, t='g', entry=int(_c[4]), name=_nm, multi=True, theme=_c[1].strip(), fx=((len(_c) > 12 and _c[12] == 'pass4') or (len(_c) > 11 and _c[11].lower().endswith('.wmo')))))
         if _cat not in cfg['tabs']['objects']: cfg['tabs']['objects'].append(_cat)
 
 # admin decisions from the in-game admin tool (claude_tools/admin_import.py): garrison-admin.json {removed:[kind], categories:{kind:cat}, cats:[ordered object categories]}
@@ -87,7 +91,7 @@ if os.path.exists(_bf):
     for _l in open(_bf).read().splitlines():
         _p = _l.split('\t')
         BOUNDS[_p[0].lower().replace('.mdx', '.m2')] = ((float(_p[1]) + float(_p[2])) / 2, float(_p[3]), float(_p[2]))
-items, missing, nobounds, t14 = [], [], [], []
+items, missing, nobounds, t14, wmo_items = [], [], [], [], []
 for it in cfg['items']:
     e = it['entry']
     if it['t'] == 'c':
@@ -99,11 +103,12 @@ for it in cfg['items']:
     else:
         if e not in gob: missing.append(it['kind']); continue
         nm, dp, ty = gob[e]
-        if ty == 14 and it.get('multi'):   # game object type 14 = map object: the client does not draw one spawned by a script (the server places it, nothing shows), so it goes to the Removed shelf
-            it['category'] = 'Removed'; it['hid'] = True; t14.append(it['kind'])
+        if go_model.get(dp, '').lower().endswith('.wmo') and it.get('multi'):   # whole-building WMOs draw now (type 14, custom-sql/014): all of them go to Unsorted for review
+            it['category'] = 'Unsorted'; it['hid'] = True; wmo_items.append(it['kind'])
         if it.get('theme') is not None and not it.get('fx') and BOUNDS and go_model.get(dp, '').lower() not in BOUNDS:
             nobounds.append(it['kind']); continue     # sheet decor whose model has no measurable geometry = particle/FX emitter
         items.append(dict(it, label=it.get('name') or nm, detail='', model=go_model.get(dp, ''), human=0))
+if wmo_items: print('%d WMO decor items put in Unsorted for review' % len(wmo_items))
 if t14: print('%d type-14 (map object) decor items forced to Removed: the client cannot draw them' % len(t14))
 if nobounds: print('dropped %d sheet items with no model geometry (FX)' % len(nobounds))
 if missing: print('MISSING from DB (dropped):', missing)
