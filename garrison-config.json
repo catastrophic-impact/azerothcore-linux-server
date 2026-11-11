@@ -8186,6 +8186,15 @@
    "multi": true,
    "wild": true,
    "icon": "Ability_Hunter_BeastCall"
+  },
+  {
+   "kind": "h_supply_drinks",
+   "tab": "npcs",
+   "category": "Horde > Supplies",
+   "t": "c",
+   "entry": 982,
+   "name": "Food & Drink (Thultash)",
+   "icon": "INV_Drink_05"
   }
  ]
 }
