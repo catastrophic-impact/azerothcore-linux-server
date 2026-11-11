@@ -241,7 +241,7 @@ local bar, sendRows = nil, {}
 local WIDE, NARROW = 1010, 800
 function G.BuildCurate(frame)
     -- header: Curator mode switch (GM level 3+ only)
-    local on = CreateFrame("CheckButton", nil, frame, "UICheckButtonTemplate"); on:SetSize(24, 24); on:SetPoint("TOPLEFT", 342, -64)
+    local on = CreateFrame("CheckButton", nil, frame, "UICheckButtonTemplate"); on:SetSize(24, 24); on:SetPoint("TOPLEFT", 450, -64)
     local onl = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); onl:SetPoint("LEFT", on, "RIGHT", 0, 0); onl:SetText("Curator")
     on:SetScript("OnClick", function(self) DB().curatorOn = self:GetChecked() and true or false; G.ApplyCur(); st.keep = {}; G.Refresh() end)
     ui.curOn = on; ui.curOnLabel = onl

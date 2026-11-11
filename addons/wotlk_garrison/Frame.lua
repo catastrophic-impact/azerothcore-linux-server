@@ -34,7 +34,7 @@ local function Build()
         b:SetPoint("TOPLEFT", 22 + (i - 1) * 104, -62); b:SetText(text); b:SetScript("OnClick", onclick); ui.tabBtns[key] = b
     end
     for i, t in ipairs(C.tabs) do
-        AddTab(i, t.key, t.key == "npcs" and "NPCs" or "Objects", function() st.tab, st.cat = t.key, t.cats[1]; G.Select(nil); G.Refresh() end)
+        AddTab(i, t.key, ({ npcs = "NPCs", objects = "Objects", creatures = "Creatures" })[t.key] or t.key, function() st.tab, st.cat = t.key, t.cats[1]; G.Select(nil); G.Refresh() end)
     end
     AddTab(#C.tabs + 1, "placed", "Placed", function() st.tab = "placed"; G.Select(nil); G.Request(); G.Refresh() end)
 
@@ -94,6 +94,13 @@ AcoreLib.On("house", "dplaced", function(p)
         st.decor[#st.decor + 1] = { did = tonumber(did), kind = kind }
         st.decorCount[kind] = (st.decorCount[kind] or 0) + 1
     end
+    G.Refresh()
+end)
+AcoreLib.On("house", "dsel", function(p)   -- "Select nearest": the server names the placed item (decor id or single-instance kind); show its list and select it
+    local did = tonumber(p)
+    local def
+    if did then for _, d in ipairs(st.decor) do if d.did == did then def = G.ItemByKind(d.kind) end end else def = G.ItemByKind(p) end
+    st.pfilter = G.PlacedType(def); st.wantSelect = did or p
     G.Refresh()
 end)
 AcoreLib.On("house", "dnew", function(p) end)   -- stay on the current tab (the Placed list still refreshes)

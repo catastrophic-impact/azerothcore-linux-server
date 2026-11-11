@@ -35,7 +35,7 @@ end
 
 -- install order matters: a part may only use what the parts before it exported. Optional parts belong to another component (the jukebox
 -- component ships garrison_jukebox.lua): if their file is not there they are skipped.
-local PARTS = { "config", "items", "curate", "economy", "store", "locations", "spawn", "session", "portal", "placement", "ghost", "menagerie", "props", { "jukebox", optional = true }, "perks", "gm" }
+local PARTS = { "config", "items", "curate", "economy", "store", "locations", "spawn", "session", "portal", "placement", "ghost", "menagerie", "wildlife", "props", { "jukebox", optional = true }, "perks", "gm" }
 for _, part in ipairs(PARTS) do
     local name = type(part) == "table" and part[1] or part
     local ok, mod = pcall(require, "garrison_" .. name)

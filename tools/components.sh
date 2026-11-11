@@ -15,8 +15,8 @@ esac; }
 # one line per file: "<kind> <path relative to the project>"   kind = script | sql | addon (addon = a folder copied into client-addons/)
 comp_files() { case "$1" in
   garrison)    echo "script scripts/garrison.lua"; echo "script scripts/garrison_catalog.lua"; echo "script scripts/garrison_anims.lua"
-               for f in config items curate economy store locations spawn session portal placement ghost menagerie props perks gm; do echo "script scripts/garrison_$f.lua"; done
-               for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts 012_decor_buildings 013_decor_rest 014_decor_types; do echo "sql custom-sql/$f.sql"; done
+               for f in config items curate economy store locations spawn session portal placement ghost menagerie wildlife props perks gm; do echo "script scripts/garrison_$f.lua"; done
+               for f in 002_garrison 003_garrison_npcs 004_menagerie 006_garrison_decor 007_marker 008_decor_templates 009_decor_effects 010_decor_fire 011_decor_shopfronts 012_decor_buildings 013_decor_rest 014_decor_types 015_wildlife; do echo "sql custom-sql/$f.sql"; done
                echo "sql custom-sql/001_chromie_teleporter_npc.sql"   # the garrison catalog lists the Dungeon Teleporter NPC (900001); without this row placing it fails
                echo "addon addons/wotlk_garrison"; echo "addon tools/wotlk_garrison_admin";;
   jukebox)     echo "addon addons/wotlk_jukebox"; echo "script scripts/garrison_jukebox.lua";;   # the script is inert without the garrison scripts

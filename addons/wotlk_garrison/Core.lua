@@ -19,6 +19,7 @@ G.st = {
     decor = {}, decorCount = {},  -- { {did, kind}, ... } in server order / count per kind
     wantSelect = nil,             -- decor id to select once the (chunked) list has arrived
     selDid = nil, previewedDid = nil,
+    pfilter = "objects",          -- Placed tab list: "objects" | "npcs" | "creatures"
     currency = "free", currencyItem = 0,   -- from the server: what placing costs (acore_settings.garrison.currency)
 }
 G.ui = {}   -- widgets, filled by the Build* functions

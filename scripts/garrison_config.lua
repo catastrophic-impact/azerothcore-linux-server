@@ -7,6 +7,7 @@ return function(G)
         debug = S.debug and true or false,
         maxDecor = S.maxDecor or 1000,           -- all decor in one garrison (acore_settings.lua: garrison.maxDecor)
         maxPets = S.maxPets or 5,                -- pets out at once
+        wildLeash = S.wildLeash or 8,            -- wildlife (placed creatures) stroll at most this many yards from where they were placed
         markerNpc = S.markerNpc or 900010,       -- custom-sql/007: "Garrison Marker"
         markerSpell = S.markerSpell or 1130,     -- Hunter's Mark
         markerSeconds = S.markerSeconds or 30,

@@ -36,6 +36,7 @@ return function(G)
         Reg(obj, def.t, loc.map)
         if row.did then h.decor[row.did] = row else h.rows[row.kind] = row end
         obj:SetPhaseMask(h.bit, true)   -- non-saved creature spawns ignore the phase argument
+        if def.t ~= "g" then pcall(function() obj:SetFaction(35) end) end   -- stock trainers / vendors keep their Alliance or Horde faction: red names and no interaction for the other side. 35 = friendly to all
     end
 
     local function DespawnKind(h, kind, did)   -- kind = one single kind, did = one decor instance, neither = everything

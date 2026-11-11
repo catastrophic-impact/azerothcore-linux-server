@@ -8,7 +8,7 @@ local marked = false
 function G.Mark()
     local s = G.st.selected
     if G.st.tab == "placed" and G.st.inHome and s and s.key then
-        AcoreLib.Send("house", "mark", s.key .. "," .. string.format("%.1f", s.tz or 2.5)); marked = true
+        AcoreLib.Send("house", "mark", s.key .. "," .. string.format("%.1f", (s.tz and s.tz > 0) and s.tz or 2.5)); marked = true
     end
 end
 function G.Unmark() if marked then AcoreLib.Send("house", "unmark", ""); marked = false end end
@@ -43,10 +43,32 @@ function G.BuildPad(frame)
     end
     Button("Snap to ground", 0, -252, 152, function() Nudge("snap") end)
     StaticPopupDialogs["WOTLKGARRISON_CLEAR_DECOR"] = {
-        text = "Remove ALL decor from this garrison?\n\nEverything you placed is removed and refunded where it was paid for. This cannot be undone.",
+        text = "Remove ALL %s from this garrison?\n\nEverything of that kind you placed is removed and refunded where it was paid for. This cannot be undone.",
         button1 = "Remove all", button2 = "Cancel", timeout = 0, whileDead = 1, hideOnEscape = 1, showAlert = 1,
-        OnAccept = function() AcoreLib.Send("house", "dclear", ""); G.Request() end,
+        OnAccept = function() AcoreLib.Send("house", "dclear", G.st.pfilter); G.Request() end,
     }
-    G.ui.clearBtn = Button("Remove all decor", 0, -306, 152, function() StaticPopup_Show("WOTLKGARRISON_CLEAR_DECOR") end)
+    G.ui.clearBtn = Button("Remove all", 0, -306, 152, function() StaticPopup_Show("WOTLKGARRISON_CLEAR_DECOR", G.st.pfilter) end)
+    G.ui.nearBtn = Button("Select nearest", 0, -340, 152, function() AcoreLib.Send("house", "dnear", G.st.pfilter) end)
     G.ui.pad = pad
+
+    -- the three Placed lists: objects (decor), NPCs (buildings / services, one of each) and creatures (wildlife). Each has its own list and its own "remove all".
+    local bar = CreateFrame("Frame", nil, frame); bar:SetSize(340, 24); bar:SetPoint("TOPLEFT", 190, -96); bar:Hide()
+    G.ui.pfBtns = {}
+    for i, f in ipairs({ { "objects", "Objects" }, { "npcs", "NPCs" }, { "creatures", "Creatures" } }) do
+        local b = CreateFrame("Button", nil, bar, "UIPanelButtonTemplate"); b:SetSize(108, 24); b:SetPoint("TOPLEFT", (i - 1) * 114, 0); b:SetText(f[2])
+        b:SetScript("OnClick", function() G.SetPlacedFilter(f[1]) end); G.ui.pfBtns[f[1]] = b
+    end
+    G.ui.pfBar = bar
+end
+
+function G.SetPlacedFilter(f)
+    G.st.pfilter = f; G.Select(nil); G.Refresh()
+end
+
+-- which Placed list a placed entry belongs to
+function G.PlacedType(def)
+    if not def then return "objects" end
+    if def.tab == "creatures" then return "creatures" end
+    if def.multi == 1 then return "objects" end
+    return "npcs"
 end

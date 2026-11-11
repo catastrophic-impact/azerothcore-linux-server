@@ -14,7 +14,7 @@ return function(G)
         local guid, map = g.guid, g.map and GetMapById(g.map, 0)
         g.guid = nil
         local obj = map and map:GetWorldObject(guid)
-        if obj then obj:RemoveFromWorld(false) end
+        if obj then if g.t == "c" then obj:DespawnOrUnsummon(0) else obj:RemoveFromWorld(false) end end   -- creature ghosts (wildlife) are temp summons
     end
     local function GhostStop(low, player, msg)
         local g = ghosts[low]; if not g then return end
@@ -46,8 +46,13 @@ return function(G)
         if not moved then return end
         GhostKill(g)
         g.x, g.y, g.z, g.o = x, y, z, go
-        local obj = PerformIngameSpawn(2, BY_KIND[g.kind].entry, loc.map, 0, x, y, z, go, false, 0, h.bit)
-        if obj then obj:SetPhaseMask(h.bit, true); g.guid, g.map = obj:GetGUID(), loc.map end
+        local def = BY_KIND[g.kind]
+        local obj = PerformIngameSpawn(def.t == "g" and 2 or 1, def.entry, loc.map, 0, x, y, z, go, false, 0, h.bit)
+        if obj then
+            g.guid, g.map, g.t = obj:GetGUID(), loc.map, def.t   -- record first, configure after
+            obj:SetPhaseMask(h.bit, true)
+            if def.t == "c" then pcall(function() obj:SetReactState(0) end) end
+        end
     end
     local function GhostTick()
         for low, g in pairs(ghosts) do
@@ -63,8 +68,8 @@ return function(G)
         local low = player:GetGUIDLow()
         if not h then return Msg.Send(player, "house", "res", "You must be inside your own garrison to place things.") end
         local def = BY_KIND[kind]
-        if not G.CanPlace(player, def) then return Msg.Send(player, "house", "res", "Unknown decor item.") end
-        local why = G.DecorLimit(h, kind)
+        if not def or (def.multi and not G.CanPlace(player, def)) then return Msg.Send(player, "house", "res", "Unknown item.") end
+        local why = def.multi and G.DecorLimit(h, kind)   -- the decor limit; single-instance NPCs / buildings have none
         if why then return Msg.Send(player, "house", "res", why) end
         GhostStop(low)   -- replaces a running one
         ghosts[low] = { kind = kind, pguid = player:GetGUID(), dist = 6, rot = 0, dz = 0, t0 = os.time(), x = 0, y = 0, z = 0, o = 0 }
@@ -97,8 +102,11 @@ return function(G)
         if not h then return GhostStop(low, player, "Placement ended.") end
         if not g.guid then return Msg.Send(player, "house", "res", "Wait a moment, the preview is still appearing.") end
         if not g.ok then return Msg.Send(player, "house", "res", "That spot is outside your garrison.") end
-        if G.PlaceDecorAt(player, h, owner, g.kind, BY_KIND[g.kind], g.x, g.y, g.z, g.o) then GhostStop(low, player, "")
-        end   -- not placed (cannot afford, limit): the ghost stays so you can cancel or fix it
+        local def = BY_KIND[g.kind]
+        local placed
+        if def.multi then placed = G.PlaceDecorAt(player, h, owner, g.kind, def, g.x, g.y, g.z, g.o)
+        else placed = G.PlaceSingleAt(player, h, owner, g.kind, def, g.x, g.y, g.z, g.o) end
+        if placed then GhostStop(low, player, "") end   -- not placed (cannot afford, limit): the ghost stays so you can cancel or fix it
     end)
     RegisterPlayerEvent(4, function(event, player) GhostStop(player:GetGUIDLow()) end)    -- logout
     RegisterPlayerEvent(28, function(event, player) GhostStop(player:GetGUIDLow()) end)   -- map change

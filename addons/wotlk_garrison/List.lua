@@ -17,10 +17,10 @@ local function UpdateButtons()
     if s.multi == 1 then
         remove:Hide()
         local n = st.decorCount[s.kind] or 0
-        place:SetText((n > 0 and ("Place another (" .. n .. " placed)") or "Place here") .. G.PriceText(s))
+        place:SetText((n > 0 and ("Place another (" .. n .. " placed)") or "Place") .. G.PriceText(s))
     else
         remove:Show(); remove:SetText("Remove")
-        place:SetText(st.placed[s.kind] and "Move here" or ("Place here" .. G.PriceText(s)))
+        place:SetText(st.placed[s.kind] and "Move here" or ("Place" .. G.PriceText(s)))
         if st.inHome and st.placed[s.kind] then remove:Enable() else remove:Disable() end
     end
     if st.inHome then place:Enable() else place:Disable() end
@@ -55,12 +55,16 @@ local function BuildList()
         for _, d in ipairs(st.decor) do
             local def = G.ItemByKind(d.kind)
             if def then
-                count[d.kind] = (count[d.kind] or 0) + 1
-                list[#list + 1] = Copy(def, { did = d.did, key = d.did, multi = 1, name = def.name .. " #" .. count[d.kind] })
+                count[d.kind] = (count[d.kind] or 0) + 1   -- numbered per kind across ALL lists, so "Wolf #2" is the same wolf whichever list you look at
+                if G.PlacedType(def) == st.pfilter then
+                    list[#list + 1] = Copy(def, { did = d.did, key = d.did, multi = 1, name = def.name .. " #" .. count[d.kind] })
+                end
             end
         end
-        for _, e in ipairs(C.items) do
-            if e.multi ~= 1 and st.placed[e.kind] then list[#list + 1] = Copy(e, { key = e.kind }) end
+        if st.pfilter == "npcs" then
+            for _, e in ipairs(C.items) do
+                if e.multi ~= 1 and st.placed[e.kind] then list[#list + 1] = Copy(e, { key = e.kind }) end
+            end
         end
     else
         local q = (st.query or ""):lower()
@@ -78,8 +82,8 @@ end
 
 local function RefreshCategories()
     for _, b in ipairs(catBtns) do b:Hide() end
-    if st.tab == "placed" then ui.pad:Show(); ui.catScroll:Hide(); return end
-    ui.pad:Hide(); ui.catScroll:Show()
+    if st.tab == "placed" then ui.pad:Show(); ui.pfBar:Show(); ui.catScroll:Hide(); return end
+    ui.pad:Hide(); ui.pfBar:Hide(); ui.catScroll:Show()
     local names = {}
     for _, name in ipairs(G.TabDef(st.tab).cats) do   -- categories with nothing in them (e.g. an empty Unsorted) are not shown
         if G.CuratorOn() and st.tab == "objects" then names[#names + 1] = name   -- a curator sees empty categories too (to send things there)
@@ -160,6 +164,10 @@ function G.Refresh()
         end
     end
     if st.tab == "placed" then   -- the plain list (placed things are nudged / removed by name, not browsed by looks)
+        ui.listScroll:ClearAllPoints(); ui.listScroll:SetPoint("TOPLEFT", 190, -124); ui.listScroll:SetHeight(G.ROW_H * G.ROW_N - 28)
+        for key, b in pairs(ui.pfBtns) do if key == st.pfilter then b:LockHighlight() else b:UnlockHighlight() end end
+        local pf = st.pfilter
+        ui.clearBtn:SetText("Remove all " .. pf); if pf == "npcs" then ui.clearBtn:Hide() else ui.clearBtn:Show() end   -- NPCs are removed one by one
         ui.listScroll:Show(); G.HideGrid()
         ui.content:SetHeight(math.max(#list * G.ROW_H, 1))
         for i, e in ipairs(list) do
@@ -331,7 +339,7 @@ end
 function G.BuildActions(frame, previewBg)   -- Place / Remove under the preview
     local place = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate"); place:SetSize(210, 30); place:SetPoint("TOP", ui.bigDetail, "BOTTOM", 0, -14)
     local remove = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate"); remove:SetSize(170, 26); remove:SetPoint("TOP", place, "BOTTOM", 0, -6); remove:SetText("Remove")
-    -- "Preview before placing" (default OFF = the instant placement as before; only for decor, which can be placed many times)
+    -- "Preview before placing" (default OFF = the instant placement as before; decor, creatures and NPCs)
     WotlkGarrisonDB = WotlkGarrisonDB or {}
     local pv = CreateFrame("CheckButton", nil, frame, "UICheckButtonTemplate"); pv:SetSize(24, 24); pv:SetPoint("TOPLEFT", remove, "BOTTOMLEFT", 0, -4)
     local pvl = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); pvl:SetPoint("LEFT", pv, "RIGHT", 2, 0); pvl:SetText("Preview before placing (Enter)")
@@ -340,7 +348,7 @@ function G.BuildActions(frame, previewBg)   -- Place / Remove under the preview
     pv:SetScript("OnClick", function(self) WotlkGarrisonDB.preview = self:GetChecked() and true or false end)
     place:SetScript("OnClick", function()
         local s = st.selected; if not s then return end
-        if s.multi == 1 and WotlkGarrisonDB.preview and st.tab ~= "placed" then AcoreLib.Send("house", "pstart", s.kind); return end
+        if WotlkGarrisonDB.preview and st.tab ~= "placed" then AcoreLib.Send("house", "pstart", s.kind); return end
         AcoreLib.Send("house", s.multi == 1 and "dplace" or "place", s.kind); G.Request()
     end)
     remove:SetScript("OnClick", function()

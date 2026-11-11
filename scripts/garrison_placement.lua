@@ -69,18 +69,14 @@ return function(G)
         if dchunk ~= "" then Msg.Send(player, "house", "dplaced", dchunk) end
     end)
 
-    Msg.On("house", "place", function(player, kind)
-        local h, owner = MyHouse(player)
-        if not h then return Res(player, "You must be inside your own garrison to place things.") end
-        local def = BY_KIND[kind]
-        if not def then return Res(player, "Unknown item.") end
-        if def.multi then return Res(player, "Use 'Place new' for decor.") end
-        local row = { kind = kind, x = player:GetX(), y = player:GetY(), z = player:GetZ(), o = player:GetO(), paid = 0, pcur = "" }
+    -- single-instance kinds (NPCs / buildings, one of each): placing again = moving (free, keeps what was paid). Shared by "place" (where you stand) and placement mode.
+    local function PlaceSingleAt(player, h, owner, kind, def, x, y, z, o)
+        local row = { kind = kind, x = x, y = y, z = z, o = o, paid = 0, pcur = "" }
         local old = h.rows[kind]
-        if old then row.paid, row.pcur = old.paid or 0, old.pcur or ""    -- placing again = moving: free, keeps what was paid
+        if old then row.paid, row.pcur = old.paid or 0, old.pcur or ""
         else
             local ok, paid, pcur, why = Charge(player, def)
-            if not ok then return Res(player, why) end
+            if not ok then Res(player, why); return false end
             row.paid, row.pcur = paid, pcur
         end
         DespawnKind(h, kind)    -- one of each kind: placing again moves it
@@ -88,6 +84,17 @@ return function(G)
         SpawnOne(h, row)
         if kind == "menagerie" then G.Menagerie.Roll(h, owner, player) end
         Res(player, (old and "Moved: " or "Placed: ") .. def.name .. (row.paid > 0 and not old and (" (paid " .. Money(row.paid, row.pcur) .. ")") or ""))
+        return true
+    end
+    G.PlaceSingleAt = PlaceSingleAt
+
+    Msg.On("house", "place", function(player, kind)
+        local h, owner = MyHouse(player)
+        if not h then return Res(player, "You must be inside your own garrison to place things.") end
+        local def = BY_KIND[kind]
+        if not def then return Res(player, "Unknown item.") end
+        if def.multi then return Res(player, "Use 'Place new' for decor.") end
+        PlaceSingleAt(player, h, owner, kind, def, player:GetX(), player:GetY(), player:GetZ(), player:GetO())
     end)
 
     Msg.On("house", "remove", function(player, kind)
@@ -156,22 +163,52 @@ return function(G)
         Res(player, "Removed: " .. BY_KIND[row.kind].name .. Refund(player, row))
     end)
 
-    Msg.On("house", "dclear", function(player)
+    -- which = "objects" | "creatures" (decor of that kind only) | anything else = all decor. Refunds what was paid.
+    local function IsCreature(kind) local d = BY_KIND[kind]; return d and d.t == "c" end
+    Msg.On("house", "dclear", function(player, which)
         local h, owner = MyHouse(player)
         if not h then return end
+        local function Wanted(kind)
+            if which == "creatures" then return IsCreature(kind) elseif which == "objects" then return not IsCreature(kind) end
+            return true
+        end
         local n, back = 0, {}
         for did, r in pairs(h.decor) do
-            DespawnKind(h, nil, did); n = n + 1
-            if (r.paid or 0) > 0 then back[r.pcur] = (back[r.pcur] or 0) + r.paid end
+            if Wanted(r.kind) then
+                DespawnKind(h, nil, did); n = n + 1
+                if (r.paid or 0) > 0 then back[r.pcur] = (back[r.pcur] or 0) + r.paid end
+                h.decor[did] = nil
+                store.DeleteDecor(owner, did)
+            end
         end
-        -- sweep: any decor object still tracked (e.g. its row was lost or its kind is no longer in the catalog)
+        -- sweep: any decor object of that kind still tracked (e.g. its row was lost or its kind is no longer in the catalog)
         local left = {}
-        for _, s in ipairs(h.spawned) do if s.did then left[#left + 1] = s.did end end
+        for _, sp in ipairs(h.spawned) do if sp.did and Wanted(sp.kind) then left[#left + 1] = sp.did end end
         for _, did in ipairs(left) do DespawnKind(h, nil, did) end
-        h.decor = {}
+        if which ~= "creatures" and which ~= "objects" then h.decor = {}; store.ClearDecor(owner, h.loc) end
         local refunded = ""
         for pcur, paid in pairs(back) do refunded = refunded .. Refund(player, { paid = paid, pcur = pcur }) end
-        store.ClearDecor(owner, h.loc)
-        Res(player, "Removed all decor (" .. n .. ")." .. refunded)
+        Res(player, "Removed all " .. (which == "creatures" and "creatures" or which == "objects" and "objects" or "decor") .. " (" .. n .. ")." .. refunded)
+    end)
+
+    -- "Select nearest" on the Placed tab: the placed item of the given list ("objects" | "creatures" | "npcs") closest to the player (within 30 yards).
+    -- Answers house|dsel <decor id or kind>; the addon selects it (and the pick marker floats above it).
+    Msg.On("house", "dnear", function(player, which)
+        local h = MyHouse(player)
+        if not h then return end
+        local px, py, best, bestKey = player:GetX(), player:GetY(), 30 * 30, nil
+        local function Consider(row, key)
+            local d = (row.x - px) ^ 2 + (row.y - py) ^ 2
+            if d < best then best, bestKey = d, key end
+        end
+        if which == "npcs" then
+            for kind, row in pairs(h.rows) do Consider(row, kind) end
+        else
+            for did, row in pairs(h.decor) do
+                if (which == "creatures") == (IsCreature(row.kind) and true or false) then Consider(row, tostring(did)) end
+            end
+        end
+        if not bestKey then return Res(player, "Nothing of that kind is placed within 30 yards of you.") end
+        Msg.Send(player, "house", "dsel", bestKey)
     end)
 end
