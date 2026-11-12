@@ -2,7 +2,7 @@
 -- Right-click one -> "Challenge to a pet battle" -> pb_battle.lua starts the fight against it.
 -- Species with wild = "adopt" (critters) do not get a duplicate: the REAL critter becomes the wild pet (right-click menu + a heart marker).
 -- Rules: one wild pet per species within SPACING yd (whoever is near), only species flagged wild=true in pb_data.lua, level = the level of the real mob it
--- stands next to, team = its own species + 2 from the species seen nearby (a level 1-5 wild pet fights ALONE). It is removed when nobody is near, after
+-- stands next to, team = its own species + 2 from the species seen nearby (a level 1-2 wild pet fights ALONE). It is removed when nobody is near, after
 -- LIFETIME seconds, or when a battle starts; the same spot has a COOLDOWN before that species shows up again.
 local D = require("pb_data")
 local Store = require("pb_store")
@@ -15,7 +15,7 @@ local COOLDOWN = 90             -- seconds before the species re-appears around 
 local LIFETIME = 600            -- an untouched wild pet disappears after this many seconds
 local LEAVE = 110               -- ...or when no player is within this distance
 local TALK_RANGE = 12           -- how close you must be to challenge it
-local SOLO_MAX_LEVEL = 5        -- wild pets up to this level fight alone
+local SOLO_MAX_LEVEL = 2        -- wild pets up to this PET level (not mob level: mob level 6 is already pet level 2) fight alone
 local MARKER = 62011            -- the old heart marker: no longer applied (the green friendly name is the cue); only removed from critters that still carry it
 
 local wild = {}    -- creature LOW guid (a number; GetGUID() objects are never equal as table keys) -> { guid, species, level, map, x, y, z, born, types }
@@ -193,7 +193,7 @@ local function E_ROLL() return PB_CORE and PB_CORE.RollQuality() or 1 end
 local function BuildEnemies(w)
     local lv = D.PetLevel(w.level)   -- mob level (1-80) -> pet level (1-25)
     local team = { { species = w.species, level = lv, display = w.display, quality = E_ROLL() } }
-    if w.level > SOLO_MAX_LEVEL then
+    if lv > SOLO_MAX_LEVEL then
         local pool = (w.types and #w.types > 0) and w.types or { w.species }
         for _ = 1, 2 do team[#team + 1] = { species = pool[math.random(#pool)], level = lv, quality = E_ROLL() } end
     end

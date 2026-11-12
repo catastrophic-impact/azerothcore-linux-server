@@ -100,9 +100,9 @@ check(spy and #spy == 1 and spy[1].species == 299 and spy[1].level == 1, "level 
 check(wp.gone == true and W.Count() == 2, "the wild pet is consumed when the battle starts")
 tick(); tick(); check(W.Count() == 2, "cooldown: it does not instantly reappear, got " .. W.Count())
 
--- challenge the level 7 timber wolf: team of 3, first is its own species
+-- challenge the level 7 timber wolf: pet level 2, still SOLO (3-pet teams start at pet level 3)
 spy = nil; local tw = objects[list[69]]; goTo(tw); W.OnSelect(nil, player, tw, 0, 1)
-check(spy and #spy == 3 and spy[1].species == 69, "level 7 wild pet brings 3 pets, first is its own species")
+check(spy and #spy == 1 and spy[1].species == 69, "level 7 wild pet (pet level 2) fights alone")
 for _, e in ipairs(spy or {}) do check(e.level == PB_DATA_PETLEVEL(7) and D_ok ~= false, "all enemy pets use the wild level") end
 
 -- "Never mind" does nothing

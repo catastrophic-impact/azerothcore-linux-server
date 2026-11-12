@@ -68,6 +68,22 @@ function Store.SetHp(guid, species, hp)
     SavePet(guid, species, p)
 end
 
+-- admin: every owned pet back to full health (nil hp = full)
+function Store.HealAll(player)
+    local guid = player:GetGUIDLow(); local c = Load(guid); local n = 0
+    for species, p in pairs(c.pets) do
+        p.hp, p.hpAt = nil, 0; SavePet(guid, species, p); n = n + 1
+        pcall(Msg.Send, player, "pbj", "pet", Info(species, p))   -- refresh the open journal
+    end
+    return n
+end
+RegisterPlayerEvent(42, function(_, player, command)   -- .pbheal (GM only)
+    if not player or not command or not command:match("^pbheal%s*$") then return end
+    if player:GetGMRank() < 2 then return end
+    player:SendBroadcastMessage("Healed " .. Store.HealAll(player) .. " battle pets to full health.")
+    return false
+end)
+
 -- Recruiting: a duplicate species REPLACES the owned one (better versions). Returns true when stored.
 function Store.AddPet(player, species, level, picks, quality, display)
     if not D.species[species] then return false end
@@ -123,10 +139,11 @@ end
 
 -- XP: reward depends on the PET's level vs the enemy level; a pet must have acted in the battle (checked by the caller)
 function Store.XPReward(petLevel, enemyLevel)
+    local base = Eng.XPPerWin(enemyLevel)   -- retail table: a win is worth the XpPerWin of the enemy's level
     local diff = petLevel - enemyLevel
-    if diff <= 0 then return D.XP_FULL end
-    local f = 1 - diff * D.XP_STEP
-    return f > 0.001 and math.floor(D.XP_FULL * f + 0.5) or 0
+    if diff <= 0 then return base end
+    local f = 1 - diff * D.XP_STEP   -- our rule: -20% per level the enemy is BELOW the pet, nothing at 5+ below (no power leveling)
+    return f > 0.001 and math.floor(base * f + 0.5) or 0
 end
 -- returns gained xp, new level, levels gained (nil if the pet is not owned)
 function Store.GrantXP(player, species, enemyLevel)
@@ -135,7 +152,7 @@ function Store.GrantXP(player, species, enemyLevel)
     if p.level >= D.MAX_LEVEL then return 0, p.level, 0 end
     local gain, start = Store.XPReward(p.level, enemyLevel), p.level
     p.xp = p.xp + gain
-    while p.xp >= D.XP_PER_LEVEL and p.level < D.MAX_LEVEL do p.xp = p.xp - D.XP_PER_LEVEL; p.level = p.level + 1 end
+    while p.xp >= Eng.XPNeeded(p.level) and p.level < D.MAX_LEVEL do p.xp = p.xp - Eng.XPNeeded(p.level); p.level = p.level + 1 end
     if p.level >= D.MAX_LEVEL then p.xp = 0 end
     SavePet(g, species, p)
     Msg.Send(player, "pbj", "pet", Info(species, p))
@@ -179,8 +196,8 @@ function Info(sp, p)
     local lvl = math.min(p.level, D.MAX_LEVEL)
     local st = Eng.Stats(sp, lvl, p.quality or 1)
     local cur, max = CurHp(sp, p), MaxHp(sp, p)
-    return string.format("%d,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%s", sp, lvl, p.xp, p.a[1], p.a[2], p.a[3], Eng.Family(sp), s.icon,
-        max, math.floor(st.power + 0.5), p.quality or 1, cur, s.name)
+    return string.format("%d,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d,%s", sp, lvl, p.xp, p.a[1], p.a[2], p.a[3], Eng.Family(sp), s.icon,
+        max, math.floor(st.power + 0.5), p.quality or 1, cur, Eng.XPNeeded(lvl), s.name)
 end
 
 local function SendAll(player)

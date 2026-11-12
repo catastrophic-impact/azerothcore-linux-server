@@ -7,7 +7,9 @@
 --   26       apply aura to the USER (or the enemy if its states are harmful): p2 chance, p3 duration     50/52/178  same with p2 chance, p3 duration, 50: p4 max stacks   172 stun chance p5
 --   54       damage-over-time aura on the enemy (p3 duration)      63  heal-over-time aura on the user (p3 duration)
 --   49       remove aura f.aura from the user (also what an aura does to itself after its event 1 = holder was hit, 2 = holder attacked)
---   158 177 85 229 116 28 170: gates/weather/transform markers, not interpreted (they are listed by pet-battle/test_core.lua as "not interpreted")
+--   62 Trample damage    59 Comeback: extra damage if the user was hit      27 damage that grows per use (p3 per use, max p4)      32 heal the user for p1 % of the damage this ability dealt
+--   79 "always goes first" (Charge)      141 damage split evenly over the whole enemy team      131 stun when the user acts first (p2 chance, aura = stun)
+--   158 177 85 229 116 28 170 31 157 156 136 159 80: gates/weather/transform/state markers, not interpreted (they are listed by pet-battle/test_core.lua as "not interpreted")
 local D = require("pb_data")
 local R = require("pb_retail")
 local Rules = require("pb_rules")
@@ -15,9 +17,9 @@ local C = {}
 PB_CORE = C
 C.unknown = {}
 
-local DAMAGE = { [24] = true, [222] = true, [96] = true }
+local DAMAGE = { [24] = true, [222] = true, [96] = true, [62] = true }
 local APPLY = { [50] = true, [52] = true, [178] = true }
-local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true }
+local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true, [31] = true, [157] = true, [156] = true, [136] = true, [159] = true, [80] = true, [79] = true }   -- 31/157/156/136 = internal state markers, 159 = delayed meteor, 80 = weather (the damage/heal parts of those abilities still work)
 C.INERT = INERT
 local function Other(s) return s == "P" and "E" or "P" end
 local function Alive(b, s) local n = 0; for _, p in ipairs(b[s]) do if p.hp > 0 then n = n + 1 end end; return n end
@@ -63,6 +65,9 @@ function C.Kit(speciesId)
     end
     return out
 end
+-- XP (retail BattlePetXP): a level needs WinsPerLevel wins of XpPerWin each; a win is worth XpPerWin of the ENEMY's level
+function C.XPNeeded(level) local x = R.xp[math.max(1, math.min(D.MAX_LEVEL, level))]; return x[1] * x[2] end
+function C.XPPerWin(level) return R.xp[math.max(1, math.min(D.MAX_LEVEL, level))][2] end
 function C.Family(speciesId) return R.species[D.species[speciesId].retail].family end
 function C.Stats(speciesId, level, quality) return Rules.Stats(R.species[D.species[speciesId].retail].stats, level, quality) end
 function C.MaxHp(speciesId, level, quality) return C.Stats(speciesId, level, quality).health end
@@ -241,7 +246,9 @@ local function Act(b, ev, s, cmd, used)
     local hits = 0   -- how many damage hits this turn deals (playback needs to know which one is the last)
     for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
-    local done, healed, landed = 0, 0, false
+    local done, healed, landed, dealt = 0, 0, false, 0
+    pet.ramp = pet.ramp or {}
+    local hp0 = tgt.hp
     for _, f in ipairs(turn.fx) do
         local p = f.p
         if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) then
@@ -249,6 +256,35 @@ local function Act(b, ev, s, cmd, used)
             local acc = (f.prop == 96 and HasState(tgt, p[4])) and 100 or p[2]
             landed = Hit(b, ev, s, pet, p[1], acc, slot, done < hits) or landed
             if landed and tgt.hp <= 0 then break end
+        elseif f.prop == 27 then   -- damage that grows every time the ability is used
+            done = done + 1
+            local uses = pet.ramp[ab.id] or 0; local pts = math.min(p[4], p[1] + p[3] * uses)
+            if turnNo == 1 and #ab.turns >= 1 then pet.ramp[ab.id] = uses + 1 end
+            landed = Hit(b, ev, s, pet, pts, p[2], slot, done < hits) or landed
+        elseif f.prop == 59 then   -- Comeback: extra damage only if the user was hit before
+            if pet.lastTaken > 0 and tgt.hp > 0 then Hit(b, ev, s, pet, p[1], p[2], slot, false) end
+        elseif f.prop == 141 then   -- one damage total, split evenly over every living enemy pet
+            done = done + 1
+            local o2 = Other(s); local alive = {}
+            for i, q in ipairs(b[o2]) do if q.hp > 0 then alive[#alive + 1] = i end end
+            local total = Rules.Damage(p[1], pet.power, pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent"))
+            local share = math.max(1, math.floor(total / #alive + 0.5))
+            for k, i in ipairs(alive) do
+                local q = b[o2][i]
+                if i == b.active[o2] then landed = Hit(b, ev, s, pet, 0, 100, slot, done < hits or k < #alive, share) or landed
+                else
+                    q.hp = math.max(0, q.hp - share)
+                    ev[#ev + 1] = { k = "dmg", side = s, idx = idx, tside = o2, tidx = i, dmg = share, hp = q.hp, max = q.max, slot = slot, bench = true, more = true }
+                    if q.hp <= 0 then Faint(b, ev, o2, i); ev[#ev].bench = true end
+                end
+            end
+        elseif f.prop == 32 then   -- lifesteal: heal the user for p1 % of the damage this ability dealt so far
+            local got = hp0 - tgt.hp
+            if got > 0 then Heal(b, ev, s, idx, math.floor(got * p[1] / 100)) end
+        elseif f.prop == 131 then   -- stun when the user acts first
+            if actedFirst and tgt.hp > 0 and Mod(tgt, "untargettable") == 0 and (p[2] >= 100 or b.rng(1, 100) <= p[2]) then
+                ApplyAura(b, ev, o, b.active[o], f.aura, math.max(1, p[3] or 1), false, nil, pet)
+            end
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
             done = done + 1
             if pet.lastTaken > 0 then landed = Hit(b, ev, s, pet, 0, 100, slot, done < hits, math.floor(pet.lastTaken * p[1] / 100)) or landed end
@@ -325,9 +361,30 @@ function C.CanTrap(b) local e = b.E[b.active.E]; return e.hp > 0 and e.hp <= e.m
 function C.AI(b)
     local pet = b.E[b.active.E]
     if pet.channel then return "A" .. pet.channel.slot end
+    local hurt = false; for _, q in ipairs(b.E) do if q.hp > 0 and q.hp < q.max then hurt = true end end
     local ready = {}
-    for sl = 1, 3 do if C.Ready(pet, sl) then ready[#ready + 1] = sl end end
-    return "A" .. (ready[b.rng(1, #ready)] or 1)
+    for sl = 1, 3 do
+        if C.Ready(pet, sl) then
+            local turn = pet.abil[sl].turns[1]; local healOnly, buffActive = true, false
+            for _, f in ipairs(turn.fx) do
+                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
+                if (f.prop == 26 or f.prop == 63) and f.aura ~= 0 then for _, a in ipairs(pet.auras) do if a.id == f.aura then buffActive = true end end end
+            end
+            local useless = (healOnly and not hurt and #turn.fx > 0 and not (turn.fx[1].prop == 49)) or buffActive   -- the brain does not waste a heal at full health or re-apply a running buff
+            if not useless then ready[#ready + 1] = sl end
+        end
+    end
+    if #ready == 0 then return "A1" end
+    return "A" .. ready[b.rng(1, #ready)]
+end
+
+local function Priority(pet, cmd)   -- abilities with "always goes first" (effect 79)
+    if not cmd or cmd:sub(1, 1) ~= "A" then return false end
+    local ab = pet.channel and pet.channel.ab or pet.abil[tonumber(cmd:sub(2)) or 1]
+    if not ab then return false end
+    local t = ab.turns[pet.channel and pet.channel.turn or 1]
+    for _, f in ipairs(t.fx) do if f.prop == 79 then return true end end
+    return false
 end
 
 function C.Round(b, cmdP, cmdE)
@@ -354,7 +411,10 @@ function C.Round(b, cmdP, cmdE)
     end
     local pe, ee = b.P[b.active.P], b.E[b.active.E]
     if order then
-    elseif cmdP then order = (C.Speed(pe) >= C.Speed(ee)) and { "P", "E" } or { "E", "P" }   -- equal speed: the player goes first
+    elseif cmdP then
+        local pp, ep = Priority(pe, cmdP), Priority(ee, cmdE)
+        local playerFirst = (pp and not ep) or ((pp == ep) and C.Speed(pe) >= C.Speed(ee))   -- equal speed: the player goes first
+        order = playerFirst and { "P", "E" } or { "E", "P" }
     else order = { "E" } end
     for _, s in ipairs(order) do local from = #ev; Act(b, ev, s, s == "P" and cmdP or cmdE, used); Snap(b, ev, from) end
     local from = #ev; EndOfRound(b, ev, used); Snap(b, ev, from)

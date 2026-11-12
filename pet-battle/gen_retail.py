@@ -57,6 +57,8 @@ for a in sorted(need, key=int):
 for p in sorted(eff_used, key=int):
     P = pr[p]
     out.append('R.effects[%s] = { %s }' % (p, ', '.join(q(P['ParamLabel_%d' % i]) for i in range(6) if P['ParamLabel_%d' % i])))
+xp = [x for x in R('BattlePetXP') if x['ContentSetID'] == '0']
+out.append('R.xp = { %s }' % ', '.join('[%s] = { %s, %s }' % (x['Level'], x['WinsPerLevel'], x['XpPerWin']) for x in sorted(xp, key=lambda x: int(x['Level']))))
 out.append('return R')
 open('scripts/pb_retail.lua', 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 print('species', len(ids), 'abilities', len(need), 'effect types', len(eff_used))

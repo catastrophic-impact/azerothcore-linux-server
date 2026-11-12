@@ -101,10 +101,8 @@ local function SpawnPet(b, s, idx)
     if not obj then return end
     b.guid[s] = obj:GetGUID(); b.low[s] = obj:GetGUIDLow()
     pcall(function() obj:SetReactState(0) end)
-    -- BATTLE FACTIONS (pet-battle/find_factions.py): 1907 (your pet) and 1908 (the enemy) are hostile to each other, so real spells land at any time, and NEUTRAL to every player race and
-    -- guard (yellow names, no aggro, no faction swap needed). IMMUNE_TO_PC (flag 0x100 in UNIT_FIELD_FLAGS = OBJECT_END 6 + 0x35 = 0x3B) keeps players from attacking them.
-    pcall(function() obj:SetFaction(s == "P" and 1907 or 1908) end)
-    pcall(function() obj:SetFlag(0x3B, 0x100) end)
+    pcall(function() obj:SetUnitFlags(0) end)   -- the cats (and other companion templates) carry IMMUNE_TO_PC|IMMUNE_TO_NPC (768): spells then never land on them, so no hit visual / sound / animation for EITHER side
+    pcall(function() obj:SetFaction(35) end)   -- friendly to everyone: no mob, guard or player attacks it. (A PERMANENT hostile pair does not work: every pair that can hurt each other is also attacked by real mobs, e.g. a whole murloc camp joined a battle.)
     if pet.display and pet.display > 0 then pcall(function() obj:SetDisplayId(pet.display) end)   -- the skin this pet really has
     else
         local okd, d = pcall(function() return obj:GetDisplayId() end)
@@ -254,10 +252,12 @@ local function Play(b, ev, i, status)
         nxt(500)
     elseif e.k == "dmg" then
         local t = GetObj(b, e.tside)
+        if not t then print(string.format('[pb_battle] DIAG no target object: side=%s guid=%s vis=%s', tostring(e.tside), tostring(b.low[e.tside]), tostring(b.vis))) end
         if b.vis and PB_CAST and t then
             local att = GetObj(b, e.side)
             pcall(function() t:Emote(33) end)   -- wound animation as before; the spell adds its own hit visual and sound
-            if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, noSwap = true, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
+            if not att then print(string.format('[pb_battle] DIAG no attacker object: side=%s guid=%s', tostring(e.side), tostring(b.low[e.side]))) end
+            if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
         elseif t then pcall(function() t:Emote(33) end); Fx(t, FX_HIT, 900) end
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. "," .. (e.crit and "-" .. e.dmg .. "!" or "-" .. e.dmg))
         if not e.more then After(600, function() Back(b, e.side) end) end   -- a multi-hit attacker stays put until its last hit
@@ -354,6 +354,31 @@ local function Watchdog()
     end
 end
 CreateLuaEvent(Watchdog, 5000, 0)
+
+-- FREEZE: while a battle runs, every ordinary creature around it is stunned (Freeze, spell 9454: aura 12 MOD_STUN, no cast time). Why: pet casts swap the pets to hostile factions for
+-- ~0.8 s (pb_cast), and mobs (murlocs in Elwynn) join in and attack them. Self-healing: the aura gets a 4 s duration and is refreshed every second, so a reload / crash / end of the
+-- battle releases every mob within 4 s and nothing has to be remembered or restored.
+local FREEZE_SPELL, FREEZE_RANGE, FREEZE_MS = 9454, 50, 4000
+local function FreezeTick()
+    for low, b in pairs(battles) do
+        if not b.over or (b.endedAt and os.time() - b.endedAt <= 3) then
+            local pl = GetPlayer(b)
+            if pl then
+                local ok, list = pcall(function() return pl:GetCreaturesInRange(FREEZE_RANGE) end)
+                if ok and list then
+                    for _, c in ipairs(list) do pcall(function()
+                        if not c:IsAlive() or D.species[c:GetEntry()] or c:GetFaction() == 35 then return end   -- battle pets / wild pets / peaceful NPCs: untouched
+                        local own = c:GetOwnerGUID(); if own and own ~= 0 then return end                     -- someone's pet or guardian
+                        local a = c:GetAura(FREEZE_SPELL) or c:AddAura(FREEZE_SPELL, c)
+                        if a then a:SetDuration(FREEZE_MS) end
+                        if c:IsInCombat() then c:AttackStop(); c:ClearThreatList() end
+                    end) end
+                end
+            end
+        end
+    end
+end
+CreateLuaEvent(FreezeTick, 1000, 0)
 PB_BATTLE = { Watchdog = Watchdog, Sweep = Sweep, Start = Start, InBattle = function(player) return battles[player:GetGUIDLow()] ~= nil end }
 
 Msg.On("pbt", "start", function(player) Start(player) end)

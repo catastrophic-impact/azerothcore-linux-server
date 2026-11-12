@@ -5,7 +5,7 @@
 PB_CAST = PB_CAST or {}
 local C = PB_CAST
 C.DEBUG = false
--- 1690 vs 1691 (pet-battle/find_factions.py, from FactionTemplate.dbc): hostile to each other, friendly to every player race of BOTH sides and hostile to no guard faction: spells land, names stay green, guards stay calm
+-- 1690 vs 1691 (pet-battle/find_factions.py): hostile to each other, friendly to both sides' players, no guard faction hostile to them. Pets stay faction 35 (safe from mobs) and only swap for the 0.8 s of a cast.
 C.FACTION_FRIENDLY, C.FACTION_ATT, C.FACTION_TGT, C.HOLD_MS = 35, 1690, 1691, 800
 
 local gen = {}   -- per creature: only the LATEST cast may restore it (a restore from an older cast must not clobber a newer one)
@@ -31,6 +31,7 @@ function C.Cast(att, tgt, spell, o)
     local ok = pcall(function()
         if o.dmg then att:CastCustomSpell(tgt, spell, true, o.dmg) else att:CastSpell(tgt, spell, true) end
     end)
+    if not ok then print('[pb_cast] DIAG CastSpell failed spell=' .. tostring(spell)) end
     -- a hit creature starts fleeing (its own AI): stop it every 150 ms while the hit lands and put it back on its spot, instead of waiting for the window to end
     local hold = o.hold or C.HOLD_MS
     for ms = 150, hold - 100, 150 do

@@ -118,7 +118,7 @@ local function RefreshPets()
     d.name:SetText(p.name); d.name:SetTextColor(unpack(QCOL[p.quality or 1])); d.sub:SetText(QNAME[p.quality or 1] .. " " .. p.arch .. "  -  Level " .. p.level); Color(d.sub, p.arch)
     d.stats:SetText("Health   |cffffffff" .. (p.cur or p.hp) .. " / " .. p.hp .. "|r\nAttack   |cffffffff" .. p.dmg .. "|r\nArchetype   |cffffffff" .. p.arch .. "|r\nQuality   " .. QHEX[p.quality or 1] .. QNAME[p.quality or 1] .. "|r")
     d.sum:SetText(S.follow == S.sel and "Dismiss" or "Summon Pet")
-    d.xp:SetValue(math.min(100, p.xp)); d.xp.t:SetText("Experience " .. p.xp .. " / 100")
+    local need = math.max(1, p.need or 100); d.xp:SetMinMaxValues(0, need); d.xp:SetValue(math.min(need, p.xp)); d.xp.t:SetText("Experience " .. p.xp .. " / " .. need)
     if modelFor ~= S.sel then
         modelFor = S.sel
         if S.primed then model:SetCreature(S.sel); model:SetRotation(0.61); d.loading:Hide() else d.loading:Show() end
@@ -233,9 +233,9 @@ local function Build()
 end
 
 AcoreLib.On("pbj", "pet", function(p)
-    local sp, lv, xp, a1, a2, a3, arch, icon, hp, dmg, q, cur, name = p:match("^(%d+),(%d+),(%d+),(%d+),(%d+),(%d+),(%a+),([^,]+),(%d+),(%d+),(%d+),(%d+),(.+)$")
+    local sp, lv, xp, a1, a2, a3, arch, icon, hp, dmg, q, cur, need, name = p:match("^(%d+),(%d+),(%d+),(%d+),(%d+),(%d+),(%a+),([^,]+),(%d+),(%d+),(%d+),(%d+),(%d+),(.+)$")
     if not sp then return end
-    S.pets[Num(sp)] = { level = Num(lv), xp = Num(xp), a = { Num(a1), Num(a2), Num(a3) }, arch = arch, icon = icon, hp = Num(hp), dmg = Num(dmg), quality = Num(q), cur = Num(cur), name = name }
+    S.pets[Num(sp)] = { level = Num(lv), xp = Num(xp), a = { Num(a1), Num(a2), Num(a3) }, arch = arch, icon = icon, hp = Num(hp), dmg = Num(dmg), quality = Num(q), cur = Num(cur), need = Num(need), name = name }
     Refresh()
 end)
 AcoreLib.On("pbj", "team", function(p) local n, a, b, c = p:match("^(%d),(%d+),(%d+),(%d+)$"); if n then S.teams[Num(n)] = { Num(a), Num(b), Num(c) }; Refresh() end end)
