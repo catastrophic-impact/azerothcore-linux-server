@@ -1,0 +1,5 @@
+## Interface: 30300
+## Title: Pet Battle UI Test (temporary prototype)
+## Dependencies: AcoreLib
+## Notes: Open-world pet battle prototype (retail-style bars). /pbtest
+PBTest.lua

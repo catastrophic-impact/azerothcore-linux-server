@@ -1,0 +1,55 @@
+# Elwynn Forest pet roster. EDIT: include (Y/N), archetype (Tank/Melee/Caster/Support), abilities (names, filled together later), notes.
+# archetype is only a first guess from the name. level = range of the wild mob. spawns = how many exist in the zone box (rarity). rank 1+ = elite/rare/boss.
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	32820	Wild Turkey	1	Beast	0	0	775	21774	Support		Pilgrim's Bounty event only (all 775 spawns); Support guess
+Y	14869	Pygmy Cockatrice	1	Beast	0	0	4	14940	Support		
+N	5406	Palomino	1-2	Beast	0	0	1	2408	Melee		
+Y	5403	Riding White Stallion	1-2	Beast	0	0	2	2410	Melee		
+Y	14864	Khaz Modan Ram	5	Beast	0	0	2	14939	Tank		
+N	14868	Hornsley	8	Beast	0	0	1	14937	Melee		
+Y	299	Young Wolf	1	Beast	1	0	45	447	Melee		PILOT (first species to build)
+Y	69	Timber Wolf	2	Beast	1	0	36	604	Melee		PILOT (first species to build)
+Y	525	Mangy Wolf	5-6	Beast	1	0	39	903	Melee		
+Y	1922	Gray Forest Wolf	7-8	Beast	1	0	55	380	Melee		
+Y	118	Prowler	9-10	Beast	1	0	35	11415	Melee		
+N	14865	Felinni	10	Beast	2	1	1	14935	Melee		
+Y	30	Forest Spider	5-6	Beast	3	0	4	382	Melee		
+Y	43	Mine Spider	8-9	Beast	3	0	8	368	Melee		
+N	471	Mother Fang	10	Beast	3	4	1	2541	Melee		
+Y	822	Young Forest Bear	8-9	Beast	4	0	19	1006	Tank		
+Y	113	Stonetusk Boar	5-6	Beast	5	0	10	503	Tank		
+Y	524	Rockhide Boar	7-8	Beast	5	0	40	389	Tank		
+Y	6	Kobold Vermin	1-2	Humanoid	0	0	33	10913	Support		
+Y	257	Kobold Worker	3	Humanoid	0	0	43	10912	Support		PILOT (first species to build)
+Y	38	Defias Thug	3-4	Humanoid	0	0	71	5035	Melee		
+Y	80	Kobold Laborer	3-4	Humanoid	0	0	25	365	Support		
+Y	94	Defias Cutpurse	5-6	Humanoid	0	0	23	2361	Melee		
+N	103	Garrick Padfoot	5	Humanoid	0	0	1	2073	Melee		
+N	475	Kobold Tunneler	5-6	Humanoid	0	0	1	139	Tank		
+Y	285	Murloc	6-7	Humanoid	0	0	35	617	Melee		
+Y	40	Kobold Miner	6-7	Humanoid	0	0	33	373	Tank		
+Y	735	Murloc Streamrunner	6-7	Humanoid	0	0	21	527	Melee		
+Y	476	Kobold Geomancer	7-8	Humanoid	0	0	8	163	Caster		
+N	327	Goldtooth	8	Humanoid	0	0	1	2299	Melee		
+Y	116	Defias Bandit	8-9	Humanoid	0	0	14	2357	Melee		
+Y	97	Riverpaw Runt	8-9	Humanoid	0	0	13	10791	Melee		
+N	60	Ruklar the Trapper	8	Humanoid	0	0	1	2153	Melee		
+Y	732	Murloc Lurker	9-10	Humanoid	0	0	19	983	Melee		
+Y	474	Defias Rogue Wizard	9-10	Humanoid	0	0	22	2359	Caster		
+Y	46	Murloc Forager	9-10	Humanoid	0	0	33	441	Melee		
+Y	478	Riverpaw Outrunner	9-10	Humanoid	0	0	27	512	Melee		
+N	79	Narg the Taskmaster	10	Humanoid	0	4	1	774	Melee		
+N	61	Thuros Lightfingers	11	Humanoid	0	4	1	3341	Melee		
+N	472	Fedfennel	12	Humanoid	0	4	4	175	Melee		
+N	13159	James Clark	12	Humanoid	0	0	1	13091	Melee		
+Y	6368	Cat	1	Critter	0	0	9	5555	Support		
+Y	9699	Fire Beetle	1	Critter	0	0	1	8971	Melee		
+Y	890	Fawn	1	Critter	0	0	5	654	Support		
+Y	721	Rabbit	1	Critter	0	0	55	328	Support		
+Y	1933	Sheep	3	Critter	0	0	6	856	Support		
+Y	2442	Cow	5	Critter	0	0	25	1060	Tank		
+Y	883	Deer	5	Critter	0	0	20	347	Support		
+N	7384	Cornish Rex Cat	1	Pet	0	0	1	5586	Support		
+N	7385	Bombay Cat	1	Pet	0	0	1	5556	Support		
+N	7382	Orange Tabby Cat	1	Pet	0	0	1	5554	Support		
+N	7381	Silver Tabby Cat	1	Pet	0	0	1	5555	Support		

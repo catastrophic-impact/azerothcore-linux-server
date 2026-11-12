@@ -18,3 +18,4 @@ install-test/
 
 # vendored upstream sources must be tracked exactly as published, whatever their patterns
 !/deps/**
+pet-battle/.shots/

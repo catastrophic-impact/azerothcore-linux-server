@@ -1,0 +1,37 @@
+entry	name	role	how	retail_species	retail_name	pet_type	kit
+116	Defias Bandit	Melee	type	513	Qiraji Guardling	Humanoid	0:Crush | 0:Whirlwind | 1:Hawk Eye | 1:Sandstorm | 2:Reckless Strike | 2:Blackout Kick
+822	Young Forest Bear	Melee	name	202	Baby Blizzard Bear	Beast	0:Bite | 0:Roar | 1:Bash | 1:Hibernate | 2:Maul | 2:Call Blizzard
+9699	Fire Beetle	Melee	name	406	Beetle	Critter	0:Scratch | 0:Flank | 1:Hiss | 1:Survival | 2:Swarm | 2:Apocalypse
+113	Stonetusk Boar	Melee	type	42	Black Tabby Cat	Beast	0:Claw | 0:Pounce | 1:Rake | 1:Screech | 2:Devour | 2:Prowl
+524	Rockhide Boar	Melee	type	89	Worg Pup	Beast	0:Bite | 0:Flurry | 1:Crouch | 1:Howl | 2:Leap | 2:Dazzling Dance
+6368	Cat	Melee	type	374	Black Lamb	Critter	0:Hoof | 0:Chew | 1:Comeback | 1:Soothe | 2:Bleat | 2:Stampede
+14869	Pygmy Cockatrice	Melee	type	49	Hyacinth Macaw	Flying	0:Slicing Wind | 0:Thrash | 1:Hawk Eye | 1:Adrenaline Rush | 2:Lift-Off | 2:Cyclone
+2442	Cow	Melee	name	1543	Pygmy Cow	Critter	0:Stampede | 0:Chew | 1:Mother's Milk | 1:Feed | 2:Where's the Beef? | 2:Udder Destruction
+94	Defias Cutpurse	Rogue	type	514	Flayer Youngling	Humanoid	0:Blitz | 0:Triple Snap | 1:Focus | 1:Deflection | 2:Kick | 2:Rampage
+883	Deer	Melee	name	390	Deer	Critter	0:Hoof | 0:Stampede | 1:Tranquility | 1:Nature's Ward | 2:Bleat | 2:Headbutt
+890	Fawn	Melee	name	203	Little Fawn	Critter	0:Hoof | 0:Stampede | 1:Tranquility | 1:Nature's Ward | 2:Bleat | 2:Headbutt
+46	Murloc Forager	Melee	type	165	Mojo	Aquatic	0:Water Jet | 0:Tongue Lash | 1:Healing Wave | 1:Cleansing Rain | 2:Frog Kiss | 2:Swarm of Flies
+476	Kobold Geomancer	Caster	type	114	Disgusting Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+80	Kobold Laborer	Melee	type	515	Sporeling Sprout	Humanoid	0:Jab | 0:Charge | 1:Creeping Fungus | 1:Leech Seed | 2:Spore Shrooms | 2:Crouch
+732	Murloc Lurker	Melee	name	2726	Shadowspike Lurker	Aquatic	0:Deep Claw | 1:Hiss | 2:Whirlpool X
+40	Kobold Miner	Melee	type	835	Hopling	Humanoid	0:Crush | 0:Tongue Lash | 1:Sticky Goo | 1:Poison Lash | 2:Backflip | 2:Dreadful Breath
+285	Murloc	Melee	type	383	Eternal Strider	Aquatic	0:Water Jet | 0:Poison Spit | 1:Healing Wave | 1:Cleansing Rain | 2:Soothe | 2:Pump
+478	Riverpaw Outrunner	Melee	type	1073	Terky	Humanoid	0:Punch | 0:Flank | 1:Acid Touch | 1:Lucky Dance | 2:Clobber | 2:Stampede
+118	Prowler	Melee	type	50	Green Wing Macaw	Flying	0:Slicing Wind | 0:Thrash | 1:Hawk Eye | 1:Adrenaline Rush | 2:Lift-Off | 2:Cyclone
+721	Rabbit	Melee	name	72	Snowshoe Rabbit	Critter	0:Scratch | 0:Flurry | 1:Adrenaline Rush | 1:Dodge | 2:Burrow | 2:Stampede
+14864	Khaz Modan Ram	Melee	name	434	Ram	Beast	0:Hoof | 0:Chew | 1:Comeback | 1:Soothe | 2:Bleat | 2:Stampede
+97	Riverpaw Runt	Melee	name	1166	Kun-Lai Runt	Humanoid	0:Thrash | 0:Takedown | 1:Mangle | 1:Frost Shock | 2:Rampage | 2:Deep Freeze
+1933	Sheep	Melee	name	394	Sheep	Critter	0:Hoof | 0:Chew | 1:Comeback | 1:Soothe | 2:Bleat | 2:Stampede
+30	Forest Spider	Melee	name	412	Spider	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+43	Mine Spider	Melee	name	470	Twilight Spider	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+5403	Riding White Stallion	Melee	type	90	Smolderweb Hatchling	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+735	Murloc Streamrunner	Melee	type	388	Shore Crab	Aquatic	0:Snap | 0:Surge | 1:Renewing Mists | 1:Healing Wave | 2:Shell Shield | 2:Whirlpool
+38	Defias Thug	Melee	type	1147	Harbinger of Flame	Humanoid	0:Jab | 0:Burn | 1:Magma Wave | 1:Immolate | 2:Impale | 2:Conflagrate
+32820	Wild Turkey	Melee	name	201	Plump Turkey	Flying	0:Peck | 0:Slicing Wind | 1:Squawk | 1:Gobble Strike | 2:Food Coma | 2:Flock
+6	Kobold Vermin	Caster	type	446	Jade Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+474	Defias Rogue Wizard	Caster	type	500	Minfernal	Magic	0:Crush | 0:Immolate | 1:Immolation | 1:Extra Plating | 2:Meteor Strike | 2:Explode
+69	Timber Wolf	Melee	type	197	Cobra Hatchling	Beast	0:Bite | 0:Poison Fang | 1:Hiss | 1:Counterstrike | 2:Burrow | 2:Vicious Fang
+299	Young Wolf	Melee	type	232	Darting Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+525	Mangy Wolf	Melee	type	233	Deviate Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1922	Gray Forest Wolf	Melee	type	234	Gundrak Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+257	Kobold Worker	Melee	type	1149	Corefire Imp	Humanoid	0:Burn | 0:Rush | 1:Immolation | 1:Flamethrower | 2:Cauterize | 2:Wild Magic

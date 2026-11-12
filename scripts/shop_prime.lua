@@ -18,6 +18,8 @@ local function Load()
     local all = {}
     for _, e in ipairs(Catalog.npcs or {}) do all[#all + 1] = e end
     if ok and GCat and GCat.npcs then for _, e in ipairs(GCat.npcs) do all[#all + 1] = e end end
+    local okp, PBD = pcall(require, "pb_data")   -- pet battle species (journal 3D previews)
+    if okp and PBD and PBD.species then for entry in pairs(PBD.species) do all[#all + 1] = entry end end
     if #all == 0 then return end
     local ids = table.concat(all, ",")
     local q = WorldDBQuery("SELECT entry, name, IFNULL(subname,''), IFNULL(IconName,''), type_flags, type, family, `rank`, KillCredit1, KillCredit2, " ..
@@ -41,8 +43,8 @@ local function Load()
 end
 Load()
 
-local function Send(player)
-    for entry, r in pairs(records) do
+local function SendRecord(player, entry, r, display)
+    do
         local p = CreatePacket(SMSG_CREATURE_QUERY_RESPONSE, 160)
         p:WriteULong(entry)
         p:WriteString(r.name)
@@ -51,13 +53,21 @@ local function Send(player)
         p:WriteString(r.icon)
         p:WriteULong(r.typeFlags); p:WriteULong(r.type); p:WriteULong(r.family); p:WriteULong(r.rank)
         p:WriteULong(r.kc1); p:WriteULong(r.kc2)
-        for i = 1, 4 do p:WriteULong(r.models[i]) end
+        if display and display > 0 then p:WriteULong(display); for _ = 2, 4 do p:WriteULong(0) end else for i = 1, 4 do p:WriteULong(r.models[i]) end end
         p:WriteFloat(r.hp); p:WriteFloat(r.mana)
         p:WriteUByte(r.racial)
         p:WriteULong(r.move)
         player:SendPacket(p)
     end
 end
+local function Send(player)
+    for entry, r in pairs(records) do
+        local d = PB_STORE and PB_STORE.PetDisplay and PB_STORE.PetDisplay(player, entry) or 0   -- a battle pet shows the skin YOU own
+        SendRecord(player, entry, r, d)
+    end
+end
+-- pb_store pushes a single record when a pet's skin is set / replaced, so the journal preview changes at once
+SHOP_PRIME = { SendOne = function(player, entry, display) if records[entry] then SendRecord(player, entry, records[entry], display) end end }
 
 local last = {}
 local function Prime(module)
@@ -72,4 +82,5 @@ end
 RegisterPlayerEvent(4, function(event, player) last[player:GetGUIDLow()] = nil end)   -- logout: do not keep per-player entries forever
 Msg.On("shop", "prime", Prime("shop"))
 Msg.On("house", "prime", Prime("house"))
+Msg.On("pbj", "prime", Prime("pbj"))
 return true
