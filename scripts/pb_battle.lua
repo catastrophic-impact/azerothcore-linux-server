@@ -50,7 +50,9 @@ local function Sweep(player, range)
     local keep = {}
     for _, b in pairs(battles) do for _, low in pairs(b.low or {}) do keep[low] = true end end   -- numeric low guids: a GUID object is never equal to another as a table key
     local n = 0
-    for entry in pairs(D.species) do
+    local entries = {}
+    for entry in pairs(D.species) do entries[#entries + 1] = entry; if D.StandIn(entry) then entries[#entries + 1] = D.StandIn(entry) end end
+    for _, entry in ipairs(entries) do
         local ok, list = pcall(function() return player:GetCreaturesInRange(range or 120, entry) end)
         if ok and list then
             for _, c in ipairs(list) do
@@ -95,9 +97,45 @@ local function Layout(b, pl)
     end
 end
 
+-- STAND-IN templates: for every species flagged standin = true a clone of its creature_template (+ model rows) is created once, entry 9000000 + species:
+-- same name and model, but no AIName / ScriptName / flags / loot / gossip, faction 35. Idempotent (skipped when the row exists). The server must reload creature templates once after creation.
+local function EnsureStandIns()
+    if not (WorldDBQuery and WorldDBExecute) then return end
+    local cols = {}
+    local q = WorldDBQuery("SELECT COLUMN_NAME FROM information_schema.columns WHERE table_schema = DATABASE() AND table_name = 'creature_template' ORDER BY ORDINAL_POSITION")
+    if not q then return end
+    repeat cols[#cols + 1] = q:GetString(0) until not q:NextRow()
+    local ZERO = { difficulty_entry_1 = 0, difficulty_entry_2 = 0, difficulty_entry_3 = 0, KillCredit1 = 0, KillCredit2 = 0, npcflag = 0, unit_flags = 0, unit_flags2 = 0, dynamicflags = 0,
+                   lootid = 0, pickpocketloot = 0, skinloot = 0, gossip_menu_id = 0, mingold = 0, maxgold = 0, VehicleId = 0, PetSpellDataId = 0, flags_extra = 0, ["rank"] = 0, MovementType = 0, type_flags = 0, faction = 35 }
+    WorldDBExecute("UPDATE creature_template SET `type` = 1 WHERE entry >= 9000000 AND entry < 9100000 AND `type` = 12")   -- clones made before this rule
+    local made = 0
+    for species, sp in pairs(D.species) do
+        local id = D.StandIn(species)
+        if id and not WorldDBQuery("SELECT entry FROM creature_template WHERE entry = " .. id) then
+            local sel = {}
+            for _, c in ipairs(cols) do
+                if c == "entry" then sel[#sel + 1] = tostring(id)
+                elseif c == "AIName" or c == "ScriptName" then sel[#sel + 1] = "''"
+                elseif ZERO[c] ~= nil then sel[#sel + 1] = tostring(ZERO[c])
+                elseif c == "type" then sel[#sel + 1] = "IF(`type` = 12, 1, `type`)"   -- 12 = non-combat pet: spells never land on it (the cats / Spectral Tiger Cub): a plain Beast instead
+                else sel[#sel + 1] = "`" .. c .. "`" end
+            end
+            WorldDBExecute("INSERT INTO creature_template (`" .. table.concat(cols, "`,`") .. "`) SELECT " .. table.concat(sel, ",") .. " FROM creature_template WHERE entry = " .. species)
+            WorldDBExecute("INSERT IGNORE INTO creature_template_model (CreatureID, Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild) SELECT " .. id .. ", Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild FROM creature_template_model WHERE CreatureID = " .. species)
+            made = made + 1
+        end
+    end
+    if made > 0 then
+        print("[pb_battle] created " .. made .. " stand-in creature templates, reloading creature templates in 3 s")
+        CreateLuaEvent(function() pcall(RunCommand, "reload creature_template") end, 3000, 1)
+    end
+end
+EnsureStandIns()
+
 local function SpawnPet(b, s, idx)
     local pet = b.eng[s][idx]; local p = b.pos[s]
-    local obj = PerformIngameSpawn(1, pet.species, b.map, 0, p[1], p[2], p[3], p[4], false, 0, b.phase)
+    local sp = D.species[pet.species]
+    local obj = PerformIngameSpawn(1, D.StandIn(pet.species) or pet.species, b.map, 0, p[1], p[2], p[3], p[4], false, 0, b.phase)
     if not obj then return end
     b.guid[s] = obj:GetGUID(); b.low[s] = obj:GetGUIDLow()
     pcall(function() obj:SetReactState(0) end)
@@ -138,7 +176,14 @@ end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
     Send(b, "tag", s .. "|" .. (stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])))
 end
+local function FaceAll(b)   -- both pets look at each other again (a hit / fleeing / moving creature ends up facing anywhere); runs before every turn, a little later too
+    for _, s in ipairs({ "P", "E" }) do
+        local o = GetObj(b, s); local p = b.pos and b.pos[s]
+        if o and p then pcall(function() o:SetFacing(p[4]) end) end
+    end
+end
 local function SendTurn(b, force)
+    FaceAll(b); After(500, function() if not b.over then FaceAll(b) end end)
     local pet = b.eng.P[b.eng.active.P]
     b.waiting = true; b.lastAct = os.time()
     Send(b, "turn", (force and "force" or "go") .. ";" .. pet.cd[1] .. "," .. pet.cd[2] .. "," .. pet.cd[3] .. ";" .. ((not force and b.api.CanTrap(b.eng)) and 1 or 0))
@@ -197,6 +242,7 @@ local function Play(b, ev, i, status)
     end
     local e = ev[i]
     if not e then
+        SendTags(b, "P"); SendTags(b, "E")   -- durations changed at the end of the round: refresh the status icons
         if status == "force" then SendTurn(b, true) elseif status == "turn" then SendTurn(b, false) end
         return
     end
@@ -225,7 +271,7 @@ local function Play(b, ev, i, status)
         local crate
         if t then
             local okc, go = pcall(function() return PerformIngameSpawn(2, CRATE_GO, b.map, 0, t:GetX(), t:GetY(), t:GetZ(), t:GetO(), false, 0, b.phase) end)
-            if okc and go then crate = go:GetGUID(); pcall(function() go:SetScale(1.8) end) end
+            if okc and go then crate = go:GetGUID(); pcall(function() go:SetScale(3.6) end) end
             if t then Fx(t, FX_HIT, 1500) end
         end
         After(2200, function()
@@ -296,6 +342,9 @@ local function Play(b, ev, i, status)
         Despawn(b, "P", true)
         After(700, function() SpawnPet(b, "P", e.idx); Send(b, "in", "P," .. e.idx); SendAbilities(b); SendTags(b, "P") end)
         nxt(1600)
+    elseif e.k == "weather" then
+        Send(b, "weather", e.id .. "|" .. e.turns .. "|" .. (e.name or ""))
+        nxt(e.id ~= 0 and 500 or 100)
     elseif e.k == "spawn" then
         SpawnPet(b, e.side, e.idx); Send(b, "in", e.side .. "," .. e.idx); SendTags(b, e.side)
         nxt(1400)
@@ -367,7 +416,7 @@ local function FreezeTick()
                 local ok, list = pcall(function() return pl:GetCreaturesInRange(FREEZE_RANGE) end)
                 if ok and list then
                     for _, c in ipairs(list) do pcall(function()
-                        if not c:IsAlive() or D.species[c:GetEntry()] or c:GetFaction() == 35 then return end   -- battle pets / wild pets / peaceful NPCs: untouched
+                        if not c:IsAlive() or D.species[c:GetEntry()] or D.IsStandIn(c:GetEntry()) or c:GetFaction() == 35 then return end   -- battle pets / wild pets / peaceful NPCs: untouched
                         local own = c:GetOwnerGUID(); if own and own ~= 0 then return end                     -- someone's pet or guardian
                         local a = c:GetAura(FREEZE_SPELL) or c:AddAura(FREEZE_SPELL, c)
                         if a then a:SetDuration(FREEZE_MS) end
@@ -381,7 +430,15 @@ end
 CreateLuaEvent(FreezeTick, 1000, 0)
 PB_BATTLE = { Watchdog = Watchdog, Sweep = Sweep, Start = Start, InBattle = function(player) return battles[player:GetGUIDLow()] ~= nil end }
 
-Msg.On("pbt", "start", function(player) Start(player) end)
+-- /pbtest            3 random enemy species;   /pbtest 1124 474 30   those species (level 5) as the enemy team;   /pbtest 1196@20 3118@25   with a level each (1-25)
+Msg.On("pbt", "start", function(player, payload)
+    local list = {}
+    for id, lv in tostring(payload or ""):gmatch("(%d+)@?(%d*)") do
+        local n = tonumber(id)
+        if D.species[n] and #list < 3 then list[#list + 1] = { species = n, level = math.max(1, math.min(D.MAX_LEVEL, tonumber(lv) or 5)), quality = Eng.RollQuality() } end
+    end
+    Start(player, #list > 0 and list or nil)
+end)
 Msg.On("pbt", "clean", function(player)
     local low = player:GetGUIDLow()
     local b = battles[low]
@@ -398,7 +455,7 @@ local function Command(player, payload)
     local kind, n = payload:sub(1, 1), tonumber(payload:sub(2))
     local cmd
     if kind == "A" and n and n >= 1 and n <= 3 and b.api.Ready(eng.P[eng.active.P], n) and eng.P[eng.active.P].hp > 0 then cmd = payload
-    elseif kind == "S" and eng.P[n] and eng.P[n].hp > 0 and n ~= eng.active.P then cmd = payload
+    elseif kind == "S" and eng.P[n] and eng.P[n].hp > 0 and n ~= eng.active.P and not (eng.P[eng.active.P].hp > 0 and b.api.Locked(eng.P[eng.active.P], "swapOutLock")) then cmd = payload
     elseif kind == "T" and eng.P[eng.active.P].hp > 0 and b.api.CanTrap(eng) then cmd = "T" end
     if not cmd then return end
     b.waiting = false

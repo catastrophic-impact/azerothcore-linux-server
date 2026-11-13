@@ -58,7 +58,7 @@ end
 local function ModelBox(parent, size)
     local f = CreateFrame("Frame", nil, parent); f:SetSize(size, size)
     f:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 12, insets = { left = 3, right = 3, top = 3, bottom = 3 } })
-    f.m = CreateFrame("PlayerModel", nil, f); f.m:SetPoint("TOPLEFT", 4, -4); f.m:SetPoint("BOTTOMRIGHT", -4, 4)
+    f.m = CreateFrame("DressUpModel", nil, f); f.m:SetPoint("TOPLEFT", 4, -4); f.m:SetPoint("BOTTOMRIGHT", -4, 4)
     f.fallback = f:CreateTexture(nil, "ARTWORK"); f.fallback:SetPoint("TOPLEFT", 6, -6); f.fallback:SetPoint("BOTTOMRIGHT", -6, 6)
     function f:Set(entry, icon, q, dead, scale)
         if self.entry ~= entry then
@@ -285,11 +285,90 @@ end
 function Close() PBTest_closed = (PBTest_closed or 0) + 1; if top then top:Hide(); bottom:Hide() end end
 local function Num(x) return tonumber(x) or 0 end
 
+-- ---------------------------------------------------------------- weather: a screen effect while a weather ability is active (visual only)
+-- ids: 205 Blizzard (snow), 203 Lightning Storm (rain + flashes), 454 Sandstorm (blowing sand), 229 Cleansing Rain (rain); 0 = clear
+local WX = { [205] = { tint = { 0.75, 0.85, 1, 0.16 }, n = 60, w = 3, h = 3, vx = -25, vy = -90, col = { 1, 1, 1, 0.9 } },
+             [203] = { tint = { 0.2, 0.22, 0.35, 0.28 }, n = 70, w = 1, h = 16, vx = -60, vy = -700, col = { 0.7, 0.8, 1, 0.55 }, flash = true },
+             [454] = { tint = { 0.85, 0.65, 0.3, 0.24 }, n = 70, w = 14, h = 2, vx = 650, vy = -40, col = { 0.9, 0.75, 0.4, 0.6 } },
+             [229] = { tint = { 0.25, 0.4, 0.6, 0.18 }, n = 60, w = 1, h = 14, vx = -40, vy = -600, col = { 0.6, 0.75, 1, 0.55 } } }
+local wxFrame, wxCur, wxLeft, wxParts, wxFlash = nil, nil, 0, {}, 0
+local function WxBuild()
+    if wxFrame then return end
+    wxFrame = CreateFrame("Frame", "WotlkPbWeather", UIParent)
+    wxFrame:SetAllPoints(UIParent); wxFrame:SetFrameStrata("BACKGROUND"); wxFrame:EnableMouse(false); wxFrame:Hide()
+    wxFrame.tint = wxFrame:CreateTexture(nil, "BACKGROUND"); wxFrame.tint:SetAllPoints(); wxFrame.tint:SetTexture("Interface\\Buttons\\WHITE8X8")
+    wxFrame.flash = wxFrame:CreateTexture(nil, "ARTWORK"); wxFrame.flash:SetAllPoints(); wxFrame.flash:SetTexture("Interface\\Buttons\\WHITE8X8"); wxFrame.flash:SetVertexColor(1, 1, 1, 0)
+    for i = 1, 70 do
+        local t = wxFrame:CreateTexture(nil, "OVERLAY"); t:SetTexture("Interface\\Buttons\\WHITE8X8"); t:Hide()
+        wxParts[i] = { t = t, x = 0, y = 0 }
+    end
+    wxFrame:SetScript("OnUpdate", function(_, e)
+        local w = WX[wxCur]; if not w then return end
+        local W, H = UIParent:GetWidth(), UIParent:GetHeight()
+        for i = 1, w.n do
+            local p = wxParts[i]
+            p.x = p.x + w.vx * e * (0.7 + (i % 5) * 0.15); p.y = p.y + w.vy * e * (0.7 + (i % 5) * 0.15)
+            if p.y < -10 or p.x < -20 or p.x > W + 20 then p.x = math.random(0, W); p.y = H + math.random(0, 40); if w.vx > 100 then p.x = -10; p.y = math.random(0, H) end end
+            p.t:ClearAllPoints(); p.t:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", p.x, p.y)
+        end
+        if w.flash then
+            wxFlash = wxFlash - e
+            if wxFlash <= 0 then wxFlash = 2.5 + math.random() * 3; wxFrame.flashT = 0.25 end
+            if wxFrame.flashT and wxFrame.flashT > 0 then wxFrame.flashT = wxFrame.flashT - e; wxFrame.flash:SetVertexColor(1, 1, 1, math.max(0, wxFrame.flashT) * 1.4) else wxFrame.flash:SetVertexColor(1, 1, 1, 0) end
+        end
+    end)
+end
+local WXICON = { [205] = "Spell_Frost_IceStorm", [203] = "Spell_Lightning_LightningBolt01", [454] = "Spell_Nature_Cyclone", [229] = "Spell_Nature_Tranquility" }
+local WXNAME = { [205] = "Blizzard", [203] = "Lightning Storm", [454] = "Sandstorm", [229] = "Cleansing Rain" }
+local wxBadge, wxRounds = nil, 0
+local function WxBadgeUpdate()
+    if not wxBadge then
+        wxBadge = CreateFrame("Frame", "WotlkPbWeatherBadge", UIParent); wxBadge:SetSize(150, 62); wxBadge:SetPoint("TOP", UIParent, "TOP", 0, -150); wxBadge:SetFrameStrata("HIGH")
+        wxBadge.icon = wxBadge:CreateTexture(nil, "ARTWORK"); wxBadge.icon:SetSize(40, 40); wxBadge.icon:SetPoint("TOP", 0, 0)
+        wxBadge.text = wxBadge:CreateFontString(nil, "OVERLAY", "GameFontNormal"); wxBadge.text:SetPoint("TOP", wxBadge.icon, "BOTTOM", 0, -2)
+        wxBadge:Hide()
+    end
+    if wxCur and WXICON[wxCur] and wxRounds > 0 then
+        wxBadge.icon:SetTexture("Interface\\Icons\\" .. WXICON[wxCur]); wxBadge.text:SetText(WXNAME[wxCur] .. " (" .. wxRounds .. ")"); wxBadge:Show()
+    else wxBadge:Hide() end
+end
+local function WxSet(id, rounds)
+    WxBuild(); wxCur = id; wxRounds = rounds or 0; WxBadgeUpdate()
+    local w = WX[id]
+    if not w then wxFrame:Hide(); return end
+    wxFrame.tint:SetVertexColor(unpack(w.tint)); wxFrame.flash:SetVertexColor(1, 1, 1, 0); wxFlash = 1.5
+    local W, H = UIParent:GetWidth(), UIParent:GetHeight()
+    for i = 1, 70 do
+        local p = wxParts[i]
+        if i <= w.n then p.x, p.y = math.random(0, W), math.random(0, H); p.t:SetSize(w.w, w.h); p.t:SetVertexColor(unpack(w.col)); p.t:Show() else p.t:Hide() end
+    end
+    wxFrame:Show()
+end
+
+-- ---------------------------------------------------------------- battle music: a random battleground song while a battle runs (/pbtest music = on/off)
+local MUSIC = { "pvp1", "pvp2", "pvp3", "pvp4", "pvp5" }   -- Sound\\Music\\ZoneMusic\\PVP (the same files the Jukebox lists)
+local MUSIC_LEN = { 46.7, 52.6, 40.4, 62.9, 61.8 }
+local music = { on = false, left = 0, last = 0 }
+local musicFrame = CreateFrame("Frame")
+local function PlayNext()
+    local i; repeat i = math.random(#MUSIC) until i ~= music.last or #MUSIC == 1
+    music.last, music.left = i, MUSIC_LEN[i] + 0.5
+    pcall(PlayMusic, "Sound\\Music\\ZoneMusic\\PVP\\" .. MUSIC[i] .. ".mp3")
+end
+musicFrame:SetScript("OnUpdate", function(_, e)
+    if not music.on then return end
+    music.left = music.left - e
+    if music.left <= 0 then PlayNext() end   -- the next random song when one ends
+end)
+local function MusicStart() if WotlkPbMusicOff or music.on then return end music.on = true; PlayNext() end
+local function MusicStop() if not music.on then return end music.on = false; pcall(StopMusic) end
+
 -- ---------------------------------------------------------------- server messages
 local function Setup()
     if top then return end
     Build()
-    AcoreLib.On("pbt", "begin", function() S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("") end)
+    AcoreLib.On("pbt", "begin", function() WxSet(0); MusicStart(); S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("") end)
+    AcoreLib.On("pbt", "weather", function(p) local id, n = p:match("^(%d+)|(%d+)"); WxSet(tonumber(id) or 0, tonumber(n) or 0) end)
     AcoreLib.On("pbt", "st", function(p)
         local s, i, lv, hp, max, icon, q, entry, sc, name = p:match("^(%a),(%d+),(%d+),(%d+),(%d+),([^,]+),(%d+),(%d+),(%d+),(.+)$")
         if s then S[s][Num(i)] = { lv = Num(lv), hp = Num(hp), max = Num(max), icon = icon, q = Num(q), entry = Num(entry), scale = Num(sc) / 100, name = name }; Refresh("all") end
@@ -312,6 +391,7 @@ local function Setup()
     end)
     AcoreLib.On("pbt", "fnt", function(p) local s, i = p:match("^(%a),(%d+)"); i = Num(i); S[s][i].hp = 0; Say(S[s][i].name .. " has fainted!"); Refresh() end)
     AcoreLib.On("pbt", "turn", function(p)
+        if wxCur and wxCur ~= 0 and wxRounds > 0 then wxRounds = wxRounds - 1; if wxRounds <= 0 then WxSet(0) else WxBadgeUpdate() end end   -- one round passed
         local mode, c1, c2, c3, trap = p:match("^(%a+);(%d+),(%d+),(%d+);?(%d?)$")
         S.canTrap = trap == "1"
         S.cd = { tonumber(c1) or 0, tonumber(c2) or 0, tonumber(c3) or 0 }
@@ -322,6 +402,7 @@ local function Setup()
     end)
     AcoreLib.On("pbt", "msg", function(p) Say(p, 3); DEFAULT_CHAT_FRAME:AddMessage("|cffffd100[Pet battle]|r " .. p) end)
     AcoreLib.On("pbt", "end", function(p)
+        MusicStop(); WxSet(0)
         S.canAct = false; Refresh(); turnTxt:SetText("")
         if p == "win" then Say("Victory!", 4) elseif p == "loss" then Say("Defeat... your pets limp home with 1 HP.", 4) else Say("The battle has ended.", 4) end
     end)
@@ -346,6 +427,9 @@ SlashCmdList["PBTEST"] = function(arg)
     local cmd, rest = (arg or ""):match("^(%S*)%s*(.*)$")
     if cmd == "quit" then AcoreLib.Send("pbt", "quit", "")
     elseif cmd == "clean" then Setup(); top:Show(); AcoreLib.Send("pbt", "clean", "")
+    elseif cmd == "music" then
+        WotlkPbMusicOff = not WotlkPbMusicOff; if WotlkPbMusicOff then MusicStop() end
+        DEFAULT_CHAT_FRAME:AddMessage("|cffffd100[Pet battle]|r battle music " .. (WotlkPbMusicOff and "off" or "on"))
     elseif cmd == "fx" then AcoreLib.Send("pbt", "fx", rest)
-    else AcoreLib.Send("pbt", "start", "") end
+    else AcoreLib.Send("pbt", "start", (cmd or "") .. " " .. (rest or "")) end
 end

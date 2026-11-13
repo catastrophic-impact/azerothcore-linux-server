@@ -3,6 +3,7 @@
 -- Species: pb_data.species[creature entry].retail = retail BattlePetSpecies id. Abilities unlock by level exactly as retail (slot 1 at L1, slot 2 at L2, slot 3 at L4; 2nd option of a slot at L10/15/20).
 -- EFFECT PROPS (BattlePetEffectProperties id -> meaning, inferred from the ability texts; params are the labelled columns Param_0..5):
 --   24, 222  damage: p1 Points, p2 Accuracy       96 same, but always hits when the target has state p4 (Spectral Strike vs Blinded)       384  extra hit only if the user acted first       29  extra damage if the target has state p3 (Takedown vs stunned, Maul vs bleeding)
+--   149 Weakening Blow: damage that leaves the target at 1 health at least     107 forced swap (Nether Gate, inert: only its damage works)
 --   68 Explode: p1 % of own max health as damage, user faints     135/137 gates/state markers (inert)
 --   66 Impale: damage that grows by p3 % below 25% target health     44 heal p1 % of the last hit taken (Cauterize)     194 stun-on-miss marker (inert)
 --   23       heal: p1 Points (one effect per ally in team order: Bleat has three)                    104 heal p1 points when this ability kills       197 damage = last hit taken
@@ -21,7 +22,7 @@ C.unknown = {}
 
 local DAMAGE = { [24] = true, [222] = true, [96] = true, [62] = true }
 local APPLY = { [50] = true, [52] = true, [178] = true }
-local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true, [31] = true, [157] = true, [156] = true, [136] = true, [159] = true, [80] = true, [79] = true, [194] = true, [135] = true, [137] = true }   -- 31/157/156/136 = internal state markers, 159 = delayed meteor, 80 = weather (the damage/heal parts of those abilities still work)
+local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true, [31] = true, [157] = true, [156] = true, [136] = true, [159] = true, [79] = true, [194] = true, [135] = true, [137] = true, [107] = true }   -- 31/157/156/136 = internal state markers, 159 = delayed meteor, 80 = weather (the damage/heal parts of those abilities still work)
 C.INERT = INERT
 local function Other(s) return s == "P" and "E" or "P" end
 local function Alive(b, s) local n = 0; for _, p in ipairs(b[s]) do if p.hp > 0 then n = n + 1 end end; return n end
@@ -50,8 +51,14 @@ end
 local function MakeAbility(speciesId, aid)
     local a = assert(R.abilities[aid], "retail ability " .. tostring(aid) .. " missing from pb_retail.lua")
     local ov = D.rename[speciesId] and D.rename[speciesId][a.name] or {}
+    local vis, ranged = ov.vis or VIS[a.name], ov.ranged
+    if not vis then   -- FALLBACK for abilities nobody styled yet: every damaging ability still gets a visible hit (spell animation + sound) instead of nothing
+        local dmg = false
+        for _, t in ipairs(a.turns) do for _, f in ipairs(t.fx) do if DAMAGE[f.prop] or f.prop == 66 or f.prop == 68 or f.prop == 197 or f.prop == 27 or f.prop == 29 or f.prop == 59 or f.prop == 384 or f.prop == 141 then dmg = true end end end
+        if dmg then if a.family == 5 or a.family == 6 then vis, ranged = 133, true else vis = 49966 end end   -- Magic / Elemental: fire bolt (cast, no lunge); everything else: a melee punch
+    end
     return { id = aid, name = ov.name or a.name, retailName = a.name, icon = ov.icon or ICON[a.name] or "Ability_Warrior_Rampage", tip = Clean(a.text), cd = a.cd, turns = a.turns,
-             vis = ov.vis or VIS[a.name], ranged = ov.ranged }
+             vis = vis, ranged = ranged }
 end
 
 -- the 6 abilities of a species as the journal shows them: { {slot=1, opt=1, unlock=1, ability=...}, ... }
@@ -126,6 +133,7 @@ local function Beneficial(states)
     end
     return score >= 0
 end
+function C.Locked(pet, state) return Mod(pet, state) > 0 end   -- e.g. "swapOutLock" while hibernating
 function C.Speed(p) return p.speed * (1 + Mod(p, "Mod_SpeedPercent") / 100) end
 
 local AURA_NAME = { [340] = "Burrowed", [311] = "Dodge" }
@@ -139,6 +147,7 @@ end
 -- apply aura `id` to pet (side s, index idx). duration in rounds; skipTick = it does not lose a round at the end of the round it was applied in
 local function ApplyAura(b, ev, s, idx, id, duration, skipTick, maxStacks, source)
     local pet = b[s][idx]
+    local ab0 = R.abilities[id]; if ab0 and #ab0.turns > 1 then duration = math.max(duration, #ab0.turns) end   -- shown / lasting as many rounds as it has turns
     local states = R.states[id] or {}
     local n = 0
     for _, a in ipairs(pet.auras) do if a.id == id then n = n + 1; a.left = duration; a.skip = skipTick and b.round or nil end end
@@ -232,6 +241,7 @@ local function Act(b, ev, s, cmd, used)
     local pet, tgt = b[s][idx], b[o][b.active[o]]
     if pet.hp <= 0 or tgt.hp <= 0 then return end
     if Mod(pet, "Mechanic_IsStunned") > 0 then ev[#ev + 1] = { k = "stunned", side = s, idx = idx }; return end
+    if Mod(pet, "turnLock") > 0 then ev[#ev + 1] = { k = "stunned", side = s, idx = idx, self = true }; return end   -- Hibernating: cannot act (the heals still tick)
     local ab, turnNo, slot
     if pet.channel then ab, turnNo, slot = pet.channel.ab, pet.channel.turn, pet.channel.slot
     else
@@ -246,11 +256,12 @@ local function Act(b, ev, s, cmd, used)
     b.acted[s] = true
     pet.channel = (#ab.turns > turnNo) and { ab = ab, turn = turnNo + 1, slot = slot } or nil
     local hits = 0   -- how many damage hits this turn deals (playback needs to know which one is the last)
-    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 68 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
+    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 149 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
     local done, healed, landed, dealt = 0, 0, false, 0
     pet.ramp = pet.ramp or {}
     local hp0 = tgt.hp
+    local weatherSeen = false
     for _, f in ipairs(turn.fx) do
         local p = f.p
         if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) then
@@ -297,6 +308,14 @@ local function Act(b, ev, s, cmd, used)
             landed = Hit(b, ev, s, pet, 0, p[2], slot, false, math.floor(pet.max * p[1] / 100)) or landed
             if pet.hp > 0 then Faint(b, ev, s, idx) end
             break
+        elseif f.prop == 149 then   -- Weakening Blow: ordinary damage that can never take the target below 1 health
+            done = done + 1
+            local dmg = Rules.Damage(p[1], pet.power, pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent"))
+            landed = Hit(b, ev, s, pet, 0, p[2], slot, done < hits, math.max(0, math.min(dmg, tgt.hp - 1))) or landed
+        elseif f.prop == 80 then   -- weather (Blizzard / Lightning Storm / Sandstorm / Rain): visual only for now, the addon draws a screen effect while it lasts
+            weatherSeen = true
+            b.weather = { id = f.aura, left = math.max(1, p[3] or 1) }
+            ev[#ev + 1] = { k = "weather", id = f.aura, turns = b.weather.left, name = AuraName(f.aura) }
         elseif f.prop == 44 then   -- Cauterize: heal p1 % of the last hit this pet took
             if pet.lastTaken > 0 then Heal(b, ev, s, idx, math.floor(pet.lastTaken * p[1] / 100), true) end
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
@@ -328,6 +347,14 @@ local function Act(b, ev, s, cmd, used)
         elseif f.prop == 49 then RemoveAura(pet, f.aura)
         elseif not (INERT[f.prop] or DAMAGE[f.prop] or f.prop == 384) then C.unknown[f.prop] = (C.unknown[f.prop] or 0) + 1 end
     end
+    if not weatherSeen then   -- the hit killed the target and ended the loop early: the weather still arrives
+        for _, f in ipairs(turn.fx) do
+            if f.prop == 80 then
+                b.weather = { id = f.aura, left = math.max(1, f.p[3] or 1) }
+                ev[#ev + 1] = { k = "weather", id = f.aura, turns = b.weather.left, name = AuraName(f.aura) }
+            end
+        end
+    end
 end
 
 -- periodic effects of auras (damage over time, heal over time) at the end of every round, then durations tick down
@@ -336,7 +363,10 @@ local function Periodic(b, ev, s)
     if p.hp <= 0 then return end
     local dmg, stacks, heal = 0, 0, 0
     for _, a in ipairs(p.auras) do
-        local ab = R.abilities[a.id]; local t = ab and ab.turns[1]
+        local ab = R.abilities[a.id]
+        a.ticks = (a.ticks or 0) + 1
+        local t = ab and ab.turns[math.min(a.ticks, #ab.turns)]   -- an aura with several turns (Hibernation: 10 / 20 / 40 healing) plays one per round
+        if ab and #ab.turns > 1 and a.ticks >= #ab.turns then a.left = 0 end   -- ...and ends after its last one
         if t and t.event == 255 then
             for _, f in ipairs(t.fx) do
                 if DAMAGE[f.prop] then dmg = dmg + Rules.Damage(f.p[1], a.pwr or p.power, a.fam or p.family, p.family, 0, Mod(p, "Mod_DamageTakenPercent")); stacks = stacks + 1
@@ -352,6 +382,10 @@ local function Periodic(b, ev, s)
     if heal > 0 then Heal(b, ev, s, idx, heal) end
 end
 local function EndOfRound(b, ev, used)
+    if b.weather then
+        b.weather.left = b.weather.left - 1
+        if b.weather.left <= 0 then b.weather = nil; ev[#ev + 1] = { k = "weather", id = 0, turns = 0, name = "" } end
+    end
     for _, s in ipairs({ "P", "E" }) do
         Periodic(b, ev, s)
         local p = b[s][b.active[s]]
@@ -381,7 +415,7 @@ function C.AI(b)
         if C.Ready(pet, sl) then
             local turn = pet.abil[sl].turns[1]; local healOnly, buffActive = true, false
             for _, f in ipairs(turn.fx) do
-                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 44 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
+                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 149 or f.prop == 44 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
                 if (f.prop == 26 or f.prop == 63) and f.aura ~= 0 then for _, a in ipairs(pet.auras) do if a.id == f.aura then buffActive = true end end end
             end
             local useless = (healOnly and not hurt and #turn.fx > 0 and not (turn.fx[1].prop == 49)) or buffActive   -- the brain does not waste a heal at full health or re-apply a running buff
