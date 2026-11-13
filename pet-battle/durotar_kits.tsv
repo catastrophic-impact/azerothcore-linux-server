@@ -1,0 +1,40 @@
+entry	name	role	how	retail_species	retail_name	pet_type	kit
+3300	Adder	Melee	type	374	Black Lamb	Critter	0:Hoof | 0:Chew | 1:Comeback | 1:Soothe | 2:Bleat | 2:Stampede
+3198	Burning Blade Apprentice	Caster	type	114	Disgusting Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+3114	Razormane Battleguard	Melee	type	513	Qiraji Guardling	Humanoid	0:Crush | 0:Whirlwind | 1:Hawk Eye | 1:Sandstorm | 2:Reckless Strike | 2:Blackout Kick
+3098	Mottled Boar	Melee	type	42	Black Tabby Cat	Beast	0:Claw | 0:Pounce | 1:Rake | 1:Screech | 2:Devour | 2:Prowl
+3099	Dire Mottled Boar	Melee	type	89	Worg Pup	Beast	0:Bite | 0:Flurry | 1:Crouch | 1:Howl | 2:Leap | 2:Dazzling Dance
+3100	Elder Mottled Boar	Melee	type	90	Smolderweb Hatchling	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+3103	Makrura Clacker	Melee	type	514	Flayer Youngling	Humanoid	0:Blitz | 0:Triple Snap | 1:Focus | 1:Deflection | 2:Kick | 2:Rampage
+3106	Pygmy Surf Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+3107	Surf Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+3108	Encrusted Surf Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+3110	Dreadmaw Crocolisk	Melee	type	197	Cobra Hatchling	Beast	0:Bite | 0:Poison Fang | 1:Hiss | 1:Counterstrike | 2:Burrow | 2:Vicious Fang
+3199	Burning Blade Cultist	Caster	type	446	Jade Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+3119	Kolkar Drudge	Melee	type	515	Sporeling Sprout	Humanoid	0:Jab | 0:Charge | 1:Creeping Fungus | 1:Leech Seed | 2:Spore Shrooms | 2:Crouch
+3113	Razormane Dustrunner	Melee	type	835	Hopling	Humanoid	0:Crush | 0:Tongue Lash | 1:Sticky Goo | 1:Poison Lash | 2:Backflip | 2:Dreadful Breath
+3101	Vile Familiar	Melee	type	1073	Terky	Humanoid	0:Punch | 0:Flank | 1:Acid Touch | 1:Lucky Dance | 2:Clobber | 2:Stampede
+3197	Burning Blade Fanatic	Melee	name	1919	Horde Fanatic	Humanoid	0:Ban Hammer | 0:Punch | 1:Jar of Smelly Liquid | 1:Overpowered | 2:Queue Dodge | 2:Buuurp!
+5951	Hare	Melee	name	441	Alpine Hare	Critter	0:Scratch | 0:Flurry | 1:Adrenaline Rush | 1:Dodge | 2:Burrow | 2:Stampede
+3115	Dustwind Harpy	Melee	type	1147	Harbinger of Flame	Humanoid	0:Jab | 0:Burn | 1:Magma Wave | 1:Immolate | 2:Impale | 2:Conflagrate
+3131	Lightning Hide	Melee	type	232	Darting Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+3130	Thunder Lizard	Melee	name	433	Spiky Lizard	Beast	0:Claw | 0:Quick Attack | 1:Screech | 1:Triple Snap | 2:Comeback | 2:Ravage
+3196	Burning Blade Neophyte	Melee	type	1149	Corefire Imp	Humanoid	0:Burn | 0:Rush | 1:Immolation | 1:Flamethrower | 2:Cauterize | 2:Wild Magic
+3120	Kolkar Outrunner	Melee	type	1155	Anubisath Idol	Humanoid	0:Crush | 0:Demolish | 1:Sandstorm | 1:Stoneskin | 2:Deflection | 2:Rupture
+3116	Dustwind Pillager	Melee	type	1157	Harpy Youngling	Humanoid	0:Quills | 0:Slicing Wind | 1:Flyby | 1:Counterstrike | 2:Squawk | 2:Lift-Off
+3111	Razormane Quilboar	Melee	type	1158	Stunted Yeti	Humanoid	0:Thrash | 0:Punch | 1:Mangle | 1:Haymaker | 2:Rampage | 2:Bash
+3117	Dustwind Savage	Melee	type	1166	Kun-Lai Runt	Humanoid	0:Thrash | 0:Takedown | 1:Mangle | 1:Frost Shock | 2:Rampage | 2:Deep Freeze
+3125	Clattering Scorpid	Melee	name	414	Scorpid	Beast	0:Snap | 0:Triple Snap | 1:Crouch | 1:Screech | 2:Sting | 2:Rampage
+3126	Armored Scorpid	Melee	name	432	Stripe-Tailed Scorpid	Beast	0:Snap | 0:Triple Snap | 1:Crouch | 1:Screech | 2:Sting | 2:Rampage
+3127	Venomtail Scorpid	Melee	name	545	Leopard Scorpid	Beast	0:Snap | 0:Triple Snap | 1:Crouch | 1:Screech | 2:Sting | 2:Rampage
+3112	Razormane Scout	Rogue	type	1226	Lil' Bad Wolf	Humanoid	0:Claw | 0:Counterstrike | 1:Mangle | 1:Dodge | 2:Howl | 2:Pounce
+3123	Bloodtalon Scythemaw	Melee	type	233	Deviate Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+3104	Makrura Shellhide	Melee	type	1229	Fiendish Imp	Humanoid	0:Burn | 0:Sear Magic | 1:Immolation | 1:Flamethrower | 2:Rush | 2:Nether Gate
+3105	Makrura Snapclaw	Melee	type	1257	Crafty	Humanoid	0:Comeback | 0:Accuracy | 1:Rot | 1:Aged Yolk | 2:Proto-Strike | 2:Baneling Burst
+3122	Bloodtalon Taillasher	Melee	type	234	Gundrak Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+3195	Burning Blade Thug	Melee	type	1323	Ashleaf Spriteling	Humanoid	0:Poisoned Branch | 0:Punch | 1:Solar Beam | 1:Wild Magic | 2:Entangling Roots | 2:Thorns
+3121	Durotar Tiger	Melee	type	235	Leaping Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+3206	Voodoo Troll	Caster	type	500	Minfernal	Magic	0:Crush | 0:Immolate | 1:Immolation | 1:Extra Plating | 2:Meteor Strike | 2:Explode
+3207	Hexed Troll	Caster	type	530	Oily Slimeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+3118	Dustwind Storm Witch	Melee	type	1329	Dandelion Frolicker	Humanoid	0:Scratch | 0:Bite | 1:Frolick | 1:Barkskin | 2:Kick | 2:Dazzling Dance
+3124	Scorpid Worker	Melee	type	237	Ravasaur Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds

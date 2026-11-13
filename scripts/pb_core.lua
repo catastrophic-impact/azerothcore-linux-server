@@ -3,6 +3,8 @@
 -- Species: pb_data.species[creature entry].retail = retail BattlePetSpecies id. Abilities unlock by level exactly as retail (slot 1 at L1, slot 2 at L2, slot 3 at L4; 2nd option of a slot at L10/15/20).
 -- EFFECT PROPS (BattlePetEffectProperties id -> meaning, inferred from the ability texts; params are the labelled columns Param_0..5):
 --   24, 222  damage: p1 Points, p2 Accuracy       96 same, but always hits when the target has state p4 (Spectral Strike vs Blinded)       384  extra hit only if the user acted first       29  extra damage if the target has state p3 (Takedown vs stunned, Maul vs bleeding)
+--   68 Explode: p1 % of own max health as damage, user faints     135/137 gates/state markers (inert)
+--   66 Impale: damage that grows by p3 % below 25% target health     44 heal p1 % of the last hit taken (Cauterize)     194 stun-on-miss marker (inert)
 --   23       heal: p1 Points (one effect per ally in team order: Bleat has three)                    104 heal p1 points when this ability kills       197 damage = last hit taken
 --   26       apply aura to the USER (or the enemy if its states are harmful): p2 chance, p3 duration     50/52/178  same with p2 chance, p3 duration, 50: p4 max stacks   172 stun chance p5
 --   54       damage-over-time aura on the enemy (p3 duration)      63  heal-over-time aura on the user (p3 duration)
@@ -19,7 +21,7 @@ C.unknown = {}
 
 local DAMAGE = { [24] = true, [222] = true, [96] = true, [62] = true }
 local APPLY = { [50] = true, [52] = true, [178] = true }
-local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true, [31] = true, [157] = true, [156] = true, [136] = true, [159] = true, [80] = true, [79] = true }   -- 31/157/156/136 = internal state markers, 159 = delayed meteor, 80 = weather (the damage/heal parts of those abilities still work)
+local INERT = { [158] = true, [177] = true, [85] = true, [229] = true, [116] = true, [28] = true, [170] = true, [31] = true, [157] = true, [156] = true, [136] = true, [159] = true, [80] = true, [79] = true, [194] = true, [135] = true, [137] = true }   -- 31/157/156/136 = internal state markers, 159 = delayed meteor, 80 = weather (the damage/heal parts of those abilities still work)
 C.INERT = INERT
 local function Other(s) return s == "P" and "E" or "P" end
 local function Alive(b, s) local n = 0; for _, p in ipairs(b[s]) do if p.hp > 0 then n = n + 1 end end; return n end
@@ -244,7 +246,7 @@ local function Act(b, ev, s, cmd, used)
     b.acted[s] = true
     pet.channel = (#ab.turns > turnNo) and { ab = ab, turn = turnNo + 1, slot = slot } or nil
     local hits = 0   -- how many damage hits this turn deals (playback needs to know which one is the last)
-    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
+    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 68 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
     local done, healed, landed, dealt = 0, 0, false, 0
     pet.ramp = pet.ramp or {}
@@ -285,6 +287,18 @@ local function Act(b, ev, s, cmd, used)
             if actedFirst and tgt.hp > 0 and Mod(tgt, "untargettable") == 0 and (p[2] >= 100 or b.rng(1, 100) <= p[2]) then
                 ApplyAura(b, ev, o, b.active[o], f.aura, math.max(1, p[3] or 1), false, nil, pet)
             end
+        elseif f.prop == 66 then   -- Impale: damage p1/p2, boosted by p3 % when the target is below 25% health
+            done = done + 1
+            local pts = p[1]; if tgt.hp < tgt.max * 0.25 then pts = pts * (100 + (p[3] or 100)) / 100 end
+            landed = Hit(b, ev, s, pet, pts, p[2], slot, done < hits) or landed
+            if landed and tgt.hp <= 0 then break end
+        elseif f.prop == 68 then   -- Explode: p1 % of the user's max health as damage to the enemy, then the user faints
+            done = done + 1
+            landed = Hit(b, ev, s, pet, 0, p[2], slot, false, math.floor(pet.max * p[1] / 100)) or landed
+            if pet.hp > 0 then Faint(b, ev, s, idx) end
+            break
+        elseif f.prop == 44 then   -- Cauterize: heal p1 % of the last hit this pet took
+            if pet.lastTaken > 0 then Heal(b, ev, s, idx, math.floor(pet.lastTaken * p[1] / 100), true) end
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
             done = done + 1
             if pet.lastTaken > 0 then landed = Hit(b, ev, s, pet, 0, 100, slot, done < hits, math.floor(pet.lastTaken * p[1] / 100)) or landed end
@@ -367,7 +381,7 @@ function C.AI(b)
         if C.Ready(pet, sl) then
             local turn = pet.abil[sl].turns[1]; local healOnly, buffActive = true, false
             for _, f in ipairs(turn.fx) do
-                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
+                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 44 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
                 if (f.prop == 26 or f.prop == 63) and f.aura ~= 0 then for _, a in ipairs(pet.auras) do if a.id == f.aura then buffActive = true end end end
             end
             local useless = (healOnly and not hurt and #turn.fx > 0 and not (turn.fx[1].prop == 49)) or buffActive   -- the brain does not waste a heal at full health or re-apply a running buff

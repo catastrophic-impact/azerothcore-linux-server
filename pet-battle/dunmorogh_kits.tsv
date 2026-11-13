@@ -1,0 +1,31 @@
+entry	name	role	how	retail_species	retail_name	pet_type	kit
+1116	Rockjaw Ambusher	Rogue	type	513	Qiraji Guardling	Humanoid	0:Crush | 0:Whirlwind | 1:Hawk Eye | 1:Sandstorm | 2:Reckless Strike | 2:Blackout Kick
+1128	Young Black Bear	Melee	name	202	Baby Blizzard Bear	Beast	0:Bite | 0:Roar | 1:Bash | 1:Hibernate | 2:Maul | 2:Call Blizzard
+1196	Ice Claw Bear	Melee	name	202	Baby Blizzard Bear	Beast	0:Bite | 0:Roar | 1:Bash | 1:Hibernate | 2:Maul | 2:Call Blizzard
+708	Small Crag Boar	Melee	type	42	Black Tabby Cat	Beast	0:Claw | 0:Pounce | 1:Rake | 1:Screech | 2:Devour | 2:Prowl
+1125	Crag Boar	Melee	type	89	Worg Pup	Beast	0:Bite | 0:Flurry | 1:Crouch | 1:Howl | 2:Leap | 2:Dazzling Dance
+1126	Large Crag Boar	Melee	type	90	Smolderweb Hatchling	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+1127	Elder Crag Boar	Melee	type	197	Cobra Hatchling	Beast	0:Bite | 0:Poison Fang | 1:Hiss | 1:Counterstrike | 2:Burrow | 2:Vicious Fang
+1117	Rockjaw Bonesnapper	Melee	type	514	Flayer Youngling	Humanoid	0:Blitz | 0:Triple Snap | 1:Focus | 1:Deflection | 2:Kick | 2:Rampage
+1211	Leper Gnome	Rogue	type	515	Sporeling Sprout	Humanoid	0:Jab | 0:Charge | 1:Creeping Fungus | 1:Leech Seed | 2:Spore Shrooms | 2:Crouch
+1123	Frostmane Headhunter	Melee	type	835	Hopling	Humanoid	0:Crush | 0:Tongue Lash | 1:Sticky Goo | 1:Poison Lash | 2:Backflip | 2:Dreadful Breath
+1122	Frostmane Hideskinner	Melee	type	1073	Terky	Humanoid	0:Punch | 0:Flank | 1:Acid Touch | 1:Lucky Dance | 2:Clobber | 2:Stampede
+1199	Juvenile Snow Leopard	Melee	type	232	Darting Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1201	Snow Leopard	Melee	type	233	Deviate Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+946	Frostmane Novice	Rogue	type	1147	Harbinger of Flame	Humanoid	0:Jab | 0:Burn | 1:Magma Wave | 1:Immolate | 2:Impale | 2:Conflagrate
+1718	Rockjaw Raider	Melee	type	1149	Corefire Imp	Humanoid	0:Burn | 0:Rush | 1:Immolation | 1:Flamethrower | 2:Cauterize | 2:Wild Magic
+1397	Frostmane Seer	Caster	type	114	Disgusting Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+1124	Frostmane Shadowcaster	Caster	type	446	Jade Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+1115	Rockjaw Skullthumper	Melee	type	1155	Anubisath Idol	Humanoid	0:Crush | 0:Demolish | 1:Sandstorm | 1:Stoneskin | 2:Deflection | 2:Rupture
+1121	Frostmane Snowstrider	Melee	type	1157	Harpy Youngling	Humanoid	0:Quills | 0:Slicing Wind | 1:Flyby | 1:Counterstrike | 2:Squawk | 2:Lift-Off
+707	Rockjaw Trogg	Melee	type	1158	Stunted Yeti	Humanoid	0:Thrash | 0:Punch | 1:Mangle | 1:Haymaker | 2:Rampage | 2:Bash
+724	Burly Rockjaw Trogg	Melee	type	1166	Kun-Lai Runt	Humanoid	0:Thrash | 0:Takedown | 1:Mangle | 1:Frost Shock | 2:Rampage | 2:Deep Freeze
+1120	Frostmane Troll	Melee	type	1226	Lil' Bad Wolf	Humanoid	0:Claw | 0:Counterstrike | 1:Mangle | 1:Dodge | 2:Howl | 2:Pounce
+1134	Young Wendigo	Melee	type	1229	Fiendish Imp	Humanoid	0:Burn | 0:Sear Magic | 1:Immolation | 1:Flamethrower | 2:Rush | 2:Nether Gate
+1135	Wendigo	Melee	type	1257	Crafty	Humanoid	0:Comeback | 0:Accuracy | 1:Rot | 1:Aged Yolk | 2:Proto-Strike | 2:Baneling Burst
+706	Frostmane Troll Whelp	Melee	type	1323	Ashleaf Spriteling	Humanoid	0:Poisoned Branch | 0:Punch | 1:Solar Beam | 1:Wild Magic | 2:Entangling Roots | 2:Thorns
+704	Ragged Timber Wolf	Melee	type	234	Gundrak Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+705	Ragged Young Wolf	Melee	type	235	Leaping Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1131	Winter Wolf	Melee	type	237	Ravasaur Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1133	Starving Winter Wolf	Melee	type	238	Razormaw Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1138	Snow Tracker Wolf	Melee	type	239	Razzashi Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds

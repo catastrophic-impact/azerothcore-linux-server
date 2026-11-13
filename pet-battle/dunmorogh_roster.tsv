@@ -1,0 +1,33 @@
+# Dun Morogh pet roster (zone box x -6900..-4800, y -1700..1000, mobs level <= 10, rank 0, hostile, no event/gnomeregan/ironforge NPCs). Same columns as elwynn_roster.tsv.
+# archetype is a first guess. Rabbit/Fire Beetle already exist from Elwynn.
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	704	Ragged Timber Wolf	2	Beast	1	0	16	11416	Melee		
+Y	705	Ragged Young Wolf	1	Beast	1	0	51	855	Melee		
+Y	706	Frostmane Troll Whelp	3-4	Humanoid	0	0	62	27502	Melee		
+Y	707	Rockjaw Trogg	1-2	Humanoid	0	0	41	606	Melee		
+Y	708	Small Crag Boar	3	Beast	5	0	57	607	Melee		
+Y	724	Burly Rockjaw Trogg	2	Humanoid	0	0	61	160	Melee		
+Y	946	Frostmane Novice	3-4	Humanoid	0	0	8	27492	Caster		
+Y	1115	Rockjaw Skullthumper	8-9	Humanoid	0	0	29	726	Melee		
+Y	1116	Rockjaw Ambusher	9-10	Humanoid	0	0	3	726	Melee		
+Y	1117	Rockjaw Bonesnapper	9-10	Humanoid	0	0	12	726	Melee		
+Y	1120	Frostmane Troll	7-8	Humanoid	0	0	7	27500	Melee		
+Y	1121	Frostmane Snowstrider	8-9	Humanoid	0	0	14	27498	Caster		
+Y	1122	Frostmane Hideskinner	9-10	Humanoid	0	0	11	27490	Melee		
+Y	1123	Frostmane Headhunter	8-9	Humanoid	0	0	18	27464	Melee		
+Y	1124	Frostmane Shadowcaster	9-10	Humanoid	0	0	7	27496	Caster		
+Y	1125	Crag Boar	5-6	Beast	5	0	73	607	Melee		
+Y	1126	Large Crag Boar	6-7	Beast	5	0	44	381	Melee		
+Y	1127	Elder Crag Boar	7-8	Beast	5	0	78	744	Melee		
+Y	1128	Young Black Bear	5-6	Beast	4	0	31	8843	Melee		
+Y	1131	Winter Wolf	7-8	Beast	1	0	25	785	Melee		
+Y	1133	Starving Winter Wolf	8-9	Beast	1	0	2	11416	Melee		
+Y	1134	Young Wendigo	5-6	Humanoid	0	0	5	929	Melee		
+Y	1135	Wendigo	6-7	Humanoid	0	0	43	950	Melee		
+Y	1138	Snow Tracker Wolf	6-7	Beast	1	0	14	604	Melee		
+Y	1196	Ice Claw Bear	7-8	Beast	4	0	46	8840	Melee		
+Y	1199	Juvenile Snow Leopard	5-6	Beast	2	0	15	748	Melee		
+Y	1201	Snow Leopard	7-8	Beast	2	0	66	954	Melee		
+Y	1211	Leper Gnome	8-10	Humanoid	0	0	41	6921	Melee		
+Y	1397	Frostmane Seer	8-9	Humanoid	0	0	23	27494	Caster		
+Y	1718	Rockjaw Raider	3-4	Humanoid	0	0	10	730	Melee		

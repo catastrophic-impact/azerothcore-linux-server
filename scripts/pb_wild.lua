@@ -7,7 +7,7 @@
 local D = require("pb_data")
 local Store = require("pb_store")
 
-local ZONES = { [12] = true }   -- Elwynn Forest (the zone id includes Northshire Valley). Add more zones here later.
+local ZONES = { [12] = true, [1] = true, [14] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials). Add more zones here later.
 local TICK_MS = 12000
 local SEARCH = 60               -- how far from a player real mobs are looked for
 local SPACING = 90              -- at most one wild pet per species within this distance of each other
