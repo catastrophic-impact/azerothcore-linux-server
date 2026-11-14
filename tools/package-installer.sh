@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Builds dist/acore-install.sh: ONE self-extracting file holding the installer and everything it needs (build scripts, patches, config
 # overrides, Lua scripts, client addons, custom SQL, admin TUI source). Nothing private is included (no local/, DEVNOTES, release/, cache/).
-# usage: tools/package-installer.sh        run the result anywhere:  ./acore-install.sh [--dest DIR] [--box NAME] [--clean-box] [--accounts FILE] [--no-configure] [--yes] [--no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking]
+# usage: tools/package-installer.sh        run the result anywhere:  ./acore-install.sh [--dest DIR] [--box NAME] [--clean-box] [--accounts FILE] [--no-configure] [--yes] [--no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking|--no-pets]
 set -euo pipefail
 HERE="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"; cd "$HERE"
 mkdir -p dist

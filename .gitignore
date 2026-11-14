@@ -19,3 +19,6 @@ install-test/
 # vendored upstream sources must be tracked exactly as published, whatever their patterns
 !/deps/**
 pet-battle/.shots/
+
+# retail pet data exports (wago.tools DB2 CSVs): dev-only input of pet-battle/gen_retail.py, not redistributed
+pet-battle/retail_data/

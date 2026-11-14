@@ -7,7 +7,7 @@ local player = setmetatable({}, { __index = function(t, k)
   elseif k=="GetMap" then return function() return {GetWorldObject=function() return obj end, GetHeight=function() return 0 end} end
   elseif k=="IsAlive" then return function() return true end elseif k=="IsInCombat" then return function() return false end
   elseif k=="GetDistance" then return function() return 1 end elseif k=="GetPhaseMask" then return function() return 1 end
-  elseif k=="GetMapId" then return function() return 0 end elseif k=="GetO" then return function() return 0 end
+  elseif k=="GetGMRank" then return function() return _G.RANK or 3 end elseif k=="GetMapId" then return function() return 0 end elseif k=="GetO" then return function() return 0 end
   elseif k=="GetX" or k=="GetY" or k=="GetZ" then return function() return 0 end end
   return function() end end })
 local timers = {}
@@ -25,7 +25,7 @@ function RemoveEventById() end
 function GetPlayersInWorld() return {} end
 package.loaded["acore_msg"].Send = function(p, m, a, pl) sent[#sent+1] = a .. "|" .. tostring(pl) end
 dofile("scripts/pb_battle.lua")
-events["pbj|grant"](player)
+for sp in pairs(require("pb_data").species) do PB_STORE.AddPet(player, sp, 10) end; events["pbj|list"](player)
 local sd = tonumber(os.getenv("SEED")) or 1
 if sd % 4 == 3 then events["pbj|setteam"](player, "1,721,69,299"); events["pbj|active"](player, "1")   -- a team with the rabbit (Support kit)
 elseif sd % 2 == 1 then events["pbj|setteam"](player, "1,299,69,257"); events["pbj|active"](player, "1") end   -- even seeds: no team = automatic fallback
@@ -62,6 +62,10 @@ do   -- health is kept after the battle: at least one of my pets that fought is 
     assert(zero == 0, "a pet was left at 0 HP"); assert(hurt >= 1, "no pet kept damage after the battle (health must NOT be restored)")
 end   -- how the first (played-out) battle ended; the extra scenarios below add more messages
 assert(PB_BATTLE.InBattle(player) == false, "a finished battle must not stay registered (InBattle still true)")
+-- the debug start is GM only: a normal player gets nothing
+RANK = 0; events["pbt|start"](player)
+for _ = 1, 400 do table.sort(timers, function(a, b) return a.t < b.t end); local tm = table.remove(timers, 1); if not tm then break end; for _, x in ipairs(timers) do x.t = x.t - tm.t end; tm.f() end
+assert(PB_BATTLE.InBattle(player) == false, "pbt|start must be refused for a non-GM"); RANK = nil
 -- stuck battle 1: the window never answers -> the watchdog ends it after the idle timeout
 events["pbt|start"](player)
 for _ = 1, 400 do table.sort(timers, function(a, b) return a.t < b.t end); local tm = table.remove(timers, 1); if not tm then break end; for _, x in ipairs(timers) do x.t = x.t - tm.t end; tm.f() end

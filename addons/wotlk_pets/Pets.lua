@@ -2,7 +2,6 @@
 local WHITE = "Interface\\Buttons\\WHITE8X8"
 local BACKDROP = { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
                    tile = true, tileSize = 32, edgeSize = 16, insets = { left = 4, right = 4, top = 4, bottom = 4 } }
-local TESTING = true   -- shows the "Grant test pets" button (remove once pets come from real sources)
 local ARCH = { Tank = { 0.45, 0.65, 1 }, Melee = { 1, 0.45, 0.35 }, Caster = { 0.75, 0.5, 1 }, Support = { 0.4, 0.9, 0.5 } }
 local SLOTNAME = { "Basic", "Utility", "Major" }
 local GOLD = { 1, 0.82, 0 }
@@ -226,10 +225,6 @@ local function Build()
         t:SetScript("OnClick", function() S.tab = i; Refresh() end); tabs[i] = t
     end
     BuildList(); BuildPets(); BuildTeams()
-    if TESTING then
-        local g = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate"); g:SetSize(120, 22); g:SetPoint("BOTTOMLEFT", 110, 16); g:SetText("Grant test pets")
-        g:SetScript("OnClick", function() AcoreLib.Send("pbj", "grant", "") end)
-    end
 end
 
 AcoreLib.On("pbj", "pet", function(p)

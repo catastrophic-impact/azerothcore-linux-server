@@ -1,4 +1,4 @@
--- TEMPORARY prototype: open-world pet battle UI (retail-style top VS bar + bottom action bar). The server (pb_world_test.lua) runs everything.
+-- Open-world pet battle UI (retail-style top VS bar + bottom action bar). The server (pb_battle.lua) runs everything; wild pets start battles, /pbtest is the GM debug start.
 -- /pbtest        start a test battle next to you        /pbtest quit   forfeit        /pbtest fx <spellId>   cast a visual on your pet
 local GOLD = { 0.95, 0.78, 0.25 }
 local WHITE = "Interface\\Buttons\\WHITE8X8"

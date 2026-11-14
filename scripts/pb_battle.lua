@@ -504,7 +504,8 @@ CreateLuaEvent(FreezeTick, 1000, 0)
 PB_BATTLE = { Watchdog = Watchdog, Sweep = Sweep, Start = Start, InBattle = function(player) return battles[player:GetGUIDLow()] ~= nil end }
 
 -- /pbtest            3 random enemy species;   /pbtest 1124 474 30   those species (level 5) as the enemy team;   /pbtest 1196@20 3118@25   with a level each (1-25)
-Msg.On("pbt", "start", function(player, payload)
+Msg.On("pbt", "start", function(player, payload)   -- debug start: GM only (players meet wild pets instead)
+    if player:GetGMRank() < 2 then return end
     local list = {}
     for id, lv in tostring(payload or ""):gmatch("(%d+)@?(%d*)") do
         local n = tonumber(id)
@@ -544,7 +545,8 @@ Msg.On("pbt", "quit", function(player)
     local b = battles[player:GetGUIDLow()]
     if b and not b.over then Send(b, "msg", "You forfeited the battle."); End(b, "loss") end
 end)
-Msg.On("pbt", "fx", function(player, payload)   -- animation lab: /pbtest fx <spellId>
+Msg.On("pbt", "fx", function(player, payload)   -- animation lab (GM only): /pbtest fx <spellId>
+    if player:GetGMRank() < 2 then return end
     local b = battles[player:GetGUIDLow()]; local o = b and GetObj(b, "P")
     local id = tonumber(payload)
     if o and id then Fx(o, id, 4000) end

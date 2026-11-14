@@ -4,12 +4,13 @@
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"; cd "$ROOT"
 REL="$ROOT/release"; LOG="$REL/logs/world.out"; PIPE="$REL/config/world.in"
-ADDONS="/home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/DadCraft/drive_c/ChromieCraft_3.3.5a/Interface/AddOns"
+ADDONS="${WOW_ADDONS:-$(cat "$ROOT/local/addons_path.txt" 2>/dev/null)}"   # your client Interface/AddOns folder: env WOW_ADDONS or the one-line file local/addons_path.txt (gitignored)
+[ -n "$ADDONS" ] || { echo "set WOW_ADDONS or write the client AddOns path into local/addons_path.txt"; exit 1; }
 sh pet-battle/run_tests.sh || { echo "NOT DEPLOYED: tests failed"; exit 1; }
 cp scripts/pb_*.lua scripts/shop_prime.lua "$REL/lua_scripts/"
-rm -f "$REL/lua_scripts/pb_world_test.lua"
-mkdir -p "$ADDONS/wotlk_pets" "$ADDONS/wotlk_pbtest"
-cp -a addons/wotlk_pets/. "$ADDONS/wotlk_pets/"; cp -a tools/pbtest/wotlk_pbtest/. "$ADDONS/wotlk_pbtest/"
+rm -f "$REL/lua_scripts/pb_world_test.lua" "$REL/lua_scripts/pb_fxlab.lua"
+mkdir -p "$ADDONS/wotlk_pets" "$ADDONS/wotlk_petbattle"
+cp -a addons/wotlk_pets/. "$ADDONS/wotlk_pets/"; cp -a addons/wotlk_petbattle/. "$ADDONS/wotlk_petbattle/"
 [ -p "$PIPE" ] || { echo "world console pipe missing: is the world server running? (scripts and addons were copied, start the server)"; exit 1; }
 before=$(grep -a -c "\[pb_battle\] loaded" "$LOG"); lines=$(wc -l < "$LOG")
 echo "reload ale" > "$PIPE"

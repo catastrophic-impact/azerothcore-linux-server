@@ -13,6 +13,7 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 | **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of pets that hang out and stroll about, Alliance, Horde and neutral NPCs, immortal wandering **wildlife** (about 680 animals across every hunter pet family), and thousands of decor objects with a preview-grid placement window. Decor per garrison is capped (default 1000, shown in the window as `Placed n/max`; set `maxDecor` in `acore_settings.lua`). Includes **Curator mode** (GM level 3+) to sort, rename, price and re-centre decor in game. |
 | **Jukebox** | ~1000 game tracks, your own **playlists**, and **Play Random Songs**; works on its own with `/jukebox` (plays for you only). With Garrison installed too, the jukebox NPC plays music for everyone inside a garrison: guests can pick songs, and the garrison owner can set a **Default** song or playlist that plays by itself whenever nothing else is playing. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
+| **Pet Battles** | Open-world, turn-based pet battles modelled on retail: tiny wild pets appear next to the real creatures of the starter zones (Elwynn, Dun Morogh, Durotar, Westfall, Teldrassil, Mulgore, Tirisfal Glades; 272 species). Right-click one to challenge it, capture it, and manage your pets and teams in the `/pets` journal. Ten families with a strong/weak ring and passives, breeds, qualities, weather and cooldowns. Playerbots are excluded. |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
 | **Free training** | Optional TUI switches (Options tab, on by default) that make class-trainer spells and the riding skills cost no gold; levels and quests are unchanged and switching off restores the prices. Part of the TUI, not a script. |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
@@ -41,7 +42,7 @@ Needs `distrobox`, `git`, `curl` and podman or docker.
 git clone <this repo> && cd <repo> && ./install.sh
 ```
 
-It asks which components to install (all **on** by default), whether to use our **recommended settings** (XP x4, 300 playerbots, active auction bot, faster skills/reputation, relaxed instances) or plain AzerothCore defaults (`--stock-settings`), an optional server name, and the player accounts to create, then builds everything inside an Ubuntu 22.04 distrobox and writes a **self-contained server folder** (nothing is written to your home or `~/.config`). Unattended: `--yes`, with `--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking` to leave things out, `--accounts FILE` (lines of `name password gmlevel`).
+It asks which components to install (all **on** by default), whether to use our **recommended settings** (XP x4, 300 playerbots, active auction bot, faster skills/reputation, relaxed instances) or plain AzerothCore defaults (`--stock-settings`), an optional server name, and the player accounts to create, then builds everything inside an Ubuntu 22.04 distrobox and writes a **self-contained server folder** (nothing is written to your home or `~/.config`). Unattended: `--yes`, with `--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking --no-pets` to leave things out, `--accounts FILE` (lines of `name password gmlevel`).
 
 Run the admin TUI from the server folder: `./acore-admin`
 
@@ -71,7 +72,7 @@ The addons are updated often. You can take the latest version straight from this
 1. **Download:** on GitHub press **Code → Download ZIP** and unzip it (or `git clone` / `git pull` if you use git).
 2. **Copy** the folders you want from the `addons/` folder into your WoW client's `Interface/AddOns` folder:
    - `AcoreLib` (always needed)
-   - `wotlk_garrison`, `wotlk_jukebox`, `wotlk_shop`, `wotlk_botmanager` (only the ones your server uses)
+   - `wotlk_garrison`, `wotlk_jukebox`, `wotlk_shop`, `wotlk_botmanager`, `wotlk_pets`, `wotlk_petbattle` (only the ones your server uses)
    - `Transmog` (optional): the transmog window for the Warpweaver NPC; without it players get the normal NPC menu. Its UI comes from the mod-transmog-plus project (AGPL-3.0, see `addons/Transmog/LICENSE`)
    - `wotlk_minimap` (optional): Minimap Drawer, one movable minimap button that holds all your other minimap icons (`/mmd`)
    - `tools/wotlk_garrison_admin` is the garrison admin tool, for GM accounts only
@@ -91,6 +92,7 @@ Download the repo, then in your server folder:
    | Garrison | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` and every `garrison_<name>.lua` (config, items, economy, store, locations, spawn, session, portal, placement, ghost, menagerie, wildlife, props, perks, gm) |
    | Jukebox in a garrison | `garrison_jukebox.lua` (the addon alone needs no server script) |
    | Shop | `shop_server.lua`, `shop_catalog.lua`, `shop_prime.lua` |
+   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `shop_prime.lua` and `custom-sql/016_pet_standins.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
    | Bot Manager | `bot_manager.lua` |
    | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
 

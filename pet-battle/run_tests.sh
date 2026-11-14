@@ -2,7 +2,7 @@
 # Run BEFORE every deploy of the pet scripts/addons:  flatpak-spawn --host sh pet-battle/run_tests.sh   (from the project root)
 set -e
 fail=0
-for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_store.lua scripts/shop_prime.lua scripts/pb_battle.lua scripts/pb_wild.lua tools/pbtest/wotlk_pbtest/PBTest.lua addons/wotlk_pets/Pets.lua; do
+for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_store.lua scripts/shop_prime.lua scripts/pb_battle.lua scripts/pb_wild.lua pet-battle/lab/pb_fxlab.lua addons/wotlk_petbattle/Battle.lua addons/wotlk_pets/Pets.lua; do
   luajit -bl "$f" >/dev/null || { echo "SYNTAX FAIL $f"; fail=1; }
 done
 luajit pet-battle/test_store.lua || fail=1
@@ -38,12 +38,12 @@ pbt|hp|E,1,1400,1535,-135
 pbt|end|win
 pbt|xp|Young Wolf,30,11,1
 pbt|done|'
-MSGS="$MSGS" luajit pet-battle/smoke_client.lua tools/pbtest/wotlk_pbtest/PBTest.lua | grep -q "ERROR\|NO HANDLER" && { echo "BATTLE ADDON FAIL"; fail=1; }
+MSGS="$MSGS" luajit pet-battle/smoke_client.lua addons/wotlk_petbattle/Battle.lua | grep -q "ERROR\|NO HANDLER" && { echo "BATTLE ADDON FAIL"; fail=1; }
 JMSGS='pbj|pet|721,10,0,1,1,1,Support,Ability_Druid_Dash,1000,170,3,640,Rabbit
 pbj|team|1,721,0,0
 pbj|active|1
 pbj|follow|721
 pbj|done|'
 MSGS="$JMSGS" luajit pet-battle/smoke_client.lua addons/wotlk_pets/Pets.lua | grep -q "ERROR\|NO HANDLER" && { echo "JOURNAL ADDON FAIL"; fail=1; }
-SLASH=1 MSGS="" luajit pet-battle/smoke_client.lua tools/pbtest/wotlk_pbtest/PBTest.lua | grep -q "ERROR" && { echo "SLASH COMMAND FAIL"; fail=1; }
+SLASH=1 MSGS="" luajit pet-battle/smoke_client.lua addons/wotlk_petbattle/Battle.lua | grep -q "ERROR" && { echo "SLASH COMMAND FAIL"; fail=1; }
 [ $fail = 0 ] && echo "ALL TESTS PASSED" || { echo "TESTS FAILED"; exit 1; }

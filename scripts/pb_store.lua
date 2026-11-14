@@ -1,6 +1,6 @@
 -- Pet battle STORAGE + journal server side (module "pbj"). One row per owned species per character (a duplicate recruit REPLACES it).
 -- Tables (acore_characters): dc_battlepet(guid, species, level, xp, a1, a2, a3)   dc_battleteam(guid, team, slot, species)   dc_battleplayer(guid, active_team)
--- Client -> server: pbj|list  pbj|abil|<species>  pbj|setabil|<species>,<slot>,<opt>  pbj|setteam|<team>,<s1>,<s2>,<s3>  pbj|active|<team>  pbj|grant (TEMP test: gives the pilot pets)
+-- Client -> server: pbj|list  pbj|abil|<species>  pbj|setabil|<species>,<slot>,<opt>  pbj|setteam|<team>,<s1>,<s2>,<s3>  pbj|active|<team>
 -- Server -> client: pbj|pet|..., pbj|team|..., pbj|active|n, pbj|done, pbj|abl|...
 local Msg = require("acore_msg")
 local D = require("pb_data")
@@ -248,10 +248,6 @@ Msg.On("pbj", "active", function(player, payload)
     c.active = n
     CharDBExecute(string.format("REPLACE INTO dc_battleplayer (guid, active_team) VALUES (%d,%d)", g, n))
     Msg.Send(player, "pbj", "active", n)
-end)
-Msg.On("pbj", "grant", function(player)   -- TEMPORARY test helper: one of each pilot species at level 10
-    for sp in pairs(D.species) do Store.AddPet(player, sp, 10) end
-    SendAll(player)
 end)
 RegisterPlayerEvent(4, function(_, player) cache[player:GetGUIDLow()] = nil end)   -- logout
 

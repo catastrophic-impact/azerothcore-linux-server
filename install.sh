@@ -3,17 +3,17 @@
 # Builds everything inside an Ubuntu 22.04 distrobox (home under ~/boxes), then produces a self-contained
 # server folder next to where you ran this. The server folder never touches your home or ~/.config.
 # usage: ./install.sh [--dest DIR] [--box NAME] [--clean-box] [--accounts FILE] [--no-configure] [--yes]
-#                     [--stock-settings] [--no-garrison] [--no-jukebox] [--no-shop] [--no-bots] [--no-timewalking]   (--yes = no questions, all defaults)
+#                     [--stock-settings] [--no-garrison] [--no-jukebox] [--no-shop] [--no-bots] [--no-timewalking] [--no-pets]   (--yes = no questions, all defaults)
 set -euo pipefail
 HERE="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 DEST="$PWD/azerothcore-server"; BOX="acore-box"; CLEAN=0; ACCTS="$HERE/local/accounts.txt"; CONFIGURE=1; ASSUME_YES=0
-ENABLE_garrison=1; ENABLE_jukebox=1; ENABLE_shop=1; ENABLE_bots=1; ENABLE_timewalking=1; SETTINGS=recommended
+ENABLE_garrison=1; ENABLE_jukebox=1; ENABLE_shop=1; ENABLE_bots=1; ENABLE_timewalking=1; ENABLE_pets=1; SETTINGS=recommended
 SERVER_NAME=""; NEWACCTS=()   # NEWACCTS entries: "name<TAB>password<TAB>gmlevel" (kept in memory only, never written to disk)
 source "$HERE/tools/components.sh"
 while [ $# -gt 0 ]; do case "$1" in
   --dest) DEST="$(readlink -m "$2")"; shift 2;; --box) BOX="$2"; shift 2;;
   --clean-box) CLEAN=1; shift;; --accounts) ACCTS="$2"; shift 2;; --no-configure) CONFIGURE=0; shift;;
-  --yes) ASSUME_YES=1; shift;; --stock-settings) SETTINGS=stock; shift;; --no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking) eval "ENABLE_${1#--no-}=0"; shift;;
+  --yes) ASSUME_YES=1; shift;; --stock-settings) SETTINGS=stock; shift;; --no-garrison|--no-jukebox|--no-shop|--no-bots|--no-timewalking|--no-pets) eval "ENABLE_${1#--no-}=0"; shift;;
   *) echo "unknown option $1"; exit 1;; esac; done
 CACHE="${ACORE_CACHE:-$HERE/cache}"; BOXHOME="$HOME/boxes/$BOX"
 MYSQL_URL="https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.7-linux-glibc2.28-x86_64.tar.xz"

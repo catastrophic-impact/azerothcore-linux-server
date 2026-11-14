@@ -1,5 +1,6 @@
 #!/bin/sh
 # Run the presentation lab on the live server and screenshot the whole screen about 4 times a second (parallel spectacle jobs, staggered 0.25 s).
+# The lab script is dev-only: copy pet-battle/lab/pb_fxlab.lua to release/lua_scripts/ + reload ale first, and delete it afterwards (deploy.sh removes it).
 # Usage (project root):  flatpak-spawn --host sh pet-battle/watch_lab.sh "battle 10" 60      (second argument = SECONDS to capture)
 # Frames: pet-battle/.shots/lab_NNNN.png. The WoW window must be visible. The user cannot see VS Code while in game: start and end are announced IN GAME,
 # and the lab pets/battle are cleaned up at the end.

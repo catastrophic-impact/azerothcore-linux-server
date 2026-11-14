@@ -5,7 +5,7 @@ local known = {}
 for l in io.lines("pet-battle/api_manifest.txt") do local n = l:match("^(%w+)="); if n then known[n] = true end end
 local fails, n = 0, 0
 for _, f in ipairs({ "pb_battle", "pb_cast", "pb_store", "pb_wild", "shop_prime", "pb_fxlab" }) do
-    local h = io.open("scripts/" .. f .. ".lua"); if h then
+    local h = io.open((f == "pb_fxlab" and "pet-battle/lab/" or "scripts/") .. f .. ".lua"); if h then
         local src = h:read("*a"); h:close(); local seen = {}
         for name in src:gmatch(":([A-Z]%w+)%(") do
             if not seen[name] then seen[name] = true; n = n + 1
