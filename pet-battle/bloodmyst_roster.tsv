@@ -1,0 +1,64 @@
+# bloodmyst pet roster (map 530 box x -3000..-1000, y -14000..-10800, mobs level <= 22, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	10779	Infected Squirrel	1	Critter	0	0	12	10090	Melee		
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	4075	Rat	1	Critter	0	0	18	1141	Melee		already a species
+Y	17467	Skunk	1	Critter	0	0	10	16633	Melee		already a species
+N	17850	Sunhawk Reclaimer Generator	1	Not specified	0	0	8	17188	Melee		type Not specified
+Y	10780	Infected Deer	5	Critter	0	0	5	10091	Melee		
+Y	17217	Barbed Crawler	7-9	Beast	8	0	31	342	Melee		already a species
+Y	17197	Root Thresher	7-8	Elemental	0	0	5	12348	Melee		already a species
+Y	17203	Nightstalker	8-9	Beast	2	0	3	3031	Melee		already a species
+Y	17349	Blue Flutterer	9-11	Beast	37	0	3	17709	Melee		
+Y	17345	Brown Bear	9-10	Beast	4	0	24	1006	Melee		
+Y	17525	Bloodmyst Hatchling	10-11	Beast	31	0	67	17061	Melee		
+Y	17320	Bristlelimb Shaman	10-11	Humanoid	0	0	18	6822	Melee		
+Y	17321	Bristlelimb Warrior	10-11	Humanoid	0	0	17	5773	Melee		
+Y	17530	Elekk	10	Beast	0	0	4	17063	Melee		already a species
+Y	17325	Blacksilt Forager	11-12	Humanoid	0	0	17	1762	Melee		
+Y	17327	Blacksilt Tidecaller	11-13	Humanoid	0	0	12	3940	Melee		
+Y	17352	Corrupted Treant	11-13	Elemental	0	0	21	17057	Melee		
+Y	17343	Thistle Lasher	11-12	Elemental	0	0	87	17712	Melee		
+Y	17326	Blacksilt Scout	12-13	Humanoid	0	0	11	2597	Melee		
+Y	17347	Grizzled Brown Bear	12-13	Beast	4	0	48	14316	Melee		
+Y	17339	Nazzivus Felsworn	12-14	Demon	0	0	16	6744	Melee		
+Y	17337	Nazzivus Satyr	12-13	Demon	0	0	15	2011	Melee		
+Y	17673	Stinkhorn Striker	12-14	Beast	0	0	7	17170	Melee		
+Y	17333	Wrathscale Screamer	12-13	Humanoid	0	0	20	4972	Melee		
+Y	17331	Wrathscale Shorestalker	12-13	Humanoid	0	0	21	4762	Melee		
+Y	17338	Nazzivus Rogue	13-14	Demon	0	0	19	2012	Melee		
+Y	17524	Nazzivus Summoner	13	Demon	0	0	16	11344	Melee		
+N	17604	Sunhawk Spy	13-14	Humanoid	0	0	22	17360	Melee		
+Y	17334	Wrathscale Marauder	13-14	Humanoid	0	0	19	5028	Melee		
+Y	17336	Wrathscale Sorceress	13-14	Humanoid	0	0	18	4981	Melee		
+N	17659	Blade of Argus	14-16	Humanoid	0	0	5	17162	Melee		
+N	17600	Draenei Cartographer	14	Humanoid	0	0	3	17119	Melee		npcflag 2
+Y	17322	Infected Wildkin	14-15	Humanoid	0	0	17	16266	Melee		
+Y	17324	Irradiated Wildkin	14-16	Humanoid	0	0	18	17058	Melee		
+Y	17344	Mutated Constrictor	14-15	Elemental	0	0	25	17713	Melee		
+Y	17350	Royal Blue Flutterer	14-16	Beast	37	0	17	17711	Melee		
+Y	17342	Axxarien Hellcaller	15-17	Demon	0	0	13	11344	Melee		
+Y	17340	Axxarien Shadowstalker	15-16	Demon	0	0	13	2011	Melee		
+Y	17330	Blacksilt Seer	15-17	Humanoid	0	0	29	3617	Melee		
+Y	17328	Blacksilt Shorestriker	15-16	Humanoid	0	0	15	6759	Melee		
+Y	17713	Bloodcursed Naga	15-16	Humanoid	0	0	42	11263	Melee		
+Y	17323	Contaminated Wildkin	15-16	Humanoid	0	0	12	17056	Melee		
+Y	17348	Elder Brown Bear	15-16	Beast	4	0	22	1990	Melee		
+Y	17550	Void Anomaly	15-16	Demon	0	0	13	17081	Melee		
+N	17680	Webbed Creature	15	Not specified	0	0	3	16213	Melee		type Not specified
+Y	17341	Axxarien Trickster	16	Demon	0	0	12	2014	Melee		
+N	17329	Blacksilt Warrior	16-17	Humanoid	0	0	17	6759	Melee		npcflag 2
+Y	17714	Bloodcursed Voyager	16-17	Undead	0	0	16	17556	Melee		
+Y	17353	Corrupted Stomper	16-18	Elemental	0	0	6	9593	Melee		
+Y	17527	Enraged Ravager	16-17	Beast	31	0	63	17062	Melee		
+Y	17522	Myst Spinner	16-17	Beast	3	0	5	17346	Melee		
+N	17607	Sunhawk Defender	16-17	Humanoid	0	0	10	17364	Melee		
+N	17606	Sunhawk Reclaimer	16-17	Humanoid	0	0	26	17356	Melee		
+Y	17588	Veridian Whelp	16-17	Undead	0	0	32	17254	Melee		
+Y	17346	Mutated Tangler	17-18	Elemental	0	0	10	17714	Melee		
+Y	17523	Myst Leecher	17-18	Beast	3	0	8	18043	Melee		
+N	17608	Sunhawk Pyromancer	17-18	Humanoid	0	0	13	17367	Melee		
+Y	17589	Veridian Broodling	17-18	Undead	0	0	23	17253	Melee		
+N	17358	Fouled Water Spirit	18-19	Elemental	0	0	28	17045	Melee		citizen/guard/event name
+N	17276	Watery Aspect	33-35	Elemental	0	0	10	5561	Melee		level > 22

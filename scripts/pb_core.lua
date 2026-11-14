@@ -421,6 +421,7 @@ local function Hit(b, ev, s, pet, points, accuracy, slot, more, raw)
         ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, more = more, hp = tgt.hp, max = tgt.max }; return false
     end
     local ws = WS(); if ws and ws.Stat_Accuracy and accuracy <= 100 and pet.family ~= "Elemental" then accuracy = accuracy + ws.Stat_Accuracy end   -- Sandstorm: every hit chance -10%
+    local auraAcc = Mod(pet, "Stat_Accuracy"); if auraAcc ~= 0 and accuracy <= 100 then accuracy = math.max(0, accuracy + auraAcc) end   -- Lucky Dance / Focus / Stench / Blinding Poison / Uncertainty / Flash: hit chance of the ATTACKER's auras
     if accuracy < 100 and b.rng(1, 100) > accuracy then
         ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Miss!", more = more, hp = tgt.hp, max = tgt.max }; return false
     end
@@ -508,7 +509,7 @@ local function Act(b, ev, s, cmd, used)
         local p = f.p
         if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) then
             if p[2] >= 200 and DAMAGE[f.prop] and done > 0 then   -- Body Slam: a damage effect with accuracy 200 AFTER the ability already hit = damage to the USER itself (a lone 200 = Package Drop: just never misses)
-                local selfDmg = math.max(1, Rules.Damage(p[1], pet.power, pet.useFam or pet.family, pet.family, 0, 0))
+                local selfDmg = math.max(1, Rules.Damage(p[1], pet.power, pet.family, pet.family, 0, 0))   -- retail SimpleDamage: recoil ignores the family matchup (an Elemental ability on a Critter user hit itself x0.67)
                 pet.hp = math.max(1, pet.hp - selfDmg)   -- recoil can hurt but never faint the user
                 ev[#ev + 1] = { k = "dmg", side = s, idx = idx, tside = s, tidx = idx, dmg = selfDmg, hp = pet.hp, max = pet.max, slot = slot, more = false, recoil = true, counter = 1 }
                 goto continue
@@ -564,6 +565,18 @@ local function Act(b, ev, s, cmd, used)
             weatherSeen = true
             b.weather = { id = f.aura, left = math.max(1, p[3] or 1) }
             ev[#ev + 1] = { k = "weather", id = f.aura, turns = b.weather.left, name = AuraName(f.aura) }
+        elseif f.prop == 67 then   -- Life Exchange: both active pets end on the same health (the average); nobody can go above their own maximum, nobody faints
+            if tgt.hp > 0 and pet.hp > 0 and Mod(tgt, "untargettable") == 0 then
+                local avg = math.floor((pet.hp + tgt.hp) / 2)
+                if tgt.hp > avg then
+                    Heal(b, ev, s, idx, avg - pet.hp)
+                    Hit(b, ev, s, pet, 0, 100, slot, false, math.min(tgt.hp - avg, tgt.hp - 1))
+                elseif pet.hp > avg then
+                    local loss = math.min(pet.hp - avg, pet.hp - 1); pet.hp = pet.hp - loss
+                    ev[#ev + 1] = { k = "dmg", side = s, idx = idx, tside = s, tidx = idx, dmg = loss, hp = pet.hp, max = pet.max, slot = slot, more = false, recoil = true, counter = 1 }
+                    Heal(b, ev, o, b.active[o], avg - tgt.hp)
+                end
+            end
         elseif f.prop == 44 then   -- Cauterize: heal p1 % of the last hit this pet took
             if pet.lastTaken > 0 then Heal(b, ev, s, idx, math.floor(pet.lastTaken * p[1] / 100), true) end
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took

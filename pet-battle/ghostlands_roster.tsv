@@ -1,0 +1,51 @@
+# ghostlands pet roster (map 530 box x 5000..7500, y -8500..-5000, mobs level <= 22, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	6827	Crab	1	Critter	8	0	3	5557	Melee		already a species
+Y	13321	Frog	1	Critter	0	0	4	901	Melee		already a species
+Y	16030	Maggot	1	Critter	0	0	20	9904	Melee		already a species
+Y	4075	Rat	1	Critter	0	0	11	1141	Melee		already a species
+Y	2914	Snake	1	Critter	0	0	7	1206	Melee		already a species
+Y	14881	Spider	1	Critter	0	0	8	1160	Melee		already a species
+Y	16304	Arcane Devourer	11-12	Elemental	0	0	3	14272	Melee		already a species
+Y	16335	Blackpaw Scavenger	12-13	Humanoid	0	0	22	10851	Melee		
+Y	16337	Blackpaw Shaman	12-14	Humanoid	0	0	18	10854	Melee		
+Y	16309	Gangled Cannibal	12-13	Undead	0	0	10	137	Melee		
+Y	16310	Mana Shifter	12	Beast	0	0	5	15934	Melee		already a species
+N	16804	Night Elf Corpse	12-15	Humanoid	0	0	6	16342	Melee		
+Y	16323	Phantasmal Seeker	12-14	Undead	0	0	26	4629	Melee		
+Y	16311	Phantasmal Watcher	12-14	Undead	0	0	4	14702	Melee		
+Y	33713	Rotting Crawler	12-13	Beast	8	0	4	999	Melee		
+Y	16405	Whitetail Frenzy	12-14	Beast	0	0	9	245	Melee		
+Y	16403	Withered Grimscale	12-13	Undead	0	0	11	3619	Melee		
+Y	16402	Zombified Grimscale	12-13	Undead	0	0	6	15926	Melee		
+Y	16334	Blackpaw Gnoll	13-14	Humanoid	0	0	24	848	Melee		
+Y	16348	Ghostclaw Lynx	13-14	Beast	2	0	28	16245	Melee		
+Y	16301	Risen Hungerer	13-14	Undead	0	0	11	1197	Melee		
+Y	16324	Stonewing Slayer	13-14	Undead	0	0	28	7533	Melee		
+Y	16354	Vampiric Mistbat	13-15	Beast	24	0	68	3956	Melee		
+Y	16315	Deatholme Acolyte	14-15	Humanoid	0	0	15	10535	Melee		
+Y	16351	Spindleweb Lurker	14-15	Beast	3	0	28	1087	Melee		
+Y	16314	Fallen Ranger	15	Undead	0	0	17	10728	Melee		
+N	16333	Sentinel Infiltrator	15-16	Humanoid	0	0	24	4845	Melee		
+Y	16349	Ghostclaw Ravager	16-17	Beast	2	0	47	15592	Melee		
+Y	16355	Lesser Scourgebat	16-18	Beast	24	0	25	14562	Melee		
+Y	16302	Risen Stalker	16-17	Undead	0	0	18	10970	Melee		
+Y	16316	Stonewing Tracker	16-17	Undead	0	0	10	11071	Melee		
+Y	16318	Deatholme Darkmage	17-18	Humanoid	0	0	8	10631	Melee		
+Y	16305	Dreadbone Sentinel	17-18	Undead	0	0	13	733	Melee		
+Y	16352	Greater Spindleweb	17-18	Beast	3	0	59	1090	Melee		
+Y	16344	Shadowpine Headhunter	17-18	Humanoid	0	0	26	298	Melee		
+Y	16346	Shadowpine Hexxer	17-19	Humanoid	0	0	21	590	Melee		
+Y	16469	Shadowpine Shadowcaster	17-18	Humanoid	0	0	9	16275	Melee		
+N	23705	Catlord Corpse	18	Humanoid	0	0	5	592	Melee		
+Y	16317	Deatholme Necromancer	18-19	Humanoid	0	0	19	10539	Melee		
+N	22062	Dr. Whitherlimb	18	Undead	0	4	4	16176	Melee		rank 4 (elite/rare)
+Y	16319	Nerubis Centurion	18-19	Undead	0	0	29	9758	Melee		
+Y	16345	Shadowpine Catlord	18-19	Humanoid	0	0	36	592	Melee		
+Y	16321	Wailer	18-19	Undead	0	0	18	10750	Melee		
+N	16320	Eye of Dar'Khan	19-20	Undead	0	0	32	4629	Melee		
+N	16541	Ghostlands Guardian	26-28	Humanoid	0	0	6	15511	Melee		level > 22
+N	10415	Ash'ari Crystal	60	Not specified	0	1	4	9832	Melee		rank 1 (elite/rare)
+N	23746	Zul'Aman Exterior InvisMan	60	Not specified	0	0	50	16480	Melee		level > 22
+N	25145	Budd's Bodyguard	70	Humanoid	0	1	23	22948	Melee		rank 1 (elite/rare)

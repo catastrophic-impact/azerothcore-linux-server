@@ -1,0 +1,2 @@
+# retail species whose abilities the test layer pins (see PINNED in test_abilities.lua)
+1156  # Mini Mindslayer: Life Exchange (277)

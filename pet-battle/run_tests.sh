@@ -15,6 +15,8 @@ luajit pet-battle/test_auras.lua || fail=1
 luajit pet-battle/test_api.lua || fail=1
 luajit pet-battle/sim_presentation.lua 3 || fail=1
 luajit pet-battle/test_core.lua || fail=1
+luajit pet-battle/test_qa_data.lua || fail=1   # species vs 016 SQL, zone TSV/picks/D.zones/ZONES cross-checks (QA run 3)
+luajit pet-battle/sim_qa_sweep.lua 20 || fail=1   # every species x levels x quality, 1v1 and 3v3, 20 s budget
 luajit pet-battle/smoke_wild.lua || fail=1
 python3 -I pet-battle/check_fx.py >/dev/null || { echo "FX FAIL (non-instant visual spell)"; fail=1; }
 for sd in 1 2 3 4 5 6 7 8; do   # real pb_store + engine + battle script, stubbed game API, played to the end incl. XP and recruit

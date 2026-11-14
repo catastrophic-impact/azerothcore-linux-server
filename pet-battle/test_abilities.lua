@@ -7,7 +7,9 @@ local D = require("pb_data"); local R = require("pb_retail"); local Rules = requ
 local only = arg and arg[1]
 local verbose = only == "verbose"
 local fails, passes, unchecked = {}, 0, {}
+local claimsRan = {}
 local function check(name, claim, ok, detail)
+    claimsRan[claim:match('^%a+ %a+') or claim] = true
     if ok then passes = passes + 1 else fails[#fails + 1] = name .. ": " .. claim .. " -- " .. tostring(detail) end
 end
 local function unchecked_(name, why) unchecked[#unchecked + 1] = name .. ": " .. why end
@@ -47,6 +49,9 @@ end
 local function dmgEvents(evs, side) local t = {}; for _, x in ipairs(evs) do if not x.recoil and (x.k == "dmg" or x.k == "dot") and (not side or x.side == side) then t[#t + 1] = x end end; return t end
 local function sum(t, f) local n = 0; for _, x in ipairs(t) do n = n + f(x) end; return n end
 
+-- PINNED species: retail species listed in pet-battle/pinned_species.txt are generated into pb_retail for the test layer even when no shipped kit uses them, so abilities the engine
+-- implements (1156 Mini Mindslayer: 277 Life Exchange) keep their checks after a kit re-pick
+D.species[999999] = { name = "Pinned test species", retail = 1156 }
 -- all distinct abilities of all species kits
 local abilities, byName = {}, {}
 for entry in pairs(D.species) do
@@ -63,7 +68,14 @@ for _, ab in ipairs(byName) do
         local desc = C.Describe({ text = ab.text, turns = ab.turns, family = ab.family }, C.NewPet(721, 10, { 1, 1, 1 }, dice(6), { quality = 3 }).power)
         local checked = 0
         -- 1. damage: "dealing N Family damage" = the first hit of the ability against a neutral target
-        local upTo = tonumber(desc:match("dealing up to (%d+) %a+ damage"))
+        local eachUpTo = tonumber(desc:match("each dealing up to (%d+) %a+ damage"))   -- barrage: the number is PER HIT (Moth Balls: 4 hits)
+        local upTo = (not eachUpTo) and tonumber(desc:match("dealing up to (%d+) %a+ damage"))
+        if eachUpTo then
+            checked = checked + 1
+            local evs = run(ab, { roll = 6 }, 1); local hs = dmgEvents(evs, "P")
+            local okEach = #hs >= 2; for _, x in ipairs(hs) do if math.abs(x.dmg - eachUpTo) > 3 then okEach = false end end
+            check(name, "every hit deals up to " .. eachUpTo, okEach, #hs .. " hits, first " .. tostring(hs[1] and hs[1].dmg))
+        end
         if upTo then
             checked = checked + 1
             local evs = run(ab, { roll = 6 }, 1); local tot = sum(dmgEvents(evs, "P"), function(x) return x.dmg end)
@@ -99,6 +111,20 @@ for _, ab in ipairs(byName) do
             local nHi, nLo = #dmgEvents(evsHi, "P"), #dmgEvents(evsLo, "P")
             check(name, "hits up to " .. hi .. " times (+1 when first: " .. extra .. ")", nHi == tonumber(hi) + extra, "got " .. nHi)
             check(name, "hits at least " .. lo .. " time", nLo >= tonumber(lo), "got " .. nLo)
+        end
+        -- 2b. Life Exchange: "Equalizes the health between the user and his enemy" -> both active pets end on the same health (capped by their own maximum)
+        if desc:find("Equalizes the health") then
+            checked = checked + 1
+            local _, b, a, e = run(ab, { hpFrac = 0.4 }, 1)
+            check(name, "equalizes health (user 40% -> same hp as enemy)", math.abs(a.hp - e.hp) <= 1 and a.hp > a.max * 0.4 and e.hp < e.max, "user " .. a.hp .. " enemy " .. e.hp)
+            local _, b2, a2, e2 = run(ab, { prep = function(bb, aa, ee) ee.hp = math.floor(ee.max * 0.2) end }, 1)
+            local _, b3, a3, e3 = run(ab, { prep = function(bb, aa, ee) aa.hp = 1 end }, 1)   -- user at 1 hp vs a full enemy: the user gains, nobody faints, nobody above their max
+            check(name, "equalizes health (user 1 hp)", a3.hp > 1 and a3.hp <= a3.max and e3.hp >= 1 and math.abs(a3.hp - e3.hp) <= 1, "user " .. a3.hp .. " enemy " .. e3.hp)
+            local _, b4, a4, e4 = run(ab, { prep = function(bb, aa, ee) ee.hp = 1 end }, 1)   -- enemy at 1 hp vs a full user: the user pays but keeps at least 1 hp
+            check(name, "equalizes health (enemy 1 hp)", a4.hp >= 1 and e4.hp > 1 and e4.hp <= e4.max and math.abs(a4.hp - e4.hp) <= 1, "user " .. a4.hp .. " enemy " .. e4.hp)
+            local _, b5, a5, e5 = run(ab, { prep = function(bb, aa, ee) ee.hp = aa.hp end }, 1)   -- equal health: nothing changes
+            check(name, "equalizes health (already equal)", a5.hp == a5.max and e5.hp == e5.max, "user " .. a5.hp .. " enemy " .. e5.hp)
+            check(name, "equalizes health (enemy 20%, user full: the user pays)", math.abs(a2.hp - e2.hp) <= 1 and a2.hp < a2.max and e2.hp > e2.max * 0.2, "user " .. a2.hp .. " enemy " .. e2.hp)
         end
         -- 3. healing: "Restores N health" (damaged user)
         local H = tonumber(desc:match("Restores (%d+) health")) or tonumber(desc:match("heals? .-for (%d+) health")) or tonumber(desc:match("heals? .-for (%d+)[^%d%%]"))
@@ -685,4 +711,9 @@ end
 print(string.format("abilities: %d passed, %d failed, %d abilities with nothing checkable", passes, #fails, #unchecked))
 for _, f in ipairs(fails) do print("FAIL " .. f) end
 if verbose then for _, u in ipairs(unchecked) do print("UNCHECKED " .. u) end end
+-- CANARY: pinned abilities must really be checked (a deleted/failed pin made the Life Exchange claims vanish silently)
+if not only then
+    local lifeX = false; for k in pairs(claimsRan) do if k:find("equalizes health") then lifeX = true end end
+    if not lifeX then fails[#fails + 1] = "CANARY: no Life Exchange claim ran (pinned species 1156 / PINNED lost?)"; print("FAIL " .. fails[#fails]) end
+end
 os.exit(#fails == 0 and 0 or 1)

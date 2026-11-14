@@ -1,0 +1,52 @@
+# lochmodan pet roster (map 0 box x -6300..-4500, y -4600..-2400, mobs level <= 22, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	1412	Squirrel	1	Critter	0	0	46	134	Melee		already a species
+Y	1933	Sheep	3	Critter	0	0	5	856	Melee		already a species
+Y	2098	Ram	5	Critter	0	0	7	10000	Melee		
+Y	1195	Forest Lurker	10-11	Beast	3	0	35	827	Melee		
+Y	1190	Mountain Boar	10-11	Beast	5	0	26	704	Melee		
+Y	1173	Tunnel Rat Scout	10-11	Humanoid	0	0	10	365	Melee		
+Y	1172	Tunnel Rat Vermin	10-11	Humanoid	0	0	43	10913	Melee		
+Y	1186	Elder Black Bear	11-12	Beast	4	0	24	707	Melee		
+Y	1162	Stonesplinter Scout	11-12	Humanoid	0	0	31	764	Melee		
+Y	1161	Stonesplinter Trogg	11-12	Humanoid	0	0	40	763	Melee		
+Y	1176	Tunnel Rat Forager	11-12	Humanoid	0	0	11	10912	Melee		
+Y	1202	Tunnel Rat Kobold	11-12	Humanoid	0	0	14	26	Melee		
+Y	1193	Loch Frenzy	12-13	Beast	0	0	26	1004	Melee		
+Y	1175	Tunnel Rat Digger	12-13	Humanoid	0	0	13	373	Melee		
+Y	1174	Tunnel Rat Geomancer	12-13	Humanoid	0	0	10	163	Melee		
+Y	1184	Cliff Lurker	13-14	Beast	3	0	17	827	Melee		
+Y	1188	Grizzled Black Bear	13-14	Beast	4	0	23	762	Melee		
+Y	1166	Stonesplinter Seer	13-14	Humanoid	0	0	47	764	Melee		
+Y	1163	Stonesplinter Skullthumper	13-14	Humanoid	0	0	31	160	Melee		
+Y	1693	Loch Crocolisk	14-15	Beast	6	0	27	1034	Melee		
+Y	1191	Mangy Mountain Boar	14-15	Beast	5	0	32	3027	Melee		
+Y	1177	Tunnel Rat Surveyor	14	Humanoid	0	0	3	2299	Melee		
+Y	1194	Mountain Buzzard	15-16	Beast	7	0	25	410	Melee		
+Y	1164	Stonesplinter Bonesnapper	15-16	Humanoid	0	0	17	722	Melee		
+Y	1197	Stonesplinter Shaman	15-16	Humanoid	0	0	23	763	Melee		
+Y	1189	Black Bear Patriarch	16-17	Beast	4	0	22	762	Melee		
+Y	1192	Elder Mountain Boar	16-17	Beast	5	0	19	1208	Melee		
+N	14268	Lord Condar	16	Beast	7	4	4	14313	Melee		rank 4 (elite/rare)
+Y	1165	Stonesplinter Geomancer	17-18	Humanoid	0	0	11	160	Melee		
+Y	1185	Wood Lurker	17-18	Beast	3	0	11	520	Melee		
+Y	1169	Dark Iron Insurgent	18-19	Humanoid	0	0	7	3456	Melee		
+N	1179	Mo'grosh Enforcer	18-19	Humanoid	0	1	11	6692	Melee		rank 1 (elite/rare)
+N	1178	Mo'grosh Ogre	18-19	Humanoid	0	1	15	1122	Melee		rank 1 (elite/rare)
+N	1181	Mo'grosh Shaman	18-19	Humanoid	0	1	5	1045	Melee		rank 1 (elite/rare)
+Y	1167	Stonesplinter Digger	18-19	Humanoid	0	0	15	722	Melee		
+Y	1393	Berserk Trogg	19-20	Humanoid	0	0	5	721	Melee		
+N	1180	Mo'grosh Brute	19-20	Humanoid	0	1	9	14403	Melee		rank 1 (elite/rare)
+N	1183	Mo'grosh Mystic	19-20	Humanoid	0	1	5	1052	Melee		rank 1 (elite/rare)
+Y	1224	Young Threshadon	19-20	Beast	0	0	21	867	Melee		
+N	2727	Crag Coyote	35-36	Beast	1	0	5	161	Melee		level > 22
+N	2906	Dustbelcher Warrior	35-37	Humanoid	0	0	4	5782	Melee		level > 22
+N	4846	Shadowforge Digger	35-36	Humanoid	0	1	35	6052	Melee		rank 1 (elite/rare)
+N	4844	Shadowforge Surveyor	35-36	Humanoid	0	1	27	6051	Melee		rank 1 (elite/rare)
+N	4845	Shadowforge Ruffian	36-37	Humanoid	0	1	15	6053	Melee		rank 1 (elite/rare)
+N	4856	Stonevault Cave Hunter	36-37	Humanoid	0	1	17	722	Melee		rank 1 (elite/rare)
+N	4851	Stonevault Rockchewer	36-37	Humanoid	0	1	10	721	Melee		rank 1 (elite/rare)
+N	4872	Obsidian Golem	38	Mechanical	0	1	3	2695	Melee		rank 1 (elite/rare)
+N	6491	Spirit Healer	60	Humanoid	0	0	3	5233	Melee		npcflag 16385

@@ -1,0 +1,105 @@
+# darkshore pet roster (map 1 box x 4300..7800, y -1500..1300, mobs level <= 22, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	721	Rabbit	1	Critter	0	0	16	328	Melee		already a species
+N	6145	School of Fish	1	Critter	0	0	31	4878	Melee		
+Y	1412	Squirrel	1	Critter	0	0	5	134	Melee		already a species
+Y	10017	Tainted Cockroach	1	Critter	0	0	53	2177	Melee		
+Y	10016	Tainted Rat	1	Critter	0	0	22	1141	Melee		
+Y	883	Deer	5	Critter	0	0	6	347	Melee		already a species
+Y	12298	Sickly Deer	5	Critter	0	0	59	10091	Melee		
+Y	2231	Pygmy Tide Crawler	9-10	Beast	8	0	47	1000	Melee		
+Y	6789	Thistle Cub	9-10	Beast	4	0	4	30059	Melee		
+Y	2176	Cursed Highborne	10-11	Undead	0	0	13	985	Melee		
+Y	2070	Moonstalker Runt	10-11	Beast	2	0	51	11449	Melee		
+Y	2189	Vile Sprite	10-11	Humanoid	0	0	17	2452	Melee		
+Y	2234	Young Reef Crawler	10-11	Beast	8	0	17	999	Melee		
+Y	2321	Foreststrider Fledgling	11-13	Beast	12	0	98	1042	Melee		
+Y	2163	Thistle Bear	11-12	Beast	4	0	81	1006	Melee		
+Y	2190	Wild Grell	11-12	Humanoid	0	0	23	1015	Melee		
+Y	2177	Writhing Highborne	11-12	Undead	0	0	21	5430	Melee		
+Y	10159	Young Moonkin	11-12	Humanoid	0	0	12	9390	Melee		
+Y	2167	Blackwood Pathfinder	12-13	Humanoid	0	0	12	1010	Melee		
+Y	2185	Darkshore Thresher	12-14	Beast	0	0	51	992	Melee		
+Y	2212	Deth'ryll Satyr	12-13	Humanoid	0	0	6	1013	Melee		
+Y	2202	Greymist Coastrunner	12-13	Humanoid	0	0	27	3619	Melee		
+Y	10158	Moonkin	12-13	Humanoid	0	0	26	5927	Melee		
+Y	10160	Raging Moonkin	12-14	Humanoid	0	0	22	12237	Melee		
+Y	2232	Tide Crawler	12-14	Beast	8	0	27	979	Melee		
+Y	2178	Wailing Highborne	12-13	Undead	0	0	15	10690	Melee		
+Y	2324	Blackwood Windtalker	13-14	Humanoid	0	0	14	6820	Melee		
+Y	2203	Greymist Seer	13-14	Humanoid	0	0	23	3940	Melee		
+Y	10157	Moonkin Oracle	13-14	Humanoid	0	0	3	12236	Melee		
+Y	2164	Rabid Thistle Bear	13-14	Beast	0	0	101	8840	Melee		
+Y	2174	Coastal Frenzy	14-16	Beast	0	0	46	245	Melee		
+Y	2322	Foreststrider	14-16	Beast	12	0	48	178	Melee		
+Y	2204	Greymist Netter	14-15	Humanoid	0	0	5	2597	Melee		
+Y	2069	Moonstalker	14-15	Beast	2	0	49	321	Melee		
+Y	2205	Greymist Warrior	15-16	Humanoid	0	0	11	540	Melee		
+Y	2235	Reef Crawler	15-17	Beast	8	0	18	981	Melee		
+Y	2179	Stormscale Wave Rider	15-16	Humanoid	0	0	17	4036	Melee		
+Y	2168	Blackwood Warrior	16-17	Humanoid	0	0	27	1011	Melee		
+N	37917	Crown Thug	16-17	Humanoid	0	0	13	30576	Melee		
+Y	2336	Dark Strand Fanatic	16-17	Humanoid	0	0	26	4217	Melee		
+Y	2187	Elder Darkshore Thresher	16-18	Beast	0	0	19	994	Melee		
+N	15810	Eroded Anubisath Warbringer	16-18	Not specified	0	1	12	15700	Melee		rank 1 (elite/rare)
+Y	2206	Greymist Hunter	16-17	Humanoid	0	0	8	652	Melee		
+Y	2165	Grizzled Thistle Bear	16-17	Beast	4	0	19	14316	Melee		
+Y	2180	Stormscale Siren	16-17	Humanoid	0	0	19	4980	Melee		
+Y	2338	Twilight Disciple	16-17	Humanoid	0	0	6	2873	Melee		
+Y	2169	Blackwood Totemic	17-18	Humanoid	0	0	14	6821	Melee		
+Y	2323	Giant Foreststrider	17-19	Beast	12	0	45	1283	Melee		
+Y	2237	Moonstalker Sire	17-18	Beast	2	0	20	11450	Melee		
+Y	2339	Twilight Thug	17-18	Humanoid	0	0	16	2869	Melee		
+Y	2170	Blackwood Ursa	18-19	Humanoid	0	0	12	5773	Melee		
+Y	2156	Cracked Golem	18-19	Elemental	0	0	6	10799	Melee		
+Y	2233	Encrusted Tide Crawler	18-20	Beast	8	0	15	9566	Melee		
+Y	2207	Greymist Oracle	18-19	Humanoid	0	0	12	4920	Melee		
+Y	2181	Stormscale Myrmidon	18-19	Humanoid	0	0	34	4036	Melee		
+Y	2171	Blackwood Shaman	19-20	Humanoid	0	0	6	6822	Melee		
+Y	2208	Greymist Tidehunter	19-20	Humanoid	0	0	12	478	Melee		
+Y	2071	Moonstalker Matriarch	19-20	Beast	2	0	7	3031	Melee		
+Y	2157	Stone Behemoth	19-20	Elemental	0	0	3	473	Melee		
+Y	2182	Stormscale Sorceress	19-20	Humanoid	0	0	23	4973	Melee		
+N	4802	Blackfathom Tide Priestess	20-21	Humanoid	0	1	5	4983	Melee		rank 1 (elite/rare)
+N	15813	Qiraji Officer Zod	20	Not specified	0	1	3	15738	Melee		rank 1 (elite/rare)
+Y	2236	Raging Reef Crawler	20-21	Beast	8	0	23	1001	Melee		
+Y	2183	Stormscale Warrior	20-21	Humanoid	0	0	19	11269	Melee		
+N	4803	Blackfathom Oracle	21-22	Humanoid	0	1	9	4976	Melee		rank 1 (elite/rare)
+N	2337	Dark Strand Voidcaller	28-29	Humanoid	0	0	8	4230	Melee		level > 22
+N	6086	Auberdine Sentinel	40	Humanoid	0	0	20	4845	Melee		npcflag 2
+N	8956	Angerclaw Bear	47-48	Beast	4	0	9	9276	Melee		level > 22
+N	7097	Ironbeak Owl	48-49	Beast	26	0	3	4877	Melee		level > 22
+N	8958	Angerclaw Mauler	49-50	Beast	4	0	41	1083	Melee		level > 22
+N	7086	Cursed Ooze	49-50	Not specified	0	0	24	11137	Melee		level > 22
+N	8960	Felpaw Scavenger	49-50	Beast	1	0	48	9278	Melee		level > 22
+N	7099	Ironbeak Hunter	50-51	Beast	26	0	19	10829	Melee		level > 22
+N	7109	Jadefire Felsworn	50-51	Demon	0	0	10	11334	Melee		level > 22
+N	7106	Jadefire Rogue	50-51	Demon	0	0	8	8575	Melee		level > 22
+N	7113	Jaedenar Guardian	50-51	Humanoid	0	0	14	6399	Melee		level > 22
+N	7125	Jaedenar Hound	50-51	Demon	0	0	9	6172	Melee		level > 22
+N	8957	Angerclaw Grizzly	51-52	Beast	4	0	14	9277	Melee		level > 22
+N	9878	Entropic Beast	51-52	Elemental	0	0	15	9449	Melee		level > 22
+N	8961	Felpaw Ravager	51-52	Beast	1	0	4	9280	Melee		level > 22
+N	7110	Jadefire Shadowstalker	51-52	Demon	0	0	11	11336	Melee		level > 22
+N	7115	Jaedenar Adept	51-52	Humanoid	0	0	11	6390	Melee		level > 22
+N	7112	Jaedenar Cultist	51-52	Humanoid	0	0	12	6389	Melee		level > 22
+N	7092	Tainted Ooze	51-52	Not specified	0	0	34	11141	Melee		level > 22
+N	7136	Infernal Sentry	52-53	Demon	0	1	4	4200	Melee		rank 1 (elite/rare)
+N	7098	Ironbeak Screecher	52-53	Beast	26	0	4	10831	Melee		level > 22
+N	7139	Irontree Stomper	52-53	Elemental	0	0	26	6351	Melee		level > 22
+N	7138	Irontree Wanderer	52-53	Elemental	0	0	3	2078	Melee		level > 22
+N	7107	Jadefire Trickster	52-53	Demon	0	0	26	11337	Melee		level > 22
+N	7114	Jaedenar Enforcer	52-53	Humanoid	0	0	8	6397	Melee		level > 22
+N	7126	Jaedenar Hunter	52-53	Demon	0	0	6	6173	Melee		level > 22
+N	11196	Shatterspear Drummer	52-58	Humanoid	0	0	3	11442	Melee		level > 22
+N	9879	Entropic Horror	53-54	Elemental	0	0	6	9449	Melee		level > 22
+N	7111	Jadefire Hellcaller	53-54	Demon	0	0	13	11335	Melee		level > 22
+N	7118	Jaedenar Darkweaver	53-54	Humanoid	0	0	20	6393	Melee		level > 22
+N	7120	Jaedenar Warlock	53-54	Humanoid	0	0	12	6405	Melee		level > 22
+N	7132	Toxic Horror	53-54	Elemental	0	0	12	5498	Melee		level > 22
+N	7093	Vile Ooze	53	Not specified	0	0	9	1306	Melee		level > 22
+N	11180	Bloodvenom Post Brave	55	Humanoid	0	0	6	10734	Melee		npcflag 2
+N	9862	Jaedenar Legionnaire	55	Demon	0	0	8	9129	Melee		level > 22
+N	15384	OLDWorld Trigger (DO NOT DELETE)	60	Not specified	0	0	3	18783	Melee		level > 22

@@ -1,0 +1,57 @@
+# darkshore: entry, retail species, icon, flags (auto_picks.py draft)
+10017	497	Ability_Druid_Dash	critter
+10016	499	Ability_Druid_Dash	critter
+12298	486	Spell_Nature_HealingWay	critter
+2231	388	Ability_Hunter_Pet_Crab
+6789	202	Ability_Hunter_Pet_Bear
+2176	1750	Spell_Nature_NullifyDisease
+2070	301	Ability_Hunter_Pet_Cat
+2189	1166	INV_Misc_Bandana_03
+2234	401	Ability_Hunter_Pet_Crab
+2321	1470	Ability_Hunter_Pet_Bat
+2163	440	Ability_Hunter_Pet_Bear
+2190	1953	INV_Misc_Bandana_03
+2177	1868	Spell_Nature_NullifyDisease
+10159	296	Spell_Shadow_ShadowBolt
+2167	2417	INV_Misc_Bandana_03
+2185	959	Ability_Hunter_Pet_Crocolisk
+2212	1503	INV_Misc_Bandana_03
+2202	1073	INV_Misc_Bandana_03
+10158	298	Spell_Shadow_ShadowBolt
+10160	1229	Spell_Shadow_ShadowBolt
+2232	2374	Ability_Hunter_Pet_Crab
+2178	439	Spell_Nature_NullifyDisease
+2324	1803	INV_Misc_Bandana_03
+2203	888	INV_Misc_Bandana_03
+10157	2135	Spell_Shadow_ShadowBolt
+2164	306	Ability_Hunter_Pet_Bear
+2174	2695	INV_Misc_Fish_02
+2322	1469	Ability_Hunter_Pet_Bat
+2204	1725	INV_Misc_Bandana_03
+2069	303	Ability_Hunter_Pet_Cat
+2205	835	INV_Misc_Bandana_03
+2235	2381	Ability_Hunter_Pet_Crab
+2179	1229	INV_Misc_Bandana_03
+2168	1892	INV_Misc_Bandana_03
+2336	1893	INV_Misc_Bandana_03
+2187	960	Ability_Hunter_Pet_Crocolisk
+2206	1894	INV_Misc_Bandana_03
+2165	508	Ability_Hunter_Pet_Bear
+2180	2682	INV_Misc_Bandana_03
+2338	1688	INV_Misc_Bandana_03
+2169	508	INV_Misc_Bandana_03
+2323	1468	Ability_Hunter_Pet_Bat
+2237	41	Ability_Hunter_Pet_Cat
+2339	2457	INV_Misc_Bandana_03
+2170	317	Ability_Hunter_Pet_Bear
+2156	3376	Spell_Nature_StoneClawTotem
+2233	2386	Ability_Hunter_Pet_Crab
+2207	1166	INV_Misc_Bandana_03
+2181	1953	INV_Misc_Bandana_03
+2171	2417	INV_Misc_Bandana_03
+2208	2399	Ability_Hunter_Pet_Crab
+2071	45	Ability_Hunter_Pet_Cat
+2157	961	Ability_Hunter_Pet_Crocolisk
+2182	1503	INV_Misc_Bandana_03
+2236	2446	Ability_Hunter_Pet_Crab
+2183	1073	INV_Misc_Bandana_03
