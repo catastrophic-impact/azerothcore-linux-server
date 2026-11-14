@@ -7,6 +7,11 @@ for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb
 done
 luajit pet-battle/test_store.lua || fail=1
 luajit pet-battle/test_rules.lua || fail=1
+luajit pet-battle/test_levels.lua || fail=1
+luajit pet-battle/test_describe.lua || fail=1
+luajit pet-battle/test_abilities.lua || fail=1
+luajit pet-battle/test_api.lua || fail=1
+luajit pet-battle/sim_presentation.lua 3 || fail=1
 luajit pet-battle/test_core.lua || fail=1
 luajit pet-battle/smoke_wild.lua || fail=1
 python3 -I pet-battle/check_fx.py >/dev/null || { echo "FX FAIL (non-instant visual spell)"; fail=1; }
@@ -21,6 +26,10 @@ pbt|st|E,1,10,1535,1535,INV_Pick_02,2,257,54,Kobold Worker
 pbt|in|P,1
 pbt|tag|E|Bleed~Ability_Rogue_Rupture~3~2~1;Dodge 50%~Ability_Rogue_Feint~2~1~0
 pbt|tag|P|
+pbt|stip|Wild Magic#Adds up to 8 damage to every attack against the target.
+pbt|info|E|Beast|Critter|Aquatic|Flying|Humanoid
+pbt|eabil|1|Ability_Druid_Rake#Bite#100% hit chance. Bites.#0#0
+pbt|eabil|2|Ability_Druid_Rake#Maul#Hits hard.#3#2
 pbt|turn|go;0,2,3;1
 pbt|hp|E,1,1400,1535,-135
 pbt|end|win

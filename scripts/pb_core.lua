@@ -57,8 +57,114 @@ local function MakeAbility(speciesId, aid)
         for _, t in ipairs(a.turns) do for _, f in ipairs(t.fx) do if DAMAGE[f.prop] or f.prop == 66 or f.prop == 68 or f.prop == 197 or f.prop == 27 or f.prop == 29 or f.prop == 59 or f.prop == 384 or f.prop == 141 then dmg = true end end end
         if dmg then if a.family == 5 or a.family == 6 then vis, ranged = 133, true else vis = 49966 end end   -- Magic / Elemental: fire bolt (cast, no lunge); everything else: a melee punch
     end
-    return { id = aid, name = ov.name or a.name, retailName = a.name, icon = ov.icon or ICON[a.name] or "Ability_Warrior_Rampage", tip = Clean(a.text), cd = a.cd, turns = a.turns,
+    -- retail turns: event 255 = the ordinary turns of the ability (one per round); the others are PROCS (1 = holder hit, 2 = holder dealt damage, 6/7 = before/after the round markers)
+    local main, procs = {}, {}
+    for _, t in ipairs(a.turns) do if t.event == 255 then main[#main + 1] = t else procs[#procs + 1] = t end end
+    if #main == 0 then main, procs = a.turns, {} end
+    local priority = (a.text or ""):find("always goes first") ~= nil
+    for _, t in ipairs(procs) do for _, f in ipairs(t.fx) do if f.prop == 79 then priority = true end end end
+    return { id = aid, name = ov.name or a.name, retailName = a.name, icon = ov.icon or ICON[a.name] or "Ability_Warrior_Rampage", tip = Clean(a.text), text = a.text, family = a.family, cd = a.cd, turns = main, procs = procs, priority = priority,
              vis = vis, ranged = ranged }
+end
+
+-- ---------------------------------------------------------------- descriptions (retail ability text with its formulas resolved to numbers)
+-- The retail text holds tokens like [StandardDamage(1,1)] or [abs(abilityStateMod(71,591))*AttackBonus()]. They are resolved against the ability's effects and the pet's
+-- power, so the tooltip shows the numbers this pet really deals. C.unresolved collects tokens nobody handled (test_core fails on any).
+C.unresolved = {}
+local function Fx(ab, t, e, aura)
+    local src = aura and R.abilities[aura] or ab
+    local main = {}
+    for _, tn in ipairs(src and src.turns or {}) do if tn.event == 255 then main[#main + 1] = tn end end
+    if #main == 0 then main = src and src.turns or {} end
+    local turn = main[t]
+    local fx = turn and turn.fx[e]
+    if fx and fx.p then return fx end
+    for _, tn in ipairs(main) do for _, f in ipairs(tn.fx) do if f.p and f.p[1] and f.p[1] ~= 0 then return f end end end
+    return { p = { 0, 100, 0, 0, 0, 0 } }
+end
+local function Arith(x)   -- "4+4+4" / "-5*1.5" -> number (digits and operators only)
+    x = tostring(x or "")
+    if x:match("^[%d%.%+%-%*/%(%) ]+$") then local f = (loadstring or load)("return " .. x); local ok, v = pcall(f or function() end); if ok and type(v) == "number" then return v end end
+    return tonumber(x)
+end
+local function Num(x) return Arith(x) or 0 end
+local function Round(x) return math.floor(x + 0.5) end
+local function Bonus(power) return 1 + (power or 0) / 20 end
+local function CallFn(name, args, ab, power)
+    local a = {}
+    for x in (args .. ","):gmatch("([^,]*),") do a[#a + 1] = (x:gsub("^%s+", ""):gsub("%s+$", "")) end
+    local lname = name:lower()
+    if lname == "abs" then return tostring(math.abs(Num(a[1])))
+    elseif lname == "attackbonus" then return tostring(Bonus(power))
+    elseif lname == "abilitystatemod" then
+        local sid = a[1]; local key = tonumber(sid) and R.stateNames[tonumber(sid)] or (sid or ""):gsub("^STATE_", "")
+        local st = R.states[tonumber(a[2]) or 0] or {}
+        local v = st[key]; if v == nil then for _, x in pairs(st) do v = x; break end end
+        return tostring(v or 0)
+    elseif lname == "standarddamage" or lname == "simpledamage" then return tostring(Round(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1] * Bonus(power)))
+    elseif lname == "standardhealing" then return tostring(Rules.Heal(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1], power or 0))
+    elseif lname == "formatdamage" then return tostring(Round(Num(a[1])))
+    elseif lname == "standardaccuracy" or lname == "accuracy" then local fx = Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])); return ((fx.prop == 172) and fx.p[6] or fx.p[2]) .. "%"
+    elseif lname == "duration" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[3])
+    elseif lname == "points" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1])
+    elseif lname == "pointsmax" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[4])
+    elseif lname == "pointsincreaseperuse" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[3])
+    elseif lname == "numturns" then local t = a[1] and R.abilities[tonumber(a[1])] or ab; return tostring(t and #t.turns or 1)
+    elseif lname == "school" or lname == "pettypename" then local f = ab and ab.family or -1; return Rules.FAMILIES[f + 1] or "Magic"
+    elseif lname == "abilitypettype" then return tostring(ab and ab.family or -1)
+    elseif lname == "getprocindex" then return "1"
+    end
+    return nil
+end
+function C.Describe(ab, power)
+    local text = ab and ab.text
+    if not text or text == "" then return "" end
+    text = text:gsub("%[([^%]]*)%]", function(expr)
+        local e, guard = expr, 0
+        repeat   -- innermost call first
+            local changed = false
+            e = e:gsub("([%a_][%w_]*)%s*%(([^()]*)%)", function(name, args)
+                local v = CallFn(name, args, ab, power)
+                if v == nil then C.unresolved[#C.unresolved + 1] = name; v = "?" end
+                changed = true; return v
+            end, 1)
+            guard = guard + 1
+        until not changed or guard > 20
+        local v = Arith(e)
+        if v then return tostring(Round(v)) end
+        if e:find("[%(%)%?]") or e == "" then C.unresolved[#C.unresolved + 1] = expr; return "?" end
+        return e   -- a resolved word ("Beast") or "100%"
+    end)
+    text = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+    text = text:gsub("(%w+) |4(%a+):(%a+);?", function(n, one, many) return n .. " " .. ((tonumber(n) == 1 or n:lower() == "one") and one or many) end)
+    text = text:gsub("%%%%", "%%"):gsub("(%d+%%) Hit Chance%s*", "%1 hit chance. "):gsub("%s+", " ")
+    return (text:gsub("^%s+", ""):gsub("%s+$", ""))
+end
+local STATE_TEXT = {
+    untargettable = "Cannot be hit.", Stat_Dodge = "Chance to dodge attacks.", Mechanic_IsStunned = "Stunned: cannot act.", Mod_SpeedPercent = "Speed changed.",
+    Mod_DamageTakenPercent = "Changes the damage taken.", Mod_DamageDealtPercent = "Changes the damage dealt.", Mod_HealingTakenPercent = "Changes the healing received.",
+    Mod_HealingDealtPercent = "Changes the healing done.", Mechanic_IsBleeding = "Bleeding: takes damage every round.", Mechanic_IsBurning = "Burning: takes damage every round.",
+    Mechanic_IsPoisoned = "Poisoned: takes damage every round.", Add_FlatDamageTaken = "Changes the damage of every attack against it.", Stat_Accuracy = "Changes hit chance.",
+}
+-- the description of an aura (status icon): the retail text of the ability that owns it, else a line built from its states
+function C.AuraTip(id, power)
+    local a = R.abilities[id]
+    local t = a and C.Describe(a, power) or ""
+    if t == "" then
+        local parts = {}
+        for k in pairs(R.states[id] or {}) do if STATE_TEXT[k] then parts[#parts + 1] = STATE_TEXT[k] end end
+        table.sort(parts); t = table.concat(parts, " ")
+    end
+    return t
+end
+-- family matchup for the tooltips: what this family hits hard / weakly, what hits it hard / weakly
+function C.FamilyInfo(fam)   -- fam = family NAME ("Beast")
+    local strong, weak, hurtBy, resists = {}, {}, {}, {}
+    for _, f in ipairs(Rules.FAMILIES) do
+        local m = Rules.Matchup(fam, f); if m > 1 then strong[#strong + 1] = f elseif m < 1 then weak[#weak + 1] = f end
+        local h = Rules.Matchup(f, fam); if h > 1 then hurtBy[#hurtBy + 1] = f elseif h < 1 then resists[#resists + 1] = f end
+    end
+    return { name = fam, strong = table.concat(strong, "/"), weak = table.concat(weak, "/"), hurtBy = table.concat(hurtBy, "/"), resists = table.concat(resists, "/") }
 end
 
 -- the 6 abilities of a species as the journal shows them: { {slot=1, opt=1, unlock=1, ability=...}, ... }
@@ -104,7 +210,9 @@ function C.NewPet(speciesId, level, picks, rng, opts)
         end
         if first and level >= first.unlock then
             local k = (chosen and level >= chosen.unlock) and chosen or first
-            pet.abil[slot] = k.ability
+            local ab = {}; for key, v in pairs(k.ability) do ab[key] = v end
+            ab.tip = C.Describe({ text = ab.text, turns = ab.turns, family = ab.family }, pet.power)   -- numbers for THIS pet's power
+            pet.abil[slot] = ab
         end
     end
     return pet
@@ -145,15 +253,27 @@ local function AuraTrigger(id)   -- event after which the aura removes itself (1
 end
 
 -- apply aura `id` to pet (side s, index idx). duration in rounds; skipTick = it does not lose a round at the end of the round it was applied in
+local HOSTILE_FX = { [24] = true, [222] = true, [54] = true, [52] = true, [172] = true, [178] = true }
+local function MainTurns(ab)
+    if not ab then return {} end
+    if not ab._main then ab._main = {}; for _, t in ipairs(ab.turns) do if t.event == 255 then ab._main[#ab._main + 1] = t end end end
+    return ab._main
+end
+local function AuraHostile(id)   -- an aura without state data (Ice Tomb, Soothe, Spore Shrooms) is hostile when its own turns deal damage / stun
+    local ab = R.abilities[id]
+    if not ab then return false end
+    for _, t in ipairs(MainTurns(ab)) do for _, f in ipairs(t.fx) do if HOSTILE_FX[f.prop] then return true end end end
+    return false
+end
 local function ApplyAura(b, ev, s, idx, id, duration, skipTick, maxStacks, source)
     local pet = b[s][idx]
-    local ab0 = R.abilities[id]; if ab0 and #ab0.turns > 1 then duration = math.max(duration, #ab0.turns) end   -- shown / lasting as many rounds as it has turns
+    local ab0 = R.abilities[id]; if ab0 and #MainTurns(ab0) > 1 then duration = math.max(duration, #MainTurns(ab0)) end   -- shown / lasting as many rounds as it has turns
     local states = R.states[id] or {}
     local n = 0
     for _, a in ipairs(pet.auras) do if a.id == id then n = n + 1; a.left = duration; a.skip = skipTick and b.round or nil end end
     if n < (maxStacks and maxStacks > 0 and maxStacks or 1) then
         pet.auras[#pet.auras + 1] = { id = id, left = duration, states = states, skip = skipTick and b.round or nil, on = AuraTrigger(id),
-                                       pwr = source and source.power, fam = source and source.family }
+                                       pwr = source and source.power, fam = (ab0 and ab0.family and ab0.family >= 0 and Rules.FAMILIES[ab0.family + 1]) or (source and (source.useFam or source.family)), src = source, charges = states.Special_BlockedAttackCount }
     end
     ev[#ev + 1] = { k = Beneficial(states) and "buff" or "debuff", side = s, idx = idx, what = AuraName(id):lower(), turns = duration }
 end
@@ -172,7 +292,7 @@ function C.StatusList(p)
         if e then e.stacks = e.stacks + 1; e.turns = math.max(e.turns, a.left)
         else
             local good = Beneficial(a.states)
-            e = { label = AuraName(a.id), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = a.left, stacks = 1, bad = not good }
+            e = { label = AuraName(a.id), tip = C.AuraTip(a.id, a.pwr or p.power), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = a.left, stacks = 1, bad = not good }
             if a.states.untargettable then e.icon = "Ability_Stealth" elseif a.states.Stat_Dodge then e.icon = "Ability_Rogue_Feint"
             elseif a.states.Mod_SpeedPercent then e.icon = "Ability_Rogue_Sprint" elseif a.states.Mechanic_IsStunned then e.icon = "Spell_Frost_Stun"
             elseif a.states.Mechanic_IsBleeding then e.icon = "Ability_Rogue_Rupture" elseif a.states.Mechanic_IsPoisoned then e.icon = "Ability_Rogue_DualWeild"
@@ -182,9 +302,10 @@ function C.StatusList(p)
     end
     return t
 end
+C.tips = {}   -- label -> description of the last status built with that label (the battle sends each one to the addon once)
 function C.StatusString(p)
     local out = {}
-    for _, st in ipairs(C.StatusList(p)) do out[#out + 1] = table.concat({ st.label, st.icon, st.turns, st.stacks, st.bad and 1 or 0 }, "~") end
+    for _, st in ipairs(C.StatusList(p)) do C.tips[st.label] = st.tip; out[#out + 1] = table.concat({ st.label, st.icon, st.turns, st.stacks, st.bad and 1 or 0 }, "~") end
     return table.concat(out, ";")
 end
 function C.TagText(p)
@@ -212,11 +333,20 @@ local function Heal(b, ev, s, i, amount, quick)
 end
 
 -- one damaging hit of `points` from pet (side s) to the enemy active pet. raw = a fixed damage number (Vengeance). Returns true when it landed.
+-- Add_FlatDamageTaken auras (Wild Magic +5, Deflection / Crouch style -5 ...): every attack against the holder changes by value * the source's AttackBonus
+local function Flat(tgt) local t = 0; for _, a in ipairs(tgt.auras) do local v = a.states.Add_FlatDamageTaken; if v then t = t + v * (1 + (a.pwr or 0) / 20) end end; return Round(t) end
+local function Dmg(pet, tgt, points) return math.max(1, Rules.Damage(points, pet.power, pet.useFam or pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent")) + Flat(tgt)) end
 local function Hit(b, ev, s, pet, points, accuracy, slot, more, raw)
     local o = Other(s); local oi = b.active[o]; local tgt = b[o][oi]
     if tgt.hp <= 0 then return false end
     if Mod(tgt, "untargettable") > 0 then
         ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Burrowed!", more = more, hp = tgt.hp, max = tgt.max }; return false
+    end
+    for i, a in ipairs(tgt.auras) do   -- Bubble / Soul Ward: blocks the next N attacks completely
+        if a.charges and a.charges > 0 then
+            a.charges = a.charges - 1; if a.charges <= 0 then table.remove(tgt.auras, i) end
+            ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Blocked!", more = more, hp = tgt.hp, max = tgt.max }; return false
+        end
     end
     local dodge = math.min(100, Mod(tgt, "Stat_Dodge"))
     if dodge > 0 and b.rng(1, 100) <= dodge then
@@ -225,12 +355,26 @@ local function Hit(b, ev, s, pet, points, accuracy, slot, more, raw)
     if accuracy < 100 and b.rng(1, 100) > accuracy then
         ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Miss!", more = more, hp = tgt.hp, max = tgt.max }; return false
     end
-    local dmg = raw or Rules.Damage(points, pet.power, pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent"))
-    local crit = (not raw) and b.rng(1, 100) <= 5
+    local dmg = raw or Dmg(pet, tgt, points)
+    local crit = (not raw) and b.rng(1, 100) <= 5 + Mod(pet, "Stat_CritChance")   -- Hawk Eye / Wombo Combo raise it
     if crit then dmg = dmg * 2 end
+    if Mod(tgt, "unkillable") > 0 and tgt.hp - dmg < 1 then dmg = math.max(0, tgt.hp - 1) end   -- Survival: cannot drop below 1 health
     tgt.hp = math.max(0, tgt.hp - dmg); tgt.lastTaken = dmg
     ev[#ev + 1] = { k = "dmg", side = s, idx = b.active[s], tside = o, tidx = oi, dmg = dmg, crit = crit, hp = tgt.hp, max = tgt.max, slot = slot, more = more,
-                    counter = Rules.Matchup(pet.family, tgt.family) }
+                    counter = Rules.Matchup(pet.useFam or pet.family, tgt.family) }
+    for _, a in ipairs(tgt.auras) do   -- reflect: "deals N damage each time you take direct damage" (aura ability with a proc turn on event 1 holding effect 179)
+        local aab = R.abilities[a.id]
+        for _, pt in ipairs(aab and aab.turns or {}) do
+            if pt.event == 1 then for _, rf in ipairs(pt.fx) do
+                if rf.prop == 179 and pet.hp > 0 then
+                    local rd = Rules.Damage(rf.p[1], a.pwr or tgt.power, a.fam or tgt.family, pet.family, 0, Mod(pet, "Mod_DamageTakenPercent"))
+                    pet.hp = math.max(0, pet.hp - rd)
+                    ev[#ev + 1] = { k = "dmg", side = o, idx = oi, tside = s, tidx = b.active[s], dmg = rd, hp = pet.hp, max = pet.max, reflect = true, more = false, counter = 1 }
+                    if pet.hp <= 0 then Faint(b, ev, s, b.active[s]) end
+                end
+            end end
+        end
+    end
     ConsumeAuras(pet, 2); ConsumeAuras(tgt, 1)
     if tgt.hp <= 0 then Faint(b, ev, o, oi) end
     return true
@@ -250,11 +394,13 @@ local function Act(b, ev, s, cmd, used)
         ab = pet.abil[slot]; turnNo = 1
         pet.cd[slot] = ab.cd; used[pet] = slot
     end
+    pet.useFam = (ab.family and ab.family >= 0) and Rules.FAMILIES[ab.family + 1] or nil   -- retail: damage uses the ABILITY's family (Bite = Beast damage whoever bites)
     local turn = ab.turns[turnNo]
     local actedFirst = b.acted[o] ~= true
     local actedSecond = not actedFirst
     b.acted[s] = true
     pet.channel = (#ab.turns > turnNo) and { ab = ab, turn = turnNo + 1, slot = slot } or nil
+    local missStun = false; for _, f in ipairs(turn.fx) do if f.prop == 194 then missStun = true end end
     local hits = 0   -- how many damage hits this turn deals (playback needs to know which one is the last)
     for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 149 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
@@ -262,9 +408,16 @@ local function Act(b, ev, s, cmd, used)
     pet.ramp = pet.ramp or {}
     local hp0 = tgt.hp
     local weatherSeen = false
-    for _, f in ipairs(turn.fx) do
+    local function runFx(fxlist)
+    for _, f in ipairs(fxlist) do
         local p = f.p
         if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) then
+            if p[2] >= 200 and DAMAGE[f.prop] then   -- Body Slam: accuracy 200 = damage to the USER itself
+                local selfDmg = math.max(1, Rules.Damage(p[1], pet.power, pet.useFam or pet.family, pet.family, 0, 0))
+                pet.hp = math.max(1, pet.hp - selfDmg)   -- recoil can hurt but never faint the user
+                ev[#ev + 1] = { k = "dmg", side = s, idx = idx, tside = s, tidx = idx, dmg = selfDmg, hp = pet.hp, max = pet.max, slot = slot, more = false, recoil = true, counter = 1 }
+                goto continue
+            end
             done = done + 1
             local acc = (f.prop == 96 and HasState(tgt, p[4])) and 100 or p[2]
             landed = Hit(b, ev, s, pet, p[1], acc, slot, done < hits) or landed
@@ -280,7 +433,7 @@ local function Act(b, ev, s, cmd, used)
             done = done + 1
             local o2 = Other(s); local alive = {}
             for i, q in ipairs(b[o2]) do if q.hp > 0 then alive[#alive + 1] = i end end
-            local total = Rules.Damage(p[1], pet.power, pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent"))
+            local total = Dmg(pet, tgt, p[1])
             local share = math.max(1, math.floor(total / #alive + 0.5))
             for k, i in ipairs(alive) do
                 local q = b[o2][i]
@@ -310,7 +463,7 @@ local function Act(b, ev, s, cmd, used)
             break
         elseif f.prop == 149 then   -- Weakening Blow: ordinary damage that can never take the target below 1 health
             done = done + 1
-            local dmg = Rules.Damage(p[1], pet.power, pet.family, tgt.family, Mod(pet, "Mod_DamageDealtPercent"), Mod(tgt, "Mod_DamageTakenPercent"))
+            local dmg = Dmg(pet, tgt, p[1])
             landed = Hit(b, ev, s, pet, 0, p[2], slot, done < hits, math.max(0, math.min(dmg, tgt.hp - 1))) or landed
         elseif f.prop == 80 then   -- weather (Blizzard / Lightning Storm / Sandstorm / Rain): visual only for now, the addon draws a screen effect while it lasts
             weatherSeen = true
@@ -321,32 +474,48 @@ local function Act(b, ev, s, cmd, used)
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
             done = done + 1
             if pet.lastTaken > 0 then landed = Hit(b, ev, s, pet, 0, 100, slot, done < hits, math.floor(pet.lastTaken * p[1] / 100)) or landed end
-        elseif f.prop == 29 then   -- extra damage when the target has the state in p3
-            if HasState(tgt, p[3]) and tgt.hp > 0 then Hit(b, ev, s, pet, p[1], p[2], slot, false) end
+        elseif f.prop == 29 then   -- extra damage when the target has the state in p4
+            if HasState(tgt, p[4]) and tgt.hp > 0 then Hit(b, ev, s, pet, p[1], p[2], slot, false) end
         elseif f.prop == 23 then   -- heal: the k-th heal effect of an ability heals the k-th living ally (a lone effect heals the user)
             healed = healed + 1
-            local amount = Rules.Heal(p[1], pet.power)
+            local amount = (p[1] or 0) > 0 and Rules.Heal(p[1], pet.power) or 0
             if turn.healAll == nil then local n = 0; for _, g in ipairs(turn.fx) do if g.prop == 23 then n = n + 1 end end; turn.healAll = n > 1 end
             if turn.healAll then
                 local k = 0
-                for i, q in ipairs(b[s]) do if q.hp > 0 then k = k + 1; if k == healed then Heal(b, ev, s, i, amount, healed > 1); break end end end
-            else Heal(b, ev, s, idx, amount) end
-        elseif f.prop == 104 then   -- heal when the target was killed by this ability
-            if tgt.hp <= 0 then Heal(b, ev, s, idx, Rules.Heal(p[1], pet.power)) end
+                for i, q in ipairs(b[s]) do if q.hp > 0 then k = k + 1; if k == healed then if amount > 0 then Heal(b, ev, s, i, amount, healed > 1) end; break end end end
+            elseif amount > 0 then Heal(b, ev, s, idx, amount) end
+        elseif f.prop == 104 then   -- heal when the target was killed by this ability; with a state in p4 (Leech Life) the heal is EXTRA while the target has that state
+            if p[4] and p[4] ~= 0 then if HasState(tgt, p[4]) then Heal(b, ev, s, idx, Rules.Heal(p[1], pet.power)) end
+            elseif tgt.hp <= 0 then Heal(b, ev, s, idx, Rules.Heal(p[1], pet.power)) end
+        elseif f.prop == 52 and missStun then   -- Haymaker: stuns the USER when the swing misses, nothing otherwise
+            if not landed then ApplyAura(b, ev, s, idx, f.aura, math.max(1, p[3] or 1), true, nil, pet) end   -- skipTick: the stun costs the NEXT action
         elseif f.prop == 26 or f.prop == 63 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then
             local states = R.states[f.aura] or {}
             local selfAura                      -- 63 heal-over-time = user; 54 damage-over-time and 172 stun chance = enemy; the rest by the sign of the aura's states
-            if f.prop == 63 then selfAura = true elseif f.prop == 54 or f.prop == 172 then selfAura = false else selfAura = Beneficial(states) end
+            if f.prop == 63 then selfAura = true elseif f.prop == 54 or f.prop == 172 then selfAura = false else selfAura = Beneficial(states) and not (f.prop == 50 and AuraHostile(f.aura)) end   -- effect 50 without state data = an aura for the ENEMY when its own turns deal damage / stun
             local chance, dur, stacks = p[2], p[3], (f.prop == 50) and p[4] or nil
-            if f.prop == 172 then chance, dur = p[5], p[4] end
+            if f.prop == 172 then chance, dur = (p[4] ~= 0 and HasState(tgt, p[4])) and 100 or p[6], math.max(1, p[3]) end   -- Deep Freeze: p6 % chance, certain when the target has the state in p4
             local target = selfAura and s or o
             local ok = (target == s) or (tgt.hp > 0 and Mod(tgt, "untargettable") == 0)
             if ok and (chance >= 100 or b.rng(1, 100) <= chance) then
-                ApplyAura(b, ev, target, b.active[target], f.aura, math.max(1, dur), actedSecond, stacks, pet)
+                ApplyAura(b, ev, target, b.active[target], f.aura, (dur < 0) and 99 or math.max(1, dur), actedSecond, stacks, pet)
             end
+        elseif f.prop == 159 then b.meteor = { left = 15, by = s }   -- Apocalypse
         elseif f.prop == 49 then RemoveAura(pet, f.aura)
+        elseif f.prop == 31 and p[1] == 141 and p[2] == 1 then pet.auras = {}   -- Consume Magic / Sear Magic: "removes all buffs and debuffs from the user"
+        elseif f.prop == 107 then   -- Nether Gate: forces an opponent's pet to swap into battle (a random living one)
+            local o2 = Other(s); local cand = {}
+            for i2, q in ipairs(b[o2]) do if q.hp > 0 and i2 ~= b.active[o2] then cand[#cand + 1] = i2 end end
+            if landed and tgt.hp > 0 and #cand > 0 and Mod(tgt, "swapOutLock") == 0 then
+                local from = b.active[o2]; b.active[o2] = cand[b.rng(1, #cand)]
+                ev[#ev + 1] = { k = "swap", side = o2, from = from, idx = b.active[o2], free = true, forced = true }
+            end
         elseif not (INERT[f.prop] or DAMAGE[f.prop] or f.prop == 384) then C.unknown[f.prop] = (C.unknown[f.prop] or 0) + 1 end
+        ::continue::
     end
+    end   -- runFx
+    runFx(turn.fx)
+    if landed then for _, pt in ipairs(ab.procs or {}) do if pt.event == 2 then runFx(pt.fx) end end end   -- procs: effects that follow damage the user dealt (Leech Life's healing)
     if not weatherSeen then   -- the hit killed the target and ended the loop early: the weather still arrives
         for _, f in ipairs(turn.fx) do
             if f.prop == 80 then
@@ -355,6 +524,7 @@ local function Act(b, ev, s, cmd, used)
             end
         end
     end
+    pet.useFam = nil
 end
 
 -- periodic effects of auras (damage over time, heal over time) at the end of every round, then durations tick down
@@ -365,16 +535,27 @@ local function Periodic(b, ev, s)
     for _, a in ipairs(p.auras) do
         local ab = R.abilities[a.id]
         a.ticks = (a.ticks or 0) + 1
-        local t = ab and ab.turns[math.min(a.ticks, #ab.turns)]   -- an aura with several turns (Hibernation: 10 / 20 / 40 healing) plays one per round
-        if ab and #ab.turns > 1 and a.ticks >= #ab.turns then a.left = 0 end   -- ...and ends after its last one
-        if t and t.event == 255 then
+        local mt = MainTurns(ab)
+        local t = ab and mt[math.min(a.ticks, #mt)]   -- an aura with several turns (Hibernation: 10 / 20 / 40 healing) plays one per round
+        if ab and #mt > 1 and a.ticks >= #mt then a.left = 0 end   -- ...and ends after its last one
+        if t and not (a.ticks > #mt and #mt > 1) then
+            local drains = false; for _, f in ipairs(t.fx) do if DAMAGE[f.prop] then drains = true end end
             for _, f in ipairs(t.fx) do
-                if DAMAGE[f.prop] then dmg = dmg + Rules.Damage(f.p[1], a.pwr or p.power, a.fam or p.family, p.family, 0, Mod(p, "Mod_DamageTakenPercent")); stacks = stacks + 1
-                elseif f.prop == 23 then heal = heal + Rules.Heal(f.p[1], a.pwr or p.power) end
+                if DAMAGE[f.prop] and a.src == p then   -- Chew: the delayed bonus attack of the holder itself hits its ENEMY
+                    p.useFam = a.fam; Hit(b, ev, s, p, f.p[1], f.p[2], 1, false); p.useFam = nil
+                elseif DAMAGE[f.prop] then dmg = dmg + Rules.Damage(f.p[1], a.pwr or p.power, a.fam or p.family, p.family, 0, Mod(p, "Mod_DamageTakenPercent")); stacks = stacks + 1
+                elseif f.prop == 23 then
+                    if drains and a.src and a.src ~= p then   -- Siphon Life: the damage hurts the holder, the healing goes to the CASTER
+                        for _, sd in ipairs({ "P", "E" }) do for i2, q in ipairs(b[sd]) do if q == a.src then Heal(b, ev, sd, i2, Rules.Heal(f.p[1], a.pwr or q.power)) end end end
+                    else heal = heal + Rules.Heal(f.p[1], a.pwr or p.power) end
+                elseif f.prop == 53 then heal = heal + math.floor(p.max * f.p[1] / 100)   -- Wish: a % of the holder's maximum health
+                elseif (f.prop == 54 or f.prop == 178 or f.prop == 52) and f.aura and f.aura ~= 0 then ApplyAura(b, ev, s, idx, f.aura, math.max(1, f.p[3] or 1), false, nil, a.src)   -- Spore Shrooms / Drowsy / Ice Tomb: the finished aura releases its effect
+                end
             end
         end
     end
     if dmg > 0 then
+        if Mod(p, "unkillable") > 0 and p.hp - dmg < 1 then dmg = math.max(0, p.hp - 1) end
         p.hp = math.max(0, p.hp - dmg); p.lastTaken = dmg
         ev[#ev + 1] = { k = "dot", side = s, idx = idx, dmg = dmg, stacks = stacks, hp = p.hp, max = p.max }
         if p.hp <= 0 then Faint(b, ev, s, idx); return end
@@ -382,6 +563,17 @@ local function Periodic(b, ev, s)
     if heal > 0 then Heal(b, ev, s, idx, heal) end
 end
 local function EndOfRound(b, ev, used)
+    if b.meteor then
+        b.meteor.left = b.meteor.left - 1
+        if b.meteor.left <= 0 then
+            b.meteor = nil
+            for _, sd in ipairs({ "P", "E" }) do
+                local q = b[sd][b.active[sd]]
+                local roach = q.name and (q.name:find("Cockroach") or q.name:find("Beetle"))
+                if q.hp > 0 and Mod(q, "unkillable") == 0 and not roach then q.hp = 0; Faint(b, ev, sd, b.active[sd]) end
+            end
+        end
+    end
     if b.weather then
         b.weather.left = b.weather.left - 1
         if b.weather.left <= 0 then b.weather = nil; ev[#ev + 1] = { k = "weather", id = 0, turns = 0, name = "" } end
@@ -426,13 +618,10 @@ function C.AI(b)
     return "A" .. ready[b.rng(1, #ready)]
 end
 
-local function Priority(pet, cmd)   -- abilities with "always goes first" (effect 79)
+local function Priority(pet, cmd)   -- abilities that "always go first" (data: effect 79 / the text)
     if not cmd or cmd:sub(1, 1) ~= "A" then return false end
     local ab = pet.channel and pet.channel.ab or pet.abil[tonumber(cmd:sub(2)) or 1]
-    if not ab then return false end
-    local t = ab.turns[pet.channel and pet.channel.turn or 1]
-    for _, f in ipairs(t.fx) do if f.prop == 79 then return true end end
-    return false
+    return ab ~= nil and ab.priority == true and not pet.channel
 end
 
 function C.Round(b, cmdP, cmdE)

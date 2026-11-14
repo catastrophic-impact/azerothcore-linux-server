@@ -69,6 +69,9 @@ end
 -- pb_store pushes a single record when a pet's skin is set / replaced, so the journal preview changes at once
 SHOP_PRIME = { SendOne = function(player, entry, display) if records[entry] then SendRecord(player, entry, records[entry], display) end end }
 
+-- the same record under another entry id with ONE model (battle preview of an exact skin)
+SHOP_PRIME.SendAs = function(player, asEntry, species, display) if records[species] then SendRecord(player, asEntry, records[species], display) end end
+
 local last = {}
 local function Prime(module)
     return function(player)

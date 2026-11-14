@@ -125,12 +125,29 @@ local function EnsureStandIns()
             made = made + 1
         end
     end
+    for species in pairs(D.species) do   -- weapons / shields (creature_equip_template is keyed by creature entry): idempotent, also for clones made before this rule
+        local id = D.StandIn(species)
+        if id then WorldDBExecute("INSERT IGNORE INTO creature_equip_template (CreatureID, ID, ItemID1, ItemID2, ItemID3, VerifiedBuild) SELECT " .. id .. ", ID, ItemID1, ItemID2, ItemID3, VerifiedBuild FROM creature_equip_template WHERE CreatureID = " .. species) end
+    end
     if made > 0 then
         print("[pb_battle] created " .. made .. " stand-in creature templates, reloading creature templates in 3 s")
         CreateLuaEvent(function() pcall(RunCommand, "reload creature_template") end, 3000, 1)
     end
 end
 EnsureStandIns()
+
+local displayCache = {}
+local function PickDisplay(species)   -- random model row of the species (the same rows the stand-in clone carries)
+    local list = displayCache[species]
+    if not list then
+        list = {}
+        local q = WorldDBQuery and WorldDBQuery("SELECT CreatureDisplayID FROM creature_template_model WHERE CreatureID = " .. species .. " ORDER BY Idx")
+        if q then repeat list[#list + 1] = q:GetUInt32(0) until not q:NextRow() end
+        displayCache[species] = list
+    end
+    if #list == 0 then return nil end
+    return list[math.random(1, #list)]
+end
 
 local function SpawnPet(b, s, idx)
     local pet = b.eng[s][idx]; local p = b.pos[s]
@@ -165,16 +182,48 @@ local function Despawn(b, s, fx)
 end
 
 -- ---------------------------------------------------------------- addon sync helpers
+local function Cap(text, n)   -- wire-safe text (no separators) cut at a sentence end when too long (addon messages are limited to 240 characters)
+    text = tostring(text or ""):gsub("[#|~;]", " ")
+    if #text <= n then return text end
+    local cut = text:sub(1, n); local dot = cut:match("^.*()%. ")
+    return (dot and dot > n * 0.5) and cut:sub(1, dot) or (cut:sub(1, n - 3) .. "...")
+end
 local function SendAbilities(b)
     local pet = b.eng.P[b.eng.active.P]
-    for slot, a in ipairs(pet.abil) do Send(b, "abil", slot .. "|" .. a.icon .. "#" .. a.name .. "#" .. a.tip .. "#" .. a.cd) end
+    for slot, a in ipairs(pet.abil) do Send(b, "abil", slot .. "|" .. a.icon .. "#" .. Cap(a.name, 30) .. "#" .. Cap(a.tip, 170) .. "#" .. a.cd) end
 end
+-- what the player may know about the active pets: family matchup (both sides) and the ENEMY's abilities with their cooldowns left (retail shows these too)
+local function SendInfo(b)
+    for _, s in ipairs({ "P", "E" }) do
+        local pet = b.eng[s][b.eng.active[s]]
+        local f = b.api.FamilyInfo(pet.family)
+        Send(b, "info", table.concat({ s, f.name, f.strong, f.weak, f.hurtBy, f.resists }, "|"))
+    end
+    local e = b.eng.E[b.eng.active.E]
+    for slot = 1, 3 do
+        local a = e.abil[slot]
+        if a then Send(b, "eabil", slot .. "|" .. a.icon .. "#" .. Cap(a.name, 30) .. "#" .. Cap(a.tip, 150) .. "#" .. a.cd .. "#" .. (e.cd[slot] or 0)) end
+    end
+end
+local PREVIEW_BASE = 9100000   -- preview entry = PREVIEW_BASE + display id: a client creature record with ONE model, so the 3D box shows the exact skin (male/female) the pet spawns with
 local function SendPet(b, s, i)
     local p = b.eng[s][i]
-    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, p.icon, p.quality or 1, p.species, math.floor(SCALE[p.species] * 100 + 0.5), p.name))
+    local entry = p.species
+    local pl = GetPlayer(b)
+    if p.display and p.display > 0 and pl and SHOP_PRIME and SHOP_PRIME.SendAs then
+        entry = PREVIEW_BASE + p.display
+        SHOP_PRIME.SendAs(pl, entry, p.species, p.display)
+    end
+    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.name))
 end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
-    Send(b, "tag", s .. "|" .. (stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])))
+    local str = stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])
+    Send(b, "tag", s .. "|" .. str)
+    b.tipSent = b.tipSent or {}
+    for label in str:gmatch("([^~;]+)~[^~;]+~%d+~%d+~%d") do   -- the description of each status, once per battle (the addon keeps it by label)
+        local tip = b.api.tips and b.api.tips[label]
+        if tip and tip ~= "" and b.tipSent[label] ~= tip then b.tipSent[label] = tip; Send(b, "stip", Cap(label, 30) .. "#" .. Cap(tip, 190)) end
+    end
 end
 local function FaceAll(b)   -- both pets look at each other again (a hit / fleeing / moving creature ends up facing anywhere); runs before every turn, a little later too
     for _, s in ipairs({ "P", "E" }) do
@@ -186,6 +235,7 @@ local function SendTurn(b, force)
     FaceAll(b); After(500, function() if not b.over then FaceAll(b) end end)
     local pet = b.eng.P[b.eng.active.P]
     b.waiting = true; b.lastAct = os.time()
+    SendInfo(b)
     Send(b, "turn", (force and "force" or "go") .. ";" .. pet.cd[1] .. "," .. pet.cd[2] .. "," .. pet.cd[3] .. ";" .. ((not force and b.api.CanTrap(b.eng)) and 1 or 0))
 end
 
@@ -259,7 +309,8 @@ local function Play(b, ev, i, status)
         elseif e.dmg then
             local ts = e.side == "P" and "E" or "P"
             Lunge(b, e.side, ts); b.lunged[e.side] = true
-            After(650, function() local a = GetObj(b, e.side); if a then pcall(function() a:Emote(35) end) end end)
+            local emote = (Eng.Family(b.eng[e.side][e.idx].species) == "Humanoid") and 26 or 35   -- humanoids swing a weapon (1H attack); beasts use the claw/bite animation
+            After(650, function() local a = GetObj(b, e.side); if a then pcall(function() a:PerformEmote(emote) end) end end)
             nxt(1000)
         else
             Fx(o, 60957, 1500)   -- utility ability: nature-cast glow on the user
@@ -290,6 +341,10 @@ local function Play(b, ev, i, status)
             Send(b, "fnt", "E," .. e.idx)
         end)
         nxt(2800)
+    elseif e.k == "dmg" and (e.recoil or e.reflect) then   -- the user hurt itself (Body Slam) / a reflect hit (Lightning Shield): a wound emote and the new health, no lunge / spell
+        local o = GetObj(b, e.tside); if o then pcall(function() o:PerformEmote(33) end) end
+        Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. ",-" .. e.dmg)
+        nxt(700)
     elseif e.k == "dmg" and e.bench then   -- splash on a benched pet: just its health number
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. ",-" .. e.dmg)
         nxt(250)
@@ -301,16 +356,16 @@ local function Play(b, ev, i, status)
         if not t then print(string.format('[pb_battle] DIAG no target object: side=%s guid=%s vis=%s', tostring(e.tside), tostring(b.low[e.tside]), tostring(b.vis))) end
         if b.vis and PB_CAST and t then
             local att = GetObj(b, e.side)
-            pcall(function() t:Emote(33) end)   -- wound animation as before; the spell adds its own hit visual and sound
+            pcall(function() t:PerformEmote(33) end)   -- wound animation as before; the spell adds its own hit visual and sound
             if not att then print(string.format('[pb_battle] DIAG no attacker object: side=%s guid=%s', tostring(e.side), tostring(b.low[e.side]))) end
             if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
-        elseif t then pcall(function() t:Emote(33) end); Fx(t, FX_HIT, 900) end
+        elseif t then pcall(function() t:PerformEmote(33) end); Fx(t, FX_HIT, 900) end
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. "," .. (e.crit and "-" .. e.dmg .. "!" or "-" .. e.dmg))
         if not e.more then After(600, function() Back(b, e.side) end) end   -- a multi-hit attacker stays put until its last hit
         nxt(e.more and 650 or 1000)
     elseif e.k == "dodge" then
         local t = GetObj(b, e.side)
-        if t and e.text ~= "Burrowed!" then pcall(function() t:Emote(4) end) end   -- little hop out of the way
+        if t and e.text ~= "Burrowed!" then pcall(function() t:PerformEmote(4) end) end   -- little hop out of the way
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. "," .. (e.text or "Dodge!"))   -- hp as it was at THIS moment, not the end of the round
         if not e.more then After(500, function() Back(b, e.from) end) end
         nxt(e.more and 650 or 1000)
@@ -327,20 +382,21 @@ local function Play(b, ev, i, status)
         nxt(1300)
     elseif e.k == "dot" then
         local o = GetObj(b, e.side)
-        if o then pcall(function() o:Emote(33) end) end
+        if o then pcall(function() o:PerformEmote(33) end) end
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. ",-" .. e.dmg)
         SendTags(b, "P", e.stat); SendTags(b, "E", e.stat)
         nxt(1000)
     elseif e.k == "faint" then
         local o = GetObj(b, e.side)
-        if o then pcall(function() o:Emote(34) end) end
+        if o then pcall(function() o:PerformEmote(34) end) end
         Back(b, e.side == "P" and "E" or "P")
         After(1000, function() Despawn(b, e.side, true); Send(b, "fnt", e.side .. "," .. e.idx) end)
         nxt(1700)
-    elseif e.k == "swap" then
-        Send(b, "msg", "Go, " .. eng.P[e.idx].name .. "!")
-        Despawn(b, "P", true)
-        After(700, function() SpawnPet(b, "P", e.idx); Send(b, "in", "P," .. e.idx); SendAbilities(b); SendTags(b, "P") end)
+    elseif e.k == "swap" then   -- a swap by the player, or a FORCED swap of either side (Nether Gate)
+        local sd = e.side or "P"
+        Send(b, "msg", (sd == "P" and not e.forced) and ("Go, " .. eng.P[e.idx].name .. "!") or (eng[sd][e.idx].name .. " is forced into battle!"))
+        Despawn(b, sd, true)
+        After(700, function() SpawnPet(b, sd, e.idx); Send(b, "in", sd .. "," .. e.idx); if sd == "P" then SendAbilities(b) end; SendTags(b, sd) end)
         nxt(1600)
     elseif e.k == "weather" then
         Send(b, "weather", e.id .. "|" .. e.turns .. "|" .. (e.name or ""))
@@ -374,6 +430,14 @@ local function Start(player, enemies, teamOverride)
         for i = 1, 3 do Ei[i] = Eng.NewPet(POOL[math.random(1, #POOL)], lvl, nil, nil, { quality = Eng.RollQuality() }) end
     end
     local b = { acted = {}, enemyLevel = lvl, pguid = player:GetGUID(), plow = player:GetGUIDLow(), map = player:GetMapId(), phase = Store.NormalWorld(player) and 1 or player:GetPhaseMask(), guid = {}, low = {}, lunged = {}, eng = Eng.NewBattle(P, Ei), api = Eng, test = teamOverride ~= nil }
+    for _, s in ipairs({ "P", "E" }) do   -- every pet gets its skin NOW (random model row of the species), so the preview and the spawn agree
+        for _, pet in ipairs(b.eng[s]) do
+            if not (pet.display and pet.display > 0) then
+                local d = PickDisplay(pet.species)
+                if d then pet.display = d; if s == "P" then Store.SetDisplay(player, pet.species, d) end end
+            end
+        end
+    end
     b.cx, b.cy, b.cz = player:GetX(), player:GetY(), player:GetZ()
     Layout(b, player)
     Store.SetSuppressed(player, true)   -- the follower steps aside during the battle

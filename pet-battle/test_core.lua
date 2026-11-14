@@ -62,7 +62,7 @@ do
     eq(count(ev, "dodge", "P"), 1, "attack on a burrowed pet is blocked"); eq(find(ev, "dodge", "P").text, "Burrowed!", "text")
     eq(b.P[1].channel ~= nil, true, "second turn queued"); eq(b.P[1].cd[3], 4, "burrow cooldown")
     ev = C.Round(b, "A1", "A1")   -- the player's command is ignored: the burrow attack happens
-    local d = find(ev, "dmg", "P"); eq(d.dmg, 323, "burrow strike 30 points = 322.5"); eq(#b.P[1].auras, 0, "no longer burrowed"); eq(b.P[1].channel, nil, "channel done")
+    local d = find(ev, "dmg", "P"); eq(d.dmg, 484, "burrow strike 30 points = 322.5, Beast ability vs a Critter = x1.5 (retail: the ABILITY family decides)"); eq(#b.P[1].auras, 0, "no longer burrowed"); eq(b.P[1].channel, nil, "channel done")
     eq(find(ev, "act", "P").name, "Burrow", "still Burrow acting")
 end
 

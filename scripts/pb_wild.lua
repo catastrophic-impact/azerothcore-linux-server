@@ -81,7 +81,7 @@ local function Spawn(player, species, mob, types)
     local obj = PerformIngameSpawn(1, species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)
     if not obj then return end
     local g = obj:GetGUIDLow()
-    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), map = map, x = x, y = y, z = z, born = os.time(), types = types }   -- registered first, configured after
+    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = map, x = x, y = y, z = z, born = os.time(), types = types }   -- registered first, configured after
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)                 -- friendly to everyone
     pcall(function() obj:SetScale(Store.Scale(species)) end)
@@ -97,7 +97,7 @@ local function Adopt(player, species, mob, types)
     local flags0, faction0 = 0, nil
     pcall(function() flags0 = mob:GetNPCFlags() or 0 end)
     pcall(function() faction0 = mob:GetFaction() end)
-    wild[g] = { guid = mob:GetGUID(), species = species, level = mob:GetLevel(), map = player:GetMapId(), x = mob:GetX(), y = mob:GetY(), z = mob:GetZ(),
+    wild[g] = { guid = mob:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = player:GetMapId(), x = mob:GetX(), y = mob:GetY(), z = mob:GetZ(),
                 born = os.time(), types = types, adopted = true, flags0 = flags0, faction0 = faction0 }   -- registered first, configured after
     pcall(function() mob:SetFaction(35) end)                   -- friendly (green): nobody can attack or kill the interactive critter
     pcall(function() mob:SetNPCFlags(flags0 % 2 == 1 and flags0 or flags0 + 1) end)   -- gossip bit ON (never add 1 to a flag that already has it: 1 + 1 = 2 is the quest giver bit)
@@ -191,7 +191,7 @@ end
 
 local function E_ROLL() return PB_CORE and PB_CORE.RollQuality() or 1 end
 local function BuildEnemies(w)
-    local lv = D.PetLevel(w.level)   -- mob level (1-80) -> pet level (1-25)
+    local lv = D.PetLevel(w.level, w.zone)   -- mob level -> pet level, spread over the zone's retail range (see D.zones)
     local team = { { species = w.species, level = lv, display = w.display, quality = E_ROLL() } }
     if lv > SOLO_MAX_LEVEL then
         local pool = (w.types and #w.types > 0) and w.types or { w.species }

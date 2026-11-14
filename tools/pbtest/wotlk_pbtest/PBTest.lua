@@ -5,7 +5,7 @@ local WHITE = "Interface\\Buttons\\WHITE8X8"
 local BACKDROP = { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
                    tile = true, tileSize = 32, edgeSize = 16, insets = { left = 4, right = 4, top = 4, bottom = 4 } }
 
-local S = { P = {}, E = {}, act = { P = 1, E = 1 }, abil = {}, cd = { 0, 0, 0 }, canAct = false, force = false }
+local S = { P = {}, E = {}, act = { P = 1, E = 1 }, abil = {}, cd = { 0, 0, 0 }, canAct = false, force = false, tips = {}, info = {}, eabil = {} }
 local top, bottom, banner, abBtns, benchBtns, quitBtn, trapBtn, turnTxt
 local Close   -- defined below
 local QCOL = { { 1, 1, 1 }, { 0.12, 1, 0 }, { 0, 0.44, 0.87 }, { 0.64, 0.21, 0.93 } }   -- common / uncommon / rare / epic: white, green, blue, purple
@@ -101,6 +101,7 @@ local function StatusIcon(parent)
         if not self.st then return end
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM"); GameTooltip:SetText(self.st.label .. (self.st.stacks > 1 and ("  x" .. self.st.stacks) or ""), 1, 0.82, 0)
         GameTooltip:AddLine(self.st.bad and "Harmful effect" or "Beneficial effect", self.st.bad and 1 or 0.4, self.st.bad and 0.4 or 1, 0.4)
+        local tip = S.tips[self.st.label]; if tip and tip ~= "" then GameTooltip:AddLine(tip, 1, 1, 1, 1) end
         if self.st.turns > 0 then GameTooltip:AddLine(self.st.turns .. (self.st.turns == 1 and " turn remaining" or " turns remaining"), 1, 1, 1) end
         GameTooltip:Show()
     end)
@@ -122,6 +123,31 @@ local function Panel(name, isRight)
     else
         p.name:SetPoint("TOPLEFT", p.model, "TOPRIGHT", 10, -6); p.hp:SetPoint("TOPLEFT", p.model, "TOPRIGHT", 8, -30)
     end
+    p:EnableMouse(true)   -- hover the pet panel: family matchup and (enemy) abilities with their cooldowns
+    p:SetScript("OnEnter", function(self)
+        local s = isRight and "E" or "P"; local pet = S[s][S.act[s]]; local f = S.info[s]
+        if not pet then return end
+        GameTooltip:SetOwner(self, "ANCHOR_BOTTOM"); GameTooltip:SetText(pet.name .. "  (level " .. pet.lv .. ")", 1, 0.82, 0)
+        if f then
+            GameTooltip:AddLine("Family: " .. f.name, 1, 1, 1)
+            if f.strong ~= "" then GameTooltip:AddLine("Hits harder against: " .. f.strong, 0.4, 1, 0.4) end
+            if f.weak ~= "" then GameTooltip:AddLine("Hits weaker against: " .. f.weak, 1, 0.5, 0.4) end
+            if f.hurtBy ~= "" then GameTooltip:AddLine("Takes extra damage from: " .. f.hurtBy, 1, 0.5, 0.4) end
+            if f.resists ~= "" then GameTooltip:AddLine("Takes less damage from: " .. f.resists, 0.4, 1, 0.4) end
+        end
+        if s == "E" then
+            GameTooltip:AddLine(" ")
+            for slot = 1, 3 do
+                local a = S.eabil[slot]
+                if a then
+                    GameTooltip:AddLine(a.name .. (a.cdLeft > 0 and ("  |cffff6060(ready in " .. a.cdLeft .. (a.cdLeft == 1 and " round)|r" or " rounds)|r")) or (a.cd > 0 and ("  |cff999999(cooldown " .. a.cd .. ")|r") or "")), 1, 0.82, 0)
+                    GameTooltip:AddLine(a.tip, 0.9, 0.9, 0.9, 1)
+                end
+            end
+        end
+        GameTooltip:Show()
+    end)
+    p:SetScript("OnLeave", function() GameTooltip:Hide() end)
     p.st = {}   -- status icons (buffs / debuffs with turns left), up to 6
     for i = 1, 6 do
         local b = StatusIcon(p)
@@ -367,7 +393,7 @@ local function MusicStop() if not music.on then return end music.on = false; pca
 local function Setup()
     if top then return end
     Build()
-    AcoreLib.On("pbt", "begin", function() WxSet(0); MusicStart(); S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("") end)
+    AcoreLib.On("pbt", "begin", function() WxSet(0); MusicStart(); S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; S.tips, S.info, S.eabil = {}, {}, {}; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("") end)
     AcoreLib.On("pbt", "weather", function(p) local id, n = p:match("^(%d+)|(%d+)"); WxSet(tonumber(id) or 0, tonumber(n) or 0) end)
     AcoreLib.On("pbt", "st", function(p)
         local s, i, lv, hp, max, icon, q, entry, sc, name = p:match("^(%a),(%d+),(%d+),(%d+),(%d+),([^,]+),(%d+),(%d+),(%d+),(.+)$")
@@ -376,6 +402,15 @@ local function Setup()
     AcoreLib.On("pbt", "abil", function(p)
         local slot, icon, name, tip, cd = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)$")
         if slot then S.abil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd) }; Refresh() end
+    end)
+    AcoreLib.On("pbt", "stip", function(p) local label, tip = p:match("^([^#]*)#(.*)$"); if label then S.tips[label] = tip end end)
+    AcoreLib.On("pbt", "info", function(p)
+        local s, name, strong, weak, hurtBy, resists = p:match("^(%a)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|([^|]*)$")
+        if s then S.info[s] = { name = name, strong = strong, weak = weak, hurtBy = hurtBy, resists = resists } end
+    end)
+    AcoreLib.On("pbt", "eabil", function(p)
+        local slot, icon, name, tip, cd, left = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)#(%d+)$")
+        if slot then S.eabil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd), cdLeft = tonumber(left) } end
     end)
     AcoreLib.On("pbt", "tag", function(p) local s, text = p:match("^(%a)|(.*)$"); if s then ShowStatuses(s, ParseStatuses(text)) end end)
     AcoreLib.On("pbt", "in", function(p) local s, i = p:match("^(%a),(%d+)"); S.act[s] = Num(i); Refresh(s); Say(S[s][Num(i)].name .. (s == "E" and " appears!" or ", go!")) end)

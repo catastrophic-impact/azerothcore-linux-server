@@ -1,6 +1,8 @@
 -- Headless client smoke test: luajit pet-battle/smoke_client.lua <addon.lua> <slash> ; stubs the WoW widget API generically
 local file, msgs = arg[1], arg[2]
+HOVERS = {}
 local Stub; Stub = setmetatable({}, { __index = function(t, k)
+  if k == "SetScript" then return function(self, ev, f) if ev == "OnEnter" and f then HOVERS[#HOVERS + 1] = { self, f } end return Stub end end
   if k == "GetText" then return function() return "" end end
   if k == "IsShown" then return function() return true end end
   if k == "GetWidth" or k == "GetHeight" or k == "GetTime" or k == "GetFrameLevel" then return function() return 100 end end
@@ -27,3 +29,7 @@ for line in (os.getenv("MSGS") or ""):gmatch("[^\n]+") do
   if not h then print("NO HANDLER", m, a) else local ok3, e3 = pcall(h, p); n = n + 1; if not ok3 then print("HANDLER ERROR", m .. "|" .. a, e3) end end
 end
 print("sent:", table.concat(sent, " ; "), " handled:", n)
+-- hover every tooltip handler once (status icons, pet panels, ability / swap / capture buttons): they must not error with the data the messages delivered
+local hv = 0
+for _, h in ipairs(HOVERS) do if rawget(h[1], "st") == nil then rawset(h[1], "st", false) end local ok4, e4 = pcall(h[2], h[1]); hv = hv + 1; if not ok4 then print("HOVER ERROR", e4) end end
+print("hovered:", hv)

@@ -4,8 +4,23 @@
 local D = {}
 
 D.MAX_LEVEL = 25                  -- retail pet levels 1-25 cover the whole world; level 25 = the level 80 cap
--- mob level (1-80) -> pet level (1-25). PLACEHOLDER curve until the retail zone/level data is pulled: proportional.
-function D.PetLevel(mobLevel) return math.max(1, math.min(D.MAX_LEVEL, math.floor((mobLevel or 1) * D.MAX_LEVEL / 80 + 0.5))) end
+
+-- ZONE PET LEVELS: every zone has its retail wild pet range (lo..hi) and the mob level range of its pet-eligible (wild) species (minMob..maxMob, measured from the
+-- spawns, rare outliers left out; frozen here on purpose so pet levels never shift when spawns change). A mob level is spread evenly over the retail range:
+-- pet = lo + floor((mob - minMob) * (hi - lo + 1) / (maxMob - minMob + 1)), clamped to lo..hi. Add a zone here together with its id in pb_wild ZONES.
+-- Retail ranges: warcraftpets / WoW Petopia (Elwynn, Dun Morogh, Durotar 1-2; Westfall 3-4).
+D.zones = {
+    [12] = { name = "Elwynn Forest", lo = 1, hi = 2, minMob = 1, maxMob = 10 },
+    [1]  = { name = "Dun Morogh",    lo = 1, hi = 2, minMob = 1, maxMob = 10 },
+    [14] = { name = "Durotar",       lo = 1, hi = 2, minMob = 1, maxMob = 10 },
+}
+function D.PetLevel(mobLevel, zoneId)
+    local z = zoneId and D.zones[zoneId]
+    if not z then return math.max(1, math.min(D.MAX_LEVEL, math.floor((mobLevel or 1) * D.MAX_LEVEL / 80 + 0.5))) end   -- unknown zone: old proportional curve
+    local span = z.maxMob - z.minMob + 1
+    local lv = z.lo + math.floor(((mobLevel or z.minMob) - z.minMob) * (z.hi - z.lo + 1) / span)
+    return math.max(z.lo, math.min(z.hi, lv))
+end
 
 -- QUALITY: 1 common (white), 2 uncommon (green), 3 rare (blue), 4 epic (purple). Retail: +10% health/power/speed per step (pb_rules.QualityMult).
 D.QUALITY_NAMES = { "Common", "Uncommon", "Rare", "Epic" }
@@ -53,7 +68,7 @@ D.rename = {
 }
 
 -- Species by creature entry. retail = the retail BattlePetSpecies id whose kit (family, stats, 6 abilities with level unlocks) this creature uses (chosen by pet-battle/assign_kits.py + curation).
--- standin = true: battle pets of this species spawn from a CLONE of its creature template (entry D.StandIn) with no AI/scripts/flags and faction 35 (the original's SmartAI wrecks battles: casts, yells, flees, the tabby cats' Evade). The clone rows are created at load by pb_battle. scale = optional size override. wild = true: a tiny pet spawns next to the real mobs (pb_wild.lua). critter = a real critter species.
+-- standin (default true for every species): battle pets of this species spawn from a CLONE of its creature template (entry D.StandIn) with no AI/scripts/flags and faction 35 (the original's SmartAI wrecks battles: casts, yells, flees, the tabby cats' Evade). The clone rows are created at load by pb_battle. scale = optional size override. wild = true: a tiny pet spawns next to the real mobs (pb_wild.lua). critter = a real critter species.
 D.species = {
     [299] = { name = "Young Wolf", retail = 1542, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [69] = { name = "Timber Wolf", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
@@ -169,7 +184,8 @@ D.species = {
     [36511] = { name = "Spectral Tiger Cub", retail = 242, standin = true, scale = 1.0, icon = "Ability_Hunter_Pet_Cat" },   -- companion models already pet sized
 }
 
-function D.StandIn(entry) local sp = D.species[entry]; return sp and sp.standin and (9000000 + entry) or nil end
-function D.IsStandIn(entry) return entry >= 9000000 and D.species[entry - 9000000] ~= nil and D.species[entry - 9000000].standin == true end
+-- EVERY species spawns from a stand-in (standin = false opts a species out)
+function D.StandIn(entry) local sp = D.species[entry]; return sp and sp.standin ~= false and (9000000 + entry) or nil end
+function D.IsStandIn(entry) return entry >= 9000000 and D.species[entry - 9000000] ~= nil and D.species[entry - 9000000].standin ~= false end
 
 return D
