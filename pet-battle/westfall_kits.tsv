@@ -1,0 +1,57 @@
+entry	name	role	how	retail_species	retail_name	pet_type	kit
+452	Riverpaw Bandit	Rogue	type	513	Qiraji Guardling	Humanoid	0:Crush | 0:Whirlwind | 1:Hawk Eye | 1:Sandstorm | 2:Reckless Strike | 2:Blackout Kick
+822	Young Forest Bear	Melee	name	202	Baby Blizzard Bear	Beast	0:Bite | 0:Roar | 1:Bash | 1:Hibernate | 2:Maul | 2:Call Blizzard
+124	Riverpaw Brute	Melee	type	514	Flayer Youngling	Humanoid	0:Blitz | 0:Triple Snap | 1:Focus | 1:Deflection | 2:Kick | 2:Rampage
+126	Murloc Coastrunner	Melee	type	165	Mojo	Aquatic	0:Water Jet | 0:Tongue Lash | 1:Healing Wave | 1:Cleansing Rain | 2:Frog Kiss | 2:Swarm of Flies
+2442	Cow	Melee	name	1543	Pygmy Cow	Critter	0:Stampede | 0:Chew | 1:Mother's Milk | 1:Feed | 2:Where's the Beef? | 2:Udder Destruction
+834	Coyote	Melee	type	42	Black Tabby Cat	Beast	0:Claw | 0:Pounce | 1:Rake | 1:Screech | 2:Devour | 2:Prowl
+830	Sand Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+831	Sea Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+1216	Shore Crawler	Melee	name	637	Skittering Cavern Crawler	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+883	Deer	Melee	name	390	Deer	Critter	0:Hoof | 0:Stampede | 1:Tranquility | 1:Nature's Ward | 2:Bleat | 2:Headbutt
+832	Dust Devil	Melee	type	515	Sporeling Sprout	Humanoid	0:Jab | 0:Charge | 1:Creeping Fungus | 1:Leech Seed | 2:Spore Shrooms | 2:Crouch
+824	Defias Digger	Melee	type	835	Hopling	Humanoid	0:Crush | 0:Tongue Lash | 1:Sticky Goo | 1:Poison Lash | 2:Backflip | 2:Dreadful Breath
+1236	Kobold Digger	Melee	type	1073	Terky	Humanoid	0:Punch | 0:Flank | 1:Acid Touch | 1:Lucky Dance | 2:Clobber | 2:Stampede
+2620	Prairie Dog	Melee	name	70	Brown Prairie Dog	Critter	0:Chomp | 0:Comeback | 1:Adrenaline Rush | 1:Crouch | 2:Leap | 2:Burrow
+154	Greater Fleshripper	Melee	type	89	Worg Pup	Beast	0:Bite | 0:Flurry | 1:Crouch | 1:Howl | 2:Leap | 2:Dazzling Dance
+199	Young Fleshripper	Melee	type	90	Smolderweb Hatchling	Beast	0:Strike | 0:Poison Spit | 1:Sticky Web | 1:Brittle Webbing | 2:Leech Life | 2:Spiderling Swarm
+1109	Fleshripper	Melee	type	197	Cobra Hatchling	Beast	0:Bite | 0:Poison Fang | 1:Hiss | 1:Counterstrike | 2:Burrow | 2:Vicious Fang
+481	Defias Footpad	Rogue	type	1147	Harbinger of Flame	Humanoid	0:Jab | 0:Burn | 1:Magma Wave | 1:Immolate | 2:Impale | 2:Conflagrate
+846	Rotten Ghoul	Melee	type	1149	Corefire Imp	Humanoid	0:Burn | 0:Rush | 1:Immolation | 1:Flamethrower | 2:Cauterize | 2:Wild Magic
+117	Riverpaw Gnoll	Melee	type	1155	Anubisath Idol	Humanoid	0:Crush | 0:Demolish | 1:Sandstorm | 1:Stoneskin | 2:Deflection | 2:Rupture
+36	Harvest Golem	Melee	type	1157	Harpy Youngling	Humanoid	0:Quills | 0:Slicing Wind | 1:Flyby | 1:Counterstrike | 2:Squawk | 2:Lift-Off
+480	Rusty Harvest Golem	Melee	type	1158	Stunted Yeti	Humanoid	0:Thrash | 0:Punch | 1:Mangle | 1:Haymaker | 2:Rampage | 2:Bash
+157	Goretusk	Melee	type	232	Darting Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+454	Young Goretusk	Melee	type	233	Deviate Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+547	Great Goretusk	Melee	type	234	Gundrak Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+501	Riverpaw Herbalist	Melee	type	1166	Kun-Lai Runt	Humanoid	0:Thrash | 0:Takedown | 1:Mangle | 1:Frost Shock | 2:Rampage | 2:Deep Freeze
+122	Defias Highwayman	Rogue	type	1226	Lil' Bad Wolf	Humanoid	0:Claw | 0:Counterstrike | 1:Mangle | 1:Dodge | 2:Howl | 2:Pounce
+458	Murloc Hunter	Melee	type	383	Eternal Strider	Aquatic	0:Water Jet | 0:Poison Spit | 1:Healing Wave | 1:Cleansing Rain | 2:Soothe | 2:Pump
+449	Defias Knuckleduster	Melee	type	1229	Fiendish Imp	Humanoid	0:Burn | 0:Sear Magic | 1:Immolation | 1:Flamethrower | 2:Rush | 2:Nether Gate
+119	Longsnout	Melee	type	235	Leaping Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+590	Defias Looter	Rogue	type	1257	Crafty	Humanoid	0:Comeback | 0:Accuracy | 1:Rot | 1:Aged Yolk | 2:Proto-Strike | 2:Baneling Burst
+1426	Riverpaw Miner	Melee	type	1323	Ashleaf Spriteling	Humanoid	0:Poisoned Branch | 0:Punch | 1:Solar Beam | 1:Wild Magic | 2:Entangling Roots | 2:Thorns
+123	Riverpaw Mongrel	Melee	type	1329	Dandelion Frolicker	Humanoid	0:Scratch | 0:Bite | 1:Frolick | 1:Barkskin | 2:Kick | 2:Dazzling Dance
+6271	Mouse	Melee	name	385	Mouse	Critter	0:Scratch | 0:Comeback | 1:Flurry | 1:Poison Fang | 2:Stampede | 2:Survival
+453	Riverpaw Mystic	Caster	type	114	Disgusting Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+513	Murloc Netter	Melee	type	388	Shore Crab	Aquatic	0:Snap | 0:Surge | 1:Renewing Mists | 1:Healing Wave | 2:Shell Shield | 2:Whirlpool
+456	Murloc Minor Oracle	Melee	type	401	Strand Crab	Aquatic	0:Snap | 0:Surge | 1:Renewing Mists | 1:Healing Wave | 2:Shell Shield | 2:Whirlpool
+517	Murloc Oracle	Melee	type	419	Small Frog	Aquatic	0:Water Jet | 0:Tongue Lash | 1:Healing Wave | 1:Cleansing Rain | 2:Frog Kiss | 2:Swarm of Flies
+478	Riverpaw Outrunner	Melee	type	1343	Bonkers	Humanoid	0:Jab | 0:Bite | 1:Going Bonkers! | 1:Dodge | 2:Haymaker | 2:Tornado Punch
+833	Coyote Packleader	Melee	type	237	Ravasaur Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+121	Defias Pathstalker	Rogue	type	1628	Sister of Temptation	Humanoid	0:Shadow Shock | 0:Agony | 1:Curse of Doom | 1:Siphon Life | 2:Lovestruck | 2:Haunting Song
+589	Defias Pillager	Caster	type	446	Jade Oozeling	Magic	0:Ooze Touch | 0:Absorb | 1:Corrosion | 1:Creeping Ooze | 2:Expunge | 2:Acidic Goo
+721	Rabbit	Melee	name	72	Snowshoe Rabbit	Critter	0:Scratch | 0:Flurry | 1:Adrenaline Rush | 1:Dodge | 2:Burrow | 2:Stampede
+515	Murloc Raider	Melee	type	420	Toad	Aquatic	0:Water Jet | 0:Tongue Lash | 1:Healing Wave | 1:Cleansing Rain | 2:Frog Kiss | 2:Swarm of Flies
+115	Harvest Reaper	Melee	type	1634	Wretched Servant	Humanoid	0:Jab | 0:Nether Blast | 1:Consume | 1:Weakness | 2:Wild Magic | 2:Consume Magic
+97	Riverpaw Runt	Melee	name	1166	Kun-Lai Runt	Humanoid	0:Thrash | 0:Takedown | 1:Mangle | 1:Frost Shock | 2:Rampage | 2:Deep Freeze
+500	Riverpaw Scout	Rogue	type	1803	Thistleleaf Adventurer	Humanoid	0:Scratch | 0:Bite | 1:Frolick | 1:Barkskin | 2:Kick | 2:Dazzling Dance
+95	Defias Smuggler	Rogue	type	1892	Subjugated Tadpole	Humanoid	0:Punch | 1:Acid Touch | 2:Heroic Leap
+2914	Snake	Melee	type	374	Black Lamb	Critter	0:Hoof | 0:Chew | 1:Comeback | 1:Soothe | 2:Bleat | 2:Stampede
+98	Riverpaw Taskmaster	Melee	type	1893	Allured Tadpole	Humanoid	0:Flank | 1:Acid Touch | 2:Stampede
+127	Murloc Tidehunter	Melee	type	473	Turquoise Turtle	Aquatic	0:Bite | 0:Grasp | 1:Shell Shield | 1:Healing Wave | 2:Headbutt | 2:Powerball
+504	Defias Trapper	Rogue	type	1894	Confused Tadpole	Humanoid	0:Punch | 1:Lucky Dance | 2:Clobber
+171	Murloc Warrior	Melee	type	483	Horny Toad	Aquatic	0:Water Jet | 0:Tongue Lash | 1:Healing Wave | 1:Cleansing Rain | 2:Frog Kiss | 2:Swarm of Flies
+114	Harvest Watcher	Melee	name	2850	Cursed Dune Watcher	Humanoid	0:Punch | 0:Stone Shot | 1:Body Slam | 1:Stoneskin | 2:Sandstorm | 2:Headbutt
+525	Mangy Wolf	Melee	type	238	Razormaw Hatchling	Beast	0:Bite | 0:Flank | 1:Leap | 1:Screech | 2:Devour | 2:Exposed Wounds
+1727	Defias Worker	Melee	type	1935	Squirky	Humanoid	0:Punch | 0:Fish Slap | 1:Clobber | 1:Stampede | 2:For Adventure! | 2:Bubble

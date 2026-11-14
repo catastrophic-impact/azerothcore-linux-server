@@ -218,7 +218,15 @@ local function SendPet(b, s, i)
 end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
     local str = stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])
-    Send(b, "tag", s .. "|" .. str)
+    do   -- the status list can exceed the 240 character message limit (6 statuses): the first part replaces the list ("tag"), the rest is appended ("tag2")
+        local parts, cur = {}, ""
+        for item in str:gmatch("[^;]+") do
+            if #cur + #item + 1 > 190 and cur ~= "" then parts[#parts + 1] = cur; cur = "" end
+            cur = cur .. item .. ";"
+        end
+        parts[#parts + 1] = cur
+        for i, part in ipairs(parts) do Send(b, i == 1 and "tag" or "tag2", s .. "|" .. part) end
+    end
     b.tipSent = b.tipSent or {}
     for label in str:gmatch("([^~;]+)~[^~;]+~%d+~%d+~%d") do   -- the description of each status, once per battle (the addon keeps it by label)
         local tip = b.api.tips and b.api.tips[label]
@@ -243,6 +251,7 @@ local function End(b, result)
     if b.over then return end
     b.over = true; b.endedAt = os.time()
     local plr = GetPlayer(b); if plr then Store.SetSuppressed(plr, false) end
+    if b.api.Finish then b.api.Finish(b.eng) end   -- temporary effects (Perk Up max health ...) end with the battle, before health is saved
     if not b.test then for _, p in ipairs(b.eng.P) do Store.SetHp(b.plow, p.species, p.hp > 0 and p.hp or 1) end end   -- a test team (lab) never touches saved pets   -- health is NOT restored: fainted pets are back with 1 HP, the rest keep what is left
     Send(b, "end", result)
     battles[b.plow] = nil
@@ -353,11 +362,11 @@ local function Play(b, ev, i, status)
         nxt(500)
     elseif e.k == "dmg" then
         local t = GetObj(b, e.tside)
-        if not t then print(string.format('[pb_battle] DIAG no target object: side=%s guid=%s vis=%s', tostring(e.tside), tostring(b.low[e.tside]), tostring(b.vis))) end
+        if not t and PB_DEBUG then print(string.format('[pb_battle] DIAG no target object: side=%s guid=%s vis=%s', tostring(e.tside), tostring(b.low[e.tside]), tostring(b.vis))) end
         if b.vis and PB_CAST and t then
             local att = GetObj(b, e.side)
             pcall(function() t:PerformEmote(33) end)   -- wound animation as before; the spell adds its own hit visual and sound
-            if not att then print(string.format('[pb_battle] DIAG no attacker object: side=%s guid=%s', tostring(e.side), tostring(b.low[e.side]))) end
+            if not att and PB_DEBUG then print(string.format('[pb_battle] DIAG no attacker object: side=%s guid=%s', tostring(e.side), tostring(b.low[e.side]))) end
             if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
         elseif t then pcall(function() t:PerformEmote(33) end); Fx(t, FX_HIT, 900) end
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. "," .. (e.crit and "-" .. e.dmg .. "!" or "-" .. e.dmg))
@@ -545,6 +554,6 @@ RegisterPlayerEvent(4, function(_, player)
     if b then b.over = true; Despawn(b, "P", false); Despawn(b, "E", false); battles[player:GetGUIDLow()] = nil end
 end)
 -- after a script reload: clean up around everyone online right now
-pcall(function() for _, pl in ipairs(GetPlayersInWorld()) do Sweep(pl, 200) end end)
+pcall(function() for _, pl in ipairs(GetPlayersInWorld()) do if Store.IsHuman(pl) then Sweep(pl, 200) end end end)   -- bots never get pets: skipping them avoids ~100k range queries per reload
 print("[pb_battle] loaded")
 return true

@@ -10,6 +10,8 @@ luajit pet-battle/test_rules.lua || fail=1
 luajit pet-battle/test_levels.lua || fail=1
 luajit pet-battle/test_describe.lua || fail=1
 luajit pet-battle/test_abilities.lua || fail=1
+luajit pet-battle/test_passives.lua || fail=1
+luajit pet-battle/test_auras.lua || fail=1
 luajit pet-battle/test_api.lua || fail=1
 luajit pet-battle/sim_presentation.lua 3 || fail=1
 luajit pet-battle/test_core.lua || fail=1
@@ -26,6 +28,7 @@ pbt|st|E,1,10,1535,1535,INV_Pick_02,2,257,54,Kobold Worker
 pbt|in|P,1
 pbt|tag|E|Bleed~Ability_Rogue_Rupture~3~2~1;Dodge 50%~Ability_Rogue_Feint~2~1~0
 pbt|tag|P|
+pbt|tag2|E|Frozen~Spell_Frost_Stun~1~1~1;
 pbt|stip|Wild Magic#Adds up to 8 damage to every attack against the target.
 pbt|info|E|Beast|Critter|Aquatic|Flying|Humanoid
 pbt|eabil|1|Ability_Druid_Rake#Bite#100% hit chance. Bites.#0#0

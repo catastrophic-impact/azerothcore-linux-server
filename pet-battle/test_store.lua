@@ -8,13 +8,27 @@ function CharDBExecute() end; function CharDBQuery() return nil end; function Wo
 function RegisterPlayerEvent() end; function GetPlayersInWorld() return {} end; function CreateLuaEvent() end
 local sent = {}
 SHOP_PRIME = { SendOne = function(_, entry, display) sent[#sent + 1] = entry .. ":" .. display end }
-package.loaded["acore_msg"] = { On = function() end, Send = function() end }
+local handlers, outbox = {}, {}
+package.loaded["acore_msg"] = { On = function(m, a, f) handlers[m .. "|" .. a] = f end, Send = function(_, m, a, payload) outbox[#outbox + 1] = { m = m, a = a, p = tostring(payload) } end }
 local D, Eng = require("pb_data"), require("pb_core")
 local Store = dofile("scripts/pb_store.lua")
 local player = setmetatable({}, { __index = function(_, k) if k == "GetGUIDLow" then return function() return 42 end end return function() end end })
 local realTime = os.time
 local function at(t) os.time = function() return t end end
 
+test("the journal ability list: every ability of every species has a clean, complete text that fits the 240 character message limit", function()
+    for entry in pairs(D.species) do
+        outbox = {}; handlers["pbj|abil"](player, tostring(entry))
+        eq(#outbox, #Eng.Kit(entry), "one message per ability for species " .. entry)
+        for _, o in ipairs(outbox) do
+            local text = o.m .. "|" .. o.a .. "|" .. o.p
+            truthy(#text <= 240, "message too long (" .. #text .. "): " .. text:sub(1, 80))
+            local tip = o.p:match("^[^|]*|[^#]*#[^#]*#([^#]*)#")
+            truthy(tip and tip ~= "", "empty tip: " .. o.p:sub(1, 80))
+            truthy(not tip:find("[%[%]]") and not tip:find("|4") and not tip:find("%?") and not tip:find("nil") and not tip:find(" , "), "unresolved text in the journal tip: " .. tip)
+        end
+    end
+end)
 test("a recruited pet keeps its quality and skin, starts at full health", function()
     Store.AddPet(player, 721, 1, { 1, 2, 1 }, 3, 777)
     local p = Store.Pets(player)[721]

@@ -16,6 +16,8 @@ for id, z in pairs(D.zones) do
     end
     eq(seenLo and seenHi, true, z.name .. " uses the whole range")
 end
+-- Westfall: retail 3-4, mobs 9-19: the level 1 critters clamp to 3, mobs 9-14 = 3, 15-19 = 4
+eq(D.PetLevel(1, 40), 3, "westfall critter"); eq(D.PetLevel(9, 40), 3, "westfall mob 9"); eq(D.PetLevel(14, 40), 3, "westfall mob 14"); eq(D.PetLevel(15, 40), 4, "westfall mob 15"); eq(D.PetLevel(19, 40), 4, "westfall mob 19"); eq(D.PetLevel(26, 40), 4, "westfall above the range")
 -- hypothetical wide zone (Feralas-like): retail 11-16 over mobs 40-49 spreads evenly, 6 levels over 10 mob levels
 D.zones[9999] = { lo = 11, hi = 16, minMob = 40, maxMob = 49 }
 local got = {}; for l = 40, 49 do got[#got + 1] = D.PetLevel(l, 9999) end

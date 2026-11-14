@@ -412,7 +412,13 @@ local function Setup()
         local slot, icon, name, tip, cd, left = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)#(%d+)$")
         if slot then S.eabil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd), cdLeft = tonumber(left) } end
     end)
-    AcoreLib.On("pbt", "tag", function(p) local s, text = p:match("^(%a)|(.*)$"); if s then ShowStatuses(s, ParseStatuses(text)) end end)
+    AcoreLib.On("pbt", "tag", function(p) local s, text = p:match("^(%a)|(.*)$"); if s then S.statuses = S.statuses or {}; S.statuses[s] = ParseStatuses(text); ShowStatuses(s, S.statuses[s]) end end)
+    AcoreLib.On("pbt", "tag2", function(p)   -- the rest of a long status list
+        local s, text = p:match("^(%a)|(.*)$"); if not s then return end
+        S.statuses = S.statuses or {}; local list = S.statuses[s] or {}
+        for _, st in ipairs(ParseStatuses(text)) do list[#list + 1] = st end
+        S.statuses[s] = list; ShowStatuses(s, list)
+    end)
     AcoreLib.On("pbt", "in", function(p) local s, i = p:match("^(%a),(%d+)"); S.act[s] = Num(i); Refresh(s); Say(S[s][Num(i)].name .. (s == "E" and " appears!" or ", go!")) end)
     AcoreLib.On("pbt", "act", function(p)
         local s, i, ab = p:match("^(%a),(%d+),(.+)$"); local pet = S[s][Num(i)]

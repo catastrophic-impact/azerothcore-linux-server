@@ -31,7 +31,7 @@ function C.Cast(att, tgt, spell, o)
     local ok = pcall(function()
         if o.dmg then att:CastCustomSpell(tgt, spell, true, o.dmg) else att:CastSpell(tgt, spell, true) end
     end)
-    if not ok then print('[pb_cast] DIAG CastSpell failed spell=' .. tostring(spell)) end
+    if not ok and PB_DEBUG then print('[pb_cast] DIAG CastSpell failed spell=' .. tostring(spell)) end
     -- a hit creature starts fleeing (its own AI): stop it every 150 ms while the hit lands and put it back on its spot, instead of waiting for the window to end
     local hold = o.hold or C.HOLD_MS
     for ms = 150, hold - 100, 150 do

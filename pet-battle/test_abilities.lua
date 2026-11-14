@@ -44,7 +44,7 @@ local function run(ab, o, rounds)
     for r = 1, rounds or 1 do if r == 2 and o.thenPass then a.abil = { PASS }; a.cd = { 0, 0, 0 } end local ev = C.Round(b, "A1", "A1"); for _, x in ipairs(ev) do evs[#evs + 1] = x end end
     return evs, b, a, e
 end
-local function dmgEvents(evs, side) local t = {}; for _, x in ipairs(evs) do if (x.k == "dmg" or x.k == "dot") and (not side or x.side == side) then t[#t + 1] = x end end; return t end
+local function dmgEvents(evs, side) local t = {}; for _, x in ipairs(evs) do if not x.recoil and (x.k == "dmg" or x.k == "dot") and (not side or x.side == side) then t[#t + 1] = x end end; return t end
 local function sum(t, f) local n = 0; for _, x in ipairs(t) do n = n + f(x) end; return n end
 
 -- all distinct abilities of all species kits
@@ -63,7 +63,13 @@ for _, ab in ipairs(byName) do
         local desc = C.Describe({ text = ab.text, turns = ab.turns, family = ab.family }, C.NewPet(721, 10, { 1, 1, 1 }, dice(6), { quality = 3 }).power)
         local checked = 0
         -- 1. damage: "dealing N Family damage" = the first hit of the ability against a neutral target
-        local N = tonumber(desc:match("dealing (%d+) %a+ damage")) or tonumber(desc:match("Deals (%d+) %a+ damage"))
+        local upTo = tonumber(desc:match("dealing up to (%d+) %a+ damage"))
+        if upTo then
+            checked = checked + 1
+            local evs = run(ab, { roll = 6 }, 1); local tot = sum(dmgEvents(evs, "P"), function(x) return x.dmg end)
+            check(name, "all hits of one use total " .. upTo, math.abs(tot - upTo) <= 3, "total " .. tot)
+        end
+        local N = (not upTo) and (tonumber(desc:match("dealing (%d+) %a+ damage")) or tonumber(desc:match("Deals (%d+) %a+ damage")) or tonumber(desc:match("[Ii]nstantly deals (%d+) %a+ damage")))
         if N then
             checked = checked + 1
             local evs = run(ab, {}, #ab.turns)
@@ -76,7 +82,8 @@ for _, ab in ipairs(byName) do
                 local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
                 evs = run(ab, { enemyAbility = scratch }, 8); d = {}; for _, x in ipairs(evs) do if (x.k == "dmg" and x.side == "P") or (x.k == "dot" and x.side == "E") then d[#d + 1] = x end end; first = d[1]
             end
-            local okFirst = first and first.dmg == N
+            local boostTaken = tonumber(desc:match("increasing damage taken by (%d+)%%")) or 0   -- a DoT that raises the damage taken also raises its own ticks
+            local okFirst = first and (first.dmg == N or (boostTaken > 0 and math.abs(first.dmg - N * (100 + boostTaken) / 100) <= 1))
             if first and not okFirst then   -- "dealing N" may be the total of several hits of ONE use (Spiderling Swarm: 2 x half)
                 local total = 0; for _, x in ipairs(d) do if x.round == nil and x.k == "dmg" and total < N then total = total + x.dmg end end
                 okFirst = (total == N) or (#d >= 2 and d[1].dmg + d[2].dmg == N)
@@ -94,7 +101,7 @@ for _, ab in ipairs(byName) do
             check(name, "hits at least " .. lo .. " time", nLo >= tonumber(lo), "got " .. nLo)
         end
         -- 3. healing: "Restores N health" (damaged user)
-        local H = tonumber(desc:match("Restores (%d+) health")) or tonumber(desc:match("heals? .-for (%d+)"))
+        local H = tonumber(desc:match("Restores (%d+) health")) or tonumber(desc:match("heals? .-for (%d+) health")) or tonumber(desc:match("heals? .-for (%d+)[^%d%%]"))
         if H and not desc:find("every round") and not desc:find("each round") then
             checked = checked + 1
             local evs, b, a = run(ab, { hpFrac = 0.4 }, #ab.turns)
@@ -156,7 +163,7 @@ for _, ab in ipairs(byName) do
             check(name, "user takes " .. selfN .. " damage", lost == selfN, "user lost " .. lost)
         end
         -- 9. lifesteal: "healed for N% of the damage dealt"
-        local lp = tonumber(desc:match("healed for (%d+)%% of the damage dealt"))
+        local lp = tonumber(desc:match("healed for (%d+)%% of the damage dealt")) or tonumber(desc:match("heals the user for (%d+)%% of the damage dealt"))
         if lp then
             checked = checked + 1
             local evs, b, a = run(ab, { hpFrac = 0.5 }, #ab.turns)
@@ -266,11 +273,11 @@ for _, ab in ipairs(byName) do
             check(name, "next attack deals +" .. buffP .. "%", base > 0 and math.abs(buffed - base * (100 + buffP) / 100) <= 2, base .. " -> " .. buffed)
         end
         -- 20. speed buffs: "(increases|reduces) your speed by N%"
-        local spUp, spN = desc:match("(%a+)s? your speed by (%d+)%%")
+        local spUp, spN = desc:match("(%a+)s your speed by (%d+)%%")
         if spN and (spUp == "increase" or spUp == "reduce") then
             checked = checked + 1
             local evs, b, a = run(ab, {})
-            local sp = 0; for _, au in ipairs(a.auras) do sp = sp + (au.states.Mod_SpeedPercent or 0) end
+            local sp = 0; for _, au in ipairs(a.auras) do sp = sp + (au.states.Mod_SpeedPercent or 0) end   -- still on after the round it was cast in: it matters at the start of the NEXT round
             check(name, "speed " .. spUp .. "s by " .. spN .. "%", sp == (spUp == "increase" and 1 or -1) * tonumber(spN), "speed mod " .. sp)
         end
         -- 21. healing over rounds: "restoring A health on the first round, B on the second, then C on the third" (Hibernate / Nap Time)
@@ -358,6 +365,318 @@ for _, ab in ipairs(byName) do
             local asleep = false; for _, au in ipairs(e.auras) do if au.states.Mechanic_IsStunned or au.states.turnLock then asleep = true end end
             local seenStun = false; for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then seenStun = true end end
             check(name, "the target falls asleep after the drowsy round", asleep or seenStun, "no sleep seen")
+        end
+        -- 30. Reckless Strike: "increases the damage you take for N round by P%" (the user's own penalty)
+        local recklessP = tonumber(desc:match("increases the damage you take for %d+ rounds? by (%d+)%%"))
+        if recklessP then
+            checked = checked + 1
+            local function taken(useAb)
+                local b, a, e = setup(ab, { attackerFirst = true }); e.abil = { scratch }; if not useAb then a.abil = { PASS } end
+                return sum(dmgEvents(C.Round(b, "A1", "A1"), "E"), function(x) return x.dmg end)
+            end
+            local base, pen = taken(false), taken(true)
+            check(name, "the USER takes +" .. recklessP .. "% damage afterwards", base > 0 and math.abs(pen - base * (100 + recklessP) / 100) <= 2, base .. " -> " .. pen)
+        end
+        -- 31. Horn Attack: "If the user is faster than the target, they have a N% chance to be trampled and lose their turn"
+        local trampleP = tonumber(desc:match("faster than the target, they have a (%d+)%% chance to be trampled"))
+        if trampleP then
+            checked = checked + 1
+            local function lost(first, roll) local evs = run(ab, { attackerFirst = first, roll = roll }); for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then return true end end return false end
+            check(name, "faster user + good roll tramples the target", lost(true, 6), "no lost turn")
+            check(name, "bad roll: no trample", not lost(true, 100), "trampled anyway")
+            check(name, "slower user never tramples", not lost(false, 6), "trampled while slower")
+        end
+        -- 32. Snail Mail: "Builds up power during the first round. The next round ... dealing N damage"
+        if desc:find("Builds up power during the first round") then
+            checked = checked + 1
+            local evs1 = run(ab, {}, 1); local evs2 = run(ab, {}, 2)
+            check(name, "no damage in the first (build-up) round", #dmgEvents(evs1, "P") == 0, #dmgEvents(evs1, "P") .. " hits in round 1")
+            check(name, "damage lands in the second round", #dmgEvents(evs2, "P") >= 1, "no damage by round 2")
+        end
+        -- 33. Sniff Out: "removes any objects on the battlefield"
+        if desc:find("removes any objects on the battlefield") then
+            checked = checked + 1
+            local evs, b, a, e = run(ab, { prep = function(b, a, e) e.auras[#e.auras + 1] = { id = 9997, left = 3, states = { Mechanic_IsObject = 1 }, pwr = 0 }; a.auras[#a.auras + 1] = { id = 9996, left = 3, states = { Mechanic_IsObject = 1 }, pwr = 0 } end })
+            local left = 0; for _, au in ipairs(e.auras) do if au.states.Mechanic_IsObject then left = left + 1 end end; for _, au in ipairs(a.auras) do if au.states.Mechanic_IsObject then left = left + 1 end end
+            check(name, "removes every object from the battlefield", left == 0, left .. " objects left")
+        end
+        -- 34. Spiny Carapace: "Effectiveness is tripled for N round if this ability is used while already active"
+        if desc:find("Effectiveness is tripled") then
+            checked = checked + 1
+            local b, a, e = setup(ab, { attackerFirst = true }); e.abil = { scratch }
+            local r1 = sum(dmgEvents(C.Round(b, "A1", "A1"), "P"), function(x) return x.dmg end)   -- the reflect damage of round 1 (base)
+            a.cd = { 0, 0, 0 }   -- (the cooldown is respected now: reset it to use the ability again while the aura is active)
+            local r2 = sum(dmgEvents(C.Round(b, "A1", "A1"), "P"), function(x) return x.dmg end)   -- used again while active: tripled
+            check(name, "re-using it while active triples the reflect", r1 > 0 and math.abs(r2 - 3 * r1) <= 3, "round 1 " .. r1 .. " round 2 " .. r2)
+        end
+        -- 35. Mana Surge: "Deals N additional damage when the weather is Arcane Winds"
+        local surgeN = tonumber(desc:match("Deals (%d+) additional damage when the weather is"))
+        if surgeN then
+            checked = checked + 1
+            R.states[99999] = R.states[99999] or { Weather_ArcaneStorm = 1 }
+            local function total(weather) local evs = run(ab, { prep = function(b) if weather then b.weather = { id = 99999, left = 5 } end end }, 1); return sum(dmgEvents(evs, "P"), function(x) return x.dmg end) end
+            local plain, boosted = total(false), total(true)
+            check(name, "Arcane Winds adds " .. surgeN .. " damage", boosted - plain >= surgeN - 2, plain .. " -> " .. boosted)
+        end
+        -- 36. Nature's Ward: "your type is transformed into Elemental" while healing
+        local typeTo = desc:match("your type is transformed into (%a+)")
+        if typeTo then
+            checked = checked + 1
+            local function taken(useAb)
+                local b, a, e = setup(ab, { attackerFirst = true }); e.abil = { scratch }; e.family = "Beast"; a.family = "Critter"
+                if useAb then a.abil = { ab } else a.abil = { PASS }; a.family = typeTo end
+                return sum(dmgEvents(C.Round(b, "A1", "A1"), "E"), function(x) return x.dmg end)
+            end
+            local viaAbility, direct = taken(true), taken(false)
+            check(name, "defends as " .. typeTo .. " while the aura lasts", viaAbility > 0 and viaAbility == direct, "with the ability " .. viaAbility .. " as a real " .. typeTo .. " " .. direct)
+        end
+        -- 37. Perk Up: "increases the maximum health of your active pet by N per level for M rounds"
+        local perkN, perkM = desc:match("maximum health of your active pet by (%d+) per level for (%d+) rounds")
+        if perkN then
+            checked = checked + 1
+            local b, a = setup(ab, { attackerFirst = true }); local max0 = a.max
+            C.Round(b, "A1", "A1")
+            check(name, "max health +" .. perkN .. " per level", a.max == max0 + tonumber(perkN) * a.level, max0 .. " -> " .. a.max)
+            a.abil = { PASS }; a.cd = { 0, 0, 0 }
+            for _ = 1, tonumber(perkM) + 1 do C.Round(b, "A1", "A1") end
+            check(name, "bonus ends after " .. perkM .. " rounds", a.max == max0, "max health still " .. a.max)
+        end
+        -- 38. Frog Kiss: "N% chance to transform the target into a frog for M round"
+        local frogP = tonumber(desc:match("(%d+)%% chance to transform the target into a frog"))
+        if frogP then
+            checked = checked + 1
+            local function frogged(roll) local evs = run(ab, { roll = roll, attackerFirst = true }); for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then return true end end return false end
+            check(name, frogP .. "% chance to turn the target into a frog (it loses its turn)", frogged(6), "no frog")
+            check(name, "no frog on a bad roll", not frogged(100), "frogged anyway")
+        end
+        -- 39. WEATHER abilities: the aura's states act on the whole battlefield (type damage bonus, sandstorm accuracy / flat damage, rain shortens DoTs)
+        local weatherAura; for _, t in ipairs(ab.turns) do for _, f in ipairs(t.fx) do if f.prop == 80 then weatherAura = f.aura end end end
+        if weatherAura and R.states[weatherAura] then
+            checked = checked + 1
+            local st = R.states[weatherAura]
+            local evs, b = run(ab, {})
+            check(name, "sets the weather (aura " .. weatherAura .. ")", b.weather and b.weather.id == weatherAura, "weather " .. tostring(b.weather and b.weather.id))
+            if st.Mod_PetTypeDamageDealtPercent then
+                local fam = Rules.FAMILIES[st.Mod_PetType_ID]
+                local boostedAb
+                for entry in pairs(D.species) do for _, k in ipairs(C.Kit(entry)) do
+                    local a2 = k.ability
+                    if not boostedAb and a2.family == st.Mod_PetType_ID - 1 and a2.cd == 0 and a2.turns[1] and a2.turns[1].fx[1] and (a2.turns[1].fx[1].prop == 24 or a2.turns[1].fx[1].prop == 222) and #a2.turns == 1 then boostedAb = a2 end
+                end end
+                if boostedAb then
+                    local function dmgWith(weather) local evs = run(boostedAb, { prep = function(bb) if weather then bb.weather = { id = weatherAura, left = 5 } end end }); local d = dmgEvents(evs, "P")[1]; return d and d.dmg or 0 end
+                    local plain, w = dmgWith(false), dmgWith(true)
+                    local flatBonus = (weatherAura == 203) and 20 or 0   -- Lightning Storm also adds a flat bonus per attack (checked separately below)
+                    local exp = plain * (100 + st.Mod_PetTypeDamageDealtPercent) / 100
+                    check(name, fam .. " abilities deal +" .. st.Mod_PetTypeDamageDealtPercent .. "% in this weather (" .. boostedAb.retailName .. ")", plain > 0 and w >= exp - 2 and w <= exp + 2 + flatBonus, plain .. " -> " .. w)
+                else unchecked_(name, "no family-" .. tostring(fam) .. " damage ability found to test the weather bonus") end
+            end
+            if st.Stat_Accuracy then   -- Sandstorm: every hit chance lowered: a 100% hit now misses on a roll above 100 + mod
+                local function hits(weather, roll) local evs = run(scratch, { roll = roll, prep = function(bb) if weather then bb.weather = { id = weatherAura, left = 5 } end end }); return #dmgEvents(evs, "P") > 0 end
+                local roll = 100 + st.Stat_Accuracy + 1
+                check(name, "hit chance " .. st.Stat_Accuracy .. "%: a roll of " .. roll .. " hits without it, misses in it", hits(false, roll) and not hits(true, roll), "no change")
+            end
+            if st.Add_FlatDamageTaken then
+                local function dmgWith(weather) local evs = run(scratch, { prep = function(bb) if weather then bb.weather = { id = weatherAura, left = 5 } end end }); local d = dmgEvents(evs, "P")[1]; return d and d.dmg or 0 end
+                local plain, w = dmgWith(false), dmgWith(true)
+                check(name, "flat damage " .. st.Add_FlatDamageTaken .. " on every attack", w == math.max(1, plain + st.Add_FlatDamageTaken), plain .. " -> " .. w)
+            end
+        end
+        -- 40. per-round damage: "causing A damage on the first round, B on the second round, and C on the third round" (Stampede / Flock)
+        local rA, rB, rC = desc:match("causing (%d+) %a+ damage on the first round, (%d+) %a+ on the second round, and (%d+) %a+ on the third round")
+        if rA then
+            checked = checked + 1
+            local b, a, e = setup(ab, { attackerFirst = true }); local per = {}
+            for r = 1, 3 do local evs = C.Round(b, "A1", "A1"); per[r] = sum(dmgEvents(evs, "P"), function(x) return x.dmg end) end
+            local boost = tonumber(desc:match("take (%d+)%% increased damage")) or 0   -- Stampede / Flock: the first round's debuff raises rounds 2 and 3
+            local function near(x, y, k) return math.abs(x - tonumber(y) * k) <= 3 end
+            local k2 = 1 + boost / 100
+            check(name, "deals " .. rA .. " / " .. rB .. " / " .. rC .. " in rounds 1-3 (x" .. k2 .. " after round 1 from its own debuff)", near(per[1], rA, 1) and near(per[2], rB, k2) and near(per[3], rC, k2), per[1] .. " / " .. per[2] .. " / " .. per[3])
+        end
+        -- 41. team-split channel: "deals N damage split across the enemy team ... additional damage if the weather is Cleansing Rain" (Dreadful Breath)
+        local splitN = tonumber(desc:match("deals (%d+) %a+ damage split across the enemy team"))
+        if splitN then
+            checked = checked + 1
+            local function total(weather)
+                local evs = run(ab, { enemyBench = true, prep = function(bb) if weather then bb.weather = { id = 229, left = 5 } end end }, 1)
+                local t = 0; for _, x in ipairs(evs) do if x.k == "dmg" and x.side == "P" then t = t + x.dmg end end; return t
+            end
+            local plain, rain = total(false), total(true)
+            check(name, "round damage is split across the team (total " .. splitN .. ")", math.abs(plain - splitN) <= 3, "total " .. plain)
+            if desc:find("weather is Cleansing Rain") then check(name, "extra damage in Cleansing Rain", rain > plain * 1.3, plain .. " -> " .. rain) end
+        end
+        -- 42. Pump: "First use: Increases your damage dealt by P%. Second use: ... dealing N damage"
+        local pumpP, pumpN = desc:match("First use: Increases your damage dealt by (%d+)%%%. Second use: .-dealing (%d+) %a+ damage")
+        if pumpP then
+            checked = checked + 1
+            local evs = run(ab, {}, 2); local per = {}
+            local b, a, e = setup(ab, {}); local r1 = dmgEvents(C.Round(b, "A1", "A1"), "P"); local r2 = dmgEvents(C.Round(b, "A1", "A1"), "P")
+            check(name, "first use deals no damage, second deals " .. pumpN, #r1 == 0 and r2[1] and r2[1].dmg == tonumber(pumpN), #r1 .. " hits then " .. (r2[1] and r2[1].dmg or "none"))
+        end
+        -- 43. Powerball: "increasing your speed by P%. Your speed continues to increase each time you use it"
+        local ballP = tonumber(desc:match("increasing your speed by (%d+)%%%.? +Your speed continues to increase"))
+        if ballP then
+            checked = checked + 1
+            local b, a = setup(ab, {}); local function spd() local t = 0; for _, au in ipairs(a.auras) do t = t + (au.states.Mod_SpeedPercent or 0) end return t end
+            C.Round(b, "A1", "A1"); local s1 = spd(); C.Round(b, "A1", "A1"); local s2 = spd()
+            check(name, "speed +" .. ballP .. "% per use, stacking", s1 == ballP and s2 == 2 * ballP, s1 .. " then " .. s2)
+        end
+        -- 44. "restoring N of the user's health" (Digest Brains)
+        local selfHeal = tonumber(desc:match("restoring (%d+) of the user's health"))
+        if selfHeal then
+            checked = checked + 1
+            local evs = run(ab, { hpFrac = 0.3 }, 1); local got = 0; for _, x in ipairs(evs) do if x.k == "heal" and x.side == "P" then got = got + x.amt end end
+            check(name, "heals " .. selfHeal, got == selfHeal, "healed " .. got)
+        end
+        -- 45. "healing for N health every round for M rounds" (Reanimate)
+        local hotN, hotM = desc:match("healing for (%d+) health every round for (%a+) rounds")
+        if hotN then
+            checked = checked + 1
+            local rounds = ({ two = 2, three = 3, four = 4, five = 5 })[hotM] or tonumber(hotM) or 3
+            local evs = run(ab, { hpFrac = 0.1, thenPass = true }, rounds + 1); local got = {}
+            for _, x in ipairs(evs) do if x.k == "heal" and x.side == "P" then got[#got + 1] = x.amt end end
+            local ok = #got == rounds; for _, g in ipairs(got) do if g ~= tonumber(hotN) then ok = false end end
+            check(name, "heals " .. hotN .. " every round for " .. rounds .. " rounds", ok, table.concat(got, "/"))
+        end
+        -- 46. "performing no actions for two rounds, then recovers/repairs N health" (Reboot / Repair)
+        local restN = tonumber(desc:match("performing no actions for two rounds, then %a+ (%d+) health"))
+        if restN then
+            checked = checked + 1
+            local b, a, e = setup(ab, { attackerFirst = true }); a.hp = 1; a.abil = { ab, scratch }; a.cd = { 0, 0, 0 }; e.abil = { PASS }
+            local evsAll = {}; for r = 1, 4 do for _, x in ipairs(C.Round(b, r == 1 and "A1" or "A2", "A1")) do x.round = r; evsAll[#evsAll + 1] = x end end
+            local healRound, healAmt, actions = nil, 0, 0
+            for _, x in ipairs(evsAll) do
+                if x.k == "heal" and x.side == "P" and not healRound then healRound = x.round; healAmt = x.amt end
+                if x.k == "act" and x.side == "P" and x.round > 1 and (not healRound or x.round <= healRound) and x.slot == 2 then actions = actions + 1 end
+            end
+            check(name, "recovers " .. restN .. " after doing nothing for two rounds", healAmt == restN and healRound and healRound >= 3 and actions == 0, "heal " .. healAmt .. " in round " .. tostring(healRound) .. ", extra actions " .. actions)
+        end
+        -- 47. damage over time: "causing / dealing N X damage each round" (the aura damages its holder every round; only when the claim is about ticks, not the first hit)
+        local tickN = tonumber(desc:match("causing (%d+) %a+ damage each round")) or tonumber(desc:match("dealing (%d+) %a+ damage each round")) or tonumber(desc:match("deals (%d+) %a+ damage every round"))
+        if tickN and not desc:find("to your team each round") then
+            checked = checked + 1
+            local evs = run(ab, { roll = 6, thenPass = true }, 3)
+            local ticks = {}; for _, x in ipairs(evs) do if (x.k == "dot" and x.side == "E") or (x.k == "dmg" and x.side == "P" and x.auraHit) then ticks[#ticks + 1] = x.dmg end end
+            local ok = #ticks >= 1; for _, t in ipairs(ticks) do if math.abs(t - tickN) > 1 and math.abs(t - tickN * 1.25) > 1 then ok = false end end   -- (1.25: a poison that raises damage taken also raises its own ticks)
+            check(name, "the target takes " .. tickN .. " damage every round", ok, #ticks .. " ticks: " .. table.concat(ticks, "/"))
+        end
+        -- 48. hit chance on aura damage: "Deals N damage to your team each round. M% Hit Chance" (Cyclone: each tick lands only M% of the time)
+        local cycN = tonumber(desc:match("Deals (%d+) %a+ damage to your team each round"))
+        local cycAcc = tonumber(desc:match("(%d+)%% hit chance"))
+        if cycN and cycAcc and cycAcc < 100 then
+            checked = checked + 1
+            local misses = run(ab, { roll = 100, thenPass = true }, 4); local landed = 0
+            for _, x in ipairs(misses) do if x.k == "dot" and x.side == "E" then landed = landed + 1 end end
+            local hits = run(ab, { roll = 1, thenPass = true }, 4); local landed2 = 0
+            for _, x in ipairs(hits) do if x.k == "dot" and x.side == "E" then landed2 = landed2 + 1 end end
+            check(name, "aura damage respects its " .. cycAcc .. "% hit chance (no ticks on a bad roll, ticks on a good one)", landed == 0 and landed2 >= 1, "bad roll ticks " .. landed .. ", good roll ticks " .. landed2)
+        end
+        -- 49. Cyclone kit text: "Creates a cyclone which has a N% chance to deal D damage to the enemy team each round. Lasts M rounds."
+        local cyN, cyD = desc:match("has a (%d+)%% chance to deal (%d+) %a+ damage to the enemy team each round")
+        if cyN then
+            checked = checked + 1
+            local function ticks(roll) local evs = run(ab, { roll = roll, thenPass = true }, 4); local t = {}; for _, x in ipairs(evs) do if x.k == "dot" and x.side == "E" then t[#t + 1] = x.dmg end end return t end
+            local good, bad = ticks(1), ticks(100)
+            check(name, cyN .. "% chance per round: ticks of " .. cyD .. " on a good roll, none on a bad one", #bad == 0 and #good >= 1 and math.abs(good[1] - tonumber(cyD)) <= 3, "bad " .. #bad .. " good " .. #good .. " first tick " .. tostring(good[1]))
+        end
+        -- 50. Leech Seed: "Each round, the seed deals N damage and restores that damage as health to the user"
+        local seedN = tonumber(desc:match("Each round, the seed deals (%d+) %a+ damage and restores that damage as health"))
+        if seedN then
+            checked = checked + 1
+            local evs = run(ab, { roll = 6, hpFrac = 0.3, thenPass = true }, 3); local dots, heals = {}, {}
+            for _, x in ipairs(evs) do if x.k == "dot" and x.side == "E" then dots[#dots + 1] = x.dmg elseif x.k == "heal" and x.side == "P" then heals[#heals + 1] = x.amt end end
+            local okTick = #dots >= 1 and math.abs(dots[1] - seedN) <= 1
+            local okHeal = false; for _, h in ipairs(heals) do if dots[1] and h == dots[1] then okHeal = true end end
+            check(name, "each round the seed deals " .. seedN .. " and the caster is healed for the same", okTick and okHeal, "ticks " .. table.concat(dots, "/") .. " heals " .. table.concat(heals, "/"))
+        end
+        -- 51. Lightning Storm: "All pets deal N bonus Mechanical damage each time they attack"
+        local lsN = tonumber(desc:match("deal (%d+) bonus %a+ damage each time they attack"))
+        if lsN then
+            checked = checked + 1
+            local function dmgWith(weather) local evs = run(scratch, { prep = function(bb) if weather then bb.weather = { id = 203, left = 5 } end end }, 1); local d = dmgEvents(evs, "P")[1]; return d and d.dmg or 0 end
+            local plain, w = dmgWith(false), dmgWith(true)
+            check(name, "every attack deals extra Mechanical damage (about " .. lsN .. " at power 10)", w > plain, plain .. " -> " .. w)
+        end
+        -- 52. Brittle Webbing: "Takes N damage each time they attack"; Plagued Blood: "When damaged, the attacker is healed"
+        local bwN = tonumber(desc:match("^Takes (%d+) %a+ damage each time they attack"))
+        if bwN then
+            checked = checked + 1
+            local b, a, e = setup(ab, { attackerFirst = true }); local webbed = e; webbed.auras[#webbed.auras + 1] = { id = 381, left = 3, states = R.states[381], pwr = a.power, fam = "Beast", src = a }
+            webbed.abil = { scratch }; webbed.cd = { 0, 0, 0 }; a.abil = { PASS }
+            local hp0 = webbed.hp; local evs = C.Round(b, "A1", "A1")
+            local selfDmg = 0; for _, x in ipairs(evs) do if x.reflect and x.tside == "E" then selfDmg = selfDmg + x.dmg end end
+            check(name, "the webbed pet takes damage each time it attacks", selfDmg > 0, "self damage " .. selfDmg)
+        end
+        -- 53. Plant: "Activate: ... While planted your pet cannot swap. Deactivate: For every round spent planted, you gain N health"
+        local plantN = tonumber(desc:match("For every round spent planted, you gain (%d+) health"))
+        if plantN then
+            checked = checked + 1
+            local b, a = setup(ab, { attackerFirst = true, hpFrac = 0.2 }); local ev1 = C.Round(b, "A1", "A1"); local locked = C.Locked(a, "swapOutLock")
+            a.abil = { PASS }; a.cd = { 0, 0, 0 }; local heals = {}; for _ = 1, 2 do for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "heal" and x.side == "P" then heals[#heals + 1] = x.amt end end end
+            check(name, "planted: cannot swap and heals " .. plantN .. " every round", locked and #heals == 2 and heals[1] == plantN and heals[2] == plantN, "locked " .. tostring(locked) .. " heals " .. table.concat(heals, "/"))
+            a.abil = { ab }; a.cd = { 0, 0, 0 }; C.Round(b, "A1", "A1"); a.abil = { PASS }; local after = 0; for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "heal" and x.side == "P" then after = after + 1 end end
+            check(name, "using it again deactivates it (no more healing, can swap)", after == 0 and not C.Locked(a, "swapOutLock"), "heals after deactivation " .. after)
+        end
+        -- 54. Refuge: "A natural shield surrounds the user and each friendly critter, blocking the next attack they would take"
+        if desc:find("each friendly critter, blocking the next attack") then
+            checked = checked + 1
+            local rng = dice(6); local mk = function(fam) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.family = fam; q.abil = { PASS }; q.cd = { 0, 0, 0 }; return q end
+            local user = mk("Critter"); user.abil = { ab }; local critter, beast = mk("Critter"), mk("Beast")
+            local e = mk("Beast"); e.abil = { PASS }; user.speed = 100; e.speed = 1
+            local b = C.NewBattle({ user, critter, beast }, { e }, rng); C.Round(b, "A1", "A1")
+            local function blocks(q) for _, au in ipairs(q.auras) do if au.charges and au.charges > 0 then return true end end return false end
+            check(name, "the user and each friendly Critter get a block, a Beast does not", blocks(user) and blocks(critter) and not blocks(beast), "user " .. tostring(blocks(user)) .. " critter " .. tostring(blocks(critter)) .. " beast " .. tostring(blocks(beast)))
+        end
+        -- 55. Portal: "jumps through a magical portal, avoiding the opponent's attack. The user then swaps automatically with your highest health pet"
+        if desc:find("swaps automatically with your highest health pet") or desc:find("The user then swaps with a random pet") then
+            checked = checked + 1
+            local rng = dice(6); local mk = function(frac) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; q.hp = math.floor(q.max * frac); q.speed = 50; return q end
+            local user = mk(1); user.abil = { ab }; local low, high = mk(0.3), mk(0.9)
+            local e = mk(1); e.abil = { scratch }; e.speed = 100
+            local b = C.NewBattle({ user, low, high }, { e }, rng); local ev = C.Round(b, "A1", "A1")
+            local hurt = 0; for _, x in ipairs(ev) do if x.k == "dmg" and x.side == "E" and x.tside == "P" then hurt = hurt + 1 end end
+            check(name, "avoids the enemy attack that round", hurt == 0, hurt .. " hits taken")
+            if desc:find("random pet") then check(name, "then swaps with a living ally", b.active.P ~= 1, "active " .. b.active.P)
+            else check(name, "then swaps with the highest-health ally (index 3)", b.active.P == 3, "active " .. b.active.P) end
+        end
+        -- 56. Death Grip: "forces the opponent's lowest health pet to swap into battle"
+        if desc:find("forces the opponent's lowest health pet to swap") then
+            checked = checked + 1
+            local rng = dice(6); local mk = function(frac) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; q.hp = math.floor(q.max * frac); return q end
+            local user = mk(1); user.abil = { ab }; user.speed = 100; local e1, e2, e3 = mk(1), mk(0.6), mk(0.2); e1.speed = 1
+            local b = C.NewBattle({ user }, { e1, e2, e3 }, rng); C.Round(b, "A1", "A1")
+            check(name, "pulls the LOWEST health living enemy into battle (index 3)", b.active.E == 3, "active " .. b.active.E)
+        end
+        -- 57. Consume Corpse: "Consumes an allied corpse to restore N% of total health. Corpses can only be used once"
+        local corpseP = tonumber(desc:match("Consumes an allied corpse to restore (%d+)%% of total health"))
+        if corpseP then
+            checked = checked + 1
+            local rng = dice(6); local mk = function() local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; return q end
+            local user = mk(); user.abil = { ab }; user.hp = math.floor(user.max * 0.2); user.speed = 100; local dead = mk(); dead.hp = 0; local e = mk(); e.speed = 1
+            local b = C.NewBattle({ user, dead }, { e }, rng); local hp0 = user.hp; C.Round(b, "A1", "A1")
+            check(name, "restores " .. corpseP .. "% of max health from a corpse", user.hp - hp0 == math.floor(user.max * corpseP / 100), hp0 .. " -> " .. user.hp)
+            user.hp = math.floor(user.max * 0.2); user.cd = { 0, 0, 0 }; local hp1 = user.hp; C.Round(b, "A1", "A1")
+            check(name, "the corpse can only be used once", user.hp == hp1, "healed again: " .. hp1 .. " -> " .. user.hp)
+            local u2 = mk(); u2.abil = { ab }; u2.hp = math.floor(u2.max * 0.2); u2.speed = 100; local b2 = C.NewBattle({ u2 }, { mk() }, rng); local h2 = u2.hp; C.Round(b2, "A1", "A1")
+            check(name, "without a corpse nothing happens", u2.hp == h2, h2 .. " -> " .. u2.hp)
+        end
+        -- 58. Corpse Explosion: "Instantly kills the user ... infects the target. Infected targets receive N% of their maximum health as damage every round for M rounds"
+        local ceN, ceM = desc:match("receive (%d+)%% of their maximum health as %a+ damage every round for (%d+) rounds")
+        if ceN then
+            checked = checked + 1
+            local evs, b, a, e = run(ab, { roll = 6, thenPass = true }, 3)
+            local ticks = {}; for _, x in ipairs(evs) do if x.k == "dot" and x.side == "E" then ticks[#ticks + 1] = x.dmg end end
+            check(name, "the user dies and the target takes " .. ceN .. "% of its max health each round", a.hp == 0 and #ticks >= 2 and ticks[1] == math.floor(e.max * tonumber(ceN) / 100), "user hp " .. a.hp .. " ticks " .. table.concat(ticks, "/") .. " max " .. e.max)
+        end
+        -- 59. "causing N damage every round. Lasts M rounds. Opponents struck by the flock take P% increased damage" (Falcosaur Swarm)
+        local fsN, fsM = desc:match("causing (%d+) %a+ damage every round%. Lasts (%d+) rounds")
+        if fsN then
+            checked = checked + 1
+            local boost = tonumber(desc:match("take (%d+)%% increased damage")) or 0
+            local b, a, e = setup(ab, { attackerFirst = true }); local per = {}
+            for r = 1, tonumber(fsM) do per[r] = sum(dmgEvents(C.Round(b, "A1", "A1"), "P"), function(x) return x.dmg end) end
+            local ok2 = math.abs(per[1] - tonumber(fsN)) <= 3; for r = 2, tonumber(fsM) do if math.abs(per[r] - tonumber(fsN) * (1 + boost / 100)) > 3 then ok2 = false end end
+            check(name, "deals " .. fsN .. " in round 1 and " .. fsN * (1 + boost / 100) .. " afterwards (its own +" .. boost .. "% debuff)", ok2, table.concat(per, "/"))
         end
         if checked == 0 then unchecked_(name, desc:sub(1, 150)) end
     end

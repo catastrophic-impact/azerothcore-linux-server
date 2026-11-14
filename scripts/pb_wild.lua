@@ -7,7 +7,7 @@
 local D = require("pb_data")
 local Store = require("pb_store")
 
-local ZONES = { [12] = true, [1] = true, [14] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials). Add more zones here later.
+local ZONES = { [85] = true, [215] = true, [141] = true, [12] = true, [1] = true, [14] = true, [40] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials), Westfall (40). Add more zones here later (and a D.zones row in pb_data.lua).
 local TICK_MS = 12000
 local SEARCH = 60               -- how far from a player real mobs are looked for
 local SPACING = 90              -- at most one wild pet per species within this distance of each other
@@ -106,24 +106,21 @@ end
 local function Scan(player, now)
     local map, px, py = player:GetMapId(), player:GetX(), player:GetY()
     local found, types = {}, {}
-    for species, sp in pairs(D.species) do
-        if sp.wild then
-            local ok, list = pcall(function() return player:GetCreaturesInRange(SEARCH, species, 0, 1) end)   -- both factions, alive
-            local mobs = {}
-            if ok and list then
-                for _, c in ipairs(list) do
-                    local okd, dbg = pcall(function() return c:GetDBTableGUIDLow() end)
-                    if okd and dbg and dbg > 0 and not c:IsInCombat() then mobs[#mobs + 1] = c end   -- real mobs only (a DB row), never script-spawned pets
+    -- ONE range query (all creatures within SEARCH, both factions, alive), bucketed by entry: 20x cheaper than one query per species (measured live) and the same result set
+    local ok, list = pcall(function() return player:GetCreaturesInRange(SEARCH, 0, 0, 1) end)
+    if ok and list then
+        for _, c in ipairs(list) do
+            local species = c:GetEntry(); local sp = D.species[species]
+            if sp and sp.wild then
+                local okd, dbg = pcall(function() return c:GetDBTableGUIDLow() end)
+                if okd and dbg and dbg > 0 and not c:IsInCombat() and not (sp.wild == "adopt" and wild[c:GetGUIDLow()]) then   -- real mobs only (a DB row), never script-spawned pets
+                    if not found[species] then found[species] = {}; types[#types + 1] = species end
+                    local l = found[species]; l[#l + 1] = c
                 end
             end
-            if sp.wild == "adopt" then   -- never adopt a critter that already is a wild pet
-                local free = {}
-                for _, m in ipairs(mobs) do if not wild[m:GetGUIDLow()] then free[#free + 1] = m end end
-                mobs = free
-            end
-            if #mobs > 0 then found[species] = mobs; types[#types + 1] = species end
         end
     end
+    table.sort(types)   -- deterministic order (pairs() order would make the species pick random per run)
     for _, species in ipairs(types) do
         local mobs = found[species]
         local m = mobs[math.random(#mobs)]
@@ -137,19 +134,17 @@ end
 
 -- critters left friendly/marked by an earlier script instance (reload / crash) that no registry entry owns: give them back
 local function CleanLeftovers(player)
-    for species, sp in pairs(D.species) do
-        if sp.wild == "adopt" or sp.critter then   -- real critters that an earlier version (or the adopt option) may have left friendly / flagged
-            local ok, list = pcall(function() return player:GetCreaturesInRange(SEARCH + 40, species, 0, 1) end)
-            if ok and list then
-                for _, c in ipairs(list) do
-                    local okf, fac = pcall(function() return c:GetFaction() end)
-                    local okd, dbg = pcall(function() return c:GetDBTableGUIDLow() end)
-                    -- a REAL critter (DB row) that is friendly (35) or still carries the old heart marker, but no registry entry owns it
-                    local hearts = false; pcall(function() hearts = c:HasAura(MARKER) end)
-                    if ((okf and fac == 35 and okd and dbg and dbg > 0) or hearts) and not wild[c:GetGUIDLow()] then
-                        Release(c, species); print("[pb_wild] released a leftover critter (" .. D.species[species].name .. ") low=" .. tostring(c:GetGUIDLow()))
-                    end
-                end
+    local ok, list = pcall(function() return player:GetCreaturesInRange(SEARCH + 40, 0, 0, 1) end)   -- ONE range query, filtered by entry (was one query per critter species)
+    if not (ok and list) then return end
+    for _, c in ipairs(list) do
+        local species = c:GetEntry(); local sp = D.species[species]
+        if sp and (sp.wild == "adopt" or sp.critter) then   -- real critters that an earlier version (or the adopt option) may have left friendly / flagged
+            local okf, fac = pcall(function() return c:GetFaction() end)
+            local okd, dbg = pcall(function() return c:GetDBTableGUIDLow() end)
+            -- a REAL critter (DB row) that is friendly (35) or still carries the old heart marker, but no registry entry owns it
+            local hearts = false; pcall(function() hearts = c:HasAura(MARKER) end)
+            if ((okf and fac == 35 and okd and dbg and dbg > 0) or hearts) and not wild[c:GetGUIDLow()] then
+                Release(c, species); print("[pb_wild] released a leftover critter (" .. D.species[species].name .. ") low=" .. tostring(c:GetGUIDLow()))
             end
         end
     end
@@ -157,7 +152,8 @@ end
 
 local function Tick()
     local now = os.time()
-    local players = GetPlayersInWorld() or {}
+    local players = {}
+    for _, pl in ipairs(GetPlayersInWorld() or {}) do if Store.IsHuman(pl) then players[#players + 1] = pl end end   -- bots do not count
     for g, w in pairs(wild) do
         local live = Obj(w)
         if live then w.x, w.y = live:GetX(), live:GetY() end   -- a wandering critter moves

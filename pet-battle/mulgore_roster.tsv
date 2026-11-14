@@ -1,0 +1,48 @@
+# mulgore pet roster (map 1 box x -3350..-1500, y -1500..500, mobs level <= 20, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	2955	Plainstrider	1-2	Beast	12	0	96	1219	Melee		
+Y	2620	Prairie Dog	1	Critter	0	0	18	1072	Melee		already a species
+Y	14869	Pygmy Cockatrice	1	Beast	0	0	4	14940	Melee		already a species
+N	5890	Redrock Earth Spirit	1	Elemental	0	0	5	1128	Melee		citizen/guard/event name
+Y	2966	Battleboar	3-4	Beast	5	0	42	8869	Melee		
+Y	2952	Bristleback Quilboar	3-4	Humanoid	0	0	48	1967	Melee		
+Y	2953	Bristleback Shaman	3-4	Humanoid	0	0	17	6090	Melee		
+Y	2961	Mountain Cougar	3	Beast	2	0	34	11451	Melee		
+Y	2954	Bristleback Battleboar	4-5	Beast	5	0	14	6807	Melee		
+N	3229	"Squealer" Thornmantle	5	Humanoid	0	0	4	1254	Melee		named mob
+N	10721	Novice Warrior	5	Humanoid	0	0	8	10049	Melee		training NPC
+Y	2949	Palemane Tanner	5-6	Humanoid	0	0	25	550	Melee		
+Y	2958	Prairie Wolf	5-6	Beast	1	0	118	1100	Melee		
+Y	2975	Venture Co. Hireling	5-6	Humanoid	0	0	11	7243	Melee		
+Y	2969	Wiry Swoop	5-7	Beast	7	0	17	1228	Melee		
+Y	2956	Adult Plainstrider	6-7	Beast	12	0	88	1220	Melee		
+Y	2950	Palemane Skinner	6-7	Humanoid	0	0	22	1216	Melee		
+Y	2976	Venture Co. Laborer	6-7	Humanoid	0	0	14	355	Melee		
+Y	2989	Bael'dun Digger	7-8	Humanoid	0	0	21	3785	Melee		
+Y	3035	Flatland Cougar	7-8	Beast	2	0	74	1059	Melee		
+Y	2951	Palemane Poacher	7-8	Humanoid	0	0	19	1217	Melee		
+Y	2959	Prairie Stalker	7-8	Beast	1	0	122	643	Melee		
+Y	2970	Swoop	7-9	Beast	7	0	31	1229	Melee		
+Y	2977	Venture Co. Taskmaster	7-8	Humanoid	0	0	7	355	Melee		
+Y	2962	Windfury Harpy	7-8	Humanoid	0	0	26	10877	Melee		
+Y	2990	Bael'dun Appraiser	8-9	Humanoid	0	0	13	3787	Melee		
+Y	2957	Elder Plainstrider	8-9	Beast	12	0	26	1221	Melee		
+Y	2967	Galak Centaur	8-9	Humanoid	0	0	3	9410	Melee		
+Y	2978	Venture Co. Worker	8-9	Humanoid	0	0	110	355	Melee		
+Y	2963	Windfury Wind Witch	8-9	Humanoid	0	0	19	1351	Melee		
+Y	2968	Galak Outrunner	9-10	Humanoid	0	0	3	9409	Melee		
+Y	2960	Prairie Wolf Alpha	9-10	Beast	1	0	38	161	Melee		
+N	16438	Skeletal Trooper	9-10	Undead	0	0	28	12074	Melee		Scourge event
+N	16437	Spectral Spirit	9-10	Undead	0	0	24	16169	Melee		citizen/guard/event name
+Y	2979	Venture Co. Supervisor	9-10	Humanoid	0	0	57	3904	Melee		
+N	7975	Mulgore Protector	55	Humanoid	0	0	6	7115	Melee		level > 20
+N	6491	Spirit Healer	60	Humanoid	0	0	3	5233	Melee		npcflag 16385
+N	26738	[DND] TAR Pedestal - Accessories	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26739	[DND] TAR Pedestal - Enchantments	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26740	[DND] TAR Pedestal - Gems	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26741	[DND] TAR Pedestal - General Goods	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26745	[DND] TAR Pedestal - Weapons	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26007	Arena Battlemaster	70	Humanoid	0	0	3	23766	Melee		npcflag 1048577
+N	26309	Weapons Vendor	70	Humanoid	0	0	6	23757	Melee		npcflag 4224

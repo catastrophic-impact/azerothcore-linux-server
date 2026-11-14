@@ -75,3 +75,4 @@ WriteString=Packet
 WriteUByte=Packet
 WriteULong=Packet
 SetDuration=Aura (not probe-able here; the freeze tick works live)
+IsBot=Player (verified live: probe counted 300 bots)

@@ -1,0 +1,69 @@
+# teldrassil pet roster (map 1 box x 8800..11300, y 300..2150, mobs level <= 20, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	35250	Ghostly Night Elf Celebrant	1	Humanoid	0	0	15	29710	Melee		npcflag 1
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	721	Rabbit	1	Critter	0	0	65	328	Melee		already a species
+Y	1420	Toad	1	Critter	0	0	31	901	Melee		
+N	3681	Wisp	1	Critter	0	0	3	10045	Melee		Wisp (not an animal)
+Y	2031	Young Nightsaber	1	Beast	2	0	21	11454	Melee		
+Y	1984	Young Thistle Boar	1-2	Beast	5	0	28	8869	Melee		
+Y	1988	Grell	2-3	Demon	0	0	13	6806	Melee		
+Y	2032	Mangy Nightsaber	2	Beast	2	0	12	18416	Melee		
+Y	1985	Thistle Boar	2-3	Beast	5	0	30	389	Melee		
+Y	1989	Grellkin	3-4	Demon	0	0	31	3023	Melee		
+Y	1986	Webwood Spider	3-4	Beast	3	0	44	709	Melee		
+Y	883	Deer	5	Critter	0	0	27	347	Melee		already a species
+Y	2007	Gnarlpine Gardener	5-6	Humanoid	0	0	13	6799	Melee		
+Y	2006	Gnarlpine Ursa	5-6	Humanoid	0	0	10	6798	Melee		
+Y	2042	Nightsaber	5-6	Beast	2	0	38	6805	Melee		
+Y	2002	Rascal Sprite	5-6	Demon	0	0	8	3023	Melee		
+Y	2003	Shadow Sprite	5-6	Demon	0	0	10	6809	Melee		
+Y	1995	Strigid Owl	5-6	Beast	26	0	36	10832	Melee		
+N	23527	Teldrassil Pink Elekk	5	Beast	0	0	3	22732	Melee		event Pink Elekk
+Y	2022	Timberling	5-6	Elemental	0	0	28	3033	Melee		
+Y	1998	Webwood Lurker	5-6	Beast	3	0	33	760	Melee		
+Y	2004	Dark Sprite	6-7	Demon	0	0	8	568	Melee		
+Y	2152	Gnarlpine Ambusher	6-7	Humanoid	0	0	15	3024	Melee		
+Y	7235	Gnarlpine Mystic	6-7	Humanoid	0	0	6	6804	Melee		
+Y	2008	Gnarlpine Warrior	6-7	Humanoid	0	0	29	6800	Melee		
+Y	2010	Gnarlpine Defender	7-8	Humanoid	0	0	51	6801	Melee		
+Y	2009	Gnarlpine Shaman	7-8	Humanoid	0	0	47	897	Melee		
+Y	2043	Nightsaber Stalker	7-8	Beast	2	0	32	14318	Melee		
+Y	1996	Strigid Screecher	7-8	Beast	26	0	36	4877	Melee		
+Y	2025	Timberling Bark Ripper	7-8	Elemental	0	0	12	6817	Melee		
+Y	2005	Vicious Grell	7	Demon	0	0	11	6811	Melee		
+Y	1999	Webwood Venomfang	7-8	Beast	3	0	30	759	Melee		
+Y	2015	Bloodfeather Harpy	8-9	Humanoid	0	0	11	3021	Melee		
+Y	2017	Bloodfeather Rogue	8-9	Humanoid	0	0	20	6812	Melee		
+Y	2033	Elder Nightsaber	8-9	Beast	2	0	15	3030	Melee		
+Y	2011	Gnarlpine Augur	8-9	Humanoid	0	0	25	3024	Melee		
+N	2038	Lord Melenas	8	Demon	0	0	3	1013	Melee		named boss-like (Lord Melenas)
+Y	1997	Strigid Hunter	8-9	Beast	26	0	13	10830	Melee		
+Y	2027	Timberling Trampler	8-9	Elemental	0	0	12	3034	Melee		
+Y	2000	Webwood Silkspinner	8-9	Beast	3	0	16	1989	Melee		
+Y	2019	Bloodfeather Fury	9-10	Humanoid	0	0	4	3022	Melee		
+Y	2018	Bloodfeather Sorceress	9	Humanoid	0	0	5	2296	Melee		
+Y	2020	Bloodfeather Wind Witch	9-10	Humanoid	0	0	8	10869	Melee		
+Y	2013	Gnarlpine Avenger	9-10	Humanoid	0	0	11	6803	Melee		
+Y	2012	Gnarlpine Pathfinder	9-10	Humanoid	0	0	14	6802	Melee		
+N	16438	Skeletal Trooper	9-10	Undead	0	0	32	12074	Melee		Scourge invasion event
+N	16437	Spectral Spirit	9-10	Undead	0	0	30	16169	Melee		citizen/guard/event name
+Y	2029	Timberling Mire Beast	9-10	Elemental	0	0	9	863	Melee		
+Y	2030	Elder Timberling	10-11	Elemental	0	0	9	3032	Melee		
+N	2852	Enslaved Druid of the Talon	10	Humanoid	0	0	4	4246	Melee		quest NPC
+Y	2034	Feral Nightsaber	10-11	Beast	2	0	6	3030	Melee		
+Y	2001	Giant Webwood Spider	10-11	Beast	3	0	12	6808	Melee		
+Y	2014	Gnarlpine Totemic	10-11	Humanoid	0	0	5	936	Melee		
+Y	2021	Bloodfeather Matriarch	11	Humanoid	0	0	10	6813	Melee		
+N	4262	Darnassus Sentinel	55	Humanoid	0	0	4	2306	Melee		npcflag 1
+N	12160	Shadowglen Sentinel	55	Humanoid	0	0	17	4841	Melee		level > 20
+N	3571	Teldrassil Sentinel	55	Humanoid	0	0	7	4849	Melee		npcflag 1
+N	6491	Spirit Healer	60	Humanoid	0	0	3	5233	Melee		npcflag 16385
+N	26738	[DND] TAR Pedestal - Accessories	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26739	[DND] TAR Pedestal - Enchantments	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26740	[DND] TAR Pedestal - Gems	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26741	[DND] TAR Pedestal - General Goods	70	Not specified	0	0	6	24019	Melee		npcflag 6272
+N	26745	[DND] TAR Pedestal - Weapons	70	Not specified	0	0	5	24019	Melee		npcflag 6272
+N	26007	Arena Battlemaster	70	Humanoid	0	0	3	23766	Melee		npcflag 1048577
+N	26309	Weapons Vendor	70	Humanoid	0	0	5	23757	Melee		npcflag 4224

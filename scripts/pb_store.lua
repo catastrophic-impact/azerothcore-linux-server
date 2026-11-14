@@ -213,9 +213,13 @@ Msg.On("pbj", "list", function(player) Store.SyncCompanions(player); SendAll(pla
 Msg.On("pbj", "abil", function(player, payload)   -- the 6 abilities of one species (2 options per slot)
     local sp = tonumber(payload); local s = sp and D.species[sp]
     if not s then return end
+    local mine = Load(player:GetGUIDLow()).pets[sp]   -- the numbers in the text are THIS pet's: its level and quality decide its power (a species you do not own yet is shown at level 1)
+    local power = Eng.Stats(sp, mine and mine.level or 1, mine and mine.quality or 1).power
     for _, k in ipairs(Eng.Kit(sp)) do
         local a = k.ability
-        Msg.Send(player, "pbj", "abl", sp .. "," .. k.slot .. "," .. k.opt .. "|" .. a.icon .. "#" .. a.name .. "#" .. a.tip .. "#" .. a.cd .. "#" .. k.unlock)
+        local tip = Eng.Describe(a, power):gsub("[#|~;]", " ")
+        if #tip > 170 then local cut = tip:sub(1, 170); local dot = cut:match("^.*()%. "); tip = (dot and dot > 85) and cut:sub(1, dot) or (cut:sub(1, 167) .. "...") end   -- addon messages are limited to 240 characters
+        Msg.Send(player, "pbj", "abl", sp .. "," .. k.slot .. "," .. k.opt .. "|" .. a.icon .. "#" .. a.name:gsub("[#|~;]", " ") .. "#" .. tip .. "#" .. a.cd .. "#" .. k.unlock)
     end
 end)
 Msg.On("pbj", "setabil", function(player, payload)
@@ -350,7 +354,12 @@ Msg.On("pbj", "summon", function(player, payload)
 end)
 Msg.On("pbj", "dismiss", function(player) SetFollower(player, 0) end)
 
+function Store.IsHuman(player)   -- playerbots (300 of them) never get pet features: no wild pets, no saved followers, no database lookups
+    local ok, bot = pcall(function() return player:IsBot() end)
+    return not (ok and bot)
+end
 local function Restore(player)   -- login / script load: bring the last summoned pet back
+    if not Store.IsHuman(player) then return end
     local g = player:GetGUIDLow()
     if follow[g] then return end
     local q = CharDBQuery("SELECT species FROM dc_battlefollower WHERE guid=" .. g)

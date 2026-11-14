@@ -1,0 +1,77 @@
+# westfall pet roster (map 0 box x -11500..-9500, y 600..2400, mobs level <= 20, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	620	Chicken	1	Critter	0	0	28	304	Melee		npcflag 2
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	4	16412	Melee		npcflag 1
+Y	6271	Mouse	1	Critter	0	0	4	4959	Melee		
+Y	2620	Prairie Dog	1	Critter	0	0	9	1072	Melee		
+Y	721	Rabbit	1	Critter	0	0	8	328	Melee		already a species
+Y	2914	Snake	1	Critter	0	0	15	1206	Melee		
+N	32820	Wild Turkey	1	Beast	0	0	50	21774	Melee		citizen/guard/event name; already a species
+Y	2442	Cow	5	Critter	0	0	4	1060	Melee		already a species
+Y	883	Deer	5	Critter	0	0	3	347	Melee		already a species
+N	842	Lumberjack	5	Humanoid	0	0	4	308	Melee		citizen/guard/event name
+Y	525	Mangy Wolf	5-6	Beast	1	0	6	903	Melee		already a species
+N	6670	Westfall Woodworker	5	Humanoid	0	0	8	3264	Melee		citizen/guard/event name
+Y	97	Riverpaw Runt	8-9	Humanoid	0	0	6	10791	Melee		already a species
+Y	822	Young Forest Bear	8-9	Beast	4	0	3	1006	Melee		
+Y	478	Riverpaw Outrunner	9-10	Humanoid	0	0	19	512	Melee		already a species
+Y	480	Rusty Harvest Golem	9-10	Mechanical	0	0	16	514	Melee		
+Y	834	Coyote	10-11	Beast	1	0	44	643	Melee		
+Y	481	Defias Footpad	10-11	Humanoid	0	0	5	2333	Melee		
+Y	119	Longsnout	10-11	Beast	5	0	6	381	Melee		
+Y	199	Young Fleshripper	10-11	Beast	7	0	37	410	Melee		
+Y	833	Coyote Packleader	11-12	Beast	1	0	21	161	Melee		
+Y	95	Defias Smuggler	11-12	Humanoid	0	0	44	4418	Melee		
+Y	36	Harvest Golem	11-12	Mechanical	0	0	28	367	Melee		
+N	448	Hogger	11	Humanoid	0	1	3	384	Melee		rank 1 (elite/rare)
+Y	515	Murloc Raider	11-12	Humanoid	0	0	10	441	Melee		
+Y	117	Riverpaw Gnoll	11-12	Humanoid	0	0	24	175	Melee		
+Y	504	Defias Trapper	12-13	Humanoid	0	0	39	2331	Melee		
+N	100	Gruff Swiftbite	12	Humanoid	0	4	3	175	Melee		rank 4 (elite/rare)
+Y	1236	Kobold Digger	12-13	Humanoid	0	0	7	373	Melee		
+Y	126	Murloc Coastrunner	12-13	Humanoid	0	0	25	983	Melee		
+Y	500	Riverpaw Scout	12-13	Humanoid	0	0	23	374	Melee		
+Y	454	Young Goretusk	12-13	Beast	5	0	45	8871	Melee		
+Y	590	Defias Looter	13-14	Humanoid	0	0	40	2340	Melee		
+Y	1109	Fleshripper	13-14	Beast	7	0	48	2305	Melee		
+Y	456	Murloc Minor Oracle	13-14	Humanoid	0	0	23	486	Melee		
+Y	123	Riverpaw Mongrel	13-14	Humanoid	0	0	45	383	Melee		
+Y	830	Sand Crawler	13-14	Beast	8	0	17	342	Melee		
+Y	589	Defias Pillager	14-15	Humanoid	0	0	44	2338	Melee		
+Y	157	Goretusk	14-15	Beast	5	0	54	3027	Melee		
+Y	114	Harvest Watcher	14-15	Mechanical	0	0	35	378	Melee		
+Y	513	Murloc Netter	14-15	Humanoid	0	0	30	1994	Melee		
+Y	501	Riverpaw Herbalist	14-15	Humanoid	0	0	22	413	Melee		
+Y	1426	Riverpaw Miner	14-15	Humanoid	0	0	8	374	Melee		
+Y	846	Rotten Ghoul	14-15	Undead	0	0	12	646	Melee		
+N	619	Defias Conjurer	15-16	Humanoid	0	1	3	2329	Melee		rank 1 (elite/rare)
+Y	824	Defias Digger	15-16	Humanoid	0	0	40	2441	Melee		
+N	594	Defias Henchman	15-16	Humanoid	0	1	5	2323	Melee		rank 1 (elite/rare)
+Y	121	Defias Pathstalker	15-16	Humanoid	0	0	11	2336	Melee		
+Y	171	Murloc Warrior	15-16	Humanoid	0	0	33	1305	Melee		
+Y	124	Riverpaw Brute	15-16	Humanoid	0	0	26	384	Melee		
+Y	831	Sea Crawler	15-16	Beast	8	0	12	979	Melee		
+Y	449	Defias Knuckleduster	16-17	Humanoid	0	0	15	2344	Melee		
+N	1725	Defias Watchman	16-17	Humanoid	0	1	5	184	Melee		rank 1 (elite/rare)
+Y	1727	Defias Worker	16-17	Humanoid	0	0	28	341	Melee		
+Y	547	Great Goretusk	16-17	Beast	5	0	17	3035	Melee		
+Y	154	Greater Fleshripper	16-17	Beast	7	0	13	1105	Melee		
+Y	458	Murloc Hunter	16-17	Humanoid	0	0	33	757	Melee		
+Y	452	Riverpaw Bandit	16-17	Humanoid	0	0	40	383	Melee		
+Y	122	Defias Highwayman	17-18	Humanoid	0	0	26	2342	Melee		
+Y	115	Harvest Reaper	17-18	Mechanical	0	0	10	379	Melee		
+Y	517	Murloc Oracle	17-18	Humanoid	0	0	28	1079	Melee		
+Y	98	Riverpaw Taskmaster	17-18	Humanoid	0	0	46	376	Melee		
+Y	1216	Shore Crawler	17-18	Beast	8	0	22	9570	Melee		
+N	623	Skeletal Miner	17-18	Undead	0	1	9	11402	Melee		rank 1 (elite/rare)
+N	625	Undead Dynamiter	17-18	Undead	0	1	6	829	Melee		rank 1 (elite/rare)
+N	624	Undead Excavator	17-18	Undead	0	1	5	10630	Melee		rank 1 (elite/rare)
+Y	832	Dust Devil	18-19	Elemental	0	0	7	5327	Melee		
+Y	127	Murloc Tidehunter	18-19	Humanoid	0	0	22	1995	Melee		
+Y	453	Riverpaw Mystic	18-19	Humanoid	0	0	12	502	Melee		
+N	573	Foe Reaper 4000	20	Mechanical	0	4	41	548	Melee		rank 4 (elite/rare)
+N	1423	Stormwind Guard	22-25	Humanoid	0	0	22	3258	Melee		npcflag 1
+N	462	Vultros	26	Beast	7	4	16	507	Melee		rank 4 (elite/rare)
+N	8096	Protector of the People	40	Humanoid	0	0	3	7308	Melee		level > 20
+N	6491	Spirit Healer	60	Humanoid	0	0	3	5233	Melee		npcflag 16385

@@ -1,0 +1,127 @@
+# tirisfal pet roster (map 0 box x 1300..3300, y 150..2250, mobs level <= 20, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	10716	Belfry Bat	1	Critter	0	0	12	10033	Melee		
+N	32823	Bountiful Table	1	Not specified	0	0	7	28293	Melee		type Not specified
+N	620	Chicken	1	Critter	0	0	7	304	Melee		npcflag 2
+N	7395	Cockroach	1	Non-combat Pet	0	0	6	2177	Melee		type Non-combat Pet
+Y	1512	Duskbat	1-2	Beast	24	0	40	4732	Melee		
+N	19178	Forsaken Commoner	1	Humanoid	0	0	4	19187	Melee		npcflag 3
+N	35244	Ghostly Forsaken Celebrant	1	Humanoid	0	0	19	29699	Melee		npcflag 1
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	1501	Mindless Zombie	1	Undead	0	0	28	10973	Melee		
+Y	721	Rabbit	1	Critter	0	0	12	328	Melee		already a species
+Y	4075	Rat	1	Critter	0	0	61	1141	Melee		
+N	23971	Traveling Orphan	1-3	Humanoid	0	0	4	14589	Melee		event orphan
+N	15907	Undercity Reveler	1-60	Humanoid	0	0	19	15895	Melee		npcflag 1
+N	32820	Wild Turkey	1	Beast	0	0	1184	21774	Melee		citizen/guard/event name; already a species
+Y	1502	Wretched Zombie	1-2	Undead	0	0	35	829	Melee		
+Y	1508	Young Scavenger	1	Beast	1	0	18	447	Melee		
+Y	1509	Ragged Scavenger	2-3	Beast	1	0	19	604	Melee		
+Y	1890	Rattlecage Skeleton	2-3	Undead	0	0	20	11400	Melee		
+Y	1504	Young Night Web Spider	2-3	Beast	3	0	30	513	Melee		
+Y	1513	Mangy Duskbat	3-4	Beast	24	0	21	9535	Melee		
+Y	1505	Night Web Spider	3-4	Beast	3	0	27	539	Melee		
+Y	1506	Scarlet Convert	3	Humanoid	0	0	23	2403	Melee		
+Y	1507	Scarlet Initiate	3-4	Humanoid	0	0	10	2467	Melee		
+Y	1547	Decrepit Darkhound	5-6	Demon	0	0	59	9021	Melee		
+Y	1525	Rotting Dead	5-6	Undead	0	0	36	1200	Melee		
+Y	1935	Tirisfal Farmhand	5-6	Humanoid	0	0	8	3534	Melee		
+N	23530	Tirisfal Pink Elekk	5	Beast	0	0	21	22732	Melee		event Pink Elekk
+Y	1553	Greater Duskbat	6-7	Beast	24	0	95	4734	Melee		
+N	1531	Lost Soul	6-7	Undead	0	4	4	985	Melee		rank 4 (elite/rare)
+Y	1520	Rattlecage Soldier	6-7	Undead	0	0	21	200	Melee		
+Y	1526	Ravaged Corpse	6-7	Undead	0	0	34	1201	Melee		
+Y	1674	Rot Hide Gnoll	6-7	Undead	0	0	17	10852	Melee		
+Y	1941	Rot Hide Graverobber	6-7	Undead	0	0	25	10853	Melee		
+Y	1535	Scarlet Warrior	6-7	Humanoid	0	0	35	2471	Melee		
+N	16422	Skeletal Soldier	6-7	Undead	0	0	20	12074	Melee		Scourge event
+N	16423	Spectral Apparition	6-7	Undead	0	0	22	16169	Melee		Scourge event
+N	1934	Tirisfal Farmer	6-7	Humanoid	0	0	9	3532	Melee		citizen/guard/event name
+Y	1548	Cursed Darkhound	7-8	Demon	0	0	78	9020	Melee		
+Y	1522	Darkeye Bonecaster	7-8	Undead	0	0	56	11398	Melee		
+Y	1675	Rot Hide Mongrel	7-8	Undead	0	0	19	847	Melee		
+Y	1536	Scarlet Missionary	7-8	Humanoid	0	0	13	2468	Melee		
+Y	1543	Vile Fin Puddlejumper	7-8	Humanoid	0	0	34	441	Melee		
+Y	1523	Cracked Skull Soldier	8-9	Undead	0	0	24	535	Melee		
+Y	1537	Scarlet Zealot	8-9	Humanoid	0	0	15	2472	Melee		
+Y	1554	Vampiric Duskbat	8-9	Beast	24	0	27	8808	Melee		
+Y	1544	Vile Fin Minor Oracle	8-9	Humanoid	0	0	44	1005	Melee		
+Y	1545	Vile Fin Muckdweller	9-10	Humanoid	0	0	18	346	Melee		
+Y	1534	Wailing Ancestor	9-10	Undead	0	0	22	10752	Melee		
+Y	1530	Rotting Ancestor	10-11	Undead	0	0	22	1196	Melee		
+Y	1765	Worg	10-11	Beast	1	0	26	11421	Melee		
+Y	1766	Mottled Worg	11-12	Beast	1	0	18	246	Melee		
+Y	1780	Moss Stalker	12-13	Beast	3	0	4	827	Melee		
+N	5435	Sand Shark	12-13	Beast	0	1	3	12193	Melee		rank 1 (elite/rare)
+Y	1767	Vile Fin Shredder	12-13	Humanoid	0	0	14	441	Melee		
+Y	1781	Mist Creeper	13-14	Beast	3	0	20	760	Melee		
+Y	1768	Vile Fin Tidehunter	13-14	Humanoid	0	0	6	346	Melee		
+N	6033	Lake Frenzy	15-16	Not specified	0	0	3	7449	Melee		type Not specified
+N	3617	Lordaeron Citizen	15	Undead	0	0	32	146	Melee		citizen/guard/event name
+N	6492	Rift Spawn	16-17	Elemental	0	0	6	14273	Melee		Rift Spawn (event)
+N	5652	Undercity Practice Dummy	25	Mechanical	0	0	3	3019	Melee		level > 20
+N	15105	Warsong Emissary	30	Humanoid	0	0	8	15247	Melee		npcflag 1048577
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+N	35341	Bountiful Barrel	40	Not specified	0	0	3	29775	Melee		npcflag 640
+N	14990	Defilers Emissary	40	Humanoid	0	0	8	15239	Melee		npcflag 1048577
+N	24484	Brewfest Reveler	50	Humanoid	0	0	10	21854	Melee		level > 20
+N	7980	Deathguard Elite	55	Humanoid	0	0	13	7117	Melee		level > 20
+N	22015	Eye of the Storm Envoy	55	Humanoid	0	0	8	20707	Melee		npcflag 1048577
+N	15106	Frostwolf Emissary	55	Humanoid	0	0	8	15243	Melee		npcflag 1048577
+N	34949	Isle of Conquest Envoy	55	Humanoid	0	0	4	29493	Melee		npcflag 1048577
+N	34951	Isle of Conquest Envoy	55	Humanoid	0	0	4	29493	Melee		npcflag 1048577
+N	15891	Lunar Festival Herald	55	Humanoid	0	0	4	15863	Melee		npcflag 2
+N	16096	Steamwheedle Bruiser	55	Humanoid	0	1	7	7102	Melee		rank 1 (elite/rare)
+N	30567	Strand of the Ancients Envoy	55	Humanoid	0	0	8	27130	Melee		npcflag 1048577
+N	5624	Undercity Guardian	55	Undead	0	0	33	10699	Melee		npcflag 1
+N	25535	[DNT] Torch Tossing Target Bunny	60	Not specified	0	0	5	21955	Melee		level > 20
+N	13839	Royal Dreadguard	60	Humanoid	0	1	17	13807	Melee		rank 1 (elite/rare)
+N	6491	Spirit Healer	60	Humanoid	0	0	4	5233	Melee		npcflag 16385
+N	15195	Wickerman Guardian	60	Undead	0	1	3	10699	Melee		rank 1 (elite/rare)
+N	23537	Headless Horseman - Fire (DND)	65-70	Not specified	0	0	5	11686	Melee		level > 20
+N	26738	[DND] TAR Pedestal - Accessories	70	Not specified	0	0	9	24019	Melee		npcflag 6272
+N	26747	[DND] TAR Pedestal - Arena Organizer	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26724	[DND] TAR Pedestal - Armor, Cloth & Leather	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26742	[DND] TAR Pedestal - Armor, Mail & Plate	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26748	[DND] TAR Pedestal - Beastmaster	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26739	[DND] TAR Pedestal - Enchantments	70	Not specified	0	0	8	24019	Melee		npcflag 6272
+N	26765	[DND] TAR Pedestal - Fight Promoter	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26740	[DND] TAR Pedestal - Gems	70	Not specified	0	0	9	24019	Melee		npcflag 6272
+N	26741	[DND] TAR Pedestal - General Goods	70	Not specified	0	0	9	24019	Melee		npcflag 6272
+N	26743	[DND] TAR Pedestal - Glyph, Cloth & Leather	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26744	[DND] TAR Pedestal - Glyph, Mail & Plate	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26749	[DND] TAR Pedestal - Paymaster	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26751	[DND] TAR Pedestal - Trainer, Druid	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26752	[DND] TAR Pedestal - Trainer, Hunter	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26753	[DND] TAR Pedestal - Trainer, Mage	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26754	[DND] TAR Pedestal - Trainer, Paladin	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26755	[DND] TAR Pedestal - Trainer, Priest	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26756	[DND] TAR Pedestal - Trainer, Rogue	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26757	[DND] TAR Pedestal - Trainer, Shaman	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26758	[DND] TAR Pedestal - Trainer, Warlock	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26759	[DND] TAR Pedestal - Trainer, Warrior	70	Not specified	0	0	3	24019	Melee		npcflag 6272
+N	26745	[DND] TAR Pedestal - Weapons	70	Not specified	0	0	9	24019	Melee		npcflag 6272
+N	26007	Arena Battlemaster	70	Humanoid	0	0	4	23766	Melee		npcflag 1048577
+N	26012	Arena Organizer	70	Humanoid	0	0	3	24023	Melee		npcflag 262144
+N	26307	Beastmaster	70	Humanoid	0	0	3	24028	Melee		level > 20
+N	26324	Druid Trainer	70	Humanoid	0	0	3	24029	Melee		npcflag 48
+N	26760	Fight Promoter	70	Humanoid	0	0	3	23659	Melee		level > 20
+N	23686	Headless Horseman Flame Bunny	70	Not specified	0	0	29	11686	Melee		level > 20
+N	26325	Hunter Trainer	70	Humanoid	0	0	3	24030	Melee		npcflag 48
+N	26326	Mage Trainer	70	Humanoid	0	0	3	24031	Melee		npcflag 48
+N	26327	Paladin Trainer	70	Humanoid	0	0	3	24032	Melee		npcflag 48
+N	26075	Paymaster	70	Humanoid	0	0	3	23780	Melee		level > 20
+N	26328	Priest Trainer	70	Humanoid	0	0	3	24033	Melee		npcflag 48
+N	26329	Rogue Trainer	70	Humanoid	0	0	3	23777	Melee		npcflag 48
+N	26330	Shaman Trainer	70	Humanoid	0	0	3	24034	Melee		npcflag 48
+N	26331	Warlock Trainer	70	Humanoid	0	0	3	24035	Melee		npcflag 48
+N	26332	Warrior Trainer	70	Humanoid	0	0	3	24036	Melee		npcflag 48
+N	26309	Weapons Vendor	70	Humanoid	0	0	9	23757	Melee		npcflag 4224
+N	32388	Alliance Flying Machine	74-75	Mechanical	0	0	3	26556	Melee		level > 20
+N	36213	Kor'kron Overseer	75	Humanoid	0	0	33	30063	Melee		npcflag 1
+N	32387	Stormwind Elite	75-76	Humanoid	0	1	6	3167	Melee		rank 1 (elite/rare)
+N	31652	Horde Demolisher	80	Mechanical	0	1	4	27655	Melee		rank 1 (elite/rare)
+N	31576	Invisible Stalker [Wrath Gate Horde CE 01] (UC)	80	Not specified	0	0	83	1126	Melee		level > 20
+N	31577	Invisible Stalker Target [Wrath Gate Horde CE 01] (UC)	80	Not specified	0	0	5	1126	Melee		level > 20
+N	31739	Warsong Battleguard	80	Humanoid	0	1	4	27751	Melee		rank 1 (elite/rare)

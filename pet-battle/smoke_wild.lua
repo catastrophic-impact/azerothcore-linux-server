@@ -10,6 +10,7 @@ local function newObject(entry, x, y, z, level)
     nextGuid = nextGuid + 1
     local o = { gone = false, db = false, faction = 35, guid = nextGuid, entry = entry, x = x, y = y, z = z, level = level or 1, flags = nil, scale = nil }
     o.GetGUID = function() return setmetatable({ id = o.guid }, { __index = function() return nil end }) end; o.GetGUIDLow = function() return o.guid end; o.GetX = function() return o.x end; o.GetY = function() return o.y end; o.GetZ = function() return o.z end
+    o.GetEntry = function() return o.entry end
     o.GetLevel = function() return o.level end; o.GetDBTableGUIDLow = function() return o.db or 0 end; o.IsInCombat = function() return false end
     o.GetFaction = function() return o.faction or 35 end
     o.SetFaction = function(_, f) o.faction = f end; o.npcflags = 0; o.auras = {}; o.GetNPCFlags = function() return o.npcflags end; o.SetNPCFlags = function(_, f) o.npcflags = f end
@@ -27,9 +28,9 @@ local player = { zone = 12, map = 0, x = 0, y = 0, alive = true }
 setmetatable(player, { __index = function(t, k)
     local f = {
         GetZoneId = function() return t.zone end, GetMapId = function() return t.map end, GetX = function() return t.x end, GetY = function() return t.y end, GetZ = function() return 0 end,
-        IsAlive = function() return t.alive end, IsInCombat = function() return false end, GetPhaseMask = function() return 1 end, GetGUIDLow = function() return 77 end,
+        IsBot = function() return t.isBot == true end, IsAlive = function() return t.alive end, IsInCombat = function() return false end, GetPhaseMask = function() return 1 end, GetGUIDLow = function() return 77 end,
         GetGUID = function() return setmetatable({ id = 77 }, {}) end, GetCreaturesInRange = function(_, range, entry) local out = {}; local all = {}
-            for _, o in pairs(objects) do if o.entry == entry then all[#all + 1] = o end end   -- script-spawned creatures too (no DB row)
+            for _, o in pairs(objects) do if entry == 0 or o.entry == entry then all[#all + 1] = o end end   -- script-spawned creatures too (no DB row)
             for _, m in ipairs(all) do if (m.x - t.x) ^ 2 + (m.y - t.y) ^ 2 <= range * range then out[#out + 1] = m end end return out end,
         GossipClearMenu = function() menu = {} end, GossipMenuAddItem = function(_, _, text, _, id) menu[#menu + 1] = { text = text, id = id } end,
         GossipSendMenu = function() menu.sent = true end, GossipComplete = function() menu.sent = false end,
@@ -53,7 +54,7 @@ function RegisterCreatureGossipEvent(entry, ev, f) gossip[entry .. ":" .. ev] = 
 package.loaded["acore_msg"] = { On = function() end, Send = function() end }
 
 dofile("scripts/pb_data.lua"); dofile("scripts/pb_retail.lua"); dofile("scripts/pb_rules.lua"); dofile("scripts/pb_core.lua")
-function PB_DATA_PETLEVEL(l) return require("pb_data").PetLevel(l) end
+function PB_DATA_PETLEVEL(l, z) return require("pb_data").PetLevel(l, z) end
 local Store = dofile("scripts/pb_store.lua"); package.loaded["pb_store"] = Store
 dofile("scripts/pb_battle.lua")           -- the real battle script (its cleanup sweep must leave wild pets alone)
 local Sweep = PB_BATTLE.Sweep
@@ -103,7 +104,7 @@ tick(); tick(); check(W.Count() == 2, "cooldown: it does not instantly reappear,
 -- challenge the level 7 timber wolf: pet level 2, still SOLO (3-pet teams start at pet level 3)
 spy = nil; local tw = objects[list[69]]; goTo(tw); W.OnSelect(nil, player, tw, 0, 1)
 check(spy and #spy == 1 and spy[1].species == 69, "level 7 wild pet (pet level 2) fights alone")
-for _, e in ipairs(spy or {}) do check(e.level == PB_DATA_PETLEVEL(7) and D_ok ~= false, "all enemy pets use the wild level") end
+for _, e in ipairs(spy or {}) do check(e.level == PB_DATA_PETLEVEL(7, 12) and D_ok ~= false, "all enemy pets use the wild level") end
 
 -- "Never mind" does nothing
 spy = nil; local kb = objects[list[257]]; goTo(kb); W.OnSelect(nil, player, kb, 0, 2); check(spy == nil and not kb.gone, "Never mind keeps the wild pet (spy=" .. tostring(spy) .. " gone=" .. tostring(kb.gone) .. " kb=" .. tostring(kb) .. ")")
@@ -149,6 +150,28 @@ for _, r in ipairs({ r1, r2, r3, lo }) do check(r.npcflags ~= 2, "no critter eve
 -- wrong zone: nothing spawns; nobody near: everything is removed
 player.zone = 1519; realMob(299, 1, 1, 1); local before = W.Count(); tick(); tick(); check(W.Count() <= before, "no new wild pets in a disabled zone")
 player.online = false; tick(); check(W.Count() == 0, "nobody near: all wild pets removed, got " .. W.Count())
+-- WESTFALL (zone 40, retail pet levels 3-4): the first zone with 3-pet fights. Mobs 9-14 give pet level 3, 15-19 give pet level 4; a wild pet brings a team of three at that level
+player.zone = 40; player.online = true; player.x, player.y = 3000, 3000
+local coyote = realMob(834, 3003, 3000, 14); local tusk = realMob(157, 3000, 3003, 15)
+tick(); tick(); tick()
+local wcoy, wtusk
+for g, w in pairs(W.Wild) do if w.species == 834 then wcoy = objects[g] elseif w.species == 157 then wtusk = objects[g] end end
+check(wcoy and wtusk, "Westfall mobs get their wild pets (zone 40 is enabled)")
+if wcoy and wtusk then
+    check(W.Wild[wcoy.guid].zone == 40, "the wild pet remembers its zone (40)")
+    spy = nil; goTo(wcoy); W.OnSelect(nil, player, wcoy, 0, 1)
+    check(spy and #spy == 3, "a level 3 Westfall pet fights with a team of THREE (got " .. tostring(spy and #spy) .. ")")
+    for _, e in ipairs(spy or {}) do check(e.level == 3, "Coyote (mob 14) team is pet level 3, got " .. tostring(e.level)) end
+    check(spy and spy[1].species == 834, "the first enemy is the wild pet's own species")
+    spy = nil; goTo(wtusk); W.OnSelect(nil, player, wtusk, 0, 1)
+    check(spy and #spy == 3, "Goretusk fights with three pets")
+    for _, e in ipairs(spy or {}) do check(e.level == 4, "Goretusk (mob 15) team is pet level 4, got " .. tostring(e.level)) end
+end
+-- BOTS (playerbots) never get wild pets: a bot standing in a pet zone next to real mobs spawns nothing and keeps nothing alive
+player.zone = 12; player.online = true; player.isBot = true; realMob(299, 1, 1, 1)
+local botBefore = W.Count(); tick(); tick(); tick()
+check(W.Count() == botBefore, "a playerbot next to wild mobs gets no wild pet (before " .. botBefore .. ", after " .. W.Count() .. ")")
+player.isBot = false
 local leaked = 0; for _, o in pairs(objects) do if not o.db then leaked = leaked + 1 end end
 check(leaked == 0, "no creature objects leaked, got " .. leaked)
 

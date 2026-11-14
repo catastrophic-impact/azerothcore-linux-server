@@ -18,7 +18,7 @@ function UnitName() return "x" end
 local ok, err = pcall(dofile, file); if not ok then print("LOAD ERROR", err) os.exit(1) end
 local slash = os.getenv("SLASH")
 -- handlers must exist right after load (battles can start from a gossip menu without any slash command)
-for _, need in ipairs(file:find("Pets") and { "pbj|pet", "pbj|team", "pbj|active", "pbj|done" } or { "pbt|begin", "pbt|st", "pbt|turn", "pbt|hp", "pbt|end", "pbt|done" }) do
+for _, need in ipairs(file:find("Pets") and { "pbj|pet", "pbj|team", "pbj|active", "pbj|done" } or { "pbt|begin", "pbt|st", "pbt|tag2", "pbt|turn", "pbt|hp", "pbt|end", "pbt|done" }) do
   if not handlers[need] then print("ERROR handler not registered at load: " .. need) end
 end
 if os.getenv("SLASH") == "1" then for k, f in pairs(SlashCmdList) do local ok2, e2 = pcall(f, ""); print("slash", k, ok2 and "ok" or ("ERROR " .. tostring(e2))) end end
