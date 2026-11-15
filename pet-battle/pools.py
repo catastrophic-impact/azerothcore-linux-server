@@ -17,14 +17,16 @@ POOLS = [  # (regex on the name, pool name, icon, kits)
  (r'thresher|croc|behemoth|threshadon', 'croc', CRO, [959, 960, 961, 999, 1009], False),
  (r'boar', 'boar', BOAR, [1756, 1757, 1384, 124], False),
  (r'highborne|ghost|wraith|spirit|apparition', 'ghost', UND, [1750, 1868, 439, 190, 2754, 1740, 1790, 2397], False),
- (r'golem|elemental', 'golem', ST, [1811, 3447, 2086, 3511, 1008], False),
+ (r'golem|elemental', 'golem', ST, [3511, 3376, 337, 2503, 279, 1811, 3447, 2086, 1008], False),
  (r'moonkin', 'moonkin', MAG, [296, 298, 1229, 2135], False),
 ]
-TYPE_POOLS = {'Humanoid': ([1166, 1953, 2417, 1503, 1073, 1803, 888, 1725, 835, 1229, 1892, 1893, 1894, 2682, 1688, 2184, 2457], HUM), 'Undead': ([1146, 2553, 1523, 2751, 1963, 1968, 2749, 2411, 1428, 2408, 2485, 1442], UND), 'Beast': ([1542, 89, 1470, 303, 412, 400, 396, 407], WOLF), 'Elemental': ([204, 212, 1429, 1430, 535, 2014, 3409, 1811], ELE), 'Critter': ([417, 385, 379], DASH), 'Demon': ([1229, 2135, 2011, 2013, 1149, 1147], IMP), 'Dragonkin': ([57, 59, 87, 131, 382, 142], 'INV_Misc_Head_Dragon_01')}
+TYPE_POOLS = {'Mechanical': ([83, 215, 471, 1163, 1412, 1515, 2714, 2717], 'INV_Gizmo_01'), 'Humanoid': ([1166, 1953, 2417, 1503, 1073, 1803, 888, 1725, 835, 1229, 1892, 1893, 1894, 2682, 1688, 2184, 2457], HUM), 'Undead': ([1146, 2553, 1523, 2751, 1963, 1968, 2749, 2411, 1428, 2408, 2485, 1442], UND), 'Beast': ([1542, 89, 1470, 303, 412, 400, 396, 407], WOLF), 'Elemental': ([204, 212, 1429, 1430, 535, 2014, 3409, 1811], ELE), 'Critter': ([417, 385, 379], DASH), 'Demon': ([1229, 2135, 2011, 2013, 1149, 1147], IMP), 'Dragonkin': ([57, 59, 87, 131, 382, 142], 'INV_Misc_Head_Dragon_01')}
+BANNED = {2184, 3447, 1008, 2417, 888, 2682, 2457}   # kits found overpowered across several species by the balance sweeps (Whomper 2184: 84-88% win rate for every host); add more here
+def _ok(k): return k not in BANNED and gaplib.usable(str(k))
 def candidates(name, typ):
     for rx, pn, icon, kits, crit in POOLS:
         if re.search(rx, name.lower()):
-            return [k for k in kits if gaplib.usable(str(k))] or kits, icon, bool(crit), pn
-    h = TYPE_POOLS.get(typ)
+            return [k for k in kits if _ok(k)] or kits, icon, bool(crit), pn
+    h = TYPE_POOLS.get(typ) or (TYPE_POOLS['Humanoid'] if typ in ('Giant', 'Not specified', 'Demon') and 'Humanoid' in TYPE_POOLS else None)
     if not h: return None
-    return [k for k in h[0] if gaplib.usable(str(k))] or h[0], h[1], False, "t" + typ
+    return [k for k in h[0] if _ok(k)] or h[0], h[1], False, "t" + typ

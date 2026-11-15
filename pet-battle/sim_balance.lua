@@ -6,6 +6,11 @@ math.randomseed(12345)
 local N = tonumber(arg and arg[1]) or 60
 local levels = {}; for l in (arg and arg[2] or "1,2,3,4"):gmatch("%d+") do levels[#levels + 1] = tonumber(l) end
 local ids = {}; for e in pairs(D.species) do ids[#ids + 1] = e end; table.sort(ids)
+local oppIds = ids   -- opponents come from the WHOLE roster
+if arg and arg[3] then   -- optional: only these species are measured (file with one entry per line, e.g. one zone band); see balance_zones.py
+    local only = {}; for l in io.lines(arg[3]) do local n = tonumber(l); if n then only[n] = true end end
+    ids = {}; for e in pairs(only) do if D.species[e] then ids[#ids + 1] = e end end; table.sort(ids)
+end
 local function mirror(b) return { E = b.P, P = b.E, active = { E = b.active.P, P = b.active.E }, rng = b.rng } end
 local stallLog = {}
 local function duel(a, b2)   -- returns "A" if species a wins, "B" if b2 wins, "S" for a stall
@@ -25,7 +30,7 @@ for _, lv in ipairs(levels) do
     for _, a in ipairs(ids) do
         local w, l, s = 0, 0, 0
         for i = 1, N do
-            local opp = ids[math.random(#ids)]
+            local opp = oppIds[math.random(#oppIds)]
             local r = (i % 2 == 0) and duel(a, opp) or ({ A = "B", B = "A", S = "S" })[duel(opp, a)]   -- order-averaged: half the duels with the species acting as the "player" side, half as the enemy side
             if r == "A" then w = w + 1 elseif r == "B" then l = l + 1 else s = s + 1 end
         end

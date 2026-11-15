@@ -1,0 +1,96 @@
+# ashenvale pet roster (map 1 box x 1700..3450, y -3450..1500, mobs level <= 31, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	6145	School of Fish	1	Critter	0	0	7	4878	Melee		
+Y	1412	Squirrel	1	Critter	0	0	16	134	Melee		already a species
+Y	883	Deer	5	Critter	0	0	21	347	Melee		already a species
+Y	4009	Raging Cliff Stormer	18-19	Beast	0	0	11	1538	Melee		
+Y	3816	Wild Buck	18-19	Beast	0	0	32	1917	Melee		
+Y	3812	Clattering Crawler	19-20	Beast	8	0	4	9566	Melee		
+Y	3823	Ghostpaw Runner	19-20	Beast	1	0	41	802	Melee		
+Y	3737	Saltspittle Puddlejumper	19-20	Humanoid	0	0	7	3617	Melee		
+Y	3739	Saltspittle Warrior	19-20	Humanoid	0	0	7	540	Melee		
+N	3928	Rotting Slime	20-22	Not specified	0	0	33	2028	Melee		type Not specified
+Y	3742	Saltspittle Oracle	20-21	Humanoid	0	0	5	4920	Melee		
+Y	3814	Spined Crawler	20-21	Beast	8	0	5	1001	Melee		
+Y	3819	Wildthorn Stalker	20-21	Beast	3	0	91	1103	Melee		
+Y	3809	Ashenvale Bear	21-22	Beast	4	0	85	820	Melee		
+Y	3780	Shadethicket Moss Eater	21-23	Elemental	0	0	17	168	Melee		
+Y	12897	Silverwing Warrior	21-22	Humanoid	0	0	6	4841	Melee		
+Y	12859	Splintertree Raider	21-22	Humanoid	0	0	3	12810	Melee		
+Y	4018	Antlered Courser	22-23	Beast	0	0	22	1917	Melee		
+Y	3774	Felslayer	22-23	Demon	0	0	17	10950	Melee		
+N	4020	Sap Beast	22-23	Not specified	0	0	8	358	Melee		type Not specified
+Y	3783	Shadethicket Raincaller	22-23	Elemental	0	0	22	2023	Melee		
+Y	3817	Shadowhorn Stag	22-23	Beast	0	0	70	1991	Melee		
+Y	12896	Silverwing Sentinel	22-23	Humanoid	0	0	8	4841	Melee		
+Y	12856	Ashenvale Outrunner	23-24	Humanoid	0	0	20	12912	Melee		
+Y	3917	Befouled Water Elemental	23-25	Elemental	0	0	33	525	Melee		
+Y	4051	Cenarion Botanist	23-24	Humanoid	0	0	3	4247	Melee		
+Y	4053	Daughter of Cenarius	23-25	Humanoid	0	0	3	2722	Melee		
+Y	3745	Foulweald Pathfinder	23-24	Humanoid	0	0	3	937	Melee		
+Y	3750	Foulweald Totemic	23-24	Humanoid	0	0	12	6821	Melee		
+Y	3743	Foulweald Warrior	23-24	Humanoid	0	0	15	6824	Melee		
+Y	3824	Ghostpaw Howler	23-24	Beast	1	0	31	1207	Melee		
+N	3772	Lesser Felguard	23-24	Demon	0	0	13	5049	Melee		citizen/guard/event name
+Y	4013	Pridewing Skyhunter	23-24	Beast	0	0	5	2298	Melee		
+Y	3781	Shadethicket Wood Shaper	23-24	Elemental	0	0	10	2022	Melee		
+Y	3925	Thistlefur Avenger	23-24	Humanoid	0	0	22	6823	Melee		
+Y	3923	Thistlefur Den Watcher	23-24	Humanoid	0	0	4	936	Melee		
+Y	3926	Thistlefur Pathfinder	23-24	Humanoid	0	0	4	897	Melee		
+Y	3924	Thistlefur Shaman	23-24	Humanoid	0	0	28	6801	Melee		
+Y	3922	Thistlefur Totemic	23-24	Humanoid	0	0	14	6803	Melee		
+Y	3921	Thistlefur Ursa	23-24	Humanoid	0	0	8	1999	Melee		
+Y	3746	Foulweald Den Watcher	24-25	Humanoid	0	0	4	6819	Melee		
+Y	3748	Foulweald Shaman	24-25	Humanoid	0	0	4	6822	Melee		
+Y	3749	Foulweald Ursa	24-25	Humanoid	0	0	4	1996	Melee		
+Y	4019	Great Courser	24-25	Beast	0	0	4	2161	Melee		
+Y	4054	Laughing Sister	24-25	Humanoid	0	0	26	2723	Melee		
+Y	4057	Son of Cenarius	24-25	Humanoid	0	0	5	2432	Melee		
+Y	3820	Wildthorn Venomspitter	24-25	Beast	3	0	26	336	Melee		
+N	3797	Cenarion Protector	25-26	Humanoid	0	0	8	4253	Melee		citizen/guard/event name
+Y	3810	Elder Ashenvale Bear	25-26	Beast	4	0	42	982	Melee		
+Y	3762	Felmusk Felsworn	25-26	Demon	0	0	7	2011	Melee		
+Y	3758	Felmusk Satyr	25-26	Demon	0	0	6	2010	Melee		
+Y	3782	Shadethicket Stone Mover	25-26	Elemental	0	0	19	9011	Melee		
+Y	3771	Bleakheart Hellcaller	26-27	Demon	0	0	8	2013	Melee		
+Y	3765	Bleakheart Satyr	26-27	Demon	0	0	3	2007	Melee		
+Y	3815	Blink Dragon	26-27	Dragonkin	0	0	3	1267	Melee		
+Y	3818	Elder Shadowhorn Stag	26-27	Beast	0	0	72	1992	Melee		
+Y	3759	Felmusk Rogue	26-27	Demon	0	0	4	2875	Melee		
+Y	3763	Felmusk Shadowstalker	26-27	Demon	0	0	8	6741	Melee		
+Y	11680	Horde Scout	26-28	Humanoid	0	0	26	11869	Melee		
+Y	3784	Shadethicket Bark Ripper	26-27	Elemental	0	0	13	2024	Melee		
+Y	11656	Warsong Peon	26-27	Humanoid	0	0	35	11857	Melee		
+Y	3919	Withered Ancient	26-27	Elemental	0	0	7	9593	Melee		
+Y	3770	Bleakheart Shadowstalker	27-28	Demon	0	0	10	2017	Melee		
+Y	3767	Bleakheart Trickster	27-28	Demon	0	0	7	2018	Melee		
+N	3932	Bloodtooth Guard	27-28	Humanoid	0	0	5	1996	Melee		citizen/guard/event name
+Y	3834	Crazed Ancient	27-28	Elemental	0	0	6	2077	Melee		
+Y	3825	Ghostpaw Alpha	27-28	Beast	1	0	25	776	Melee		
+Y	11681	Horde Deforester	27-28	Humanoid	0	0	12	11853	Melee		
+Y	11684	Warsong Shredder	27	Mechanical	0	0	5	1303	Melee		
+Y	3808	Forsaken Dark Stalker	28-29	Humanoid	0	0	10	4135	Melee		
+Y	3804	Forsaken Intruder	28-29	Humanoid	0	0	4	4133	Melee		
+Y	3801	Severed Sleeper	28-29	Undead	0	0	3	4159	Melee		
+Y	3789	Terrowulf Fleshripper	28-29	Humanoid	0	0	13	203	Melee		
+Y	11683	Warsong Shaman	28-29	Humanoid	0	0	5	11865	Melee		
+Y	3821	Wildthorn Lurker	28-29	Beast	3	0	12	1104	Melee		
+Y	3755	Xavian Felsworn	28-29	Demon	0	0	9	11346	Melee		
+Y	3807	Forsaken Assassin	29-30	Humanoid	0	0	9	4153	Melee		
+Y	3806	Forsaken Infiltrator	29-30	Humanoid	0	0	10	4151	Melee		
+Y	3811	Giant Ashenvale Bear	29-30	Beast	4	0	3	14315	Melee		
+Y	11697	Mannoroc Lasher	29-30	Demon	0	0	5	2834	Melee		
+N	6115	Roaming Felguard	29-30	Demon	0	0	8	5048	Melee		citizen/guard/event name
+Y	6073	Searing Infernal	29-30	Demon	0	0	14	10905	Melee		
+Y	3803	Severed Keeper	29-30	Undead	0	0	3	4164	Melee		
+Y	3791	Terrowulf Shadow Weaver	29-30	Humanoid	0	0	5	736	Melee		
+Y	11682	Warsong Grunt	29-30	Humanoid	0	0	5	11861	Melee		
+Y	3757	Xavian Hellcaller	29-30	Demon	0	0	6	11345	Melee		
+Y	3752	Xavian Rogue	29-30	Demon	0	0	6	2878	Melee		
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+N	8015	Ashenvale Sentinel	40	Humanoid	0	0	5	4841	Melee		npcflag 2
+N	6087	Astranaar Sentinel	40	Humanoid	0	0	15	4841	Melee		level > 31
+N	12903	Splintertree Guard	40	Humanoid	0	0	28	4264	Melee		level > 31
+N	6491	Spirit Healer	60	Humanoid	0	0	5	5233	Melee		npcflag 16385

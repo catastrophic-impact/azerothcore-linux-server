@@ -1,0 +1,55 @@
+# ungoro pet roster (map 1 box x -8000..-6100, y -2700..-300, mobs level <= 57, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	10541	Krakle's Thermometer	1	Critter	0	0	5	7804	Melee		
+Y	9600	Parrot	1	Critter	0	0	11	8816	Melee		
+Y	2914	Snake	1	Critter	0	0	17	1206	Melee		already a species
+Y	1420	Toad	1	Critter	0	0	37	901	Melee		already a species
+N	9157	Bloodpetal Pest	40	Not specified	0	0	4	8391	Melee		type Not specified
+Y	5425	Starving Blisterpaw	41-42	Beast	25	0	4	1535	Melee		already a species
+Y	5419	Glasshide Basilisk	42-43	Beast	0	0	5	141	Melee		already a species
+Y	5423	Scorpid Tail Lasher	43-44	Beast	20	0	3	10987	Melee		already a species
+N	5459	Centipaar Tunneler	47-48	Not specified	0	0	11	11108	Melee		type Not specified
+N	5455	Centipaar Wasp	47-48	Not specified	0	0	16	92	Melee		type Not specified
+Y	6509	Bloodpetal Lasher	48-49	Elemental	0	0	27	11634	Melee		
+N	5456	Centipaar Stinger	48-49	Not specified	0	0	21	5297	Melee		type Not specified
+N	5458	Centipaar Worker	48-49	Not specified	0	0	15	157	Melee		type Not specified
+Y	9165	Fledgling Pterrordax	48-50	Beast	0	0	17	8410	Melee		
+N	6556	Muculent Ooze	48-50	Not specified	0	0	12	11140	Melee		type Not specified
+Y	6505	Ravasaur	48-49	Beast	11	0	37	5242	Melee		
+Y	6511	Bloodpetal Thresher	49-50	Elemental	0	0	34	11633	Melee		
+Y	5460	Centipaar Sandreaver	49-50	Beast	41	0	6	11079	Melee		
+N	5457	Centipaar Swarmer	49-50	Not specified	0	0	13	11107	Melee		type Not specified
+Y	6507	Ravasaur Hunter	49-50	Beast	11	0	19	5292	Melee		
+Y	6506	Ravasaur Runner	49-50	Beast	11	0	21	5290	Melee		
+Y	9162	Young Diemetradon	49-50	Beast	0	0	10	8510	Melee		
+N	6557	Primal Ooze	50-52	Not specified	0	0	26	4754	Melee		type Not specified
+Y	9166	Pterrordax	50-52	Beast	0	0	13	8411	Melee		
+Y	6517	Tar Beast	50-51	Elemental	0	0	14	1549	Melee		
+Y	6514	Un'Goro Gorilla	50-51	Beast	9	0	10	844	Melee		
+Y	6508	Venomhide Ravasaur	50-51	Beast	11	0	22	5291	Melee		
+Y	6510	Bloodpetal Flayer	51-52	Elemental	0	0	64	11635	Melee		
+Y	9163	Diemetradon	51-52	Beast	0	0	50	8511	Melee		
+Y	6553	Gorishi Reaver	51-53	Beast	41	0	15	11087	Melee		
+N	6551	Gorishi Wasp	51-52	Not specified	0	0	11	11090	Melee		type Not specified
+N	6552	Gorishi Worker	51-52	Not specified	0	0	15	11091	Melee		type Not specified
+Y	6527	Tar Creeper	51-52	Elemental	0	0	12	3018	Melee		
+Y	6513	Un'Goro Stomper	51-52	Beast	9	0	7	5294	Melee		
+Y	6512	Bloodpetal Trapper	52-53	Elemental	0	0	52	11636	Melee		
+Y	9167	Frenzied Pterrordax	52-54	Beast	0	0	51	8412	Melee		
+N	6559	Glutinous Ooze	52-54	Not specified	0	0	43	1146	Melee		type Not specified
+N	6555	Gorishi Tunneler	52-53	Not specified	0	0	3	11089	Melee		type Not specified
+N	6502	Plated Stegodon	52-54	Beast	0	1	7	5287	Melee		rank 1 (elite/rare)
+N	6501	Stegodon	52-53	Beast	0	1	13	5241	Melee		rank 1 (elite/rare)
+Y	6518	Tar Lurker	52-54	Elemental	0	0	16	9010	Melee		
+Y	6516	Un'Goro Thunderer	52-53	Beast	9	0	9	5244	Melee		
+Y	6520	Scorching Elemental	53-54	Elemental	0	0	12	1070	Melee		
+N	6503	Spiked Stegodon	53-54	Beast	0	1	3	5288	Melee		rank 1 (elite/rare)
+Y	6519	Tar Lord	53-54	Elemental	0	0	16	480	Melee		
+Y	14460	Blazing Invader	54-56	Elemental	0	0	4	14527	Melee		
+N	6498	Devilsaur	54-55	Beast	39	1	6	5239	Melee		rank 1 (elite/rare)
+Y	9164	Elder Diemetradon	54-55	Beast	0	0	53	8512	Melee		
+Y	6521	Living Blaze	54-55	Elemental	0	0	22	5488	Melee		
+N	6491	Spirit Healer	60	Humanoid	0	0	4	5233	Melee		npcflag 16385
+N	6560	Stone Guardian	60-61	Elemental	0	1	7	8395	Melee		rank 1 (elite/rare)
+N	28602	Death's Hand Acolyte	77-78	Humanoid	0	0	5	25342	Melee		level > 57

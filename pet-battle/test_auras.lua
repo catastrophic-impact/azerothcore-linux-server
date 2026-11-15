@@ -16,6 +16,53 @@ local function kitAbility(name) for e in pairs(D.species) do for _, k in ipairs(
 local function count(ev, f) local c = 0; for _, x in ipairs(ev) do if f(x) then c = c + 1 end end return c end
 local function aura(p, id, left, src, extra) local a = { id = id, left = left or 3, states = R.states[id] or {}, pwr = src and src.power or 0, fam = src and src.family, src = src }; for k, v in pairs(extra or {}) do a[k] = v end; p.auras[#p.auras + 1] = a; return a end
 
+-- PHOTOSYNTHESIS (aura 267, effects 23 + 171): heals every round, twice as much in Sunny weather (weather aura 403 carries Weather_Sunlight)
+do
+    local function run(sunny)
+        local h, e = pet("Elemental", 10, PASS), pet("Beast", 10, PASS); h.hp = math.floor(h.max * 0.3); aura(h, 267, 99, h)
+        local b = battle(h, e); if sunny then b.weather = { id = 403, left = 5 } end
+        local hp0 = h.hp; C.Round(b, "A1", "A1"); return h.hp - hp0
+    end
+    local plain, sunny = run(false), run(true)
+    ok(plain > 0, "Photosynthesis heals every round (" .. plain .. ")")
+    ok(sunny == plain * 2 or sunny == plain * 2 + 1 or sunny == plain * 2 - 1 or sunny > plain + plain * 0.8, "Photosynthesis heals about twice as much in Sunny weather (" .. plain .. " vs " .. sunny .. ")")
+end
+
+-- DARK REBIRTH (794 casts aura 795; proc event 7 + effect 111): killed once -> reborn at full health, then the aura 796 drains 20% of max health per round
+do
+    D.species[999951] = { name = "Pinned Dark Rebirth", retail = 270 }
+    local ab; for _, k in ipairs(C.Kit(999951)) do if k.ability.id == 794 then ab = k.ability end end
+    ok(ab ~= nil, "Dark Rebirth (794) is available through a pinned species")
+    local h, e = pet("Undead", 10, PASS), pet("Beast", 10, hit(2000, nil, 1)); h.speed = 1; e.speed = 999
+    aura(h, 795, 99, h)
+    local b = battle({ h, pet("Beast") }, { e }); local ev = C.Round(b, "A1", "A1")
+    ok(h.hp > 0 and count(ev, function(x) return x.k == "heal" and x.revive end) == 1, "Dark Rebirth: the holder is reborn instead of fainting (hp " .. h.hp .. "/" .. h.max .. ")")
+    local drain = 0; for _, a in ipairs(h.auras) do if a.id == 796 then drain = drain + 1 end end
+    ok(drain == 1 and not (function() for _, a in ipairs(h.auras) do if a.id == 795 then return true end end end)(), "the rebirth aura is used up and the drain aura 796 is on")
+    e.abil = { PASS }; e.cd = { 0, 0, 0 }; local hpR = h.hp; C.Round(b, "A1", "A1")
+    ok(hpR - h.hp == math.floor(h.max * 20 / 100), "the drain takes 20% of max health per round from the next round on (" .. hpR .. " -> " .. h.hp .. " of " .. h.max .. ")")
+    local h2, e2 = pet("Undead", 10, PASS), pet("Beast", 10, hit(2000, nil, 1)); e2.speed = 999; h2.revived = true
+    local b2 = battle({ h2 }, { e2 }); local ev2 = C.Round(b2, "A1", "A1")
+    ok(h2.hp == 0, "without the aura the pet faints as usual")
+end
+
+-- HOWLING BLAST (120): extra damage to the enemy TEAM when the target is Chilled
+do
+    D.species[999952] = { name = "Pinned Howling Blast", retail = 253 }
+    local ab; for _, k in ipairs(C.Kit(999952)) do if k.ability.id == 120 then ab = k.ability end end
+    ok(ab ~= nil, "Howling Blast (120) is available through a pinned species")
+    if ab then
+        local function run(chilled)
+            local a, e1, e2, e3 = pet("Elemental", 10, ab), pet("Beast", 10, PASS), pet("Beast", 10, PASS), pet("Beast", 10, PASS); a.speed = 999
+            if chilled then aura(e1, 415, 3, a) end
+            local b = battle({ a }, { e1, e2, e3 }); C.Round(b, "A1", "A1"); return e1, e2, e3
+        end
+        local e1, e2, e3 = run(true); local f1, f2, f3 = run(false)
+        ok(e2.hp < e2.max and e3.hp < e3.max, "Howling Blast hurts the benched enemies when the target is Chilled (" .. e2.hp .. "/" .. e2.max .. ", " .. e3.hp .. "/" .. e3.max .. ")")
+        ok(f2.hp == f2.max and f3.hp == f3.max, "no team damage when the target is not Chilled")
+    end
+end
+
 -- NEVERMORE (522 casts aura 738 on the enemy; effects 168 / 129): the enemy's NEXT ability is locked out for 5 rounds, then the aura ends
 do
     D.species[999961] = { name = "Pinned Nevermore", retail = 630 }

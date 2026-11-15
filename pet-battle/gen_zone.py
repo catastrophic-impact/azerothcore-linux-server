@@ -15,7 +15,7 @@ rows = sql("SELECT t.entry, t.name, t.minlevel, t.maxlevel, t.type, t.family, t.
            "WHERE c.map=%s AND c.position_x BETWEEN %s AND %s AND c.position_y BETWEEN %s AND %s GROUP BY t.entry HAVING sp>=3 ORDER BY t.minlevel, t.name" % (mp, x1, x2, y1, y2))
 TYPE = {'1': 'Beast', '2': 'Dragonkin', '3': 'Demon', '4': 'Elemental', '5': 'Giant', '6': 'Undead', '7': 'Humanoid', '8': 'Critter', '9': 'Mechanical', '10': 'Not specified', '11': 'Totem', '12': 'Non-combat Pet'}
 BAD = ('guard', 'citizen', 'celebrant', 'protector', 'woodworker', 'lumberjack', 'spirit', 'turkey', 'farmer', 'militia', 'watchman', 'deputy', 'peasant', 'dockworker', 'merchant', 'innkeeper')
-existing = set(re.findall(r'\[(\d+)\] = \{ name', open('scripts/pb_data.lua').read()))
+existing = set(re.findall(r'\[(\d+)\] = \{ name = "[^"]*", retail =', open('scripts/pb_data.lua').read()))
 out, meta = [], []
 for r in rows:
     entry, nm, lo, hi, typ, fam, rk, sp, disp, cls, npc = r[:11]

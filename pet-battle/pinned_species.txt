@@ -19,3 +19,5 @@
 86 293  # Lil' Smoky: Launch Rocket (293, effect 75)
 2778 1105  # Finduin: Reflective Shield (1105 -> aura 1104, effect 204)
 630 522  # Gilnean Raven: Nevermore (522, effect 168 -> aura 738 / effect 129)
+270 794  # Dark Phoenix Hatchling: Dark Rebirth (794 -> aura 795/796, effects 111/138)
+253 120  # Frigid Frostling: Howling Blast (120, effects 138 + 29 caster-state form)

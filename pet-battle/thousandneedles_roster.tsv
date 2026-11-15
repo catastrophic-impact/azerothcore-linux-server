@@ -1,0 +1,72 @@
+# thousandneedles pet roster (map 1 box x -6750..-4950, y -4800..-900, mobs level <= 36, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	2914	Snake	1	Critter	0	0	6	1206	Melee		already a species
+Y	4250	Galak Packhound	24	Beast	25	0	3	2726	Melee		
+Y	4094	Galak Scout	24-25	Humanoid	0	0	21	9411	Melee		
+Y	4096	Galak Windchaser	24-25	Humanoid	0	0	27	9412	Melee		
+Y	4117	Cloud Serpent	25-26	Beast	27	0	4	2705	Melee		
+N	4126	Crag Stalker	25-26	Beast	2	0	15	1043	Melee		npcflag 2
+Y	4093	Galak Wrangler	25-26	Humanoid	0	0	22	9414	Melee		
+Y	10758	Grimtotem Bandit	25-26	Humanoid	0	0	4	10223	Melee		
+Y	10760	Grimtotem Geomancer	25-27	Humanoid	0	0	7	10227	Melee		
+Y	4099	Galak Marauder	26-27	Humanoid	0	0	4	9415	Melee		
+Y	4097	Galak Stormer	26-27	Humanoid	0	0	3	9416	Melee		
+Y	4111	Gravelsnout Kobold	26-27	Humanoid	0	0	6	2153	Melee		
+Y	10759	Grimtotem Stomper	26-27	Humanoid	0	0	9	10238	Melee		
+Y	4248	Pesterhide Hyena	26-27	Beast	25	0	34	2713	Melee		
+Y	4118	Venomous Cloud Serpent	26-28	Beast	27	0	9	10991	Melee		
+Y	10757	Boiling Elemental	27-28	Elemental	0	0	9	5561	Melee		
+Y	4119	Elder Cloud Serpent	27-29	Beast	27	0	18	2703	Melee		
+Y	4095	Galak Mauler	27-28	Humanoid	0	0	5	9417	Melee		
+Y	4114	Gravelsnout Forager	27-28	Humanoid	0	0	4	2299	Melee		
+Y	4124	Needles Cougar	27-28	Beast	2	0	31	1056	Melee		
+Y	10761	Grimtotem Reaver	28	Humanoid	0	0	8	10233	Melee		
+Y	4109	Highperch Consort	28-29	Beast	0	0	4	2297	Melee		
+Y	4107	Highperch Wyvern	28-29	Beast	0	0	10	2298	Melee		
+Y	4249	Pesterhide Snarler	28-29	Beast	25	0	23	10903	Melee		
+Y	10756	Scalding Elemental	28-29	Elemental	0	0	5	5562	Melee		
+Y	4100	Screeching Harpy	28-29	Humanoid	0	0	6	1352	Melee		
+Y	4120	Thundering Boulderkin	28-29	Elemental	0	0	6	9587	Melee		
+Y	4116	Gravelsnout Surveyor	29-30	Humanoid	0	0	3	774	Melee		
+Y	4101	Screeching Roguefeather	29-30	Humanoid	0	0	11	1350	Melee		
+Y	5523	War Party Kodo	29-30	Beast	0	0	3	6269	Melee		
+N	4430	Gnome Pit Crewman	30	Humanoid	0	0	4	5435	Melee		npcflag 1
+N	4429	Goblin Pit Crewman	30	Humanoid	0	0	5	7192	Melee		npcflag 1
+Y	4154	Salt Flats Scavenger	30-32	Beast	7	0	6	2305	Melee		
+Y	4147	Saltstone Basilisk	30-31	Beast	0	0	20	12340	Melee		
+Y	4104	Screeching Windcaller	30	Humanoid	0	0	6	10876	Melee		
+Y	4142	Sparkleshell Tortoise	30-31	Beast	21	0	22	5052	Melee		
+Y	4140	Scorpid Reaver	31-32	Beast	20	0	33	3247	Melee		
+Y	4158	Salt Flats Vulture	32-34	Beast	7	0	6	10825	Melee		
+Y	4151	Saltstone Crystalhide	32-33	Beast	0	0	39	12341	Melee		
+N	4130	Silithid Searcher	32-33	Not specified	0	0	5	11144	Melee		type Not specified
+Y	4144	Sparkleshell Borer	32-33	Beast	21	0	6	2307	Melee		
+Y	4139	Scorpid Terror	33-34	Beast	20	0	16	2491	Melee		
+N	4133	Silithid Hive Drone	33-34	Not specified	0	0	33	11097	Melee		type Not specified
+Y	9377	Swirling Vortex	33-34	Elemental	0	0	6	8549	Melee		
+Y	4150	Saltstone Gazer	34-35	Beast	0	0	18	8392	Melee		
+N	4131	Silithid Invader	34-35	Not specified	0	0	5	11143	Melee		type Not specified
+Y	4143	Sparkleshell Snapper	34-35	Beast	21	0	29	2308	Melee		
+N	9157	Bloodpetal Pest	40	Not specified	0	0	4	8391	Melee		level > 36
+N	4324	Searing Whelp	42-43	Dragonkin	0	0	4	397	Melee		level > 36
+N	4334	Firemane Flamecaller	43-44	Dragonkin	0	1	6	8309	Melee		rank 1 (elite/rare)
+N	9525	Freewind Brave	45	Humanoid	0	0	17	7115	Melee		level > 36
+N	6509	Bloodpetal Lasher	48-49	Elemental	0	0	14	11634	Melee		level > 36
+N	6556	Muculent Ooze	48-50	Not specified	0	0	4	11140	Melee		level > 36
+N	6511	Bloodpetal Thresher	49-50	Elemental	0	0	9	11633	Melee		level > 36
+N	9162	Young Diemetradon	49-50	Beast	0	0	5	8510	Melee		level > 36
+N	6557	Primal Ooze	50-52	Not specified	0	0	4	4754	Melee		level > 36
+N	9166	Pterrordax	50-52	Beast	0	0	8	8411	Melee		level > 36
+N	6517	Tar Beast	50-51	Elemental	0	0	10	1549	Melee		level > 36
+N	6514	Un'Goro Gorilla	50-51	Beast	9	0	10	844	Melee		level > 36
+N	6510	Bloodpetal Flayer	51-52	Elemental	0	0	22	11635	Melee		level > 36
+N	9163	Diemetradon	51-52	Beast	0	0	4	8511	Melee		level > 36
+N	6527	Tar Creeper	51-52	Elemental	0	0	7	3018	Melee		level > 36
+N	6513	Un'Goro Stomper	51-52	Beast	9	0	7	5294	Melee		level > 36
+N	6512	Bloodpetal Trapper	52-53	Elemental	0	0	5	11636	Melee		level > 36
+N	6518	Tar Lurker	52-54	Elemental	0	0	16	9010	Melee		level > 36
+N	6516	Un'Goro Thunderer	52-53	Beast	9	0	9	5244	Melee		level > 36
+N	6519	Tar Lord	53-54	Elemental	0	0	16	480	Melee		level > 36
+N	6491	Spirit Healer	60	Humanoid	0	0	5	5233	Melee		npcflag 16385
+N	28602	Death's Hand Acolyte	77-78	Humanoid	0	0	10	25342	Melee		level > 36

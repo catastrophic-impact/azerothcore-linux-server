@@ -5,7 +5,7 @@ import sys, re, itertools, os
 sys.path.insert(0, 'pet-battle'); import pools as P
 zone = sys.argv[1]; excl = set(sys.argv[2:])
 cyc = {}
-src = open('scripts/pb_data.lua').read(); existing = set(re.findall(r'\[(\d+)\] = \{ name', src))
+src = open('scripts/pb_data.lua').read(); existing = set(re.findall(r'\[(\d+)\] = \{ name = "[^"]*", retail =', src))
 out = ['# %s: entry, retail species, icon, flags (auto_picks.py draft)' % zone]
 for l in open('pet-battle/%s_roster.tsv' % zone, encoding='utf-8'):
     if l.startswith('#') or l.startswith('include'): continue

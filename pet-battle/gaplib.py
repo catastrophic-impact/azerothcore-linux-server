@@ -8,6 +8,8 @@ def _handled():
     h = set(re.findall(r'prop == (\d+)', core))
     for m in re.finditer(r'^local (DAMAGE|APPLY|INERT) = \{([^}]*)\}', core, re.M): h |= set(re.findall(r'\[(\d+)\]', m.group(2)))
     return h
+# abilities whose BEHAVIOUR is not implemented although their effect numbers look handled to the static census (found by the harness / QA): trap-on-use auras, Portal-variants, block-count auras, delayed grenades...
+EXTRA_GAP_ABILITIES = {'811': 'Magma Trap', '568': 'Feign Death (145)', '1944': 'Retrieve (145)', '1989': 'Shell Rush (145)', '760': 'Shield Block', '636': 'Sticky Grenade', '1101': 'Shieldstorm'}
 _cache = {}
 def load():
     if _cache: return _cache
@@ -35,11 +37,20 @@ def load():
     gap = {}
     for sid, abs_ in sx.items():
         bp = set()
-        for a in abs_: bp |= bad_props(a)
+        for a in abs_:
+            bp |= bad_props(a)
+            if a in EXTRA_GAP_ABILITIES: bp.add('ability ' + a)
         if bp: gap[sid] = sorted(bp)
     fam = {s['ID']: int(s['PetTypeEnum']) for s in R('BattlePetSpecies')}
     _cache.update(sx=sx, boss=boss, gap=gap, fam=fam, name=name)
     return _cache
+def slots(sid):
+    return {x['SlotEnum'] for x in _slotrows()[sid]} if sid in _slotrows() else set()
+_sr = {}
+def _slotrows():
+    if not _sr:
+        for x in R('BattlePetSpeciesXAbility'): _sr.setdefault(x['BattlePetSpeciesID'], []).append(x)
+    return _sr
 def usable(sid):
-    c = load(); return sid in c['sx'] and sid not in c['boss'] and sid not in c['gap']
+    c = load(); return sid in c['sx'] and sid not in c['boss'] and sid not in c['gap'] and len(slots(sid)) >= 3   # a kit needs abilities in all 3 slots
 def gap_species(): return load()['gap']

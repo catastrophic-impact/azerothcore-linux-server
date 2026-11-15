@@ -1,0 +1,73 @@
+# tanaris pet roster (map 1 box x -10600..-6800, y -5700..-2700, mobs level <= 51, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	20102	Goblin Commoner	1	Humanoid	0	0	8	19340	Melee		npcflag 3
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+N	16398	Necropolis Proxy	1	Not specified	0	0	6	16925	Melee		type Not specified
+N	16386	Necropolis Relay	1	Not specified	0	0	6	16925	Melee		type Not specified
+Y	20025	Sable Jaguar Specimen	1	Beast	2	0	3	18416	Melee		
+N	16356	Scourge Invasion Minion, finder	1	Not specified	0	0	184	11686	Melee		type Not specified
+N	20055	Tarren Mill Peasant Specimen	15	Humanoid	0	0	10	19305	Melee		citizen/guard/event name
+Y	5422	Scorpid Hunter	40-41	Beast	20	0	42	2414	Melee		
+Y	5616	Wastewander Thief	40-41	Humanoid	0	0	25	5532	Melee		
+Y	5428	Roc	41-43	Beast	7	0	18	3248	Melee		
+Y	5425	Starving Blisterpaw	41-42	Beast	25	0	57	1535	Melee		
+Y	5618	Wastewander Bandit	41-42	Humanoid	0	0	13	5568	Melee		
+Y	5419	Glasshide Basilisk	42-43	Beast	0	0	69	141	Melee		
+N	5646	Sandfury Axe Thrower	42-44	Humanoid	0	1	11	6411	Melee		rank 1 (elite/rare)
+N	5645	Sandfury Hideskinner	42-43	Humanoid	0	1	7	6413	Melee		rank 1 (elite/rare)
+Y	14123	Steeljaw Snapper	42-43	Beast	21	0	37	7114	Melee		
+Y	5617	Wastewander Shadow Mage	42-43	Humanoid	0	0	24	5530	Melee		
+Y	5429	Fire Roc	43-45	Beast	7	0	41	7348	Melee		
+Y	8667	Gusting Vortex	43-45	Elemental	0	0	5	8715	Melee		
+N	5647	Sandfury Firecaller	43-44	Humanoid	0	1	23	6415	Melee		rank 1 (elite/rare)
+Y	5423	Scorpid Tail Lasher	43-44	Beast	20	0	82	10987	Melee		
+Y	5615	Wastewander Rogue	43-44	Humanoid	0	0	22	5571	Melee		
+Y	5426	Blisterpaw Hyena	44-45	Beast	25	0	126	1536	Melee		
+N	7857	Southsea Dock Worker	44-45	Humanoid	0	0	30	6938	Melee		excluded (zone_batch prune: event/NPC-like name)
+Y	7856	Southsea Freebooter	44-45	Humanoid	0	0	27	6948	Melee		
+Y	7855	Southsea Pirate	44-45	Humanoid	0	0	26	6944	Melee		
+Y	7858	Southsea Swashbuckler	44-45	Humanoid	0	0	31	6950	Melee		
+Y	5623	Wastewander Assassin	44-45	Humanoid	0	0	13	5573	Melee		
+Y	5471	Dunemaul Ogre	45-46	Humanoid	0	0	10	11545	Melee		
+Y	5420	Glasshide Gazer	45-46	Beast	0	0	109	7344	Melee		
+Y	5465	Land Rager	45-47	Elemental	0	0	4	8550	Melee		
+Y	15685	Southsea Kidnapper	45	Humanoid	0	0	5	6950	Melee		
+Y	5472	Dunemaul Enforcer	46-47	Humanoid	0	0	25	11544	Melee		
+Y	5473	Dunemaul Ogre Mage	46-47	Humanoid	0	0	7	12003	Melee		
+Y	5424	Scorpid Dunestalker	46-47	Beast	20	0	69	10986	Melee		
+Y	5474	Dunemaul Brute	47-48	Humanoid	0	0	30	11545	Melee		
+Y	5475	Dunemaul Warlock	47-48	Humanoid	0	0	17	11542	Melee		
+N	5441	Hazzali Wasp	47-48	Not specified	0	0	42	482	Melee		type Not specified
+N	5452	Hazzali Worker	47-48	Not specified	0	0	23	11095	Melee		type Not specified
+Y	5427	Rabid Blisterpaw	47-48	Beast	25	0	55	2609	Melee		
+Y	5430	Searing Roc	47-49	Beast	7	0	12	10827	Melee		
+N	5456	Centipaar Stinger	48-49	Not specified	0	0	4	5297	Melee		type Not specified
+N	5466	Coast Strider	48-49	Giant	0	1	10	10039	Melee		rank 1 (elite/rare)
+N	5469	Dune Smasher	48-49	Giant	0	1	6	6910	Melee		rank 1 (elite/rare)
+Y	5421	Glasshide Petrifier	48-49	Beast	0	0	14	12339	Melee		
+N	5453	Hazzali Tunneler	48-49	Not specified	0	0	19	11094	Melee		type Not specified
+Y	5431	Surf Glider	48-50	Beast	21	0	134	7114	Melee		
+Y	5454	Hazzali Sandreaver	49-50	Beast	41	0	18	3195	Melee		
+N	5450	Hazzali Stinger	49-50	Not specified	0	0	19	3194	Melee		type Not specified
+N	5451	Hazzali Swarmer	49-50	Not specified	0	0	39	11093	Melee		type Not specified
+N	8201	Omgorn the Lost	50	Humanoid	0	4	3	11570	Melee		rank 4 (elite/rare)
+N	9460	Gadgetzan Bruiser	57	Humanoid	0	0	37	11375	Melee		npcflag 1
+N	616141	Ghoul Berserker	59-60	Undead	0	0	57	24993	Melee		level > 51
+N	616299	Skeletal Shocktrooper	59-60	Undead	0	0	50	12074	Melee		level > 51
+N	616298	Spectral Soldier	59-60	Undead	0	0	46	16169	Melee		level > 51
+N	616230	Cultist Engineer	60	Not specified	0	0	28	16151	Melee		npcflag 1
+N	6491	Spirit Healer	60	Humanoid	0	0	6	5233	Melee		npcflag 16385
+N	616379	Spirit of the Damned	61	Undead	0	4	3	16170	Melee		rank 4 (elite/rare)
+N	20054	Lordaeron Watchman Specimen	65	Humanoid	0	1	9	19310	Melee		rank 1 (elite/rare)
+N	20027	Blackfang Tarantula Specimen	67-68	Beast	3	0	3	1104	Melee		level > 51
+N	20026	Darkwater Crocolisk Specimen	67-68	Beast	6	0	4	18417	Melee		level > 51
+N	20069	Night Elf Wisp Specimen	69-70	Humanoid	0	1	14	19304	Melee		rank 1 (elite/rare)
+N	19950	Custodian of Time	70	Dragonkin	0	1	4	19278	Melee		rank 1 (elite/rare)
+N	616136	Necrotic Shard	70	Not specified	0	0	7	16135	Melee		level > 51
+N	19918	Time Watcher	70	Dragonkin	0	1	10	19260	Melee		rank 1 (elite/rare)
+N	19951	Warden of Time	70	Dragonkin	0	1	8	19279	Melee		rank 1 (elite/rare)
+N	29868	Stratholme Child Specimen	78-79	Humanoid	0	0	7	262	Melee		level > 51
+N	29865	Stratholme Citizen Specimen	78-79	Humanoid	0	0	6	26598	Melee		level > 51
+N	29866	Stratholme Resident Specimen	78-79	Humanoid	0	0	7	26602	Melee		level > 51
+N	29867	Lordaeron Footman Specimen	80	Humanoid	0	1	6	26597	Melee		rank 1 (elite/rare)

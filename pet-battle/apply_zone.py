@@ -26,7 +26,7 @@ for x in R('BattlePetSpeciesState'):
     if 'Passive_Boss' in k or 'Passive_Elite' in k or k == 'Internal_InitialLevel': bad[x['BattlePetSpeciesID']].append(k)
     if (k == 'Stat_Power' and v >= 200) or (k == 'Stat_Stamina' and v >= 300) or (k == 'Stat_Speed' and v >= 300): bad[x['BattlePetSpeciesID']].append('%s=%d (NPC-style stat bonus)' % (k, v))
 src = open('scripts/pb_data.lua').read()
-existing = set(re.findall(r'\[(\d+)\] = \{ name', src))
+existing = set(re.findall(r'\[(\d+)\] = \{ name = "[^"]*", retail =', src))
 lines, problems = [], []
 for e, r in roster.items():
     if e in existing: continue

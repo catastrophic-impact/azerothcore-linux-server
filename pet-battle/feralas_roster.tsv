@@ -1,0 +1,80 @@
+# feralas pet roster (map 1 box x -6100..-3400, y -100..3800, mobs level <= 51, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	721	Rabbit	1	Critter	0	0	6	328	Melee		already a species
+Y	2914	Snake	1	Critter	0	0	14	1206	Melee		already a species
+Y	1412	Squirrel	1	Critter	0	0	9	134	Melee		already a species
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+Y	5229	Gordunni Ogre	40-41	Humanoid	0	0	16	597	Melee		
+Y	5286	Longtooth Runner	40-41	Beast	1	0	68	165	Melee		
+Y	5249	Woodpaw Mongrel	40-41	Humanoid	0	0	27	8598	Melee		
+Y	5237	Gordunni Ogre Mage	41-42	Humanoid	0	0	8	11558	Melee		
+Y	7726	Grimtotem Naturalist	41-42	Humanoid	0	0	21	6831	Melee		
+Y	5335	Hatecrest Screamer	41-42	Humanoid	0	0	22	5029	Melee		
+Y	5332	Hatecrest Wave Rider	41-42	Humanoid	0	0	6	4922	Melee		
+Y	5268	Ironfur Bear	41-42	Beast	4	0	39	3201	Melee		
+Y	5307	Vale Screecher	41-43	Beast	27	0	4	2699	Melee		
+Y	5253	Woodpaw Brute	41-42	Humanoid	0	0	20	543	Melee		
+Y	5251	Woodpaw Trapper	41-42	Humanoid	0	0	28	10796	Melee		
+Y	7997	Captured Sprite Darter	42-43	Dragonkin	0	0	12	9345	Melee		
+Y	5232	Gordunni Brute	42-43	Humanoid	0	0	31	11554	Melee		
+Y	7725	Grimtotem Raider	42-43	Humanoid	0	0	24	6835	Melee		
+Y	5260	Groddoc Ape	42-43	Beast	9	0	26	3186	Melee		
+Y	5337	Hatecrest Siren	42-43	Humanoid	0	0	8	11259	Melee		
+Y	5331	Hatecrest Warrior	42-43	Humanoid	0	0	16	9135	Melee		
+Y	5254	Woodpaw Mystic	42-43	Humanoid	0	0	44	10794	Melee		
+Y	5255	Woodpaw Reaver	42-43	Humanoid	0	0	36	10795	Melee		
+Y	5328	Coast Crawl Deepseer	43-44	Humanoid	0	0	17	3900	Melee		
+Y	5292	Feral Scar Yeti	43-44	Humanoid	0	0	16	3207	Melee		
+Y	5300	Frayfeather Hippogryph	43-44	Beast	0	0	13	3210	Melee		
+Y	5234	Gordunni Mauler	43-44	Humanoid	0	0	12	11557	Melee		
+Y	5240	Gordunni Warlock	43-44	Humanoid	0	0	15	11560	Melee		
+Y	7727	Grimtotem Shaman	43-44	Humanoid	0	0	9	6833	Melee		
+Y	5334	Hatecrest Myrmidon	43-44	Humanoid	0	0	10	9134	Melee		
+Y	5336	Hatecrest Sorceress	43-44	Humanoid	0	0	29	11260	Melee		
+Y	5287	Longtooth Howler	43-44	Beast	1	0	38	3202	Melee		
+Y	5278	Sprite Darter	43-45	Dragonkin	0	0	21	2158	Melee		
+Y	5258	Woodpaw Alpha	43-44	Humanoid	0	0	12	10793	Melee		
+Y	5327	Coast Crawl Snapclaw	44-45	Humanoid	0	0	14	3215	Melee		
+Y	5295	Enraged Feral Scar	44-45	Humanoid	0	0	12	10943	Melee		
+Y	5304	Frayfeather Stagwing	44-45	Beast	0	0	19	10890	Melee		
+Y	5236	Gordunni Shaman	44-45	Humanoid	0	0	15	11559	Melee		
+Y	5272	Grizzled Ironfur Bear	44-45	Beast	4	0	32	8838	Melee		
+N	5333	Hatecrest Serpent Guard	44-45	Humanoid	0	0	29	11258	Melee		citizen/guard/event name
+Y	5308	Rogue Vale Screecher	44-46	Beast	27	0	20	3204	Melee		
+Y	7584	Wandering Forest Walker	44-46	Elemental	0	0	5	9592	Melee		
+N	5245	Zukk'ash Wasp	44-45	Not specified	0	0	10	482	Melee		type Not specified
+N	5246	Zukk'ash Worker	44-45	Not specified	0	0	10	157	Melee		type Not specified
+Y	5305	Frayfeather Skystormer	45-46	Beast	0	0	24	3211	Melee		
+Y	5238	Gordunni Battlemaster	45-46	Humanoid	0	0	16	11533	Melee		
+Y	5239	Gordunni Mage-Lord	45-46	Humanoid	0	0	15	11556	Melee		
+Y	5293	Hulking Feral Scar	45-46	Humanoid	0	0	12	10944	Melee		
+N	5244	Zukk'ash Stinger	45-46	Not specified	0	0	10	3194	Melee		type Not specified
+N	5247	Zukk'ash Tunneler	45-46	Not specified	0	0	29	2592	Melee		type Not specified
+Y	5306	Frayfeather Patriarch	46-47	Beast	0	0	8	6756	Melee		
+Y	5241	Gordunni Warlord	46-47	Humanoid	0	0	16	11561	Melee		
+Y	5296	Rage Scar Yeti	46-47	Humanoid	0	0	8	3220	Melee		
+N	5360	Deep Strider	47-49	Giant	0	1	7	12812	Melee		rank 1 (elite/rare)
+Y	5299	Ferocious Rage Scar	47-48	Humanoid	0	0	14	3208	Melee		
+Y	5288	Rabid Longtooth	47-48	Beast	1	0	12	3203	Melee		
+Y	5462	Sea Spray	47-48	Elemental	0	0	34	5562	Melee		
+Y	5276	Sprite Dragon	47-50	Dragonkin	0	0	3	8471	Melee		
+N	5361	Wave Strider	47-48	Giant	0	1	4	10039	Melee		rank 1 (elite/rare)
+Y	5297	Elder Rage Scar	48-49	Humanoid	0	0	5	3209	Melee		
+Y	5274	Ironfur Patriarch	48-49	Beast	4	0	18	3200	Melee		
+N	5357	Land Walker	48-49	Giant	0	1	6	10037	Melee		rank 1 (elite/rare)
+Y	5461	Sea Elemental	48-49	Elemental	0	0	25	5450	Melee		
+N	5359	Shore Strider	48-49	Giant	0	1	9	4945	Melee		rank 1 (elite/rare)
+N	5358	Cliff Giant	49-50	Giant	0	1	7	12813	Melee		rank 1 (elite/rare)
+Y	5262	Groddoc Thunderer	49-50	Beast	9	0	19	3188	Melee		
+N	12418	Gordok Hyena	52-54	Beast	25	0	13	2712	Melee		level > 51
+N	11443	Gordok Ogre-Mage	52-53	Humanoid	0	1	62	12472	Melee		rank 1 (elite/rare)
+N	11440	Gordok Enforcer	53-54	Humanoid	0	1	24	12471	Melee		rank 1 (elite/rare)
+N	11442	Gordok Mauler	53-54	Humanoid	0	1	19	12473	Melee		rank 1 (elite/rare)
+N	8147	Camp Mojache Brave	55	Humanoid	0	0	19	7363	Melee		npcflag 2
+N	7939	Feathermoon Sentinel	55	Humanoid	0	0	20	7012	Melee		level > 51
+N	12801	Arcane Chimaerok	60-62	Beast	38	1	6	10810	Melee		rank 1 (elite/rare)
+N	12800	Chimaerok	60-61	Beast	38	1	3	4269	Melee		rank 1 (elite/rare)
+N	6491	Spirit Healer	60	Humanoid	0	0	4	5233	Melee		npcflag 16385
+N	12802	Chimaerok Devourer	61-62	Beast	38	1	9	9560	Melee		rank 1 (elite/rare)

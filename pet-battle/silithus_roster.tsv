@@ -1,0 +1,54 @@
+# silithus pet roster (map 1 box x -8600..-6200, y -300..2300, mobs level <= 62, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	9167	Frenzied Pterrordax	52-54	Beast	0	0	9	8412	Melee		already a species
+Y	11735	Stonelash Scorpid	54-55	Beast	20	0	79	15383	Melee		
+Y	11740	Dredge Striker	55-56	Beast	42	0	68	15386	Melee		
+Y	11744	Dust Stormer	55-57	Elemental	0	0	53	8715	Melee		
+Y	11738	Sand Skitterer	55-56	Beast	3	0	75	8014	Melee		
+Y	12178	Tortured Druid	55-56	Undead	0	0	19	12269	Melee		
+Y	11746	Desert Rumbler	56-58	Elemental	0	0	24	8550	Melee		
+Y	11736	Stonelash Pincer	56	Beast	20	0	111	15384	Melee		
+Y	12179	Tortured Sentinel	56-57	Undead	0	0	26	12270	Melee		
+Y	11745	Cyclone Warrior	57-59	Elemental	0	0	5	8716	Melee		
+N	11741	Dredge Crusher	57-58	Beast	42	0	66	14524	Melee		npcflag 2
+N	11698	Hive'Ashi Stinger	57-58	Not specified	0	1	19	12149	Melee		rank 1 (elite/rare)
+N	11724	Hive'Ashi Swarmer	57-58	Not specified	0	1	45	12152	Melee		rank 1 (elite/rare)
+N	11721	Hive'Ashi Worker	57-58	Not specified	0	1	11	12151	Melee		rank 1 (elite/rare)
+Y	11739	Rock Stalker	57-58	Beast	3	0	82	711	Melee		
+Y	11737	Stonelash Flayer	57-58	Beast	20	0	85	15385	Melee		
+Y	14455	Whirling Invader	57-58	Elemental	0	0	4	14525	Melee		
+Y	11747	Desert Rager	58-59	Elemental	0	0	3	1162	Melee		
+N	11722	Hive'Ashi Defender	58-59	Not specified	0	1	24	12153	Melee		rank 1 (elite/rare)
+N	11723	Hive'Ashi Sandstalker	58-59	Beast	41	1	16	12150	Melee		rank 1 (elite/rare)
+N	11726	Hive'Zora Tunneler	58-59	Not specified	0	1	9	12159	Melee		rank 1 (elite/rare)
+N	11727	Hive'Zora Wasp	58-59	Not specified	0	0	107	11088	Melee		type Not specified
+N	11725	Hive'Zora Waywatcher	58-59	Not specified	0	1	21	12158	Melee		rank 1 (elite/rare)
+Y	11880	Twilight Avenger	58-59	Humanoid	0	0	58	11811	Melee		
+Y	15542	Twilight Marauder	58-59	Humanoid	0	0	5	15552	Melee		
+N	11730	Hive'Regal Ambusher	59-60	Beast	41	1	24	11106	Melee		rank 1 (elite/rare)
+N	11731	Hive'Regal Burrower	59-60	Not specified	0	1	12	12156	Melee		rank 1 (elite/rare)
+N	11734	Hive'Regal Hive Lord	59-61	Beast	41	1	36	12155	Melee		rank 1 (elite/rare)
+N	11733	Hive'Regal Slavemaker	59-60	Not specified	0	1	43	12154	Melee		rank 1 (elite/rare)
+N	11732	Hive'Regal Spitfire	59-60	Not specified	0	1	38	9229	Melee		rank 1 (elite/rare)
+N	11729	Hive'Zora Hive Sister	59-60	Not specified	0	1	29	12160	Melee		rank 1 (elite/rare)
+N	11728	Hive'Zora Reaver	59-60	Beast	41	1	29	11085	Melee		rank 1 (elite/rare)
+Y	11881	Twilight Geolord	59-60	Humanoid	0	0	45	11819	Melee		
+Y	11882	Twilight Stonecaller	59-60	Humanoid	0	0	24	11815	Melee		
+N	17765	Alliance Silithyst Sentinel	60	Humanoid	0	1	3	1598	Melee		rank 1 (elite/rare)
+N	15184	Cenarion Hold Infantry	60	Humanoid	0	1	30	15304	Melee		rank 1 (elite/rare)
+Y	15545	Cenarion Outrider	60	Humanoid	0	0	12	15304	Melee		
+N	17766	Horde Silithyst Sentinel	60	Humanoid	0	1	3	7117	Melee		rank 1 (elite/rare)
+N	15442	Ironforge Brigade Footman	60	Humanoid	0	1	3	15565	Melee		rank 1 (elite/rare)
+Y	15441	Ironforge Brigade Rifleman	60	Humanoid	0	0	7	15566	Melee		
+N	15617	Orgrimmar Legion Axe Thrower	60	Humanoid	0	1	7	15574	Melee		rank 1 (elite/rare)
+N	15616	Orgrimmar Legion Grunt	60	Humanoid	0	1	4	15571	Melee		rank 1 (elite/rare)
+N	6491	Spirit Healer	60	Humanoid	0	0	5	5233	Melee		npcflag 16385
+Y	15201	Twilight Flamereaver	60	Humanoid	0	0	13	2896	Melee		
+Y	11883	Twilight Master	60	Humanoid	0	0	9	11824	Melee		
+Y	15213	Twilight Overlord	60-61	Humanoid	0	0	19	15407	Melee		
+N	15743	Colossal Anubisath Warbringer	61-62	Not specified	0	1	3	15696	Melee		rank 1 (elite/rare)
+N	15185	Brood of Nozdormu	62	Dragonkin	0	1	5	6370	Melee		rank 1 (elite/rare)
+N	15758	Supreme Anubisath Warbringer	62	Not specified	0	1	12	15710	Melee		rank 1 (elite/rare)
+N	15818	Lieutenant General Nokhor	63	Not specified	0	3	3	15794	Melee		rank 3 (elite/rare)

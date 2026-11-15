@@ -1,0 +1,34 @@
+# searing pet roster (map 0 box x -7300..-6200, y -1900..-900, mobs level <= 51, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	9699	Fire Beetle	1	Critter	0	0	26	8971	Melee		already a species
+Y	9700	Lava Crab	1	Critter	0	0	25	5560	Melee		already a species
+Y	5839	Dark Iron Geologist	43-44	Humanoid	0	0	8	7793	Melee		
+Y	5856	Glassweb Spider	43-45	Beast	3	0	17	4456	Melee		
+N	8637	Dark Iron Watchman	44-45	Humanoid	0	0	5	7929	Melee		citizen/guard/event name
+Y	5850	Blazing Elemental	45-47	Elemental	0	0	7	1070	Melee		
+Y	15692	Dark Iron Kidnapper	45	Humanoid	0	0	10	7789	Melee		
+Y	5844	Dark Iron Slaver	45-46	Humanoid	0	0	24	7789	Melee		
+Y	5857	Searing Lava Spider	45-47	Beast	3	0	23	4457	Melee		
+N	5843	Slave Worker	45-47	Humanoid	0	0	57	487	Melee		npcflag 1
+Y	5853	Tempered War Golem	45-47	Elemental	0	0	7	5747	Melee		
+Y	5840	Dark Iron Steamsmith	46-47	Humanoid	0	0	5	7796	Melee		
+Y	8402	Enslaved Archaeologist	46-47	Humanoid	0	0	6	7751	Melee		
+N	8279	Faulty War Golem	46	Elemental	0	4	5	10800	Melee		rank 4 (elite/rare)
+Y	5855	Magma Elemental	46-48	Elemental	0	0	23	2075	Melee		
+Y	8566	Dark Iron Lookout	47-48	Humanoid	0	0	16	7865	Melee		
+Y	5846	Dark Iron Taskmaster	47-48	Humanoid	0	0	30	7798	Melee		
+Y	5858	Greater Lava Spider	47-49	Beast	3	0	23	7510	Melee		
+Y	5854	Heavy War Golem	47-49	Mechanical	0	0	23	10801	Melee		
+Y	9318	Incendosaur	47-49	Beast	0	0	13	8509	Melee		
+Y	5852	Inferno Elemental	47-49	Elemental	0	0	6	5488	Melee		
+Y	8442	Shadowsilk Poacher	47-50	Humanoid	0	0	5	7810	Melee		
+N	8889	Anvilrage Overseer	48-49	Humanoid	0	1	5	8754	Melee		rank 1 (elite/rare)
+N	8504	Dark Iron Sentry	48	Humanoid	0	1	6	7814	Melee		rank 1 (elite/rare)
+N	8277	Rekk'tilac	48	Beast	3	4	5	4458	Melee		rank 4 (elite/rare)
+N	5861	Twilight Fire Guard	48-49	Humanoid	0	1	4	7825	Melee		rank 1 (elite/rare)
+N	5862	Twilight Geomancer	49-50	Humanoid	0	1	3	7830	Melee		rank 1 (elite/rare)
+N	8419	Twilight Idolater	49-51	Humanoid	0	1	4	7729	Melee		rank 1 (elite/rare)
+N	8283	Slave Master Blackheart	50	Humanoid	0	4	5	7819	Melee		rank 4 (elite/rare)
+N	14622	Thorium Brotherhood Lookout	50-52	Humanoid	0	0	6	14669	Melee		level > 51
+N	8282	Highlord Mastrogonde	51	Humanoid	0	2	3	7835	Melee		rank 2 (elite/rare)

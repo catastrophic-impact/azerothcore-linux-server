@@ -362,6 +362,22 @@ local function MagicCap(p, d)   -- Magic passive: no single attack / tick / spla
 end
 local function Faint(b, ev, s, idx, final)   -- final = true: a real death (Explode, the meteor): the Undead / Mechanical revive does not apply
     local p = b[s][idx]; p.hp = 0
+    if not final then   -- DARK REBIRTH (aura with a proc on event 7 + effect 111): "if killed, reborn with p1 % health" then the aura's own effects apply (a self drain per round)
+        for ai = #p.auras, 1, -1 do
+            local au = p.auras[ai]; local aab = R.abilities[au.id]
+            for _, pt in ipairs(aab and aab.turns or {}) do
+                if pt.event == 7 then for _, rf in ipairs(pt.fx) do if rf.prop == 111 and p.hp == 0 then
+                    table.remove(p.auras, ai)
+                    p.hp = math.max(1, math.floor(p.max * (rf.p[1] or 100) / 100)); p.channel = nil
+                    local last = ev[#ev]
+                    if last and ((last.k == "dmg" and last.tside == s and last.tidx == idx) or (last.k == "dot" and last.side == s and last.idx == idx)) then last.hp = p.hp end
+                    ev[#ev + 1] = { k = "heal", side = s, idx = idx, amt = p.hp, hp = p.hp, max = p.max, quick = true, revive = true }
+                    for _, rf2 in ipairs(pt.fx) do if rf2.prop == 26 and rf2.aura and rf2.aura ~= 0 then ApplyAura(b, ev, s, idx, rf2.aura, 99, true, nil, nil) end end
+                end end end
+            end
+            if p.hp > 0 then return end
+        end
+    end
     if not final and not p.revived and (p.family == "Undead" or p.family == "Mechanical") then   -- family passives: Undead returns to life for ONE round, Mechanical returns to life at 20% health (once per pet per battle)
         p.revived = true
         if p.family == "Undead" then p.hp = 1; p.undeadLeft = 2 else p.hp = math.max(1, math.floor(p.max * 0.2)) end
@@ -518,6 +534,7 @@ local function Act(b, ev, s, cmd, used)
     for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 226 or f.prop == 68 or f.prop == 149 or (f.prop == 384 and actedFirst) or (f.prop == 385 and actedSecond) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
     local done, healed, landed, dealt, runK = 0, 0, false, 0, nil
+    local cstate, h29 = {}, 0   -- Howling Blast: effect 138 sets a CASTER state (p1) when the target has the state in p5; effect 29 with RequiredCasterState (p3) then hits the k-th OTHER living enemy
     local h100 = 0   -- effect 100 counter: the k-th effect heals the k-th OTHER living ally of the required family
     pet.ramp = pet.ramp or {}
     local hp0 = tgt.hp
@@ -632,6 +649,22 @@ local function Act(b, ev, s, cmd, used)
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
             done = done + 1
             if pet.lastTaken > 0 then landed = Hit(b, ev, s, pet, 0, 100, slot, done < hits, math.floor(pet.lastTaken * p[1] / 100)) or landed end
+        elseif f.prop == 138 then
+            if (p[5] or 0) == 0 or HasState(tgt, p[5]) then cstate[p[1]] = true end
+        elseif f.prop == 29 and (p[3] or 0) > 0 then   -- caster-state form: extra damage to the enemy TEAM (every other living enemy), k-th effect = k-th enemy
+            if cstate[p[3]] then
+                h29 = h29 + 1; local o2 = Other(s); local k = 0
+                for i, q in ipairs(b[o2]) do
+                    if q.hp > 0 and i ~= b.active[o2] then
+                        k = k + 1
+                        if k == h29 then
+                            local d = MagicCap(q, Dmg(pet, q, p[1])); q.hp = math.max(0, q.hp - d)
+                            ev[#ev + 1] = { k = "dmg", side = s, idx = idx, tside = o2, tidx = i, dmg = d, hp = q.hp, max = q.max, slot = slot, bench = true, more = true }
+                            if q.hp <= 0 then Faint(b, ev, o2, i); ev[#ev].bench = true end
+                        end
+                    end
+                end
+            end
         elseif f.prop == 29 then   -- extra damage when the target has the state in p4
             if HasState(tgt, p[4]) and tgt.hp > 0 then Hit(b, ev, s, pet, p[1], p[2], slot, false) end
         elseif f.prop == 23 then   -- heal: the k-th heal effect of an ability heals the k-th living ally (a lone effect heals the user)
@@ -751,7 +784,7 @@ local function Periodic(b, ev, s)
                 elseif f.prop == 32 then leechPct = f.p[1]   -- Leech Seed
                 elseif DAMAGE[f.prop] or f.prop == 65 then
                     local pts, acc = f.p[1], (f.prop == 65) and 100 or f.p[2]
-                    local pctOfMax = f.prop == 62 and ab and ab.text and ab.text:find("%% of the target's health")
+                    local pctOfMax = f.prop == 62 and ab and ab.text and (ab.text:find("%% of the target's health") or ab.text:find("%% health each round"))   -- (Corpse Explosion infection; Dark Rebirth drain)
                     if f.prop == 65 then local w, wn = WS(), R.stateNames[f.p[4]]; if w and wn and w[wn] then pts = pts + (f.p[3] or 0) end end   -- Creeping Fungus: more damage in Moonlight
                     if acc >= 100 or b.rng(1, 100) <= acc then   -- Cyclone: each tick lands only with its hit chance
                         local d = Rules.Damage(pts, a.pwr or p.power, a.fam or p.family, EffFam(p), 0, Mod(p, "Mod_DamageTakenPercent"))
@@ -772,6 +805,9 @@ local function Periodic(b, ev, s)
                     if drains and a.src and a.src ~= p then   -- Siphon Life: the damage hurts the holder, the healing goes to the CASTER
                         for _, sd in ipairs({ "P", "E" }) do for i2, q in ipairs(b[sd]) do if q == a.src then Heal(b, ev, sd, i2, Rules.Heal(f.p[1], a.pwr or q.power)) end end end
                     else heal = heal + Rules.Heal(f.p[1], a.pwr or p.power) end
+                elseif f.prop == 171 then   -- Photosynthesis: the same heal AGAIN while the weather state in p3 is up (Sunny)
+                    local w, sn = WS(), R.stateNames[f.p[3] or 0]
+                    if w and sn and w[sn] then heal = heal + Rules.Heal(f.p[1], a.pwr or p.power) end
                 elseif f.prop == 53 then heal = heal + math.floor(p.max * f.p[1] / 100)   -- Wish: a % of the holder's maximum health
                 elseif (f.prop == 54 or f.prop == 178 or f.prop == 52) and f.aura and f.aura ~= 0 then ApplyAura(b, ev, s, idx, f.aura, math.max(1, f.p[3] or 1), false, nil, a.src)   -- Spore Shrooms / Drowsy / Ice Tomb: the finished aura releases its effect
                 end

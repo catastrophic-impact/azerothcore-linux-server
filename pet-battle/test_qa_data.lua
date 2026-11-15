@@ -35,13 +35,16 @@ for id, sp in pairs(D.species) do
 end
 
 -- 3. zone rosters / picks / D.zones / ZONES
-local zfile = { eversong = 3430, azuremyst = 3524, silverpine = 130, darkshore = 148, lochmodan = 38, redridge = 44, ghostlands = 3433, bloodmyst = 3525,
-                elwynn = 12, dunmorogh = 1, durotar = 14, westfall = 40, teldrassil = 141, mulgore = 215, tirisfal = 85 }
+local zfile = {}   -- data-driven: every zone_ranges.tsv row whose zone id is in D.zones (zone key = the file prefix)
+for l in io.lines("pet-battle/zone_ranges.tsv") do
+    if not l:find("^#") and l:find("%S") then local c = {}; for f in (l .. "\t"):gmatch("(.-)\t") do c[#c + 1] = f end; if D.zones[tonumber(c[2])] then zfile[c[1]] = tonumber(c[2]) end end
+end
 local wild = readAll("scripts/pb_wild.lua"):match("local ZONES = {([^}]*)}")
 local zset = {}; for id in wild:gmatch("%[(%d+)%] = true") do check(not zset[id], "dup ZONES id " .. id); zset[id] = true end
 local nz = 0; for id in pairs(D.zones) do nz = nz + 1; check(zset[tostring(id)], "D.zones " .. id .. " not in pb_wild ZONES") end
 local nzs = 0; for id in pairs(zset) do nzs = nzs + 1; check(D.zones[tonumber(id)], "ZONES " .. id .. " has no D.zones row") end
-check(nz == nzs and nz == 15, "zone counts D.zones " .. nz .. " ZONES " .. nzs)
+local nfile = 0; for _ in pairs(zfile) do nfile = nfile + 1 end
+check(nz == nzs and nz == nfile, "zone counts D.zones " .. nz .. " ZONES " .. nzs)
 local function lines(p) local t = {}; for l in readAll(p):gmatch("[^\n]+") do t[#t + 1] = l end; return t end
 local function split(l) local t = {}; for f in (l .. "\t"):gmatch("(.-)\t") do t[#t + 1] = f end; return t end
 local allYes, stale = {}, {}

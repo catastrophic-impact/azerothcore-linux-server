@@ -1,0 +1,48 @@
+# stonetalon pet roster (map 1 box x -300..1500, y -1100..1500, mobs level <= 27, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	721	Rabbit	1	Critter	0	0	13	328	Melee		already a species
+Y	4075	Rat	1	Critter	0	0	7	1141	Melee		already a species
+Y	2914	Snake	1	Critter	0	0	3	1206	Melee		already a species
+Y	1412	Squirrel	1	Critter	0	0	22	134	Melee		already a species
+Y	11911	Grimtotem Mercenary	14-15	Humanoid	0	0	33	11882	Melee		
+Y	11910	Grimtotem Ruffian	14-15	Humanoid	0	0	17	11878	Melee		
+Y	4008	Cliff Stormer	15-17	Beast	0	0	17	1537	Melee		
+Y	11912	Grimtotem Brute	15-16	Humanoid	0	0	24	11874	Melee		
+Y	11913	Grimtotem Sorcerer	15-16	Humanoid	0	0	17	11886	Melee		
+Y	4005	Deepmoss Creeper	16-17	Beast	3	0	23	760	Melee		
+Y	11917	Gogger Geomancer	16-17	Humanoid	0	0	24	26	Melee		
+Y	11915	Gogger Rock Keeper	16-17	Humanoid	0	0	19	26	Melee		
+Y	4007	Deepmoss Venomspitter	17-18	Beast	3	0	51	759	Melee		
+Y	11918	Gogger Stonepounder	17-18	Humanoid	0	0	12	26	Melee		
+Y	4009	Raging Cliff Stormer	18-19	Beast	0	0	14	1538	Melee		already a species
+Y	3989	Venture Co. Logger	18-19	Humanoid	0	0	66	7228	Melee		
+Y	4006	Deepmoss Webspinner	19-20	Beast	3	0	40	1989	Melee		
+Y	3991	Venture Co. Deforester	19-20	Humanoid	0	0	36	7226	Melee		
+Y	3988	Venture Co. Operator	19-20	Humanoid	0	0	22	7230	Melee		
+Y	4011	Young Pridewing	19-20	Beast	0	0	5	2154	Melee		
+Y	4072	Prisoner of Jin'Zil	20	Humanoid	0	0	3	3894	Melee		
+Y	4003	Windshear Geomancer	20-21	Humanoid	0	0	7	163	Melee		
+N	11921	Besseleth	21	Beast	3	1	4	11348	Melee		rank 1 (elite/rare)
+Y	4012	Pridewing Wyvern	21-22	Beast	0	0	7	295	Melee		
+Y	3999	Windshear Digger	21-22	Humanoid	0	0	46	2153	Melee		
+Y	4004	Windshear Overlord	21-22	Humanoid	0	0	9	511	Melee		
+Y	4014	Pridewing Consort	22-23	Beast	0	0	5	2297	Melee		
+Y	4044	Blackened Basilisk	23-24	Beast	0	0	4	2173	Melee		
+N	4036	Rogue Flame Spirit	23-24	Elemental	0	0	4	4607	Melee		citizen/guard/event name
+Y	4024	Bloodfury Slayer	25-26	Humanoid	0	0	4	10870	Melee		
+N	4696	Scorpashi Snapper	30-31	Beast	20	0	12	2729	Melee		level > 27; already a species
+N	4689	Starving Bonepaw	30-32	Beast	25	0	5	2726	Melee		level > 27; already a species
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+N	4728	Gritjaw Basilisk	31-32	Beast	0	0	15	1074	Melee		level > 27; already a species
+N	4672	Hatefury Felsworn	31-32	Demon	0	0	13	2014	Melee		level > 27; already a species
+N	4670	Hatefury Rogue	31-32	Demon	0	0	13	6741	Melee		level > 27; already a species
+N	4671	Hatefury Trickster	31-32	Demon	0	0	13	2021	Melee		level > 27; already a species
+N	4692	Dread Swoop	32-33	Beast	7	0	5	1192	Melee		level > 27; already a species
+N	4673	Hatefury Betrayer	32-33	Demon	0	0	14	11331	Melee		level > 27; already a species
+N	4675	Hatefury Hellcaller	32-33	Demon	0	0	17	2014	Melee		level > 27; already a species
+N	4674	Hatefury Shadowstalker	32-33	Demon	0	0	11	11332	Melee		level > 27; already a species
+N	7730	Stonetalon Grunt	40	Humanoid	0	0	16	9802	Melee		npcflag 2
+N	8151	Nijel's Point Guard	45	Humanoid	0	0	12	7368	Melee		level > 27
+N	6491	Spirit Healer	60	Humanoid	0	0	3	5233	Melee		npcflag 16385
