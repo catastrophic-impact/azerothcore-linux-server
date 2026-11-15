@@ -51,13 +51,24 @@ local function sum(t, f) local n = 0; for _, x in ipairs(t) do n = n + f(x) end;
 
 -- PINNED species: retail species listed in pet-battle/pinned_species.txt are generated into pb_retail for the test layer even when no shipped kit uses them, so abilities the engine
 -- implements (1156 Mini Mindslayer: 277 Life Exchange) keep their checks after a kit re-pick
-D.species[999999] = { name = "Pinned test species", retail = 1156 }
+local PIN_KEEP = {}
+do   -- one pinned test species per line of pinned_species.txt (ids 999990+)
+    local i = 0
+    for l in io.lines("pet-battle/pinned_species.txt") do
+        local code = l:gsub("#.*", "")
+        local id, keep = code:match("(%d+)%s*(.*)")   -- "<species> [abilityId ...]": with ability ids only THOSE kit abilities are pinned (the rest of that kit is not under test)
+        if id then
+            i = i + 1; D.species[999990 + i] = { name = "Pinned test species " .. id, retail = tonumber(id) }
+            if keep and keep:match("%d") then PIN_KEEP[999990 + i] = {}; for k in keep:gmatch("%d+") do PIN_KEEP[999990 + i][tonumber(k)] = true end end
+        end
+    end
+end
 -- all distinct abilities of all species kits
 local abilities, byName = {}, {}
 for entry in pairs(D.species) do
     for _, k in ipairs(C.Kit(entry)) do
         local a = k.ability
-        if not abilities[a.id] then abilities[a.id] = a; byName[#byName + 1] = a end
+        if (not PIN_KEEP[entry] or PIN_KEEP[entry][a.id]) and not abilities[a.id] then abilities[a.id] = a; byName[#byName + 1] = a end
     end
 end
 table.sort(byName, function(x, y) return x.retailName < y.retailName end)
@@ -81,7 +92,8 @@ for _, ab in ipairs(byName) do
             local evs = run(ab, { roll = 6 }, 1); local tot = sum(dmgEvents(evs, "P"), function(x) return x.dmg end)
             check(name, "all hits of one use total " .. upTo, math.abs(tot - upTo) <= 3, "total " .. tot)
         end
-        local N = (not upTo) and (tonumber(desc:match("dealing (%d+) %a+ damage")) or tonumber(desc:match("Deals (%d+) %a+ damage")) or tonumber(desc:match("[Ii]nstantly deals (%d+) %a+ damage")))
+        local pairForm = desc:match("or (%d+) %a+ damage if the user strikes (%a+)")
+        local N = (not upTo) and (not pairForm) and (tonumber(desc:match("dealing (%d+) %a+ damage")) or tonumber(desc:match("Deals (%d+) %a+ damage")) or tonumber(desc:match("[Ii]nstantly deals (%d+) %a+ damage")))
         if N then
             checked = checked + 1
             local evs = run(ab, {}, #ab.turns)
@@ -107,7 +119,7 @@ for _, ab in ipairs(byName) do
         if lo and desc:find("per hit") or (lo and desc:find("per lash")) or (lo and desc:find("per attack")) then
             checked = checked + 1
             local evsHi = run(ab, { roll = 6 }); local evsLo = run(ab, { roll = 100 })
-            local extra = (desc:find("additional time") or desc:find("an additional")) and 1 or 0
+            local extra = ((desc:find("additional time") or desc:find("an additional")) and not desc:find("attacks last")) and 1 or 0   -- (+1 only for the FIRST-mover form; the "last" form is claim 5c)
             local nHi, nLo = #dmgEvents(evsHi, "P"), #dmgEvents(evsLo, "P")
             check(name, "hits up to " .. hi .. " times (+1 when first: " .. extra .. ")", nHi == tonumber(hi) + extra, "got " .. nHi)
             check(name, "hits at least " .. lo .. " time", nLo >= tonumber(lo), "got " .. nLo)
@@ -125,6 +137,15 @@ for _, ab in ipairs(byName) do
             local _, b5, a5, e5 = run(ab, { prep = function(bb, aa, ee) ee.hp = aa.hp end }, 1)   -- equal health: nothing changes
             check(name, "equalizes health (already equal)", a5.hp == a5.max and e5.hp == e5.max, "user " .. a5.hp .. " enemy " .. e5.hp)
             check(name, "equalizes health (enemy 20%, user full: the user pays)", math.abs(a2.hp - e2.hp) <= 1 and a2.hp < a2.max and e2.hp > e2.max * 0.2, "user " .. a2.hp .. " enemy " .. e2.hp)
+        end
+        -- 3b. "healing up to N% of your health" (Buried Treasure): a % of the MAXIMUM health
+        local pctHeal = tonumber(desc:match("healing up to (%d+)%% of your health"))
+        if pctHeal then
+            checked = checked + 1
+            local _, b, a = run(ab, { hpFrac = 0.4 }, 1)
+            local want = math.floor(a.max * pctHeal / 100)
+            local lost = a.max - math.floor(a.max * 0.4)
+            check(name, "heals " .. pctHeal .. "% of max health", a.hp == math.max(2, math.floor(a.max * 0.4)) + math.min(want, a.max - math.max(2, math.floor(a.max * 0.4))), "hp " .. a.hp .. " max " .. a.max)
         end
         -- 3. healing: "Restores N health" (damaged user)
         local H = tonumber(desc:match("Restores (%d+) health")) or tonumber(desc:match("heals? .-for (%d+) health")) or tonumber(desc:match("heals? .-for (%d+)[^%d%%]"))
@@ -149,8 +170,35 @@ for _, ab in ipairs(byName) do
             local firstAct; for _, x in ipairs(evs) do if x.k == "act" then firstAct = x.side; break end end
             check(name, "always goes first even when slower", firstAct == "P", "first act " .. tostring(firstAct))
         end
+        -- 5b. pair form: "dealing A damage, or B damage if the user strikes first/last" (Arcane Slash, Tail Sweep, Scrabble)
+        if pairForm then
+            checked = checked + 1
+            local base = tonumber(desc:match("[Dd]eal[a-z]* (%d+) %a+ damage, or")) or tonumber(desc:match("(%d+) %a+ damage, or"))
+            local alt, cond = desc:match("or (%d+) %a+ damage if the user strikes (%a+)")
+            alt = tonumber(alt)
+            local function hit1(first) local d = dmgEvents(run(ab, { attackerFirst = first }), "P"); return d[1] and d[1].dmg end
+            local whenCond, otherwise = hit1(cond == "first"), hit1(cond ~= "first")
+            check(name, "deals " .. tostring(alt) .. " when it strikes " .. cond, whenCond == alt, "got " .. tostring(whenCond))
+            check(name, "deals " .. tostring(base) .. " otherwise", otherwise == base, "got " .. tostring(otherwise))
+        end
+        -- 5d. walls: "blocks two attacks. Allied and enemy attacks both count" -> exactly two attacks are blocked, the third lands
+        if desc:find("blocks two attacks") or desc:find("blocks 2 attacks") then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local evs = run(ab, { enemyAbility = scratch, attackerFirst = true }, 4)
+            local blocked, landed = 0, 0
+            for _, x in ipairs(evs) do if x.k == "dodge" and x.text == "Blocked!" then blocked = blocked + 1 end; if x.k == "dmg" and x.side == "E" and x.tside == "P" then landed = landed + 1 end end
+            check(name, "blocks exactly two attacks", blocked == 2, "blocked " .. blocked)
+            check(name, "the third attack lands", landed >= 1, "landed " .. landed)
+        end
+        -- 5c. "Hits an additional time if the user attacks last"
+        if desc:find("Hits an additional time if the user attacks last") then
+            checked = checked + 1
+            local n1 = #dmgEvents(run(ab, { attackerFirst = false, roll = 6 }), "P"); local n2 = #dmgEvents(run(ab, { attackerFirst = true, roll = 6 }), "P")
+            check(name, "hits an additional time when it attacks last", n1 == n2 + 1, n1 .. " vs " .. n2)
+        end
         -- 6. "if the user attacks first" bonus: more damage when first than when second
-        if desc:find("if the user strikes first") or desc:find("if the user attacks first") or desc:find("Hits an additional time if") or desc:find("goes first") and not desc:find("always goes first") then
+        if desc:find("if the user strikes first") or desc:find("if the user attacks first") or desc:find("Hits an additional time if the user attacks first") or desc:find("goes first") and not desc:find("always goes first") then
             checked = checked + 1
             local f = sum(dmgEvents(run(ab, { attackerFirst = true }), "P"), function(x) return x.dmg end)
             local s = sum(dmgEvents(run(ab, { attackerFirst = false }), "P"), function(x) return x.dmg end)
@@ -234,7 +282,7 @@ for _, ab in ipairs(byName) do
         end
         -- 14. aura durations: "for N rounds" / "Lasts N rounds" with an aura applied to someone
         local dur = tonumber(desc:match("[Ll]asts (%d+) rounds?")) or tonumber(desc:match("for (%d+) rounds"))
-        if dur and dur > 0 and not N and #ab.turns ~= dur and #ab.turns > 0 then
+        if dur and dur > 0 and not N and #ab.turns ~= dur and #ab.turns > 0 and not desc:find("next ability") then   -- ("next ability ... locked out for N rounds" is a cooldown lock, not an aura length)
             checked = checked + 1
             local evs, b, a, e = run(ab, {})
             local seen = 0
@@ -242,7 +290,8 @@ for _, ab in ipairs(byName) do
             for _, au in ipairs(e.auras) do seen = math.max(seen, au.left) end
             if b.weather then seen = math.max(seen, b.weather.left) end
             -- the round ends by ticking the duration down once: left == dur or dur - 1 are both an aura of that length
-            check(name, "applies an aura of " .. dur .. " rounds", seen == dur or seen == dur - 1, "longest aura left " .. seen)
+            local delay = tonumber(desc:match("After (%d+) rounds?")) or 0   -- "After 1 round, the ground erupts for 2 rounds" = an aura of delay + dur
+            check(name, "applies an aura of " .. (dur + delay) .. " rounds", seen == dur + delay or seen == dur + delay - 1, "longest aura left " .. seen)
         end
         local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
         local function enemyDamage(evs) return sum(dmgEvents(evs, "E"), function(x) return x.dmg end) end

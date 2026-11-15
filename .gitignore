@@ -23,3 +23,4 @@ pet-battle/.shots/
 # retail pet data exports (wago.tools DB2 CSVs): dev-only input of pet-battle/gen_retail.py, not redistributed
 pet-battle/retail_data/
 pet-battle/AGENT_BRIEFS.md
+pet-battle/__pycache__/

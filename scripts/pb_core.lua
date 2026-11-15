@@ -54,7 +54,7 @@ local function MakeAbility(speciesId, aid)
     local vis, ranged = ov.vis or VIS[a.name], ov.ranged
     if not vis then   -- FALLBACK for abilities nobody styled yet: every damaging ability still gets a visible hit (spell animation + sound) instead of nothing
         local dmg = false
-        for _, t in ipairs(a.turns) do for _, f in ipairs(t.fx) do if DAMAGE[f.prop] or f.prop == 66 or f.prop == 68 or f.prop == 197 or f.prop == 27 or f.prop == 29 or f.prop == 59 or f.prop == 384 or f.prop == 141 then dmg = true end end end
+        for _, t in ipairs(a.turns) do for _, f in ipairs(t.fx) do if DAMAGE[f.prop] or f.prop == 66 or f.prop == 226 or f.prop == 68 or f.prop == 197 or f.prop == 27 or f.prop == 29 or f.prop == 59 or f.prop == 384 or f.prop == 385 or f.prop == 141 then dmg = true end end end
         if dmg then if a.family == 5 or a.family == 6 then vis, ranged = 133, true else vis = 49966 end end   -- Magic / Elemental: fire bolt (cast, no lunge); everything else: a melee punch
     end
     -- retail turns: event 255 = the ordinary turns of the ability (one per round); the others are PROCS (1 = holder hit, 2 = holder dealt damage, 6/7 = before/after the round markers)
@@ -116,6 +116,7 @@ local function CallFn(name, args, ab, power)
     elseif lname == "duration" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[3])
     elseif lname == "statechange" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1])
     elseif lname == "points" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1])
+    elseif lname == "percentage" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[1])
     elseif lname == "pointsmax" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[4])
     elseif lname == "pointsincreaseperuse" then return tostring(Fx(ab, Num(a[1]), Num(a[2]), tonumber(a[3])).p[3])
     elseif lname == "numturns" then local t = a[1] and R.abilities[tonumber(a[1])] or ab; return tostring(t and #t.turns or 1)
@@ -416,6 +417,10 @@ local function Hit(b, ev, s, pet, points, accuracy, slot, more, raw)
             ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Blocked!", more = more, hp = tgt.hp, max = tgt.max }; return false
         end
     end
+    if b.wall and b.wall.charges > 0 then   -- a wall in the field eats the attack (either side's)
+        b.wall.charges = b.wall.charges - 1; if b.wall.charges <= 0 then b.wall = nil end
+        ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, text = "Blocked!", more = more, hp = tgt.hp, max = tgt.max }; return false
+    end
     local dodge = math.min(100, Mod(tgt, "Stat_Dodge"))
     if dodge > 0 and b.rng(1, 100) <= dodge then
         ev[#ev + 1] = { k = "dodge", side = o, idx = oi, from = s, more = more, hp = tgt.hp, max = tgt.max }; return false
@@ -440,6 +445,14 @@ local function Hit(b, ev, s, pet, points, accuracy, slot, more, raw)
         local aab = R.abilities[a.id]
         for _, pt in ipairs(aab and aab.turns or {}) do
             if pt.event == 1 then for _, rf in ipairs(pt.fx) do
+                if rf.prop == 204 and pet.hp > 0 and dmg > 0 then   -- Reflective Shield: p1 % of the direct damage taken goes back to the attacker
+                    local rd = math.floor(dmg * rf.p[1] / 100)
+                    if rd > 0 then
+                        pet.hp = math.max(0, pet.hp - rd)
+                        ev[#ev + 1] = { k = "dmg", side = o, idx = oi, tside = s, tidx = b.active[s], dmg = rd, hp = pet.hp, max = pet.max, reflect = true, more = false, counter = 1 }
+                        if pet.hp <= 0 then Faint(b, ev, s, b.active[s]) end
+                    end
+                end
                 if rf.prop == 179 and pet.hp > 0 then
                     local rd = MagicCap(pet, Rules.Damage(rf.p[1], a.pwr or tgt.power, a.fam or tgt.family, pet.family, 0, Mod(pet, "Mod_DamageTakenPercent")))
                     pet.hp = math.max(0, pet.hp - rd)
@@ -489,6 +502,10 @@ local function Act(b, ev, s, cmd, used)
         end
         ab = pet.abil[slot]; turnNo = 1
         pet.cd[slot] = ab.cd; used[pet] = slot
+        for i = #pet.auras, 1, -1 do   -- Nevermore (aura with a proc on event 9 + effect 129): the NEXT ability this pet uses is locked out for p1 rounds (cooldown) and the aura ends
+            local a = pet.auras[i]; local ab9 = a.on == 9 and R.abilities[a.id]
+            if ab9 then for _, t9 in ipairs(ab9.turns) do for _, f9 in ipairs(t9.fx) do if f9.prop == 129 then pet.cd[slot] = math.max(pet.cd[slot] or 0, f9.p[1]); table.remove(pet.auras, i) end end end end
+        end
     end
     pet.useFam = (ab.family and ab.family >= 0) and Rules.FAMILIES[ab.family + 1] or nil   -- retail: damage uses the ABILITY's family (Bite = Beast damage whoever bites)
     local turn = ab.turns[turnNo]
@@ -498,16 +515,17 @@ local function Act(b, ev, s, cmd, used)
     pet.channel = (#ab.turns > turnNo) and { ab = ab, turn = turnNo + 1, slot = slot } or nil
     local missStun = false; for _, f in ipairs(turn.fx) do if f.prop == 194 then missStun = true end end
     local hits = 0   -- how many damage hits this turn deals (playback needs to know which one is the last)
-    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 149 or (f.prop == 384 and actedFirst) then hits = hits + 1 end end
+    for _, f in ipairs(turn.fx) do if DAMAGE[f.prop] or f.prop == 197 or f.prop == 66 or f.prop == 226 or f.prop == 68 or f.prop == 149 or (f.prop == 384 and actedFirst) or (f.prop == 385 and actedSecond) then hits = hits + 1 end end
     ev[#ev + 1] = { k = "act", side = s, idx = idx, slot = slot, ab = ab.id, name = ab.name, dmg = hits > 0, vis = ab.vis, ranged = ab.ranged }
     local done, healed, landed, dealt, runK = 0, 0, false, 0, nil
+    local h100 = 0   -- effect 100 counter: the k-th effect heals the k-th OTHER living ally of the required family
     pet.ramp = pet.ramp or {}
     local hp0 = tgt.hp
     local weatherSeen = false
     local function runFx(fxlist)
     for _, f in ipairs(fxlist) do
         local p = f.p
-        if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) then
+        if DAMAGE[f.prop] or (f.prop == 384 and actedFirst) or (f.prop == 385 and actedSecond) then   -- 384 = extra hit when the user acted FIRST, 385 = when the user acted LAST (Tail Sweep, Arcane Slash, Scrabble, Steady Snap)
             if p[2] >= 200 and DAMAGE[f.prop] and done > 0 then   -- Body Slam: a damage effect with accuracy 200 AFTER the ability already hit = damage to the USER itself (a lone 200 = Package Drop: just never misses)
                 local selfDmg = math.max(1, Rules.Damage(p[1], pet.power, pet.family, pet.family, 0, 0))   -- retail SimpleDamage: recoil ignores the family matchup (an Elemental ability on a Critter user hit itself x0.67)
                 pet.hp = math.max(1, pet.hp - selfDmg)   -- recoil can hurt but never faint the user
@@ -548,6 +566,11 @@ local function Act(b, ev, s, cmd, used)
             if actedFirst and tgt.hp > 0 and Mod(tgt, "untargettable") == 0 and (p[2] >= 100 or b.rng(1, 100) <= p[2]) then
                 ApplyAura(b, ev, o, b.active[o], f.aura, math.max(1, p[3] or 1), false, nil, pet)
             end
+        elseif f.prop == 226 then   -- damage p1, plus p3 more when the target has the state in p4 (Sludge Claw: Poisoned; Deep Burn / Personal Inferno: Burning; Sneak Attack: Blinded)
+            done = done + 1
+            local pts = p[1]; if HasState(tgt, p[4]) then pts = pts + (p[3] or 0) end
+            landed = Hit(b, ev, s, pet, pts, p[2], slot, done < hits) or landed
+            if landed and tgt.hp <= 0 then break end
         elseif f.prop == 66 then   -- Impale: damage p1/p2, boosted by p3 % when the target is below 25% health
             done = done + 1
             local pts = p[1]; if tgt.hp < tgt.max * 0.25 then pts = pts * (100 + (p[3] or 100)) / 100 end
@@ -577,6 +600,33 @@ local function Act(b, ev, s, cmd, used)
                     Heal(b, ev, o, b.active[o], avg - tgt.hp)
                 end
             end
+        elseif f.prop == 77 or f.prop == 75 then   -- TWO-USE blast: the first use sets an aura (77 Lock-On: on the TARGET; 75 Launch Rocket: on the USER), the second use deals p1 damage and removes it
+            local holder = (f.prop == 77) and tgt or pet; local hs = (f.prop == 77) and o or s; local hi = (f.prop == 77) and b.active[o] or idx
+            local have; for _, a in ipairs(holder.auras) do if a.id == f.aura then have = a end end
+            if have then
+                RemoveAura(holder, f.aura)
+                done = done + 1
+                landed = Hit(b, ev, s, pet, p[1], p[2] or 100, slot, false) or landed
+            elseif f.prop == 75 or (tgt.hp > 0 and Mod(tgt, "untargettable") == 0) then
+                ApplyAura(b, ev, hs, hi, f.aura, (f.prop == 75) and 99 or 2, true, nil, pet)
+            end
+        elseif f.prop == 168 then   -- Nevermore: the enemy's next ability is locked out (aura with effect 129, see Act)
+            if tgt.hp > 0 and Mod(tgt, "untargettable") == 0 and (p[2] >= 100 or b.rng(1, 100) <= p[2]) then ApplyAura(b, ev, o, b.active[o], f.aura, math.max(1, p[3] or 2), true, nil, pet) end
+        elseif f.prop == 53 then   -- Buried Treasure: heals the user for p1 % of its MAXIMUM health (the same effect inside an aura = Wish, handled in the aura tick)
+            Heal(b, ev, s, idx, math.floor(pet.max * p[1] / 100))
+        elseif f.prop == 100 then   -- Healing Stream / Draconic Remedy / Rebuild: heals other living allies of the family in p4 (1-based family id) for p1 points; the k-th effect takes the k-th such ally
+            h100 = h100 + 1
+            local want = Rules.FAMILIES[p[4] or 0]; local k = 0
+            for i, q in ipairs(b[s]) do
+                if i ~= idx and q.hp > 0 and (not want or q.family == want) then
+                    k = k + 1
+                    if k == h100 then Heal(b, ev, s, i, Rules.Heal(p[1], pet.power), true); break end
+                end
+            end
+        elseif f.prop == 150 then   -- WALL (Prismatic Barrier, Ice Barrier, Beaver Dam, Weald Wall, Illusionary Barrier, Onyx Wall): a field object that blocks the next N attacks of EITHER side (Special_BlockedAttackCount, "allied and enemy attacks both count")
+            local st = R.states[f.aura] or {}
+            b.wall = { id = f.aura, charges = st.Special_BlockedAttackCount or 2, owner = s }
+            ev[#ev + 1] = { k = "buff", side = s, idx = idx, what = AuraName(f.aura):lower(), turns = b.wall.charges }
         elseif f.prop == 44 then   -- Cauterize: heal p1 % of the last hit this pet took
             if pet.lastTaken > 0 then Heal(b, ev, s, idx, math.floor(pet.lastTaken * p[1] / 100), true) end
         elseif f.prop == 197 then   -- damage equal to the last hit this pet took
@@ -659,7 +709,7 @@ local function Act(b, ev, s, cmd, used)
                 local from = b.active[o2]; b.active[o2] = cand[(f.prop == 139) and 1 or b.rng(1, #cand)]
                 ev[#ev + 1] = { k = "swap", side = o2, from = from, idx = b.active[o2], free = true, forced = true }
             end
-        elseif not (INERT[f.prop] or DAMAGE[f.prop] or f.prop == 384) then C.unknown[f.prop] = (C.unknown[f.prop] or 0) + 1 end
+        elseif not (INERT[f.prop] or DAMAGE[f.prop] or f.prop == 384 or f.prop == 385) then C.unknown[f.prop] = (C.unknown[f.prop] or 0) + 1 end
         ::continue::
     end
     end   -- runFx
@@ -807,7 +857,7 @@ function C.AI(b)
         if C.Ready(pet, sl) then
             local turn = pet.abil[sl].turns[1]; local healOnly, buffActive = true, false
             for _, f in ipairs(turn.fx) do
-                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 29 or f.prop == 197 or f.prop == 66 or f.prop == 68 or f.prop == 149 or f.prop == 44 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
+                if DAMAGE[f.prop] or f.prop == 384 or f.prop == 385 or f.prop == 29 or f.prop == 197 or f.prop == 66 or f.prop == 226 or f.prop == 68 or f.prop == 149 or f.prop == 44 or f.prop == 141 or f.prop == 27 or f.prop == 59 or f.prop == 131 or APPLY[f.prop] or f.prop == 54 or f.prop == 172 then healOnly = false end
                 if (f.prop == 26 or f.prop == 63) and f.aura ~= 0 then for _, a in ipairs(pet.auras) do if a.id == f.aura then buffActive = true end end end
             end
             local useless = (healOnly and not hurt and #turn.fx > 0 and not (turn.fx[1].prop == 49)) or buffActive   -- the brain does not waste a heal at full health or re-apply a running buff

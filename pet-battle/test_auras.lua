@@ -16,6 +16,51 @@ local function kitAbility(name) for e in pairs(D.species) do for _, k in ipairs(
 local function count(ev, f) local c = 0; for _, x in ipairs(ev) do if f(x) then c = c + 1 end end return c end
 local function aura(p, id, left, src, extra) local a = { id = id, left = left or 3, states = R.states[id] or {}, pwr = src and src.power or 0, fam = src and src.family, src = src }; for k, v in pairs(extra or {}) do a[k] = v end; p.auras[#p.auras + 1] = a; return a end
 
+-- NEVERMORE (522 casts aura 738 on the enemy; effects 168 / 129): the enemy's NEXT ability is locked out for 5 rounds, then the aura ends
+do
+    D.species[999961] = { name = "Pinned Nevermore", retail = 630 }
+    local ab; for _, k in ipairs(C.Kit(999961)) do if k.ability.id == 522 then ab = k.ability end end
+    ok(ab ~= nil, "Nevermore (522) is available through a pinned species")
+    if ab then
+        local a, e = pet("Flying", 10, ab), pet("Beast", 10, hit(10, nil, 1)); a.speed = 999
+        local b = battle(a, e); C.Round(b, "A1", "A1")   -- the caster is faster: the enemy's very next ability (this round) is the locked one
+        ok(e.cd[1] >= 4, "the enemy's next ability is locked out for about 5 rounds (cooldown " .. e.cd[1] .. ")")
+        local still = false; for _, x in ipairs(e.auras) do if x.id == 738 then still = true end end
+        ok(not still, "the lock aura ends after the locked ability")
+        local a2, e2 = pet("Flying", 10, ab), pet("Beast", 10, hit(10, nil, 1)); a2.speed = 1; e2.speed = 999
+        local b2 = battle(a2, e2); C.Round(b2, "A1", "A1")   -- the enemy is faster: it acts BEFORE the lock lands, so its next ability is the one of the following round
+        local has2 = false; for _, x in ipairs(e2.auras) do if x.id == 738 then has2 = true end end
+        ok(has2 and e2.cd[1] == 0, "a faster enemy keeps the lock aura for its next ability")
+    end
+end
+
+-- REFLECTIVE SHIELD (aura 1104, proc event 1, effect 204): "deals damage equal to 50% of direct attacks back to the attacker"
+do
+    local a, e = pet("Beast", 10, hit(30, nil, 1)), pet("Beast", 10, PASS); aura(e, 1104, 3, e)
+    local b = battle(a, e); local a0, e0 = a.hp, e.hp; local ev = C.Round(b, "A1", "A1")
+    local took, reflected = e0 - e.hp, a0 - a.hp
+    ok(took > 0 and reflected == math.floor(took * 50 / 100), "Reflective Shield: the attacker takes 50% of the damage back (took " .. took .. ", reflected " .. reflected .. ")")
+    local a2, e2 = pet("Beast", 10, hit(30, nil, 1)), pet("Beast", 10, PASS); local b2 = battle(a2, e2); local ev2 = C.Round(b2, "A1", "A1")
+    ok(a2.hp == a2.max, "no reflect without the aura")
+end
+
+-- HEALING STREAM / DRACONIC REMEDY / REBUILD (effect 100): "restoring N health to the user, and half that to other <family> allies" (pinned species supply the abilities)
+do
+    D.species[999971] = { name = "Pinned Healing Stream", retail = 1206 }; D.species[999972] = { name = "Pinned Draconic Remedy", retail = 2079 }
+    for _, cfg in ipairs({ { "Healing Stream", "Aquatic" }, { "Draconic Remedy", "Dragonkin" } }) do
+        local ab = kitAbility(cfg[1]); ok(ab ~= nil, cfg[1] .. " is available through a pinned species")
+        if ab then
+            local u, same, other = pet(cfg[2], 10, ab), pet(cfg[2], 10, PASS), pet("Beast", 10, PASS)
+            for _, q in ipairs({ u, same, other }) do q.hp = math.floor(q.max * 0.3) end
+            local e = pet("Beast", 10, PASS); local b = battle({ u, same, other }, { e }); local u0, s0, o0 = u.hp, same.hp, other.hp
+            C.Round(b, "A1", "A1")
+            ok(u.hp > u0, cfg[1] .. ": the user is healed (" .. u0 .. " -> " .. u.hp .. ")")
+            ok(same.hp > s0 and same.hp - s0 < u.hp - u0 + 2, cfg[1] .. ": another " .. cfg[2] .. " ally is healed for about half (" .. (same.hp - s0) .. " vs " .. (u.hp - u0) .. ")")
+            ok(other.hp == o0, cfg[1] .. ": an ally of another family is NOT healed")
+        end
+    end
+end
+
 -- BRITTLE WEBBING (aura 381, proc event 2): the holder takes damage each time it attacks; a holder killed by it stops attacking
 do
     local a, e = pet("Beast", 10, PASS), pet("Beast", 10, hit(10, nil, 1)); aura(e, 381, 3, a)

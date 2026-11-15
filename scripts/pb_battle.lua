@@ -109,9 +109,11 @@ local function EnsureStandIns()
                    lootid = 0, pickpocketloot = 0, skinloot = 0, gossip_menu_id = 0, mingold = 0, maxgold = 0, VehicleId = 0, PetSpellDataId = 0, flags_extra = 0, ["rank"] = 0, MovementType = 0, type_flags = 0, faction = 35 }
     WorldDBExecute("UPDATE creature_template SET `type` = 1 WHERE entry >= 9000000 AND entry < 9100000 AND `type` = 12")   -- clones made before this rule
     local made = 0
+    local have = {}   -- ONE bulk query instead of one SELECT per species on every script load (the species list grows into the thousands)
+    do local qa = WorldDBQuery("SELECT entry FROM creature_template WHERE entry >= 9000000 AND entry < 9100000"); if qa then repeat have[qa:GetUInt32(0)] = true until not qa:NextRow() end end
     for species, sp in pairs(D.species) do
         local id = D.StandIn(species)
-        if id and not WorldDBQuery("SELECT entry FROM creature_template WHERE entry = " .. id) then
+        if id and not have[id] then
             local sel = {}
             for _, c in ipairs(cols) do
                 if c == "entry" then sel[#sel + 1] = tostring(id)
@@ -125,9 +127,9 @@ local function EnsureStandIns()
             made = made + 1
         end
     end
-    for species in pairs(D.species) do   -- weapons / shields (creature_equip_template is keyed by creature entry): idempotent, also for clones made before this rule
+    for species in pairs(D.species) do   -- weapons / shields (creature_equip_template is keyed by creature entry): idempotent; only needed when clones were just made (custom-sql/016 carries them otherwise)
         local id = D.StandIn(species)
-        if id then WorldDBExecute("INSERT IGNORE INTO creature_equip_template (CreatureID, ID, ItemID1, ItemID2, ItemID3, VerifiedBuild) SELECT " .. id .. ", ID, ItemID1, ItemID2, ItemID3, VerifiedBuild FROM creature_equip_template WHERE CreatureID = " .. species) end
+        if id and made > 0 then WorldDBExecute("INSERT IGNORE INTO creature_equip_template (CreatureID, ID, ItemID1, ItemID2, ItemID3, VerifiedBuild) SELECT " .. id .. ", ID, ItemID1, ItemID2, ItemID3, VerifiedBuild FROM creature_equip_template WHERE CreatureID = " .. species) end
     end
     if made > 0 then
         print("[pb_battle] created " .. made .. " stand-in creature templates, reloading creature templates in 3 s")
