@@ -1,0 +1,28 @@
+# alterac pet roster (map 0 box x 200..1400, y -1000..0, mobs level <= 41, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	4075	Rat	1	Critter	0	0	3	1141	Melee		already a species
+Y	2098	Ram	5	Critter	0	0	4	10000	Melee		already a species
+N	6033	Lake Frenzy	15-16	Not specified	0	0	4	7449	Melee		type Not specified
+Y	2351	Gray Bear	21-22	Beast	4	0	4	806	Melee		already a species
+Y	2408	Snapjaw	30-31	Beast	21	0	25	1244	Melee		already a species
+Y	2250	Mountain Yeti	32-33	Humanoid	0	0	10	1050	Melee		
+Y	2240	Syndicate Footpad	32-33	Humanoid	0	0	7	3706	Melee		
+Y	2251	Giant Yeti	33-34	Humanoid	0	0	32	6767	Melee		
+Y	2407	Hulking Mountain Lion	33-34	Beast	2	0	11	2300	Melee		
+Y	2241	Syndicate Thief	33-34	Humanoid	0	0	5	3709	Melee		
+Y	2252	Crushridge Ogre	34-35	Humanoid	0	0	49	11567	Melee		
+Y	2319	Syndicate Wizard	34-35	Humanoid	0	0	11	3712	Melee		
+Y	2318	Argus Shadow Mage	35-36	Humanoid	0	0	9	3723	Melee		
+Y	2253	Crushridge Brute	35-36	Humanoid	0	0	30	610	Melee		
+Y	2242	Syndicate Spy	35-36	Humanoid	0	0	20	3716	Melee		
+N	2254	Crushridge Mauler	36-37	Humanoid	0	1	15	655	Melee		rank 1 (elite/rare)
+Y	2243	Syndicate Sentry	36-37	Humanoid	0	0	31	3721	Melee		
+N	2255	Crushridge Mage	37-38	Humanoid	0	1	8	6705	Melee		rank 1 (elite/rare)
+N	2431	Jailor Borhuin	37	Humanoid	0	0	3	1830	Melee		excluded (hand: NPC/boss-like)
+Y	2245	Syndicate Saboteur	37-38	Humanoid	0	0	8	3725	Melee		
+N	2256	Crushridge Enforcer	38-39	Humanoid	0	1	13	416	Melee		rank 1 (elite/rare)
+Y	2246	Syndicate Assassin	38-39	Humanoid	0	0	16	3727	Melee		
+N	2287	Crushridge Warmonger	39-40	Humanoid	0	1	26	536	Melee		rank 1 (elite/rare)
+Y	2247	Syndicate Enforcer	39-40	Humanoid	0	0	11	3729	Melee		
+N	2306	Baron Vardus	40	Humanoid	0	0	4	1827	Melee		excluded (hand: NPC/boss-like)

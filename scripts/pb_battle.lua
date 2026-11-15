@@ -10,6 +10,7 @@ local Store = require("pb_store")
 local LEVEL = 10
 local POOL = {}; for entry in pairs(D.species) do POOL[#POOL + 1] = entry end   -- enemy species (random, abilities rolled: 1 of 2 per slot)
 -- instant (no-duration) visual spells only: 46172 / 43452 / 43467 are long-lasting auras and stay on the pet
+local FX_LEVELUP = 47292   -- Level Up (the character's gold burst; instant, no aura - checked by check_fx.py)
 local FX_SPAWN, FX_POOF, FX_HIT, FX_DEBUFF = 52096, 12244, nil, 60958   -- Cosmetic Teleport Effect, Poof, (none), Cosmetic Fire Cast
 local TRIES, MAX_RANGE = 3, 40
 local battles = {}
@@ -260,19 +261,24 @@ local function End(b, result)
     After(result == "win" and 600 or 1200, function()
         if result ~= "win" then Despawn(b, "P", true) end
         Despawn(b, "E", true)
+        local leveled = false
         if result == "win" and not b.test then
             local pl = GetPlayer(b)
             if pl and not b.eng.captured then   -- experience (a battle ended by capturing the last pet gives none, like retail)
                 for i, p in ipairs(b.eng.P) do
                     if b.acted[i] then
                         local gain, lv, ups = Store.GrantXP(pl, p.species, b.enemyLevel)
-                        if gain then Msg.Send(pl, "pbt", "xp", p.name .. "," .. gain .. "," .. lv .. "," .. ups) end
+                        if gain then
+                            Msg.Send(pl, "pbt", "xp", p.name .. "," .. gain .. "," .. lv .. "," .. ups)
+                            if ups and ups > 0 then leveled = true end
+                        end
                     end
                 end
+                if leveled then Fx(GetObj(b, "P"), FX_LEVELUP, 2500) end   -- the gold level-up burst on the pet that is standing there
             end
         end
         local plx = GetPlayer(b); if plx then Msg.Send(plx, "pbt", "done", "") end
-        if result == "win" then After(500, function() Despawn(b, "P", true) end) end
+        if result == "win" then After(leveled and 2600 or 500, function() Despawn(b, "P", true) end) end
     end)
 end
 

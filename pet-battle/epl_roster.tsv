@@ -1,0 +1,101 @@
+# epl pet roster (map 0 box x 1300..3500, y -5700..-2600, mobs level <= 59, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	17795	Horde Tower Buffer	1	Not specified	0	0	4	5187	Melee		type Not specified
+N	12202	Human Skull	1	Not specified	0	0	8	7804	Melee		type Not specified
+N	16398	Necropolis Proxy	1	Not specified	0	0	6	16925	Melee		type Not specified
+N	16386	Necropolis Relay	1	Not specified	0	0	6	16925	Melee		type Not specified
+N	16225	Pack Mule	1-2	Beast	0	0	3	14546	Melee		excluded (hand: NPC/event)
+N	16356	Scourge Invasion Minion, finder	1	Not specified	0	0	156	11686	Melee		type Not specified
+N	12247	Scourge Structure	1	Not specified	0	0	8	12271	Melee		type Not specified
+N	6547	Suffering Victim	25	Humanoid	0	0	3	1027	Melee		excluded (hand: NPC/event)
+Y	29212	Risen Drudge	50	Undead	0	0	44	829	Melee		
+Y	8555	Crypt Stalker	53-54	Undead	0	0	7	3004	Melee		
+Y	11290	Mossflayer Zombie	53-54	Undead	0	0	8	4778	Melee		
+Y	8600	Plaguebat	53-55	Beast	24	0	86	7894	Melee		
+Y	8596	Plaguehound Runt	53-54	Demon	0	0	47	7890	Melee		
+N	9452	Scarlet Enchanter	53-55	Humanoid	0	1	44	10403	Melee		rank 1 (elite/rare)
+N	9447	Scarlet Warder	53-54	Humanoid	0	1	59	10376	Melee		rank 1 (elite/rare)
+Y	8523	Scourge Soldier	53-54	Undead	0	0	23	5231	Melee		
+Y	8540	Torn Screamer	53-55	Undead	0	0	25	984	Melee		
+Y	8519	Blighted Surge	54-55	Elemental	0	0	9	5497	Melee		
+Y	8530	Cannibal Ghoul	54-55	Undead	0	0	31	10626	Melee		
+Y	8603	Carrion Grub	54-55	Beast	0	0	87	7898	Melee		
+Y	8524	Cursed Mage	54-55	Undead	0	0	23	11397	Melee		
+Y	8553	Necromancer	54-55	Humanoid	0	0	8	10427	Melee		
+Y	8601	Noxious Plaguebat	54-56	Beast	24	0	61	7896	Melee		
+Y	8534	Putrid Gargoyle	54-56	Undead	0	0	30	7854	Melee		
+N	8607	Rotting Sludge	54-55	Not specified	0	0	7	11141	Melee		type Not specified
+N	9449	Scarlet Cleric	54-55	Humanoid	0	1	44	10387	Melee		rank 1 (elite/rare)
+Y	11291	Unliving Mossflayer	54-55	Undead	0	0	11	4769	Melee		
+Y	28488	Coldwraith	55-56	Undead	0	0	4	26919	Melee		
+Y	8556	Crypt Walker	55-56	Undead	0	0	9	11178	Melee		
+Y	8551	Dark Summoner	55-56	Humanoid	0	0	4	10417	Melee		
+Y	28489	Disciple of Blood	55-57	Humanoid	0	0	8	25469	Melee		
+Y	28490	Disciple of Frost	55-57	Humanoid	0	0	9	25475	Melee		
+Y	28491	Disciple of the Unholy	55-57	Humanoid	0	0	9	25479	Melee		
+N	10817	Duggan Wildhammer	55	Humanoid	0	4	4	10374	Melee		rank 4 (elite/rare)
+Y	8541	Hate Shrieker	55-57	Undead	0	0	30	10751	Melee		
+N	32545	Initiate's Training Dummy	55	Mechanical	0	0	3	3019	Melee		excluded (hand: NPC/event)
+N	8606	Living Decay	55-56	Not specified	0	0	22	681	Melee		type Not specified
+Y	8520	Plague Ravager	55-56	Elemental	0	0	11	5563	Melee		
+Y	8597	Plaguehound	55-56	Demon	0	0	34	7891	Melee		
+N	9451	Scarlet Archmage	55-57	Humanoid	0	1	11	10413	Melee		rank 1 (elite/rare)
+N	9450	Scarlet Curate	55-56	Humanoid	0	1	14	10398	Melee		rank 1 (elite/rare)
+Y	8525	Scourge Warder	55-56	Undead	0	0	7	612	Melee		
+Y	8521	Blighted Horror	56-57	Elemental	0	0	8	11171	Melee		
+Y	8605	Carrion Devourer	56-57	Beast	0	0	44	7900	Melee		
+Y	8526	Dark Caster	56-57	Undead	0	0	8	9788	Melee		
+Y	8531	Gibbering Ghoul	56-57	Undead	0	0	8	10487	Melee		
+N	29202	Knight of the Ebon Blade	56-58	Undead	0	1	44	25998	Melee		rank 1 (elite/rare)
+Y	8602	Monstrous Plaguebat	56-58	Beast	24	0	57	7897	Melee		
+Y	8535	Putrid Shrieker	56-58	Undead	0	0	6	7855	Melee		
+N	9448	Scarlet Praetorian	56-57	Humanoid	0	1	30	10395	Melee		rank 1 (elite/rare)
+Y	8548	Vile Tutor	56-57	Humanoid	0	0	16	10953	Melee		
+N	13118	Crimson Bodyguard	57-58	Humanoid	0	1	4	10492	Melee		rank 1 (elite/rare)
+Y	8557	Crypt Horror	57-58	Undead	0	0	6	6841	Melee		
+Y	8542	Death Singer	57-59	Undead	0	0	29	8783	Melee		
+Y	8539	Eyeless Watcher	57-58	Undead	0	0	7	7857	Melee		
+Y	8598	Frenzied Plaguehound	57-58	Demon	0	0	72	9022	Melee		
+N	31094	Knight of the Ebon Blade	57-58	Undead	0	1	23	25998	Melee		rank 1 (elite/rare)
+Y	8562	Mossflayer Cannibal	57-59	Humanoid	0	0	13	10434	Melee		
+Y	8560	Mossflayer Scout	57-58	Humanoid	0	0	12	10442	Melee		
+Y	8565	Pathstrider	57-58	Humanoid	0	0	5	19820	Melee		
+Y	8522	Plague Monstrosity	57-58	Elemental	0	0	5	11172	Melee		
+N	8527	Scourge Guard	57-58	Undead	0	0	14	370	Melee		citizen/guard/event name
+Y	11288	Spectral Betrayer	57-58	Undead	0	0	10	10935	Melee		
+Y	11621	Spectral Corpse	57-58	Undead	0	0	6	11475	Melee		
+Y	11289	Spectral Defender	57-58	Undead	0	0	3	10939	Melee		
+Y	11620	Spectral Marauder	57-58	Undead	0	0	4	12329	Melee		
+Y	8543	Stitched Horror	57-58	Undead	0	0	40	1693	Melee		
+N	31098	Terrifying Abomination	57-58	Undead	0	1	29	24812	Melee		rank 1 (elite/rare)
+Y	8558	Crypt Slayer	58-59	Undead	0	0	11	9758	Melee		
+Y	8546	Dark Adept	58-59	Humanoid	0	0	15	10408	Melee		
+Y	8532	Diseased Flayer	58-59	Undead	0	0	22	571	Melee		
+Y	8528	Dread Weaver	58-59	Undead	0	0	7	11396	Melee		
+Y	8561	Mossflayer Shadowhunter	58-59	Humanoid	0	0	25	10438	Melee		
+N	12352	Scarlet Trooper	58-59	Humanoid	0	0	9	10500	Melee		excluded (hand: NPC/event)
+N	29239	Vigilant Gargoyle	58	Undead	0	0	8	25753	Melee		excluded (hand: NPC/event)
+N	8563	Woodsman	58-59	Humanoid	0	0	9	19827	Melee		excluded (hand: NPC/event)
+N	12262	Ziggurat Protector	58	Undead	0	1	6	10627	Melee		rank 1 (elite/rare)
+N	16228	Argent Dawn Infantry	59-60	Humanoid	0	0	6	16093	Melee		level > 59
+N	616141	Ghoul Berserker	59-60	Undead	0	0	51	24993	Melee		level > 59
+N	16229	Injured Argent Dawn Infantry	59-60	Humanoid	0	0	3	16077	Melee		level > 59
+N	8564	Ranger	59-60	Humanoid	0	0	13	19822	Melee		level > 59
+N	8529	Scourge Champion	59-60	Undead	0	0	14	7847	Melee		level > 59
+N	8550	Shadowmage	59-60	Humanoid	0	0	9	10421	Melee		level > 59
+N	616299	Skeletal Shocktrooper	59-60	Undead	0	0	53	12074	Melee		level > 59
+N	616298	Spectral Soldier	59-60	Undead	0	0	51	16169	Melee		level > 59
+N	8545	Stitched Golem	59-60	Undead	0	0	7	7858	Melee		level > 59
+N	31095	Val'kyr Battle-maiden	59-60	Undead	0	1	4	26762	Melee		rank 1 (elite/rare)
+N	16378	Argent Sentry	60	Humanoid	0	1	23	16147	Melee		rank 1 (elite/rare)
+N	616230	Cultist Engineer	60	Not specified	0	0	24	16151	Melee		npcflag 1
+N	16117	Plagued Swine	60	Beast	5	0	17	6121	Melee		level > 59
+N	31096	Scourge Necromancer	60	Undead	0	1	6	25351	Melee		rank 1 (elite/rare)
+N	17878	Scourge Siege Engineer	60	Undead	0	0	19	775	Melee		level > 59
+N	6491	Spirit Healer	60	Humanoid	0	0	9	5233	Melee		npcflag 16385
+N	32542	Disciple's Training Dummy	65	Mechanical	0	0	3	28047	Melee		level > 59
+N	616136	Necrotic Shard	70	Not specified	0	0	6	16135	Melee		level > 59
+N	28481	Runeforge (SE)	70	Not specified	0	0	6	23980	Melee		level > 59
+N	32543	Veteran's Training Dummy	75	Mechanical	0	0	3	16074	Melee		level > 59
+N	32546	Ebon Knight's Training Dummy	80	Mechanical	0	0	3	28048	Melee		level > 59

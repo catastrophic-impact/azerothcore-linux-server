@@ -231,6 +231,28 @@ local function Say(text, secs)
     banner:SetText(text); banner:SetAlpha(1); banner.fade = secs or 2.2
 end
 
+-- Level-up graphic (like the character's): a gold star burst behind a big "Level Up!" with the pet's name and new level, plus the level-up sound; fades after ~3.5 s
+local luFrame
+local function LevelUpFx(name, lv)
+    if not luFrame then
+        local f = CreateFrame("Frame", nil, UIParent); f:SetSize(420, 160); f:SetPoint("CENTER", UIParent, "CENTER", 0, 170); f:SetFrameStrata("FULLSCREEN_DIALOG"); f:Hide()
+        f.burst = f:CreateTexture(nil, "BACKGROUND"); f.burst:SetTexture("Interface\\Cooldown\\star4"); f.burst:SetBlendMode("ADD"); f.burst:SetPoint("CENTER"); f.burst:SetVertexColor(1, 0.85, 0.25)
+        f.title = f:CreateFontString(nil, "OVERLAY"); f.title:SetFont("Fonts\\FRIZQT__.TTF", 38, "OUTLINE"); f.title:SetPoint("CENTER", 0, 14); f.title:SetTextColor(1, 0.82, 0)
+        f.sub = f:CreateFontString(nil, "OVERLAY"); f.sub:SetFont("Fonts\\FRIZQT__.TTF", 18, "OUTLINE"); f.sub:SetPoint("TOP", f.title, "BOTTOM", 0, -6); f.sub:SetTextColor(1, 1, 1)
+        f:SetScript("OnUpdate", function(self, e)
+            self.t = (self.t or 0) + e; local t = self.t
+            local grow = math.min(1, t / 0.5); self.burst:SetSize(120 + 380 * grow, 120 + 380 * grow)
+            self.burst:SetAlpha(t < 0.5 and grow or math.max(0, 1 - (t - 0.5) / 2.5))
+            self:SetAlpha(t < 2.8 and 1 or math.max(0, 1 - (t - 2.8) / 0.7))
+            if t > 3.5 then self:Hide() end
+        end)
+        luFrame = f
+    end
+    luFrame.title:SetText("Level Up!"); luFrame.sub:SetText(name .. " is now level " .. lv)
+    luFrame.t = 0; luFrame:SetAlpha(1); luFrame:Show()
+    pcall(PlaySound, "LEVELUPSOUND")
+end
+
 local function ButtonFrame(parent, size)
     local b = CreateFrame("Button", nil, parent)
     b:SetSize(size, size)
@@ -451,7 +473,10 @@ local function Setup()
         local name, gain, lv, ups = p:match("^([^,]+),(%d+),(%d+),(%d+)$")
         if not name then return end
         DEFAULT_CHAT_FRAME:AddMessage("|cffffd100" .. name .. " gains " .. gain .. " experience.|r")
-        if Num(ups) > 0 then DEFAULT_CHAT_FRAME:AddMessage("|cff66ff66" .. name .. " reached level " .. lv .. "!|r") end
+        if Num(ups) > 0 then
+            DEFAULT_CHAT_FRAME:AddMessage("|cff66ff66" .. name .. " reached level " .. lv .. "!|r")
+            LevelUpFx(name, lv)
+        end
     end)
     AcoreLib.On("pbt", "done", function()   -- the battle is over: leave the result banner up for a few seconds, then close the bars
         local f = CreateFrame("Frame"); local t = 0

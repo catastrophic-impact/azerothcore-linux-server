@@ -1,0 +1,109 @@
+# stranglethorn pet roster (map 0 box x -14700..-11260, y -1000..900, mobs level <= 45, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	15723	Booty Bay Reveler	1-60	Humanoid	0	0	19	15762	Melee		level > 45
+N	20102	Goblin Commoner	1	Humanoid	0	0	6	19340	Melee		npcflag 3
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	1150	River Crocolisk	30-31	Beast	6	0	13	1039	Melee		
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+Y	683	Young Panther	30-31	Beast	2	0	24	2437	Melee		
+Y	855	Young Stranglethorn Raptor	30-31	Beast	11	0	3	180	Melee		
+Y	681	Young Stranglethorn Tiger	30-31	Beast	2	0	23	598	Melee		
+Y	905	Sharptooth Frenzy	31-32	Beast	0	0	18	705	Melee		
+Y	688	Stone Maw Basilisk	31-32	Beast	0	0	5	12344	Melee		
+Y	937	Kurzen Jungle Fighter	32-33	Humanoid	0	0	16	4443	Melee		
+Y	940	Kurzen Medicine Man	32-33	Humanoid	0	0	23	4436	Melee		
+Y	1108	Mistvale Gorilla	32-33	Beast	9	0	11	843	Melee		
+Y	736	Panther	32-33	Beast	2	0	15	599	Melee		
+Y	682	Stranglethorn Tiger	32-33	Beast	2	0	23	320	Melee		
+Y	694	Bloodscalp Axe Thrower	33-34	Humanoid	0	0	10	4572	Melee		
+Y	702	Bloodscalp Scavenger	33-34	Humanoid	0	0	8	4571	Melee		
+Y	697	Bloodscalp Shaman	33-34	Humanoid	0	0	10	4573	Melee		
+Y	587	Bloodscalp Warrior	33-34	Humanoid	0	0	5	4570	Melee		
+Y	685	Stranglethorn Raptor	33-34	Beast	11	0	14	788	Melee		
+Y	699	Bloodscalp Beastmaster	34-35	Humanoid	0	0	6	4576	Melee		
+Y	595	Bloodscalp Hunter	34-35	Humanoid	0	0	18	4574	Melee		
+Y	701	Bloodscalp Mystic	34-35	Humanoid	0	0	30	4577	Melee		
+Y	588	Bloodscalp Scout	34-35	Humanoid	0	0	28	4575	Melee		
+Y	698	Bloodscalp Tiger	34-35	Beast	2	0	6	320	Melee		
+Y	689	Crystal Spine Basilisk	34-35	Beast	0	0	17	601	Melee		
+Y	1085	Elder Stranglethorn Tiger	34-35	Beast	2	0	14	698	Melee		
+Y	938	Kurzen Commando	34-35	Humanoid	0	0	15	4439	Melee		
+Y	941	Kurzen Headshrinker	34-35	Humanoid	0	0	8	4444	Melee		
+Y	943	Kurzen Wrangler	34	Humanoid	0	0	4	4438	Melee		
+Y	1097	Venture Co. Mechanic	34-35	Humanoid	0	0	7	7200	Melee		
+Y	1094	Venture Co. Miner	34-35	Humanoid	0	0	12	7201	Melee		
+Y	686	Lashtail Raptor	35-36	Beast	11	0	29	788	Melee		
+Y	4458	Murkgill Hunter	35-36	Humanoid	0	0	5	478	Melee		
+Y	4461	Murkgill Warrior	35-36	Humanoid	0	0	12	5243	Melee		
+N	879	Saltscale Hunter	35-36	Humanoid	0	1	5	1079	Melee		rank 1 (elite/rare)
+N	871	Saltscale Warrior	35-36	Humanoid	0	1	5	506	Melee		rank 1 (elite/rare)
+Y	1151	Saltwater Crocolisk	35-36	Beast	6	0	11	2548	Melee		
+Y	1152	Snapjaw Crocolisk	35-36	Beast	6	0	27	833	Melee		
+Y	1096	Venture Co. Geologist	35-36	Humanoid	0	0	40	7197	Melee		
+Y	597	Bloodscalp Berserker	36-37	Humanoid	0	0	13	4579	Melee		
+Y	671	Bloodscalp Headhunter	36-37	Humanoid	0	0	18	4580	Melee		
+Y	939	Kurzen Elite	36-37	Humanoid	0	0	14	4446	Melee		
+Y	942	Kurzen Witch Doctor	36-37	Humanoid	0	0	13	4450	Melee		
+Y	691	Lesser Water Elemental	36-37	Elemental	0	0	14	5561	Melee		
+Y	1142	Mosh'Ogg Brute	36-37	Humanoid	0	0	6	11567	Melee		
+Y	1144	Mosh'Ogg Witch Doctor	36-37	Humanoid	0	0	6	610	Melee		
+N	873	Saltscale Oracle	36-37	Humanoid	0	1	5	11293	Melee		rank 1 (elite/rare)
+Y	854	Young Jungle Stalker	36-37	Beast	11	0	4	615	Melee		
+Y	660	Bloodscalp Witch Doctor	37	Humanoid	0	0	12	4581	Melee		
+N	14487	Gluggle	37	Humanoid	0	4	4	5286	Melee		rank 4 (elite/rare)
+Y	1114	Jungle Thunderer	37-38	Beast	9	0	41	845	Melee		
+Y	684	Shadowmaw Panther	37-38	Beast	2	0	24	633	Melee		
+Y	772	Stranglethorn Tigress	37-38	Beast	2	0	52	614	Melee		
+Y	4260	Venture Co. Shredder	37	Mechanical	0	0	3	1269	Melee		
+N	2635	Elder Saltwater Crocolisk	38	Beast	6	1	4	815	Melee		rank 1 (elite/rare)
+Y	979	Kurzen Shadow Hunter	38	Humanoid	0	0	5	4454	Melee		
+Y	978	Kurzen Subchief	38	Humanoid	0	0	14	4459	Melee		
+N	14488	Roloch	38	Humanoid	0	4	6	5782	Melee		rank 4 (elite/rare)
+Y	690	Cold Eye Basilisk	39-40	Beast	0	0	19	8797	Melee		
+Y	696	Skullsplitter Axe Thrower	39-40	Humanoid	0	0	17	4622	Melee		
+Y	780	Skullsplitter Mystic	39-40	Humanoid	0	0	20	4616	Melee		
+Y	667	Skullsplitter Warrior	39-40	Humanoid	0	0	27	4632	Melee		
+N	728	Bhag'thera	40	Beast	2	1	3	613	Melee		rank 1 (elite/rare)
+Y	1562	Bloodsail Mage	40-41	Humanoid	0	0	8	2561	Melee		
+Y	1561	Bloodsail Raider	40-41	Humanoid	0	0	8	793	Melee		
+Y	1557	Elder Mistvale Gorilla	40-41	Beast	9	0	28	838	Melee		
+Y	687	Jungle Stalker	40-41	Beast	11	0	43	11317	Melee		
+Y	2544	Southern Sand Crawler	40-41	Beast	8	0	5	9573	Melee		
+Y	674	Venture Co. Strip Miner	40-41	Humanoid	0	0	25	7202	Melee		
+Y	677	Venture Co. Tinkerer	40-41	Humanoid	0	0	4	7204	Melee		
+N	709	Mosh'Ogg Warmonger	41-42	Humanoid	0	1	15	655	Melee		rank 1 (elite/rare)
+Y	784	Skullsplitter Beastmaster	41-42	Humanoid	0	0	4	4624	Melee		
+Y	669	Skullsplitter Hunter	41-42	Humanoid	0	0	9	4628	Melee		
+Y	782	Skullsplitter Scout	41-42	Humanoid	0	0	9	4625	Melee		
+Y	670	Skullsplitter Witch Doctor	41-42	Humanoid	0	0	6	4627	Melee		
+Y	1550	Thrashtail Basilisk	41-42	Beast	0	0	13	8802	Melee		
+Y	676	Venture Co. Surveyor	41-42	Humanoid	0	0	3	7203	Melee		
+Y	1563	Bloodsail Swashbuckler	42-43	Humanoid	0	0	13	796	Melee		
+Y	1564	Bloodsail Warlock	42-43	Humanoid	0	0	17	4461	Melee		
+Y	1713	Elder Shadowmaw Panther	42-43	Beast	2	0	9	11452	Melee		
+N	14491	Kurmokk	42	Beast	9	4	11	3186	Melee		rank 4 (elite/rare)
+Y	1558	Silverback Patriarch	42-43	Beast	9	0	9	844	Melee		
+N	14492	Verifonix	42	Humanoid	0	4	6	7232	Melee		rank 4 (elite/rare)
+Y	1551	Ironjaw Basilisk	43-44	Beast	0	0	21	2174	Melee		
+N	679	Mosh'Ogg Shaman	43-44	Humanoid	0	1	5	536	Melee		rank 1 (elite/rare)
+Y	1907	Naga Explorer	43-44	Humanoid	0	0	23	4923	Melee		
+Y	783	Skullsplitter Berserker	43-44	Humanoid	0	0	10	4623	Melee		
+Y	781	Skullsplitter Headhunter	43-44	Humanoid	0	0	6	4635	Melee		
+N	730	Tethis	43	Beast	11	1	3	8472	Melee		rank 1 (elite/rare)
+Y	1488	Zanzil Zombie	43-44	Undead	0	0	10	1065	Melee		
+Y	1653	Bloodsail Elder Magus	44-45	Humanoid	0	0	6	2563	Melee		
+N	672	Skullsplitter Spiritchaser	44	Humanoid	0	0	6	4621	Melee		citizen/guard/event name
+Y	1491	Zanzil Naga	44	Undead	0	0	11	4923	Melee		
+Y	1490	Zanzil Witch Doctor	44	Humanoid	0	0	6	16228	Melee		
+N	1552	Scale Belly	45	Beast	0	4	4	12342	Melee		rank 4 (elite/rare)
+N	28058	Dread Cannon	50	Mechanical	0	0	3	3146	Melee		level > 45
+N	2522	Jaguero Stalker	50	Beast	2	0	8	613	Melee		level > 45
+N	2521	Skymane Gorilla	50	Beast	9	0	13	809	Melee		level > 45
+N	11355	Gurubashi Warrior	54-55	Humanoid	0	1	3	11167	Melee		rank 1 (elite/rare)
+N	1064	Grom'gol Grunt	55	Humanoid	0	0	12	4368	Melee		level > 45
+N	16096	Steamwheedle Bruiser	55	Humanoid	0	1	3	7102	Melee		rank 1 (elite/rare)
+N	4624	Booty Bay Bruiser	57	Humanoid	0	0	54	7102	Melee		level > 45
+N	15724	Drunken Bruiser	57	Humanoid	0	0	62	7102	Melee		level > 45
+N	28052	Dread Crew	60-62	Humanoid	0	0	21	25073	Melee		level > 45
+N	6491	Spirit Healer	60	Humanoid	0	0	5	5233	Melee		npcflag 16385

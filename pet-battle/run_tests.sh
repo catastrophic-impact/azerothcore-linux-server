@@ -9,6 +9,7 @@ luajit pet-battle/test_store.lua || fail=1
 luajit pet-battle/test_rules.lua || fail=1
 luajit pet-battle/test_levels.lua || fail=1
 luajit pet-battle/test_describe.lua || fail=1
+luajit pet-battle/test_levelup_wiring.lua || fail=1
 luajit pet-battle/test_abilities.lua || fail=1
 luajit pet-battle/test_passives.lua || fail=1
 luajit pet-battle/test_auras.lua || fail=1

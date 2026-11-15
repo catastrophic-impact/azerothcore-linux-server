@@ -284,6 +284,27 @@ local function AuraTrigger(id)   -- event after which the aura removes itself (1
     for _, f in ipairs(t.fx) do if f.prop == 49 then return t.event end end
 end
 
+-- DISPLAY ONLY (never changes engine rules): a damaging aura an ENEMY put on this pet is a debuff even when it has no state data (Rust/Creeping Fungus, Leech Seed, Acid Touch...);
+-- Toxic Skin is a damaging BUFF (thorns). The status/log also uses the caster's flavored ability name (Rust) instead of the retail aura name (Creeping Fungus).
+local DISPLAY_DMG = { [24] = true, [222] = true, [96] = true, [62] = true, [65] = true, [54] = true, [52] = true, [172] = true, [178] = true }
+local NOT_HOSTILE = { [1086] = true }
+local function DisplayHostile(id)
+    local ab = R.abilities[id]
+    if not ab or NOT_HOSTILE[id] then return false end
+    for _, t in ipairs(ab.turns or {}) do for _, f in ipairs(t.fx) do if DISPLAY_DMG[f.prop] then return true end end end
+    return false
+end
+local function AuraGood(id, states, holder, src) return Beneficial(states) and not (src and src ~= holder and DisplayHostile(id)) end
+local function AuraNameFor(id, src)
+    if src and src.abil then for _, ab in ipairs(src.abil) do
+        local ra = ab.id and R.abilities[ab.id]
+        if ra and ab.name and ab.name ~= ra.name then
+            for _, t in ipairs(ra.turns or {}) do for _, f in ipairs(t.fx) do if f.aura == id then return ab.name end end end
+        end
+    end end
+    return AuraName(id)
+end
+
 -- apply aura `id` to pet (side s, index idx). duration in rounds; skipTick = it does not lose a round at the end of the round it was applied in
 local HOSTILE_FX = { [24] = true, [222] = true, [54] = true, [52] = true, [172] = true, [178] = true }
 local function MainTurns(ab)
@@ -311,7 +332,7 @@ local function ApplyAura(b, ev, s, idx, id, duration, skipTick, maxStacks, sourc
                                        pwr = source and source.power, fam = (ab0 and ab0.family and ab0.family >= 0 and Rules.FAMILIES[ab0.family + 1]) or (source and (source.useFam or source.family)), src = source, charges = states.Special_BlockedAttackCount }
     end
     SyncMax(pet)
-    ev[#ev + 1] = { k = Beneficial(states) and "buff" or "debuff", side = s, idx = idx, what = AuraName(id):lower(), turns = duration }
+    ev[#ev + 1] = { k = AuraGood(id, states, pet, source) and "buff" or "debuff", side = s, idx = idx, what = AuraNameFor(id, source):lower(), turns = duration }
 end
 local function RemoveAura(pet, id)
     for i = #pet.auras, 1, -1 do if pet.auras[i].id == id then table.remove(pet.auras, i) end end
@@ -325,10 +346,11 @@ function C.StatusList(p)
     local t, seen = {}, {}
     for _, a in ipairs(p.auras) do
         local e = seen[a.id]
-        if e then e.stacks = e.stacks + 1; e.turns = math.max(e.turns, a.left)
+        if AuraName(a.id):find("Server Only") then   -- internal bookkeeping aura (speed priority): works in the engine, never shown to the player
+        elseif e then e.stacks = e.stacks + 1; if a.left < 90 then e.turns = math.max(e.turns, a.left) end
         else
-            local good = Beneficial(a.states)
-            e = { label = AuraName(a.id), tip = C.AuraTip(a.id, a.pwr or p.power), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = a.left, stacks = 1, bad = not good }
+            local good = AuraGood(a.id, a.states, p, a.src)
+            e = { label = AuraNameFor(a.id, a.src), tip = C.AuraTip(a.id, a.pwr or p.power), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = (a.left >= 90) and 0 or a.left, stacks = 1, bad = not good }
             if a.states.untargettable then e.icon = "Ability_Stealth" elseif a.states.Stat_Dodge then e.icon = "Ability_Rogue_Feint"
             elseif a.states.Mod_SpeedPercent then e.icon = "Ability_Rogue_Sprint" elseif a.states.Mechanic_IsStunned then e.icon = "Spell_Frost_Stun"
             elseif a.states.Mechanic_IsBleeding then e.icon = "Ability_Rogue_Rupture" elseif a.states.Mechanic_IsPoisoned then e.icon = "Ability_Rogue_DualWeild"

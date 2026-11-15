@@ -1,0 +1,60 @@
+# blasted pet roster (map 0 box x -12400..-10950, y -3950..-2650, mobs level <= 56, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	16398	Necropolis Proxy	1	Not specified	0	0	6	16925	Melee		type Not specified
+N	16386	Necropolis Relay	1	Not specified	0	0	6	16925	Melee		type Not specified
+N	16356	Scourge Invasion Minion, finder	1	Not specified	0	0	168	11686	Melee		type Not specified
+Y	750	Marsh Inkspewer	42-43	Humanoid	0	0	4	1995	Melee		
+Y	751	Marsh Flesheater	43-44	Humanoid	0	0	6	391	Melee		
+Y	752	Marsh Oracle	44-45	Humanoid	0	0	3	386	Melee		
+Y	5984	Starving Snickerfang	45-46	Beast	25	0	10	8050	Melee		
+Y	5979	Wretched Lost One	45-47	Humanoid	0	0	3	152	Melee		
+Y	5982	Black Slayer	46-48	Beast	7	0	4	10824	Melee		
+Y	5990	Redstone Basilisk	47-48	Beast	0	0	5	2743	Melee		
+Y	5992	Ashmane Boar	48-49	Beast	5	0	5	3026	Melee		
+Y	5983	Bonepicker	49-50	Beast	7	0	5	1105	Melee		
+N	8302	Deatheye	49	Beast	0	4	13	2174	Melee		rank 4 (elite/rare)
+N	6001	Nethergarde Analyst	49-51	Humanoid	0	0	3	6713	Melee		excluded (hand: NPC/event)
+N	6000	Nethergarde Cleric	49-51	Humanoid	0	0	3	6731	Melee		excluded (hand: NPC/event)
+N	5999	Nethergarde Soldier	49-50	Humanoid	0	0	44	6727	Melee		excluded (hand: NPC/event)
+Y	5985	Snickerfang Hyena	49-50	Beast	25	0	9	2714	Melee		
+Y	8675	Felbeast	50-51	Demon	0	0	11	7949	Melee		
+N	8303	Grunter	50	Beast	5	4	18	8870	Melee		rank 4 (elite/rare)
+N	6003	Nethergarde Officer	50-51	Humanoid	0	0	5	6752	Melee		excluded (hand: NPC/event)
+Y	5988	Scorpok Stinger	50-51	Beast	20	0	15	6068	Melee		
+N	8300	Ravage	51	Beast	25	4	14	10904	Melee		rank 4 (elite/rare)
+Y	5991	Redstone Crystalhide	51-52	Beast	0	0	11	798	Melee		
+Y	6004	Shadowsworn Cultist	51-52	Humanoid	0	0	21	7838	Melee		
+Y	5993	Helboar	52-53	Demon	0	0	8	11410	Melee		
+Y	6006	Shadowsworn Adept	52-53	Humanoid	0	0	20	6770	Melee		
+Y	6005	Shadowsworn Thug	52-53	Humanoid	0	0	20	6793	Melee		
+N	8299	Spiteflayer	52	Beast	7	4	15	388	Melee		rank 4 (elite/rare)
+N	8301	Clack the Reaver	53	Beast	20	4	17	10983	Melee		rank 4 (elite/rare)
+Y	5977	Dreadmaul Mauler	53-54	Humanoid	0	0	9	14401	Melee		
+Y	6007	Shadowsworn Enforcer	53-54	Humanoid	0	0	3	6787	Melee		
+Y	6008	Shadowsworn Warlock	53-54	Humanoid	0	0	4	6789	Melee		
+N	8298	Akubar the Seer	54	Humanoid	0	4	8	10920	Melee		rank 4 (elite/rare)
+Y	5978	Dreadmaul Warlock	54-55	Humanoid	0	0	7	11543	Melee		
+N	6011	Felguard Sentry	54-55	Demon	0	0	6	9017	Melee		citizen/guard/event name
+Y	6010	Felhound	54-55	Demon	0	0	6	1913	Melee		
+N	7670	Servant of Allistarj	54-55	Humanoid	0	0	3	6855	Melee		excluded (hand: NPC/event)
+N	7851	Nethergarde Elite	55	Humanoid	0	1	8	7910	Melee		rank 1 (elite/rare)
+N	8297	Magronos the Unyielding	56	Humanoid	0	4	10	11564	Melee		rank 4 (elite/rare)
+N	19311	Portal Hound	57-58	Demon	0	0	6	18880	Melee		level > 56
+N	7668	Servant of Razelikh	57	Humanoid	0	0	7	6847	Melee		level > 56
+N	616141	Ghoul Berserker	59-60	Undead	0	0	43	24993	Melee		level > 56
+N	616299	Skeletal Shocktrooper	59-60	Undead	0	0	44	12074	Melee		level > 56
+N	616298	Spectral Soldier	59-60	Undead	0	0	43	16169	Melee		level > 56
+N	19365	Argent Bowman	60	Humanoid	0	0	6	19001	Melee		level > 56
+N	19322	Argent Guardian	60	Humanoid	0	0	4	10727	Melee		level > 56
+N	19366	Argent Hunter	60	Humanoid	0	0	3	19428	Melee		level > 56
+N	19320	Argent Protector	60	Humanoid	0	0	6	11407	Melee		level > 56
+N	616230	Cultist Engineer	60	Not specified	0	0	24	16151	Melee		npcflag 1
+N	19286	Invading Fel Stalker	60	Demon	0	0	3	1913	Melee		level > 56
+N	19284	Invading Felguard	60	Demon	0	0	10	14255	Melee		level > 56
+N	19287	Invading Voidwalker	60	Demon	0	0	6	16575	Melee		level > 56
+N	8718	Manahound	60	Demon	0	1	5	6173	Melee		rank 1 (elite/rare)
+N	12396	Doomguard Commander	61	Demon	0	1	6	4426	Melee		rank 1 (elite/rare)
+N	8717	Felguard Elite	61	Demon	0	1	8	7970	Melee		rank 1 (elite/rare)
+N	19288	Dreadknight	63	Demon	0	1	3	10691	Melee		rank 1 (elite/rare)
+N	616136	Necrotic Shard	70	Not specified	0	0	6	16135	Melee		level > 56

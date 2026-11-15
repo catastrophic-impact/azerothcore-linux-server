@@ -162,6 +162,14 @@ for _, enemy in ipairs(ids) do
             end
             if o.kind ~= "player" and not o.despawned then problem(name .. ": a " .. o.kind .. " (entry " .. o.entry .. ") is still in the world after the battle") end
         end
+        -- status durations the player sees must be real round counts: "until used" effects (stored as 99 internally) show no number (user report: Rake showed 99 turns)
+        for _, m in ipairs(sent) do
+            if m.action == "tag" or m.action == "tag2" then
+                for label, turns in m.payload:gmatch("([^~;|]+)~[^~;]+~(%d+)~%d+~%d") do
+                    if tonumber(turns) > 12 then problem(name .. ": status '" .. label .. "' shows " .. turns .. " turns") end
+                end
+            end
+        end
         -- text hygiene
         for _, m in ipairs(sent) do
             if m.action == "abil" or m.action == "eabil" or m.action == "stip" then

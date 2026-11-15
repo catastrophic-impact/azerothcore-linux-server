@@ -1,0 +1,77 @@
+# azshara pet roster (map 1 box x 2000..4950, y -8200..-4400, mobs level <= 56, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+N	14499	Horde Orphan	1-3	Humanoid	0	0	5	14589	Melee		excluded (hand: NPC/event)
+N	16398	Necropolis Proxy	1	Not specified	0	0	3	16925	Melee		type Not specified
+N	16386	Necropolis Relay	1	Not specified	0	0	4	16925	Melee		type Not specified
+N	16356	Scourge Invasion Minion, finder	1	Not specified	0	0	112	11686	Melee		type Not specified
+N	8386	Horizon Scout Crewman	42	Humanoid	0	0	8	7595	Melee		excluded (hand: NPC/event)
+Y	8759	Mosshoof Runner	45-47	Beast	0	0	8	8013	Melee		
+Y	6190	Spitelash Warrior	46-47	Humanoid	0	0	28	6747	Melee		
+Y	6184	Timbermaw Pathfinder	46-47	Humanoid	0	0	10	936	Melee		
+Y	6193	Spitelash Screamer	47-48	Humanoid	0	0	23	6749	Melee		
+Y	6185	Timbermaw Warrior	47-48	Humanoid	0	0	16	6825	Melee		
+Y	8762	Timberweb Recluse	47-48	Beast	3	0	24	8014	Melee		
+Y	7864	Lingering Highborne	48-50	Undead	0	0	6	146	Melee		
+N	6194	Spitelash Serpent Guard	48-49	Humanoid	0	0	41	6748	Melee		citizen/guard/event name
+Y	6377	Thunderhead Stagwing	48-50	Beast	0	0	36	10894	Melee		
+Y	8763	Mistwing Rogue	49-50	Beast	38	0	6	12682	Melee		
+Y	8760	Mosshoof Stag	49-50	Beast	0	0	3	2161	Melee		
+Y	6187	Timbermaw Den Watcher	49-50	Humanoid	0	0	14	6826	Melee		
+N	193	Blue Dragonspawn	50-51	Dragonkin	0	1	7	196	Melee		rank 1 (elite/rare)
+Y	6369	Coralshell Tortoise	50-52	Beast	21	0	4	2308	Melee		
+Y	6372	Makrinni Snapclaw	50-51	Humanoid	0	0	3	2600	Melee		
+Y	6196	Spitelash Myrmidon	50-51	Humanoid	0	0	64	11265	Melee		
+Y	6378	Thunderhead Skystormer	50-52	Beast	0	0	65	10893	Melee		
+Y	6188	Timbermaw Shaman	50-51	Humanoid	0	0	31	2000	Melee		
+N	6198	Blood Elf Surveyor	51-52	Humanoid	0	0	12	18982	Melee		excluded (hand: NPC/event)
+N	6131	Draconic Mageweaver	51-52	Dragonkin	0	1	22	6761	Melee		rank 1 (elite/rare)
+Y	6201	Legashi Rogue	51-53	Demon	0	0	17	6743	Melee		
+Y	6200	Legashi Satyr	51-52	Demon	0	0	16	2878	Melee		
+Y	6195	Spitelash Siren	51-52	Humanoid	0	0	91	11266	Melee		
+Y	6371	Storm Bay Warrior	51-52	Humanoid	0	0	21	506	Melee		
+Y	6189	Timbermaw Ursa	51-52	Humanoid	0	0	29	6746	Melee		
+Y	6347	Young Wavethrasher	51-52	Beast	0	0	8	10900	Melee		
+N	6199	Blood Elf Reclaimer	52-53	Humanoid	0	0	18	18980	Melee		excluded (hand: NPC/event)
+N	6130	Blue Scalebane	52-53	Dragonkin	0	1	17	6760	Melee		rank 1 (elite/rare)
+N	6148	Cliff Walker	52-53	Giant	0	1	26	12813	Melee		rank 1 (elite/rare)
+N	8766	Forest Ooze	52-53	Not specified	0	0	14	1306	Melee		type Not specified
+Y	6202	Legashi Hellcaller	52-53	Demon	0	0	15	11338	Melee		
+Y	6370	Makrinni Scrabbler	52-53	Humanoid	0	0	18	10922	Melee		
+Y	8764	Mistwing Ravager	52-53	Beast	38	0	10	4269	Melee		
+Y	8761	Mosshoof Courser	52-53	Beast	0	0	122	10957	Melee		
+Y	6380	Thunderhead Consort	52-54	Beast	0	0	42	10891	Melee		
+Y	6379	Thunderhead Patriarch	52-54	Beast	0	0	26	10892	Melee		
+Y	6348	Wavethrasher	52-53	Beast	0	0	18	10899	Melee		
+Y	6135	Arkkoran Clacker	53-54	Humanoid	0	0	24	2599	Melee		
+Y	6136	Arkkoran Muckdweller	53-54	Humanoid	0	0	18	5025	Melee		
+N	6147	Cliff Thunderer	53-54	Giant	0	1	29	12814	Melee		rank 1 (elite/rare)
+Y	6352	Coralshell Lurker	53-54	Beast	21	0	45	10947	Melee		
+N	6129	Draconic Magelord	53-54	Dragonkin	0	1	5	6762	Melee		rank 1 (elite/rare)
+Y	6349	Great Wavethrasher	53-54	Beast	0	0	30	10897	Melee		
+N	6143	Servant of Arkkoroc	53-54	Giant	0	1	12	12812	Melee		rank 1 (elite/rare)
+Y	7885	Spitelash Battlemaster	53-54	Humanoid	0	0	19	11267	Melee		
+Y	6138	Arkkoran Oracle	54-55	Humanoid	0	0	20	11293	Melee		
+Y	6137	Arkkoran Pincer	54-55	Humanoid	0	0	23	1817	Melee		
+N	6146	Cliff Breaker	54-55	Giant	0	1	24	1918	Melee		rank 1 (elite/rare)
+Y	6350	Makrinni Razorclaw	54-55	Humanoid	0	0	24	1247	Melee		
+N	12125	Mammoth Shark	54	Beast	0	1	7	12207	Melee		rank 1 (elite/rare)
+N	6144	Son of Arkkoroc	54-55	Giant	0	1	8	4945	Melee		rank 1 (elite/rare)
+Y	7886	Spitelash Enchantress	54-55	Humanoid	0	0	11	11268	Melee		
+Y	6351	Storm Bay Oracle	54-55	Humanoid	0	0	26	386	Melee		
+N	3296	Orgrimmar Grunt	55	Humanoid	0	0	4	4259	Melee		npcflag 1
+N	31416	Orgrimmar Grunt	55	Humanoid	0	0	6	4259	Melee		excluded (hand: NPC/event)
+N	14462	Thundering Invader	55-57	Elemental	0	0	4	14505	Melee		level > 56
+N	13322	Hydraxian Honor Guard	57-58	Elemental	0	1	7	5564	Melee		rank 1 (elite/rare)
+N	616141	Ghoul Berserker	59-60	Undead	0	0	26	24993	Melee		level > 56
+N	7461	Hederine Initiate	59-60	Demon	0	1	10	10924	Melee		rank 1 (elite/rare)
+N	7462	Hederine Manastalker	59-60	Demon	0	1	9	6172	Melee		rank 1 (elite/rare)
+N	7463	Hederine Slayer	59-60	Demon	0	1	8	9018	Melee		rank 1 (elite/rare)
+N	616299	Skeletal Shocktrooper	59-60	Undead	0	0	33	12074	Melee		level > 56
+N	616298	Spectral Soldier	59-60	Undead	0	0	31	16169	Melee		level > 56
+N	616230	Cultist Engineer	60	Not specified	0	0	16	16151	Melee		npcflag 1
+N	32666	Expert's Training Dummy	60	Mechanical	0	0	4	28047	Melee		level > 56
+N	6491	Spirit Healer	60	Humanoid	0	0	4	5233	Melee		npcflag 16385
+N	32667	Master's Training Dummy	70	Mechanical	0	0	4	28047	Melee		level > 56
+N	616136	Necrotic Shard	70	Not specified	0	0	4	16135	Melee		level > 56
+N	31144	Grandmaster's Training Dummy	80	Mechanical	0	0	4	16074	Melee		level > 56

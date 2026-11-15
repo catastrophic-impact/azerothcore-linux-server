@@ -7,7 +7,7 @@
 local D = require("pb_data")
 local Store = require("pb_store")
 
-local ZONES = { [406] = true, [1377] = true, [490] = true, [400] = true, [440] = true, [357] = true, [405] = true, [331] = true, [11] = true, [51] = true, [47] = true, [267] = true, [10] = true, [46] = true, [3] = true, [45] = true, [3525] = true, [3433] = true, [44] = true, [38] = true, [148] = true, [130] = true, [3524] = true, [3430] = true, [85] = true, [215] = true, [141] = true, [12] = true, [1] = true, [14] = true, [40] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials), Westfall (40). Add more zones here later (and a D.zones row in pb_data.lua).
+local ZONES = { [36] = true, [493] = true, [618] = true, [361] = true, [15] = true, [17] = true, [16] = true, [28] = true, [8] = true, [33] = true, [139] = true, [41] = true, [4] = true, [406] = true, [1377] = true, [490] = true, [400] = true, [440] = true, [357] = true, [405] = true, [331] = true, [11] = true, [51] = true, [47] = true, [267] = true, [10] = true, [46] = true, [3] = true, [45] = true, [3525] = true, [3433] = true, [44] = true, [38] = true, [148] = true, [130] = true, [3524] = true, [3430] = true, [85] = true, [215] = true, [141] = true, [12] = true, [1] = true, [14] = true, [40] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials), Westfall (40). Add more zones here later (and a D.zones row in pb_data.lua).
 local TICK_MS = 12000
 local SEARCH = 60               -- how far from a player real mobs are looked for
 local SPACING = 90              -- at most one wild pet per species within this distance of each other

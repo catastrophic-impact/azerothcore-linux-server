@@ -1,0 +1,135 @@
+# barrens pet roster (map 1 box x -4600..1100, y -3490..-1510, mobs level <= 28, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	3300	Adder	1	Critter	0	0	56	1206	Melee		already a species
+Y	3835	Biletoad	1	Critter	0	0	11	1924	Melee		
+N	32823	Bountiful Table	1	Not specified	0	0	3	28293	Melee		type Not specified
+Y	3444	Dig Rat	1	Critter	0	0	14	1418	Melee		
+N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
+Y	2620	Prairie Dog	1	Critter	0	0	25	1072	Melee		already a species
+Y	2914	Snake	1	Critter	0	0	36	1206	Melee		already a species
+N	14894	Swarm of bees	1	Not specified	0	0	4	14985	Melee		type Not specified
+Y	1420	Toad	1	Critter	0	0	54	901	Melee		already a species
+Y	4166	Gazelle	3	Critter	0	0	45	1547	Melee		
+Y	12296	Sickly Gazelle	3	Critter	0	0	64	14951	Melee		
+Y	10685	Swine	3	Critter	0	0	12	10015	Melee		
+N	14901	Peon	4	Humanoid	0	0	16	10038	Melee		excluded (hand: NPC/event)
+Y	3379	Burning Blade Bruiser	10-11	Humanoid	0	0	26	4198	Melee		
+Y	3268	Razormane Thornweaver	10-11	Humanoid	0	0	13	6096	Melee		
+Y	3267	Razormane Water Seeker	10-11	Humanoid	0	0	18	1964	Melee		
+Y	3380	Burning Blade Acolyte	11-12	Humanoid	0	0	19	4196	Melee		
+Y	3244	Greater Plainstrider	11-12	Beast	12	0	93	178	Melee		
+Y	3265	Razormane Hunter	11-12	Humanoid	0	0	9	6094	Melee		
+Y	3415	Savannah Huntress	11-12	Beast	2	0	47	1056	Melee		
+Y	3254	Sunscale Lashtail	11-13	Beast	11	0	17	1744	Melee		
+Y	3246	Fleeting Plainstrider	12-13	Beast	12	0	135	1284	Melee		
+Y	3272	Kolkar Wrangler	12-13	Humanoid	0	0	70	9442	Melee		
+Y	3266	Razormane Defender	12-13	Humanoid	0	0	22	1253	Melee		
+Y	3269	Razormane Geomancer	12-13	Humanoid	0	0	17	6093	Melee		
+Y	3243	Savannah Highmane	12-13	Beast	2	0	6	1973	Melee		
+Y	4316	Kolkar Packhound	13	Beast	25	0	12	1535	Melee		
+Y	3273	Kolkar Stormer	13-14	Humanoid	0	0	54	9443	Melee		
+Y	3271	Razormane Mystic	13-14	Humanoid	0	0	6	4643	Melee		
+Y	3255	Sunscale Screecher	13-15	Beast	11	0	150	1747	Melee		
+N	3285	Venture Co. Peon	13-14	Humanoid	0	0	15	355	Melee		excluded (hand: NPC/event)
+Y	3242	Zhevra Runner	13-14	Beast	0	0	133	6087	Melee		
+Y	3397	Kolkar Bloodcharger	14-15	Humanoid	0	0	18	9447	Melee		
+Y	3274	Kolkar Pack Runner	14-15	Humanoid	0	0	12	9445	Melee		
+Y	3234	Lost Barrens Kodo	14-15	Beast	0	0	25	10918	Melee		
+Y	3425	Savannah Prowler	14-15	Beast	2	0	87	1973	Melee		
+N	3284	Venture Co. Drudger	14-15	Humanoid	0	0	37	355	Melee		excluded (hand: NPC/event)
+Y	3276	Witchwing Harpy	14-15	Humanoid	0	0	15	3218	Melee		
+Y	3248	Barrens Giraffe	15-16	Beast	0	0	58	4473	Melee		
+N	3630	Deviate Coiler	15-16	Beast	27	1	4	1742	Melee		rank 1 (elite/rare)
+N	3632	Deviate Creeper	15-16	Beast	11	1	12	1744	Melee		rank 1 (elite/rare)
+N	3634	Deviate Stalker	15-17	Beast	11	1	4	1746	Melee		rank 1 (elite/rare)
+Y	4127	Hecklefang Hyena	15-16	Beast	25	0	93	2710	Melee		
+Y	3275	Kolkar Marauder	15-16	Humanoid	0	0	14	4874	Melee		
+Y	3461	Oasis Snapjaw	15-16	Beast	21	0	37	6368	Melee		
+Y	3241	Savannah Patriarch	15-16	Beast	2	0	6	1977	Melee		
+Y	3282	Venture Co. Mercenary	15-16	Humanoid	0	0	11	3912	Melee		
+Y	3277	Witchwing Roguefeather	15-16	Humanoid	0	0	7	2162	Melee		
+Y	3260	Bristleback Water Seeker	16-17	Humanoid	0	0	32	1274	Melee		
+N	3641	Deviate Lurker	16-17	Beast	0	1	8	1752	Melee		rank 1 (elite/rare)
+N	3633	Deviate Slayer	16-17	Beast	11	1	14	949	Melee		rank 1 (elite/rare)
+N	3631	Deviate Stinglash	16-17	Beast	27	1	7	4091	Melee		rank 1 (elite/rare)
+N	3638	Devouring Ectoplasm	16-17	Not specified	0	1	10	4266	Melee		rank 1 (elite/rare)
+Y	3245	Ornery Plainstrider	16-17	Beast	12	0	68	6076	Melee		
+Y	3256	Sunscale Scytheclaw	16-18	Beast	11	0	67	4442	Melee		
+Y	3258	Bristleback Hunter	17-18	Humanoid	0	0	57	4745	Melee		
+Y	3426	Zhevra Charger	17-18	Beast	0	0	44	2187	Melee		
+Y	3261	Bristleback Thornweaver	18-19	Humanoid	0	0	29	6077	Melee		
+Y	4129	Hecklefang Snarler	18-19	Beast	25	0	28	2711	Melee		
+N	3655	Mad Magglish	18	Humanoid	0	1	3	7221	Melee		rank 1 (elite/rare)
+Y	3240	Stormsnout	18-19	Beast	0	0	70	1537	Melee		
+Y	3247	Thunderhawk Hatchling	18-20	Beast	27	0	14	1742	Melee		
+Y	3463	Wandering Barrens Giraffe	18-19	Beast	0	0	37	2193	Melee		
+Y	3236	Barrens Kodo	19-20	Beast	0	0	11	1453	Melee		
+Y	3263	Bristleback Geomancer	19-20	Humanoid	0	0	32	6091	Melee		
+Y	3456	Razormane Pathfinder	20-21	Humanoid	0	0	13	1964	Melee		
+Y	3250	Silithid Creeper	20-21	Beast	20	0	25	2730	Melee		
+Y	3251	Silithid Grub	20	Beast	0	0	24	7572	Melee		
+Y	3424	Thunderhawk Cloudscraper	20-22	Beast	27	0	6	1975	Melee		
+Y	3239	Thunderhead	20-21	Beast	0	0	51	1538	Melee		
+Y	3466	Zhevra Courser	20-21	Beast	0	0	33	6086	Melee		
+Y	3374	Bael'dun Excavator	21-22	Humanoid	0	0	29	1968	Melee		
+Y	3252	Silithid Swarmer	21-22	Beast	20	0	28	2731	Melee		
+Y	3375	Bael'dun Foreman	22-23	Humanoid	0	0	8	1970	Melee		
+Y	4128	Hecklefang Stalker	22-23	Beast	25	0	37	2712	Melee		
+Y	3474	Lakota'mani	22	Beast	0	0	4	1241	Melee		
+Y	3457	Razormane Stalker	22-23	Humanoid	0	0	17	1253	Melee		
+Y	3238	Stormhide	22-23	Beast	0	0	42	1539	Melee		
+Y	3376	Bael'dun Soldier	23-24	Humanoid	0	0	17	3839	Melee		
+Y	3249	Greater Thunderhawk	23-24	Beast	27	0	16	1974	Melee		
+N	6132	Razorfen Servitor	23-24	Humanoid	0	1	4	1343	Melee		rank 1 (elite/rare)
+Y	3458	Razormane Seer	23-24	Humanoid	0	0	21	6095	Melee		
+Y	3377	Bael'dun Rifleman	24-25	Humanoid	0	0	15	3837	Melee		
+Y	3235	Greater Barrens Kodo	24-25	Beast	0	0	4	1232	Melee		
+N	3392	Prospector Khazgorm	24	Humanoid	0	0	4	1400	Melee		npcflag 4224
+Y	3459	Razormane Warfrenzy	24-25	Humanoid	0	0	16	4751	Melee		
+Y	3472	Washte Pawne	25	Beast	27	0	4	2699	Melee		
+Y	3237	Wooly Kodo	25-26	Beast	0	0	4	10914	Melee		
+Y	3378	Bael'dun Officer	26	Humanoid	0	0	11	3870	Melee		
+N	14718	Horde Laborer	26-27	Humanoid	0	0	6	11857	Melee		excluded (hand: NPC/event)
+N	15760	Winter Reveler	30-40	Humanoid	0	0	4	15713	Melee		npcflag 1
+N	7872	Death's Head Cultist	33-34	Humanoid	0	1	9	6098	Melee		rank 1 (elite/rare)
+N	7873	Razorfen Battleguard	33-34	Humanoid	0	1	36	6108	Melee		rank 1 (elite/rare)
+N	7874	Razorfen Thornweaver	33-34	Humanoid	0	1	12	1963	Melee		rank 1 (elite/rare)
+N	4351	Bloodfen Raptor	35-36	Beast	11	0	5	2571	Melee		level > 28
+N	4376	Darkmist Spider	35-36	Beast	3	0	13	545	Melee		level > 28
+N	4341	Drywallow Crocolisk	35-36	Beast	6	0	17	1080	Melee		level > 28
+N	4346	Noxious Flayer	35-36	Beast	27	0	5	2700	Melee		level > 28
+N	4834	Theramore Infiltrator	35-36	Humanoid	0	0	16	4675	Melee		level > 28
+N	23720	Theramore Prisoner	35	Humanoid	0	0	7	2978	Melee		level > 28
+N	5184	Theramore Sentry	35-36	Humanoid	0	0	21	4677	Melee		level > 28
+N	4382	Withervine Creeper	35-36	Elemental	0	0	26	2024	Melee		level > 28
+N	4352	Bloodfen Screecher	36-37	Beast	11	0	6	1962	Melee		level > 28
+N	4378	Darkmist Recluse	36-37	Beast	3	0	6	2538	Melee		level > 28
+N	23592	Grimtotem Breaker	36-37	Humanoid	0	0	15	21656	Melee		level > 28
+N	23714	Grimtotem Elder	36-37	Humanoid	0	0	6	21653	Melee		level > 28
+N	23593	Grimtotem Spirit-Shifter	36-37	Humanoid	0	0	7	21653	Melee		level > 28
+N	4414	Darkfang Venomspitter	37-38	Beast	3	0	6	2542	Melee		level > 28
+N	4343	Drywallow Snapper	37-38	Beast	6	0	48	814	Melee		level > 28
+N	4347	Noxious Reaver	37-38	Beast	27	0	13	2707	Melee		level > 28
+N	5057	Theramore Deserter	37	Humanoid	0	0	28	3016	Melee		level > 28
+N	4387	Withervine Mire Beast	37-38	Elemental	0	0	10	1549	Melee		level > 28
+N	4412	Darkfang Creeper	38-39	Beast	3	0	51	2546	Melee		level > 28
+N	4379	Darkmist Silkspinner	38-39	Beast	3	0	19	2541	Melee		level > 28
+N	23594	Grimtotem Destroyer	38-39	Humanoid	0	0	11	21663	Melee		level > 28
+N	23595	Grimtotem Earthbinder	38-39	Humanoid	0	0	6	21658	Melee		level > 28
+N	4344	Mottled Drywallow Crocolisk	38-39	Beast	6	0	60	2548	Melee		level > 28
+N	4348	Noxious Shredder	38-39	Beast	27	0	27	2708	Melee		level > 28
+N	4385	Withervine Rager	38-39	Elemental	0	0	10	697	Melee		level > 28
+N	4356	Bloodfen Razormaw	39-40	Beast	11	0	14	1962	Melee		level > 28
+N	4357	Bloodfen Lashtail	40-41	Beast	11	0	16	2574	Melee		level > 28
+N	4345	Drywallow Daggermaw	40-41	Beast	6	0	36	807	Melee		level > 28
+N	3501	Horde Guard	40	Humanoid	0	0	40	4261	Melee		level > 28
+N	4329	Firemane Scout	41-42	Dragonkin	0	1	18	143	Melee		rank 1 (elite/rare)
+N	4323	Searing Hatchling	41-42	Dragonkin	0	0	14	715	Melee		level > 28
+N	4331	Firemane Ash Tail	42-43	Dragonkin	0	1	19	8249	Melee		rank 1 (elite/rare)
+N	4324	Searing Whelp	42-43	Dragonkin	0	0	6	397	Melee		level > 28
+N	4328	Firemane Scalebane	43-44	Dragonkin	0	1	5	8310	Melee		rank 1 (elite/rare)
+N	10036	Brackenwall Enforcer	55	Humanoid	0	0	16	10704	Melee		level > 28
+N	14717	Horde Elite	55	Humanoid	0	1	8	14716	Melee		rank 1 (elite/rare)
+N	23636	Mudsprocket Bruiser	55	Humanoid	0	0	5	21698	Melee		level > 28
+N	6491	Spirit Healer	60	Humanoid	0	0	11	5233	Melee		npcflag 16385

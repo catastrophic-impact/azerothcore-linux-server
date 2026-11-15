@@ -114,6 +114,7 @@ R.species[959] = { name = "Cragmaw", family = "Aquatic", stats = {  }, abil = { 
 R.species[960] = { name = "Gnasher", family = "Aquatic", stats = {  }, abil = { { 0, 1, 803 }, { 1, 1, 538 }, { 2, 1, 423 } } }
 R.species[961] = { name = "Chomps", family = "Aquatic", stats = {  }, abil = { { 0, 1, 803 }, { 1, 1, 509 }, { 2, 1, 538 } } }
 R.species[964] = { name = "Arcanus", family = "Magic", stats = {  }, abil = { { 0, 1, 484 }, { 1, 1, 486 }, { 2, 1, 488 } } }
+R.species[999] = { name = "Needleback", family = "Aquatic", stats = {  }, abil = { { 0, 1, 376 }, { 1, 2, 249 }, { 2, 4, 566 } } }
 R.species[1073] = { name = "Terky", family = "Humanoid", stats = { Stat_Power = 0, Stat_Speed = 0, Stat_Stamina = 0 }, abil = { { 0, 1, 111 }, { 0, 10, 193 }, { 1, 2, 756 }, { 1, 15, 757 }, { 2, 4, 350 }, { 2, 20, 163 } } }
 R.species[1143] = { name = "Giant Bone Spider", family = "Undead", stats = {  }, abil = { { 0, 1, 648 }, { 0, 10, 380 }, { 1, 2, 339 }, { 1, 15, 212 }, { 2, 4, 383 }, { 2, 20, 780 } } }
 R.species[1146] = { name = "Stitched Pup", family = "Undead", stats = {  }, abil = { { 0, 1, 499 }, { 0, 10, 360 }, { 1, 2, 666 }, { 1, 15, 362 }, { 2, 4, 665 }, { 2, 20, 657 } } }
@@ -153,6 +154,8 @@ R.species[1631] = { name = "Hyjal Wisp", family = "Magic", stats = {  }, abil = 
 R.species[1634] = { name = "Wretched Servant", family = "Humanoid", stats = {  }, abil = { { 0, 1, 219 }, { 0, 10, 608 }, { 1, 2, 160 }, { 1, 15, 471 }, { 2, 4, 592 }, { 2, 20, 1231 } } }
 R.species[1688] = { name = "Crusher", family = "Humanoid", stats = { Stat_Power = 50, Stat_Speed = -100, Stat_Stamina = 50 }, abil = { { 0, 1, 756 }, { 0, 10, 406 }, { 1, 2, 1380 }, { 1, 15, 1073 }, { 2, 4, 532 }, { 2, 20, 390 } } }
 R.species[1692] = { name = "Savage Cub", family = "Beast", stats = {  }, abil = { { 0, 1, 429 }, { 0, 10, 535 }, { 1, 2, 492 }, { 1, 15, 357 }, { 2, 4, 538 }, { 2, 20, 536 } } }
+R.species[1709] = { name = "Fledgling Kingfeather", family = "Flying", stats = { Stat_Power = 100, Stat_Speed = -100 }, abil = { { 0, 1, 420 }, { 0, 10, 202 }, { 1, 2, 162 }, { 1, 15, 1545 }, { 2, 4, 190 }, { 2, 20, 170 } } }
+R.species[1710] = { name = "Fledgling Oliveback", family = "Flying", stats = { Stat_Speed = 100, Stat_Stamina = -100 }, abil = { { 0, 1, 420 }, { 0, 10, 202 }, { 1, 2, 162 }, { 1, 15, 1545 }, { 2, 4, 190 }, { 2, 20, 170 } } }
 R.species[1713] = { name = "Long-Eared Owl", family = "Flying", stats = { Stat_Speed = -100, Stat_Stamina = 100 }, abil = { { 0, 1, 1370 }, { 0, 10, 184 }, { 1, 2, 256 }, { 1, 15, 190 }, { 2, 4, 517 }, { 2, 20, 518 } } }
 R.species[1717] = { name = "Extinguished Eye", family = "Magic", stats = { Stat_Power = -100, Stat_Speed = 0, Stat_Stamina = 100 }, abil = { { 0, 1, 473 }, { 0, 10, 483 }, { 1, 2, 475 }, { 1, 15, 486 }, { 2, 4, 474 }, { 2, 20, 794 } } }
 R.species[1725] = { name = "Grumpling", family = "Humanoid", stats = { Stat_Power = 100, Stat_Speed = -150, Stat_Stamina = 50 }, abil = { { 0, 1, 1099 }, { 0, 10, 477 }, { 1, 2, 314 }, { 1, 15, 416 }, { 2, 4, 586 }, { 2, 20, 481 } } }
@@ -169,7 +172,6 @@ R.species[1766] = { name = "Empowered Manafiend", family = "Magic", stats = { St
 R.species[1773] = { name = "Erudite Manafiend", family = "Magic", stats = { Stat_Power = 75, Stat_Speed = 0, Stat_Stamina = -75 }, abil = { { 0, 1, 421 }, { 0, 10, 299 }, { 1, 2, 488 }, { 1, 15, 593 }, { 2, 4, 589 }, { 2, 20, 1231 } } }
 R.species[1774] = { name = "Eldritch Manafiend", family = "Magic", stats = { Stat_Power = 75, Stat_Speed = 0, Stat_Stamina = -75 }, abil = { { 0, 1, 421 }, { 0, 10, 299 }, { 1, 2, 488 }, { 1, 15, 593 }, { 2, 4, 589 }, { 2, 20, 752 } } }
 R.species[1782] = { name = "Clamps", family = "Undead", stats = { Stat_Power = 50, Stat_Speed = -50, Stat_Stamina = 0 }, abil = { { 0, 1, 117 }, { 1, 1, 310 }, { 2, 1, 1287 } } }
-R.species[1790] = { name = "Lil' Spirit Guide", family = "Undead", stats = { Stat_Power = -100, Stat_Speed = 0, Stat_Stamina = 100 }, abil = { { 0, 1, 210 }, { 1, 2, 178 }, { 2, 4, 476 } } }
 R.species[1803] = { name = "Thistleleaf Adventurer", family = "Humanoid", stats = { Stat_Power = 0, Stat_Speed = 0, Stat_Stamina = 0 }, abil = { { 0, 1, 119 }, { 0, 10, 110 }, { 1, 2, 1047 }, { 1, 15, 1045 }, { 2, 4, 307 }, { 2, 20, 366 } } }
 R.species[1804] = { name = "Risen Saber Kitten", family = "Undead", stats = { Stat_Power = 100, Stat_Speed = 100, Stat_Stamina = -200 }, abil = { { 0, 1, 160 }, { 0, 10, 535 }, { 1, 2, 492 }, { 1, 15, 357 }, { 2, 4, 538 }, { 2, 20, 536 } } }
 R.species[1848] = { name = "Nightmare Sprout", family = "Elemental", stats = {  }, abil = { { 0, 1, 394 }, { 1, 2, 665 }, { 2, 4, 1731 } } }
@@ -191,7 +193,6 @@ R.species[2013] = { name = "Seduction", family = "Humanoid", stats = {  }, abil 
 R.species[2014] = { name = "Living Pool", family = "Elemental", stats = {  }, abil = { { 0, 1, 380 }, { 1, 2, 447 }, { 2, 4, 123 } } }
 R.species[2022] = { name = "Tylarr Gronnden", family = "Humanoid", stats = { Stat_Power = 250, Stat_Speed = -250, Stat_Stamina = 0 }, abil = { { 0, 1, 406 }, { 0, 10, 532 }, { 1, 2, 436 }, { 1, 15, 221 }, { 2, 4, 762 }, { 2, 20, 1078 } } }
 R.species[2080] = { name = "Rattlejaw", family = "Undead", stats = { Stat_Power = 50, Stat_Stamina = -50 }, abil = { { 0, 1, 1958 }, { 0, 10, 1483 }, { 1, 2, 1091 }, { 1, 15, 1959 }, { 2, 4, 1957 }, { 2, 20, 665 } } }
-R.species[2114] = { name = "Globe Yeti", family = "Humanoid", stats = { Internal_InitialLevel = 25, Stat_Power = 50, Stat_Speed = -100, Stat_Stamina = 50 }, abil = { { 0, 1, 477 }, { 0, 10, 124 }, { 1, 2, 347 }, { 1, 15, 762 }, { 2, 4, 586 }, { 2, 20, 348 } } }
 R.species[2130] = { name = "Void Shardling", family = "Magic", stats = { Stat_Power = 75, Stat_Speed = 0, Stat_Stamina = -75 }, abil = { { 0, 1, 421 }, { 0, 10, 299 }, { 1, 2, 488 }, { 1, 15, 764 }, { 2, 4, 589 }, { 2, 20, 752 } } }
 R.species[2131] = { name = "Arcane Gorger", family = "Magic", stats = { Stat_Power = -50, Stat_Stamina = 50 }, abil = { { 0, 1, 484 }, { 0, 10, 360 }, { 1, 2, 486 }, { 1, 15, 488 }, { 2, 4, 489 }, { 2, 20, 490 } } }
 R.species[2135] = { name = "Rebellious Imp", family = "Humanoid", stats = { Stat_Power = 100, Stat_Stamina = -100 }, abil = { { 0, 1, 113 }, { 0, 10, 763 }, { 1, 2, 409 }, { 1, 15, 503 }, { 2, 4, 1125 }, { 2, 20, 466 } } }
@@ -370,6 +371,7 @@ R.states[1124] = { Stat_Dodge = 100 }
 R.states[1346] = { Stat_Dodge = 33 }
 R.states[1379] = { Add_FlatDamageTaken = -15 }
 R.states[1417] = { Special_TypeOverride = 7 }
+R.states[1546] = { Mod_DamageDealtPercent = 25 }
 R.states[1721] = { Mod_DamageDealtPercent = 125 }
 R.states[1723] = { Stat_Dodge = 100 }
 R.states[1725] = { Mod_DamageTakenPercent = 100 }
@@ -870,6 +872,8 @@ R.abilities[1417] = { name = "Elemental Mark", family = -1, cd = 0, text = "Wear
 R.abilities[1418] = { name = "Rot", family = 3, cd = 0, text = "Periodically transforms this pet to take damage as if they were Undead.", turns = { { turn = 1, event = 5, fx = { { prop = 49, aura = 968, p = { 100, 0, 0, 0, 0, 0 } } } }, { turn = 1, event = 6, fx = { { prop = 229, aura = 968, p = { 0, 100, 1, 1, 0, 124 } } } }, { turn = 0, event = 255, fx = {  } } } }
 R.abilities[1466] = { name = "Stone Form", family = 3, cd = 6, text = "The caster enters a stone state and restores [StandardDamage(1,1)] health each turn for 3 turns.", turns = { { turn = 0, event = 255, fx = { { prop = 23, aura = 0, p = { 45, 100, 20, 0, 0, 0 } } } }, { turn = 0, event = 255, fx = { { prop = 23, aura = 0, p = { 45, 100, 20, 0, 0, 0 } } } }, { turn = 0, event = 255, fx = { { prop = 23, aura = 0, p = { 45, 100, 20, 0, 0, 0 } } } } } }
 R.abilities[1483] = { name = "Skull Toss", family = 3, cd = 0, text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Hits the enemy with a skull, dealing [StandardDamage(1,1)] [School()] damage.", turns = { { turn = 0, event = 255, fx = { { prop = 222, aura = 0, p = { 22, 100, 60, 0, 0, 0 } } } } } }
+R.abilities[1545] = { name = "Preen", family = 2, cd = 3, text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Restores [StandardDamage(1,1)] health and increases your damage dealt by [abs(abilityStateMod( STATE_Mod_DamageDealtPercent, 613 ))]% for [duration(1,2)] |4round:rounds;.", turns = { { turn = 0, event = 255, fx = { { prop = 23, aura = 0, p = { 22, 100, 20, 0, 0, 0 } }, { prop = 26, aura = 1546, p = { 0, 100, 2, 0, 0, 0 } } } } } }
+R.abilities[1546] = { name = "Preen", family = -1, cd = 0, text = "Damage increased by [abs(abilityStateMod( STATE_Mod_DamageDealtPercent, 613 ))]%.", turns = { { turn = 0, event = 255, fx = {  } } } }
 R.abilities[1556] = { name = "Jar of Smelly Liquid", family = 0, cd = 2, text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Deals [StandardDamage(1,1)] [School()] damage and reduces the target's speed by [abs(abilityStateMod(25,470))]% and damage done by [abs(abilityStateMod(23,470))]% for [duration(1,2)] |4round:rounds;.", turns = { { turn = 0, event = 255, fx = { { prop = 24, aura = 0, p = { 15, 100, 0, 0, 0, 0 } }, { prop = 50, aura = 470, p = { 0, 100, 1, 0, 0, 0 } } } } } }
 R.abilities[1557] = { name = "Buuurp!", family = 6, cd = 4, text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Deals [StandardDamage(1,1)] [petTypeName(abilityPetType())] damage instantly. The enemy is |cFF1EFF00Poisoned|r for [StandardDamage(1,1,379)] additional [petTypeName(abilityPetType())] damage per round for [duration(1,2)] |4round:rounds.", turns = { { turn = 0, event = 255, fx = { { prop = 24, aura = 0, p = { 30, 100, 0, 0, 0, 0 } }, { prop = 54, aura = 379, p = { 1, 100, 2, 0, 0, 0 } } } } } }
 R.abilities[1682] = { name = "Holy Strike", family = 0, cd = 0, text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Strike the enemy, dealing [StandardDamage(1, 1)] [School()] damage.", turns = { { turn = 0, event = 255, fx = { { prop = 222, aura = 0, p = { 21, 100, 40, 0, 0, 0 } } } } } }

@@ -40,4 +40,29 @@ do
     -- the status icon of Wild Magic carries its description
     local sl = C.StatusList(b2.E[1]); ok(sl[1] and sl[1].tip:find("Adds up to") ~= nil and sl[1].bad == true, "status tip: " .. tostring(sl[1] and sl[1].tip))
 end
+-- every aura an ability can apply must show the player a real name and description (user asked: do debuffs say what they are?); internal "Server Only" auras are hidden
+do
+    local seenA = {}
+    for _, a in pairs(R.abilities) do for _, t in ipairs(a.turns or {}) do for _, f in ipairs(t.fx or {}) do if f.aura and f.aura ~= 0 then seenA[f.aura] = true end end end end
+    for id in pairs(seenA) do
+        local list = C.StatusList({ power = 10, family = "Beast", auras = { { id = id, left = 2, states = R.states[id] or {}, pwr = 10 } } })
+        for _, st in ipairs(list) do
+            ok(st.tip ~= "", "aura " .. id .. " '" .. st.label .. "' is shown to the player with an empty description")
+            ok(not st.label:find("Server Only") and not st.label:find("^Effect %d"), "aura " .. id .. " shows an internal/unnamed label: " .. st.label)
+        end
+    end
+end
+-- damaging auras an enemy applies are DEBUFFS and carry the caster's flavored name (user report: the Kobold Miner's Rust "did nothing": shown as a buff named Creeping Fungus)
+do
+    local hi = function(x, y) return y end
+    local a = C.NewPet(40, 10, { 1, 1, 1 }, hi, { quality = 3 }); local e = C.NewPet(721, 10, { 1, 1, 1 }, hi, { quality = 3 })
+    local rust; for i, ab in ipairs(a.abil) do if ab.name == "Rust" then rust = i end end
+    ok(rust ~= nil, "Kobold Miner kit has Rust in slot 2")
+    local b = C.NewBattle({ a }, { e }, hi); local ev = C.Round(b, "A" .. (rust or 1), "A1")
+    local found; for _, x in ipairs(ev) do if (x.k == "buff" or x.k == "debuff") and x.side == "E" then found = x end end
+    ok(found and found.k == "debuff" and found.what == "rust", "Rust is announced as a debuff named rust: " .. tostring(found and (found.k .. " " .. found.what)))
+    local sl = C.StatusList(e); ok(sl[1] and sl[1].label == "Rust" and sl[1].bad == true, "enemy status list shows Rust as a harmful status: " .. tostring(sl[1] and sl[1].label))
+    local thorn = C.StatusList({ power = 10, family = "Beast", auras = { { id = 1086, left = 2, states = R.states[1086] or {}, pwr = 10, src = e } } })
+    ok(thorn[1] and thorn[1].bad == false, "Toxic Skin (damaging buff) stays a buff")
+end
 print(string.format("describe: %d passed, %d failed", n - fails, fails)); os.exit(fails == 0 and 0 or 1)

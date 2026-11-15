@@ -1,0 +1,14 @@
+# deadwind pet roster (map 0 box x -11700..-10600, y -2550..-1900, mobs level <= 60, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (retail kits now).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	7369	Deadwind Brute	55-56	Humanoid	0	0	9	11533	Melee		
+Y	7379	Deadwind Ogre Mage	55-57	Humanoid	0	0	8	11537	Melee		
+Y	7376	Sky Shadow	55-56	Beast	7	0	4	10826	Melee		
+Y	7371	Deadwind Mauler	56-57	Humanoid	0	0	6	11536	Melee		
+Y	7372	Deadwind Warlock	57-58	Humanoid	0	0	5	11538	Melee		
+N	12381	Ley Sprite	57-58	Not specified	0	0	5	12432	Melee		type Not specified
+Y	7370	Restless Shade	58-60	Undead	0	0	9	4870	Melee		
+Y	12377	Wailing Spectre	58-60	Undead	0	0	15	11649	Melee		
+Y	12378	Damned Soul	59-60	Undead	0	0	10	146	Melee		
+Y	12379	Unliving Caretaker	59-60	Undead	0	0	9	13951	Melee		
+Y	12380	Unliving Resident	59-60	Undead	0	0	16	12430	Melee		
