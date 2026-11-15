@@ -495,11 +495,11 @@ D.species = {
     [1779] = { name = "Moonrage Glutton", retail = 1725, wild = true, icon = "INV_Misc_Bandana_03" },
     [1865] = { name = "Ravenclaw Raider", retail = 2553, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [1773] = { name = "Rot Hide Mystic", retail = 1523, wild = true, icon = "Spell_Nature_NullifyDisease" },
-    [1867] = { name = "Dalaran Apprentice", retail = 2009, wild = true, icon = "Spell_Nature_HealingWay" },
+    [1867] = { name = "Dalaran Apprentice", retail = 1160, wild = true, icon = "Spell_Nature_HealingWay" },
     [1782] = { name = "Moonrage Darksoul", retail = 1229, wild = true, icon = "Spell_Shadow_SummonImp" },
     [1868] = { name = "Ravenclaw Servant", retail = 2080, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [1869] = { name = "Ravenclaw Champion", retail = 1428, wild = true, icon = "Spell_Nature_NullifyDisease" },
-    [2173] = { name = "Reef Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [2173] = { name = "Reef Frenzy", retail = 960, wild = true, icon = "INV_Misc_Fish_02" },
     [1914] = { name = "Dalaran Mage", retail = 964, wild = true, icon = "Spell_Shadow_ShadowBolt" },
     [1870] = { name = "Hand of Ravenclaw", retail = 1626, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [1953] = { name = "Lake Skulker", retail = 535, wild = true, icon = "Spell_Nature_HealingWay" },
@@ -518,7 +518,7 @@ D.species = {
     [1942] = { name = "Rot Hide Savage", retail = 2408, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [1909] = { name = "Vile Fin Lakestalker", retail = 1893, wild = true, icon = "INV_Misc_Fish_02" },
     [1889] = { name = "Dalaran Wizard", retail = 2130, wild = true, icon = "Spell_Shadow_ShadowBolt" },
-    [1908] = { name = "Vile Fin Oracle", retail = 2694, wild = true, icon = "INV_Misc_Fish_02" },
+    [1908] = { name = "Vile Fin Oracle", retail = 164, wild = true, icon = "INV_Misc_Fish_02" },
     -- ---- Darkshore roster (retail pet levels 3-5; kits hand-picked, darkshore_picks.tsv)
     [10017] = { name = "Tainted Cockroach", retail = 497, critter = true, wild = true, icon = "Ability_Druid_Dash" },
     [10016] = { name = "Tainted Rat", retail = 499, critter = true, wild = true, icon = "Ability_Druid_Dash" },
@@ -546,7 +546,7 @@ D.species = {
     [2203] = { name = "Greymist Seer", retail = 1073, wild = true, icon = "INV_Misc_Bandana_03" },
     [10157] = { name = "Moonkin Oracle", retail = 2135, wild = true, icon = "Spell_Shadow_ShadowBolt" },
     [2164] = { name = "Rabid Thistle Bear", retail = 306, wild = true, icon = "Ability_Hunter_Pet_Bear" },
-    [2174] = { name = "Coastal Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [2174] = { name = "Coastal Frenzy", retail = 961, wild = true, icon = "INV_Misc_Fish_02" },
     [2322] = { name = "Foreststrider", retail = 1469, wild = true, icon = "Ability_Hunter_Pet_Bat" },
     [2204] = { name = "Greymist Netter", retail = 1725, wild = true, icon = "INV_Misc_Bandana_03" },
     [2069] = { name = "Moonstalker", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Cat" },
@@ -587,7 +587,7 @@ D.species = {
     [1161] = { name = "Stonesplinter Trogg", retail = 1503, wild = true, icon = "INV_Misc_Bandana_03" },
     [1176] = { name = "Tunnel Rat Forager", retail = 1073, wild = true, icon = "INV_Misc_Bandana_03" },
     [1202] = { name = "Tunnel Rat Kobold", retail = 1803, wild = true, icon = "INV_Misc_Bandana_03" },
-    [1193] = { name = "Loch Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [1193] = { name = "Loch Frenzy", retail = 960, wild = true, icon = "INV_Misc_Fish_02" },
     [1175] = { name = "Tunnel Rat Digger", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
     [1174] = { name = "Tunnel Rat Geomancer", retail = 1725, wild = true, icon = "INV_Misc_Bandana_03" },
     [1184] = { name = "Cliff Lurker", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Cat" },
@@ -639,7 +639,7 @@ D.species = {
     [16323] = { name = "Phantasmal Seeker", retail = 2553, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [16311] = { name = "Phantasmal Watcher", retail = 1523, wild = true, icon = "Spell_Nature_NullifyDisease" },
     [33713] = { name = "Rotting Crawler", retail = 388, wild = true, icon = "Ability_Hunter_Pet_Crab" },
-    [16405] = { name = "Whitetail Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [16405] = { name = "Whitetail Frenzy", retail = 961, wild = true, icon = "INV_Misc_Fish_02" },
     [16403] = { name = "Withered Grimscale", retail = 1892, wild = true, icon = "INV_Misc_Fish_02" },
     [16402] = { name = "Zombified Grimscale", retail = 1893, wild = true, icon = "INV_Misc_Fish_02" },
     [16334] = { name = "Blackpaw Gnoll", retail = 1894, wild = true, icon = "INV_Misc_Bandana_03" },
@@ -847,14 +847,14 @@ D.species = {
     [2270] = { name = "Hillsbrad Sentry", retail = 1892, wild = true, icon = "INV_Misc_Bandana_03" },
     [2373] = { name = "Mudsnout Shaman", retail = 1893, wild = true, icon = "INV_Misc_Bandana_03" },
     [2368] = { name = "Daggerspine Shorestalker", retail = 1894, wild = true, icon = "INV_Misc_Bandana_03" },
-    [2374] = { name = "Torn Fin Muckdweller", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [2374] = { name = "Torn Fin Muckdweller", retail = 960, wild = true, icon = "INV_Misc_Fish_02" },
     [2370] = { name = "Daggerspine Screamer", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
     [2450] = { name = "Miner Hackett", retail = 1688, wild = true, icon = "INV_Misc_Bandana_03" },
-    [2375] = { name = "Torn Fin Coastrunner", retail = 2652, wild = true, icon = "INV_Misc_Fish_02" },
+    [2375] = { name = "Torn Fin Coastrunner", retail = 401, wild = true, icon = "INV_Misc_Fish_02" },
     [2248] = { name = "Cave Yeti", retail = 835, wild = true, icon = "INV_Misc_Bandana_03" },
     [2369] = { name = "Daggerspine Shorehunter", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
     [2408] = { name = "Snapjaw", retail = 400, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
-    [2376] = { name = "Torn Fin Oracle", retail = 2694, wild = true, icon = "INV_Misc_Fish_02" },
+    [2376] = { name = "Torn Fin Oracle", retail = 173, wild = true, icon = "INV_Misc_Fish_02" },
     -- ---- The Hinterlands roster (retail pet levels 11-11; kits hand-picked, hinterlands_picks.tsv)
     [2927] = { name = "Vicious Owlbeast", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Bat" },
     [2651] = { name = "Witherbark Hideskinner", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
@@ -1405,7 +1405,7 @@ D.species = {
     [683] = { name = "Young Panther", retail = 1542, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [855] = { name = "Young Stranglethorn Raptor", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [681] = { name = "Young Stranglethorn Tiger", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
-    [905] = { name = "Sharptooth Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [905] = { name = "Sharptooth Frenzy", retail = 961, wild = true, icon = "INV_Misc_Fish_02" },
     [688] = { name = "Stone Maw Basilisk", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [937] = { name = "Kurzen Jungle Fighter", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
     [940] = { name = "Kurzen Medicine Man", retail = 1953, wild = true, icon = "INV_Misc_Bandana_03" },
@@ -1495,7 +1495,7 @@ D.species = {
     [17115] = { name = "Cursed Lost One", retail = 1803, wild = true, icon = "INV_Misc_Bandana_03" },
     [762] = { name = "Lost One Riftseeker", retail = 1725, wild = true, icon = "INV_Misc_Bandana_03" },
     [862] = { name = "Stonard Explorer", retail = 835, wild = true, icon = "INV_Misc_Bandana_03" },
-    [14356] = { name = "Sawfin Frenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [14356] = { name = "Sawfin Frenzy", retail = 960, wild = true, icon = "INV_Misc_Fish_02" },
     [1082] = { name = "Sawtooth Crocolisk", retail = 960, wild = true, icon = "Ability_Hunter_Pet_Crocolisk" },
     [764] = { name = "Swampwalker", retail = 204, wild = true, icon = "Spell_Nature_HealingWay" },
     [768] = { name = "Shadow Panther", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
@@ -1642,7 +1642,7 @@ D.species = {
     [3458] = { name = "Razormane Seer", retail = 1953, wild = true, icon = "INV_Misc_Bandana_03" },
     [3377] = { name = "Bael'dun Rifleman", retail = 1503, wild = true, icon = "INV_Misc_Bandana_03" },
     [3235] = { name = "Greater Barrens Kodo", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
-    [3459] = { name = "Razormane Warfrenzy", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [3459] = { name = "Razormane Warfrenzy", retail = 961, wild = true, icon = "INV_Misc_Fish_02" },
     [3472] = { name = "Washte Pawne", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [3237] = { name = "Wooly Kodo", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [3378] = { name = "Bael'dun Officer", retail = 1073, wild = true, icon = "INV_Misc_Bandana_03" },
@@ -1658,7 +1658,7 @@ D.species = {
     [4352] = { name = "Bloodfen Screecher", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [23590] = { name = "Defias Conjuror", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
     [23592] = { name = "Grimtotem Breaker", retail = 1953, wild = true, icon = "INV_Misc_Bandana_03" },
-    [4362] = { name = "Mirefin Coastrunner", retail = 2695, wild = true, icon = "INV_Misc_Fish_02" },
+    [4362] = { name = "Mirefin Coastrunner", retail = 960, wild = true, icon = "INV_Misc_Fish_02" },
     [4414] = { name = "Darkfang Venomspitter", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [23591] = { name = "Defias Diver", retail = 1503, wild = true, icon = "INV_Misc_Bandana_03" },
     [4343] = { name = "Drywallow Snapper", retail = 412, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
@@ -1679,7 +1679,7 @@ D.species = {
     [4345] = { name = "Drywallow Daggermaw", retail = 303, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [4415] = { name = "Giant Darkfang Spider", retail = 396, wild = true, icon = "Ability_Hunter_Pet_Spider" },
     [4403] = { name = "Muckshell Pincer", retail = 835, wild = true, icon = "INV_Misc_Bandana_03" },
-    [4389] = { name = "Murk Thresher", retail = 999, wild = true, icon = "Ability_Hunter_Pet_Crocolisk" },
+    [4389] = { name = "Murk Thresher", retail = 388, wild = true, icon = "Ability_Hunter_Pet_Crocolisk" },
     [4323] = { name = "Searing Hatchling", retail = 57, wild = true, icon = "INV_Misc_Head_Dragon_01" },
     [4404] = { name = "Muckshell Scrabbler", retail = 388, wild = true, icon = "Ability_Hunter_Pet_Crab" },
     [4324] = { name = "Searing Whelp", retail = 57, wild = true, icon = "INV_Misc_Head_Dragon_01" },
@@ -1767,6 +1767,246 @@ D.species = {
     [2245] = { name = "Syndicate Saboteur", retail = 1894, wild = true, icon = "INV_Misc_Bandana_03" },
     [2246] = { name = "Syndicate Assassin", retail = 1688, wild = true, icon = "INV_Misc_Bandana_03" },
     [2247] = { name = "Syndicate Enforcer", retail = 1166, wild = true, icon = "INV_Misc_Bandana_03" },
+    -- ---- companion pets (collect-only: not wild; granted at level 1 when the character knows the companion spell; census pet-battle/companion_census.tsv)
+    [2671] = { name = "Mechanical Squirrel", retail = 39, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [7380] = { name = "Siamese Cat", retail = 44, standin = true, companion = true, icon = "Ability_Hunter_Pet_Cat" },   -- exact
+    [7383] = { name = "Black Tabby Cat", retail = 42, standin = true, companion = true, icon = "Ability_Hunter_Pet_Cat" },   -- exact
+    [7386] = { name = "White Kitten", retail = 46, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [7387] = { name = "Green Wing Macaw", retail = 50, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [7388] = { name = "Cockatoo", retail = 403, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [7389] = { name = "Senegal", retail = 51, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [7390] = { name = "Cockatiel", retail = 47, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [7391] = { name = "Hyacinth Macaw", retail = 49, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [7392] = { name = "Prairie Chicken", retail = 646, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [7393] = { name = "White Plymouth Rock", retail = 646, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [7394] = { name = "Ancona Chicken", retail = 52, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [7395] = { name = "Cockroach", retail = 393, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [7543] = { name = "Dark Whelpling", retail = 56, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [7544] = { name = "Crimson Whelpling", retail = 56, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- close
+    [7545] = { name = "Emerald Whelpling", retail = 59, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [7546] = { name = "Bronze Whelpling", retail = 1563, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [7547] = { name = "Azure Whelpling", retail = 57, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [7548] = { name = "Faeling", retail = 557, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- guess
+    [7549] = { name = "Tree Frog", retail = 65, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [7550] = { name = "Wood Frog", retail = 64, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [7551] = { name = "Dart Frog", retail = 4665, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [7552] = { name = "Island Frog", retail = 4666, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [7553] = { name = "Great Horned Owl", retail = 68, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- exact
+    [7554] = { name = "Snowy Owl", retail = 69, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- exact
+    [7555] = { name = "Hawk Owl", retail = 67, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- exact
+    [7556] = { name = "Eagle Owl", retail = 68, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- close
+    [7558] = { name = "Cottontail Rabbit", retail = 378, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- close
+    [7559] = { name = "Spotted Rabbit", retail = 378, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- close
+    [7560] = { name = "Snowshoe Rabbit", retail = 72, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- exact
+    [7561] = { name = "Albino Snake", retail = 74, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- exact
+    [7562] = { name = "Brown Snake", retail = 77, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- exact
+    [7563] = { name = "Blue Racer", retail = 387, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [7565] = { name = "Black Kingsnake", retail = 75, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- exact
+    [7566] = { name = "Scarlet Snake", retail = 387, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- close
+    [7567] = { name = "Crimson Snake", retail = 78, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- exact
+    [7568] = { name = "Ribbon Snake", retail = 387, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- close
+    [7569] = { name = "Green Water Snake", retail = 418, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- close
+    [7570] = { name = "Elven Wisp", retail = 547, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- close
+    [8376] = { name = "Mechanical Chicken", retail = 83, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [9656] = { name = "Pet Bombling", retail = 85, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [9657] = { name = "Lil' Smoky", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [9662] = { name = "Sprite Darter Hatchling", retail = 87, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [9936] = { name = "Corrupted Kitten", retail = 46, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [10259] = { name = "Worg Pup", retail = 89, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [10598] = { name = "Smolderweb Hatchling", retail = 90, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [11236] = { name = "Blood Parrot", retail = 403, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [11325] = { name = "Panda Cub", retail = 92, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [11326] = { name = "Mini Diablo", retail = 1229, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [11327] = { name = "Zergling", retail = 465, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [12419] = { name = "Lifelike Toad", retail = 95, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [14143] = { name = "Ar'lia", retail = 1725, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [14305] = { name = "Human Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [14421] = { name = "Brown Prairie Dog", retail = 70, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [14444] = { name = "Orcish Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [14629] = { name = "Loggerhead Snapjaw", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [14630] = { name = "Leatherback Snapjaw", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [14631] = { name = "Olive Snapjaw", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [14632] = { name = "Hawksbill Snapjaw", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [14633] = { name = "Albino Snapjaw", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [14755] = { name = "Tiny Green Dragon", retail = 757, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [14756] = { name = "Tiny Red Dragon", retail = 758, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [14878] = { name = "Jubling", retail = 106, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [15186] = { name = "Murky", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [15356] = { name = "Blue Baby Murloc", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [15357] = { name = "Purple Baby Murloc", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [15358] = { name = "Lurky", retail = 111, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [15359] = { name = "Pink Baby Murloc", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [15360] = { name = "Green Baby Murloc", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [15361] = { name = "Murki", retail = 1168, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [15429] = { name = "Disgusting Oozeling", retail = 114, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [15661] = { name = "Baby Shark", retail = 1911, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- guess
+    [15698] = { name = "Father Winter's Helper", retail = 119, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [15699] = { name = "Tranquil Mechanical Yeti", retail = 116, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [15705] = { name = "Winter's Little Helper", retail = 120, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [15706] = { name = "Winter Reindeer", retail = 118, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [15710] = { name = "Tiny Snowman", retail = 117, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [15919] = { name = "Jade Owl", retail = 845, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- exact
+    [15923] = { name = "Golden Hare", retail = 448, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- close
+    [15926] = { name = "Black Pearl Panther", retail = 240, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- close
+    [15927] = { name = "Truesilver Crab", retail = 3363, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [15944] = { name = "Ruby Serpent", retail = 78, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- guess
+    [15948] = { name = "Emerald Owl", retail = 845, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- close
+    [15955] = { name = "Black Diamond Crab", retail = 3361, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [15959] = { name = "Dark Iron Scorpid", retail = 414, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [16069] = { name = "Gurky", retail = 121, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [16085] = { name = "Peddlefeet", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [16445] = { name = "Terky", retail = 1073, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [16456] = { name = "Poley", retail = 124, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [16547] = { name = "Speedy", retail = 125, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [16548] = { name = "Mr. Wiggles", retail = 126, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [16549] = { name = "Whiskers the Rat", retail = 127, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [16701] = { name = "Spirit of Summer", retail = 128, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [17254] = { name = "White Tiger Cub", retail = 301, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [17255] = { name = "Hippogryph Hatchling", retail = 130, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [17707] = { name = "Dawnstone Crab", retail = 3362, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [17708] = { name = "Living Ruby Serpent", retail = 78, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- guess
+    [17709] = { name = "Talasite Owl", retail = 845, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- close
+    [17710] = { name = "Nightseye Panther", retail = 240, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- close
+    [18381] = { name = "Netherwhelp", retail = 131, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [18839] = { name = "Magical Crawdad", retail = 132, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [20245] = { name = "Mr. Kitty", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [20246] = { name = "Manny", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [20247] = { name = "Kitty", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [20408] = { name = "Mana Wyrmling", retail = 136, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [20472] = { name = "Brown Rabbit", retail = 137, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- exact
+    [21008] = { name = "Yellow Moth", retail = 140, standin = true, companion = true, icon = "Ability_Hunter_Pet_Moth" },   -- exact
+    [21009] = { name = "Red Moth", retail = 139, standin = true, companion = true, icon = "Ability_Hunter_Pet_Moth" },   -- exact
+    [21010] = { name = "Blue Moth", retail = 138, standin = true, companion = true, icon = "Ability_Hunter_Pet_Moth" },   -- exact
+    [21018] = { name = "White Moth", retail = 141, standin = true, companion = true, icon = "Ability_Hunter_Pet_Moth" },   -- exact
+    [21055] = { name = "Golden Dragonhawk Hatchling", retail = 142, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21056] = { name = "Blue Dragonhawk Hatchling", retail = 145, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21063] = { name = "Silver Dragonhawk Hatchling", retail = 144, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21064] = { name = "Red Dragonhawk Hatchling", retail = 143, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21076] = { name = "Firefly", retail = 194, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21266] = { name = "Ravager Hatchling", retail = 465, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [21847] = { name = "Fel Guard Hound", retail = 89, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [22328] = { name = "Toy RC Mortar Tank", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
+    [22445] = { name = "Miniwing", retail = 194, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- guess
+    [22484] = { name = "Zeppit", retail = 1761, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- guess
+    [22817] = { name = "Blood Elf Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [22818] = { name = "Draenei Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [22943] = { name = "Wolpertinger", retail = 153, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [23060] = { name = "Netherwing Whelp", retail = 131, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- close
+    [23114] = { name = "Lucky", retail = 155, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [23198] = { name = "Lucky", retail = 155, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [23231] = { name = "Willy", retail = 157, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [23234] = { name = "Bananas", retail = 156, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [23258] = { name = "Egbert", retail = 646, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- guess
+    [23266] = { name = "Peanut", retail = 159, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [23274] = { name = "Stinker", retail = 160, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [23439] = { name = "Hungry Nether Ray", retail = 186, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [23442] = { name = "Nether Ray Desummoner", retail = 186, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [23787] = { name = "Mister Manny", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [23909] = { name = "Sinister Squashling", retail = 162, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [24388] = { name = "Toothy", retail = 163, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [24389] = { name = "Muckbreath", retail = 164, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [24480] = { name = "Mojo", retail = 165, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [24753] = { name = "Pint-Sized Pink Pachyderm", retail = 166, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [24916] = { name = "Living Flare", retail = 3411, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- guess
+    [24968] = { name = "Clockwork Rocket Bot", retail = 277, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- close
+    [25062] = { name = "Tiny Sporebat", retail = 534, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [25109] = { name = "Rocket Chicken", retail = 168, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [25110] = { name = "Dragon Kite", retail = 169, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [25146] = { name = "Golden Pig", retail = 170, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [25147] = { name = "Silver Pig", retail = 171, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [25706] = { name = "Scorchling", retail = 3411, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- guess
+    [25761] = { name = "Alliance Deserter", retail = 1803, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [25861] = { name = "Orphaned Mammoth Calf", retail = 202, standin = true, companion = true, icon = "Ability_Hunter_Pet_Moth" },   -- guess
+    [26050] = { name = "Snarly", retail = 173, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [26056] = { name = "Chuck", retail = 174, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [26119] = { name = "Phoenix Hatchling", retail = 175, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [26240] = { name = "Seaspray Albatross", retail = 534, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- guess
+    [26242] = { name = "Empyrean Tortoise", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- close
+    [26243] = { name = "Crimson Serpent", retail = 78, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- guess
+    [26244] = { name = "Shadowsong Panther", retail = 240, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- close
+    [27017] = { name = "Depleted War Golem", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
+    [27217] = { name = "Spirit of Competition", retail = 179, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [27346] = { name = "Essence of Competition", retail = 180, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [28120] = { name = "Lafoo", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28121] = { name = "Jaloot", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28122] = { name = "Moodle", retail = 459, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28214] = { name = "Goregek the Gorilla Hunter", retail = 1692, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28215] = { name = "Dajik the Wasp Hunter", retail = 1692, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28216] = { name = "Zepik the Gorloc Hunter", retail = 1692, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28267] = { name = "Coyote Spirit", retail = 89, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [28470] = { name = "Nether Ray Fry", retail = 186, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [28513] = { name = "Vampiric Batling", retail = 187, standin = true, companion = true, icon = "Spell_Nature_NullifyDisease" },   -- exact
+    [28883] = { name = "Frosty", retail = 117, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- guess
+    [29089] = { name = "Mini Tyrael", retail = 1503, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [29147] = { name = "Ghostly Skull", retail = 190, standin = true, companion = true, icon = "Spell_Nature_NullifyDisease" },   -- exact
+    [29726] = { name = "Mr. Chilly", retail = 1911, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [30191] = { name = "Deep Twilight Serpent", retail = 387, standin = true, companion = true, icon = "Ability_Hunter_Pet_Serpent" },   -- guess
+    [30192] = { name = "Sapphire Owl", retail = 845, standin = true, companion = true, icon = "Ability_Hunter_Pet_Owl" },   -- close
+    [30379] = { name = "Westfall Chicken", retail = 84, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [31575] = { name = "Giant Sewer Rat", retail = 193, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [32589] = { name = "Tickbird Hatchling", retail = 194, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [32590] = { name = "White Tickbird Hatchling", retail = 195, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [32591] = { name = "Cobra Hatchling", retail = 197, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [32592] = { name = "Proto-Drake Whelp", retail = 57, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- exact
+    [32595] = { name = "Pengu", retail = 473, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [32643] = { name = "Kirin Tor Familiar", retail = 1160, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- guess
+    [32791] = { name = "Spring Rabbit", retail = 200, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- exact
+    [32818] = { name = "Plump Turkey", retail = 201, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [32841] = { name = "Baby Blizzard Bear", retail = 202, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bear" },   -- exact
+    [32939] = { name = "Little Fawn", retail = 203, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [32980] = { name = "Faithful Mule", retail = 434, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [32983] = { name = "Rented Pack Mule", retail = 434, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [33188] = { name = "Teldrassil Sproutling", retail = 204, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [33194] = { name = "Dun Morogh Cub", retail = 205, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [33197] = { name = "Tirisfal Batling", retail = 206, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [33198] = { name = "Durotar Scorpion", retail = 207, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [33199] = { name = "Alarming Clockbot", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
+    [33200] = { name = "Elwynn Lamb", retail = 209, standin = true, companion = true, icon = "Ability_Druid_Dash" },   -- exact
+    [33205] = { name = "Ammen Vale Lashling", retail = 212, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [33219] = { name = "Mulgore Hatchling", retail = 194, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- guess
+    [33226] = { name = "Strand Crawler", retail = 211, standin = true, companion = true, icon = "Ability_Hunter_Pet_Crab" },   -- exact
+    [33227] = { name = "Enchanted Broom", retail = 213, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [33274] = { name = "Mechanopeep", retail = 215, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [33529] = { name = "Curious Wolvar Pup", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [33530] = { name = "Curious Oracle Hatchling", retail = 225, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [33532] = { name = "Wolvar Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [33533] = { name = "Oracle Orphan", retail = 1166, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- guess
+    [33578] = { name = "Murkimus the Gladiator", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [33810] = { name = "Sen'jin Fetish", retail = 218, standin = true, companion = true, icon = "Spell_Nature_NullifyDisease" },   -- exact
+    [34031] = { name = "XS-001 Constructor Bot", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
+    [34279] = { name = "Ruby Hare", retail = 448, standin = true, companion = true, icon = "Ability_Hunter_Pet_Rabbit" },   -- close
+    [34320] = { name = "Venomhide Hatchling", retail = 506, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- close
+    [34364] = { name = "Calico Cat", retail = 224, standin = true, companion = true, icon = "Ability_Hunter_Pet_Cat" },   -- exact
+    [34587] = { name = "Warbot", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- exact
+    [34694] = { name = "Grunty", retail = 1725, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [34724] = { name = "Shimmering Wyrmling", retail = 229, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [34770] = { name = "Macabre Marionette", retail = 1351, standin = true, companion = true, icon = "Spell_Nature_NullifyDisease" },   -- exact
+    [34930] = { name = "Jade Tiger", retail = 231, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [35387] = { name = "Leaping Hatchling", retail = 235, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35394] = { name = "Razzashi Hatchling", retail = 239, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35395] = { name = "Deviate Hatchling", retail = 233, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35396] = { name = "Darting Hatchling", retail = 232, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35397] = { name = "Ravasaur Hatchling", retail = 237, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35398] = { name = "Razormaw Hatchling", retail = 238, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35399] = { name = "Obsidian Hatchling", retail = 236, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35400] = { name = "Gundrak Hatchling", retail = 234, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [35468] = { name = "Onyx Panther", retail = 240, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [36482] = { name = "Tuskarr Kite", retail = 241, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [36607] = { name = "Onyxian Whelpling", retail = 57, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- close
+    [36871] = { name = "Core Hound Pup", retail = 89, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- close
+    [36908] = { name = "Gryphon Hatchling", retail = 245, standin = true, companion = true, icon = "Ability_Hunter_Pet_Bat" },   -- exact
+    [36909] = { name = "Wind Rider Cub", retail = 246, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- exact
+    [36910] = { name = "Zipao Tiger", retail = 247, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [36911] = { name = "Pandaren Monk", retail = 1803, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- exact
+    [36979] = { name = "Lil' K.T.", retail = 249, standin = true, companion = true, icon = "Spell_Nature_NullifyDisease" },   -- exact
+    [37865] = { name = "Perky Pug", retail = 89, standin = true, companion = true, icon = "Ability_Hunter_Pet_Wolf" },   -- guess
+    [38374] = { name = "Toxic Wasteling", retail = 251, standin = true, companion = true, icon = "Spell_Shadow_ShadowBolt" },   -- exact
+    [40198] = { name = "Frigid Frostling", retail = 253, standin = true, companion = true, icon = "Spell_Nature_StoneClawTotem" },   -- exact
+    [40295] = { name = "Clockwork Rocket Bot", retail = 277, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- close
+    [40624] = { name = "Celestial Dragon", retail = 57, standin = true, companion = true, icon = "INV_Misc_Head_Dragon_01" },   -- guess
+    [40703] = { name = "Lil' XT", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
+    [40721] = { name = "Murkimus the Gladiator", retail = 107, standin = true, companion = true, icon = "INV_Misc_Bandana_03" },   -- close
+    [42078] = { name = "Mini Thor", retail = 227, standin = true, companion = true, icon = "INV_Gizmo_01" },   -- guess
 }
 
 -- EVERY species spawns from a stand-in (standin = false opts a species out)

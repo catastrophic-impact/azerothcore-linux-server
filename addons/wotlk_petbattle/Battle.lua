@@ -5,7 +5,8 @@ local WHITE = "Interface\\Buttons\\WHITE8X8"
 local BACKDROP = { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
                    tile = true, tileSize = 32, edgeSize = 16, insets = { left = 4, right = 4, top = 4, bottom = 4 } }
 
-local S = { P = {}, E = {}, act = { P = 1, E = 1 }, abil = {}, cd = { 0, 0, 0 }, canAct = false, force = false, tips = {}, info = {}, eabil = {} }
+local S = { P = {}, E = {}, act = { P = 1, E = 1 }, abil = {}, cd = { 0, 0, 0 }, canAct = false, force = false, tips = {}, info = {}, eabil = {}, own = {} }
+local CollectedFx
 local top, bottom, banner, abBtns, benchBtns, quitBtn, trapBtn, turnTxt
 local Close   -- defined below
 local QCOL = { { 1, 1, 1 }, { 0.12, 1, 0 }, { 0, 0.44, 0.87 }, { 0.64, 0.21, 0.93 } }   -- common / uncommon / rare / epic: white, green, blue, purple
@@ -118,6 +119,7 @@ local function Panel(name, isRight)
     p.lvl = p.lvlf:CreateFontString(nil, "OVERLAY", "GameFontNormal"); p.lvl:SetPoint("BOTTOM", 0, 5)
     p.name = p:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     p.hp = Bar(p, 226, 24)
+    p.own = p:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); p.own:SetPoint("TOPLEFT", p, "BOTTOMLEFT", 6, -8); p.own:SetJustifyH("LEFT")   -- BELOW the panel (the screen top would cut it off), left of the team pips   -- enemy: collected / not collected / upgrade
     if isRight then
         p.name:SetPoint("TOPRIGHT", p.model, "TOPLEFT", -10, -6); p.hp:SetPoint("TOPRIGHT", p.model, "TOPLEFT", -8, -30)
     else
@@ -128,6 +130,7 @@ local function Panel(name, isRight)
         local s = isRight and "E" or "P"; local pet = S[s][S.act[s]]; local f = S.info[s]
         if not pet then return end
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM"); GameTooltip:SetText(pet.name .. "  (level " .. pet.lv .. ")", 1, 0.82, 0)
+        if pet.species then GameTooltip:AddLine(pet.species, 0.7, 0.7, 0.7) end   -- renamed: the real species
         if f then
             GameTooltip:AddLine("Family: " .. f.name, 1, 1, 1)
             if f.strong ~= "" then GameTooltip:AddLine("Hits harder against: " .. f.strong, 0.4, 1, 0.4) end
@@ -191,6 +194,7 @@ local function Refresh(instantSide)
         local w, a = side[s], S[s][S.act[s]]
         if a then
             w.model:Set(a.entry, a.icon, a.q, a.hp <= 0, a.scale); w.name:SetText(a.name); w.name:SetTextColor(unpack(QCOL[a.q or 1])); w.lvl:SetText("Lv " .. a.lv)
+            if s == "E" then local o = S.own[S.act.E]; w.own:SetText(o and o.text or ""); if o then w.own:SetTextColor(o.r, o.g, o.b) end else w.own:SetText("") end
             SetHP(w.hp, a.hp, a.max, instantSide == s or instantSide == "all")
         end
         for i = 1, 3 do
@@ -231,6 +235,18 @@ local function Say(text, secs)
     banner:SetText(text); banner:SetAlpha(1); banner.fade = secs or 2.2
 end
 
+-- "You have collected <Pet>": big text in the middle of the screen for a few seconds
+local colFrame
+CollectedFx = function(name, q)
+    if not colFrame then
+        colFrame = CreateFrame("Frame", nil, UIParent); colFrame:SetSize(600, 60); colFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 120); colFrame:SetFrameStrata("FULLSCREEN_DIALOG"); colFrame:Hide()
+        colFrame.t = colFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge"); colFrame.t:SetAllPoints()
+        colFrame:SetScript("OnUpdate", function(self, e) self.left = self.left - e; if self.left <= 0 then self:Hide() elseif self.left < 1 then self:SetAlpha(self.left) end end)
+    end
+    local c = QHEX[q or 1] or "|cffffffff"
+    colFrame.t:SetText("You have collected " .. c .. name .. "|r!"); colFrame.left = 4.5; colFrame:SetAlpha(1); colFrame:Show()
+end
+
 -- Level-up graphic (like the character's): a gold star burst behind a big "Level Up!" with the pet's name and new level, plus the level-up sound; fades after ~3.5 s
 local luFrame
 local function LevelUpFx(name, lv)
@@ -253,8 +269,8 @@ local function LevelUpFx(name, lv)
     pcall(PlaySound, "LEVELUPSOUND")
 end
 
-local function ButtonFrame(parent, size)
-    local b = CreateFrame("Button", nil, parent)
+local function ButtonFrame(parent, size, name)
+    local b = CreateFrame("Button", name, parent)
     b:SetSize(size, size)
     b.icon = b:CreateTexture(nil, "ARTWORK"); b.icon:SetPoint("TOPLEFT", 3, -3); b.icon:SetPoint("BOTTOMRIGHT", -3, 3)
     b.border = b:CreateTexture(nil, "OVERLAY"); b.border:SetAllPoints(); b.border:SetTexture("Interface\\Buttons\\UI-ActionButton-Border")
@@ -283,7 +299,7 @@ local function Build()
     bottom:SetFrameStrata("HIGH"); bottom:SetBackdrop(BACKDROP); bottom:Hide()
     abBtns = {}
     for i = 1, 3 do
-        local b = ButtonFrame(bottom, 50); b:SetPoint("LEFT", 24 + (i - 1) * 58, 0)
+        local b = ButtonFrame(bottom, 50, "WotlkPbAbility" .. i); b:SetPoint("LEFT", 24 + (i - 1) * 58, 0)
         b.key = b:CreateFontString(nil, "OVERLAY", "NumberFontNormalSmall"); b.key:SetPoint("TOPLEFT", 3, -3); b.key:SetText(i)
         b.cdTxt = b:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge"); b.cdTxt:SetPoint("CENTER")
         b.tip = function(self)
@@ -330,7 +346,7 @@ local function Build()
 
 end
 
-function Close() PBTest_closed = (PBTest_closed or 0) + 1; if top then top:Hide(); bottom:Hide() end end
+function Close() PBTest_closed = (PBTest_closed or 0) + 1; if top then top:Hide(); bottom:Hide(); pcall(ClearOverrideBindings, bottom) end end
 local function Num(x) return tonumber(x) or 0 end
 
 -- ---------------------------------------------------------------- weather: a screen effect while a weather ability is active (visual only)
@@ -415,12 +431,24 @@ local function MusicStop() if not music.on then return end music.on = false; pca
 local function Setup()
     if top then return end
     Build()
-    AcoreLib.On("pbt", "begin", function() WxSet(0); MusicStart(); S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; S.tips, S.info, S.eabil = {}, {}, {}; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("") end)
+    AcoreLib.On("pbt", "begin", function() WxSet(0); MusicStart(); S.P, S.E, S.act, S.canAct, S.force, S.abil, S.cd = {}, {}, { P = 1, E = 1 }, false, false, {}, { 0, 0, 0 }; S.tips, S.info, S.eabil, S.own = {}, {}, {}, {}; ShowStatuses("P", {}); ShowStatuses("E", {}); AcoreLib.Send("pbj", "prime", ""); top:Show(); bottom:Show(); banner:SetText(""); turnTxt:SetText("")
+        for i = 1, 3 do pcall(SetOverrideBindingClick, bottom, true, tostring(i), "WotlkPbAbility" .. i) end   -- keys 1-3 use the battle abilities, not the action bar, while the battle runs
+    end)
     AcoreLib.On("pbt", "weather", function(p) local id, n = p:match("^(%d+)|(%d+)"); WxSet(tonumber(id) or 0, tonumber(n) or 0) end)
     AcoreLib.On("pbt", "st", function(p)
         local s, i, lv, hp, max, icon, q, entry, sc, name = p:match("^(%a),(%d+),(%d+),(%d+),(%d+),([^,]+),(%d+),(%d+),(%d+),(.+)$")
-        if s then S[s][Num(i)] = { lv = Num(lv), hp = Num(hp), max = Num(max), icon = icon, q = Num(q), entry = Num(entry), scale = Num(sc) / 100, name = name }; Refresh("all") end
+        if s then local nick, species = name:match("^([^|]*)|(.+)$")   -- a renamed pet arrives as "nickname|species"
+            S[s][Num(i)] = { lv = Num(lv), hp = Num(hp), max = Num(max), icon = icon, q = Num(q), entry = Num(entry), scale = Num(sc) / 100, name = nick or name, species = species }; Refresh("all") end
     end)
+    AcoreLib.On("pbt", "own", function(p)   -- the enemy pet i against our collection: status 0 = not collected, 1 = this one would be an upgrade, 2 = we own the same or better
+        local i, st, oq, ol = p:match("^(%d+),(%d),(%d),(%d+)$"); if not i then return end
+        st = tonumber(st); local mine = QNAME[tonumber(oq)] and ("Lv " .. ol .. " " .. QNAME[tonumber(oq)]) or ""
+        if st == 0 then S.own[tonumber(i)] = { text = "NOT COLLECTED", r = 0.3, g = 1, b = 0.3 }
+        elseif st == 1 then S.own[tonumber(i)] = { text = "UPGRADE - you own " .. mine, r = 1, g = 0.82, b = 0 }
+        else S.own[tonumber(i)] = { text = "Collected (" .. mine .. ")", r = 0.7, g = 0.7, b = 0.7 } end
+        Refresh()
+    end)
+    AcoreLib.On("pbt", "got", function(p) local q, name = p:match("^(%d),(.+)$"); if name then CollectedFx(name, tonumber(q)) end end)
     AcoreLib.On("pbt", "abil", function(p)
         local slot, icon, name, tip, cd = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)$")
         if slot then S.abil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd) }; Refresh() end
@@ -444,7 +472,7 @@ local function Setup()
     AcoreLib.On("pbt", "in", function(p) local s, i = p:match("^(%a),(%d+)"); S.act[s] = Num(i); Refresh(s); Say(S[s][Num(i)].name .. (s == "E" and " appears!" or ", go!")) end)
     AcoreLib.On("pbt", "act", function(p)
         local s, i, ab = p:match("^(%a),(%d+),(.+)$"); local pet = S[s][Num(i)]
-        Say(pet.name .. " uses " .. ab .. "!", 1.8); S.canAct = false; Refresh()
+        Say(pet.name .. " uses " .. ab .. "!", 1.8); S.canAct = false; Refresh(); turnTxt:SetText("")
     end)
     AcoreLib.On("pbt", "hp", function(p)
         local s, i, hp, max, delta = p:match("^(%a),(%d+),(%d+),(%d+),(.+)$"); i = Num(i)
@@ -458,8 +486,8 @@ local function Setup()
         local mode, c1, c2, c3, trap = p:match("^(%a+);(%d+),(%d+),(%d+);?(%d?)$")
         S.canTrap = trap == "1"
         S.cd = { tonumber(c1) or 0, tonumber(c2) or 0, tonumber(c3) or 0 }
-        S.canAct = true; S.force = (mode == "force"); Refresh()
-        turnTxt:SetText(S.force and "Choose your next pet" or "Your turn")
+        S.force = (mode == "force"); S.canAct = (mode ~= "stun"); Refresh()   -- "stun": crowd controlled, every button stays grey and the server passes the turn
+        turnTxt:SetText(mode == "stun" and "Stunned - turn passes" or (S.force and "Choose your next pet" or "Your turn"))
         bottom.hint:SetText(S.force and "Pick a pet to send out" or "")
         if S.force then Say("Choose your next pet!", 3) end
     end)

@@ -217,7 +217,7 @@ local function SendPet(b, s, i)
         entry = PREVIEW_BASE + p.display
         SHOP_PRIME.SendAs(pl, entry, p.species, p.display)
     end
-    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.name))
+    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.nick and (p.nick .. "|" .. D.species[p.species].name) or p.name))
 end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
     local str = stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])
@@ -242,11 +242,20 @@ local function FaceAll(b)   -- both pets look at each other again (a hit / fleei
         if o and p then pcall(function() o:SetFacing(p[4]) end) end
     end
 end
+local Play   -- forward declaration (defined below)
 local function SendTurn(b, force)
     FaceAll(b); After(500, function() if not b.over then FaceAll(b) end end)
     local pet = b.eng.P[b.eng.active.P]
     b.waiting = true; b.lastAct = os.time()
     SendInfo(b)
+    if not force and pet.hp > 0 and b.api.CantAct(pet) then   -- stunned / asleep: everything stays greyed out and the turn passes by itself
+        Send(b, "turn", "stun;0,0,0;0"); b.waiting = false
+        After(1500, function()
+            if b.over or b.waiting then return end
+            b.lastAct = os.time(); local ev, status = b.api.Round(b.eng, "A1", b.api.AI(b.eng)); Play(b, ev, 1, status)
+        end)
+        return
+    end
     Send(b, "turn", (force and "force" or "go") .. ";" .. pet.cd[1] .. "," .. pet.cd[2] .. "," .. pet.cd[3] .. ";" .. ((not force and b.api.CanTrap(b.eng)) and 1 or 0))
 end
 
@@ -301,7 +310,7 @@ local function Back(b, s)
     After(450, function() local o2 = GetObj(b, s); if o2 then pcall(function() o2:SetFacing(p[4]) end) end end)
 end
 
-local function Play(b, ev, i, status)
+function Play(b, ev, i, status)
     if b.over then return end
     local pl = GetPlayer(b)
     if not pl or not pl:IsAlive() or pl:GetMapId() ~= b.map or pl:GetDistance(b.cx, b.cy, b.cz) > MAX_RANGE then
@@ -322,8 +331,9 @@ local function Play(b, ev, i, status)
         local o = GetObj(b, e.side)
         b.vis = e.vis   -- a real spell (visual + sound) for this ability, if it has one
         local ranged = e.ranged; b.ranged = ranged
-        if e.dmg and b.vis and ranged and PB_CAST then nxt(500)   -- spell casters stay put; the spell is cast on the hit event (melee abilities with a spell still lunge)
-        elseif e.dmg then
+        local attack = e.dmg or e.vis ~= nil   -- a damaging ability that missed / was dodged still ATTACKS (no utility glow)
+        if attack and b.vis and ranged and PB_CAST then nxt(500)   -- spell casters stay put; the spell is cast on the hit event (melee abilities with a spell still lunge)
+        elseif attack then
             local ts = e.side == "P" and "E" or "P"
             Lunge(b, e.side, ts); b.lunged[e.side] = true
             local emote = (Eng.Family(b.eng[e.side][e.idx].species) == "Humanoid") and 26 or 35   -- humanoids swing a weapon (1H attack); beasts use the claw/bite animation
@@ -352,8 +362,9 @@ local function Play(b, ev, i, status)
             b.guid.E = nil; b.low.E = nil
             local pet = eng.E[e.idx]
             if pl and not b.test then
-                local msg = Store.Capture(pl, pet)
+                local msg, kept, kq = Store.Capture(pl, pet)
                 Msg.Send(pl, "pbt", "msg", msg)
+                if kept then Msg.Send(pl, "pbt", "got", (kq or 1) .. "," .. pet.name) end   -- the big centered "You have collected ..."
             elseif pl then Msg.Send(pl, "pbt", "msg", "You captured " .. pet.name .. "! (test battle: not saved)") end
             Send(b, "fnt", "E," .. e.idx)
         end)
@@ -388,7 +399,7 @@ local function Play(b, ev, i, status)
         nxt(e.more and 650 or 1000)
     elseif e.k == "buff" or e.k == "debuff" then
         SendTags(b, "P", e.stat); SendTags(b, "E", e.stat)
-        if e.k == "debuff" then Fx(GetObj(b, e.side), FX_DEBUFF, 1200) end
+        -- (no glow on the debuffed pet: it looked like that pet casting a buff that does nothing; the status icon is the feedback)
         nxt(700)
     elseif e.k == "heal" then
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. ",+" .. e.amt)
@@ -438,7 +449,7 @@ local function Start(player, enemies, teamOverride)
     local mine = teamOverride or Store.ActiveTeam(player)
     if #mine == 0 then Msg.Send(player, "pbt", "msg", "You have no pets yet. Open /pets."); return false end
     local P, Ei, sum = {}, {}, 0
-    for i, m in ipairs(mine) do P[i] = Eng.NewPet(m.species, m.level, m.picks, nil, { quality = m.quality, hp = m.hp }); P[i].display = m.display; sum = sum + m.level end
+    for i, m in ipairs(mine) do P[i] = Eng.NewPet(m.species, m.level, m.picks, nil, { quality = m.quality, hp = m.hp }); P[i].display = m.display; if m.nick and m.nick ~= "" then P[i].nick, P[i].name = m.nick, m.nick end; sum = sum + m.level end
     local lvl = math.max(1, math.floor(sum / #mine + 0.5))
     if enemies then
         lvl = enemies[1].level
@@ -461,6 +472,7 @@ local function Start(player, enemies, teamOverride)
     battles[g] = b
     Send(b, "begin", "")
     for _, s in ipairs({ "P", "E" }) do for i = 1, #b.eng[s] do SendPet(b, s, i) end end
+    if not b.test then for i, ep in ipairs(b.eng.E) do local st, oq, ol = Store.Compare(player, ep.species, ep.quality, ep.level); Send(b, "own", i .. "," .. st .. "," .. oq .. "," .. ol) end end
     SendAbilities(b)
     After(300, function() SpawnPet(b, "P", 1); Send(b, "in", "P,1") end)
     After(1300, function() SpawnPet(b, "E", 1); Send(b, "in", "E,1") end)
@@ -469,7 +481,7 @@ local function Start(player, enemies, teamOverride)
 end
 -- Watchdog: no battle may live forever. Ends battles whose player left / died / changed map / walked away, and battles that wait for a move for
 -- IDLE_TIMEOUT seconds (e.g. the window never opened); forgets a recruit picker left open that long.
-local IDLE_TIMEOUT = 120
+local IDLE_TIMEOUT = 300   -- 5 minutes (user: at least 3)
 local function Watchdog()
     local now = os.time()
     for low, b in pairs(battles) do

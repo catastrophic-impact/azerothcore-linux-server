@@ -1,0 +1,248 @@
+creature	name	spells	in_D	retail_id	retail_name	family	confidence	needs_standin	notes
+2671	Mechanical Squirrel	4055	N	39	Mechanical Squirrel	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7380	Siamese Cat	10677	N	44	Siamese Cat	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+7381	Silver Tabby Cat	10678	Y				in_D	Y	standin strips: AIName SmartAI
+7382	Orange Tabby Cat	10676	Y				in_D	Y	standin strips: AIName SmartAI
+7383	Black Tabby Cat	10675	N	42	Black Tabby Cat	Beast	exact	Y	standin strips: AIName SmartAI
+7384	Cornish Rex Cat	10674	Y				in_D	Y	standin strips: AIName SmartAI
+7385	Bombay Cat	10673	Y				in_D	Y	standin strips: AIName SmartAI | shares display 5556x1 with another companion
+7386	White Kitten	10679	N	46	White Kitten	Beast	exact	Y	standin strips: AIName SmartAI | shares display 9989x1 with another companion
+7387	Green Wing Macaw	10683	N	50	Green Wing Macaw	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7388	Cockatoo	10681	N	403	Parrot	Flying	close	Y	Parrot kit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7389	Senegal	10684	N	51	Senegal	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7390	Cockatiel	10680	N	47	Cockatiel	Flying	exact	Y	
+7391	Hyacinth Macaw	10682	N	49	Hyacinth Macaw	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7392	Prairie Chicken	10686	N	646	Chicken	Flying	close	Y	Chicken kit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 304x1 with another companion
+7393	White Plymouth Rock	10687	N	646	Chicken	Flying	close	Y	Chicken kit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 304x1 with another companion
+7394	Ancona Chicken	10685	N	52	Ancona Chicken	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7395	Cockroach	10688	N	393	Cockroach	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7543	Dark Whelpling	10695	N	56	Dark Whelpling	Dragonkin	exact	Y	in R.species (pinned)
+7544	Crimson Whelpling	10697	N	56	Dark Whelpling	Dragonkin	close	Y	no retail Crimson; Dark Whelpling kit
+7545	Emerald Whelpling	10698	N	59	Emerald Whelpling	Dragonkin	exact	Y	
+7546	Bronze Whelpling	10699	N	1563	Bronze Whelpling	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7547	Azure Whelpling	10696	N	57	Azure Whelpling	Dragonkin	exact	Y	
+7548	Faeling	10700	N	557	Nether Faerie Dragon	Dragonkin	guess	Y	Nether Faerie Dragon (Dragonkin); alt 1323 Ashleaf Spriteling | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 6294x1 with another companion
+7549	Tree Frog	10704	N	65	Tree Frog	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7550	Wood Frog	10703	N	64	Wood Frog	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 901x1 with another companion
+7551	Dart Frog	10701	N	4665	Yellow Tropical Frog	Aquatic	close	Y	Yellow Tropical Frog | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7552	Island Frog	10702	N	4666	Tropical Frog	Aquatic	close	Y	Tropical Frog | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7553	Great Horned Owl	10707	N	68	Great Horned Owl	Flying	exact	Y	
+7554	Snowy Owl	10708	N	69	Snowy Owl	Flying	exact	Y	
+7555	Hawk Owl	10706	N	67	Hawk Owl	Flying	exact	Y	
+7556	Eagle Owl	10705	N	68	Great Horned Owl	Flying	close	Y	Great Horned Owl
+7558	Cottontail Rabbit	10710	N	378	Rabbit	Critter	close	Y	Rabbit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 4626x1 with another companion
+7559	Spotted Rabbit	10712,35157	N	378	Rabbit	Critter	close	Y	Rabbit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 6302x1 with another companion | 2 spells
+7560	Snowshoe Rabbit	10711	N	72	Snowshoe Rabbit	Critter	exact	Y	shares display 328x1 with another companion
+7561	Albino Snake	10713	N	74	Albino Snake	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7562	Brown Snake	10716	N	77	Brown Snake	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7563	Blue Racer	10715	N	387	Snake	Beast	close	Y	Snake
+7565	Black Kingsnake	10714	N	75	Black Kingsnake	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7566	Scarlet Snake	10720	N	387	Snake	Beast	close	Y	Snake | shares display 2954x1 with another companion
+7567	Crimson Snake	10717	N	78	Crimson Snake	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7568	Ribbon Snake	10719	N	387	Snake	Beast	close	Y	Snake | shares display 2954x1 with another companion
+7569	Green Water Snake	10718	N	418	Water Snake	Beast	close	Y	Water Snake | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+7570	Elven Wisp	10721	N	547	Nordrassil Wisp	Magic	close	Y	Nordrassil Wisp
+8376	Mechanical Chicken	12243	N	83	Mechanical Chicken	Mechanical	exact	Y	
+9656	Pet Bombling	15048	N	85	Pet Bombling	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: engineering gadget pet
+9657	Lil' Smoky	15049	N	86	Lil' Smoky	Mechanical	exact	Y	in R.species
+9662	Sprite Darter Hatchling	15067	N	87	Sprite Darter Hatchling	Dragonkin	exact	Y	shares display 6294x1 with another companion
+9936	Corrupted Kitten	15648	N	46	White Kitten	Beast	close	Y	White Kitten
+10259	Worg Pup	15999	N	89	Worg Pup	Beast	exact	Y	multi-model 9563x1,9572x1
+10598	Smolderweb Hatchling	16450	N	90	Smolderweb Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+11236	Blood Parrot	17567	N	403	Parrot	Flying	close	Y	Parrot kit | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+11325	Panda Cub	17707,26972	N	92	Panda Cub	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | 2 spells
+11326	Mini Diablo	17708	N	1229	Fiendish Imp	Humanoid	guess	Y	Fiendish Imp; retail Mini Diablo family unverified | FLAG: promotional
+11327	Zergling	17709	N	465	Ravager Hatchling	Beast	guess	Y	Ravager Hatchling (Beast) | FLAG: promotional
+12419	Lifelike Toad	19772	N	95	Lifelike Toad	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 901x1 with another companion
+14143	Ar'lia	22567	N	1725	Grumpling	Humanoid	guess	Y	unknown creature; verify in-game (Grumpling Humanoid placeholder)
+14305	Human Orphan	23013	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child; Kun-Lai Runt kit | standin strips: npcflag 3
+14421	Brown Prairie Dog	10709	N	70	Brown Prairie Dog	Critter	exact	Y	
+14444	Orcish Orphan	23012	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child | standin strips: npcflag 2
+14629	Loggerhead Snapjaw	23429	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle | shares display 14657x1 with another companion
+14630	Leatherback Snapjaw	23431	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle
+14631	Olive Snapjaw	23430	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle
+14632	Hawksbill Snapjaw	23432	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle
+14633	Albino Snapjaw	23428	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle
+14755	Tiny Green Dragon	23531	N	757	Tiny Green Dragon	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+14756	Tiny Red Dragon	23530	N	758	Tiny Red Dragon	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+14878	Jubling	23811	N	106	Jubling	Aquatic	exact	Y	
+15186	Murky	24696,24939	N	107	Murky	Humanoid	exact	Y	2 spells
+15356	Blue Baby Murloc	24985	N	107	Murky	Humanoid	close	Y	Murky (Humanoid murloc)
+15357	Purple Baby Murloc	24990	N	107	Murky	Humanoid	close	Y	Murky
+15358	Lurky	24988	N	111	Lurky	Humanoid	exact	Y	shares display 15398x1 with another companion
+15359	Pink Baby Murloc	24989	N	107	Murky	Humanoid	close	Y	Murky
+15360	Green Baby Murloc	24986	N	107	Murky	Humanoid	close	Y	Murky
+15361	Murki	24987,25018	N	1168	Murki	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | 2 spells
+15429	Disgusting Oozeling	25162	N	114	Disgusting Oozeling	Magic	exact	Y	standin strips: AIName SmartAI
+15661	Baby Shark	25849	N	1911	Sting Ray Pup	Aquatic	guess	Y	Sting Ray Pup (Aquatic) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+15698	Father Winter's Helper	26533	N	119	Father Winter's Helper	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: event
+15699	Tranquil Mechanical Yeti	26010	N	116	Tranquil Mechanical Yeti	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: event
+15705	Winter's Little Helper	26541	N	120	Winter's Little Helper	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: event
+15706	Winter Reindeer	26529	N	118	Winter Reindeer	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+15710	Tiny Snowman	26045	N	117	Tiny Snowman	Elemental	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: event vanity
+15919	Jade Owl	61365	N	845	Jade Owl	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15905x1 with another companion
+15923	Golden Hare	26571	N	448	Hare	Critter	close	Y	Hare | standin strips: creature type 8 (stand-in forces type 12->1 only if 12; others keep type)
+15926	Black Pearl Panther	26576	N	240	Onyx Panther	Magic	close	Y	Onyx Panther (Magic gem cat) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15920x1 with another companion
+15927	Truesilver Crab	26581	N	3363	Truesilver Crab	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+15944	Ruby Serpent	26599	N	78	Crimson Snake	Beast	guess	Y	Crimson Snake | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15923x1 with another companion
+15948	Emerald Owl	61368	N	845	Jade Owl	Magic	close	Y	Jade Owl (Magic) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15905x1 with another companion
+15955	Black Diamond Crab	26609	N	3361	Diamond Crab	Aquatic	close	Y	Diamond Crab | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+15959	Dark Iron Scorpid	26614	N	414	Scorpid	Beast	close	Y	Scorpid
+16069	Gurky	27241	N	121	Gurky	Humanoid	exact	Y	
+16085	Peddlefeet	27570	N	122	Peddlefeet	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+16445	Terky	28487	N	1073	Terky	Humanoid	exact	Y	shares display 15398x1 with another companion
+16456	Poley	28505	N	124	Poley	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 16189x1 with another companion
+16547	Speedy	28738	N	125	Speedy	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+16548	Mr. Wiggles	28739	N	126	Mr. Wiggles	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+16549	Whiskers the Rat	28740	N	127	Whiskers the Rat	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+16701	Spirit of Summer	28871	N	128	Spirit of Summer	Elemental	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: event
+17254	White Tiger Cub	30152	N	301	Panther Cub	Beast	close	Y	Panther Cub
+17255	Hippogryph Hatchling	30156	N	130	Hippogryph Hatchling	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+17707	Dawnstone Crab	31039	N	3362	Sapphire Crab	Aquatic	close	Y	Sapphire Crab | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+17708	Living Ruby Serpent	31040	N	78	Crimson Snake	Beast	guess	Y	Crimson Snake | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15923x1 with another companion
+17709	Talasite Owl	48986	N	845	Jade Owl	Magic	close	Y	Jade Owl | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15905x1 with another companion
+17710	Nightseye Panther	31047	N	240	Onyx Panther	Magic	close	Y	Onyx Panther | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15920x1 with another companion
+18381	Netherwhelp	32298	N	131	Netherwhelp	Dragonkin	exact	Y	
+18839	Magical Crawdad	33050	N	132	Magical Crawdad	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+20245	Mr. Kitty	35050	N	459	Cat	Beast	close	Y	Cat | shares display 9989x1 with another companion
+20246	Manny	35052	N	459	Cat	Beast	guess	Y	Cat; creature family unknown
+20247	Kitty	35053	N	459	Cat	Beast	close	Y	Cat | shares display 5556x1 with another companion
+20408	Mana Wyrmling	35156	N	136	Mana Wyrmling	Magic	exact	Y	
+20472	Brown Rabbit	35239	N	137	Brown Rabbit	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 4626x1 with another companion
+21008	Yellow Moth	35910	N	140	Yellow Moth	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_moth
+21009	Red Moth	35909	N	139	Red Moth	Flying	exact	Y	standin strips: ScriptName npc_pet_gen_moth
+21010	Blue Moth	35907	N	138	Blue Moth	Flying	exact	Y	standin strips: ScriptName npc_pet_gen_moth
+21018	White Moth	35911	N	141	White Moth	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_moth
+21055	Golden Dragonhawk Hatchling	36027	N	142	Golden Dragonhawk Hatchling	Dragonkin	exact	Y	
+21056	Blue Dragonhawk Hatchling	36031	N	145	Blue Dragonhawk Hatchling	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+21063	Silver Dragonhawk Hatchling	36029	N	144	Silver Dragonhawk Hatchling	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+21064	Red Dragonhawk Hatchling	36028	N	143	Red Dragonhawk Hatchling	Dragonkin	exact	Y	
+21076	Firefly	36034	N	146	Firefly	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+21266	Ravager Hatchling	36467	N	465	Ravager Hatchling	Beast	exact	Y	multi-model 20155x1,20160x1
+21847	Fel Guard Hound	37690	N	89	Worg Pup	Beast	guess	Y	Worg Pup (Beast); creature type 3 Demon, script npc_fel_guard_hound | standin strips: creature type 3 (stand-in forces type 12->1 only if 12; others keep type); ScriptName npc_fel_guard_hound
+22328	Toy RC Mortar Tank	38842	N	227	Warbot	Mechanical	guess	Y	Warbot (Mechanical) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: vanity toy
+22445	Miniwing	39181	N	194	Tickbird Hatchling	Flying	guess	Y	Tickbird Hatchling (Flying)
+22484	Zeppit	39242	N	1761	Echo Batling	Flying	guess	Y	Echo Batling (Flying); family unverified | standin strips: AIName SmartAI
+22817	Blood Elf Orphan	39478	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child | standin strips: npcflag 2
+22818	Draenei Orphan	39479	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child | standin strips: npcflag 3
+22943	Wolpertinger	39709	N	153	Wolpertinger	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+23060	Netherwing Whelp	39986	N	131	Netherwhelp	Dragonkin	close	Y	Netherwhelp | standin strips: creature type 2 (stand-in forces type 12->1 only if 12; others keep type)
+23114	Lucky	40319	N	155	Lucky	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 21304x1 with another companion
+23198	Lucky	40405	N	155	Lucky	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+23231	Willy	40613	N	157	Willy	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+23234	Bananas	40549	N	156	Bananas	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 21362x1 with another companion
+23258	Egbert	40614	N	646	Chicken	Flying	guess	Y	Chicken (Flying bird) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+23266	Peanut	40634	N	159	Peanut	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+23274	Stinker	40990	N	160	Stinker	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+23439	Hungry Nether Ray	41423	N	186	Nether Ray Fry	Flying	close	Y	Nether Ray Fry | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+23442	Nether Ray Desummoner	41449	N	186	Nether Ray Fry	Flying	close	Y	Nether Ray Fry; two random models | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: creature type 10 (stand-in forces type 12->1 only if 12; others keep type) | multi-model 169x1,15880x1
+23787	Mister Manny	42422	N	459	Cat	Beast	guess	Y	Cat; creature family unknown | standin strips: creature type 1 (stand-in forces type 12->1 only if 12; others keep type) | shares display 21362x1 with another companion
+23909	Sinister Squashling	42609	N	162	Sinister Squashling	Elemental	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: event vanity pet
+24388	Toothy	43697	N	163	Toothy	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+24389	Muckbreath	43698	N	164	Muckbreath	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+24480	Mojo	43918	N	165	Mojo	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+24753	Pint-Sized Pink Pachyderm	44369	N	166	Pint-Sized Pink Pachyderm	Critter	exact	Y	
+24916	Living Flare	44879	N	3411	Blaze Spirit	Elemental	guess	Y	Blaze Spirit (Elemental) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: creature type 4 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI
+24968	Clockwork Rocket Bot	54187	N	277	Clockwork Gnome	Mechanical	close	Y	Clockwork Gnome (Mechanical) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+25062	Tiny Sporebat	45082	N	167	Tiny Sporebat	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+25109	Rocket Chicken	45125	N	168	Rocket Chicken	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+25110	Dragon Kite	45127	N	169	Dragon Kite	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | multi-model 22966x1,22990x1,22991x1,22992x1 | FLAG: vanity object (kite)
+25146	Golden Pig	45174	N	170	Golden Pig	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 21304x1 with another companion
+25147	Silver Pig	45175	N	171	Silver Pig	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+25706	Scorchling	45890	N	3411	Blaze Spirit	Elemental	guess	Y	Blaze Spirit (Elemental) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+25761	Alliance Deserter	45963	N	1803	Thistleleaf Adventurer	Humanoid	guess	Y	Humanoid; Thistleleaf Adventurer | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type) | multi-model 23147x1,23150x1,23151x1,23152x1
+25861	Orphaned Mammoth Calf	46233	N	202	Baby Blizzard Bear	Beast	guess	Y	Baby Blizzard Bear (Beast); 4 random models | standin strips: creature type 1 (stand-in forces type 12->1 only if 12; others keep type) | multi-model 23437x1,23436x1,23434x1,23435x1
+26050	Snarly	46425	N	173	Snarly	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+26056	Chuck	46426	N	174	Chuck	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+26119	Phoenix Hatchling	46599	N	175	Phoenix Hatchling	Elemental	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+26240	Seaspray Albatross	48983	N	534	Imperial Eagle Chick	Flying	guess	Y	Imperial Eagle Chick (Flying)
+26242	Empyrean Tortoise	46780	N	473	Turquoise Turtle	Aquatic	close	Y	Turquoise Turtle | shares display 14657x1 with another companion
+26243	Crimson Serpent	46783	N	78	Crimson Snake	Beast	guess	Y	Crimson Snake (Beast) - gem serpents are Dragonkin/Magic at retail | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15923x1 with another companion
+26244	Shadowsong Panther	46784	N	240	Onyx Panther	Magic	close	Y	Onyx Panther | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 15920x1 with another companion
+27017	Depleted War Golem	47794	N	227	Warbot	Mechanical	guess	Y	Warbot | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+27217	Spirit of Competition	48406	N	179	Spirit of Competition	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: promotional/event
+27346	Essence of Competition	48408	N	180	Essence of Competition	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: promotional/event
+27914	Ethereal Soul-Trader	49964,50049	N	183	Ethereal Soul-Trader	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_soul_trader_beacon; npcflag 129 | FLAG: NOT a battle pet candidate: vendor beacon (npcflag 129, script npc_pet_gen_soul_trader_beacon, 2 spells -> 1 creature) | 2 spells
+28120	Lafoo	51190	N	459	Cat	Beast	guess	Y	Beast placeholder (Sholazar hunter companion), SmartAI | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI; npcflag 2
+28121	Jaloot	51191	N	459	Cat	Beast	guess	Y	Beast placeholder (gorilla?) | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI; npcflag 3
+28122	Moodle	51192	N	459	Cat	Beast	guess	Y	Beast placeholder | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI; npcflag 3
+28214	Goregek the Gorilla Hunter	51186	N	1692	Savage Cub	Beast	guess	Y	Savage Cub (Beast) | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI; npcflag 2 | shares display 25385x1 with another companion
+28215	Dajik the Wasp Hunter	51188	N	1692	Savage Cub	Beast	guess	Y	Savage Cub (Beast) | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI
+28216	Zepik the Gorloc Hunter	51189	N	1692	Savage Cub	Beast	guess	Y	Savage Cub (Beast) | standin strips: creature type 7 (stand-in forces type 12->1 only if 12; others keep type); AIName SmartAI; npcflag 3 | shares display 25385x1 with another companion
+28267	Coyote Spirit	51149	N	89	Worg Pup	Beast	guess	Y	Worg Pup (Beast); retail family may be Magic
+28470	Nether Ray Fry	51716	N	186	Nether Ray Fry	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+28513	Vampiric Batling	51851	N	187	Vampiric Batling	Undead	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+28883	Frosty	52615	N	117	Tiny Snowman	Elemental	guess	Y	Tiny Snowman (Elemental) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+29089	Mini Tyrael	53082	N	189	Mini Tyrael	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: promotional
+29147	Ghostly Skull	53316	N	190	Ghostly Skull	Undead	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: vanity object (skull)
+29726	Mr. Chilly	55068	N	192	Mr. Chilly	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: event vanity
+30191	Deep Twilight Serpent	68351	N	387	Snake	Beast	guess	Y	Snake
+30192	Sapphire Owl	56187	N	845	Jade Owl	Magic	close	Y	Jade Owl | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+30379	Westfall Chicken	13548	N	84	Westfall Chicken	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 304x1 with another companion
+31575	Giant Sewer Rat	59250	N	193	Giant Sewer Rat	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+32589	Tickbird Hatchling	61348	N	194	Tickbird Hatchling	Flying	exact	Y	
+32590	White Tickbird Hatchling	61349	N	195	White Tickbird Hatchling	Flying	exact	Y	
+32591	Cobra Hatchling	61351	N	197	Cobra Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+32592	Proto-Drake Whelp	61350	N	196	Proto-Drake Whelp	Dragonkin	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+32595	Pengu	61357	N	198	Pengu	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+32643	Kirin Tor Familiar	61472	N	1160	Arcane Eye	Magic	guess	Y	Arcane Eye (Magic)
+32791	Spring Rabbit	61725	N	200	Spring Rabbit	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_spring_rabbit | shares display 6302x1 with another companion
+32818	Plump Turkey	61773	N	201	Plump Turkey	Flying	exact	Y	standin strips: ScriptName npc_pet_gen_plump_turkey
+32841	Baby Blizzard Bear	61855	N	202	Baby Blizzard Bear	Beast	exact	Y	shares display 16189x1 with another companion
+32939	Little Fawn	61991	N	203	Little Fawn	Critter	exact	Y	
+32980	Faithful Mule	62067	N	434	Ram	Beast	close	Y	Ram (Beast) | standin strips: creature type 1 (stand-in forces type 12->1 only if 12; others keep type)
+32983	Rented Pack Mule	62076	N	434	Ram	Beast	close	Y	Ram (Beast) | standin strips: creature type 1 (stand-in forces type 12->1 only if 12; others keep type)
+33188	Teldrassil Sproutling	62491	N	204	Teldrassil Sproutling	Elemental	exact	Y	standin strips: AIName SmartAI
+33194	Dun Morogh Cub	62508	N	205	Dun Morogh Cub	Beast	exact	Y	
+33197	Tirisfal Batling	62510	N	206	Tirisfal Batling	Flying	exact	Y	
+33198	Durotar Scorpion	62513	N	207	Durotar Scorpion	Beast	exact	Y	standin strips: AIName SmartAI
+33199	Alarming Clockbot	62514	N	227	Warbot	Mechanical	guess	Y	Warbot | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+33200	Elwynn Lamb	62516	N	209	Elwynn Lamb	Critter	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+33205	Ammen Vale Lashling	62562	N	212	Ammen Vale Lashling	Elemental	exact	Y	
+33219	Mulgore Hatchling	62542	N	194	Tickbird Hatchling	Flying	guess	Y	Tickbird Hatchling (Flying plainstrider)
+33226	Strand Crawler	62561	N	211	Strand Crawler	Aquatic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+33227	Enchanted Broom	62564	N	213	Enchanted Broom	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: vanity object (broom)
+33238	Argent Squire	62609	N	1803	Thistleleaf Adventurer	Humanoid	guess	Y	Humanoid | standin strips: ScriptName npc_pet_gen_argent_pony_bridle; npcflag 129 | FLAG: vendor/mount-bridle script npc_pet_gen_argent_pony_bridle, npcflag 129 (vendor pet) - exclude or strip flags
+33239	Argent Gruntling	62746	N	1803	Thistleleaf Adventurer	Humanoid	guess	Y	Humanoid | standin strips: ScriptName npc_pet_gen_argent_pony_bridle; npcflag 129 | FLAG: vendor script npc_pet_gen_argent_pony_bridle, npcflag 129 - exclude or strip flags
+33274	Mechanopeep	62674	N	215	Mechanopeep	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+33529	Curious Wolvar Pup	65382	N	226	Curious Wolvar Pup	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 25384x1 with another companion
+33530	Curious Oracle Hatchling	65381	N	225	Curious Oracle Hatchling	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | shares display 25173x1 with another companion
+33532	Wolvar Orphan	65353	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child | standin strips: AIName SmartAI; npcflag 3 | shares display 25384x1 with another companion
+33533	Oracle Orphan	65352	N	1166	Kun-Lai Runt	Humanoid	guess	Y	Humanoid child | standin strips: AIName SmartAI; npcflag 3 | shares display 25173x1 with another companion
+33578	Murkimus the Gladiator	63318	N	107	Murky	Humanoid	close	Y	Murky | shares display 28734x1 with another companion | FLAG: promotional
+33810	Sen'jin Fetish	63712	N	218	Sen'jin Fetish	Undead	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: vanity object
+34031	XS-001 Constructor Bot	64351	N	227	Warbot	Mechanical	guess	Y	Warbot | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+34279	Ruby Hare	56121	N	448	Hare	Critter	close	Y	Hare | standin strips: creature type 8 (stand-in forces type 12->1 only if 12; others keep type) | shares display 328x1 with another companion
+34320	Venomhide Hatchling	65183	N	506	Venomspitter Hatchling	Beast	close	Y	Venomspitter Hatchling | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_venomhide_hatchling; npcflag 2
+34364	Calico Cat	65358	N	224	Calico Cat	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+34587	Warbot	65682	N	227	Warbot	Mechanical	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+34694	Grunty	66030	N	228	Grunty	Humanoid	exact	Y	in R.species | standin strips: AIName SmartAI
+34724	Shimmering Wyrmling	66096	N	229	Shimmering Wyrmling	Magic	exact	Y	
+34770	Macabre Marionette	66175	N	1351	Macabre Marionette	Undead	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: vanity object (puppet)
+34930	Jade Tiger	66520	N	231	Jade Tiger	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35387	Leaping Hatchling	67416	N	235	Leaping Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI
+35394	Razzashi Hatchling	67420	N	239	Razzashi Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35395	Deviate Hatchling	67414	N	233	Deviate Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35396	Darting Hatchling	67413	N	232	Darting Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_darting_hatchling
+35397	Ravasaur Hatchling	67418	N	237	Ravasaur Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35398	Razormaw Hatchling	67419	N	238	Razormaw Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35399	Obsidian Hatchling	67417	N	236	Obsidian Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35400	Gundrak Hatchling	67415	N	234	Gundrak Hatchling	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+35468	Onyx Panther	67527	N	240	Onyx Panther	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+36482	Tuskarr Kite	68767	N	241	Tuskarr Kite	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: vanity object (kite)
+36511	Spectral Tiger Cub	68810	Y				in_D	Y	
+36607	Onyxian Whelpling	69002	N	57	Azure Whelpling	Dragonkin	close	Y	Azure kit; or 1153 Death Talon Whelpguard
+36871	Core Hound Pup	69452	N	89	Worg Pup	Beast	close	Y	Worg Pup
+36908	Gryphon Hatchling	69535	N	245	Gryphon Hatchling	Flying	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_wind_rider_cub
+36909	Wind Rider Cub	69536	N	246	Wind Rider Cub	Beast	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_wind_rider_cub
+36910	Zipao Tiger	69539	N	247	Zipao Tiger	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+36911	Pandaren Monk	69541	N	248	Pandaren Monk	Humanoid	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: promotional
+36979	Lil' K.T.	69677	N	249	Lil' K.T.	Undead	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: promotional
+37865	Perky Pug	70613	N	89	Worg Pup	Beast	guess	Y	Worg Pup (Beast dog) | FLAG: promotional
+38374	Toxic Wasteling	71840	N	251	Toxic Wasteling	Magic	exact	Y	retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: ScriptName npc_pet_gen_toxic_wasteling
+40198	Frigid Frostling	74932	N	253	Frigid Frostling	Elemental	exact	Y	
+40295	Clockwork Rocket Bot	75134	N	277	Clockwork Gnome	Mechanical	close	Y	Clockwork Gnome (Mechanical) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen
+40624	Celestial Dragon	75613	N	57	Azure Whelpling	Dragonkin	guess	Y	dragon kit | FLAG: promotional
+40703	Lil' XT	75906	N	227	Warbot	Mechanical	guess	Y	Warbot (Mechanical) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | standin strips: AIName SmartAI | FLAG: promotional
+40721	Murkimus the Gladiator	75936	N	107	Murky	Humanoid	close	Y	Murky | shares display 28734x1 with another companion | FLAG: promotional
+42078	Mini Thor	78381	N	227	Warbot	Mechanical	guess	Y	Warbot (Mechanical) | retail kit NOT in pb_retail yet: add id to pet-battle/pinned_species.txt (or gen_retail) and regen | FLAG: promotional

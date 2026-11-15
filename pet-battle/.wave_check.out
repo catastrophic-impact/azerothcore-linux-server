@@ -1,0 +1,65 @@
+ALL TESTS PASSED
+== audit_standins
+== gap census
+eligible species: 2316; unhandled effect types: 12 (handled set: 69)
+species with at least one unhandled effect: 41 (2%)
+prop 230  species 17   abilities: Deadly Dreaming(2500), Haunt(652)
+== privacy sweep of 56 files
+== files for the commit block
+README.md
+addons/wotlk_petbattle/Battle.lua
+custom-sql/016_pet_standins.sql
+pet-battle/duskwood_picks.tsv
+pet-battle/eversong_picks.tsv
+pet-battle/ghostlands_picks.tsv
+pet-battle/run_tests.sh
+pet-battle/silverpine_picks.tsv
+pet-battle/sim_presentation.lua
+pet-battle/test_describe.lua
+pet-battle/zone_ranges.tsv
+scripts/pb_battle.lua
+scripts/pb_core.lua
+scripts/pb_data.lua
+scripts/pb_retail.lua
+scripts/pb_wild.lua
+pet-battle/alterac_meta.tsv
+pet-battle/alterac_picks.tsv
+pet-battle/alterac_roster.tsv
+pet-battle/azshara_meta.tsv
+pet-battle/azshara_picks.tsv
+pet-battle/azshara_roster.tsv
+pet-battle/barrens_meta.tsv
+pet-battle/barrens_picks.tsv
+pet-battle/barrens_roster.tsv
+pet-battle/blasted_meta.tsv
+pet-battle/blasted_picks.tsv
+pet-battle/blasted_roster.tsv
+pet-battle/deadwind_meta.tsv
+pet-battle/deadwind_picks.tsv
+pet-battle/deadwind_roster.tsv
+pet-battle/dustwallow_meta.tsv
+pet-battle/dustwallow_picks.tsv
+pet-battle/dustwallow_roster.tsv
+pet-battle/epl_meta.tsv
+pet-battle/epl_picks.tsv
+pet-battle/epl_roster.tsv
+pet-battle/felwood_meta.tsv
+pet-battle/felwood_picks.tsv
+pet-battle/felwood_roster.tsv
+pet-battle/moonglade_meta.tsv
+pet-battle/moonglade_picks.tsv
+pet-battle/moonglade_roster.tsv
+pet-battle/stranglethorn_meta.tsv
+pet-battle/stranglethorn_picks.tsv
+pet-battle/stranglethorn_roster.tsv
+pet-battle/swampsorrows_meta.tsv
+pet-battle/swampsorrows_picks.tsv
+pet-battle/swampsorrows_roster.tsv
+pet-battle/test_levelup_wiring.lua
+pet-battle/winterspring_meta.tsv
+pet-battle/winterspring_picks.tsv
+pet-battle/winterspring_roster.tsv
+pet-battle/wpl_meta.tsv
+pet-battle/wpl_picks.tsv
+pet-battle/wpl_roster.tsv
+WAVE CHECK: OK

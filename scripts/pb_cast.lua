@@ -8,6 +8,7 @@ C.DEBUG = false
 -- 1690 vs 1691 (pet-battle/find_factions.py): hostile to each other, friendly to both sides' players, no guard faction hostile to them. Pets stay faction 35 (safe from mobs) and only swap for the 0.8 s of a cast.
 C.FACTION_FRIENDLY, C.FACTION_ATT, C.FACTION_TGT, C.HOLD_MS = 35, 1690, 1691, 800
 
+local lvlOrig = {}   -- creature low guid -> its real level while it is raised for a cast
 local gen = {}   -- per creature: only the LATEST cast may restore it (a restore from an older cast must not clobber a newer one)
 local function After(ms, fn) CreateLuaEvent(function() fn() end, ms, 1) end
 -- a stored Map userdata is INVALID by the time a timer fires: always get a fresh map through a player (found with the debug lines)
@@ -28,6 +29,12 @@ function C.Cast(att, tgt, spell, o)
     local pguid = o.pguid; if not pguid then local np = att:GetNearestPlayer(200); pguid = np and np:GetGUID() end
     local hostile = (not o.heal) and (not o.noSwap) and ag ~= tg   -- noSwap: the two pets are permanently hostile to each other already (battle pets), nothing to swap
     if hostile then pcall(function() att:SetFaction(C.FACTION_ATT); tgt:SetFaction(C.FACTION_TGT) end) end   -- the configuration verified with .pbfx + screenshots
+    local h0, la, lt = 0, 0, 0   -- evidence for "the projectile flew through the target": the target must LOSE health from the real spell (a spell MISS shows no impact)
+    pcall(function() h0, la, lt = tgt:GetHealth(), att:GetLevel(), tgt:GetLevel() end)
+    -- A real spell can MISS: 3.3.5 hit chance is 96 - leveldiff (diff < 3) else 94 - (diff - 2) * 11, so a level 1 pet casting at a level 8 pet misses most casts and the projectile flies
+    -- through without an impact (measured: only caster level < target level ever missed). The caster is raised to the target's level for the cast and put back afterwards.
+    if not o.heal and lt > la and la > 0 then pcall(function() lvlOrig[al] = lvlOrig[al] or la; att:SetLevel(lt) end) end
+    local la2 = la; pcall(function() la2 = att:GetLevel() end)   -- the level actually used for the cast (logged: proves SetLevel works)
     local ok = pcall(function()
         if o.dmg then att:CastCustomSpell(tgt, spell, true, o.dmg) else att:CastSpell(tgt, spell, true) end
     end)
@@ -43,14 +50,20 @@ function C.Cast(att, tgt, spell, o)
         end)
     end
     After(hold, function()
-        local newer = gen[al] ~= ga or gen[tl] ~= gt   -- a later cast owns these creatures now: it restores them
+        local newer = gen[al] ~= ga or gen[tl] ~= gt   -- a later cast owns these creatures now: it restores them (and the real level)
         if newer then if o.done then pcall(o.done) end return end
         local oka, a = pcall(Fresh, pguid, ag); local okt, t = pcall(Fresh, pguid, tg)
         if C.DEBUG then print("[pb_cast] restore: att", oka, a ~= nil, "tgt", okt, t ~= nil, (not okt) and tostring(t) or "") end
         if not oka then a = nil end; if not okt then t = nil end
+        if lvlOrig[al] then if a then pcall(function() a:SetLevel(lvlOrig[al]) end) end; lvlOrig[al] = nil end   -- back to the real level
         local okr, err = pcall(function()
             if a then if hostile then a:SetFaction(C.FACTION_FRIENDLY) end; a:ClearInCombat(); a:MoveClear() end
             if t then
+                if not o.heal then   -- one line per damaging cast: spell, caster level, target level, whether the real spell landed
+                    local h1 = t:GetHealth(); local landed = h1 < h0
+                    C.stats = C.stats or { cast = 0, landed = 0 }; C.stats.cast = C.stats.cast + 1; if landed then C.stats.landed = C.stats.landed + 1 end
+                    print(string.format("[pb_cast] spell=%d attLv=%d(cast at %d) tgtLv=%d hp %d->%d landed=%s (%d/%d landed)", spell, la, la2, lt, h0, h1, tostring(landed), C.stats.landed, C.stats.cast))
+                end
                 if hostile then t:SetFaction(C.FACTION_FRIENDLY) end; t:ClearInCombat(); t:RemoveAura(spell)
                 if o.hp_after then t:SetHealth(math.max(1, o.hp_after)) end
                 t:MoveClear()   -- a hit critter runs away (its own AI): stop it and put it back on its spot

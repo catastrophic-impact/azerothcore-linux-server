@@ -61,7 +61,7 @@ Msg.On("shop", "buy", function(player, payload)
         return Msg.Send(player, "shop", "res", id .. ";Not enough funds")
     end
     if GOLD_MODE then player:ModifyMoney(-price) else player:RemoveItem(TICKET, price) end
-    if e.spell then player:LearnSpell(e.spell) end
+    if e.spell then player:LearnSpell(e.spell); pcall(function() require("pb_store").SyncCompanions(player) end) end   -- a bought companion pet goes straight into the pet journal
     if e.item and not e.spell then player:AddItem(e.item, e.count or 1) end
     Msg.Send(player, "shop", "res", id .. ";OK")
     Msg.Send(player, "shop", "bal", Balance(player))

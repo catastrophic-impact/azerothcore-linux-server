@@ -11,6 +11,7 @@ local ZONES = { [36] = true, [493] = true, [618] = true, [361] = true, [15] = tr
 local TICK_MS = 12000
 local SEARCH = 60               -- how far from a player real mobs are looked for
 local SPACING = 90              -- at most one wild pet per species within this distance of each other
+local MAX_AREA = 3              -- at most this many wild pets within SPACING of a player, all of DIFFERENT species (user: up to 3, never 2-3 of a kind)
 local COOLDOWN = 90             -- seconds before the species re-appears around that spot after a battle
 local LIFETIME = 600            -- an untouched wild pet disappears after this many seconds
 local LEAVE = 110               -- ...or when no player is within this distance
@@ -74,10 +75,24 @@ local function WildNear(species, map, x, y)
     return false
 end
 
+-- Where a wild pet appears: a random spot 5-50 yd from its mob (the user wants them spread out, not stacked on the mob). The ground there must exist and sit within
+-- MAX_DZ of the mob's height (rejects cliffs, lake beds, spots under a roof/overhang); up to 8 tries, otherwise the old close spot (3 yd) so a spawn never fails.
+local MIN_DIST, MAX_DIST, MAX_DZ, TRIES = 5, 50, 5, 8
+local function SpawnSpot(mx, my, mz, height, rand)
+    rand = rand or math.random
+    for _ = 1, TRIES do
+        local ang, dist = rand() * 6.2832, MIN_DIST + rand() * (MAX_DIST - MIN_DIST)
+        local x, y = mx + math.cos(ang) * dist, my + math.sin(ang) * dist
+        local ok, h = pcall(height, x, y)
+        if ok and h and h > -1000 and math.abs(h - mz) <= MAX_DZ then return x, y, h + 0.1 end
+    end
+    local ang = rand() * 6.2832
+    return mx + math.cos(ang) * 3, my + math.sin(ang) * 3, mz
+end
+
 local function Spawn(player, species, mob, types)
     local map = player:GetMapId()
-    local ang, dist = math.random() * 6.2832, 2 + math.random() * 1.5
-    local x, y, z = mob:GetX() + math.cos(ang) * dist, mob:GetY() + math.sin(ang) * dist, mob:GetZ()
+    local x, y, z = SpawnSpot(mob:GetX(), mob:GetY(), mob:GetZ(), function(px, py) local m = mob:GetMap(); return m and m:GetHeight(px, py, 1) end)
     local obj = PerformIngameSpawn(1, species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)
     if not obj then return end
     local g = obj:GetGUIDLow()
@@ -120,12 +135,17 @@ local function Scan(player, now)
             end
         end
     end
+    local near, here = 0, {}   -- wild pets already around this player (within SPACING of him): the cap and the species that are taken
+    for _, w in pairs(wild) do
+        if w.map == map and (w.x - px) ^ 2 + (w.y - py) ^ 2 < SPACING * SPACING then near = near + 1; here[w.species] = true end
+    end
+    if near >= MAX_AREA then return end
     table.sort(types)   -- deterministic order (pairs() order would make the species pick random per run)
     for _, species in ipairs(types) do
         local mobs = found[species]
         local m = mobs[math.random(#mobs)]
         local mx, my = m:GetX(), m:GetY()
-        if not WildNear(species, map, mx, my) and not Cooling(species, map, mx, my, now) then
+        if not here[species] and not WildNear(species, map, mx, my) and not Cooling(species, map, mx, my, now) then
             if D.species[species].wild == "adopt" then Adopt(player, species, m, types) else Spawn(player, species, m, types) end
             return   -- at most one new wild pet per player per tick: they trickle in
         end
@@ -218,6 +238,7 @@ end
 
 -- test hooks (used by pet-battle/smoke_wild.lua)
 PB_WILD.MARKER = MARKER
+PB_WILD.SpawnSpot = SpawnSpot
 PB_WILD.Tick, PB_WILD.Count = Tick, function() local n = 0; for _ in pairs(wild) do n = n + 1 end; return n end
 PB_WILD.OnHello, PB_WILD.OnSelect, PB_WILD.Wild = OnHello, OnSelect, wild
 print("[pb_wild] loaded")

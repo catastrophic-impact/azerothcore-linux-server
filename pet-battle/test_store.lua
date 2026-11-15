@@ -78,6 +78,45 @@ test("capture keeps the wild pet's level, quality and skin; a worse capture of a
     local better = Store.Capture(player, { species = 883, name = "Deer", level = 9, quality = 3, display = 5 })
     truthy(better:find("replaces"), "replaced"); eq(Store.Pets(player)[883].level, 9, "better level replaces")
 end)
+test("Compare: not collected / upgrade / same-or-better, same rule as Capture; Capture reports kept + quality", function()
+    local pl2 = player
+    local st0 = Store.Compare(pl2, 9699, 2, 5); eq(st0, 0, "uncollected species -> 0")
+    local _, kept, kq = Store.Capture(pl2, { species = 9699, name = "Fire Beetle", level = 5, quality = 2, display = 1 }); eq(kept, true, "first capture kept"); eq(kq, 2, "kept quality returned")
+    local a, oq, ol = Store.Compare(pl2, 9699, 2, 5); eq(a, 2, "same quality same level -> not an upgrade"); eq(oq, 2, "owned quality"); eq(ol, 5, "owned level")
+    eq((Store.Compare(pl2, 9699, 2, 6)), 1, "same quality higher level -> upgrade"); eq((Store.Compare(pl2, 9699, 3, 1)), 1, "higher quality -> upgrade")
+    eq((Store.Compare(pl2, 9699, 1, 40)), 2, "lower quality never an upgrade")
+    local _, kept2 = Store.Capture(pl2, { species = 9699, name = "Fire Beetle", level = 4, quality = 2, display = 1 }); eq(kept2, false, "worse capture released -> not kept")
+end)
+test("Rename (nickname): validation, persistence, wire name 'nick|species', clear restores", function()
+    eq(Store.CleanNick("  Fluffy  Boy "), "Fluffy Boy", "trims and collapses spaces"); eq(Store.CleanNick(""), "", "empty clears"); eq(Store.CleanNick("ThisNameIsWayTooLong"), nil, "over 12 characters refused")
+    eq(Store.CleanNick("Bob'); DROP"), nil, "punctuation refused"); eq(Store.CleanNick("R2D2"), nil, "digits refused")
+    Store.AddPet(player, 2442, 3, nil, 1, 0)
+    eq(Store.SetNick(player, 2442, "Bessie"), true, "set"); eq(Store.Nick(player, 2442), "Bessie", "stored")
+    eq(Store.SetNick(player, 99999, "Nope"), false, "unowned species refused"); eq(Store.SetNick(player, 2442, "bad!"), false, "invalid refused"); eq(Store.Nick(player, 2442), "Bessie", "invalid keeps the old name")
+    eq(Store.SetNick(player, 2442, ""), true, "clear"); eq(Store.Nick(player, 2442), nil, "cleared")
+end)
+test("SyncCompanions: a known companion spell adds ONE level-1 journal pet; repeated syncs never duplicate or reset it", function()
+    Store.COMP[1933] = { 55501 }
+    local known = {}; local pl = setmetatable({ HasSpell = function(_, sp) return known[sp] == true end }, { __index = player })
+    eq(Store.SyncCompanions(pl), 0, "spell not known: nothing added"); eq(Store.Pets(pl)[1933], nil, "no pet yet")
+    known[55501] = true
+    eq(Store.SyncCompanions(pl), 1, "spell known: one pet added"); eq(Store.Pets(pl)[1933].level, 1, "level 1")
+    Store.SetHp(42, 1933, 1)
+    local p = Store.Pets(pl)[1933]; p.level = 7
+    for _ = 1, 5 do eq(Store.SyncCompanions(pl), 0, "repeat sync adds nothing") end
+    eq(Store.Pets(pl)[1933].level, 7, "a leveled pet is never reset by a sync")
+    local n = 0; for sp in pairs(Store.Pets(pl)) do if sp == 1933 then n = n + 1 end end; eq(n, 1, "exactly one row for the species")
+    Store.COMP[1933] = nil
+end)
+test("a level up fully heals the pet; a win without a level up keeps the health", function()
+    Store.AddPet(player, 2442, 1, nil, 1, 0); at(9500)
+    local max = Eng.MaxHp(2442, 1, 1); Store.SetHp(42, 2442, 20)
+    local p = Store.Pets(player)[2442]; p.xp = 0
+    local gain, lv, ups = Store.GrantXP(player, 2442, 1)   -- level 1 enemy: not enough XP for level 2 at once
+    if ups == 0 then eq(Store.Pets(player)[2442].hp ~= nil, true, "no level up: the damaged health is kept") end
+    p.xp = Eng.XPNeeded(p.level) - 1; local _, _, ups2 = Store.GrantXP(player, 2442, p.level)
+    truthy(ups2 and ups2 >= 1, "a level up happened"); eq(Store.Pets(player)[2442].hp, nil, "level up: health back to full (nil = full)")
+end)
 test("XP gain keeps the pet's current health value", function()
     Store.AddPet(player, 257, 10, nil, 1, 0); at(9000); Store.SetHp(42, 257, 50)
     local p = Store.Pets(player)[257]; Store.GrantXP(player, 257, 10)

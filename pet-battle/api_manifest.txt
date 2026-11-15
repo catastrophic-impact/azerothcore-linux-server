@@ -63,6 +63,7 @@ SetFaction=Creature/Player
 SetHealth=Creature/Player
 SetHomePosition=Creature
 SetMaxHealth=Creature/Player
+SetLevel=Creature/Player
 SetNPCFlags=Creature
 SetPhaseMask=Creature/GameObject/Player
 SetReactState=Creature

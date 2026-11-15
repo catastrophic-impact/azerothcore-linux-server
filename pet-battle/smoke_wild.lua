@@ -175,6 +175,44 @@ player.isBot = false
 local leaked = 0; for _, o in pairs(objects) do if not o.db then leaked = leaked + 1 end end
 check(leaked == 0, "no creature objects leaked, got " .. leaked)
 
+-- area cap: at most 3 wild pets within 90 yd of a player, all different species (5 candidate species stand around him)
+do
+    player.online = false; tick(); tick()   -- clear everything from the scenarios above
+    player.x, player.y, player.online = 6000, 6000, true
+    for i, e in ipairs({ 299, 69, 257, 721, 883 }) do realMob(e, 6000 + i * 4, 6000 + i * 3, 1) end
+    local worst, dup = 0, false
+    for _ = 1, 14 do
+        tick()
+        local n, seen = 0, {}
+        for _, w in pairs(W.Wild) do if (w.x - 6000) ^ 2 + (w.y - 6000) ^ 2 < 90 * 90 then n = n + 1; if seen[w.species] then dup = true end seen[w.species] = true end end
+        worst = math.max(worst, n)
+    end
+    check(worst == 3, "area cap: exactly 3 wild pets fill the area (max seen " .. worst .. ")")
+    check(not dup, "area cap: never two wild pets of the same species around one player")
+    player.online = false; tick(); tick(); player.x, player.y, player.online = 0, 0, true
+end
+
+-- spawn spot: 5-50 yd from the mob, on ground within 5 yd of the mob's height; a lake (x > 20) and a cliff (y > 30) are rejected; no ground at all -> the close fallback
+do
+    local mx, my, mz = 100, 200, 10
+    local function height(x, y) if x - mx > 20 then return mz - 40 end if y - my > 30 then return mz + 25 end return mz + 1 end   -- relative to the mob
+    local minD, maxD, bad, close = 1e9, 0, 0, 0
+    for _ = 1, 500 do
+        local x, y, z = W.SpawnSpot(mx, my, mz, height)
+        local d = math.sqrt((x - mx) ^ 2 + (y - my) ^ 2)
+        if d < 4.9 then close = close + 1 end
+        minD, maxD = math.min(minD, d), math.max(maxD, d)
+        if x - mx > 20 or y - my > 30 or math.abs(z - mz) > 5 then bad = bad + 1 end
+    end
+    check(bad == 0, "spawn spots: " .. bad .. " of 500 landed in the lake / on the cliff")
+    check(close == 0 and minD >= 4.9 and maxD <= 50.1, "spawn spots stay 5-50 yd from the mob (min " .. string.format("%.1f", minD) .. " max " .. string.format("%.1f", maxD) .. ", close fallbacks " .. close .. ")")
+    check(maxD > 35, "spawn spots reach far out (max " .. string.format("%.1f", maxD) .. ")")
+    local x, y = W.SpawnSpot(mx, my, mz, function() return nil end)
+    check(math.sqrt((x - mx) ^ 2 + (y - my) ^ 2) < 3.1, "no ground data: falls back to a close spot instead of failing")
+    local errx = W.SpawnSpot(mx, my, mz, function() error("boom") end)
+    check(errx ~= nil, "a failing height lookup does not break the spawn")
+end
+
 print(string.format("wild: %d checks passed, %d failed", passes, #fails))
 for _, f in ipairs(fails) do print("  FAIL " .. f) end
 os.exit(#fails == 0 and 0 or 1)

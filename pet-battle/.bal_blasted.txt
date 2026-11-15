@@ -1,0 +1,35 @@
+balance sweep: 436 species, 30 duels per species per level, levels 3,4,5,6,7,8,9,10,12,13,14,16,17,18
+  Prairie Dog                  ( 2620) win rate  13%  stalls 0
+  Infected Deer                (10780) win rate  15%  stalls 0
+  Tainted Cockroach            (10017) win rate  16%  stalls 0
+  Tainted Rat                  (10016) win rate  18%  stalls 0
+  Warpwood Shredder            ( 7101) win rate  19%  stalls 0
+  Snapjaw Crocolisk            ( 1152) win rate  20%  stalls 0
+  Skeletal Terror              ( 1785) win rate  20%  stalls 0
+  Spectral Betrayer            (11288) win rate  21%  stalls 0
+  Infected Squirrel            (10779) win rate  21%  stalls 0
+  Young Murk Thresher          ( 4388) win rate  21%  stalls 0
+  Blighted Surge               ( 8519) win rate  22%  stalls 0
+  Swampwalker                  (  764) win rate  22%  stalls 0
+  Gazelle                      ( 4166) win rate  22%  stalls 0
+  Soulless Ghoul               ( 1794) win rate  22%  stalls 0
+  Jadefire Felsworn            ( 7109) win rate  44%  stalls 1
+  Plaguehound                  ( 8597) win rate  46%  stalls 1
+  Legashi Satyr                ( 6200) win rate  47%  stalls 1
+  Jadefire Trickster           ( 7107) win rate  79%  stalls 0
+  Dark Caster                  ( 8526) win rate  80%  stalls 0
+  Rotting Cadaver              ( 4474) win rate  80%  stalls 0
+  Scourge Soldier              ( 8523) win rate  81%  stalls 0
+  Cannibal Ghoul               ( 8530) win rate  82%  stalls 0
+  Skeletal Acolyte             ( 1789) win rate  82%  stalls 0
+  Skeletal Executioner         ( 1787) win rate  82%  stalls 0
+  Blighted Zombie              ( 4475) win rate  82%  stalls 0
+  Crypt Slayer                 ( 8558) win rate  83%  stalls 0
+  Unliving Caretaker           (12379) win rate  83%  stalls 0
+  Haunting Vision              ( 4472) win rate  84%  stalls 0
+  Putrid Shrieker              ( 8535) win rate  84%  stalls 0
+  Spectral Marauder            (11620) win rate  84%  stalls 0
+  STALL Legashi Satyr (6200) vs Felmusk Felsworn (3762) level 13
+  STALL Hatefury Rogue (4670) vs Plaguehound (8597) level 14
+  STALL Jadefire Felsworn (7109) vs Felmusk Felsworn (3762) level 18
+median win rate 47%, lowest Prairie Dog 13%, highest Spectral Marauder 84%, 30 flagged

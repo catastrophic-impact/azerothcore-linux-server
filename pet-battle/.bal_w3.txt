@@ -1,0 +1,2 @@
+measuring 436 species at levels 3,4,5,6,7,8,9,10,12,13,14,16,17,18 (30 duels each)
+median win rate 47%, lowest Prairie Dog 13%, highest Spectral Marauder 84%, 30 flagged

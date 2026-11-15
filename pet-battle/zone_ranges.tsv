@@ -16,7 +16,7 @@ redridge	44	0	-9950	-8500	-3100	-1500	26	4	5	8	25	Redridge Mountains	Petopia for
 ghostlands	3433	530	5000	7500	-8500	-5000	22	3	5	11	20	Ghostlands	Petopia forum t=19184	done
 bloodmyst	3525	530	-3000	-1000	-14000	-10800	22	3	5	9	18	Bloodmyst Isle	Petopia forum t=19184	done
 # --- sourced by the zone content agents (2026-11-14): status ready / NEEDS REVIEW / NO SOURCE / SKIP; zone ids from memory UNVERIFIED (check with a probe on the first apply); minMob of arathi/burning raised from 1 (level-1 critters) to the real fighting floor
-alterac	36	0	200	1400	-1000	0	41	7	8	30	40	Alterac Mountains	DERIVED (user 2026-11-14 wants the zone; no retail source): same mob band 30-39 as Arathi (7-8)	ready
+alterac	36	0	200	1400	-1000	0	41	7	8	30	40	Alterac Mountains	DERIVED (user 2026-11-14 wants the zone; no retail source): closest sourced mob bands Arathi 30-39 and Desolace 29-42 (both 7-8); user confirmed 2026-11-15	ready
 arathi	45	0	-2600	-700	-3700	-2000	40	7	8	30	39	Arathi Highlands	Petopia forum t=19184: '7 : Arathi Highlands'; https://www.mmo-champion.com/threads/1183967-Battle-Pet-Levels-By-Zone reply: '7-8'	ready
 badlands	3	0	-7700	-6320	-4600	-2350	45	13	14	35	44	Badlands	Petopia forum t=19184: '13 : Badlands' (upper level inferred, see notes)	ready
 blasted	4	0	-12400	-10950	-3950	-2650	56	16	17	42	55	Blasted Lands	Petopia forum t=19184: '16 : Blasted Lands' (upper level inferred, see notes)	NEEDS REVIEW: box edges touch Swamp of Sorrows/Deadwind mobs; hi level inferred

@@ -3,3 +3,6 @@
 ## Notes: Your battle pets, their abilities and your teams. /pets
 ## Dependencies: AcoreLib
 Pets.lua
+PetDex.lua
+ZoneLevels.lua
+MapLevels.lua

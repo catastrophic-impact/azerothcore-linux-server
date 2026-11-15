@@ -1,0 +1,58 @@
+balance sweep: 1596 species, 20 duels per species per level, levels 1,5,10,15,20,25
+  Fawn                         (  890) win rate   4%  stalls 0
+  Skunk                        (17467) win rate  10%  stalls 0
+  Hare                         ( 5951) win rate  11%  stalls 0
+  Stone Behemoth               ( 2157) win rate  13%  stalls 0
+  Sheep                        ( 1933) win rate  16%  stalls 0
+  Deer                         (  883) win rate  17%  stalls 0
+  Blazing Invader              (14460) win rate  17%  stalls 0
+  Nightsaber                   ( 2042) win rate  18%  stalls 0
+  Fire Beetle                  ( 9699) win rate  18%  stalls 0
+  Rabbit                       (  721) win rate  18%  stalls 0
+  Withered Green Keeper        (15637) win rate  18%  stalls 0
+  Roach                        ( 4076) win rate  19%  stalls 0
+  Mouse                        ( 6271) win rate  19%  stalls 0
+  Infected Deer                (10780) win rate  19%  stalls 0
+  Black Rat                    ( 2110) win rate  19%  stalls 0
+  Swine                        (10685) win rate  20%  stalls 0
+  Giant Marsh Frog             (23979) win rate  20%  stalls 0
+  Rot Hide Brute               ( 1939) win rate  20%  stalls 0
+  Unliving Caretaker           (12379) win rate  20%  stalls 0
+  Infected Squirrel            (10779) win rate  21%  stalls 0
+  Sickly Gazelle               (12296) win rate  21%  stalls 0
+  Rascal Sprite                ( 2002) win rate  22%  stalls 0
+  Bone Chewer                  (  210) win rate  22%  stalls 0
+  Gusting Vortex               ( 8667) win rate  22%  stalls 0
+  Giant Wetlands Crocolisk     ( 2089) win rate  22%  stalls 0
+  Sharptooth Frenzy            (  905) win rate  32%  stalls 1
+  Reef Frenzy                  ( 2173) win rate  36%  stalls 2
+  Torn Fin Muckdweller         ( 2374) win rate  39%  stalls 1
+  Makrura Clacker              ( 3103) win rate  39%  stalls 1
+  Skeletal Soldier             (16422) win rate  44%  stalls 1
+  Blackwood Totemic            ( 2169) win rate  57%  stalls 1
+  Hatefury Shadowstalker       ( 4674) win rate  78%  stalls 0
+  Thistlefur Shaman            ( 3924) win rate  79%  stalls 0
+  Risen Hungerer               (16301) win rate  79%  stalls 0
+  Rotted One                   (  948) win rate  80%  stalls 0
+  Rot Hide Plague Weaver       ( 1940) win rate  80%  stalls 0
+  Razormane Scout              ( 3112) win rate  80%  stalls 0
+  Wendigo                      ( 1135) win rate  82%  stalls 0
+  Dark Caster                  ( 8526) win rate  82%  stalls 0
+  Ravenclaw Raider             ( 1865) win rate  83%  stalls 0
+  Scourge Soldier              ( 8523) win rate  83%  stalls 0
+  Unliving Mossflayer          (11291) win rate  83%  stalls 0
+  Eyeless Watcher              ( 8539) win rate  84%  stalls 0
+  Quel'dorei Wraith            (16326) win rate  84%  stalls 0
+  Stonewing Slayer             (16324) win rate  87%  stalls 0
+  Plague Spreader              (  604) win rate  87%  stalls 0
+  Wailer                       (16321) win rate  88%  stalls 0
+  Rotting Cadaver              ( 4474) win rate  88%  stalls 0
+  Ravenclaw Champion           ( 1869) win rate  88%  stalls 0
+  STALL Sharptooth Frenzy (905) vs Mirefin Coastrunner (4362) level 1
+  STALL Reef Frenzy (2173) vs Reef Frenzy (2173) level 1
+  STALL Reef Frenzy (2173) vs Coastal Frenzy (2174) level 1
+  STALL Torn Fin Muckdweller (2374) vs Vile Fin Oracle (1908) level 1
+  STALL Skeletal Soldier (16422) vs Loch Frenzy (1193) level 1
+  STALL Makrura Clacker (3103) vs Small Crag Boar (708) level 20
+  STALL Elder Brown Bear (17348) vs Blackwood Totemic (2169) level 25
+median win rate 50%, lowest Fawn 4%, highest Ravenclaw Champion 88%, 49 flagged

@@ -15,7 +15,7 @@ local cache = {}   -- guidLow -> { pets = { [species] = {level, xp, a = {1,1,1}}
 
 CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battlepet (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, level TINYINT UNSIGNED NOT NULL DEFAULT 1, xp INT UNSIGNED NOT NULL DEFAULT 0, a1 TINYINT NOT NULL DEFAULT 1, a2 TINYINT NOT NULL DEFAULT 1, a3 TINYINT NOT NULL DEFAULT 1, quality TINYINT UNSIGNED NOT NULL DEFAULT 1, display INT UNSIGNED NOT NULL DEFAULT 0, hp INT UNSIGNED NOT NULL DEFAULT 0, hp_at INT UNSIGNED NOT NULL DEFAULT 0, PRIMARY KEY (guid, species)) ENGINE=InnoDB")
 -- older installs: add the columns that came later (hp 0 = full health)
-for _, c in ipairs({ { "quality", "TINYINT UNSIGNED NOT NULL DEFAULT 1" }, { "display", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp_at", "INT UNSIGNED NOT NULL DEFAULT 0" } }) do
+for _, c in ipairs({ { "quality", "TINYINT UNSIGNED NOT NULL DEFAULT 1" }, { "display", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp_at", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "nick", "VARCHAR(16) NOT NULL DEFAULT ''" } }) do
     if not CharDBQuery("SHOW COLUMNS FROM dc_battlepet LIKE '" .. c[1] .. "'") then CharDBExecute("ALTER TABLE dc_battlepet ADD COLUMN " .. c[1] .. " " .. c[2]) end
 end
 CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battleteam (guid INT UNSIGNED NOT NULL, team TINYINT UNSIGNED NOT NULL, slot TINYINT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid, team, slot)) ENGINE=InnoDB")
@@ -26,10 +26,10 @@ local function Load(guid)
     if cache[guid] then return cache[guid] end
     local c = { pets = {}, teams = {}, active = 1 }
     for n = 1, TEAMS do c.teams[n] = { 0, 0, 0 } end
-    local q = CharDBQuery("SELECT species, level, xp, a1, a2, a3, quality, display, hp, hp_at FROM dc_battlepet WHERE guid=" .. guid)
+    local q = CharDBQuery("SELECT species, level, xp, a1, a2, a3, quality, display, hp, hp_at, nick FROM dc_battlepet WHERE guid=" .. guid)
     if q then repeat
         c.pets[q:GetUInt32(0)] = { level = q:GetUInt32(1), xp = q:GetUInt32(2), a = { q:GetUInt32(3), q:GetUInt32(4), q:GetUInt32(5) },
-                                   quality = math.max(1, q:GetUInt32(6)), display = q:GetUInt32(7), hp = q:GetUInt32(8) > 0 and q:GetUInt32(8) or nil, hpAt = q:GetUInt32(9) }
+                                   quality = math.max(1, q:GetUInt32(6)), display = q:GetUInt32(7), hp = q:GetUInt32(8) > 0 and q:GetUInt32(8) or nil, hpAt = q:GetUInt32(9), nick = q:GetString(10) or "" }
     until not q:NextRow() end
     q = CharDBQuery("SELECT team, slot, species FROM dc_battleteam WHERE guid=" .. guid)
     if q then repeat
@@ -43,8 +43,8 @@ local function Load(guid)
 end
 
 local function SavePet(guid, sp, p)
-    CharDBExecute(string.format("REPLACE INTO dc_battlepet (guid, species, level, xp, a1, a2, a3, quality, display, hp, hp_at) VALUES (%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d)",
-        guid, sp, p.level, p.xp, p.a[1], p.a[2], p.a[3], p.quality or 1, p.display or 0, p.hp or 0, p.hpAt or 0))
+    CharDBExecute(string.format("REPLACE INTO dc_battlepet (guid, species, level, xp, a1, a2, a3, quality, display, hp, hp_at, nick) VALUES (%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,'%s')",
+        guid, sp, p.level, p.xp, p.a[1], p.a[2], p.a[3], p.quality or 1, p.display or 0, p.hp or 0, p.hpAt or 0, (p.nick or ""):gsub("[^%a ]", "")))
 end
 
 -- Health: stored as the value at time hpAt (nil = full); it recovers 1% of max every 10 seconds, also while offline. Computed on demand, nothing ticks.
@@ -99,11 +99,11 @@ function Store.Capture(player, pet)
     local c = Load(player:GetGUIDLow()); local owned = c.pets[pet.species]
     local q, lvl = pet.quality or 1, math.min(pet.level, D.MAX_LEVEL)
     if owned and ((owned.quality or 1) > q or ((owned.quality or 1) == q and owned.level >= lvl)) then
-        return "You captured " .. pet.name .. ", but you already own a better one, so it was released."
+        return "You captured " .. pet.name .. ", but you already own a better one, so it was released.", false
     end
     Store.AddPet(player, pet.species, lvl, { math.random(1, 2), math.random(1, 2), math.random(1, 2) }, q, pet.display)
     Msg.Send(player, "pbj", "pet", Info(pet.species, Load(player:GetGUIDLow()).pets[pet.species]))
-    return "You captured " .. pet.name .. "!" .. (owned and " It replaces the one you had." or "")
+    return "You captured " .. pet.name .. "!" .. (owned and " It replaces the one you had." or ""), true, q
 end
 -- the skin of the pet you own (one per species): saved the first time it is seen so it never changes by chance
 function Store.PetDisplay(player, species) local p = Load(player:GetGUIDLow()).pets[species]; return p and p.display or 0 end
@@ -125,6 +125,9 @@ do
         if D.species[npc] then COMP[npc] = COMP[npc] or {}; table.insert(COMP[npc], q:GetUInt32(0)) end
     until not q:NextRow() end
 end
+Store.COMP = COMP   -- companion creature -> { spells } (tests)
+-- Idempotent: a companion creature that is a species becomes a level 1 journal pet ONCE (only when the character does not own that species yet, so a leveled pet is never reset and
+-- no duplicate row can appear however often this runs: login, journal open, battle start, right after a shop purchase).
 function Store.SyncCompanions(player)
     local g = player:GetGUIDLow(); local c = Load(g); local added = 0
     for npc, spells in pairs(COMP) do
@@ -154,12 +157,35 @@ function Store.GrantXP(player, species, enemyLevel)
     p.xp = p.xp + gain
     while p.xp >= Eng.XPNeeded(p.level) and p.level < D.MAX_LEVEL do p.xp = p.xp - Eng.XPNeeded(p.level); p.level = p.level + 1 end
     if p.level >= D.MAX_LEVEL then p.xp = 0 end
+    if p.level > start then p.hp, p.hpAt = nil, nil end   -- a level up heals the pet fully (nil = full health)
     SavePet(g, species, p)
     Msg.Send(player, "pbj", "pet", Info(species, p))
     return gain, p.level, p.level - start
 end
 function Store.Pets(player) return Load(player:GetGUIDLow()).pets end   -- (tests)
 function Store.OwnedQuality(player, species) local p = Load(player:GetGUIDLow()).pets[species]; return p and (p.quality or 1) or 0 end
+-- how a wild pet (quality q, level lvl) compares with our collection: 0 = not collected, 1 = it would be an upgrade (same rule as Capture), 2 = we own the same or better. Also returns the owned quality / level.
+function Store.Compare(player, species, q, lvl)
+    local o = Load(player:GetGUIDLow()).pets[species]
+    if not o then return 0, 0, 0 end
+    local oq = o.quality or 1
+    if (q or 1) > oq or ((q or 1) == oq and math.min(lvl, D.MAX_LEVEL) > o.level) then return 1, oq, o.level end
+    return 2, oq, o.level
+end
+-- RENAME (like retail): one pet per species, so the nickname belongs to the species. 1-12 letters and spaces (a plain-ASCII rule keeps it safe for the DB and the fonts); "" clears it.
+function Store.CleanNick(text)
+    text = (text or ""):gsub("^%s+", ""):gsub("%s+$", ""):gsub("%s+", " ")
+    if text == "" then return "" end
+    if #text > 12 or text:find("[^%a ]") then return nil end
+    return text
+end
+function Store.SetNick(player, species, text)
+    local g = player:GetGUIDLow(); local p = Load(g).pets[species]; local nick = Store.CleanNick(text)
+    if not p or nick == nil then return false end
+    p.nick = nick; SavePet(g, species, p)
+    Msg.Send(player, "pbj", "pet", Info(species, p)); return true
+end
+function Store.Nick(player, species) local p = Load(player:GetGUIDLow()).pets[species]; return p and p.nick ~= "" and p.nick or nil end
 function Store.OwnedLevel(player, species) local p = Load(player:GetGUIDLow()).pets[species]; return p and p.level or 0 end
 
 -- the active team as engine input: { {species, level, picks}, ... } (empty slots dropped)
@@ -186,7 +212,7 @@ function Store.ActiveTeam(player)
     local out = {}
     for _, sp in ipairs(c.teams[c.active] or {}) do
         local p = c.pets[sp]
-        if sp ~= 0 and p then out[#out + 1] = { species = sp, level = p.level, picks = { p.a[1], p.a[2], p.a[3] }, quality = p.quality or 1, display = p.display or 0, hp = CurHp(sp, p) } end
+        if sp ~= 0 and p then out[#out + 1] = { species = sp, level = p.level, picks = { p.a[1], p.a[2], p.a[3] }, quality = p.quality or 1, display = p.display or 0, hp = CurHp(sp, p), nick = p.nick } end
     end
     return out
 end
@@ -197,7 +223,7 @@ function Info(sp, p)
     local st = Eng.Stats(sp, lvl, p.quality or 1)
     local cur, max = CurHp(sp, p), MaxHp(sp, p)
     return string.format("%d,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d,%s", sp, lvl, p.xp, p.a[1], p.a[2], p.a[3], Eng.Family(sp), s.icon,
-        max, math.floor(st.power + 0.5), p.quality or 1, cur, Eng.XPNeeded(lvl), s.name)
+        max, math.floor(st.power + 0.5), p.quality or 1, cur, Eng.XPNeeded(lvl), (p.nick and p.nick ~= "") and (p.nick .. "|" .. s.name) or s.name)
 end
 
 local function SendAll(player)
@@ -221,6 +247,10 @@ Msg.On("pbj", "abil", function(player, payload)   -- the 6 abilities of one spec
         if #tip > 170 then local cut = tip:sub(1, 170); local dot = cut:match("^.*()%. "); tip = (dot and dot > 85) and cut:sub(1, dot) or (cut:sub(1, 167) .. "...") end   -- addon messages are limited to 240 characters
         Msg.Send(player, "pbj", "abl", sp .. "," .. k.slot .. "," .. k.opt .. "|" .. a.icon .. "#" .. a.name:gsub("[#|~;]", " ") .. "#" .. tip .. "#" .. a.cd .. "#" .. k.unlock)
     end
+end)
+Msg.On("pbj", "rename", function(player, payload)
+    local sp, text = payload:match("^(%d+),(.*)$"); sp = tonumber(sp)
+    if not sp or not Store.SetNick(player, sp, text) then Msg.Send(player, "pbt", "msg", "That name is not allowed: use 1-12 letters and spaces.") end
 end)
 Msg.On("pbj", "setabil", function(player, payload)
     local sp, slot, opt = payload:match("^(%d+),(%d),(%d)$"); sp, slot, opt = tonumber(sp), tonumber(slot), tonumber(opt)
@@ -364,7 +394,7 @@ local function Restore(player)   -- login / script load: bring the last summoned
         if c.pets[q:GetUInt32(0)] then SetFollower(player, q:GetUInt32(0)) end
     end
 end
-RegisterPlayerEvent(3, function(_, player) Restore(player) end)
+RegisterPlayerEvent(3, function(_, player) pcall(Store.SyncCompanions, player); Restore(player) end)   -- login: companions the character already knows are in the journal
 RegisterPlayerEvent(4, function(_, player)   -- logout: remove the follower
     local g = player:GetGUIDLow()
     if follow[g] then Despawn(follow[g]); follow[g] = nil end

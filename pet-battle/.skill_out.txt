@@ -1,0 +1,22 @@
+[  30s] M1/M2 level 5 pairing 1223/1600
+[  60s] M1/M2 level 10 pairing 863/1600
+[  90s] M1/M2 level 15 pairing 463/1600
+[ 120s] M1/M2 level 20 pairing 148/1600
+[ 150s] M1/M2 level 20 pairing 1378/1600
+[ 180s] M1/M2 level 25 pairing 997/1600
+rated species 662, weak pool 165 (win rate <= 38%), median pool 165 (41%-50%)
+[ 210s] M3 level 5 pairing 522/1600
+[ 240s] M3 level 10 pairing 19/1600
+[ 270s] M3 level 10 pairing 977/1600
+[ 300s] M3 level 15 pairing 420/1600
+[ 330s] M3 level 15 pairing 1575/1600
+[ 360s] M3 level 20 pairing 1156/1600
+[ 390s] M3 level 25 pairing 738/1600
+
+M1 random vs random          45.6%  | L5 44.5%  L10 46.7%  L15 45.6%  L20 44.2%  L25 47.3%
+M2 greedy vs random          61.2%  | L5 61.5%  L10 62.9%  L15 60.2%  L20 60.5%  L25 60.6%
+M3 greedy WEAK vs random MED  52.5%  | L5 59.4%  L10 51.7%  L15 47.6%  L20 52.4%  L25 51.2%
+M3r random WEAK vs random MED 28.8%  | L5 29.9%  L10 27.2%  L15 26.3%  L20 31.3%  L25 29.4%
+delta M2-M1 +15.5 pts  (L5 +17.0, L10 +16.3, L15 +14.6, L20 +16.3, L25 +13.4)   M3-M3r +23.7 pts
+stalls/timeouts (300 rounds): 1;  greedy per battle (M2): swaps 0.10 heals 0.44 buffs/dots 2.05 cd-ability picks 2.79, rounds 21.2
+GATE greedy >= random+15: PASS   GATE M3 >= 45%: PASS   runtime 414s

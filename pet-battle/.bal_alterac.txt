@@ -1,0 +1,2 @@
+balance sweep: 18 species, 30 duels per species per level, levels 7,8
+median win rate 45%, lowest Rat 23%, highest Gray Bear 77%, 0 flagged

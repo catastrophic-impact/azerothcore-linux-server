@@ -1,0 +1,92 @@
+8940 Counter({'FALLBACK': 4617, 'VIS': 2158, 'none': 2110, 'override': 55})
+FALLBACK distinct 200 4617
+vis mismatch by theme (species-ability rows) Counter({'nature': 927, 'frost': 524, 'shadow': 234, 'wind': 214, 'arcane': 127, 'water': 76, 'earth': 37, 'lightning': 20, 'fire': 12, 'holy': 10}) distinct names 85
+V|Acid Touch|nature|49966|FALLBACK|222
+V|Arcane Blast|arcane|133|FALLBACK|21
+V|Arcane Explosion|arcane|133|FALLBACK|17
+V|Arcane Missiles|arcane|133|override|1
+V|Arcane Storm|arcane|133|FALLBACK|19
+V|Beam|arcane|133|FALLBACK|1
+V|Blinkstrike|water|133|FALLBACK|2
+V|Blood in the Water|water|49966|FALLBACK|31
+V|Brittle Webbing|nature|49966|FALLBACK|132
+V|Burrow|earth|49966|FALLBACK|8
+V|Call Blizzard|frost|133|FALLBACK|12
+V|Call Darkness|shadow|49966|FALLBACK|31
+V|Call of Winter|frost|133|FALLBACK|57
+V|Chaos Nova|arcane|133|FALLBACK|4
+V|Charge|lightning|35290|VIS|1
+V|Counterspell|arcane|133|FALLBACK|1
+V|Creeping Ooze|nature|49966|FALLBACK|14
+V|Death Coil|shadow|49966|FALLBACK|3
+V|Death Grip|shadow|49966|FALLBACK|3
+V|Deep Freeze|frost|133|FALLBACK|115
+V|Diseased Bite|nature|17253|VIS|22
+V|Drain Power|shadow|133|FALLBACK|7
+V|Dreadful Breath|shadow|49966|FALLBACK|42
+V|Dust Kick|earth|49966|override|1
+V|Dust Whirl|earth|49966|FALLBACK|1
+V|Earth Mend|earth|133|FALLBACK|1
+V|Earthquake|earth|403|override|1
+V|Empowering Strikes|arcane|49966|FALLBACK|1
+V|Flame Breath|fire|49966|FALLBACK|11
+V|Focused Beams|arcane|133|FALLBACK|2
+V|Frost Nova|frost|133|FALLBACK|5
+V|Frost Shock|frost|133|FALLBACK|122
+V|Frost Spit|frost|133|FALLBACK|1
+V|Ghostly Bite|shadow|49966|FALLBACK|6
+V|Gift of Winter Veil|frost|133|FALLBACK|47
+V|Ice Lance|frost|133|FALLBACK|6
+V|Ice Spike|frost|133|FALLBACK|56
+V|Infected Claw|nature|49966|FALLBACK|33
+V|Leech Seed|nature|133|FALLBACK|24
+V|Light|holy|133|FALLBACK|1
+V|Mana Surge|arcane|133|FALLBACK|4
+V|Moth Dust|earth|49966|FALLBACK|4
+V|Mud Throw|water|133|FALLBACK|1
+V|Nether Blast|shadow|133|FALLBACK|5
+V|Nether Gate|shadow|133|FALLBACK|89
+V|Nightmare|shadow|133|FALLBACK|1
+V|Ooze Touch|nature|133|FALLBACK|13
+V|Pebble Barrage|earth|403|override|1
+V|Pickaxe Charge|lightning|1752|override|1
+V|Plagued Blood|nature|49966|FALLBACK|43
+V|Poison Fang|nature|49966|FALLBACK|20
+V|Poison Lash|nature|133|FALLBACK|62
+V|Poison Protocol|nature|49966|FALLBACK|3
+V|Poison Spit|nature|49966|FALLBACK|145
+V|Poisoned Blade|nature|1752|override|1
+V|Poisoned Branch|nature|133|FALLBACK|20
+V|Poisoned Spear|nature|1752|override|1
+V|Powerball|arcane|49966|FALLBACK|3
+V|Quake|earth|49966|FALLBACK|1
+V|Quicksand|earth|133|FALLBACK|4
+V|Rock Barrage|earth|133|FALLBACK|1
+V|Rockfall|earth|49966|override|1
+V|Rot|nature|49966|FALLBACK|9
+V|Sand Toss|earth|49966|FALLBACK|1
+V|Sandstorm|lightning|49966|FALLBACK|18
+V|Scorched Earth|fire|49966|FALLBACK|1
+V|Screech|wind|49966|FALLBACK|101
+V|Shadow Shock|shadow|49966|FALLBACK|15
+V|Shadow Slash|shadow|49966|FALLBACK|13
+V|Slicing Wind|wind|49966|FALLBACK|101
+V|Snowball|frost|133|FALLBACK|103
+V|Solar Beam|arcane|133|FALLBACK|4
+V|Soulrush|shadow|133|FALLBACK|5
+V|Spectral Strike|shadow|133|FALLBACK|14
+V|Spray|water|133|override|1
+V|Sticky Web|nature|49966|FALLBACK|163
+V|Stone Rush|earth|133|FALLBACK|9
+V|Stone Shot|earth|133|FALLBACK|3
+V|Sunlight|holy|133|FALLBACK|9
+V|Surge|arcane|49966|FALLBACK|31
+V|Surge of Power|arcane|133|FALLBACK|18
+V|Tidal Wave|water|49966|FALLBACK|11
+V|Tornado Punch|wind|49966|FALLBACK|1
+V|Water Jet|water|49966|FALLBACK|30
+V|Whirlwind|wind|49966|FALLBACK|11
+ICON mismatches 1
+I|Stone Bolt|lightning|Spell_Nature_StoneClawTotem|1
+vis none themed damaging: n/a
+Counter({'49966': 3821, '': 2110, '133': 1345, '16827': 876, '17253': 565, '35290': 201, '1752': 16, '403': 4, '2948': 1, '116': 1})

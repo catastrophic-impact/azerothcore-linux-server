@@ -19,6 +19,11 @@ luajit pet-battle/test_core.lua || fail=1
 luajit pet-battle/test_qa_data.lua || fail=1   # species vs 016 SQL, zone TSV/picks/D.zones/ZONES cross-checks (QA run 3)
 luajit pet-battle/sim_qa_sweep.lua 20 || fail=1   # every species x levels x quality, 1v1 and 3v3, 20 s budget
 luajit pet-battle/smoke_wild.lua || fail=1
+luajit pet-battle/audit_labels.lua 600 || fail=1   # what the player reads vs what the engine does (buff that hurts, turn counters, label text)
+luajit pet-battle/test_l1_kits.lua || fail=1   # every species can attack at level 1
+luajit pet-battle/test_ability_vis.lua || fail=1   # ability visual spell fits the ability name (Snowball is not a fireball)
+luajit pet-battle/test_ui_pets.lua || fail=1   # /pets journal: filters, search, drag and drop (headless API stub)
+sh pet-battle/check_ui_api.sh || fail=1   # no 3.3.5-missing UI APIs, every .toc file exists
 python3 -I pet-battle/check_fx.py >/dev/null || { echo "FX FAIL (non-instant visual spell)"; fail=1; }
 for sd in 1 2 3 4 5 6 7 8; do   # real pb_store + engine + battle script, stubbed game API, played to the end incl. XP and recruit
   out=$(SEED=$sd luajit pet-battle/smoke_world.lua 2>&1) || { echo "WORLD FAIL seed $sd"; echo "$out" | tail -6; fail=1; }
@@ -42,7 +47,7 @@ pbt|end|win
 pbt|xp|Young Wolf,30,11,1
 pbt|done|'
 MSGS="$MSGS" luajit pet-battle/smoke_client.lua addons/wotlk_petbattle/Battle.lua | grep -q "ERROR\|NO HANDLER" && { echo "BATTLE ADDON FAIL"; fail=1; }
-JMSGS='pbj|pet|721,10,0,1,1,1,Support,Ability_Druid_Dash,1000,170,3,640,Rabbit
+JMSGS='pbj|pet|721,10,0,1,1,1,Critter,Ability_Druid_Dash,1000,170,3,640,Rabbit
 pbj|team|1,721,0,0
 pbj|active|1
 pbj|follow|721

@@ -134,6 +134,7 @@ end
 Launcher("Garrison", "wotlk_garrison", "Interface\\Icons\\Spell_Arcane_PortalStormWind", "Garrison", "WOTLKGARRISON")
 Launcher("Jukebox", "wotlk_jukebox", "Interface\\Icons\\INV_Misc_Note_01", "Jukebox", "WOTLKJUKEBOX")
 Launcher("Bots", "wotlk_botmanager", "Interface\\Icons\\Ability_Hunter_BeastCall", "Bot Manager", "WOTLKBOTS")
+Launcher("Pets", "wotlk_pets", "Interface\\Icons\\Ability_Hunter_MendPet", "Pet Journal", "PETS")
 Launcher("Shop", "wotlk_shop", "Interface\\Icons\\INV_Misc_Coin_01", "Shop", "WOTLKSHOP")
 local LAUNCHER_HOME = "Server"
 

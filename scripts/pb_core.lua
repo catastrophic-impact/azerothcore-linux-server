@@ -48,6 +48,61 @@ local function Clean(text)
     text = (text or ""):gsub("%[[^%]]*%]", ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("Hit Chance", ""):gsub("%s+", " ")
     return (text:gsub("^%s+", ""):gsub("%s+$", ""))
 end
+-- Every id: a school-damage spell (effect 2) WITH a missile model and travel speed > 0 (checked by pet-battle/check_fx.py), so the projectile is visible and lands on the target.
+-- Visual spell by the THEME of the ability's NAME (first row that matches wins; a pattern is a word PREFIX, a trailing $ means the whole word). All ids are plain bolt/instant
+-- spells without a lingering aura or duration (checked against Spell.dbc by pet-battle/check_fx.py). Rows are ordered so that "Frost Shock" is frost and "Shadow Shock" is shadow.
+local THEME_VIS = {
+    { "frost|ice$|icy|icicle|snow|freez|chill|blizzard|winter|glacial|hail", 116 },
+    { "fire|flame|burn|scorch|ember|lava|magma|immolat|inferno|meteor|candle|sear$|searing|cinder|blaz", 9053 },
+    { "shadow|dark|death|curse|void|drain|nether|nightmare|spectral|soul|ghost|dread|siphon", 686 },
+    { "web|ooze|poison|toxic|acid|plague|rot$|rotting|infect|venom|spore|leech|corros|creeping", 9591 },
+    { "leaf|thorn|vine|branch|seed|wrath|bloom|ironbark|woodchip|photosyn|bark|root|entangl|ensnar", 5176 },
+    { "lightning|thunder|shock|storm|static|zap|spark", 403 },
+    { "holy|light$|lights|smite|radian|sunlight|sunfire|sunbeam|sun$|solar|beacon", 31759 },
+    { "arcane|mana|surge|nova$|beam|power|counterspell|chaos|focused", 7269 },
+    { "water|wave|spray|tide|tidal|geyser|jet$|brine|mud|rain$|bubble", 31012 },
+    { "rock$|rocky|rockfall|stone|boulder|quake|crystal|sand|dust|pebble|earth|avalanche|rockslide", 9483 },
+    { "wind|gust|tornado|cyclone|whirl|screech|shriek|slicing|squall", 3044 },
+}
+local function ThemeVis(name)
+    local padded = " " .. name:lower():gsub("[%p]", " ") .. " "
+    for _, row in ipairs(THEME_VIS) do
+        for pat in row[1]:gmatch("[^|]+") do
+            local whole = pat:sub(-1) == "$"
+            if padded:find(" " .. (whole and (pat:sub(1, -2) .. " ") or pat), 1, true) then return row[2], true end
+        end
+    end
+end
+C.ThemeVis = ThemeVis
+-- Icon by the same name themes (an ability nobody styled by hand used to show the generic Rampage icon: 7 of 10 abilities). Index = THEME_VIS row; then utility / physical rows.
+local THEME_ICON = { "Spell_Frost_FrostBolt02", "Spell_Fire_FlameBolt", "Spell_Shadow_ShadowBolt", "Ability_Rogue_DualWeild", "Spell_Nature_ResistNature", "Spell_Lightning_LightningBolt01",
+                     "Spell_Holy_HolyBolt", "Spell_Arcane_StarFire", "Spell_Frost_FrostNova", "Spell_Nature_StoneClawTotem", "Spell_Nature_Cyclone" }
+local UTIL_ICON = {
+    { "heal|mend|regener|restor|wish|cure|soothe|rejuven|lifeblood", "Spell_Nature_HealingWay" },
+    { "shield|ward|block|barrier|plating|armor|protect|fortif|carapace|stone form|hunker|crouch", "Ability_Defend" },
+    { "dodge|dance|feint|evade|burrow|hide|stealth|prowl|vanish|nocturnal|blink", "Ability_Rogue_Feint" },
+    { "sleep|slumber|hibernat|nap$|lullaby", "Spell_Nature_Sleep" },
+    { "stun|dizz|daze|confus|haymaker|fist", "Spell_Frost_Stun" },
+    { "speed|sprint|dash|charge|lift|leap|stampede|rush|flyby|swoop|dive", "Ability_Rogue_Sprint" },
+    { "howl|roar|call$|cry|bellow|bleat|chirp|trumpet", "Ability_Druid_DemoralizingRoar" },
+    { "bite|chomp|fang|maul|devour|gnaw", "Ability_Druid_Maul" },
+    { "claw|rake|scratch|swipe|peck|talon|pounce|flank|flurry|rip$|tear", "Ability_Druid_Rake" },
+    { "strike|kick|punch|slam|smash|crush|hammer|clobber|bash|thrash|headbutt|gore|hoof|tackle|jab|weakening|punish|demolish|lash|backflip", "Ability_Warrior_Sunder" },
+    { "explod|explosion|barrage|rocket|grenade|bomb|cannon|shot", "Spell_Fire_Meteorstorm" },
+    { "sting|swarm|bleed|rend|rupture|wound", "Ability_Rogue_Rupture" },
+}
+local function ThemeIcon(name)
+    local padded = " " .. name:lower():gsub("[%p]", " ") .. " "
+    local function hit(list)
+        for _, pat in ipairs(list) do
+            local whole = pat:sub(-1) == "$"
+            if padded:find(" " .. (whole and (pat:sub(1, -2) .. " ") or pat), 1, true) then return true end
+        end
+    end
+    for i, row in ipairs(THEME_VIS) do local l = {}; for pat in row[1]:gmatch("[^|]+") do l[#l + 1] = pat end; if hit(l) then return THEME_ICON[i] end end
+    for _, row in ipairs(UTIL_ICON) do local l = {}; for pat in row[1]:gmatch("[^|]+") do l[#l + 1] = pat end; if hit(l) then return row[2] end end
+end
+C.ThemeIcon = ThemeIcon
 local function MakeAbility(speciesId, aid)
     local a = assert(R.abilities[aid], "retail ability " .. tostring(aid) .. " missing from pb_retail.lua")
     local ov = D.rename[speciesId] and D.rename[speciesId][a.name] or {}
@@ -55,7 +110,10 @@ local function MakeAbility(speciesId, aid)
     if not vis then   -- FALLBACK for abilities nobody styled yet: every damaging ability still gets a visible hit (spell animation + sound) instead of nothing
         local dmg = false
         for _, t in ipairs(a.turns) do for _, f in ipairs(t.fx) do if DAMAGE[f.prop] or f.prop == 66 or f.prop == 226 or f.prop == 68 or f.prop == 197 or f.prop == 27 or f.prop == 29 or f.prop == 59 or f.prop == 384 or f.prop == 385 or f.prop == 141 then dmg = true end end end
-        if dmg then if a.family == 5 or a.family == 6 then vis, ranged = 133, true else vis = 49966 end end   -- Magic / Elemental: fire bolt (cast, no lunge); everything else: a melee punch
+        if dmg then
+            vis, ranged = ThemeVis(ov.name or a.name)   -- the spell must FIT THE NAME (Snowball is not a fireball)
+            if not vis then if a.family == 5 or a.family == 6 then vis, ranged = 9053, true else vis = 49966 end end   -- unthemed Magic / Elemental: plain fire bolt (cast, no lunge); everything else: a melee punch
+        end
     end
     -- retail turns: event 255 = the ordinary turns of the ability (one per round); the others are PROCS (1 = holder hit, 2 = holder dealt damage, 6/7 = before/after the round markers)
     local main, procs = {}, {}
@@ -63,7 +121,7 @@ local function MakeAbility(speciesId, aid)
     if #main == 0 then main, procs = a.turns, {} end
     local priority = (a.text or ""):find("always goes first") ~= nil
     for _, t in ipairs(procs) do for _, f in ipairs(t.fx) do if f.prop == 79 or f.prop == 145 or f.prop == 107 then priority = true end end end
-    return { id = aid, name = ov.name or a.name, retailName = a.name, icon = ov.icon or ICON[a.name] or "Ability_Warrior_Rampage", tip = Clean(a.text), text = a.text, family = a.family, cd = a.cd, turns = main, procs = procs, priority = priority,
+    return { id = aid, name = ov.name or a.name, retailName = a.name, icon = ov.icon or ICON[a.name] or ThemeIcon(ov.name or a.name) or "Ability_Warrior_Rampage", tip = Clean(a.text), text = a.text, family = a.family, cd = a.cd, turns = main, procs = procs, priority = priority,
              vis = vis, ranged = ranged }
 end
 
@@ -269,6 +327,7 @@ local function Beneficial(states)
     end
     return score >= 0
 end
+function C.CantAct(pet) return pet.hp > 0 and (Mod(pet, "Mechanic_IsStunned") > 0 or Mod(pet, "turnLock") > 0) end   -- crowd controlled: the turn passes by itself
 function C.Locked(pet, state) return Mod(pet, state) > 0 end   -- e.g. "swapOutLock" while hibernating
 function C.Speed(p)
     local sp = p.speed * (1 + Mod(p, "Mod_SpeedPercent") / 100)
@@ -326,9 +385,9 @@ local function ApplyAura(b, ev, s, idx, id, duration, skipTick, maxStacks, sourc
     if pet.family == "Aquatic" and duration > 1 and (AuraHostile(id) or states.Mechanic_IsBleeding or states.Mechanic_IsBurning or states.Mechanic_IsPoisoned) then duration = duration - 1 end   -- Aquatic passive: damage over time lasts a round less
     do local w = WS(); if w and w.Weather_Rain and duration > 1 and (AuraHostile(id) or states.Mechanic_IsBleeding or states.Mechanic_IsBurning or states.Mechanic_IsPoisoned) then duration = duration - 1 end end   -- Cleansing Rain: hostile damage over time lasts one round less
     local n = 0
-    for _, a in ipairs(pet.auras) do if a.id == id then n = n + 1; a.left = duration; a.skip = skipTick and b.round or nil end end
+    for _, a in ipairs(pet.auras) do if a.id == id then n = n + 1; a.left = duration; a.perm = duration >= 90; a.skip = skipTick and b.round or nil end end
     if n < (maxStacks and maxStacks > 0 and maxStacks or 1) then
-        pet.auras[#pet.auras + 1] = { id = id, left = duration, states = states, skip = skipTick and b.round or nil, on = AuraTrigger(id),
+        pet.auras[#pet.auras + 1] = { id = id, left = duration, perm = duration >= 90, states = states, skip = skipTick and b.round or nil, on = AuraTrigger(id),
                                        pwr = source and source.power, fam = (ab0 and ab0.family and ab0.family >= 0 and Rules.FAMILIES[ab0.family + 1]) or (source and (source.useFam or source.family)), src = source, charges = states.Special_BlockedAttackCount }
     end
     SyncMax(pet)
@@ -347,10 +406,10 @@ function C.StatusList(p)
     for _, a in ipairs(p.auras) do
         local e = seen[a.id]
         if AuraName(a.id):find("Server Only") then   -- internal bookkeeping aura (speed priority): works in the engine, never shown to the player
-        elseif e then e.stacks = e.stacks + 1; if a.left < 90 then e.turns = math.max(e.turns, a.left) end
+        elseif e then e.stacks = e.stacks + 1; if not a.perm and a.left < 90 then e.turns = math.max(e.turns, a.left) end
         else
             local good = AuraGood(a.id, a.states, p, a.src)
-            e = { label = AuraNameFor(a.id, a.src), tip = C.AuraTip(a.id, a.pwr or p.power), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = (a.left >= 90) and 0 or a.left, stacks = 1, bad = not good }
+            e = { label = AuraNameFor(a.id, a.src), tip = C.AuraTip(a.id, a.pwr or p.power), icon = good and "Spell_Holy_PowerWordShield" or "Spell_Shadow_CurseOfTounges", turns = (a.perm or a.left >= 90) and 0 or a.left, stacks = 1, bad = not good }
             if a.states.untargettable then e.icon = "Ability_Stealth" elseif a.states.Stat_Dodge then e.icon = "Ability_Rogue_Feint"
             elseif a.states.Mod_SpeedPercent then e.icon = "Ability_Rogue_Sprint" elseif a.states.Mechanic_IsStunned then e.icon = "Spell_Frost_Stun"
             elseif a.states.Mechanic_IsBleeding then e.icon = "Ability_Rogue_Rupture" elseif a.states.Mechanic_IsPoisoned then e.icon = "Ability_Rogue_DualWeild"
@@ -890,7 +949,7 @@ local function EndOfRound(b, ev, used)
         if p.hp > 0 then
             for i = #p.auras, 1, -1 do
                 local a = p.auras[i]
-                if a.skip ~= b.round then a.left = a.left - 1 end
+                if a.skip ~= b.round and not a.perm then a.left = a.left - 1 end   -- a permanent aura (99 turns) never counts down
                 if a.left <= 0 then table.remove(p.auras, i) end
             end
             SyncMax(p)

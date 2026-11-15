@@ -12,6 +12,7 @@ for l in io.lines("pet-battle/api_manifest.txt") do local n = l:match("^(%w+)=")
 local PURE = { GetGUID = true, GetGUIDLow = true }   -- handled by the stub itself (still must be in the manifest)
 
 local objects, nextId, badCalls, problems = {}, 100, {}, {}
+local cosmetic, utilityActs = {}, 0   -- cosmetic spell id -> casts this battle; abilities that are PURE utility (no damage, no attack spell) this battle
 local function problem(msg) problems[#problems + 1] = msg end
 local function newObj(entry, kind)
     nextId = nextId + 1
@@ -28,6 +29,7 @@ local function newObj(entry, kind)
         elseif name == "SetScale" then return function(_, s) o.scale = s end
         elseif name == "SetFaction" then return function(_, f) o.faction = f end
         elseif name == "SetUnitFlags" then return function(_, f) if f == 0 then o.flagsCleared = true end end
+        elseif name == "CastSpell" then return function(_, _, spell) cosmetic[spell] = (cosmetic[spell] or 0) + 1 end   -- every visual-only spell the playback casts (Fx)
         elseif name == "PerformEmote" then return function() o.emotes = o.emotes + 1 end
         elseif name == "DespawnOrUnsummon" or name == "RemoveFromWorld" then return function() o.despawned = true end
         elseif name == "IsAlive" then return function() return not o.despawned end
@@ -84,6 +86,14 @@ package.loaded["acore_msg"] = { On = function() end, Send = function(_, module, 
 end }
 SHOP_PRIME = { SendAs = function() end, SendOne = function() end }
 dofile("scripts/pb_battle.lua")
+do   -- watch the engine events the playback receives: which acts are pure utility (the only ones that may play the utility glow)
+    local Eng = require("pb_core"); local origRound = Eng.Round
+    Eng.Round = function(b, ...)
+        local ev, st = origRound(b, ...)
+        for _, x in ipairs(ev) do if x.k == "act" and not (x.dmg or x.vis ~= nil) then utilityActs = utilityActs + 1 end end
+        return ev, st
+    end
+end
 local D = require("pb_data")
 local PREVIEW_BASE = 9100000
 
@@ -115,7 +125,7 @@ local tested, skipped = 0, 0
 for _, enemy in ipairs(ids) do
     -- fresh slate per battle
     for k in pairs(objects) do if objects[k].kind ~= "player" then objects[k] = nil end end
-    sent = {}; timers = {}
+    sent = {}; timers = {}; cosmetic = {}; utilityActs = 0
     local lvl = math.random(1, 6)
     local foes = { { species = enemy, level = lvl, quality = math.random(1, 4) } }
     if lvl > 2 then for _ = 1, 2 do foes[#foes + 1] = { species = pool[math.random(#pool)], level = lvl, quality = math.random(1, 4) } end end
@@ -129,6 +139,9 @@ for _, enemy in ipairs(ids) do
         if PB_BATTLE.InBattle(P) and PB_BATTLE.CleanAll then PB_BATTLE.CleanAll(P) end
         drain(2000)
         local name = D.species[enemy].name .. " (" .. enemy .. ")"
+        -- the cosmetic glows must match the events: 60957 (nature glow) only for pure utility abilities, never for an attack that missed; 60958 (fire glow) was the debuff glow that looked like a buff cast
+        if (cosmetic[60957] or 0) ~= utilityActs then problem(name .. ": utility glow cast " .. (cosmetic[60957] or 0) .. " times but only " .. utilityActs .. " abilities were pure utility (a missed attack or another event plays the glow)") end
+        if (cosmetic[60958] or 0) > 0 then problem(name .. ": the debuff glow (60958) was cast " .. cosmetic[60958] .. " times: a pet that merely received a debuff must not look like it casts") end
         -- previews the addon was told to show: species -> set of displays
         local previewDisplays, scales = {}, {}
         for _, m in ipairs(sent) do
