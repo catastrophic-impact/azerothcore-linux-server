@@ -20,9 +20,25 @@ local function new(kind, name, parent)
 end
 for _, m in ipairs({ "SetSize", "SetPoint", "SetAutoFocus", "ClearFocus", "SetTextColor", "SetWidth", "SetHeight", "SetJustifyH", "SetBackdrop", "SetBackdropBorderColor",
     "SetAllPoints", "SetTexture", "SetVertexColor", "SetHighlightTexture", "RegisterForDrag", "RegisterForClicks", "SetFrameStrata", "ClearAllPoints", "SetMovable", "EnableMouse",
-    "SetCreature", "HighlightText", "SetRotation", "SetDesaturated", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues", "SetValue", "StartMoving", "StopMovingOrSizing", "AddLineX" }) do
+    "SetCreature", "SetPortraitZoom", "SetFrameLevel", "SetAlpha", "IsShown", "Show", "GetWidth", "GetHeight", "HighlightText", "SetRotation", "SetDesaturated", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues", "SetValue", "StartMoving", "StopMovingOrSizing", "AddLineX" }) do
     M[m] = function(self, ...) self["last_" .. m] = { ... } end
 end
+function M:GetFrameLevel() return 1 end
+-- geometry recording (used by the layout check in section 4d): every anchor and size the addon sets
+function M:ClearAllPoints() self.pts = {}; self.allpts = nil end
+function M:SetPoint(point, a, b, c, d)
+    self.pts = self.pts or {}
+    local rel, relPoint, x, y = nil, nil, 0, 0
+    if type(a) == "number" then x, y = a, b
+    elseif type(b) == "number" then rel, x, y = a, b, c
+    else rel, relPoint, x, y = a, b, c or 0, d or 0 end
+    self.pts[#self.pts + 1] = { point = point, rel = rel, relPoint = relPoint or point, x = x or 0, y = y or 0 }
+    self.last_SetPoint = { point, a, b, c, d }
+end
+function M:SetAllPoints(f) self.allpts = f or true end
+function M:SetSize(w, h) self.w, self.h = w, h end
+function M:SetWidth(w) self.w = w end
+function M:SetHeight(h) self.h = h end
 function M:SetScript(ev, fn) self.scripts[ev] = fn end
 function M:GetScript(ev) return self.scripts[ev] end
 function M:SetText(t) self.text = tostring(t == nil and "" or t); if self.kind == "EditBox" then fire(self, "OnTextChanged", true) end end
@@ -41,6 +57,8 @@ function M:GetParent() return self.parent end
 function M:SetChecked(v) self.checked = v and true or false end
 function M:GetChecked() return self.checked end
 function M:SetScrollChild(c) self.child = c end
+function M:GetVerticalScroll() return self.vscroll or 0 end
+function M:SetVerticalScroll(v) self.vscroll = v end
 function M:CreateFontString(name, layer, tpl) return new("FontString", name, self) end
 function M:CreateTexture(name, layer) return new("Texture", name, self) end
 
@@ -74,10 +92,18 @@ local function installStub()
     function UIDropDownMenu_AddButton(info, level) if cur then cur[#cur + 1] = info end end
     function CloseDropDownMenus() closed = closed + 1 end
     function OPENMENU_(dd, level, value) cur = {}; UIDROPDOWNMENU_MENU_VALUE = value or ""; dd.initfn(dd, level or 1); local r = cur; cur = nil; return r end
+    -- bags for the Feed menu: BAGS[bag][slot] = { id, name, minLevel, type, subtype, count }
+    BAGS = {}
+    function GetContainerNumSlots(b) return BAGS[b] and #BAGS[b] or 0 end
+    function GetContainerItemLink(b, sl) local it = BAGS[b] and BAGS[b][sl]; return it and ("|cffffffff|Hitem:" .. it[1] .. ":0:0:0:0:0:0:0|h[" .. it[2] .. "]|h|r") end
+    function GetContainerItemInfo(b, sl) local it = BAGS[b][sl]; return "tex", it[6] end
+    function GetItemInfo(link) local id = tonumber(link:match("item:(%d+)")); for _, bg in pairs(BAGS) do for _, it in ipairs(bg) do if it[1] == id then return it[2], link, 1, 1, it[3], it[4], it[5], 20, "", "Interface\\Icons\\x" end end end end
+    function ToggleDropDownMenu(level, value, dd) FEEDMENU = OPENMENU_(dd, level or 1) end
     function IsMouseButtonDown() return mouseDown end
     DEFAULT_CHAT_FRAME = { AddMessage = function(_, t) chat[#chat + 1] = t end }
     function GetCursorPosition() return 100, 200 end
     function MouseIsOver(f) return over[f] == true end
+    function GetTime() return 100 end
     SlashCmdList, UISpecialFrames = {}, {}
     tinsert = table.insert
     AcoreLib = {
@@ -102,8 +128,8 @@ local function loadPets()
 end
 
 ---------------------------------------------------------------- test data
-local PETS = {   -- sp, name, family, quality  (pet 2 is renamed: wire name "nickname|species")
-    { 1, "Young Wolf", "Beast", 1 }, { 2, "Fang|Dire Wolf", "Beast", 3 }, { 3, "Stone Turtle", "Aquatic", 2 }, { 4, "Cave Whelp", "Dragonkin", 4 },
+local PETS = {   -- sp, name, family, quality  
+    { 1, "Young Wolf", "Beast", 1 }, { 2, "Dire Wolf", "Beast", 3 }, { 3, "Stone Turtle", "Aquatic", 2 }, { 4, "Cave Whelp", "Dragonkin", 4 },
     { 5, "Fire Imp", "Elemental", 1 }, { 6, "Frost Imp", "Magic", 2 }, { 7, "Moon Sprite", "Magic", 3 }, { 8, "Wild Sprite", "Flying", 4 },
     { 9, "Gray Wolf Pup", "Beast", 1 }, { 10, "Sea Turtle", "Aquatic", 3 }, { 11, "Ice Elemental", "Elemental", 4 }, { 12, "Healing Bloom, Greater", "Humanoid", 2 },
 }
@@ -118,7 +144,7 @@ local S = W.S
 ok(SlashCmdList["PETS"] and SLASH_PETS1 == "/pets" and SLASH_PETS2 == "/petjournal", "slash command registered")
 for _, need in ipairs({ "pet", "team", "follow", "active", "done", "abl", "primed" }) do ok(handlers["pbj|" .. need], "handler registered at load: pbj|" .. need) end
 
--- (1) open the frame through the slash command
+-- (1) open the frame through the slash command (the journal opens on the COLLECTED view)
 SlashCmdList["PETS"]()
 local frame = WotlkPetsFrame
 ok(frame and frame:IsShown(), "slash opens the frame")
@@ -209,11 +235,6 @@ local CASES = {
     { "search zone word AND name word: 'durotar sprite'", { filter = "durotar sprite", family = {}, qual = {} }, "7,8" },
     { "search zone word AND family word: 'elwynn magic' -> empty", { filter = "elwynn magic", family = {}, qual = {} }, "" },
     { "search two zone words AND: 'duskwood westfall'", { filter = "duskwood westfall", family = {}, qual = {} }, "8,10" },
-    { "search by nickname: 'fang' (pet 2 is renamed Fang, a Dire Wolf)", { filter = "fang", family = {}, qual = {} }, "2" },
-    { "search by species of a renamed pet: 'dire'", { filter = "dire", family = {}, qual = {} }, "2" },
-    { "nickname and species words AND: 'fang wolf'", { filter = "fang wolf", family = {}, qual = {} }, "2" },
-    { "nickname word AND another pet's word -> empty: 'fang gray'", { filter = "fang gray", family = {}, qual = {} }, "" },
-    { "renamed pet is still found by its species: 'dire wolf'", { filter = "dire wolf", family = {}, qual = {} }, "2" },
     { "view=team + quality 4 -> empty", { filter = "", family = {}, qual = set(4), view = "team" }, "" },
 }
 local CASES2 = {   -- universe: 12 owned pets + 5 uncollected pseudo pets (101-105; 101 lives in Duskwood, 102 in Elwynn Forest and Duskwood)
@@ -304,8 +325,6 @@ local MUT = {
     ["zone filter inverted"] = function() return build({ invZone = true }) end,
     ["zone filter passes species with no zone data"] = function() return build({ zoneNilPass = true }) end,
     ["search ignores zone names"] = function() return build({ noZoneSearch = true }) end,
-    ["search ignores the species of a renamed pet"] = function() return build({ noSpecies = true }) end,
-    ["search ignores the nickname of a renamed pet"] = function() return build({ noNick = true }) end,
     ["case-sensitive search"] = function() return build({ case = true }) end,
     ["search uses Lua patterns"] = function() return build({ pattern = true }) end,
     ["missing quality defaults to 2"] = function() return build({ q2 = true }) end,
@@ -386,7 +405,7 @@ setView(1); eq(S.view, "all", "choosing 'All pets' resets the view"); eq(vdd.ddt
 fm[3].func(); qm[2].func(); setView(4); WotlkPetsSearch:SetText("fire")
 ok(next(S.family) and next(S.qual) and S.view == "team" and S.filter == "fire", "all filters set before Clear")
 fire(btn("Clear filters"), "OnClick")
-eq(next(S.family), nil, "Clear empties the family set"); eq(next(S.qual), nil, "Clear empties the quality set"); eq(S.view, "all", "Clear resets the view"); eq(vdd.ddtext, "All pets", "Clear resets the view text")
+eq(next(S.family), nil, "Clear empties the family set"); eq(next(S.qual), nil, "Clear empties the quality set"); eq(S.view, "collected", "Clear resets the view to the default (Collected)"); eq(vdd.ddtext, "Collected", "Clear resets the view text")
 eq(S.filter, "", "Clear resets the search"); eq(WotlkPetsSearch.text, "", "Clear empties the search box"); eq(fdd.ddtext, "All families", "Clear resets the family text"); eq(qdd.ddtext, "All qualities", "Clear resets the quality text")
 eq(frame.count.text, "12 pets", "Clear restores the count")
 -- zone drop-down: single choice, two levels
@@ -424,50 +443,16 @@ fire(rowFor(12), "OnEnter"); ok(not lines():find("Found in", 1, true), "row tool
 reset(2); handlers["pbj|team"]("2,7,10,0"); fire(slot(2, 1), "OnEnter"); ok(lines():find("Found in: Durotar, Duskwood", 1, true), "team slot tooltip has the 'Found in' line: " .. lines())
 fire(slot(2, 2), "OnEnter"); ok(lines():find("+2 more", 1, true), "team slot tooltip: '+2 more'")
 reset(1)
--- PET RENAME
-eq(S.pets[2].name, "Fang", "renamed wire 'nick|species': name is the nickname"); eq(S.pets[2].species, "Dire Wolf", "renamed wire: species is the real species name")
-eq(S.pets[1].name, "Young Wolf", "plain wire: name unchanged"); eq(S.pets[1].species, nil, "plain wire: species is nil")
-eq(S.pets[12].name, "Healing Bloom, Greater", "plain name with a comma still parses whole"); eq(S.pets[12].species, nil, "plain name with a comma: no species")
+eq(S.pets[1].name, "Young Wolf", "plain wire: name unchanged")
+eq(S.pets[12].name, "Healing Bloom, Greater", "a name with a comma still parses whole")
 reset(1)
-eq(table.concat({ ids(W.PetPasses, { filter = "wolf", family = {}, qual = {} }) }), "1,2,9", "'wolf' finds the renamed Dire Wolf through its species")
-sb = WotlkPetsSearch; sb:SetText("fang"); eq(visibleRows(), "2", "UI search by nickname"); sb:SetText("dire"); eq(visibleRows(), "2", "UI search by species of a renamed pet"); sb:SetText(""); eq(frame.count.text, "12 pets", "count restored after search")
--- tooltip species line
-local function nlines() return #GameTooltip.lines end
-fire(rowFor(2), "OnEnter"); local renLines = nlines(); ok(lines():find("Dire Wolf", 1, true), "renamed pet tooltip has the species line: " .. lines())
-fire(rowFor(9), "OnEnter"); eq(nlines(), renLines - 1, "plain pet tooltip has one line fewer (no species line)"); ok(not lines():find("Dire", 1, true) and not lines():find("Gray Wolf", 1, true), "plain pet tooltip has no species line")
-reset(2); fire(slot(1, 1), "OnEnter"); eq(nlines(), renLines - 1, "team slot, plain pet 1: no species line"); handlers["pbj|team"]("1,2,3,5"); fire(slot(1, 1), "OnEnter"); eq(nlines(), renLines, "team slot, renamed pet 2: species line"); ok(lines():find("Dire Wolf", 1, true), "team slot tooltip names the species")
--- details pane second line
-reset(1); local function subOf() for _, f in ipairs(created) do if f.kind == "FontString" and f.text:find("Level 12", 1, true) and f.text:find("Rare", 1, true) then return f.text end end end
-fire(rowFor(2), "OnClick"); ok((subOf() or ""):find("\n[^\n]*Dire Wolf"), "details pane: second line shows the species: " .. tostring(subOf()))
-fire(rowFor(1), "OnClick"); local plainSub; for _, f in ipairs(created) do if f.kind == "FontString" and f.text:find("Level 11", 1, true) and f.text:find("Common", 1, true) then plainSub = f.text end end
-ok(plainSub and not plainSub:find("\n", 1, true), "details pane: no second line for a plain pet: " .. tostring(plainSub))
--- rename button and popup
-local def = StaticPopupDialogs["WOTLKPETS_RENAME"]
-ok(def and def.button1 == ACCEPT and def.button2 == CANCEL and def.hasEditBox, "popup WOTLKPETS_RENAME defined with Accept/Cancel and an edit box"); eq(def.maxLetters, 12, "popup limits the name to 12 letters")
-local ren = btn("Rename"); ok(ren, "Rename button exists")
-reset(1); popups = {}; fire(ren, "OnClick"); eq(#popups, 0, "Rename with no selected pet opens nothing")
-fire(rowFor(2), "OnClick"); fire(ren, "OnClick")
-local dlg = popups[1]; ok(dlg and dlg.which == "WOTLKPETS_RENAME" and dlg.data == 2, "Rename opens the popup for the selected species id"); eq(dlg.arg, "Dire Wolf", "popup text argument is the real species name")
-eq(dlg.editBox.text, "Fang", "renamed pet: edit box prefilled with the nickname")
-sent = {}; dlg.editBox:SetText("Rex"); def.OnAccept(dlg); eq(#sent, 1, "accept sends once"); eq(sent[1].m .. "|" .. sent[1].a .. "|" .. sent[1].p, "pbj|rename|2,Rex", "accept sends '<id>,<text>'")
-sent = {}; dlg.editBox:SetText("Rex Jr"); def.EditBoxOnEnterPressed(dlg.editBox); eq(sent[1] and sent[1].p, "2,Rex Jr", "Enter sends '<id>,<text>'"); ok(not dlg:IsShown(), "Enter closes the popup")
-sent = {}; local dlg2 = StaticPopup_Show("WOTLKPETS_RENAME", "x", nil, 2); dlg2.editBox:SetText(""); def.OnAccept(dlg2); eq(sent[1] and sent[1].p, "2,", "empty text on accept clears the nickname ('<id>,')")
-sent = {}; dlg2.editBox:SetText(""); def.EditBoxOnEnterPressed(dlg2.editBox); eq(sent[1] and sent[1].p, "2,", "empty text on Enter clears the nickname")
-local dlg3 = StaticPopup_Show("WOTLKPETS_RENAME", "x", nil, 2); def.EditBoxOnEscapePressed(dlg3.editBox); ok(not dlg3:IsShown(), "Escape closes the popup"); eq(#sent, 1 + 0, "Escape sends nothing")
--- plain pet: popup opens with an empty box, argument is its own name
-fire(rowFor(1), "OnClick"); popups = {}; fire(ren, "OnClick")
-eq(popups[1].data, 1, "plain pet: popup carries its id"); eq(popups[1].arg, "Young Wolf", "plain pet: popup text argument is its name"); eq(popups[1].editBox.text, "", "plain pet: edit box is not prefilled")
-sent = {}; popups[1].editBox:SetText("Rover"); def.OnAccept(popups[1]); eq(sent[1] and sent[1].p, "1,Rover", "plain pet rename string")
--- server confirms: clearing the nickname returns a plain pet
-handlers["pbj|pet"](wire({ 2, "Dire Wolf", "Beast", 3 })); eq(S.pets[2].species, nil, "after a clear the pet is plain again"); eq(S.pets[2].name, "Dire Wolf", "after a clear the name is the species")
-handlers["pbj|pet"](wire({ 2, "Fang|Dire Wolf", "Beast", 3 })); eq(S.pets[2].name, "Fang", "renamed again")
-reset(1)
+eq(table.concat({ ids(W.PetPasses, { filter = "wolf", family = {}, qual = {} }) }), "1,2,9", "'wolf' finds Dire Wolf, Young Wolf and Gray Wolf Pup")
 -- COLLECTED / NOT COLLECTED (pseudo pets from WotlkPetDex)
 local FIXDEX = { [101] = { "Alpha Crab", "Aquatic", "INV_Misc_A" }, [102] = { "Beta Cat", "Beast", "INV_Misc_B" }, [103] = { "Gamma Wolf", "Beast", "INV_Misc_C" },
     [104] = { "Delta Bot", "Mechanical", "INV_Misc_D" }, [105] = { "Echo Wisp", "Magic", "INV_Misc_E" }, [3] = { "Flesh Eater", "Undead", "INV_Misc_F" } }   -- 3 is owned: the owned pet wins
 WotlkPetDex = FIXDEX
 reset(1)
-eq(visibleRows(), "101,102,4,104,105,2,5,6,103,9,12,11,7,10,3,8,1", "view all: owned and uncollected pets merged, sorted by name; owned species 3 not duplicated")
+eq(visibleRows(), "101,102,4,104,2,105,5,6,103,9,12,11,7,10,3,8,1", "view all: owned and uncollected pets merged, sorted by name; owned species 3 not duplicated")
 eq(frame.count.text, "17 pets", "count counts owned + uncollected")
 setView(3); eq(visibleRows(), "101,102,104,105,103", "view Not collected: only uncollected pets"); eq(frame.count.text, "5 of 17 pets", "count 'n of N pets' for Not collected")
 setView(2); eq(visibleRows(), "4,2,5,6,9,12,11,7,10,3,8,1", "view Collected: only owned pets"); eq(frame.count.text, "12 pets", "count in Collected view excludes uncollected pets")
@@ -477,7 +462,7 @@ setView(1)
 local function rowOf(sp) return rowFor(sp) end
 local r101, r1 = rowOf(101), rowOf(1)
 eq(r101.name.text, "Alpha Crab", "uncollected row: name"); eq(r101.name.last_SetTextColor[1] .. "," .. r101.name.last_SetTextColor[2], "0.6,0.6", "uncollected row: grey name")
-ok(r101.icon.last_SetDesaturated[1] == true, "uncollected row: desaturated icon"); eq(r101.icon.last_SetTexture[1], "Interface\\Icons\\INV_Misc_A", "uncollected row: dex icon")
+ok(r101.icon.last_SetDesaturated[1] == true, "uncollected row: desaturated icon"); eq(r101.icon.last_SetTexture[1], "Interface\\Icons\\Ability_Druid_AquaticForm", "uncollected row: the pet TYPE icon (Aquatic)")
 ok(r101.sub.text:find("Aquatic", 1, true) and r101.sub.text:find("not collected", 1, true), "uncollected row sub: '<family> not collected': " .. r101.sub.text); eq(r101.lvl.text, "", "uncollected row: empty level")
 ok(r1.icon.last_SetDesaturated[1] == false, "owned row: icon not desaturated"); ok(not r1.sub.text:find("not collected", 1, true), "owned row: no 'not collected'"); eq(r1.lvl.text, "11", "owned row: level shown")
 -- filters apply to uncollected pets
@@ -486,15 +471,16 @@ qm[4].func(); eq(visibleRows(), "2,7,10", "quality filter hides uncollected pets
 setView(3); qm[2].func(); eq(visibleRows(), "", "Not collected AND quality -> nothing"); eq(S.emptyTxt.text, "No pet matches the filters. Use Clear filters.", "empty text for view+quality"); qm[1].func(); setView(1)
 OPENMENU_(zdd, 2, "Eastern Kingdoms")[2].func(); eq(visibleRows(), "101,102,7,10,8", "zone Duskwood lists owned and uncollected species"); OPENMENU_(zdd, 1)[1].func()
 sb:SetText("crab"); eq(visibleRows(), "101", "search finds an uncollected pet"); sb:SetText("")
-setView(3); fire(btn("Clear filters"), "OnClick"); eq(S.view, "all", "Clear resets S.view"); eq(vdd.ddtext, "All pets", "Clear resets the view text"); eq(frame.count.text, "17 pets", "Clear restores the merged count")
+setView(3); fire(btn("Clear filters"), "OnClick"); eq(S.view, "collected", "Clear resets S.view to Collected"); eq(vdd.ddtext, "Collected", "Clear resets the view text"); setView(1); eq(frame.count.text, "17 pets", "All pets view shows the merged count")
 -- details pane
-local function dOf() return btn("Rename").parent end
+local function dOf() return btn("Feed").parent end
 local function kids(kind, pred) local t = {}; for _, f in ipairs(created) do if f.parent == dOf() and f.kind == kind and (not pred or pred(f)) then t[#t + 1] = f end end return t end
 local function whereTxt() for _, f in ipairs(kids("FontString")) do if f.text:find("^Found in") then return f.text end end end
 local function subTxt() for _, f in ipairs(kids("FontString")) do if f.text:find("Not collected  %-", 1) or f.text:find("Level ", 1, true) then return f.text end end end
 local function statsTxt() for _, f in ipairs(kids("FontString")) do if f.text:find("^Family") or f.text:find("^Health") then return f.text end end end
 local abBtns = kids("Button", function(f) return f.cd ~= nil end); eq(#abBtns, 6, "6 ability buttons found")
 local labels = kids("FontString", function(f) return f.text == "Basic" or f.text == "Utility" or f.text == "Major" end); eq(#labels, 3, "3 ability labels found")
+reset(1); fire(rowFor(1), "OnClick")
 local sumB, xpB = btn("Summon") or btn("Dismiss"), kids("StatusBar")[1]
 reset(1); sent = {}
 fire(rowFor(102), "OnClick")
@@ -502,7 +488,7 @@ eq(statsTxt(), "Family   |cffffffffBeast|r", "dex details: stats show only the f
 local dn; for _, f in ipairs(kids("FontString")) do if f.text == "Beta Cat" then dn = f end end
 ok(dn and dn.last_SetTextColor[1] == 0.65, "dex details: grey name")
 eq(whereTxt(), "Found in: Elwynn Forest, Duskwood, Westfall, Durotar, The Barrens, Zone Six +1 more", "dex details: first 6 zones and '+1 more'")
-ok(not sumB:IsShown() and not btn("Rename"):IsShown() and not xpB:IsShown(), "dex details: Summon, Rename and the xp bar are hidden")
+ok(not sumB:IsShown() and not btn("Feed"):IsShown() and not xpB:IsShown(), "dex details: Summon, Feed and the xp bar are hidden")
 local allHidden = true; for _, b in ipairs(abBtns) do if b:IsShown() then allHidden = false end end; ok(allHidden, "dex details: ability buttons hidden")
 allHidden = true; for _, l in ipairs(labels) do if l:IsShown() then allHidden = false end end; ok(allHidden, "dex details: ability labels hidden")
 eq(#sentOf("abil"), 0, "selecting an uncollected pet asks the server for no abilities")
@@ -510,7 +496,7 @@ fire(rowFor(101), "OnClick"); eq(whereTxt(), "Found in: Duskwood", "dex details:
 fire(rowFor(103), "OnClick"); eq(whereTxt(), "Found in: companion pet", "dex details: species with no zones -> 'companion pet'")
 fire(rowFor(10), "OnClick")
 eq(whereTxt(), "Found in: Elwynn Forest, Duskwood, Westfall, Durotar, The Barrens", "owned details: where shown under the xp bar")
-ok(sumB:IsShown() and btn("Rename"):IsShown() and xpB:IsShown(), "owned details: Summon, Rename and the xp bar shown again")
+ok(sumB:IsShown() and btn("Feed"):IsShown() and xpB:IsShown(), "owned details: Summon, Feed and the xp bar shown again")
 allHidden = true; for _, b in ipairs(abBtns) do if not b:IsShown() then allHidden = false end end; ok(allHidden, "owned details: ability buttons shown again")
 allHidden = true; for _, l in ipairs(labels) do if not l:IsShown() then allHidden = false end end; ok(allHidden, "owned details: ability labels shown again")
 ok((statsTxt() or ""):find("^Health"), "owned details: stats back"); ok((subTxt() or ""):find("Level 20", 1, true), "owned details: sub shows the level")
@@ -547,7 +533,7 @@ reset(1)
 -- list -> empty slot
 fire(rowFor(2), "OnDragStart"); findDrag()
 eq(S.tab, 2, "dragging from the list opens the Teams tab"); ok(S.drag and S.drag.sp == 2 and S.drag.fromTeam == nil, "drag state from list")
-ok(dragFrame and dragFrame.shown and dragFrame.tex.last_SetTexture[1] == "Interface\\Icons\\Ability_Hunter_Pet_Wolf", "cursor icon shown")
+ok(dragFrame and dragFrame.shown and dragFrame.tex.last_SetTexture[1] == "Interface\\Icons\\Ability_Racial_BearForm", "cursor icon shown (Beast type icon)")
 fire(dragFrame, "OnUpdate"); ok(dragFrame.last_SetPoint ~= nil, "cursor icon follows the mouse")
 drop(slot(2, 2)); fire(rowFor(2), "OnDragStop")
 eq(teamsStr(), "1,3,5 | 0,2,0 | 0,0,0", "list -> empty slot: teams"); eq(setteams(), "2,0,2,0", "list -> empty slot: exact setteam"); eq(S.drag, nil, "drag cleared after drop"); ok(not dragFrame.shown, "cursor icon hidden after drop")
@@ -713,21 +699,154 @@ do
         if type(sp) ~= "number" or type(d) ~= "table" or type(d[1]) ~= "string" or d[1] == "" or type(d[2]) ~= "string" or type(d[3]) ~= "string" or d[3] == "" then badShape = badShape + 1 end
         if not RF[d[2]] then badFam[#badFam + 1] = tostring(sp) .. ":" .. tostring(d[2]) end
     end
-    eq(n, 1844, "PetDex has 1844 species (1605 wild + 239 companions)"); eq(badShape, 0, "every dex entry is { name, family, icon } with a numeric key"); ok(#badFam == 0, "every dex family is one of the 10 retail families: " .. table.concat(badFam, ","))
+    local expectedDex = 0; do package.path = "scripts/?.lua;" .. package.path; local okD, DD = pcall(require, "pb_data"); if okD then for _, sp in pairs(DD.species) do if sp.wild or sp.companion then expectedDex = expectedDex + 1 end end end end   -- every wild/companion species in pb_data
+    eq(n, expectedDex, "PetDex lists every wild/companion species of pb_data (" .. expectedDex .. ")"); eq(badShape, 0, "every dex entry is { name, family, icon } with a numeric key"); ok(#badFam == 0, "every dex family is one of the 10 retail families: " .. table.concat(badFam, ","))
     local zfile = loadfile("addons/wotlk_pets/ZoneLevels.lua"); local zenv = {}; setfenv(zfile, zenv); zfile()
     local missing = {}; for sp in pairs(zenv.WotlkPetSpeciesZones) do if not DEX[sp] then missing[#missing + 1] = tostring(sp) end end
     ok(#missing == 0, "every WotlkPetSpeciesZones key exists in the dex: " .. table.concat(missing, ","))
     -- the real dex through the real addon (no owned pets: everything is uncollected)
     ZONEDATA = { levels = zenv.WotlkPetZoneLevels, groups = zenv.WotlkPetZoneGroups, species = zenv.WotlkPetSpeciesZones, dex = DEX }
     loadPets(); SlashCmdList["PETS"](); local W2 = WotlkPets
-    eq(WotlkPetsFrame.count.text, "1844 pets", "real dex: all 1844 species listed when nothing is owned"); eq(W2.S.emptyTxt.text, "", "real dex: no empty text")
+    OPENMENU_(WotlkPetsViewDD)[1].func()   -- the journal OPENS on Collected; All pets shows the whole dex
+    eq(WotlkPetsFrame.count.text, expectedDex .. " pets", "real dex: all " .. expectedDex .. " species listed when nothing is owned"); eq(W2.S.emptyTxt.text, "", "real dex: no empty text")
     OPENMENU_(WotlkPetsViewDD)[2].func(); eq(WotlkPetsFrame.count.text, "0 pets", "real dex: Collected view with nothing owned lists nothing"); OPENMENU_(WotlkPetsViewDD)[1].func()
     ZONEDATA = nil
 end
 
 ---------------------------------------------------------------- (4b) empty state with no pets at all (fresh load)
-loadPets(); SlashCmdList["PETS"](); local f2 = WotlkPetsFrame
+loadPets(); SlashCmdList["PETS"](); local f2 = WotlkPetsFrame; eq(WotlkPets.S.view, "collected", "the journal OPENS on the Collected view")
 eq(WotlkPets.S.emptyTxt.text, "You have no battle pets yet. Capture wild pets in battle.", "no-pets empty-state text"); eq(f2.count.text, "0 pets", "count with no pets")
+
+---------------------------------------------------------------- (4b2) FEEDING: the Feed button lists the food in the bags and sends the choice
+do
+    loadPets(); SlashCmdList["PETS"](); local W4 = WotlkPets; feed(PETS); handlers["pbj|done"]()
+    BAGS = { [0] = { { 111, "Tough Jerky", 1, "Consumable", "Food & Drink", 5 }, { 222, "Spiced Wolf Meat", 25, "Consumable", "Food & Drink", 3 }, { 333, "Linen Bandage", 1, "Consumable", "Bandage", 9 }, { 444, "Pet Treat", 12, "Consumable", "Food & Drink", 2 } },
+             [1] = { { 111, "Tough Jerky", 1, "Consumable", "Food & Drink", 4 } } }
+    local function feedBtn() for _, f in ipairs(created) do if f.kind == "Button" and f.text == "Feed" then return f end end end
+    W4.S.sel = 1; W4.S.tab = 1; handlers["pbj|done"]()   -- pet 1 is level 11
+    local fb = feedBtn(); ok(fb and fb.shown, "Feed button shown for a collected pet")
+    sent = {}; fire(fb, "OnClick")
+    ok(FEEDMENU and #FEEDMENU == 3, "menu lists the 3 distinct foods (bandage ignored, jerky stacks merged): " .. tostring(FEEDMENU and #FEEDMENU))
+    local text = {}; for _, e in ipairs(FEEDMENU) do text[#text + 1] = e.text end
+    ok(text[1]:find("Pet Treat") and text[1]:find("level 12") and text[2]:find("Spiced Wolf Meat") and text[2]:find("x3") and text[2]:find("level 25"), "usable food first, lowest sufficient level first: " .. text[1] .. " / " .. text[2])
+    ok(text[3]:find("Tough Jerky") and text[3]:find("x9") and text[3]:find("too weak") and FEEDMENU[3].disabled, "too-weak food greyed out, stacks merged (x9): " .. text[3])
+    FEEDMENU[2].func(); eq(sentOf("feed")[1], "1,222", "choosing a food sends species,itemId")
+    BAGS = {}; fire(fb, "OnClick"); ok(FEEDMENU[1].text:find("No food") and FEEDMENU[1].disabled, "empty bags: a disabled 'No food' line")
+    W4.S.sel = 99999; handlers["pbj|pet"]("99999,3,0,1,2,1,Beast,Ability_Hunter_Pet_Wolf,500,10,1,500,100,Whelp"); handlers["pbj|done"]()
+    local fb2 = feedBtn(); ok(fb2 ~= nil, "feed button exists")
+end
+
+---------------------------------------------------------------- (4d) LAYOUT: compute every anchor to coordinates (no screenshot needed): nothing may leave its window or overlap a sibling button
+do
+    loadPets(); SlashCmdList["PETS"](); local W5 = WotlkPets; feed(PETS); handlers["pbj|done"]()
+    W5.S.sel = 1; W5.S.tab = 1; handlers["pbj|done"]()
+    local win = WotlkPetsFrame
+    local memo = {}
+    local OFF = { TOPLEFT = { 0, 0 }, TOP = { .5, 0 }, TOPRIGHT = { 1, 0 }, LEFT = { 0, .5 }, CENTER = { .5, .5 }, RIGHT = { 1, .5 }, BOTTOMLEFT = { 0, 1 }, BOTTOM = { .5, 1 }, BOTTOMRIGHT = { 1, 1 } }
+    local rect
+    local function resolve(f, rel) if rel == nil then return f.parent end if type(rel) == "string" then return _G[rel] end return rel end
+    function rect(f)   -- left, top, width, height in window pixels (y grows downward); nil when not determinable
+        if memo[f] ~= nil then return memo[f] or nil end
+        memo[f] = false
+        if f == win then memo[f] = { 0, 0, 800, 560 }; return memo[f] end
+        local par = f.parent
+        if not par then return nil end
+        local pr = rect(par); if not pr then return nil end
+        local w, h = f.w, f.h
+        if f.kind == "FontString" and (not h or not w) then   -- text size estimate: 14 px per line, 7 px per character
+            local lines, longest = 1, 0
+            for ln in (tostring(f.text or "") .. "\n"):gmatch("([^\n]*)\n") do longest = math.max(longest, #ln:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end
+            lines = select(2, tostring(f.text or ""):gsub("\n", "")) + 1
+            h = h or 14 * lines; w = w or 7 * longest
+        end
+        local pts = f.pts or {}
+        if f.allpts then memo[f] = { pr[1], pr[2], pr[3], pr[4] }; return memo[f] end
+        local function anchorPos(pt)
+            local base = resolve(f, pt.rel); local br = base and rect(base); if not br then return nil end
+            local o = OFF[pt.relPoint]; return br[1] + o[1] * br[3] + pt.x, br[2] + o[2] * br[4] - pt.y
+        end
+        if #pts == 0 then return nil end
+        if #pts >= 2 then   -- two corners define the size
+            local l, t, r, b
+            for _, pt in ipairs(pts) do
+                local ax, ay = anchorPos(pt); if not ax then return nil end
+                local o = OFF[pt.point]
+                if o[1] == 0 then l = ax elseif o[1] == 1 then r = ax end
+                if o[2] == 0 then t = ay elseif o[2] == 1 then b = ay end
+            end
+            if l and r then w = r - l end; if t and b then h = b - t end
+            if not l and r and w then l = r - w end; if not t and b and h then t = b - h end
+            if l and t and w and h then memo[f] = { l, t, w, h }; return memo[f] end
+            return nil
+        end
+        local pt = pts[1]; local ax, ay = anchorPos(pt); if not ax or not w or not h then return nil end
+        local o = OFF[pt.point]; memo[f] = { ax - o[1] * w, ay - o[2] * h, w, h }; return memo[f]
+    end
+    local function within(r, box, pad) return r[1] >= box[1] - 0.5 and r[2] >= box[2] - 0.5 and r[1] + r[3] <= box[1] + box[3] + 0.5 and r[2] + r[4] <= box[2] + box[4] + 0.5 end
+    local pane = W5.pane and W5.pane() or nil
+    local winBox = rect(win)
+    local btns = {}; local named = {}
+    for _, f in ipairs(created) do
+        if f.kind == "Button" and f.shown and f.w and f.w > 20 and f.parent and f.parent ~= WotlkPetsScroll.child and f.text ~= "" then
+            local r = rect(f); if r then btns[#btns + 1] = { f = f, r = r }; named[f.text] = r end
+        end
+    end
+    ok(#btns >= 4, "layout solver found the visible buttons (" .. #btns .. ")")
+    for _, e in ipairs(btns) do ok(within(e.r, winBox), string.format("button '%s' stays inside the window: x %.0f..%.0f of 800, y %.0f..%.0f of 560", e.f.text, e.r[1], e.r[1] + e.r[3], e.r[2], e.r[2] + e.r[4])) end
+    ok(named["Summon Pet"] and named["Feed"], "Summon and Feed buttons all exist")
+    local function overlap(a, b) return a[1] < b[1] + b[3] and b[1] < a[1] + a[3] and a[2] < b[2] + b[4] and b[2] < a[2] + a[4] end
+    local list = {}; for t, r in pairs(named) do if t == "Summon Pet" or t == "Feed" or t == "Dismiss" then list[#list + 1] = { t, r } end end
+    for i = 1, #list do for j = i + 1, #list do ok(not overlap(list[i][2], list[j][2]), "buttons '" .. list[i][1] .. "' and '" .. list[j][1] .. "' do not overlap") end end
+    -- the pet pane (right of the list) must hold them: right edge <= window edge minus the 20 px margin
+    -- every sized widget of the pet pane (xp bar, ability buttons, model frame) stays inside the window, and the xp bar does not sit on a button
+    local checked = 0
+    for _, f in ipairs(created) do
+        if f.shown and f.w and f.h and f.parent and f.parent ~= WotlkPetsScroll.child and f.kind ~= "FontString" and f.kind ~= "Texture" and f.kind ~= "EditBox" then
+            local r = rect(f)
+            if r and f.w > 20 and f.h > 8 then checked = checked + 1; if not within(r, winBox) then ok(false, string.format("%s '%s' leaves the window: x %.0f..%.0f y %.0f..%.0f", f.kind, tostring(f.text), r[1], r[1] + r[3], r[2], r[2] + r[4])) end end
+        end
+    end
+    ok(checked >= 8, "layout check covered " .. checked .. " sized widgets")
+    for _, f in ipairs(created) do
+        if f.kind == "StatusBar" and f.shown and f.w then
+            local xr = rect(f)
+            for t, r in pairs(named) do if (t == "Summon Pet" or t == "Dismiss" or t == "Feed") and xr then ok(not overlap(xr, r), "the xp bar does not overlap the '" .. t .. "' button") end end
+        end
+    end
+    for _, t in ipairs({ "Summon Pet", "Feed" }) do local r = named[t]; ok(r and r[1] + r[3] <= 800 - 20 + 0.5, t .. " button right edge " .. (r and (r[1] + r[3]) or "?") .. " <= 780") end
+end
+
+---------------------------------------------------------------- (4c) SCALE: opening the journal makes the server resend every pet, one message each (1,500 pets = 1,500 messages)
+do
+    loadPets(); SlashCmdList["PETS"](); local W3 = WotlkPets
+    local N = 1500
+    local refreshes = 0
+    local holder = WotlkPetsScroll.child; local oldSet = holder.SetHeight
+    holder.SetHeight = function(self, h) refreshes = refreshes + 1; if oldSet then return oldSet(self, h) end end   -- one SetHeight per Refresh
+    local t0 = os.clock()
+    for i = 1, N do handlers["pbj|pet"](string.format("%d,10,5,1,2,1,Beast,Ability_Hunter_Pet_Wolf,1500,30,2,1400,200,Test Pet %d", i, i)) end
+    handlers["pbj|team"]("1,1,2,3"); handlers["pbj|active"]("1"); handlers["pbj|follow"]("0"); handlers["pbj|done"]()
+    local dt = os.clock() - t0
+    eq(WotlkPetsFrame.count.text, N .. " pets", "1500 pets listed after the burst")
+    ok(refreshes <= 6, "the burst redraws the list a handful of times, not once per pet (" .. refreshes .. " redraws)")
+    print(string.format("  scale: 1500-pet sync %.2f s", dt)); ok(dt < 3, string.format("1500-pet sync with the journal open takes %.2f s", dt))
+    local rowFrames = 0; for _, f in ipairs(created) do if f.kind == "Button" and f.parent == WotlkPetsScroll.child then rowFrames = rowFrames + 1 end end
+    ok(rowFrames <= 24, "the list is virtual: " .. rowFrames .. " row frames for 1500 pets (not 1500)")
+    -- scrolling rebinds the same few frames to later pets
+    local firstShown = function() local best; for _, f in ipairs(created) do if f.kind == "Button" and f.parent == WotlkPetsScroll.child and f.shown and f.sp and (not best or f.sp < best) then best = f.sp end end return best end
+    local before = firstShown()
+    WotlkPetsScroll.vscroll = 42 * 200; WotlkPetsScroll.scripts.OnVerticalScroll(WotlkPetsScroll, 42 * 200)
+    local after = firstShown(); ok(after and before and after ~= before, "scrolling 200 rows down shows other pets (" .. tostring(before) .. " -> " .. tostring(after) .. ")")
+    local rf2 = 0; for _, f in ipairs(created) do if f.kind == "Button" and f.parent == WotlkPetsScroll.child then rf2 = rf2 + 1 end end
+    ok(rf2 == rowFrames, "scrolling creates no new frames")
+    WotlkPetsScroll.vscroll = 0; WotlkPetsScroll.scripts.OnVerticalScroll(WotlkPetsScroll, 0)
+    -- a single pet arriving later (capture) still updates the open list at once
+    handlers["pbj|pet"]("1600,3,0,1,2,1,Magic,Ability_Hunter_Pet_Wolf,900,20,3,900,100,Late Pet")
+    eq(WotlkPetsFrame.count.text, (N + 1) .. " pets", "a single later 'pet' message refreshes immediately")
+    -- filtering at scale
+    t0 = os.clock(); WotlkPetsSearch.text = "Test Pet 14"; W3.S.filter = "test pet 14"; handlers["pbj|done"](); dt = os.clock() - t0
+    ok(dt < 1, string.format("search on 1500 pets redraws in %.2f s", dt))
+end
 
 ---------------------------------------------------------------- (5) global leak check
 local bad = {}

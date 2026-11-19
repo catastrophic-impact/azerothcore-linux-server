@@ -1,0 +1,149 @@
+# base ability ids rejected by the pet tests (tests_to_blocklist.py); mechanic_templates.py never uses them
+163	stampede choreography: the retail text tells a story no real spell name matches
+175	aura text/describe
+176	aura text/describe
+184	retail text names the ability (flavored Throwing Knives still says Quills)
+198	status label audit (audit_labels)
+226	status label audit (audit_labels)
+279	aura text/describe
+280	aura text/describe
+292	status label audit (audit_labels)
+308	status label audit (audit_labels)
+323	known gap
+330	aura text/describe
+331	aura text/describe
+332	aura text/describe
+444	known gap
+461	retail story text
+529	engine conformance (test_abilities)
+572	status label audit (audit_labels)
+574	engine conformance (test_abilities)
+600	status label audit (audit_labels)
+601	status label audit (audit_labels)
+602	status label audit (audit_labels)
+605	status label audit (audit_labels)
+606	engine conformance (test_abilities)
+612	engine conformance (test_abilities)
+615	status label audit (audit_labels)
+632	engine conformance (test_abilities)
+634	engine conformance (test_abilities)
+636	aura text/describe
+637	aura text/describe
+646	status label audit (audit_labels)
+647	engine conformance (test_abilities)
+652	known gap
+663	status label audit (audit_labels)
+664	status label audit (audit_labels)
+670	engine conformance (test_abilities)
+671	status label audit (audit_labels)
+718	status label audit (audit_labels)
+746	retail story text
+747	retail story text
+768	engine conformance (test_abilities)
+769	status label audit (audit_labels)
+774	engine conformance (test_abilities)
+775	status label audit (audit_labels)
+810	aura text/describe
+811	aura text/describe
+828	engine conformance (test_abilities)
+849	status label audit (audit_labels)
+909	status label audit (audit_labels)
+910	status label audit (audit_labels)
+921	status label audit (audit_labels)
+922	known gap
+938	status label audit (audit_labels)
+942	status label audit (audit_labels)
+980	aura text/describe
+981	aura text/describe
+1002	status label audit (audit_labels)
+1014	status label audit (audit_labels)
+1015	status label audit (audit_labels)
+1063	engine conformance (test_abilities)
+1077	status label audit (audit_labels)
+1085	status label audit (audit_labels)
+1101	engine conformance (test_abilities)
+1106	status label audit (audit_labels)
+1108	status label audit (audit_labels)
+1116	status label audit (audit_labels)
+1359	status label audit (audit_labels)
+1369	status label audit (audit_labels)
+1412	engine conformance (test_abilities)
+1443	status label audit (audit_labels)
+1536	status label audit (audit_labels)
+1559	status label audit (audit_labels)
+1681	status label audit (audit_labels)
+1796	status label audit (audit_labels)
+1810	status label audit (audit_labels)
+1920	status label audit (audit_labels)
+1945	status label audit (audit_labels)
+1962	engine conformance (test_abilities)
+1966	status label audit (audit_labels)
+2023	status label audit (audit_labels)
+2082	aura text/describe
+2085	aura text/describe
+2102	aura text/describe
+2103	aura text/describe
+2112	status label audit (audit_labels)
+2113	status label audit (audit_labels)
+2212	text junk
+2232	status label audit (audit_labels)
+2248	status label audit (audit_labels)
+2257	status label audit (audit_labels)
+2258	status label audit (audit_labels)
+2293	text resolves to zero/unknown (for 0 )
+2300	engine conformance (test_abilities)
+2312	status label audit (audit_labels)
+2322	status label audit (audit_labels)
+2326	status label audit (audit_labels)
+2327	status label audit (audit_labels)
+2329	aura text/describe
+2330	aura text/describe
+2334	status label audit (audit_labels)
+2352	known gap
+2357	status label audit (audit_labels)
+2358	status label audit (audit_labels)
+2359	status label audit (audit_labels)
+2360	status label audit (audit_labels)
+2361	status label audit (audit_labels)
+2365	status label audit (audit_labels)
+2375	status label audit (audit_labels)
+2378	engine conformance (test_abilities)
+2389	status label audit (audit_labels)
+2390	status label audit (audit_labels)
+2396	status label audit (audit_labels)
+2404	engine conformance (test_abilities)
+2406	status label audit (audit_labels)
+2413	engine conformance (test_abilities)
+2425	status label audit (audit_labels)
+2432	engine conformance (test_abilities)
+2441	status label audit (audit_labels)
+2442	status label audit (audit_labels)
+2447	status label audit (audit_labels)
+2448	engine conformance (test_abilities)
+2449	status label audit (audit_labels)
+2451	text resolves to zero/unknown (for 0 )
+2456	status label audit (audit_labels)
+2458	status label audit (audit_labels)
+2468	status label audit (audit_labels)
+2474	status label audit (audit_labels)
+2479	status label audit (audit_labels)
+2482	status label audit (audit_labels)
+2489	status label audit (audit_labels)
+2490	status label audit (audit_labels)
+2495	status label audit (audit_labels)
+2511	text junk
+2512	status label audit (audit_labels)
+2527	status label audit (audit_labels)
+468	ability visual vs flavored name (test_ability_vis)
+214	ability visual vs flavored name (test_ability_vis)
+592	ability visual vs flavored name (test_ability_vis)
+1068	ability visual vs flavored name (test_ability_vis)
+569	ability visual vs flavored name (test_ability_vis)
+218	ability visual vs flavored name (test_ability_vis)
+513	ability visual vs flavored name (test_ability_vis)
+624	ability visual vs flavored name (test_ability_vis)
+369	ability visual vs flavored name (test_ability_vis)
+2062	ability visual vs flavored name (test_ability_vis)
+488	damaging aura shown as a buff (audit_labels BUFF THAT HURTS: aura 487 Blood Presence)
+2071	ability visual vs flavored name (test_ability_vis)
+409	damaging aura shown as a buff (audit_labels BUFF THAT HURTS: aura 408 Pestilence)

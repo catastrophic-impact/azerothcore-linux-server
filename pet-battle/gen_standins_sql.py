@@ -24,6 +24,8 @@ SET @pb_sel = (SELECT GROUP_CONCAT(CASE
 SET @pb_q = CONCAT('INSERT IGNORE INTO creature_template (', @pb_cols, ') SELECT ', @pb_sel, ' FROM creature_template src WHERE FIND_IN_SET(src.`entry`, @pb_ids)');
 PREPARE pb_stmt FROM @pb_q; EXECUTE pb_stmt; DEALLOCATE PREPARE pb_stmt;
 UPDATE creature_template SET `type` = 1 WHERE entry >= 9000000 AND entry < 9100000 AND `type` = 12;
+-- every stand-in is level 80: both pets in a fight then have the SAME level (a real spell never misses by level difference) and no level ever changes in view (a change plays the level-up animation)
+UPDATE creature_template SET minlevel = 80, maxlevel = 80 WHERE entry >= 9000000 AND entry < 9100000;
 INSERT IGNORE INTO creature_template_model (CreatureID, Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild)
     SELECT CreatureID + 9000000, Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild FROM creature_template_model WHERE FIND_IN_SET(CreatureID, @pb_ids);
 INSERT IGNORE INTO creature_equip_template (CreatureID, ID, ItemID1, ItemID2, ItemID3, VerifiedBuild)

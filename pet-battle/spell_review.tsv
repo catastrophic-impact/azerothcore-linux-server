@@ -1,0 +1,169 @@
+part	spell	proposed_features	tooltip
+A	Mark of Blood	DUM,H	place a mark of blood on an enemy.  whenever the marked enemy deals damage to a target, that target is healed for X% of its maximum health.  lasts for X or up to X hits. hits by this target restore X% health.
+A	Vampiric Blood	H	temporarily grants the death knight X% of maximum health and increases the amount of health generated through spells and effects by X% for X.  after the effect expires, the health is lost. healing improved by X%
+maximum health increased by X%
+A	Horn of Winter	DU	the death knight blows the horn of winter, which generates 10 runic power and increases total strength and agility of all party or raid members within X yards by X.  lasts X. increases your total strength and agility by X.
+A	Death and Decay	P	corrupts the ground targeted by the death knight, causing X shadow damage every sec that targets remain in the area for X.  this ability produces a high amount of threat. X shadow damage inflicted every sec
+A	Unholy Presence	SU	infuses the death knight with unholy fury, increasing attack speed by X%, movement speed by X% and reducing the global cooldown on all abilities by ${X/-1000}.1 sec.  only one presence may be active at a time. attack speed increased X%.
+movement speed increased by X%.
+global cooldown on all abilities reduced by ${X/-1000}.1 sec.
+A	Nature's Grasp	R	while active, any time an enemy strikes the caster they have a X% chance to become afflicted by entangling roots (rank 8).  X charges.  lasts X. melee damage you take has a chance to entangle the enemy.
+A	Bear Form	DU,SL	shapeshift into bear form, increasing melee attack power by X, armor contribution from cloth and leather items by X%, and stamina by X%.  also protects the caster from polymorph effects and allows the use of various bear abilities.
+
+the act of shapeshifting frees the caster of polymorph and movement impairing effects. immune to polymorph effects.  increases melee attack power by X, armor contribution from cloth and leather items by X%, and stamina by X%.
+A	Berserk	SL	when activated, this ability causes your mangle (bear) ability to hit up to X targets and have no cooldown, and reduces the energy cost of all your cat form abilities by X%.  lasts X.  you cannot use tiger's fury while berserk is active. 
+
+clears the effect of fear and makes you immune to fear for the duration. immune to fear effects.
+A	Feral Charge	R	teaches feral charge (bear) and feral charge (cat).
+
+feral charge (bear) - causes you to charge an enemy, immobilizing and interrupting any spell being cast for X. this ability can be used in bear form and dire bear form. 15 second cooldown.
+
+feral charge (cat) - causes you to leap behind an enemy, dazing them for X. 30 second cooldown.
+A	Feral Charge - Bear	R	causes you to charge an enemy, immobilizing and interrupting any spell being cast for X. immobilized.
+A	Mangle	DU,VU	mangle the target, inflicting damage and causing the target to take additional damage from bleed effects for X.  this ability can be used in cat form or dire bear form.
+A	Savage Roar	DU,DUM	finishing move that increases physical damage done by X%.  only useable while in cat form.  lasts longer per combo point:
+   1 point  : 14 seconds
+   2 points: 19 seconds
+   3 points: 24 seconds
+   4 points: 29 seconds
+   5 points: 34 seconds physical damage done increased by X%.
+A	Tranquility	DUM,H	heals all nearby group members for X every X seconds for X.  druid must channel to maintain the spell. heals nearby party members for X every X seconds.
+A	Tree of Life	H	reduces the mana cost of your healing over time spells by X% and grants the ability to shapeshift into the tree of life. while in this form you increase healing received by X% for all party and raid members within X yards, and you can only cast restoration spells in addition to innervate, barkskin, nature's grasp and thorns spells.
+
+the act of shapeshifting frees the caster of polymorph and movement impairing effects.
+A	Aspect of the Beast	DU	the hunter takes on the aspects of a beast, becoming untrackable and increasing melee attack power of the hunter and the hunter's pet by X%.  only one aspect can be active at a time. untrackable and melee attack power for the pet and hunter increased by 10%.
+A	Aspect of the Dragonhawk	DG,DU	the hunter takes on the aspects of a dragonhawk, increasing ranged attack power by X and chance to dodge by X%.  only one aspect can be active at a time. increases ranged attack power by X.
+increases dodge chance by X%.
+A	Aspect of the Hawk	DU	the hunter takes on the aspects of a hawk, increasing ranged attack power by X.  only one aspect can be active at a time. increases ranged attack power by X.
+A	Kill Command	DU,DUM	give the command to kill, increasing your pet's damage done from special attacks by ${X*3}% for X.  each special attack done by the pet reduces the damage bonus by X%.
+A	Hunter's Mark	DU	places the hunter's mark on the target, increasing the ranged attack power of all attackers against that target by X.  in addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible.  the target also appears on the mini-map.  lasts for X. all attackers gain X ranged attack power against this target.
+A	Rapid Fire	SU	increases ranged attack speed by X% for X. increases ranged attack speed by X%.
+A	Trueshot Aura	DU	increases the attack power of party and raid members within X yards by X%.  lasts X. increases attack power by X%.
+A	Explosive Shot	DU,P	you fire an explosive charge into the enemy target, dealing ${X*0.14+X}-${X*0.14+X} fire damage. the charge will blast the target every second for an additional X. taking fire damage every second.
+A	Arcane Missiles	DUM,P	launches arcane missiles at the enemy, causing X arcane damage every X sec for X.
+A	Arcane Power	DU	when activated, your spells deal X% more damage while costing X% more mana to cast.  this effect lasts X. increased damage and mana cost for your spells.
+A	Invisibility	ST	$?s54354[instantly makes the caster invisible, reducing all threat.][fades the caster to invisibility over X, reducing threat each second.]  the effect is cancelled if you perform any actions.  while invisible, you can only see other invisible targets and those who can see invisible.  lasts X. fading.
+A	Mana Shield	DEF	absorbs X damage, draining mana instead.  drains X mana per damage absorbed.  lasts X. absorbs damage, draining mana instead.
+A	Combustion	CR,DU	when activated, this spell increases your critical strike damage bonus with fire damage spells by X%, and causes each of your fire damage spell hits to increase your critical strike chance with fire damage spells by X%.  this effect lasts until you have caused X non-periodic critical strikes with fire spells.
+A	Molten Armor	CR,SH	causes X fire damage when hit, increases your critical strike rating by X% of your spirit, and reduces the chance you are critically hit by X%.  only one type of armor spell can be active on the mage at any time.  lasts X. causes X fire damage to attackers.  chance to receive a critical hit reduced by X%.  critical strike rating increased by X% of spirit.
+A	Blizzard	DUM,P	ice shards pelt the target area doing ${X*8*$<mult>} frost damage over X. X frost damage every X X:seconds;.
+A	Icy Veins	SU	hastens your spellcasting, increasing spell casting speed by X% and reduces the pushback suffered from damaging attacks while casting by X%.  lasts X. casting speed of all spells increased by X% and reduces pushback suffered by damaging attacks while casting by X%.
+A	Holy Shock	DUM,H	blasts the target with holy energy, causing X holy damage to an enemy, or X healing to an ally.
+A	Sacred Shield	DEF,DUM	each time the target takes damage they gain a sacred shield, absorbing X damage and increasing the paladin's chance to critically hit with flash of light by X% for up to X.  they cannot gain this effect more than once every X sec.  lasts X.  this spell cannot be on more than one target at any one time. each time the target takes damage they gain a sacred shield, absorbing X damage and increasing the paladin's chance to critically hit with flash of light by X%.   the target cannot gain this effect more than once every X sec.
+A	Seal of Light	H	fills the paladin with divine light for X, giving each melee attack a chance to heal the paladin for ${0.15*X+0.15*X}.  only one seal can be active on the paladin at any one time.
+
+unleashing this seal's energy will deal ${1+0.25*X+0.16*X} holy damage to an enemy. melee attacks have a chance to heal you.
+A	Seal of Righteousness	DU,DUM	fills the paladin with holy spirit for X, granting each melee attack ${X*(0.022*X+0.044*X)} additional holy damage.  only one seal can be active on the paladin at any one time.
+
+unleashing this seal's energy will cause ${1+0.2*X+0.32*X} holy damage to an enemy. melee attacks cause an additional  ${X*(0.022*X+0.044*X)} holy damage.
+A	Blessing of Sanctuary	DEF,DG,DU,DUM	places a blessing on the friendly target, reducing damage taken from all sources by X% for X and increasing strength and stamina by X%.  in addition, when the target blocks, parries, or dodges a melee attack the target will gain X% of maximum displayed mana.  players may only have one blessing on them per paladin at any one time. damage taken reduced by up to X%, strength and stamina increased by X%, and blocked, parried, and dodged melee attacks cause a gain X% of maximum displayed mana.
+A	Greater Blessing of Sanctuary	DEF,DG,DU,DUM	gives all members of the raid or group that share the same class with the target the greater blessing of sanctuary, reducing damage taken from all sources by X% for X and increasing strength and stamina by X%.  in addition, when the target blocks, parries, or dodges a melee attack the target will gain X% of maximum displayed mana.  players may only have one blessing on them per paladin at any one time. damage taken reduced by up to X%, strength and stamina increased by X%, and blocked, parried, and dodged melee attacks cause a gain X% of maximum displayed mana.
+A	Holy Shield	DU,SH	increases chance to block by X% for X and deals X holy damage for each attack blocked while active.  each block expends a charge.  X charges. block chance increased by X%.  X holy damage dealt to attacker when blocked.  X charges.
+A	Seal of Justice	S	fills the paladin with the spirit of justice for X, giving each melee attack a chance to stun for X.  only one seal can be active on the paladin at any one time.
+
+unleashing this seal's energy will deal ${1+0.25*X+0.16*X} holy damage to an enemy. melee attacks have a chance to stun for X.
+A	Blessing of Might	DU	places a blessing on the friendly target, increasing attack power by X for X.  players may only have one blessing on them per paladin at any one time. increases attack power by X.
+A	Crusader Aura	SU	increases the mounted speed by X% for all party and raid members within X yards.  players may only have one aura on them per paladin at any one time.  this does not stack with other movement speed increasing effects. mounted speed increased by X%.  this does not stack with other movement speed increasing effects.
+A	Greater Blessing of Might	DU	gives all members of the raid or group that share the same class with the target the greater blessing of might, increasing attack power by X for X.  players may only have one blessing on them per paladin at any one time. increases attack power by X.
+A	Seal of Command	DU,DUM	all melee attacks deal ${0.36*X} to ${0.36*X} additional holy damage.  when used with attacks or abilities that strike a single target, this additional holy damage will strike up to 2 additional targets.  lasts X.
+
+unleashing this seal's energy will judge an enemy, instantly causing ${0.19*X+0.08*X+0.13*X} to ${0.19*X+0.08*X+0.13*X} holy damage. melee attacks deal additional holy damage.
+A	Seal of Corruption	DU,DUM,P	fills the paladin with holy power, causing attacks to apply blood corruption, which deals ${(0.013*X+0.025*X)*5} additional holy damage over X.  once stacked to X times, each of the paladins attacks also deals X% weapon damage as additional holy damage.  blood corruption can stack up to X times.  only one seal can be active on the paladin at any one time.  lasts X.
+
+unleashing this seal's energy will deal ${1+0.22*X+0.14*X} holy damage to an enemy, increased by 10% for each application of blood corruption on the target. melee attacks cause holy damage over X.
+A	Seal of Vengeance	DU,DUM,P	fills the paladin with holy power, causing attacks to apply holy vengeance, which deals ${(0.013*X+0.025*X)*5} additional holy damage over X.  holy vengeance can stack up to X times.  once stacked to X times, each of the paladin's attacks also deals X% weapon damage as additional holy damage.  only one seal can be active on the paladin at any one time.  lasts X.
+
+unleashing this seal's energy will deal ${1+0.22*X+0.14*X} holy damage to an enemy, increased by 10% for each application of holy vengeance on the target. melee attacks cause holy damage over X.
+A	Fear Ward	SL	wards the friendly target against fear.  the next fear effect used against the target will fail, using up the ward.  lasts X. warded against fear.
+A	Penance	DUM,H	launches a volley of holy light at the target, causing X holy damage to an enemy, or X healing to an ally instantly and every X sec for X.
+A	Power Infusion	SU	infuses the target with power, increasing spell casting speed by X% and reducing the mana cost of all spells by X%.  lasts X. spell casting speed increased by X% and mana cost of spells reduced by X%.
+A	Prayer of Mending	H	places a spell on the target that heals them for X the next time they take damage.  when the heal occurs, prayer of mending jumps to a party or raid member within X yards.  jumps up to X times and lasts X after each jump.  this spell can only be placed on one target at a time.
+A	Mind Sear	P	causes an explosion of shadow magic around the enemy target, causing X shadow damage every X sec for X to all enemies within X yards around the target. causing shadow damage to all targets within X yards.
+A	Vampiric Embrace	DUM,H	fills you with the embrace of shadow energy, causing you to be healed for X% and other party members to be healed for $/5;15286s1% of any single-target shadow spell damage you deal for X. X% of single-target shadow spell damage caused by casting priest heals the priest and $/5;15286s1% heals the group.
+A	Cold Blood	CR	when activated, increases the critical strike chance of your next offensive ability by X%. critical strike chance of your next offensive ability increased by X%.
+A	Hunger For Blood	DU,DUM	enrages you, increasing all damage caused by X%.  requires a bleed effect to be active on the target.  lasts X.
+A	Slice and Dice	DUM,SU	finishing move that increases melee attack speed by X%.  lasts longer per combo point:
+   1 point  : ${(9+$<glyph>)*(100+$<mult>)/100} seconds
+   2 points: ${(12+$<glyph>)*(100+$<mult>)/100} seconds
+   3 points: ${(15+$<glyph>)*(100+$<mult>)/100} seconds
+   4 points: ${(18+$<glyph>)*(100+$<mult>)/100} seconds
+   5 points: ${(21+$<glyph>)*(100+$<mult>)/100} seconds melee attack speed increased by X%.
+A	Blade Flurry	SU	increases your attack speed by X%.  in addition, attacks strike an additional nearby opponent.  lasts X. attack speed increased by X%.  weapon attacks strike an additional nearby opponent.
+A	Feint	DEF	performs a feint, causing no damage but lowering your threat by a large amount, making the enemy less likely to attack you.  in addition, reduces the damage you take from area of effect attacks by X% for X. X% reduced damage taken from area of effect attacks.
+A	Killing Spree	DU,DUM,ST	step through the shadows from enemy to enemy within 10 yards, attacking an enemy every .5 secs with both weapons until 5 assaults are made, and increasing all damage done by X% for the duration.  can hit the same target multiple times.  cannot hit invisible or stealthed targets. attacking an enemy every X sec.
+damage dealt increased by X%.
+A	Shiv	CR,DUM,SD	performs an instant off-hand weapon attack that automatically applies the poison from your off-hand weapon to the target.  slower weapons require more energy.  neither shiv nor the poison it applies can be a critical strike.  awards 1 combo point.
+A	Shadow Dance	ST	enter the shadow dance for X, allowing the use of sap, garrote, ambush, cheap shot, premeditation, pickpocket and disarm trap regardless of being stealthed. can use opening abilities without being stealthed.
+A	Vanish	ST	allows the rogue to vanish from sight, entering an improved stealth mode for X.  also breaks movement impairing effects.  more effective than vanish (rank 2). improved stealth.
+A	Elemental Mastery	SU	when activated, your next lightning bolt, chain lightning or lava burst spell becomes an instant cast spell. in addition, you gain X% spell haste for X. elemental mastery shares a cooldown with nature's swiftness. cast time of your next lightning bolt, chain lightning or lava burst spell is reduced by X%.
+A	Lightning Shield	SH	the caster is surrounded by X balls of lightning.  when a spell, melee or ranged attack hits the caster, the attacker will be struck for X nature damage.  this expends one lightning ball.  only one ball will fire every few seconds.  lasts X.  only one elemental shield can be active on the shaman at any one time. causes X nature damage to attacker on hit.  X charges.
+A	Shamanistic Rage	DEF,S	reduces all damage taken by X% and gives your successful melee attacks a chance to regenerate mana equal to X% of your attack power. this spell is usable while stunned. lasts X.
+A	Earth Shield	DUM,H	protects the target with an earthen shield, reducing casting or channeling time lost when damaged by X%  and causing attacks to heal the shielded target for $<heal>.  this effect can only occur once every few seconds.  X charges.  lasts X.  earth shield can only be placed on one target at a time and only one elemental shield can be active on a target at a time. reduces casting or channeling time lost when damaged by X% and attacks heal the shielded target for X.
+A	Tidal Force	DUM,H	increases the critical effect chance of your healing wave, lesser healing wave and chain heal by X%. each critical heal reduces the chance by 20%. lasts X. increases the critical effect chance of your healing wave, lesser healing wave and chain heal by X%. each critical heal reduces the chance by 20%. lasts X.
+A	Demon Charge	S	charge an enemy, stunning it for X.
+A	Enslave Demon	SD,SU	enslaves the target demon, up to level X, forcing it to do your bidding.  while enslaved, the time between the demon's attacks is increased by X% and its casting speed is slowed by X%.  lasts up to X. enslaved.
+A	Immolation Aura	P	ignites the area surrounds you, causing X fire damage to all nearby enemies every X sec.  lasts X. damages all nearby enemies.
+A	Rain of Fire	DUM,P	calls down a fiery rain to burn enemies in the area of effect for ${X*4} fire damage over X. X fire damage every X seconds.
+A	Bladestorm	SL	instantly whirlwind up to X nearby targets and for the next X you will perform a whirlwind attack every X sec.  while under the effects of bladestorm, you can move but cannot perform any other abilities but you do not feel pity or remorse or fear and you cannot be stopped unless killed. you cannot be stopped and perform a whirlwind every X sec.  no other abilities can be used.
+A	Charge	DUM,S	charge an enemy, generate $/10;s2 rage, and stun it for X.  cannot be used in combat.
+A	Second Wind	H,R,S	whenever you are struck by a stun or immobilize effect you will generate $/10;29842o1 rage and X% of your total health over X. generates $/10;s1 rage and heals X% of your total health every X sec.
+A	Battle Shout	DU	the warrior shouts, increasing attack power of all raid and party members within X yards by X.  lasts X. increases your attack power by X.
+A	Berserker Rage	DU,SL	the warrior enters a berserker rage, removing and granting immunity to fear, sap and incapacitate effects and generating extra rage when taking damage.  lasts X. immune to fear, sap and incapacitate effects.  generating extra rage when taking damage.
+A	Bloodthirst	H	instantly attack the target causing ${X*X/100} damage.  in addition, the next X successful melee attacks will restore X% of max health.  this effect lasts X.  damage is based on your attack power. successful melee attacks restore X% of max health.
+A	Demoralizing Shout	DD	reduces the melee attack power of all enemies within X yards by X for X. reduces melee attack power by X.
+A	Execute	DU,DUM	attempt to finish off a wounded foe, causing ${X+X*0.2} damage and converting each extra point of rage into $*10;f1 additional damage (up to a maximum cost of 30 rage).  only usable on enemies that have less than 20% health.
+A	Heroic Fury	CL,R	removes any immobilization effects and refreshes the cooldown of your intercept ability.
+A	Sunder Armor	DU	sunders the target's armor, reducing it by X% per sunder armor and causes a high amount of threat.  threat increased by attack power.  can be applied up to 5 times.  lasts X. armor decreased by X%.
+A	Vigilance	DEF,SH	focus your protective gaze on a group or raid target, reducing their damage taken by X% and transfers $<threat>% of the threat they cause to you.  in addition, each time they are hit by an attack your taunt cooldown is refreshed.  lasts X.  this effect can only be on one target at a time. damage taken reduced by X% and X% of all threat transferred to warrior.
+A	Swoop	R	your pet swoops at an enemy, immobilizing the target for X, and adds X% melee attack power to the pet's next attack.
+A	Demonic Frenzy	DU	the felguard's damaging melee attacks cause a demonic frenzy, increasing attack power by X% for X.  this effect can stack up to X times. attack power increased by X%.
+A	Activate MG Turret	P	10 mana per second.
+automatically fires a shot at the nearest enemy tonk within X yards every X sec, dealing X damage per shot.
+A	Flamethrower	P,SD	10 mana per second.
+deals X damage every X sec to all tonks in front of you within X yards. also slows movement to X% and deals X damage per second for X.
+A	Soothing Kiss	SD	soothes the target, increasing the chance that it will attack something else and decreases melee attack speed by X% for X.  more effective than soothing kiss (rank 4). melee attack speed slowed by X%.
+A	Furious Howl	DU	increases melee and ranged attack power by X for the wolf and its master for X. increased melee and ranged attack power.
+A	Bullheaded	CL,DD	removes all movement impairing effects and all effects which cause loss of control of your pet, and reduces damage done to your pet by X% for X.
+A	Call of the Wild	DU	your pet roars, increasing your pet's and your melee and ranged attack power by X%.  lasts X. increases your melee and ranged attack power by X%.
+A	Lick Your Wounds	H	your pet heals itself for X% of its total health over X while channeling. gain X% of total health every X sec.
+A	Rabid	DU	your pet goes into a killing frenzy.  successful attacks have a chance to increase attack power by X%.  this effect will stack up to X times.  lasts X. hits can increase the pet's attack power.
+A	Roar of Sacrifice	CR	protects a friendly target from critical strikes, making attacks against that target unable to be critical strikes, but X% of all damage taken by that target is also taken by the pet.  lasts X. immune to critical strikes, but damage transferred to the hunter's pet.
+A	Stoneform	CL	removes all poison, disease and bleed effects and increases your armor by X% for X.
+A	Escape Artist	R	escape the effects of any immobilization or movement speed reduction effect.
+A	Every Man for Himself	CL	removes all movement impairing effects and all effects which cause loss of control of your character.  this effect shares a cooldown with other similar effects.
+A	Will of the Forsaken	SL	removes any charm, fear and sleep effect. this effect shares a 45 sec cooldown with other similar effects.
+B	Pestilence		spreads existing blood plague and frost fever infections from your target to all other enemies within X yards.
+B	Deathchill		when activated, makes your next icy touch, howling blast, frost strike or obliterate a critical hit if used within X. your next icy touch, howling blast, frost strike or obliterate has a 100% chance to critically hit.
+B	Hungering Cold		purges the earth around the death knight of all heat.  enemies within X yards are trapped in ice, preventing them from performing any action for X and infecting them with frost fever.  enemies are considered frozen, but any damage other than diseases will break the ice. frozen.
+B	Lichborne		draw upon unholy energy to become undead for X.  while undead, you are immune to charm, fear and sleep effects. immune to charm, fear and sleep.
+undead.
+B	Starfall		you summon a flurry of stars from the sky on all targets within X yards of the caster, each dealing X arcane damage. also causes X arcane damage to all other enemies within X yards of the enemy target. maximum 20 stars. lasts X.  shapeshifting into an animal form or mounting cancels the effect. any effect which causes you to lose control of your character will suppress the starfall effect. summoning stars from the sky.
+B	Demoralizing Roar		the druid roars, decreasing nearby enemies' melee attack power by X.  lasts X. decreases melee attack power by X.
+B	Nature's Swiftness		when activated, your next nature spell with a base casting time less than 10 sec. becomes an instant cast spell. your next nature spell will be an instant cast spell.
+B	Scorpid Sting		stings the target, reducing chance to hit with melee and ranged attacks by X% for X.  only one sting per hunter can be active on any one target. chance to hit with melee and ranged attacks reduced by X%.
+B	Volley		continuously fires a volley of ammo at the target area, causing ${X*0.083700+X} arcane damage to enemy targets within X yards every ${X/6}.2 X:seconds; for X.
+B	Deterrence		when activated, increases parry chance by X%, reduces the chance ranged attacks will hit you by X% and grants a X% chance to deflect spells.  while deterrence is active, you cannot attack.  lasts X. parry chance increased by X%, chance for ranged attacks to miss you increased by X%, X% chance to deflect spells, and unable to attack.
+B	Focus Magic		increases the target's chance to critically hit with spells by X%.  when the target critically hits the caster's chance to critically hit with spells is increased. increases chance to critically hit with spells by X%.
+B	Presence of Mind		when activated, your next mage spell with a casting time less than 10 sec becomes an instant cast spell. your next mage spell with a casting time less than 10 sec will be an instant cast spell.
+B	Concentration Aura		all party or raid members within X yards lose X% less casting or channeling time when damaged.  players may only have one aura on them per paladin at any one time. reduces casting or channeling time lost when damaged by X%.
+B	Divine Favor		when activated, gives your next flash of light, holy light, or holy shock spell a X% critical effect chance. critical effect chance of next flash of light, holy light, or holy shock spell increased by X%.
+B	Divine Sacrifice		X% of all damage taken by party members within X yards is redirected to the paladin (up to a maximum of X% of the paladin's health times the number of party members).  damage which reduces the paladin below X% health will break the effect.  lasts X. X% of all damage taken by party members redirected to the paladin.
+B	Pain Suppression		
+B	Mind Control		controls a humanoid mind up to level X, but increases the time between its attacks by X%.  lasts up to X. charmed.  time between attacks increased by X%.
+B	Mind Soothe		soothes the target, reducing the range at which it will attack you by X yards.  only affects humanoid targets.  lasts X. reduced distance at which target will attack.
+B	Psychic Horror		you terrify the target, causing them to tremble in horror for X and drop their main hand and ranged weapons for X. disarmed.
+B	Dismantle		disarm the enemy, removing all weapons, shield or other equipment carried for X. disarmed.
+B	Fire Nova		causes the shaman's active fire totem to emit a wave of flames, inflicting X fire damage to enemies within X yards of the totem.
+B	Curse of Idiocy		curse the target with idiocy, reducing intellect and spirit by X every X seconds until each is reduced by a total of $*15;s1.  only one curse per warlock can be active on any one target. intellect and spirit reduced.
+B	Metamorphosis		
+B	Retaliation		instantly counterattack any enemy that strikes you in melee for X.  melee attacks made from behind cannot be counterattacked.  a maximum of X attacks will cause retaliation. counterattacking all melee attacks.
+B	Enraged Regeneration		you regenerate X% of your total health over X.  this ability requires an enrage effect, consumes all enrage effects and prevents any from affecting you for the full duration. regenerates X% of your total health every X sec.
+B	Slam		slams the opponent, causing weapon damage plus X.
+B	Shield Block		increases your chance to block and block value by X% for X. block chance and block value increased by X%.
+B	Spell Reflection		raise your shield, reflecting the next spell cast on you.  lasts X. reflects the next spell cast on you.
+B	Blood Pact		increases party and raid members' health by X. increases health by X.
+B	Dust Cloud		your tallstrider kicks up an obscuring cloud of dust, causing all enemies within 10 yards to miss their next attack.  lasts for X.
+B	Carrion Feeder		your pet can generate health and happiness by eating a corpse.  will not work on the remains of elemental or mechanical creatures.
+B	Heart of the Phoenix		when your pet dies, it will miraculously return to life with full health.
+B	Find Treasure		allows the dwarf to sense nearby treasure, making it appear on the minimap.  lasts X. finding treasure.
+B	Cannibalize		when activated, regenerates X% of total health every X sec for X.  only works on humanoid or undead corpses within X yds.  any movement, action, or damage taken while cannibalizing will cancel the effect.

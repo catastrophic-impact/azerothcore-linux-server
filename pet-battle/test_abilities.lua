@@ -157,6 +157,7 @@ for _, ab in ipairs(byName) do
         end
         -- 4. stun chance: "N% chance to stun"
         local sp = tonumber(desc:match("(%d+)%% chance to stun")) or tonumber(desc:match("(%d+)%%%% chance to stun"))
+        if sp and desc:match("chance to stun[^.]*if the target is") then unchecked_(name, "conditional stun (target state)"); sp = nil end
         if sp then
             checked = checked + 1
             local function stunned(roll) local evs = run(ab, { roll = roll, attackerFirst = true }); for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then return true end end return false end
@@ -198,11 +199,11 @@ for _, ab in ipairs(byName) do
             check(name, "hits an additional time when it attacks last", n1 == n2 + 1, n1 .. " vs " .. n2)
         end
         -- 6. "if the user attacks first" bonus: more damage when first than when second
-        if desc:find("if the user strikes first") or desc:find("if the user attacks first") or desc:find("Hits an additional time if the user attacks first") or desc:find("goes first") and not desc:find("always goes first") then
+        if desc:find("if the user strikes first") or desc:find("if the user attacks first") or desc:find("Hits an additional time if the user attacks first") or desc:find("goes first") and not desc:find("always goes first") and not desc:find("goes first if the weather") then
             checked = checked + 1
             local f = sum(dmgEvents(run(ab, { attackerFirst = true }), "P"), function(x) return x.dmg end)
             local s = sum(dmgEvents(run(ab, { attackerFirst = false }), "P"), function(x) return x.dmg end)
-            local stunClaim = desc:find("stuns the opponent if the user goes first") or desc:find("Interrupts")
+            local stunClaim = desc:find("stuns the opponent if the user goes first") or desc:find("stunning the opponent if the user goes first") or desc:find("Interrupts")
             if stunClaim then
                 local function stunnedWhenFirst(first) local evs, _, _, e = run(ab, { attackerFirst = first }, 2); for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then return true end end return false end
                 check(name, "stuns/interrupts the enemy when it goes first", stunnedWhenFirst(true), "no stun when first")
@@ -385,7 +386,8 @@ for _, ab in ipairs(byName) do
             local b, a, e = setup(ab, { attackerFirst = false }); e.abil = { scratch }; a.abil = { ab }
             local evs = C.Round(b, "A1", "A1")
             local taken = sum(dmgEvents(evs, "E"), function(x) return x.dmg end); local dealt = sum(dmgEvents(evs, "P"), function(x) return x.dmg end)
-            check(name, "deals the damage of the last hit taken", taken > 0 and dealt == taken, "took " .. taken .. " dealt " .. dealt)
+            local pw = 100; for _, t in ipairs(ab.turns) do for _, f in ipairs(t.fx) do if f.prop == 197 then pw = f.p[1] end end end   -- retail Power (Dark Fate 150 = 150% of the last hit)
+            check(name, "deals the damage of the last hit taken", taken > 0 and dealt == math.floor(taken * pw / 100), "took " .. taken .. " dealt " .. dealt)
         end
         -- 24. Haymaker: "If the ability misses, the user is stunned for 1 round"
         if desc:find("If the ability misses, the user is stunned") then
@@ -752,6 +754,79 @@ for _, ab in ipairs(byName) do
             for r = 1, tonumber(fsM) do per[r] = sum(dmgEvents(C.Round(b, "A1", "A1"), "P"), function(x) return x.dmg end) end
             local ok2 = math.abs(per[1] - tonumber(fsN)) <= 3; for r = 2, tonumber(fsM) do if math.abs(per[r] - tonumber(fsN) * (1 + boost / 100)) > 3 then ok2 = false end end
             check(name, "deals " .. fsN .. " in round 1 and " .. fsN * (1 + boost / 100) .. " afterwards (its own +" .. boost .. "% debuff)", ok2, table.concat(per, "/"))
+        end
+        -- 60. plain stun: "stunning them for N round" (Crystal Prison): the target loses its next action
+        if desc:find("stunning them for %d+ round") and not desc:find("%% chance") then
+            checked = checked + 1
+            local evs = run(ab, { roll = 6, enemyAbility = nil }, 2)
+            local st = 0; for _, x in ipairs(evs) do if x.k == "stunned" and x.side == "E" then st = st + 1 end end
+            check(name, "the target is stunned", st >= 1, st .. " stunned events")
+        end
+        -- 61. "Increases damage by N% for 1 round" (Inner Vision): the NEXT attack deals N% more
+        local ivN = tonumber(desc:match("^Increases damage by (%d+)%% for 1 round"))
+        if ivN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local function second(withBuff)
+                local b, a, e = setup(ab, { attackerFirst = true }); a.abil = { withBuff and ab or PASS, scratch }; a.cd = { 0, 0, 0 }
+                C.Round(b, "A1", "A1"); local hs = dmgEvents(C.Round(b, "A2", "A1"), "P"); return hs[1] and hs[1].dmg or 0
+            end
+            local base, buffed = second(false), second(true)
+            check(name, "the next attack deals " .. ivN .. "% more", base > 0 and math.abs(buffed / base - (1 + ivN / 100)) < 0.05, base .. " -> " .. buffed)
+        end
+        -- 62. Minefield: "The next pet to swap into the battle will receive N Mechanical damage"
+        local mfN = tonumber(desc:match("next pet to swap into the battle will receive (%d+) %a+ damage"))
+        if mfN then
+            checked = checked + 1
+            local b, a, e = setup(ab, { attackerFirst = true, enemyBench = true }); C.Round(b, "A1", "A1")
+            local e2 = b.E[2]; local hp0 = e2.hp; b.E[1].hp = 0; a.abil = { PASS }; a.cd = { 0, 0, 0 }; C.Round(b, "A1", "A1")   -- the front pet faints: the next one steps on the mine
+            check(name, "the pet that swaps in takes " .. mfN, math.abs((hp0 - e2.hp) - mfN) <= 3, hp0 .. " -> " .. e2.hp)
+            do   -- the mine laid on the PLAYER's team: swapping in triggers it too
+                local rng = dice(6); local function mk() local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 3 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; return q end
+                local p1, p2, en = mk(), mk(), mk(); en.abil = { ab }; en.speed = 100; p1.speed = 1
+                local b2 = C.NewBattle({ p1, p2 }, { en }, rng); C.Round(b2, "A1", "A1"); local h = p2.hp; C.Round(b2, "S2", "A1")
+                check(name, "swapping into the enemy's mine hurts the swapped-in pet", h - p2.hp >= mfN - 3, h .. " -> " .. p2.hp)
+            end
+        end
+        -- 63. Explode: "Instantly kills the caster, dealing damage equal to N% of the user's total health to the current enemy"
+        local exN = tonumber(desc:match("damage equal to (%d+)%% of the user's total health"))
+        if exN then
+            checked = checked + 1
+            local evs, b, a, e = run(ab, { roll = 6 }, 1)
+            local d = sum(dmgEvents(evs, "P"), function(x) return x.dmg end)
+            check(name, "the caster dies and the enemy takes " .. exN .. "% of the caster's max health", a.hp == 0 and math.abs(d - math.floor(a.max * exN / 100)) <= 2, "caster hp " .. a.hp .. " dealt " .. d .. " expected " .. math.floor(a.max * exN / 100))
+        end
+        -- 64. "restoring N health to the user, and half that to other <family> allies" (Healing Stream, Draconic Remedy, Rebuild)
+        local hsN, hsFam = desc:match("restoring (%d+) health to %a+, and half that amount? to other (%a+) allies")
+        if not hsN then hsN, hsFam = desc:match("restoring (%d+) health to the user, and half that to other (%a+) allies") end
+        if hsN then
+            checked = checked + 1
+            local fam = hsFam:sub(1, 1):upper() .. hsFam:sub(2); if fam == "Aquatic" or fam == "Dragonkin" or fam == "Mechanical" then else fam = nil end
+            local rng = dice(6); local function mk(f) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 3 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; if f then q.family = f end; q.hp = math.floor(q.max * 0.1); return q end
+            local user = mk(fam); user.abil = { ab }; user.speed = 100; local same, other = mk(fam), mk(fam == "Mechanical" and "Beast" or "Mechanical"); local e = mk(); e.hp = e.max; e.speed = 1
+            local hu, hs2, ho = user.hp, same.hp, other.hp
+            local b = C.NewBattle({ user, same, other }, { e }, rng); C.Round(b, "A1", "A1")
+            check(name, "heals the user " .. hsN, math.abs((user.hp - hu) - tonumber(hsN)) <= 3, hu .. " -> " .. user.hp)
+            check(name, "heals a same-family ally half (" .. math.floor(tonumber(hsN) / 2) .. ")", math.abs((same.hp - hs2) - tonumber(hsN) / 2) <= 3, hs2 .. " -> " .. same.hp)
+            check(name, "does not heal another family", other.hp == ho, ho .. " -> " .. other.hp)
+        end
+        -- 65. Blinding Poison: "reducing their hit chance by N% for 1 round": with N = 100 the enemy's next attack misses
+        local bpN = tonumber(desc:match("reducing their hit chance by (%d+)%% for 1 round"))
+        if bpN and bpN >= 100 then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); local hits = 0
+            for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "E" and x.tside == "P" then hits = hits + 1 end end
+            check(name, "the poisoned enemy cannot hit", hits == 0, hits .. " hits landed")
+        end
+        -- 66. Spirit Spikes: "deals N Magic damage each time you take direct damage" - the attacker takes N back
+        local ssN = tonumber(desc:match("deals (%d+) %a+ damage each time you take direct damage%. Lasts 1 round"))
+        if ssN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); local back = 0
+            for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "P" and x.tside == "E" then back = back + x.dmg end end
+            check(name, "the attacker takes " .. ssN .. " back", math.abs(back - ssN) <= 3, "reflected " .. back)
         end
         if checked == 0 then unchecked_(name, desc:sub(1, 150)) end
     end

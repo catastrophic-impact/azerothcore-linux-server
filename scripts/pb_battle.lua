@@ -5,6 +5,9 @@
 local Msg = require("acore_msg")
 local D = require("pb_data")
 local Eng = require("pb_core")   -- the retail-based battle engine
+-- one icon per pet TYPE (keep in sync with TYPE_ICON in addons/wotlk_pets/Pets.lua): the battle frames show it instead of a 3D model (tall models had their heads cut off)
+local TYPE_ICON = { Humanoid = "INV_Misc_Head_Human_01", Dragonkin = "INV_Misc_Head_Dragon_01", Flying = "Ability_Druid_FlightForm", Undead = "Spell_Shadow_AnimateDead", Critter = "INV_Egg_01",
+    Magic = "Spell_Arcane_Arcane01", Elemental = "Spell_Nature_EarthElemental_Totem", Mechanical = "INV_Gizmo_01", Aquatic = "Ability_Druid_AquaticForm", Beast = "Ability_Racial_BearForm" }
 local Store = require("pb_store")
 
 local LEVEL = 10
@@ -19,6 +22,17 @@ local LEGACY = { 36871, 33194, 33200, 7562, 33198, 31575 }   -- creatures used b
 local SCALE = setmetatable({}, { __index = function(_, k) return Store.Scale(k) end })   -- shared size normalization lives in pb_store
 
 local function After(ms, fn) CreateLuaEvent(function() fn() end, ms, 1) end
+-- BATTLE TRACE (debug): a transcript of one battle in world.out, lines "[pbtrace] b<battle> t=<ms>": what the player was OFFERED, each engine event, every message sent to the
+-- addon, every presentation step the server orders (emote id, real spell id, move). t = the scheduled playback time in ms since the battle began (waiting for the player is not counted).
+-- On for ONE player with `/pbtest trace` (GM), or for everybody with PB_TRACE = true. Off: nothing is printed. The VIOLATION check below is always on.
+local traceOn, battleNo = {}, 0
+local RecentActs = {}   -- [player guidlow] = the last 6 abilities played, newest last
+local function Tracing(b) return PB_TRACE or (b and b.trace) end
+local function Tr(b, off, fmt, ...)
+    if not Tracing(b) then return end
+    local ok, line = pcall(string.format, fmt, ...)
+    print(string.format("[pbtrace] b%d t=%6d %s", b.no or 0, off or b.vt or 0, ok and line or fmt))   -- off = absolute playback time (a delayed step), nil = now
+end
 local function GetPlayer(b) return GetPlayerByGUID(b.pguid) end
 local function GetObj(b, s)
     local g = b.guid[s]
@@ -27,10 +41,16 @@ local function GetObj(b, s)
     local map = ok and pl and pl:GetMap()
     return map and map:GetWorldObject(g)
 end
-local function Send(b, action, payload) local pl = GetPlayer(b); if pl then Msg.Send(pl, "pbt", action, payload) end end
+local function Send(b, action, payload) Tr(b, nil, "-> addon %s|%s", action, tostring(payload)); local pl = GetPlayer(b); if pl then Msg.Send(pl, "pbt", action, payload) end end
+local function Emote(b, side, id, off)   -- one animation on a battle pet (traced)
+    local o = GetObj(b, side)
+    Tr(b, off, "emote %d on %s%s", id, side, o and "" or " (NO OBJECT)")
+    if o then pcall(function() o:PerformEmote(id) end) end
+end
 
-local function Fx(obj, id, ms)   -- visual-only spell that removes itself again
+local function Fx(obj, id, ms, b, side)   -- visual-only spell that removes itself again (b, side: only for the trace)
     if not obj or not id then return end
+    if b then Tr(b, nil, "fx spell %d on %s for %d ms", id, tostring(side), ms or 1500) end
     pcall(function() obj:CastSpell(obj, id, true) end)
     local guid = obj:GetGUID()
     local okp, np = pcall(function() return obj:GetNearestPlayer(150) end)
@@ -193,7 +213,10 @@ local function Cap(text, n)   -- wire-safe text (no separators) cut at a sentenc
 end
 local function SendAbilities(b)
     local pet = b.eng.P[b.eng.active.P]
-    for slot, a in ipairs(pet.abil) do Send(b, "abil", slot .. "|" .. a.icon .. "#" .. Cap(a.name, 30) .. "#" .. Cap(a.tip, 170) .. "#" .. a.cd) end
+    for slot, a in ipairs(pet.abil) do
+        local nm = Cap(a.name, 30); local room = math.min(170, 240 - (#("pbt|abil|" .. slot .. "|") + #a.icon + #nm + #tostring(a.cd) + 4))   -- addon messages are limited to 240 characters: flavored spell names and icons are longer than retail's
+        Send(b, "abil", slot .. "|" .. a.icon .. "#" .. nm .. "#" .. Cap(a.tip, room) .. "#" .. a.cd)
+    end
 end
 -- what the player may know about the active pets: family matchup (both sides) and the ENEMY's abilities with their cooldowns left (retail shows these too)
 local function SendInfo(b)
@@ -217,7 +240,7 @@ local function SendPet(b, s, i)
         entry = PREVIEW_BASE + p.display
         SHOP_PRIME.SendAs(pl, entry, p.species, p.display)
     end
-    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.nick and (p.nick .. "|" .. D.species[p.species].name) or p.name))
+    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, TYPE_ICON[p.family] or p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.name))   -- the pet TYPE icon (no 3D model in the battle frames)
 end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
     local str = stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])
@@ -243,28 +266,74 @@ local function FaceAll(b)   -- both pets look at each other again (a hit / fleei
     end
 end
 local Play   -- forward declaration (defined below)
+-- Legal: the command the player may give right now (nil = not offered / refused). Used by Command AND by the OFFER line of the trace, so both always agree.
+local function Legal(b, cmd)
+    local eng = b.eng; local pet = eng.P[eng.active.P]
+    local kind, n = cmd:sub(1, 1), tonumber(cmd:sub(2))
+    if kind == "A" and n and n >= 1 and n <= 3 and b.api.Ready(pet, n) and pet.hp > 0 then return cmd
+    elseif kind == "S" and eng.P[n] and eng.P[n].hp > 0 and n ~= eng.active.P and not (pet.hp > 0 and b.api.Locked(pet, "swapOutLock")) then return cmd
+    elseif kind == "T" and pet.hp > 0 and b.api.CanTrap(eng) then return "T" end
+end
+-- Honored: the INVARIANT 'a choice that is offered must be honored by the engine'. Given the command and the event list of the round it started: did the engine do what was
+-- offered? false + reason otherwise (e.g. the player picked ability 2 and the engine ran slot 1, or a trap was offered and nothing was captured).
+-- An ability may legitimately not happen when the enemy acted FIRST and fainted or stunned the player's pet.
+local function Honored(cmd, ev)
+    local kind, n = cmd:sub(1, 1), tonumber(cmd:sub(2))
+    local enemyActed, forcedOut = false, false
+    for _, e in ipairs(ev) do
+        if kind == "S" then if e.k == "swap" and e.side == "P" and e.idx == n then return true end
+        elseif kind == "T" then if e.k == "trap" then return true end
+        else
+            if e.k == "act" and e.side == "E" then enemyActed = true end
+            if e.k == "swap" and e.side == "P" and e.forced then forcedOut = true end   -- Nether Gate / Death Grip: the choice was made for the pet that got pulled out; the new pet uses the nearest legal slot (its own cooldowns)
+            if e.k == "act" and e.side == "P" then
+                if e.slot == n or forcedOut then return true end
+                return false, "ability " .. n .. " was offered, the engine ran slot " .. tostring(e.slot) .. " (" .. tostring(e.name) .. ")"
+            end
+            if enemyActed and e.side == "P" and (e.k == "stunned" or e.k == "faint") then return true end   -- the enemy went first and took the turn away
+            if enemyActed and e.k == "faint" and e.side == "E" and not e.bench then return true end   -- the enemy went first and then DIED (reflect / damage over time): no target is left for the player's pet
+        end
+    end
+    if kind == "S" then return false, "swap to " .. n .. " was offered, no swap happened" end
+    if kind == "T" then return false, "capture was offered, nothing was captured" end
+    return false, "ability " .. n .. " was offered, the player's pet never acted"
+end
+local violations = 0
 local function SendTurn(b, force)
     FaceAll(b); After(500, function() if not b.over then FaceAll(b) end end)
     local pet = b.eng.P[b.eng.active.P]
     b.waiting = true; b.lastAct = os.time()
     SendInfo(b)
-    if not force and pet.hp > 0 and b.api.CantAct(pet) then   -- stunned / asleep: everything stays greyed out and the turn passes by itself
-        Send(b, "turn", "stun;0,0,0;0"); b.waiting = false
+    local chan = pet.channel   -- an ability that runs over several rounds (Stampede, Dive, Solar Beam...): the player has NO choice until it ends, so nothing is offered
+    if not force and pet.hp > 0 and (chan or b.api.CantAct(pet)) then   -- stunned / asleep / mid-ability: everything stays greyed out and the turn passes by itself
+        if chan and not b.api.CantAct(pet) then Send(b, "turn", "lock;0,0,0;0;" .. Cap(chan.ab.name .. ": round " .. chan.turn .. " of " .. #chan.ab.turns, 40))
+        else Send(b, "turn", "stun;0,0,0;0;" .. (Eng.LockLabel(pet) or "Stunned")) end
+        b.waiting = false
         After(1500, function()
             if b.over or b.waiting then return end
             b.lastAct = os.time(); local ev, status = b.api.Round(b.eng, "A1", b.api.AI(b.eng)); Play(b, ev, 1, status)
         end)
         return
     end
+    if Tracing(b) then
+        local offered = {}
+        for _, c in ipairs({ "A1", "A2", "A3", "S1", "S2", "S3", "T" }) do if Legal(b, c) then offered[#offered + 1] = c end end
+        Tr(b, nil, "OFFER round %d (%s): %s | active %s hp %d/%d vs %s hp %d/%d | cooldowns %d,%d,%d", b.eng.round or 0, force and "forced swap" or "go", table.concat(offered, " "),
+            pet.name, pet.hp, pet.max, b.eng.E[b.eng.active.E].name, b.eng.E[b.eng.active.E].hp, b.eng.E[b.eng.active.E].max, pet.cd[1], pet.cd[2], pet.cd[3])
+        for slot = 1, 3 do local a = pet.abil[slot]; if a then Tr(b, nil, "OFFER   button %d = %s (icon %s, cd %d): %s", slot, a.name, tostring(a.icon), a.cd, tostring(a.tip)) end end
+    end
     Send(b, "turn", (force and "force" or "go") .. ";" .. pet.cd[1] .. "," .. pet.cd[2] .. "," .. pet.cd[3] .. ";" .. ((not force and b.api.CanTrap(b.eng)) and 1 or 0))
 end
 
-local function End(b, result)
+local function End(b, result, forfeit)
     if b.over then return end
     b.over = true; b.endedAt = os.time()
     local plr = GetPlayer(b); if plr then Store.SetSuppressed(plr, false) end
     if b.api.Finish then b.api.Finish(b.eng) end   -- temporary effects (Perk Up max health ...) end with the battle, before health is saved
-    if not b.test then for _, p in ipairs(b.eng.P) do Store.SetHp(b.plow, p.species, p.hp > 0 and p.hp or 1) end end   -- a test team (lab) never touches saved pets   -- health is NOT restored: fainted pets are back with 1 HP, the rest keep what is left
+    if not b.test then   -- a FORFEIT is a defeat: every pet of the team drops to 1 HP, like a lost battle
+        for _, p in ipairs(b.eng.P) do Store.SetHp(b.plow, p.species, (not forfeit and p.hp > 0) and p.hp or 1) end
+        local plh = GetPlayer(b); if plh then for _, p in ipairs(b.eng.P) do pcall(Store.PushPet, plh, p.species) end end   -- an open journal shows the new health at once
+    end   -- a test team (lab) never touches saved pets   -- health is NOT restored: fainted pets are back with 1 HP, the rest keep what is left
     Send(b, "end", result)
     battles[b.plow] = nil
     After(result == "win" and 600 or 1200, function()
@@ -295,6 +364,7 @@ end
 local CRATE_GO = 193761   -- Doodad_stormwindcrate05: a plain crate (type 5, not interactive) dropped over a pet being captured
 local function Lunge(b, s, ts)
     local o, t = GetObj(b, s), GetObj(b, ts)
+    Tr(b, nil, "move %s lunges at %s%s", s, ts, (o and t) and "" or " (NO OBJECT)")
     if not (o and t) then return end
     local ox, oy, tx, ty = o:GetX(), o:GetY(), t:GetX(), t:GetY()
     local d = math.sqrt((tx - ox) ^ 2 + (ty - oy) ^ 2); if d < 0.1 then return end
@@ -305,9 +375,44 @@ end
 local function Back(b, s)
     if not b.lunged[s] then return end
     b.lunged[s] = nil
+    Tr(b, nil, "move %s goes back", s)
     local o = GetObj(b, s); local p = b.pos[s]
-    if o then pcall(function() o:MoveTo(2, p[1], p[2], p[3], false) end) end
-    After(450, function() local o2 = GetObj(b, s); if o2 then pcall(function() o2:SetFacing(p[4]) end) end end)
+    local hop = b.vhop and b.vhop[s]; b.vhop = b.vhop or {}; b.vhop[s] = nil
+    if o then
+        if hop then pcall(function() o:MoveJump(p[1], p[2], p[3], 9.0, 2.5, 7) end)   -- Backflip: a hop back to the spot (lab-accepted)
+        else pcall(function() o:MoveTo(2, p[1], p[2], p[3], false) end) end
+    end
+    After(hop and 900 or 450, function() local o2 = GetObj(b, s); if o2 then pcall(function() o2:SetFacing(p[4]) end) end end)
+end
+
+-- Non-attack presentation of an ability (modes from scripts/pb_vis.lua, accepted in the lab): self = a buff/heal spell on the pet itself, target = a debuff spell at the enemy,
+-- aura = the spell's aura applied straight to the pet (no cast animation). Returns the ms to wait.
+local function Support(b, e, vm, o)
+    local side = e.side; local ts = side == "P" and "E" or "P"
+    local t = GetObj(b, ts)
+    Tr(b, nil, "support %s spell %d on %s", vm, e.vis, side)
+    if vm == "aura" then
+        pcall(function() o:AddAura(e.vis, o) end)
+        local g = o:GetGUID(); local pg = b.pguid
+        After(2400, function() pcall(function() local pl = GetPlayerByGUID(pg); local m = pl and pl:GetMap(); local o2 = m and m:GetWorldObject(g); if o2 then o2:RemoveAura(e.vis) end end) end)
+        return 1500
+    elseif vm == "target" then
+        if not t then return 600 end
+        PB_CAST.Cast(o, t, e.vis, { pguid = b.pguid, ranged = true, noSwap = nil, hp_after = t:GetHealth(), home = b.pos[ts] })   -- a debuff spell: the health stays where it is
+        return 1300
+    end
+    -- self: the other pet is made hostile to the caster for the cast so an area heal / buff cannot land on it; both are held in place (they flee when made hostile) and put back
+    if t then pcall(function() t:SetFaction(1691); o:SetFaction(1690) end) end
+    local hold = 1700
+    for ms = 150, hold, 150 do After(ms, function() pcall(function()
+        local a2, t2 = GetObj(b, side), GetObj(b, ts)
+        for _, x in ipairs({ { a2, side }, { t2, ts } }) do if x[1] then x[1]:MoveClear(); local p = b.pos[x[2]]; if p then x[1]:MoveTo(2, p[1], p[2], p[3], false) end end end
+    end) end) end
+    After(hold + 100, function() pcall(function()
+        for _, x in ipairs({ GetObj(b, side), GetObj(b, ts) }) do if x then x:SetFaction(35); x:ClearInCombat(); x:RemoveAura(e.vis) end end
+    end) end)
+    PB_CAST.Cast(o, o, e.vis, { pguid = b.pguid, heal = true, hold = 1500, home = b.pos[side] })
+    return 1500
 end
 
 function Play(b, ev, i, status)
@@ -322,25 +427,43 @@ function Play(b, ev, i, status)
         if status == "force" then SendTurn(b, true) elseif status == "turn" then SendTurn(b, false) end
         return
     end
-    local function nxt(ms) After(ms, function() Play(b, ev, i + 1, status) end) end
+    local function nxt(ms) b.vt = (b.vt or 0) + ms; After(ms, function() Play(b, ev, i + 1, status) end) end
     local eng = b.eng
+    if Tracing(b) then
+        local f = {}
+        for k, v in pairs(e) do local t = type(v); if t == "number" or t == "string" or t == "boolean" then f[#f + 1] = k .. "=" .. tostring(v) end end
+        table.sort(f); Tr(b, nil, "ev %d/%d %s", i, #ev, table.concat(f, " "))
+    end
 
     if e.k == "act" then
         Send(b, "act", e.side .. "," .. e.idx .. "," .. e.name)
         if e.side == "P" then b.acted[e.idx] = true end   -- only pets that actually fought earn XP
         local o = GetObj(b, e.side)
-        b.vis = e.vis   -- a real spell (visual + sound) for this ability, if it has one
-        local ranged = e.ranged; b.ranged = ranged
-        local attack = e.dmg or e.vis ~= nil   -- a damaging ability that missed / was dodged still ATTACKS (no utility glow)
-        if attack and b.vis and ranged and PB_CAST then nxt(500)   -- spell casters stay put; the spell is cast on the hit event (melee abilities with a spell still lunge)
+        do   -- the last acts of this player's battle, for `/pbtest bad` (kept after the battle ends)
+            local g = b.plow or 0; local list = RecentActs[g] or {}; RecentActs[g] = list
+            list[#list + 1] = string.format("%s %s (ability %s) spell=%s mode=%s", e.side, e.name or "?", tostring(e.ab), tostring(e.vis), tostring(e.vm or (e.ranged and "ranged" or "melee")))
+            while #list > 6 do table.remove(list, 1) end
+        end
+        local vm = e.vm or (e.ranged and "ranged" or "melee")   -- how the ability is played (scripts/pb_vis.lua): melee / ranged / self / target / aura
+        local hitSpell = (vm == "melee" or vm == "ranged") and e.vis or nil
+        b.vis = hitSpell   -- a real spell (visual + sound) cast on the hit event
+        local ranged = (vm == "ranged"); b.ranged = ranged
+        b.vdmg = e.vdmg; b.vhop = b.vhop or {}; b.vhop[e.side] = e.vhop
+        local support = e.vis and PB_CAST and (vm == "self" or vm == "target" or vm == "aura")
+        local attack = e.dmg or hitSpell ~= nil   -- a damaging ability that missed / was dodged still ATTACKS (no utility glow)
+        if e.vpre and PB_CAST and o then pcall(function() PB_CAST.Cast(o, o, e.vpre, { pguid = b.pguid, heal = true, hold = 1300, home = b.pos[e.side] }) end) end   -- a caster-side spell first (Adrenaline Rush: Berserking, then the hit)
+        if support and o then
+            nxt(Support(b, e, vm, o) + (e.dmg and 300 or 0))   -- an ability that also deals damage (Roar) goes on to its hit event
+        elseif attack and b.vis and ranged and PB_CAST then nxt(500)   -- spell casters stay put; the spell is cast on the hit event (melee abilities with a spell still lunge)
         elseif attack then
             local ts = e.side == "P" and "E" or "P"
             Lunge(b, e.side, ts); b.lunged[e.side] = true
             local emote = (Eng.Family(b.eng[e.side][e.idx].species) == "Humanoid") and 26 or 35   -- humanoids swing a weapon (1H attack); beasts use the claw/bite animation
-            After(650, function() local a = GetObj(b, e.side); if a then pcall(function() a:PerformEmote(emote) end) end end)
+            local at = (b.vt or 0) + 650   -- when it fires, in playback time (b.vt moves on with the event below)
+            After(650, function() Emote(b, e.side, emote, at) end)
             nxt(1000)
         else
-            Fx(o, 60957, 1500)   -- utility ability: nature-cast glow on the user
+            Fx(o, 60957, 1500, b, e.side)   -- utility ability: nature-cast glow on the user
             nxt(900)
         end
     elseif e.k == "trap" then   -- CAPTURE: a crate drops over the enemy pet, it is taken away, the capture is saved
@@ -370,7 +493,7 @@ function Play(b, ev, i, status)
         end)
         nxt(2800)
     elseif e.k == "dmg" and (e.recoil or e.reflect) then   -- the user hurt itself (Body Slam) / a reflect hit (Lightning Shield): a wound emote and the new health, no lunge / spell
-        local o = GetObj(b, e.tside); if o then pcall(function() o:PerformEmote(33) end) end
+        Emote(b, e.tside, 33)
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. ",-" .. e.dmg)
         nxt(700)
     elseif e.k == "dmg" and e.bench then   -- splash on a benched pet: just its health number
@@ -384,16 +507,17 @@ function Play(b, ev, i, status)
         if not t and PB_DEBUG then print(string.format('[pb_battle] DIAG no target object: side=%s guid=%s vis=%s', tostring(e.tside), tostring(b.low[e.tside]), tostring(b.vis))) end
         if b.vis and PB_CAST and t then
             local att = GetObj(b, e.side)
-            pcall(function() t:PerformEmote(33) end)   -- wound animation as before; the spell adds its own hit visual and sound
+            Emote(b, e.tside, 33)   -- wound animation as before; the spell adds its own hit visual and sound
             if not att and PB_DEBUG then print(string.format('[pb_battle] DIAG no attacker object: side=%s guid=%s', tostring(e.side), tostring(b.low[e.side]))) end
-            if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
-        elseif t then pcall(function() t:PerformEmote(33) end); Fx(t, FX_HIT, 900) end
+            Tr(b, nil, "cast real spell %d %s -> %s (%s) hp_after=%d", b.vis, e.side, e.tside, b.ranged and "ranged" or "melee", math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5))
+            if att then PB_CAST.Cast(att, t, b.vis, { pguid = b.pguid, ranged = b.ranged, retry = b.vdmg and 2 or nil, hp_after = math.floor(e.hp / math.max(1, e.max) * 1000 + 0.5), home = b.pos[e.tside] }) end
+        elseif t then Emote(b, e.tside, 33); Fx(t, FX_HIT, 900, b, e.tside)
+        else Tr(b, nil, "NO TARGET OBJECT for the hit on %s", e.tside) end
         Send(b, "hp", e.tside .. "," .. e.tidx .. "," .. e.hp .. "," .. e.max .. "," .. (e.crit and "-" .. e.dmg .. "!" or "-" .. e.dmg))
         if not e.more then After(600, function() Back(b, e.side) end) end   -- a multi-hit attacker stays put until its last hit
-        nxt(e.more and 650 or 1000)
+        nxt(e.more and (b.vis and 1000 or 650) or 1000)   -- a real spell needs ~1 s between hits to be seen (lab)
     elseif e.k == "dodge" then
-        local t = GetObj(b, e.side)
-        if t and e.text ~= "Burrowed!" then pcall(function() t:PerformEmote(4) end) end   -- little hop out of the way
+        if e.text ~= "Burrowed!" then Emote(b, e.side, 4) end   -- little hop out of the way
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. "," .. (e.text or "Dodge!"))   -- hp as it was at THIS moment, not the end of the round
         if not e.more then After(500, function() Back(b, e.from) end) end
         nxt(e.more and 650 or 1000)
@@ -405,18 +529,16 @@ function Play(b, ev, i, status)
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. ",+" .. e.amt)
         nxt(e.quick and 450 or 1000)
     elseif e.k == "stunned" then
-        Send(b, "msg", eng[e.side][e.idx].name .. (e.self and " is hibernating and cannot act!" or (e.label == "Polymorphed" and " is a sheep and cannot act!" or " is stunned and loses its turn!")))
+        Send(b, "msg", eng[e.side][e.idx].name .. Eng.LockText(e))
         SendTags(b, "P", e.stat); SendTags(b, "E", e.stat)
         nxt(1300)
     elseif e.k == "dot" then
-        local o = GetObj(b, e.side)
-        if o then pcall(function() o:PerformEmote(33) end) end
+        Emote(b, e.side, 33)
         Send(b, "hp", e.side .. "," .. e.idx .. "," .. e.hp .. "," .. e.max .. ",-" .. e.dmg)
         SendTags(b, "P", e.stat); SendTags(b, "E", e.stat)
         nxt(1000)
     elseif e.k == "faint" then
-        local o = GetObj(b, e.side)
-        if o then pcall(function() o:PerformEmote(34) end) end
+        Emote(b, e.side, 34)
         Back(b, e.side == "P" and "E" or "P")
         After(1000, function() Despawn(b, e.side, true); Send(b, "fnt", e.side .. "," .. e.idx) end)
         nxt(1700)
@@ -449,7 +571,7 @@ local function Start(player, enemies, teamOverride)
     local mine = teamOverride or Store.ActiveTeam(player)
     if #mine == 0 then Msg.Send(player, "pbt", "msg", "You have no pets yet. Open /pets."); return false end
     local P, Ei, sum = {}, {}, 0
-    for i, m in ipairs(mine) do P[i] = Eng.NewPet(m.species, m.level, m.picks, nil, { quality = m.quality, hp = m.hp }); P[i].display = m.display; if m.nick and m.nick ~= "" then P[i].nick, P[i].name = m.nick, m.nick end; sum = sum + m.level end
+    for i, m in ipairs(mine) do P[i] = Eng.NewPet(m.species, m.level, m.picks, nil, { quality = m.quality, hp = m.hp }); P[i].display = m.display; sum = sum + m.level end
     local lvl = math.max(1, math.floor(sum / #mine + 0.5))
     if enemies then
         lvl = enemies[1].level
@@ -458,6 +580,8 @@ local function Start(player, enemies, teamOverride)
         for i = 1, 3 do Ei[i] = Eng.NewPet(POOL[math.random(1, #POOL)], lvl, nil, nil, { quality = Eng.RollQuality() }) end
     end
     local b = { acted = {}, enemyLevel = lvl, pguid = player:GetGUID(), plow = player:GetGUIDLow(), map = player:GetMapId(), phase = Store.NormalWorld(player) and 1 or player:GetPhaseMask(), guid = {}, low = {}, lunged = {}, eng = Eng.NewBattle(P, Ei), api = Eng, test = teamOverride ~= nil }
+    battleNo = battleNo + 1; b.no = battleNo; b.vt = 0; b.trace = traceOn[g]
+    Tr(b, nil, "BEGIN player=%d enemy level %d, team %d vs %d pets%s", g, lvl, #P, #Ei, b.test and " (test team)" or "")
     for _, s in ipairs({ "P", "E" }) do   -- every pet gets its skin NOW (random model row of the species), so the preview and the spawn agree
         for _, pet in ipairs(b.eng[s]) do
             if not (pet.display and pet.display > 0) then
@@ -521,7 +645,8 @@ local function FreezeTick()
     end
 end
 CreateLuaEvent(FreezeTick, 1000, 0)
-PB_BATTLE = { Watchdog = Watchdog, Sweep = Sweep, Start = Start, InBattle = function(player) return battles[player:GetGUIDLow()] ~= nil end }
+PB_BATTLE = { Watchdog = Watchdog, Sweep = Sweep, Start = Start, InBattle = function(player) return battles[player:GetGUIDLow()] ~= nil end,
+    Honored = Honored, Violations = function() return violations end }
 
 -- /pbtest            3 random enemy species;   /pbtest 1124 474 30   those species (level 5) as the enemy team;   /pbtest 1196@20 3118@25   with a level each (1-25)
 Msg.On("pbt", "start", function(player, payload)   -- debug start: GM only (players meet wild pets instead)
@@ -546,14 +671,17 @@ local function Command(player, payload)
     local b = battles[player:GetGUIDLow()]
     if not b or b.over or not b.waiting then return end
     local eng = b.eng
-    local kind, n = payload:sub(1, 1), tonumber(payload:sub(2))
-    local cmd
-    if kind == "A" and n and n >= 1 and n <= 3 and b.api.Ready(eng.P[eng.active.P], n) and eng.P[eng.active.P].hp > 0 then cmd = payload
-    elseif kind == "S" and eng.P[n] and eng.P[n].hp > 0 and n ~= eng.active.P and not (eng.P[eng.active.P].hp > 0 and b.api.Locked(eng.P[eng.active.P], "swapOutLock")) then cmd = payload
-    elseif kind == "T" and eng.P[eng.active.P].hp > 0 and b.api.CanTrap(eng) then cmd = "T" end
-    if not cmd then return end
+    local cmd = Legal(b, payload)
+    if not cmd then Tr(b, nil, "COMMAND %s refused (not offered)", tostring(payload)); return end
     b.waiting = false
+    Tr(b, nil, "COMMAND %s (the player's choice)", cmd)
     local ev, status = b.api.Round(eng, cmd, b.api.AI(eng))
+    local honored, why = Honored(cmd, ev)
+    if not honored then   -- always on: an offered choice the engine ignored (the Stampede class of bug)
+        violations = violations + 1
+        local kinds = {}; for _, x in ipairs(ev) do kinds[#kinds + 1] = x.k .. ((x.side or "") ~= "" and ":" .. x.side or "") .. (x.name and ("(" .. x.name .. ")") or "") end
+        print(string.format("[pbtrace] VIOLATION b%d round %d: %s (command %s) events: %s", b.no or 0, eng.round or 0, why, cmd, table.concat(kinds, " ")))
+    end
     Play(b, ev, 1, status)
 end
 Msg.On("pbt", "cmd", Command)
@@ -563,7 +691,25 @@ PB_BATTLE.Waiting = function(player) local b = battles[player:GetGUIDLow()]; ret
 PB_BATTLE.CleanAll = function(player) Msg.Send(player, "pbt", "end", "interrupted"); local b = battles[player:GetGUIDLow()]; if b then b.over = true; Despawn(b, "P", false); Despawn(b, "E", false); battles[player:GetGUIDLow()] = nil end; return Sweep(player, 200) end
 Msg.On("pbt", "quit", function(player)
     local b = battles[player:GetGUIDLow()]
-    if b and not b.over then Send(b, "msg", "You forfeited the battle."); End(b, "loss") end
+    if b and not b.over then Send(b, "msg", "You forfeited the battle: your pets are knocked out."); End(b, "loss", true) end
+end)
+Msg.On("pbt", "trace", function(player)   -- GM only: switch the battle trace on / off for yourself (applies from the NEXT battle; a running one too)
+    if player:GetGMRank() < 2 then return end
+    local g = player:GetGUIDLow(); traceOn[g] = not traceOn[g] or nil
+    local b = battles[g]; if b then b.trace = traceOn[g] end
+    Msg.Send(player, "pbt", "msg", "Battle trace " .. (traceOn[g] and "ON: transcript goes to world.out ([pbtrace])" or "OFF"))
+end)
+PB_BATTLE.Bad = function(player, comment)   -- `/pbtest bad [comment]` (GM): the ability that just looked wrong; the last acts + spells + modes go to logs/pb_bad.tsv and world.out
+    local g = player:GetGUIDLow(); local list = RecentActs[g] or {}
+    local line = string.format("%s\t%s\t%s", os.date("%Y-%m-%d %H:%M:%S"), table.concat(list, " | "), comment or "")
+    print("[pb_bad] " .. line)
+    local f = io.open("logs/pb_bad.tsv", "a"); if f then f:write(line, "\n"); f:close() end
+    Msg.Send(player, "pbt", "msg", #list > 0 and ("Flagged: " .. list[#list]) or "Flagged (no ability played yet)")
+    return #list
+end
+Msg.On("pbt", "bad", function(player, payload)
+    if player:GetGMRank() < 2 then return end
+    PB_BATTLE.Bad(player, payload)
 end)
 Msg.On("pbt", "fx", function(player, payload)   -- animation lab (GM only): /pbtest fx <spellId>
     if player:GetGMRank() < 2 then return end

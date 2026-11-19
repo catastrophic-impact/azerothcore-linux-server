@@ -8,7 +8,6 @@ C.DEBUG = false
 -- 1690 vs 1691 (pet-battle/find_factions.py): hostile to each other, friendly to both sides' players, no guard faction hostile to them. Pets stay faction 35 (safe from mobs) and only swap for the 0.8 s of a cast.
 C.FACTION_FRIENDLY, C.FACTION_ATT, C.FACTION_TGT, C.HOLD_MS = 35, 1690, 1691, 800
 
-local lvlOrig = {}   -- creature low guid -> its real level while it is raised for a cast
 local gen = {}   -- per creature: only the LATEST cast may restore it (a restore from an older cast must not clobber a newer one)
 local function After(ms, fn) CreateLuaEvent(function() fn() end, ms, 1) end
 -- a stored Map userdata is INVALID by the time a timer fires: always get a fresh map through a player (found with the debug lines)
@@ -31,16 +30,40 @@ function C.Cast(att, tgt, spell, o)
     if hostile then pcall(function() att:SetFaction(C.FACTION_ATT); tgt:SetFaction(C.FACTION_TGT) end) end   -- the configuration verified with .pbfx + screenshots
     local h0, la, lt = 0, 0, 0   -- evidence for "the projectile flew through the target": the target must LOSE health from the real spell (a spell MISS shows no impact)
     pcall(function() h0, la, lt = tgt:GetHealth(), att:GetLevel(), tgt:GetLevel() end)
-    -- A real spell can MISS: 3.3.5 hit chance is 96 - leveldiff (diff < 3) else 94 - (diff - 2) * 11, so a level 1 pet casting at a level 8 pet misses most casts and the projectile flies
-    -- through without an impact (measured: only caster level < target level ever missed). The caster is raised to the target's level for the cast and put back afterwards.
-    if not o.heal and lt > la and la > 0 then pcall(function() lvlOrig[al] = lvlOrig[al] or la; att:SetLevel(lt) end) end
-    local la2 = la; pcall(function() la2 = att:GetLevel() end)   -- the level actually used for the cast (logged: proves SetLevel works)
+    -- (a real spell can still MISS ~4% of the time at equal levels; pb_battle gives both sides the same fixed level so nothing changes in view, and a miss gets an impact visual below)
+    local la2 = la
     local ok = pcall(function()
         if o.dmg then att:CastCustomSpell(tgt, spell, true, o.dmg) else att:CastSpell(tgt, spell, true) end
     end)
     if not ok and PB_DEBUG then print('[pb_cast] DIAG CastSpell failed spell=' .. tostring(spell)) end
+    -- A real spell can MISS (hit table: ~10% measured in the lab, 2026-11-16) and a miss shows NO effect on the target while the engine says it hit. o.retry = n (a spell known to deal
+    -- damage, from the caller): if the target has lost no health at o.retryAt ms, cast it again (up to n times). Spells that deal no damage (Kick) must NOT pass retry: they would always repeat.
+    local nretry = (o.retry or 0) > 0 and (not o.heal) and ag ~= tg and o.retry or 0
+    local retryAt = o.retryAt or (o.ranged and 750 or 400)
+    local function Recheck(left)
+        After(retryAt, function()
+            if left <= 0 or gen[al] ~= ga or gen[tl] ~= gt then return end   -- a newer cast owns these creatures
+            pcall(function()
+                local t1, a1 = Fresh(pguid, tg), Fresh(pguid, ag)
+                if t1 and a1 and t1:GetHealth() >= h0 then
+                    C.retried = (C.retried or 0) + 1
+                    if o.dmg then a1:CastCustomSpell(t1, spell, true, o.dmg) else a1:CastSpell(t1, spell, true) end
+                    Recheck(left - 1)
+                end
+            end)
+        end)
+    end
+    if nretry > 0 then Recheck(nretry) end
+    if o.missFx and not o.heal then   -- the projectile flew through (health did not drop): show an impact anyway, the engine decides the damage
+        After(500, function()
+            pcall(function()
+                local t1 = Fresh(pguid, tg)
+                if t1 and t1:GetHealth() >= h0 then t1:CastSpell(t1, o.missFx, true) end
+            end)
+        end)
+    end
     -- a hit creature starts fleeing (its own AI): stop it every 150 ms while the hit lands and put it back on its spot, instead of waiting for the window to end
-    local hold = o.hold or C.HOLD_MS
+    local hold = (o.hold or C.HOLD_MS) + nretry * retryAt   -- every possible repeat needs its own time before the restore
     for ms = 150, hold - 100, 150 do
         After(ms, function()
             pcall(function()
@@ -55,7 +78,6 @@ function C.Cast(att, tgt, spell, o)
         local oka, a = pcall(Fresh, pguid, ag); local okt, t = pcall(Fresh, pguid, tg)
         if C.DEBUG then print("[pb_cast] restore: att", oka, a ~= nil, "tgt", okt, t ~= nil, (not okt) and tostring(t) or "") end
         if not oka then a = nil end; if not okt then t = nil end
-        if lvlOrig[al] then if a then pcall(function() a:SetLevel(lvlOrig[al]) end) end; lvlOrig[al] = nil end   -- back to the real level
         local okr, err = pcall(function()
             if a then if hostile then a:SetFaction(C.FACTION_FRIENDLY) end; a:ClearInCombat(); a:MoveClear() end
             if t then

@@ -12,7 +12,6 @@ AcoreLib = { On = function(m, a, f) handlers[m .. "|" .. a] = f end, Send = func
 function CreateFrame() return setmetatable({}, getmetatable(Stub)) end   -- a fresh table per frame (real frames keep their own fields)
 UIParent, GameTooltip, DEFAULT_CHAT_FRAME = Stub, Stub, { AddMessage = function(_, t) print("CHAT:", t) end }
 UISpecialFrames, SlashCmdList = {}, {}
-StaticPopupDialogs, ACCEPT, CANCEL = {}, "OK", "Cancel"; function StaticPopup_Show() end   -- the rename dialog (real client API)
 function tinsert(t, v) t[#t + 1] = v end
 function GetTime() return 0 end
 function UnitName() return "x" end

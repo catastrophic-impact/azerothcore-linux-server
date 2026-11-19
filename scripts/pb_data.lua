@@ -68,6 +68,7 @@ D.QUALITY_NAMES = { "Common", "Uncommon", "Rare", "Epic" }
 D.QUALITY_WEIGHTS = { 55, 28, 13, 4 }      -- how often a wild pet is each quality
 D.CAPTURE_HP = 0.35                        -- retail: an enemy pet can be captured (trap) at or below 35% health; the capture always works, costs your turn, keeps the pet's level/quality/skin
 D.REGEN_PCT, D.REGEN_SECONDS = 1, 10       -- a pet recovers 1% of its max health every 10 seconds (also while you are offline)
+D.FED_PCT, D.FED_STEP, D.FED_SECONDS = 10, 2, 20       -- WELL FED (pet feeding): +10% of max health every 2 seconds for 20 seconds, on top of the slow regeneration
 D.XP_STEP = 0.20                 -- XP: retail table (pb_retail R.xp: wins x XpPerWin per level, a win = XpPerWin of the ENEMY level); our rule on top: -20% per level the enemy is BELOW the pet, 0 at 5+ below
 
 -- ANIMATION / SOUND RULE: an ability's name, animation and spell share one style. Claw/Scratch/Swipe/Rake = attack emote + pet Claw spell; Bite/Maul = attack emote + Bite spell;
@@ -97,16 +98,67 @@ D.rename = {
     [38]  = { ["Punch"] = { name = "Haymaker", vis = 49966 }, ["Flank"] = { name = "Back Stab", vis = 1752 }, ["Acid Touch"] = { name = "Poisoned Blade", vis = 1752 }, ["Lucky Dance"] = { name = "Sidestep" },
               ["Clobber"] = { name = "Cudgel Blow", vis = 49966 }, ["Stampede"] = { name = "Thug Rush", vis = 49966 } },                                   -- Defias Thug (retail Terky)
     [474] = { ["Feedback"] = { name = "Frost Bolt", vis = 116, ranged = true, icon = "Spell_Frost_FrostBolt02" }, ["Arcane Blast"] = { name = "Arcane Missiles", vis = 133, ranged = true },
-              ["Evanescence"] = { name = "Blink" }, ["Sear Magic"] = { name = "Fire Blast", vis = 133, ranged = true }, ["Wish"] = { name = "Mana Shield" }, ["Amplify Magic"] = { name = "Arcane Power" } },   -- Defias Rogue Wizard (retail Hyjal Wisp)
+              ["Evanescence"] = { name = "Blink" }, ["Sear Magic"] = { name = "Cleanse" }, ["Wish"] = { name = "Mana Shield" }, ["Amplify Magic"] = { name = "Arcane Power" } },   -- Defias Rogue Wizard (retail Hyjal Wisp)
     [476] = { ["Beam"] = { name = "Stone Bolt", vis = 403, ranged = true, icon = "Spell_Nature_StoneClawTotem" }, ["Light"] = { name = "Pebble Barrage", vis = 403, ranged = true },
-              ["Flash"] = { name = "Earth Mend" }, ["Arcane Blast"] = { name = "Tremor", vis = 403, ranged = true }, ["Soul Ward"] = { name = "Stoneskin" }, ["Arcane Explosion"] = { name = "Earthquake", vis = 403, ranged = true } },   -- Kobold Geomancer (retail Nordrassil Wisp)
+              ["Flash"] = { name = "Blinding Dust" }, ["Arcane Blast"] = { name = "Tremor", vis = 403, ranged = true }, ["Soul Ward"] = { name = "Stoneskin" }, ["Arcane Explosion"] = { name = "Earthquake", vis = 403, ranged = true } },   -- Kobold Geomancer (retail Nordrassil Wisp)
     [40]  = { ["Jab"] = { name = "Pick Jab", vis = 1752 }, ["Charge"] = { name = "Pickaxe Charge", vis = 1752 }, ["Creeping Fungus"] = { name = "Rust" }, ["Leech Seed"] = { name = "Sap Strength" },
-              ["Spore Shrooms"] = { name = "Rockslide" }, ["Crouch"] = { name = "Brace" } },                                                               -- Kobold Miner (retail Sporeling Sprout)
+              ["Spore Shrooms"] = { name = "Rockslide", text = "[StandardAccuracy(1,1)] |cffffffffHit Chance|r  Shakes loose rocks above the enemy team. They hang for 2 |4round:rounds;, then a rockslide buries the front pet, dealing [StandardDamage(1,1, 748)] [School(748)] damage every round for [duration(3,1,747)] rounds." }, ["Crouch"] = { name = "Brace" } },                                                               -- Kobold Miner (retail Sporeling Sprout)
     [478] = { ["Crush"] = { name = "Club Smash", vis = 49966 }, ["Tongue Lash"] = { name = "Gnoll Lash", vis = 49966 }, ["Sticky Goo"] = { name = "Mud Throw" }, ["Poison Lash"] = { name = "Rusty Spear", vis = 1752 },
               ["Backflip"] = { name = "Leap Away" }, ["Dreadful Breath"] = { name = "Foul Howl" } },                                                      -- Riverpaw Outrunner (retail Hopling)
     [97]  = { ["Punch"] = { name = "Club Whack", vis = 49966 }, ["Flank"] = { name = "Spear Poke", vis = 1752 }, ["Acid Touch"] = { name = "Poisoned Spear", vis = 1752 }, ["Lucky Dance"] = { name = "Gnoll Shuffle" },
               ["Clobber"] = { name = "Skull Crack", vis = 49966 }, ["Stampede"] = { name = "Runt Rush", vis = 49966 } },                                  -- Riverpaw Runt (retail Gurky)
 }
+
+-- FAMILY-WIDE flavored names (D4): a species whose body does not fit the retail ability (a Defias Bandit with "Acid Touch", a gnoll with "Gift of Winter Veil") gets a name that fits
+-- what it is. Mechanics, numbers and cooldowns are untouched; the retail story text is neutralised (pb_core Flavor). A per-species D.rename entry wins over this table.
+-- Fields as D.rename. Without `vis` the visual comes from the NEW name's theme (Rock Throw = a thrown stone), else a plain melee hit.
+D.famrename = {
+    Humanoid = {
+        ["Acid Touch"] = { name = "Poisoned Blade", vis = 1752 }, ["Mangle"] = { name = "Sunder Armor", icon = "Ability_Warrior_Sunder" }, ["Frost Shock"] = { name = "Hamstring", vis = 1752, icon = "Ability_ShockWave" },
+        ["Deep Freeze"] = { name = "Stunning Blow", vis = 49966 }, ["Snowball"] = { name = "Rock Throw" }, ["Stampede"] = { name = "Relentless Assault", vis = 49966, icon = "Ability_Warrior_Charge" },
+        ["Flank"] = { name = "Double Strike", vis = 1752 }, ["Burn"] = { name = "Torch Throw", vis = 9053, ranged = true, icon = "Spell_Fire_FlameBolt" }, ["Lucky Dance"] = { name = "Rally", icon = "Ability_Warrior_RallyingCry" },
+        ["Immolation"] = { name = "Flaming Weapon", icon = "Spell_Fire_Immolation" }, ["Nether Gate"] = { name = "Grappling Hook", vis = 1752, icon = "Ability_Warrior_Charge" }, ["Flamethrower"] = { name = "Molotov Cocktail", vis = 9053, ranged = true, icon = "Spell_Fire_Fireball02" },
+        ["Spiny Carapace"] = { name = "Spiked Armor", icon = "Ability_Defend" }, ["Sear Magic"] = { name = "Cleanse", icon = "Spell_Holy_DispelMagic" }, ["Thrash"] = { name = "Wild Swings", vis = 49966, icon = "Ability_Whirlwind" }, ["Scratch"] = { name = "Slash", vis = 16827 },
+        ["Barkskin"] = { name = "Toughen Up", icon = "Ability_Warrior_ShieldWall" }, ["Dazzling Dance"] = { name = "Forced March", icon = "Ability_Rogue_Sprint" }, ["Frolick"] = { name = "Evade" }, ["Call of Winter"] = { name = "Blizzard" },
+        ["Ice Spike"] = { name = "Spear Throw", vis = 1752, icon = "Ability_Throw" }, ["Gift of Winter Veil"] = { name = "Shadow Bolt" }, ["Poison Lash"] = { name = "Poisoned Dagger", vis = 1752 },
+        ["Tongue Lash"] = { name = "Whip Lash", vis = 1752 }, ["Sticky Goo"] = { name = "Throw Net", vis = 49966, icon = "Ability_Ensnare" }, ["Demolish"] = { name = "Sledgehammer", vis = 49966, icon = "INV_Hammer_01" },
+        ["Shell Armor"] = { name = "Shield Wall", icon = "Ability_Warrior_ShieldWall" }, ["Portal"] = { name = "Tactical Retreat", icon = "Ability_Rogue_Feint" }, ["Triple Snap"] = { name = "Triple Slash", vis = 1752, icon = "Ability_Rogue_Eviscerate" },
+        ["Wild Magic"] = { name = "Hunter's Mark", icon = "Ability_Hunter_MarkedForDeath" }, ["Cauterize"] = { name = "Bind Wounds", icon = "Spell_Holy_Heal" }, ["Lift-Off"] = { name = "Leaping Strike", vis = 49966 }, ["Slicing Wind"] = { name = "Whirling Blades" },
+        ["Squawk"] = { name = "Intimidating Shout", icon = "Ability_Warrior_WarCry" }, ["Flyby"] = { name = "Exploit Opening", vis = 1752, icon = "Ability_Rogue_Ambush" }, ["Quills"] = { name = "Throwing Knives", vis = 1752, icon = "Ability_Throw" },
+        ["Magma Wave"] = { name = "Shockwave", vis = 49966, icon = "Ability_ThunderClap" }, ["Immolate"] = { name = "Flaming Arrow", icon = "Spell_Fire_FlameBolt" }, ["Conflagrate"] = { name = "Fire Strike" }, ["Consume"] = { name = "Drain Life" },
+        ["Consume Magic"] = { name = "Purify", icon = "Spell_Holy_Purify" }, ["Nether Blast"] = { name = "Arcane Bolt" }, ["Lovestruck"] = { name = "Sucker Punch", vis = 49966, icon = "Ability_Warrior_Sunder" }, ["Tail Slap"] = { name = "Backhand", vis = 49966, icon = "Ability_Warrior_Sunder" },
+        ["Tail Smash"] = { name = "Pummel", vis = 49966, icon = "Ability_Warrior_Sunder" }, ["Claw"] = { name = "Rake Across", vis = 16827 }, ["Pounce"] = { name = "Leaping Attack", vis = 16827 },
+    },
+    Undead = { ["Carpnado"] = { name = "Bone Whirl" }, ["Shell Shield"] = { name = "Bone Armor", icon = "Ability_Defend" }, ["Prowl"] = { name = "Stalk", icon = "Ability_Rogue_Feint" } },
+}
+-- A family-wide rename must not fight the CREATURE: a Frostmane troll throwing snowballs, a Searing Blade cultist with Immolation, a Venom witch with Acid Touch already fit.
+-- Themes by retail ability name -> words in the species name that make the original name right.
+local THEMES = {
+    { "snowball|frost|freez|ice|winter|blizzard", "frost|ice|snow|winter|chill|glacial|frozen|yeti" },
+    { "burn|flame|immolat|fire|conflag|magma|ember|inferno", "fire|flame|burn|blaze|searing|magma|ember|infernal|molten|ash|cinder|scorch" },
+    { "acid|poison|toxic|venom|spore|plague", "poison|venom|viper|acid|toxic|plague|rot|spider|scorpid|snake|serpent|naga" },
+    { "shadow|nether|death|curse", "shadow|dark|death|nether|void|grave|cursed|twilight|dread" },
+}
+local function ThemeFits(speciesId, retailName)
+    local sp = D.species[speciesId]; if not sp then return false end
+    local n, a = sp.name:lower(), retailName:lower()
+    for _, t in ipairs(THEMES) do
+        local hit = false; for w in t[1]:gmatch("[^|]+") do if a:find(w, 1, true) then hit = true end end
+        if hit then for w in t[2]:gmatch("[^|]+") do if n:find(w, 1, true) then return true end end end
+    end
+    return false
+end
+function D.UseLegacyKits()   -- tests only (PB_LEGACY=1): the shipped species go back to their original retail kits + hand renames (engine fixtures); composed kits come from pb_wild_kits
+    for _, sp in pairs(D.species) do if sp.retail0 then sp.retail = sp.retail0; sp.synthetic = nil end end
+    for e, r in pairs(D.rename0 or {}) do D.rename[e] = r or nil end
+end
+function D.RenameOf(speciesId, retailName, family)   -- species entry, else the family-wide one (unless the creature's own theme already fits the retail name)
+    local sp = D.rename[speciesId]; if sp and sp[retailName] then return sp[retailName] end
+    if D.species[speciesId] and D.species[speciesId].synthetic then return nil end   -- composed kits (real 3.3.5 spells) carry ALL their names in D.rename: no hand family table
+    local fm = family and D.famrename[family]; local e = fm and fm[retailName]
+    if e and ThemeFits(speciesId, retailName) then return nil end
+    return e
+end
 
 -- Species by creature entry. retail = the retail BattlePetSpecies id whose kit (family, stats, 6 abilities with level unlocks) this creature uses (chosen by pet-battle/assign_kits.py + curation).
 -- standin (default true for every species): battle pets of this species spawn from a CLONE of its creature template (entry D.StandIn) with no AI/scripts/flags and faction 35 (the original's SmartAI wrecks battles: casts, yells, flees, the tabby cats' Evade). The clone rows are created at load by pb_battle. scale = optional size override. wild = true: a tiny pet spawns next to the real mobs (pb_wild.lua). critter = a real critter species.
@@ -2012,5 +2064,9 @@ D.species = {
 -- EVERY species spawns from a stand-in (standin = false opts a species out)
 function D.StandIn(entry) local sp = D.species[entry]; return sp and sp.standin ~= false and (9000000 + entry) or nil end
 function D.IsStandIn(entry) return entry >= 9000000 and D.species[entry - 9000000] ~= nil and D.species[entry - 9000000].standin ~= false end
+
+-- composed wild-mob kits for the Outland/Northrend zones (GENERATED: pet-battle/gen_wild_kits.py; zones: pet-battle/wire_wild_kits.py)
+package.loaded["pb_data"] = D   -- the generated file requires pb_data itself
+require("pb_wild_kits")
 
 return D

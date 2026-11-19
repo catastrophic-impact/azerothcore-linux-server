@@ -90,7 +90,7 @@ do   -- watch the engine events the playback receives: which acts are pure utili
     local Eng = require("pb_core"); local origRound = Eng.Round
     Eng.Round = function(b, ...)
         local ev, st = origRound(b, ...)
-        for _, x in ipairs(ev) do if x.k == "act" and not (x.dmg or x.vis ~= nil) then utilityActs = utilityActs + 1 end end
+        for _, x in ipairs(ev) do if x.k == "act" and not (x.dmg or (x.vis ~= nil and (x.vm == nil or x.vm == "melee" or x.vm == "ranged"))) then utilityActs = utilityActs + 1 end end   -- (no PB_CAST here: a self/target/aura support spell falls back to the glow)
         return ev, st
     end
 end

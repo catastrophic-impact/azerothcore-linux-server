@@ -12,9 +12,10 @@ for l in open(os.path.join(root, 'pet-battle/zone_ranges.tsv')):
     if l.startswith('#') or len(f) < 13 or f[8] in ('-', '') or f[12] in rows: continue
     rows[f[12]] = tuple(int(x) for x in f[8:12]); keys[f[0]] = (f[12], f[2])
 EK_530 = {'eversong', 'ghostlands'}
-groups = {'Eastern Kingdoms': [], 'Kalimdor': []}
+OUTLAND = {'hellfire', 'zangarmarsh', 'terokkar', 'nagrand', 'bladesedge', 'netherstorm', 'shadowmoon'}   # map 530 zones that are Outland (Eversong/Ghostlands are Eastern Kingdoms, Azuremyst/Bloodmyst Kalimdor)
+groups = {'Eastern Kingdoms': [], 'Kalimdor': [], 'Outland': [], 'Northrend': []}
 for key, (name, m) in keys.items():
-    groups['Eastern Kingdoms' if (m == '0' or key in EK_530) else 'Kalimdor'].append(name)
+    groups['Northrend' if m == '571' else 'Outland' if key in OUTLAND else 'Eastern Kingdoms' if (m == '0' or key in EK_530) else 'Kalimdor'].append(name)
 species = {}
 for key, (name, m) in keys.items():
     path = os.path.join(root, 'pet-battle', key + '_roster.tsv')

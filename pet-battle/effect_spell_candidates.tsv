@@ -1,0 +1,493 @@
+effect	cooldown	status	spells_with_primary_effect	spells_with_all_parts	spells_within_1_cd_bucket	best_4
+accdown-cd0	0	keep	3	3	2	Insect Swarm; Scorpid Sting; Dust Cloud
+accdown-critup-cd0	0	keep	3	0	2	Insect Swarm; Scorpid Sting; Dust Cloud
+accup-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+accup-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+accup-critup-cd0	0	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+accup-critup-cd0#2	0	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+aoe-conditional-p19-cd0	0	keep	35	35	17	Arcane Explosion; Blizzard; Blood Boil; Fan of Knives
+aoe-p20-cd0	0	keep	35	35	17	Arcane Explosion; Blizzard; Blood Boil; Fan of Knives
+critup-cd0	0	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+critup-cd0#2	0	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+critup-cd0#3	0	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+damage-accdown-p10-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-backline-p10-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-backline-p12-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-backline-p14-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p13-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p15-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p15-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p15-cd0#3	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p15-cd0#4	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p17-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p18-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-conditional-p20-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-critup-p10-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-critup-p4-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-defense-p15-cd0	0	keep	167	3	104	Sting; Acid Spit; Shattering Throw; Ambush
+damage-delayed-p50-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-dmgdown-p10-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-dmgup-p10-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-dmgup-vuln-p13-cd0	0	keep	167	0	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-dmgup-vuln-p13-cd0#2	0	keep	167	0	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-dot-critup-p17-cd0	0	failed-our-tests	167	0	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-defense-p50-cd0	0	keep	167	0	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-dmgdown-p15-cd0	0	failed-our-tests	167	0	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p10-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p10-cd0#2	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p10-cd0#3	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p10-cd0#4	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0#2	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0#3	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0#4	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0#5	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p12-cd0#6	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p13-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p14-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p14-cd0#2	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p15-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p15-cd0#2	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p15-cd0#3	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p16-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p16-cd0#2	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p18-cd0	0	keep	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p18-cd0#2	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-p19-cd0	0	failed-our-tests	167	16	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-dot-vuln-p10-cd0	0	keep	167	0	104	Fireball; Flamestrike; Frostfire Bolt; Hemorrhage
+damage-drain-p10-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-drain-p14-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-escalating-p10-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-goesfirst-conditional-p15-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-goesfirst-p15-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-goesfirst-p15-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-goesfirst-p15-cd0#3	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-goesfirst-p5-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-hot-p16-cd0	0	keep	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-hot-p17-cd0	0	failed-our-tests	167	0	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-noswap-dot-p10-cd0	0	keep	167	0	104	Fireball; Flamestrike; Frostfire Bolt; Immolate
+damage-noswap-p10-cd0	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-noswap-p15-cd0	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-noswap-p15-cd0#2	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-noswap-p15-cd0#3	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-noswap-p17-cd0	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-noswap-p18-cd0	0	keep	167	4	104	Counterattack; Feral Charge - Bear; Frost Nova; Swoop
+damage-p0-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p10-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p10-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p12-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p15-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p18-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p20-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p20-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p20-cd0#3	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p20-cd0#4	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p21-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p22-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p25-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p28-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p4-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p4-cd0#2	0	failed-our-tests	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p40-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p40-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p6-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p7-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p7-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-p9-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-recharge-conditional-p40-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-recharge-conditional-p40-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+damage-speeddown-p10-cd0	0	keep	167	11	104	Deadly Throw; Frostbolt; Frostfire Bolt; Typhoon
+damage-speeddown-p10-cd0#2	0	keep	167	11	104	Deadly Throw; Frostbolt; Frostfire Bolt; Typhoon
+damage-speeddown-p15-cd0	0	failed-our-tests	167	11	104	Deadly Throw; Frostbolt; Frostfire Bolt; Typhoon
+damage-speeddown-p18-cd0	0	failed-our-tests	167	11	104	Deadly Throw; Frostbolt; Frostfire Bolt; Typhoon
+damage-speedup-goesfirst-conditional-p40-cd0	0	failed-our-tests	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-goesfirst-conditional-p40-cd0#2	0	failed-our-tests	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-goesfirst-p15-cd0	0	keep	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-p10-cd0	0	keep	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-p10-cd0#2	0	keep	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-p10-cd0#3	0	keep	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-speedup-p15-cd0	0	keep	167	1	104	Lava Breath; Ambush; Arcane Blast; Arcane Explosion
+damage-vuln-p10-cd0	0	keep	167	2	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-vuln-p3-cd0	0	keep	167	2	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-vuln-p3-cd0#2	0	keep	167	2	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-vuln-p3-cd0#3	0	keep	167	2	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damage-vuln-p5-cd0	0	keep	167	2	104	Hemorrhage; Mangle; Ambush; Arcane Blast
+damageshield-cd0	0	engine-gap	7	7	3	Fire Shield; Lightning Shield; Thorns; Spell Reflection
+damageshield-defense-cd0	0	engine-gap	7	0	3	Fire Shield; Lightning Shield; Thorns; Spell Reflection
+defense-cd0	0	keep	37	37	19	Blessing of Sanctuary; Curse of the Elements; Demon Armor; Demon Skin
+dmgup-accup-cd0	0	keep	47	47	24	Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk; Aspect of the Hawk
+dmgup-twostep-cd0	0	keep	47	47	24	Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk; Aspect of the Hawk
+dmgup-vuln-cd0	0	keep	47	1	24	Bone Shield; Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk
+dmgup-vuln-cd0#2	0	keep	47	1	24	Bone Shield; Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk
+dmgup-vuln-cd0#3	0	keep	47	1	24	Bone Shield; Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk
+dodge-cd0	0	keep	3	3	1	Aspect of the Monkey; Ghostly Strike; Deterrence
+dot-cd0	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#10	0	failed-our-tests	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#11	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#2	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#3	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#4	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#5	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#6	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#7	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#8	0	engine-gap	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-cd0#9	0	keep	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-object-delayed-cd0	0	objects	48	48	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+dot-vuln-cd0	0	keep	48	0	34	Blizzard; Corruption; Curse of Agony; Drain Soul
+heal-p0-cd0	0	keep	30	30	23	Beacon of Light; Binding Heal; Blood Pact; Chain Heal
+hot-cd0	0	keep	17	17	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+hot-cd0#2	0	engine-gap	17	17	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+hot-cd0#3	0	keep	17	17	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+hot-cd0#4	0	keep	17	17	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+hot-dot-cd0	0	keep	17	0	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+hot-typechange-cd0	0	failed-our-tests	17	17	11	Consume Shadows; Flash of Light; Health Funnel; Lifebloom
+multihit-conditional-p10-cd0	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p10-cd0#2	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p15-cd0	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p17-cd0	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p17-cd0#2	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p25-cd0	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+multihit-conditional-p25-cd0#2	0	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+noeffect-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+noswap-twostep-cd0	0	keep	9	9	3	Entangling Roots; Freeze; Counterattack; Feral Charge - Bear
+object-delayed-cd0	0	objects	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+speeddown-vuln-cd0	0	keep	21	0	13	Blade Twisting; Chains of Ice; Curse of Exhaustion; Deadly Throw
+speedup-accup-critup-cd0	0	keep	20	0	7	Aspect of the Cheetah; Aspect of the Pack; Blazing Speed; Fear
+speedup-cd0	0	keep	20	20	7	Aspect of the Cheetah; Aspect of the Pack; Blazing Speed; Fear
+stun-cd0	0	keep	42	42	16	Banish; Cheap Shot; Cyclone; Enslave Demon
+swapin-defense-cd0	0	keep	37	37	19	Blessing of Sanctuary; Curse of the Elements; Demon Armor; Demon Skin
+twostep-cd0	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+twostep-cd0#2	0	keep	167	167	104	Ambush; Arcane Blast; Arcane Explosion; Backstab
+vuln-cd0	0	keep	19	19	13	Aspect of the Monkey; Curse of the Elements; Dampen Magic; Expose Armor
+vuln-cd0#2	0	keep	19	19	13	Aspect of the Monkey; Curse of the Elements; Dampen Magic; Expose Armor
+vuln-cd0#3	0	keep	19	19	13	Aspect of the Monkey; Curse of the Elements; Dampen Magic; Expose Armor
+vuln-cd0#4	0	keep	19	19	13	Aspect of the Monkey; Curse of the Elements; Dampen Magic; Expose Armor
+damage-conditional-p20-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-critup-weather-p24-cd1	1	failed-our-tests	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-dmgup-p15-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-dmgup-p20-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-dot-delayed-p7-cd1	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-dot-delayed-p9-cd1	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-dot-delayed-p9-cd1#2	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-dot-delayed-p9-cd1#3	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-dot-p15-cd1	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-dot-p15-cd1#2	1	keep	167	16	139	Explosive Shot; Flame Shock; Conflagrate; Fire Breath
+damage-drain-conditional-p10-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-drain-conditional-p15-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-drain-conditional-p20-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-drain-p12-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-drain-p14-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-escalating-p10-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-escalating-p10-cd1#2	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-escalating-p10-cd1#3	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-escalating-p10-cd1#4	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-goesfirst-p20-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-interrupt-stun-conditional-p20-cd1	1	keep	167	0	139	Wind Shear; Charge; Gouge; Kick
+damage-p20-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-p25-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-p30-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-p30-cd1#2	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-p35-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-p45-cd1	1	keep	167	167	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-speeddown-dmgdown-p10-cd1	1	keep	167	0	139	Frost Shock; Cone of Cold; Deadly Throw; Frostbolt
+damage-speeddown-p10-cd1	1	keep	167	11	139	Frost Shock; Cone of Cold; Deadly Throw; Frostbolt
+damage-speedup-goesfirst-p20-cd1	1	keep	167	1	139	Lava Breath; Arcane Barrage; Arcane Shot; Chain Lightning
+damage-stunchance-p20-cd1	1	keep	167	0	139	Arcane Barrage; Arcane Shot; Chain Lightning; Counterattack
+damage-vuln-p25-cd1	1	keep	167	2	139	Hemorrhage; Mangle; Arcane Barrage; Arcane Shot
+dmgup-cd1	1	keep	47	47	24	Amplify Magic; Aspect of the Beast; Aspect of the Dragonhawk; Aspect of the Hawk
+dot-delayed-cd1	1	keep	48	48	41	Consecration; Explosive Shot; Flame Shock; Blizzard
+dot-dmgup-conditional-cd1	1	keep	48	0	41	Consecration; Explosive Shot; Flame Shock; Blizzard
+multihit-conditional-p10-cd1	1	keep	6	6	4	Arcane Missiles; Drain Soul; Hellfire; Hurricane
+noswap-untargetable-conditional-cd1	1	engine-gap	9	0	4	Counterattack; Entangling Roots; Feral Charge - Bear; Freeze
+aoe-p23-cd2	2	keep	35	35	14	Demoralizing Screech; Divine Storm; Fire Nova; Spore Cloud
+cleanse-self-cd2	2	keep	21	21	3	Devour Magic; Shield Slam; Tranquilizing Shot; Abolish Disease
+damage-backline-p11-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-conditional-p20-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-conditional-p25-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-dmgdown-p20-cd2	2	keep	167	0	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-dot-delayed-p8-cd2	2	keep	167	16	83	Conflagrate; Fire Breath; Holy Fire; Spirit Strike
+damage-dot-dmgdown-p15-cd2	2	keep	167	0	83	Conflagrate; Fire Breath; Holy Fire; Spirit Strike
+damage-drain-p10-cd2	2	keep	167	0	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-forceswap-p10-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-goesfirst-p12-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-goesfirst-p25-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-interrupt-stun-goesfirst-conditional-p10-cd2	2	failed-our-tests	167	0	83	Charge; Gouge; Kick; Maim
+damage-p100-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-p15-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-p9-cd2	2	keep	167	167	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-speeddown-dmgdown-p15-cd2	2	keep	167	0	83	Cone of Cold; Froststorm Breath; Avenger's Shield; Blast Wave
+damage-stunchance-p20-cd2	2	failed-our-tests	167	0	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damage-untargetable-delayed-p16-cd2	2	keep	167	0	83	Acid Spit; Aimed Shot; Chaos Bolt; Charge
+damageshield-conditional-cd2	2	engine-gap	7	7	1	Spell Reflection; Fire Shield; Lightning Shield; Nature's Grasp
+dmgup-cd2	2	keep	47	47	3	Berserker Rage; Horn of Winter; Tiger's Fury; Amplify Magic
+dot-conditional-cd2	2	engine-gap	48	48	13	Conflagrate; Fire Breath; Holy Fire; Poison Spit
+dot-object-cd2	2	objects	48	48	13	Conflagrate; Fire Breath; Holy Fire; Poison Spit
+dot-object-cd2#2	2	objects	48	48	13	Conflagrate; Fire Breath; Holy Fire; Poison Spit
+dot-object-conditional-cd2	2	objects	48	48	13	Conflagrate; Fire Breath; Holy Fire; Poison Spit
+heal-p25-cd2	2	keep	30	30	4	Prayer of Mending; Swiftmend; Circle of Healing; Riptide
+vuln-delayed-conditional-cd2	2	failed-our-tests	19	19	2	Faerie Fire (Feral); Kidney Shot; Aspect of the Monkey; Bone Shield
+accdown-cd3	3	failed-our-tests	3	3	1	Dust Cloud; Insect Swarm; Scorpid Sting
+accdown-critup-cd3	3	keep	3	0	1	Dust Cloud; Insect Swarm; Scorpid Sting
+aoe-dot-p27-cd3	3	failed-our-tests	35	8	13	Immolation Aura; Spore Cloud; Consecration; Blizzard
+aoe-p27-cd3	3	keep	35	35	13	Blast Wave; Frost Nova; Holy Wrath; Immolation Aura
+aoe-weather-conditional-p24-cd3	3	keep	35	35	13	Blast Wave; Frost Nova; Holy Wrath; Immolation Aura
+block-cd3	3	keep	2	2	1	Shield Block; Holy Shield
+block-cd3#2	3	keep	2	2	1	Shield Block; Holy Shield
+critup-cd3	3	keep	5	5	0	Cold Blood; Combustion; Deathchill; Divine Favor
+damage-accdown-p10-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-accdown-p25-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-backline-p11-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-backline-p13-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-backline-p15-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p10-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p15-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p20-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p20-cd3#2	3	failed-our-tests	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p20-cd3#3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p20-cd3#4	3	failed-our-tests	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p25-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p30-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p40-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p40-cd3#2	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-p40-cd3#3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-samefamily-cd3	3	engine-gap	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-conditional-speedcompare-cd3	3	engine-gap	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-critup-weather-p27-cd3	3	failed-our-tests	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-dmgup-conditional-p25-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-dot-object-p10-cd3	3	objects	167	16	61	Conflagrate; Fire Breath; Holy Fire; Savage Rend
+damage-dot-p16-cd3	3	failed-our-tests	167	16	61	Conflagrate; Fire Breath; Holy Fire; Savage Rend
+damage-dot-weather-p27-cd3	3	engine-gap	167	16	61	Conflagrate; Fire Breath; Holy Fire; Savage Rend
+damage-dot-weather-p27-cd3#2	3	keep	167	16	61	Conflagrate; Fire Breath; Holy Fire; Savage Rend
+damage-drain-conditional-p25-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-drain-conditional-p30-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-drain-p10-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-drain-p18-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-goesfirst-p5-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-healtakendown-p25-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-healtakenup-weather-p27-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-interrupt-stun-goesfirst-conditional-p15-cd3	3	keep	167	0	61	Concussion Blow; Counterspell; Dragon's Breath; Holy Wrath
+damage-noswap-p20-cd3	3	keep	167	4	61	Frost Nova; Swoop; Feral Charge - Bear; Counterattack
+damage-noswap-p20-cd3#2	3	keep	167	4	61	Frost Nova; Swoop; Feral Charge - Bear; Counterattack
+damage-noswap-speeddown-block-p10-cd3	3	keep	167	0	61	Avenger's Shield; Blast Wave; Dragon's Breath; Frost Nova
+damage-p13-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p13-cd3#2	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p13-cd3#3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p15-cd3#2	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p150-cd3	3	failed-our-tests	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p25-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p25-cd3#2	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p25-cd3#3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p25-cd3#4	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p25-cd3#5	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p30-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p32-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p50-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p6-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-p8-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-speeddown-p10-cd3	3	keep	167	11	61	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-speeddown-p20-cd3	3	keep	167	11	61	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-speeddown-p25-cd3	3	keep	167	11	61	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-speeddown-p30-cd3	3	keep	167	11	61	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-stun-conditional-p50-cd3	3	keep	167	12	61	Concussion Blow; Dragon's Breath; Holy Wrath; Scatter Shot
+damage-stun-p25-cd3	3	keep	167	12	61	Concussion Blow; Dragon's Breath; Holy Wrath; Scatter Shot
+damage-stun-p40-cd3	3	keep	167	12	61	Concussion Blow; Dragon's Breath; Holy Wrath; Scatter Shot
+damage-stunchance-conditional-p25-cd3	3	failed-our-tests	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-stunchance-conditional-p25-cd3#2	3	failed-our-tests	167	0	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-vuln-p6-cd3	3	failed-our-tests	167	2	61	Hemorrhage; Mangle; Avenger's Shield; Blast Wave
+damage-vuln-p8-cd3	3	failed-our-tests	167	2	61	Hemorrhage; Mangle; Avenger's Shield; Blast Wave
+damage-weather-p27-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-weather-p8-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damage-weather-p9-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+damageshield-cd3	3	engine-gap	7	7	2	Nature's Grasp; Spell Reflection; Bad Attitude; Fire Shield
+damageshield-defense-cd3	3	engine-gap	7	0	2	Nature's Grasp; Spell Reflection; Bad Attitude; Fire Shield
+damageshield-reflectpct-cd3	3	engine-gap	7	7	2	Nature's Grasp; Spell Reflection; Bad Attitude; Fire Shield
+defense-cd3	3	keep	37	37	13	Fade; Fire Ward; Frost Ward; Ice Barrier
+dmgup-cd3	3	keep	47	47	7	Berserker Rage; Horn of Winter; Tiger's Fury; Bone Shield
+dmgup-cd3#2	3	keep	47	47	7	Berserker Rage; Horn of Winter; Tiger's Fury; Bone Shield
+dodge-cd3	3	keep	3	3	1	Ghostly Strike; Deterrence; Aspect of the Monkey
+dot-cd3	3	keep	48	48	14	Black Arrow; Death and Decay; Immolation Aura; Conflagrate
+dot-delayed-cd3	3	keep	48	48	14	Black Arrow; Death and Decay; Immolation Aura; Conflagrate
+dot-object-cd3	3	objects	48	48	14	Black Arrow; Death and Decay; Immolation Aura; Conflagrate
+heal-conditional-lowhp-cd3	3	engine-gap	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-dmgup-p22-cd3	3	keep	30	0	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-dmgup-p22-cd3#2	3	keep	30	0	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-dot-weather-p30-cd3	3	engine-gap	30	0	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p12-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p20-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p24-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p24-cd3#2	3	failed-our-tests	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p28-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-p30-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+heal-weather-p9-cd3	3	keep	30	30	3	Prayer of Mending; Swiftmend; Vampiric Blood; Circle of Healing
+healpct-corpse-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+healpct-goesfirst-p25-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+healpct-p25-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+speeddown-cd3	3	failed-our-tests	21	21	7	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+speedup-dodge-goesfirst-cd3	3	keep	20	0	6	Psychic Scream; Shadowstep; Dive; Howl of Terror
+speedup-dodge-goesfirst-cd3#2	3	keep	20	0	6	Psychic Scream; Shadowstep; Dive; Howl of Terror
+survive-delayed-cd3	3	keep	167	167	61	Avenger's Shield; Blast Wave; Concussion Blow; Counterspell
+vuln-cd3	3	keep	19	19	6	Kidney Shot; Bone Shield; Disarm; Divine Plea
+aoe-forceswap-p25-cd4	4	keep	35	35	12	Howl of Terror; Thunderstorm; Arcane Torrent; Bladestorm
+aoe-p36-cd4	4	keep	35	35	12	Howl of Terror; Thunderstorm; Arcane Torrent; Bladestorm
+cleanse-enemy-cd4	4	keep	21	21	6	Heroic Fury; Bullheaded; Escape Artist; Every Man for Himself
+cleanse-self-p20-cd4	4	keep	21	21	6	Heroic Fury; Bullheaded; Escape Artist; Every Man for Himself
+cleanse-team-cd4	4	keep	21	21	6	Heroic Fury; Bullheaded; Escape Artist; Every Man for Himself
+damage-accdown-p25-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-avoidswap-p20-cd4	4	engine-gap	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-backline-p12-cd4	4	failed-our-tests	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-conditional-p30-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-conditional-p30-cd4#2	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-critdown-p20-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-critup-weather-p36-cd4	4	failed-our-tests	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-delayed-p50-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-delayed-p50-cd4#2	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-dmgup-dmgdown-p10-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-dot-conditional-p30-cd4	4	keep	167	16	27	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-dot-p30-cd4	4	keep	167	16	27	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-drain-dot-p10-cd4	4	keep	167	0	27	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-drain-healtakenup-weather-p6-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-drain-p20-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-forceswap-p10-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-forceswap-p10-cd4#2	4	engine-gap	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-forceswap-p10-cd4#3	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-forceswap-p50-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-goesfirst-p7-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-hot-p20-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-interrupt-stun-goesfirst-conditional-p20-cd4	4	failed-our-tests	167	0	27	Demon Charge; Gnaw; Silence; Sonic Blast
+damage-noswap-p25-cd4	4	failed-our-tests	167	4	27	Frost Nova; Swoop; Feral Charge - Bear; Counterattack
+damage-object-p25-cd4	4	objects	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-p10-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-p20-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-p32-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-p35-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-p40-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-speeddown-p20-cd4	4	keep	167	11	27	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-speeddown-p30-cd4	4	keep	167	11	27	Avenger's Shield; Blast Wave; Dragon's Breath; Tendon Rip
+damage-stun-delayed-p40-cd4	4	failed-our-tests	167	12	27	Demon Charge; Gnaw; Sonic Blast; Concussion Blow
+damage-stunchance-conditional-p25-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-stunchance-conditional-p30-cd4	4	failed-our-tests	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-stunchance-dot-p30-cd4	4	failed-our-tests	167	0	27	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-stunchance-p30-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-delayed-p30-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-delayed-p30-cd4#2	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-delayed-p30-cd4#3	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-delayed-p30-cd4#4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-delayed-p30-cd4#5	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-p25-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-untargetable-p30-cd4	4	keep	167	0	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+damage-vuln-p5-cd4	4	failed-our-tests	167	2	27	Hemorrhage; Mangle; Demon Charge; Gnaw
+damageshield-cd4	4	engine-gap	7	7	2	Nature's Grasp; Bad Attitude; Spell Reflection; Fire Shield
+damageshield-cd4#2	4	engine-gap	7	7	2	Nature's Grasp; Bad Attitude; Spell Reflection; Fire Shield
+damageshield-cd4#3	4	engine-gap	7	7	2	Nature's Grasp; Bad Attitude; Spell Reflection; Fire Shield
+damageshield-defense-cd4	4	engine-gap	7	0	2	Nature's Grasp; Bad Attitude; Spell Reflection; Fire Shield
+defense-cd4	4	keep	37	37	13	Anti-Magic Shell; Barkskin; Roar of Sacrifice; Sacrifice
+defense-cd4#2	4	keep	37	37	13	Anti-Magic Shell; Barkskin; Roar of Sacrifice; Sacrifice
+defense-cd4#3	4	keep	37	37	13	Anti-Magic Shell; Barkskin; Roar of Sacrifice; Sacrifice
+defense-cd4#4	4	keep	37	37	13	Anti-Magic Shell; Barkskin; Roar of Sacrifice; Sacrifice
+delayed-cd4	4	keep	167	167	27	Demon Charge; Gnaw; Heroic Throw; Mocking Blow
+delayed-untargetable-cd4	4	keep	15	15	7	Cloak of Shadows; Disengage; Dispersion; Evasion
+dodge-cd4	4	keep	3	3	2	Deterrence; Ghostly Strike; Aspect of the Monkey
+dodge-cd4#2	4	keep	3	3	2	Deterrence; Ghostly Strike; Aspect of the Monkey
+dot-accdown-cd4	4	keep	48	1	7	Insect Swarm; Curse of Doom; Pin; Savage Rend
+dot-cd4	4	engine-gap	48	48	7	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-cd4#2	4	failed-our-tests	48	48	7	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+heal-accdown-p12-cd4	4	keep	30	0	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-accup-critup-p20-cd4	4	keep	30	0	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-p0-cd4	4	keep	30	30	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-p15-cd4	4	keep	30	30	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-p16-cd4	4	keep	30	30	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-p30-cd4	4	keep	30	30	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+heal-p40-cd4	4	keep	30	30	3	Vampiric Blood; Death Pact; Desperate Prayer; Prayer of Mending
+aoe-dot-object-p33-cd5	5	objects	35	8	7	Immolation Aura; Spore Cloud; Consecration; Blizzard
+aoe-p36-cd5	5	keep	35	35	7	Arcane Torrent; Bladestorm; Intimidating Shout; Starfall
+aoe-p45-cd5	5	keep	35	35	7	Arcane Torrent; Bladestorm; Intimidating Shout; Starfall
+aoe-vuln-p33-cd5	5	keep	35	0	7	Arcane Torrent; Bladestorm; Intimidating Shout; Starfall
+aoe-weather-conditional-p40-cd5	5	keep	35	35	7	Arcane Torrent; Bladestorm; Intimidating Shout; Starfall
+block-cd5#2	5	keep	2	2	1	Shield Block; Holy Shield
+block-object-cd5	5	objects	2	2	1	Shield Block; Holy Shield
+block-object-cd5#2	5	objects	2	2	1	Shield Block; Holy Shield
+block-object-cd5#3	5	objects	2	2	1	Shield Block; Holy Shield
+block-object-cd5#4	5	objects	2	2	1	Shield Block; Holy Shield
+block-object-cd5#5	5	objects	2	2	1	Shield Block; Holy Shield
+block-object-cd5#6	5	objects	2	2	1	Shield Block; Holy Shield
+critup-cd5	5	keep	5	5	5	Cold Blood; Combustion; Deathchill; Divine Favor
+damage-accdown-defense-weather-p45-cd5	5	keep	167	0	12	Acid Spit; Shattering Throw; Sting; Strangulate
+damage-accdown-healtakendown-weather-p45-cd5	5	keep	167	0	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-accdown-p25-cd5	5	failed-our-tests	167	0	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-dmgup-p30-cd5	5	keep	167	0	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-dot-p5-cd5	5	keep	167	16	12	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-forceswap-p20-cd5	5	engine-gap	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-forceswap-p20-cd5#2	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-noswap-p30-cd5	5	failed-our-tests	167	4	12	Frost Nova; Swoop; Feral Charge - Bear; Counterattack
+damage-noswap-recharge-p50-cd5	5	keep	167	4	12	Frost Nova; Swoop; Feral Charge - Bear; Counterattack
+damage-p20-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-p40-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-p40-cd5#2	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-recharge-p50-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-stunchance-p40-cd5	5	failed-our-tests	167	0	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-swap-dot-p15-cd5	5	failed-our-tests	167	16	12	Savage Rend; Conflagrate; Fire Breath; Holy Fire
+damage-swapself-p12-cd5	5	engine-gap	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-swapself-vuln-p12-cd5	5	engine-gap	167	2	12	Hemorrhage; Mangle; Strangulate; Demon Charge
+damage-untargetable-delayed-p40-cd5	5	keep	167	0	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-weather-p15-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-weather-p45-cd5	5	engine-gap	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damage-weather-p45-cd5#2	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+damageshield-cd5	5	engine-gap	7	7	2	Bad Attitude; Nature's Grasp; Retaliation; Spell Reflection
+defense-cd5	5	keep	37	37	8	Divine Protection; Icebound Fortitude; Survival Instincts; Anti-Magic Shell
+defense-cd5#2	5	keep	37	37	8	Divine Protection; Icebound Fortitude; Survival Instincts; Anti-Magic Shell
+delayed-cd5	5	failed-our-tests	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+delayed-cd5#2	5	failed-our-tests	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+dmgup-critup-cd5	5	keep	47	0	17	Adrenaline Rush; Arcane Power; Avenging Wrath; Berserk
+dot-cd5	5	failed-our-tests	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-cd5#2	5	failed-our-tests	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-cd5#3	5	failed-our-tests	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-delayed-cd5	5	keep	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-delayed-cd5#2	5	keep	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-delayed-cd5#3	5	keep	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-delayed-cd5#4	5	keep	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-delayed-cd5#5	5	keep	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-object-cd5	5	objects	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-object-cd5#2	5	objects	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-object-cd5#3	5	objects	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+dot-object-cd5#4	5	objects	48	48	4	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+equalizehp-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+heal-p18-cd5	5	keep	30	30	3	Death Pact; Desperate Prayer; Vampiric Blood; Lay on Hands
+heal-p35-cd5	5	keep	30	30	3	Death Pact; Desperate Prayer; Vampiric Blood; Lay on Hands
+heal-p70-cd5	5	keep	30	30	3	Death Pact; Desperate Prayer; Vampiric Blood; Lay on Hands
+heal-weather-p15-cd5	5	keep	30	30	3	Death Pact; Desperate Prayer; Vampiric Blood; Lay on Hands
+healpct-delayed-cd5	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+healpct-delayed-cd5#2	5	keep	167	167	12	Strangulate; Demon Charge; Gnaw; Heroic Throw
+hot-cd5	5	keep	17	17	5	Cannibalize; Enraged Regeneration; Gift of the Naaru; Lick Your Wounds
+hot-stun-noswap-cd5	5	keep	17	0	5	Health Funnel; Mend Pet; Cannibalize; Enraged Regeneration
+hot-stun-noswap-cd5#2	5	keep	17	0	5	Health Funnel; Mend Pet; Cannibalize; Enraged Regeneration
+hot-stun-noswap-cd5#3	5	keep	17	0	5	Health Funnel; Mend Pet; Cannibalize; Enraged Regeneration
+hot-stun-noswap-cd5#4	5	keep	17	0	5	Health Funnel; Mend Pet; Cannibalize; Enraged Regeneration
+rebirth-delayed-cd5	5	engine-gap	1	1	0	Heart of the Phoenix
+speeddown-cd5	5	failed-our-tests	21	21	1	Blind; Avenger's Shield; Blast Wave; Dragon's Breath
+speeddown-dmgup-cd5	5	keep	21	0	1	Blind; Avenger's Shield; Blast Wave; Dragon's Breath
+speedup-dodge-goesfirst-cd5	5	keep	20	0	7	Berserking; Dash; Intimidating Shout; Nature's Swiftness
+stun-cd5	5	keep	42	42	14	Blind; Intimidating Shout; War Stomp; Bash
+stun-cd5#2	5	keep	42	42	14	Blind; Intimidating Shout; War Stomp; Bash
+stun-cd5#3	5	keep	42	42	14	Blind; Intimidating Shout; War Stomp; Bash
+vuln-cd5	5	keep	19	19	5	Bone Shield; Disarm; Divine Plea; Huddle
+block-cd6	6	failed-our-tests	2	2	0	Shield Block; Holy Shield
+block-cd6#2	6	keep	2	2	0	Shield Block; Holy Shield
+dot-object-cd6	6	objects	48	48	0	Curse of Doom; Pin; Savage Rend; Venom Web Spray
+heal-p45-cd6	6	keep	30	30	2	Death Pact; Desperate Prayer; Lay on Hands; Tranquility
+stun-speedup-dodge-goesfirst-delayed-cd6	6	keep	42	0	3	Intimidating Shout; Howl of Terror; Psychic Scream; Fear
+swapin-resetcooldowns-cd6	6	engine-gap	167	167	1	Strangulate; Demon Charge; Gnaw; Heroic Throw
+swapself-heal-p25-cd6	6	engine-gap	30	30	2	Death Pact; Desperate Prayer; Lay on Hands; Tranquility
+avoidswap-cd7	7	keep	167	167	1	Shattering Throw; Strangulate; Demon Charge; Gnaw
+avoidswap-cd8	8	engine-gap	167	167	1	Shattering Throw; Strangulate; Demon Charge; Gnaw
+avoidswap-cd8#2	8	engine-gap	167	167	1	Shattering Throw; Strangulate; Demon Charge; Gnaw
+block-cd8	8	keep	2	2	0	Shield Block; Holy Shield
+block-object-cd8	8	objects	2	2	0	Shield Block; Holy Shield
+dodge-cd8	8	keep	3	3	0	Deterrence; Ghostly Strike; Aspect of the Monkey
+heal-p25-cd8	8	keep	30	30	2	Lay on Hands; Tranquility; Death Pact; Desperate Prayer
+lifesteal-aura-cd8	8	engine-gap	167	167	1	Shattering Throw; Strangulate; Demon Charge; Gnaw
+reviveall-cd8	8	engine-gap	167	167	1	Shattering Throw; Strangulate; Demon Charge; Gnaw
+stun-noswap-dot-untargetable-object-cd8	8	objects	42	0	0	Banish; Cyclone; Blind; Intimidating Shout
+stun-noswap-dot-untargetable-object-cd8#2	8	objects	42	0	0	Banish; Cyclone; Blind; Intimidating Shout
+swap-speedup-dmgup-goesfirst-conditional-cd8	8	engine-gap	20	0	2	Bloodlust; Heroism; Berserking; Dash
+blockability-cd10	10	engine-gap	167	167	0	Shattering Throw; Strangulate; Demon Charge; Gnaw
+delayed-cd20	20	keep	167	167	0	Shattering Throw; Strangulate; Demon Charge; Gnaw

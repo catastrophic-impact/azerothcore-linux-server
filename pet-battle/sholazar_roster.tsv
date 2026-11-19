@@ -1,0 +1,52 @@
+# Sholazar Basin pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	28139	Frenzyheart Pup	1-5	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	28140	Gorloc Hatchling	1-5	Humanoid	0	0	4	0	Melee		composed kit: Aquatic
+Y	28093	Sholazar Tickbird	1	Critter	0	0	29	0	Melee		composed kit: Critter
+Y	28127	Softknuckle	1-5	Beast	0	0	11	0	Melee		composed kit: Beast
+Y	25428	Magmoth Shaman	69-70	Humanoid	0	0	57	0	Melee		composed kit: Elemental
+Y	25433	Offspring of Magmothregar	69-70	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	25434	Magmoth Crusher	70	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	25432	Mate of Magmothregar	70	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	25684	Talramas Abomination	71	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	28003	Bittertide Hydra	75-76	Beast	0	0	13	0	Melee		composed kit: Beast
+Y	28108	Bonescythe Ravager	75-76	Undead	0	0	93	0	Melee		composed kit: Undead
+Y	28001	Dreadsaber	75-76	Beast	2	0	43	0	Melee		composed kit: Beast
+Y	28011	Emperor Cobra	75-76	Beast	35	0	65	0	Melee		composed kit: Beast
+Y	28170	Frosthowl Screecher	75-76	Undead	0	0	47	0	Melee		composed kit: Undead
+Y	28004	Goretalon Roc	75-76	Beast	26	0	27	0	Melee		composed kit: Flying
+Y	28129	Longneck Grazer	75-76	Beast	0	0	36	0	Melee		composed kit: Beast
+Y	28002	Mangal Crocolisk	75-76	Beast	6	0	42	0	Melee		composed kit: Aquatic
+Y	29123	Monstrous Wight	75-76	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	28085	Sapphire Hive Drone	75-77	Beast	44	0	74	0	Melee		composed kit: Flying
+Y	28009	Shardhorn Rhino	75-76	Beast	43	0	26	0	Melee		composed kit: Beast
+Y	28010	Stranded Thresher	75-76	Beast	0	0	7	0	Melee		composed kit: Beast
+Y	28123	Venture Co. Excavator	75-76	Humanoid	0	0	40	0	Melee		composed kit: Humanoid
+Y	28124	Venture Co. Ruffian	75-76	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	28373	Cultist Infiltrator	76-77	Humanoid	0	0	22	0	Melee		composed kit: Undead
+Y	28538	Cultist Saboteur	76-77	Humanoid	0	0	8	0	Melee		composed kit: Undead
+Y	28081	Frenzyheart Scavenger	76-77	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	28080	Frenzyheart Spearbearer	76-77	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	28096	Hardknuckle Charger	76-77	Beast	9	0	21	0	Melee		composed kit: Beast
+Y	28098	Hardknuckle Forager	76	Beast	9	0	41	0	Melee		composed kit: Beast
+Y	29124	Lifeblood Elemental	76	Elemental	0	0	18	0	Melee		composed kit: Elemental
+Y	28110	Mistwhisper Oracle	76-77	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	28109	Mistwhisper Warrior	76-77	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	28378	Primordial Drake	76-77	Dragonkin	0	0	15	0	Melee		composed kit: Dragonkin
+Y	28086	Sapphire Hive Wasp	76-77	Beast	44	0	69	0	Melee		composed kit: Flying
+Y	28320	Servant of Freya	76-77	Elemental	0	0	62	0	Melee		composed kit: Elemental
+Y	29036	Servant of Freya	76-77	Elemental	0	0	17	0	Melee		composed kit: Elemental
+Y	28380	Shattertusk Bull	76-77	Beast	0	0	19	0	Melee		composed kit: Beast
+Y	28381	Shattertusk Calf	76	Beast	0	0	4	0	Melee		composed kit: Critter
+Y	28379	Shattertusk Mammoth	76-77	Beast	0	0	25	0	Melee		composed kit: Beast
+Y	28218	Snowblind Ghoul	76-77	Undead	0	0	120	0	Melee		composed kit: Undead
+Y	28079	Frenzyheart Hunter	77-78	Humanoid	0	0	85	0	Melee		composed kit: Beast
+Y	28078	Frenzyheart Ravager	77-78	Humanoid	0	0	106	0	Melee		composed kit: Humanoid
+Y	28112	Sparktouched Oracle	77-78	Humanoid	0	0	56	0	Melee		composed kit: Humanoid
+Y	28111	Sparktouched Warrior	77-78	Humanoid	0	0	62	0	Melee		composed kit: Humanoid
+Y	28083	Serfex the Reaver	78	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	30751	Kul'galar Oracle	79-80	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	28858	Storm Revenant	79-80	Elemental	0	0	23	0	Melee		composed kit: Elemental
+Y	30737	Nesingwary Game Warden	80	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	28877	Stormwatcher	80	Elemental	0	0	4	0	Melee		composed kit: Elemental

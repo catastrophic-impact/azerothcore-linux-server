@@ -1,0 +1,139 @@
+# Borean Tundra pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	25677	Borean Frog	1	Critter	0	0	18	0	Melee		composed kit: Aquatic
+Y	31685	Borean Marmot	1	Critter	0	0	93	0	Melee		composed kit: Critter
+Y	25652	Nerub'ar Scarab	1	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	25679	Steam Frog	1	Critter	0	0	97	0	Melee		composed kit: Aquatic
+Y	28440	Tundra Penguin	1	Critter	0	0	33	0	Melee		composed kit: Critter
+Y	25362	Warsong Swine	5-6	Beast	0	0	17	0	Melee		composed kit: Beast
+Y	27432	Warsong Hold Peon	64-65	Humanoid	0	0	7	0	Melee		composed kit: Critter
+Y	25361	Alliance Deserter	65-72	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	25610	Scourge Prisoner	65-67	Humanoid	0	0	19	0	Melee		composed kit: Undead
+Y	26112	Bor'gorok Peon	66-69	Humanoid	0	0	8	0	Melee		composed kit: Critter
+Y	25829	Marsh Fawn	66-67	Beast	0	0	37	0	Melee		composed kit: Critter
+Y	26159	Taunka'le Evacuee	66-71	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	25488	Wooly Rhino Calf	67	Beast	43	0	118	0	Melee		composed kit: Critter
+Y	25470	Bloodspore Firestarter	68-69	Humanoid	0	0	47	0	Melee		composed kit: Humanoid
+Y	25467	Bloodspore Harvester	68-69	Humanoid	0	0	54	0	Melee		composed kit: Humanoid
+Y	25464	Bloodspore Moth	68-69	Beast	37	0	55	0	Melee		composed kit: Flying
+Y	25468	Bloodspore Roaster	68-69	Humanoid	0	0	27	0	Melee		composed kit: Humanoid
+Y	25317	Civilian Recruit	68	Humanoid	0	0	13	0	Melee		composed kit: Critter
+Y	25605	Clandestine Cultist	68-69	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	25227	Crypt Crawler	68-69	Undead	0	0	31	0	Melee		composed kit: Undead
+Y	25651	Cultist Necrolyte	68-69	Humanoid	0	0	12	0	Melee		composed kit: Undead
+Y	24567	Den Vermin	68-69	Humanoid	0	0	33	0	Melee		composed kit: Humanoid
+Y	26189	Fleeing Cultist	68-69	Humanoid	0	0	3	0	Melee		composed kit: Undead
+Y	25276	Goblin Siege Engineer	68-71	Humanoid	0	0	10	0	Melee		composed kit: Mechanical
+Y	25623	Harvest Collector	68	Mechanical	0	0	12	0	Melee		composed kit: Mechanical
+Y	25596	Infected Kodo Beast	68	Beast	0	0	22	0	Melee		composed kit: Beast
+Y	25496	Kvaldir Mist Lord	68-69	Humanoid	0	0	35	0	Melee		composed kit: Aquatic
+Y	25479	Kvaldir Mistweaver	68-69	Humanoid	0	0	22	0	Melee		composed kit: Aquatic
+Y	25760	Kvaldir Raider	68-69	Humanoid	0	0	14	0	Melee		composed kit: Aquatic
+Y	25481	Landing Crawler	68-69	Beast	8	0	17	0	Melee		composed kit: Aquatic
+Y	24613	Mammoth Calf	68	Beast	0	0	83	0	Melee		composed kit: Critter
+Y	24562	Nerub'ar Invader	68-69	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	24566	Nerub'ar Skitterer	68-69	Undead	0	0	34	0	Melee		composed kit: Undead
+Y	25650	Plagued Scavenger	68-69	Undead	0	0	16	0	Melee		composed kit: Undead
+Y	24576	Riplash Myrmidon	68	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	24662	Riplash Sorceress	68	Humanoid	0	0	6	0	Melee		composed kit: Magic
+Y	25582	Scourged Flamespitter	68-69	Undead	0	0	16	0	Melee		composed kit: Undead
+Y	25981	Scourged Footman	68-69	Undead	0	0	18	0	Melee		composed kit: Undead
+Y	25521	Skadir Longboatsman	68-69	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	25523	Skadir Mariner	68-69	Humanoid	0	0	24	0	Melee		composed kit: Aquatic
+Y	25613	Skadir Mistweaver	68-69	Humanoid	0	0	23	0	Melee		composed kit: Humanoid
+Y	25522	Skadir Raider	68-69	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	25520	Skadir Runecaster	68-69	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	26172	Slain Cultist	68-69	Humanoid	0	0	7	0	Melee		composed kit: Undead
+Y	25234	Stormfleet Deckhand	68-69	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	25850	Trapped Mammoth Calf	68	Beast	0	0	19	0	Melee		composed kit: Critter
+Y	25675	Tundra Wolf	68	Beast	1	0	19	0	Melee		composed kit: Beast
+Y	25333	Undying Aggressor	68-69	Undead	0	0	59	0	Melee		composed kit: Undead
+Y	25600	Unliving Swine	68-69	Undead	0	0	44	0	Melee		composed kit: Undead
+Y	25275	Warsong Blacksmith	68-70	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	25487	Wooly Rhino Matriarch	68	Beast	43	0	31	0	Melee		composed kit: Beast
+Y	25355	Beryl Hound	69-70	Demon	0	0	22	0	Melee		composed kit: Beast
+Y	25585	Beryl Mage Hunter	69-70	Dragonkin	0	0	20	0	Melee		composed kit: Dragonkin
+Y	25449	Beryl Reclaimer	69-70	Humanoid	0	0	44	0	Melee		composed kit: Humanoid
+Y	25316	Beryl Sorcerer	69-70	Humanoid	0	0	12	0	Melee		composed kit: Magic
+Y	25353	Beryl Treasure Hunter	69-70	Humanoid	0	0	37	0	Melee		composed kit: Beast
+Y	25718	Coldarra Mage Slayer	69	Demon	0	0	11	0	Melee		composed kit: Magic
+Y	25609	En'kilah Necrolord	69	Humanoid	0	0	20	0	Melee		composed kit: Undead
+Y	25351	Ghostly Sage	69-70	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	25836	Loot Crazed Diver	69-70	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	25806	Loot Crazed Poacher	69-70	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	25880	Minion of Kaw	69-71	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	25294	Nerub'ar Web Lord	69	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	25839	Northsea Mercenary	69-70	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	25844	Northsea Thug	69-70	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	25817	Oiled Fledgeling	69	Beast	26	0	65	0	Melee		composed kit: Flying
+Y	25228	Risen Crypt Lord	69	Undead	0	0	5	0	Melee		composed kit: Undead
+Y	25350	Risen Longrunner	69-70	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	25306	Valiance Keep Cannoneer	69	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	29617	Valiance Keep Defender	69	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	27393	Valiance Keep Fisherman	69	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	25313	Valiance Keep Footman	69	Humanoid	0	0	23	0	Melee		composed kit: Humanoid
+Y	25311	Valiance Keep Rifleman	69	Humanoid	0	0	30	0	Melee		composed kit: Humanoid
+Y	25611	Warsong Aberration	69	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	25216	Winterfin Oracle	69-70	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	25215	Winterfin Shorestriker	69-70	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	25217	Winterfin Warrior	69-70	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	24614	Wooly Mammoth	69	Beast	0	0	54	0	Melee		composed kit: Beast
+Y	25489	Wooly Rhino Bull	69	Beast	43	0	18	0	Melee		composed kit: Beast
+Y	25793	55-D Collect-a-tron	70-71	Mechanical	0	0	5	0	Melee		composed kit: Mechanical
+Y	26126	Bone Warrior	70-71	Undead	0	0	26	0	Melee		composed kit: Undead
+Y	26174	Carrion Condor	70-71	Beast	7	0	72	0	Melee		composed kit: Flying
+Y	24957	Cult Plaguebringer	70-71	Humanoid	0	0	19	0	Melee		composed kit: Undead
+Y	25758	Defendo-tank 66D	70-71	Mechanical	0	0	52	0	Melee		composed kit: Mechanical
+Y	28150	Destroyed Siege Tank	70	Mechanical	0	0	9	0	Melee		composed kit: Mechanical
+Y	25415	Enraged Tempest	70-71	Elemental	0	0	22	0	Melee		composed kit: Elemental
+Y	25660	Festering Ghoul	70-71	Undead	0	0	31	0	Melee		composed kit: Undead
+Y	26601	Fizzcrank Airman	70	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	25501	Gammoth Tender	70	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	25204	Glimmer Bay Orca	70-71	Beast	0	0	6	0	Melee		composed kit: Beast
+Y	25701	Gorloc Dredger	70-71	Humanoid	0	0	21	0	Melee		composed kit: Aquatic
+Y	25686	Gorloc Gibberer	70-71	Humanoid	0	0	25	0	Melee		composed kit: Aquatic
+Y	25700	Gorloc Hunter	70-71	Humanoid	0	0	26	0	Melee		composed kit: Aquatic
+Y	25699	Gorloc Mud Splasher	70-71	Humanoid	0	0	22	0	Melee		composed kit: Aquatic
+Y	25687	Gorloc Steam Belcher	70-71	Humanoid	0	0	29	0	Melee		composed kit: Aquatic
+Y	25685	Gorloc Waddler	70-71	Humanoid	0	0	20	0	Melee		composed kit: Aquatic
+Y	25764	Kaskala Defender	70	Humanoid	0	0	41	0	Melee		composed kit: Humanoid
+Y	25979	Loot Crazed Hunter	70-71	Humanoid	0	0	10	0	Melee		composed kit: Beast
+Y	25429	Magmoth Forager	70-71	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	25680	Marsh Caribou	70-71	Beast	0	0	182	0	Melee		composed kit: Beast
+Y	25622	Nerub'ar Tunneler	70-71	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	24563	Nerub'ar Venomspitter	70-71	Undead	0	0	27	0	Melee		composed kit: Undead
+Y	25619	Nerub'ar Warrior	70-71	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	25835	Nesingwary Trapper	70-71	Humanoid	0	0	15	0	Melee		composed kit: Beast
+Y	25750	Oil-soaked Caribou	70	Beast	0	0	11	0	Melee		composed kit: Beast
+Y	25791	Oil-stained Wolf	70-71	Beast	1	0	39	0	Melee		composed kit: Beast
+Y	25482	Sand Turtle	70	Beast	21	0	5	0	Melee		composed kit: Aquatic
+Y	25752	Scavenge-bot 004-A8	70-71	Mechanical	0	0	30	0	Melee		composed kit: Mechanical
+Y	25792	Scavenge-bot 005-B6	70-71	Mechanical	0	0	18	0	Melee		composed kit: Mechanical
+Y	25753	Sentry-bot 57-K	70	Mechanical	0	0	56	0	Melee		composed kit: Mechanical
+Y	24601	Steam Rager	70-71	Elemental	0	0	59	0	Melee		composed kit: Elemental
+Y	26160	Taunka'le Pack Kodo	70	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	27189	Unu'pe Spearman	70	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	29965	Unu'pe Turtle Rider	70	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	26047	Warsong Worg	70	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	26202	Ziggurat Defender	70-71	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	25721	Arcane Serpent	71-72	Dragonkin	0	0	15	0	Melee		composed kit: Dragonkin
+Y	25724	Ascended Mage Hunter	71-72	Humanoid	0	0	4	0	Melee		composed kit: Magic
+Y	25713	Blue Drakonid Supplicant	71-72	Dragonkin	0	0	6	0	Melee		composed kit: Dragonkin
+Y	25717	Coldarra Scalesworn	71-72	Dragonkin	0	0	10	0	Melee		composed kit: Dragonkin
+Y	25719	Coldarra Spellbinder	71-72	Humanoid	0	0	15	0	Melee		composed kit: Magic
+Y	25722	Coldarra Spellweaver	71-72	Dragonkin	0	0	30	0	Melee		composed kit: Dragonkin
+Y	25728	Coldarra Wyrmkin	71-72	Dragonkin	0	0	38	0	Melee		composed kit: Dragonkin
+Y	25814	Fizzcrank Mechagnome	71	Mechanical	0	0	21	0	Melee		composed kit: Mechanical
+Y	25709	Glacial Ancient	71-72	Elemental	0	0	9	0	Melee		composed kit: Elemental
+Y	27107	Injured Warsong Mage	71-73	Humanoid	0	0	4	0	Melee		composed kit: Magic
+Y	25707	Magic-bound Ancient	71-72	Elemental	0	0	8	0	Melee		composed kit: Elemental
+Y	25321	Kaskala Craftsman	72	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	25322	Kaskala Shaman	72	Humanoid	0	0	7	0	Melee		composed kit: Elemental
+Y	25396	Naxxanar Skeletal Mage	72	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	26127	Nexus Drake Hatchling	72	Dragonkin	0	0	7	0	Melee		composed kit: Dragonkin
+Y	27106	Injured Warsong Warrior	73	Humanoid	0	0	14	0	Melee		composed kit: Critter
+Y	25332	Stitched Warsong Horror	73-75	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	25253	Valiance Keep Footman	75	Humanoid	0	0	40	0	Melee		composed kit: Humanoid
+Y	25244	Warsong Marksman	75	Humanoid	0	0	39	0	Melee		composed kit: Beast
+Y	25286	Warsong Wind Rider	75	Humanoid	0	0	6	0	Melee		composed kit: Humanoid

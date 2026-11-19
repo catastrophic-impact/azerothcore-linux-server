@@ -1,5 +1,13 @@
 math.randomseed(tonumber(os.getenv("SEED")) or 1)
 package.path = "scripts/?.lua;" .. package.path
+-- the battle TRACE is on for the whole run; its lines are collected (TRACE=1 also shows them) and checked at the end
+PB_TRACE = true
+-- PBCAST=1: a recording PB_CAST stands in for the real-spell module, so the presentation MODES (melee/ranged hit casts, self/target/aura support casts) run and can be checked
+CASTS = {}
+if os.getenv("PBCAST") then PB_CAST = { Cast = function(att, tgt, spell, o) CASTS[#CASTS + 1] = { spell = spell, heal = o and o.heal, retry = o and o.retry }; return true end } end
+local TL, realprint = {}, print
+print = function(...) local t = {}; for i = 1, select("#", ...) do t[i] = tostring((select(i, ...))) end; local l = table.concat(t, " ")
+  if l:find("^%[pbtrace%]") then TL[#TL + 1] = l; if os.getenv("TRACE") then realprint(l) end else realprint(l) end end
 local sent, events = {}, {}
 local obj = setmetatable({}, { __index = function(t, k) return function(self, ...) if k == "GetGUID" then return setmetatable({ id = 1 }, {}) elseif k == "GetGUIDLow" then return 1 elseif k=="GetX" or k=="GetY" or k=="GetZ" then return 0 elseif k=="GetDisplayId" then return 4000 elseif k=="GetMap" then return {GetWorldObject=function() return t end} end return t end end })
 local player = setmetatable({}, { __index = function(t, k)
@@ -104,6 +112,94 @@ do
     local abil = 0; for i = before + 1, #sent do if sent[i]:match("^abil|") then abil = abil + 1 end end
     assert(abil >= 1, "retail battle sent its abilities to the addon")
     print("retail core battle played to the end, turns:", turns2)
+end
+-- MULTI-ROUND ABILITY (Stampede): after the first round the player is offered NO choice: the turn message is 'lock' with the round count, and it passes by itself
+do
+    PB_STORE.HealAll(player)
+    events["pbj|setteam"](player, "1,2442,0,0"); events["pbj|active"](player, "1")
+    local foe = { { species = 721, level = 10, quality = 2 } }
+    assert(PB_BATTLE.Start(player, foe), "battle for the stampede test must start")
+    local function pump(untilFn) for _ = 1, 400 do table.sort(timers, function(a, b) return a.t < b.t end); local tm = table.remove(timers, 1); if not tm then break end; for _, x in ipairs(timers) do x.t = x.t - tm.t end; tm.f(); if untilFn and untilFn() then return true end end end
+    local function lastTurn() for i = #sent, 1, -1 do if sent[i]:match("^turn|") then return sent[i], i end end end
+    pump(function() return PB_BATTLE.Waiting(player) end)
+    local base = #sent; PB_BATTLE.Command(player, "A1")   -- slot 1 = Stampede for the Cow
+    local locked
+    pump(function() for i = base + 1, #sent do if sent[i]:match("^turn|lock;") then locked = sent[i]; return true end end end)
+    assert(locked, "after Stampede's first round the turn message must be 'lock' (the player has no choice), got: " .. tostring(lastTurn()))
+    assert(locked:find("round 2 of 3", 1, true), "the lock message names the round: " .. locked)
+    -- the turn passes by itself: a third round follows without any command
+    local n0 = #sent
+    pump(function() for i = n0 + 1, #sent do if sent[i]:match("^turn|lock;.*round 3 of 3") then return true end end end)
+    local l, idx = lastTurn(); assert(l:find("round 3 of 3", 1, true), "round 3 follows by itself: " .. tostring(l))
+    pump(function() local t = lastTurn(); return t and t:match("^turn|go;") end)
+    assert((lastTurn()):match("^turn|go;"), "after the third round the player gets the buttons back")
+    print("stampede: locked for rounds 2 and 3, buttons back afterwards")
+    events["pbt|quit"](player); pump()
+end
+-- FORFEIT: a forfeited battle is a defeat, every pet of the team ends at 1 HP (and an open journal is told)
+do
+    PB_STORE.HealAll(player)   -- earlier battles of this seed left pets hurt
+    events["pbj|setteam"](player, "1,721,69,299"); events["pbj|active"](player, "1")
+    local foe = { { species = 721, level = 10, quality = 2 } }
+    assert(PB_BATTLE.Start(player, foe), "battle for the forfeit test must start")
+    for _ = 1, 60 do table.sort(timers, function(a, b) return a.t < b.t end); local tm = table.remove(timers, 1); if not tm then break end; for _, x in ipairs(timers) do x.t = x.t - tm.t end; tm.f(); if PB_BATTLE.Waiting(player) then break end end
+    assert(PB_BATTLE.Waiting(player), "the forfeit test battle waits for a command")
+    local before = #sent
+    for _, sp in ipairs({ 721, 69, 299 }) do local _, max = PB_STORE.PetHp(sp, PB_STORE.Pets(player)[sp]); local cur = PB_STORE.PetHp(sp, PB_STORE.Pets(player)[sp]); assert(cur == max, "pet " .. sp .. " starts at full health") end
+    events["pbt|quit"](player)
+    for _ = 1, 400 do table.sort(timers, function(a, b) return a.t < b.t end); local tm = table.remove(timers, 1); if not tm then break end; for _, x in ipairs(timers) do x.t = x.t - tm.t end; tm.f() end
+    for _, sp in ipairs({ 721, 69, 299 }) do local cur = PB_STORE.PetHp(sp, PB_STORE.Pets(player)[sp]); assert(cur == 1, "forfeit: pet " .. sp .. " ends at 1 HP, got " .. cur) end
+    local pushed = 0; for i = before + 1, #sent do if sent[i]:match("^pet|") then pushed = pushed + 1 end end
+    assert(pushed >= 3, "forfeit: the journal was sent the new health of the team (" .. pushed .. " pet messages)")
+    print("forfeit: team knocked out, journal updated")
+end
+do   -- /pbtest bad: remembers the abilities of the battle just played (also after it ended)
+    local n = PB_BATTLE.Bad(player, "smoke test")
+    assert(n and n >= 1, "/pbtest bad found no recent ability after a full battle")
+end
+-- BATTLE TRACE checks: the transcript has what the player was offered, the engine events and the presentation steps; no offered choice was ignored by the engine
+do
+    local n = { offer = 0, ev = 0, cmd = 0, emote = 0, send = 0, viol = 0 }
+    for _, l in ipairs(TL) do
+        if l:find(" OFFER round ", 1, true) then n.offer = n.offer + 1 end
+        if l:find(" ev %d+/%d+ ") then n.ev = n.ev + 1 end
+        if l:find(" COMMAND ", 1, true) then n.cmd = n.cmd + 1 end
+        if l:find(" emote ", 1, true) then n.emote = n.emote + 1 end
+        if l:find(" -> addon ", 1, true) then n.send = n.send + 1 end
+        if l:find("VIOLATION", 1, true) then n.viol = n.viol + 1; realprint(l) end
+    end
+    assert(n.offer > 0 and n.ev > 0 and n.cmd > 0 and n.emote > 0 and n.send > 0, string.format("trace is incomplete: offer=%d ev=%d command=%d emote=%d addon=%d", n.offer, n.ev, n.cmd, n.emote, n.send))
+    assert(n.viol == 0 and PB_BATTLE.Violations() == 0, n.viol .. " offered choice(s) were ignored by the engine (see VIOLATION lines)")
+    -- the checker itself must catch the Stampede class of bug (mutation check): ability 2 offered but slot 1 ran / nothing ran / no capture / no swap
+    local H = PB_BATTLE.Honored
+    assert(H("A2", { { k = "act", side = "P", slot = 2 } }) == true)
+    assert(H("A2", { { k = "act", side = "P", slot = 1, name = "Bite" } }) == false, "checker must flag a different slot")
+    assert(H("A2", { { k = "act", side = "E", slot = 1 }, { k = "stunned", side = "P" } }) == true, "enemy first and stunned my pet: fine")
+    assert(H("A2", { { k = "act", side = "E", slot = 1 }, { k = "dmg", side = "P" }, { k = "faint", side = "E" } }) == true, "the enemy acted first and died from a reflect: nothing left to attack")
+    assert(H("A2", { { k = "faint", side = "E" } }) == false, "an enemy faint with no enemy action first is not an excuse")
+    assert(H("A2", { { k = "stunned", side = "P" } }) == false, "stunned with no enemy action first: the choice was offered, so it is a violation")
+    assert(H("A2", { { k = "act", side = "E", slot = 1 }, { k = "swap", side = "P", forced = true }, { k = "act", side = "P", slot = 1 } }) == true, "forced swap: the new pet may use another slot (cooldowns)")
+    assert(H("A2", { { k = "act", side = "E", slot = 1 }, { k = "swap", side = "P" }, { k = "act", side = "P", slot = 1 } }) == false, "a non-forced swap is no excuse")
+    assert(H("A2", {}) == false and H("T", {}) == false and H("S2", { { k = "swap", side = "P", idx = 3 } }) == false)
+    assert(H("S2", { { k = "swap", side = "P", idx = 2 } }) == true and H("T", { { k = "trap" } }) == true)
+    realprint(string.format("trace: %d lines, %d offers, %d commands, %d events, %d emotes, 0 violations", #TL, n.offer, n.cmd, n.ev, n.emote))
+end
+if os.getenv("PBCAST") then   -- every act the engine ordered with a support mode produced exactly that support cast (same spell, same order); every hit cast belongs to an act with that spell
+    local want, got, hitspells, hitcasts = {}, {}, {}, 0
+    for _, l in ipairs(TL) do
+        if l:find(" ev %d+/%d+ ") and l:find(" k=act ", 1, true) then
+            local vis, vm = l:match(" vis=(%d+)"), l:match(" vm=(%a+)")
+            if vis and (vm == "self" or vm == "target" or vm == "aura") then want[#want + 1] = vm .. " " .. vis end
+            if vis and (vm == "melee" or vm == "ranged" or not vm) then hitspells[vis] = true end
+        end
+        local m, sp = l:match(" support (%a+) spell (%d+) on ")
+        if m then got[#got + 1] = m .. " " .. sp end
+        local cs = l:match(" cast real spell (%d+) ")
+        if cs then hitcasts = hitcasts + 1; assert(hitspells[cs], "a hit cast of spell " .. cs .. " belongs to no act with that visual") end
+    end
+    assert(#want == #got, string.format("support casts: the engine ordered %d, the battle played %d", #want, #got))
+    for i = 1, #want do assert(want[i] == got[i], "support cast " .. i .. ": ordered '" .. want[i] .. "', played '" .. got[i] .. "'") end
+    realprint(string.format("presentation modes: %d support casts, %d hit casts, %d PB_CAST calls", #want, hitcasts, #CASTS))
 end
 local counts = {}
 for _, m in ipairs(sent) do local a = m:match("^(%a+)"); counts[a] = (counts[a] or 0) + 1 end

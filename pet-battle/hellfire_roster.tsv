@@ -1,0 +1,95 @@
+# Hellfire Peninsula pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	15476	Scorpion	1	Critter	0	0	22	0	Melee		composed kit: Critter
+Y	16598	Eye of Thrallmar	48-49	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	19425	Orgrimmar Peon	50-51	Humanoid	0	0	8	0	Melee		composed kit: Critter
+Y	16591	Thrallmar Peon	50-51	Humanoid	0	0	14	0	Melee		composed kit: Critter
+Y	16838	Honor Hold Miner	53-55	Humanoid	0	0	5	0	Melee		composed kit: Critter
+Y	16835	Explorers' League Archaeologist	54-56	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	16884	War Horse	55-56	Beast	0	0	8	0	Melee		composed kit: Beast
+Y	16938	Dreghood Brute	56-57	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	16937	Dreghood Geomancer	56-57	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	18978	Heckling Fel Sprite	57-58	Demon	0	0	64	0	Melee		composed kit: Magic
+Y	19432	Injured Grunt	57-58	Humanoid	0	0	6	0	Melee		composed kit: Critter
+Y	16865	Injured Stormwind Infantry	57-58	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	16864	Stormwind Infantry	57-58	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	19624	Wounded Stormwind Infantry	57-58	Humanoid	0	0	8	0	Melee		composed kit: Critter
+Y	16578	Blood Elf Pilgrim	58-60	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	19701	Bonechewer Evoker	58-59	Humanoid	0	0	38	0	Melee		composed kit: Humanoid
+Y	16876	Bonechewer Mutant	58-59	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	16925	Bonechewer Raider	58-59	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	18952	Bonechewer Scavenger	58-59	Humanoid	0	0	54	0	Melee		composed kit: Humanoid
+Y	16972	Bonestripper Buzzard	58-59	Beast	7	0	54	0	Melee		composed kit: Flying
+Y	16847	Debilitated Mag'har Grunt	58	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	16836	Escaped Dreghood	58	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	19190	Fel Handler	58-59	Demon	0	0	31	0	Melee		composed kit: Magic
+Y	19136	Flamewaker Imp	58	Demon	0	0	32	0	Melee		composed kit: Magic
+Y	19261	Infernal Warbringer	58-59	Demon	0	0	45	0	Melee		composed kit: Mechanical
+Y	16866	Injured Nethergarde Infantry	58-59	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	16590	Injured Thrallmar Grunt	58-59	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	16831	Nethergarde Infantry	58-60	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	16950	Netherhound	58	Demon	0	0	29	0	Melee		composed kit: Beast
+Y	17263	Recovering Pilgrim	58-60	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	16879	Starving Helboar	58-59	Demon	0	0	64	0	Melee		composed kit: Beast
+Y	16907	Bleeding Hollow Peon	59	Humanoid	0	0	33	0	Melee		composed kit: Critter
+Y	18981	Doomwhisperer	59	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	19434	Dreadcaller	59	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	18827	Gan'arg Sapper	59-60	Demon	0	0	41	0	Melee		composed kit: Mechanical
+Y	16976	Ghostly Denizen	59-60	Undead	0	0	18	0	Melee		composed kit: Undead
+Y	16896	Honor Hold Archer	59-60	Humanoid	0	0	15	0	Melee		composed kit: Beast
+Y	16842	Honor Hold Defender	59-60	Humanoid	0	0	42	0	Melee		composed kit: Humanoid
+Y	16932	Razorfang Hatchling	59-60	Beast	31	0	48	0	Melee		composed kit: Critter
+Y	16904	Unyielding Footman	59-60	Undead	0	0	37	0	Melee		composed kit: Undead
+Y	16906	Unyielding Knight	59-60	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	16905	Unyielding Sorcerer	59-60	Undead	0	0	14	0	Melee		composed kit: Undead
+Y	16873	Bleeding Hollow Dark Shaman	60-61	Humanoid	0	0	5	0	Melee		composed kit: Elemental
+Y	16871	Bleeding Hollow Grunt	60-61	Humanoid	0	0	44	0	Melee		composed kit: Humanoid
+Y	19422	Bleeding Hollow Necrolyte	60-61	Humanoid	0	0	20	0	Melee		composed kit: Undead
+Y	19424	Bleeding Hollow Tormentor	60-61	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	19423	Bleeding Hollow Worg	60	Beast	1	0	6	0	Melee		composed kit: Beast
+Y	16863	Deranged Helboar	60-61	Demon	0	0	87	0	Melee		composed kit: Beast
+Y	22461	Fel Cannon MKI	60	Mechanical	0	0	14	0	Melee		composed kit: Mechanical
+Y	16954	Forge Camp Legionnaire	60-61	Demon	0	0	30	0	Melee		composed kit: Magic
+Y	16947	Gan'arg Servant	60-61	Demon	0	0	36	0	Melee		composed kit: Mechanical
+Y	16843	Honor Hold Cavalryman	60	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	19259	Infernal Invader	60-61	Demon	0	0	11	0	Melee		composed kit: Mechanical
+Y	17053	Kaliri Swooper	60-61	Beast	26	0	8	0	Melee		composed kit: Flying
+Y	16974	Rogue Voidwalker	60-61	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	16960	Sister of Grief	60-61	Demon	0	0	18	0	Melee		composed kit: Magic
+Y	16927	Stonescythe Whelp	60-61	Humanoid	0	0	75	0	Melee		composed kit: Humanoid
+Y	16580	Thrallmar Grunt	60	Humanoid	0	0	49	0	Melee		composed kit: Humanoid
+Y	16582	Thrallmar Marksman	60	Humanoid	0	0	14	0	Melee		composed kit: Beast
+Y	16599	Thrallmar Wolf Rider	60	Humanoid	0	0	8	0	Melee		composed kit: Beast
+Y	16975	Uncontrolled Voidwalker	60-61	Demon	0	0	9	0	Melee		composed kit: Magic
+Y	16973	Bonestripper Vulture	61-62	Beast	7	0	56	0	Melee		composed kit: Flying
+Y	17014	Collapsing Voidwalker	61-62	Demon	0	0	27	0	Melee		composed kit: Magic
+Y	16880	Hulking Helboar	61-62	Demon	0	0	64	0	Melee		composed kit: Beast
+Y	16846	Mag'har Grunt	61	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	19408	Maiden of Pain	61	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	16946	Mo'arg Forgefiend	61-62	Demon	0	0	5	0	Melee		composed kit: Mechanical
+Y	19189	Quillfang Skitterer	61-62	Beast	31	0	18	0	Melee		composed kit: Beast
+Y	19415	Shattered Hand Acolyte	61-62	Humanoid	0	0	7	0	Melee		composed kit: Undead
+Y	16878	Shattered Hand Berserker	61-62	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	19295	Shattered Hand Grenadier	61	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	19413	Shattered Hand Mage	61-62	Humanoid	0	0	7	0	Melee		composed kit: Magic
+Y	16929	Stonescythe Alpha	61-62	Humanoid	0	0	47	0	Melee		composed kit: Humanoid
+Y	16928	Stonescythe Ambusher	61	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	16951	Terrorfiend	61-62	Demon	0	0	27	0	Melee		composed kit: Magic
+Y	19527	Vacillating Voidcaller	61-62	Demon	0	0	10	0	Melee		composed kit: Magic
+Y	16966	Haal'eshi Windwalker	62-63	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	16912	Mag'har Hunter	62-63	Humanoid	0	0	17	0	Melee		composed kit: Beast
+Y	16911	Mag'har Watcher	62-63	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	19192	Mistress of Doom	62-63	Demon	0	0	3	0	Melee		composed kit: Magic
+Y	16934	Quillfang Ravager	62-63	Beast	31	0	6	0	Melee		composed kit: Beast
+Y	16870	Shattered Hand Captain	62-63	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	16867	Shattered Hand Grunt	62-63	Humanoid	0	0	38	0	Melee		composed kit: Humanoid
+Y	19410	Shattered Hand Neophyte	62-63	Humanoid	0	0	9	0	Melee		composed kit: Critter
+Y	19411	Shattered Hand Warlock	62-63	Humanoid	0	0	11	0	Melee		composed kit: Magic
+Y	17058	Illidari Taskmaster	63	Demon	0	0	14	0	Melee		composed kit: Magic
+Y	17035	Kaliri Matriarch	63	Beast	26	0	6	0	Melee		composed kit: Flying
+Y	17282	Falcon Watch Ranger	68	Humanoid	0	0	12	0	Melee		composed kit: Beast
+Y	24919	Wrath Herald	69-70	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	19324	Armored Gryphon Destroyer	70	Beast	0	0	3	0	Melee		composed kit: Flying
+Y	19275	Armored Wyvern Destroyer	70	Beast	0	0	5	0	Melee		composed kit: Flying
+Y	22323	Incandescent Fel Spark	70-71	Elemental	0	0	29	0	Melee		composed kit: Magic

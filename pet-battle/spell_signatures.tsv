@@ -1,0 +1,917 @@
+source	spell_id	name	features	cooldown_ms
+class:DeathKnight/Blood	49941	Blood Boil	A,D	0
+class:DeathKnight/Blood	61158	Blood Gorged		0
+class:DeathKnight/Blood	48266	Blood Presence	DU	1000
+class:DeathKnight/Blood	66215	Blood Strike	D	0
+class:DeathKnight/Blood	45529	Blood Tap		60000
+class:DeathKnight/Blood	50449	Bloody Vengeance	DU	0
+class:DeathKnight/Blood	49028	Dancing Rune Weapon	DUM,SUM	90000
+class:DeathKnight/Blood	56222	Dark Command		8000
+class:DeathKnight/Blood	62904	Death Coil	DUM,H	0
+class:DeathKnight/Blood	48743	Death Pact	DUM,H	120000
+class:DeathKnight/Blood	55262	Heart Strike	D	0
+class:DeathKnight/Blood	49016	Hysteria	DU	180000
+class:DeathKnight/Blood	49005	Mark of Blood	DUM,H	180000
+class:DeathKnight/Blood	50842	Pestilence	A,DUM	0
+class:DeathKnight/Blood	48982	Rune Tap		60000
+class:DeathKnight/Blood	53331	Rune of Lichbane	DU,DUM	0
+class:DeathKnight/Blood	53323	Rune of Swordshattering	DUM	0
+class:DeathKnight/Blood	47476	Strangulate	DUM	120000
+class:DeathKnight/Blood	55233	Vampiric Blood	H	60000
+class:DeathKnight/Blood	50150	Will of the Necropolis	DUM	0
+class:DeathKnight/Frost	45524	Chains of Ice	DUM,SD	0
+class:DeathKnight/Frost	66188	Death Strike	D,DUM	0
+class:DeathKnight/Frost	49796	Deathchill		120000
+class:DeathKnight/Frost	47568	Empower Rune Weapon		300000
+class:DeathKnight/Frost	57532	Eye of Acherus	SUM	10000
+class:DeathKnight/Frost	48263	Frost Presence	VU	1000
+class:DeathKnight/Frost	66196	Frost Strike	D	0
+class:DeathKnight/Frost	49142	Frozen Rune Weapon	DU,VU	0
+class:DeathKnight/Frost	57623	Horn of Winter	DU	20000
+class:DeathKnight/Frost	51411	Howling Blast	A,D,DUM	8000
+class:DeathKnight/Frost	49203	Hungering Cold	DUM	60000
+class:DeathKnight/Frost	48792	Icebound Fortitude	DUM,VU	120000
+class:DeathKnight/Frost	52372	Icy Touch	D	6000
+class:DeathKnight/Frost	49039	Lichborne		120000
+class:DeathKnight/Frost	47528	Mind Freeze		10000
+class:DeathKnight/Frost	66198	Obliterate	D,DUM	0
+class:DeathKnight/Frost	3714	Path of Frost	DUM	0
+class:DeathKnight/Frost	66217	Rune Strike	D	0
+class:DeathKnight/Frost	53341	Rune of Cinderglacier	DU,DUM	0
+class:DeathKnight/Frost	53343	Rune of Razorice	DU,DUM	0
+class:DeathKnight/Frost	51271	Unbreakable Armor	DEF	60000
+class:DeathKnight/Unholy	48778	Acherus Deathcharger		0
+class:DeathKnight/Unholy	48707	Anti-Magic Shell	DEF	45000
+class:DeathKnight/Unholy	51052	Anti-Magic Zone	SUM	120000
+class:DeathKnight/Unholy	42651	Army of the Dead	DUM,SUM	0
+class:DeathKnight/Unholy	49222	Bone Shield	DU,VU	60000
+class:DeathKnight/Unholy	51328	Corpse Explosion	DUM	5000
+class:DeathKnight/Unholy	52375	Death Coil	DUM,H	0
+class:DeathKnight/Unholy	50977	Death Gate		60000
+class:DeathKnight/Unholy	49576	Death Grip	DUM	35000
+class:DeathKnight/Unholy	49999	Death Strike	D,DUM	0
+class:DeathKnight/Unholy	49938	Death and Decay	A	30000
+class:DeathKnight/Unholy	63560	Ghoul Frenzy	SL	10000
+class:DeathKnight/Unholy	51267	On a Pale Horse	S,SD,SL,SU	0
+class:DeathKnight/Unholy	66216	Plague Strike	D	0
+class:DeathKnight/Unholy	61999	Raise Ally	DUM	600000
+class:DeathKnight/Unholy	46584	Raise Dead	DUM	180000
+class:DeathKnight/Unholy	55271	Scourge Strike	D,DUM	0
+class:DeathKnight/Unholy	49206	Summon Gargoyle	SUM	180000
+class:DeathKnight/Unholy	50536	Unholy Blight	P	0
+class:DeathKnight/Unholy	48265	Unholy Presence	SU	1000
+class:Druid/Balance	22812	Barkskin	VU	60000
+class:Druid/Balance	33786	Cyclone	IM,S	0
+class:Druid/Balance	53308	Entangling Roots	P,R	0
+class:Druid/Balance	770	Faerie Fire	DEF	0
+class:Druid/Balance	33831	Force of Nature	SUM	180000
+class:Druid/Balance	18658	Hibernate	S,SL	0
+class:Druid/Balance	48467	Hurricane	A,MH,SD	0
+class:Druid/Balance	29166	Innervate		180000
+class:Druid/Balance	48468	Insect Swarm	AD,P	0
+class:Druid/Balance	48463	Moonfire	D,P	0
+class:Druid/Balance	24907	Moonkin Aura		0
+class:Druid/Balance	24858	Moonkin Form	CR,DEF,DU,H,S,VU	0
+class:Druid/Balance	53312	Nature's Grasp	R	60000
+class:Druid/Balance	26995	Soothe Animal		0
+class:Druid/Balance	53201	Starfall		90000
+class:Druid/Balance	48465	Starfire	D	0
+class:Druid/Balance	18960	Teleport: Moonglade		0
+class:Druid/Balance	53307	Thorns	SH	0
+class:Druid/Balance	61391	Typhoon	D,SD,SUM	0
+class:Druid/Balance	48461	Wrath	D	0
+class:Druid/Feral Combat	1066	Aquatic Form	SL	0
+class:Druid/Feral Combat	8983	Bash	S	60000
+class:Druid/Feral Combat	5487	Bear Form	DU,SL	0
+class:Druid/Feral Combat	50334	Berserk	SL	180000
+class:Druid/Feral Combat	768	Cat Form	DU,SL	0
+class:Druid/Feral Combat	5209	Challenging Roar	A	180000
+class:Druid/Feral Combat	48570	Claw	D	0
+class:Druid/Feral Combat	48575	Cower		10000
+class:Druid/Feral Combat	33357	Dash	SU	180000
+class:Druid/Feral Combat	48560	Demoralizing Roar	A	0
+class:Druid/Feral Combat	9634	Dire Bear Form	DU,SL	0
+class:Druid/Feral Combat	5229	Enrage		60000
+class:Druid/Feral Combat	16857	Faerie Fire (Feral)	DEF	6000
+class:Druid/Feral Combat	49377	Feral Charge	R	0
+class:Druid/Feral Combat	16979	Feral Charge - Bear	R	15000
+class:Druid/Feral Combat	49376	Feral Charge - Cat	SUM	30000
+class:Druid/Feral Combat	48577	Ferocious Bite	D	0
+class:Druid/Feral Combat	33943	Flight Form	SU	0
+class:Druid/Feral Combat	22845	Frenzied Regeneration	H	0
+class:Druid/Feral Combat	6795	Growl		8000
+class:Druid/Feral Combat	34299	Improved Leader of the Pack	H	0
+class:Druid/Feral Combat	48568	Lacerate	D,P	0
+class:Druid/Feral Combat	49802	Maim	D,S	10000
+class:Druid/Feral Combat	33917	Mangle	DU,VU	0
+class:Druid/Feral Combat	48564	Mangle (Bear)	D	6000
+class:Druid/Feral Combat	48566	Mangle (Cat)	D	0
+class:Druid/Feral Combat	48480	Maul	D	0
+class:Druid/Feral Combat	49803	Pounce	S	0
+class:Druid/Feral Combat	49804	Pounce Bleed	P	0
+class:Druid/Feral Combat	37117	Primal Fury	CR	0
+class:Druid/Feral Combat	5215	Prowl	SD,ST	10000
+class:Druid/Feral Combat	48574	Rake	D,P	0
+class:Druid/Feral Combat	48579	Ravage	D	0
+class:Druid/Feral Combat	49800	Rip	P	0
+class:Druid/Feral Combat	52610	Savage Roar	DU,DUM	0
+class:Druid/Feral Combat	48572	Shred	D	0
+class:Druid/Feral Combat	61336	Survival Instincts	DUM	180000
+class:Druid/Feral Combat	40120	Swift Flight Form	SU	0
+class:Druid/Feral Combat	48562	Swipe (Bear)	A,D	0
+class:Druid/Feral Combat	62078	Swipe (Cat)	D	0
+class:Druid/Feral Combat	50213	Tiger's Fury	DU	30000
+class:Druid/Feral Combat	5225	Track Humanoids		1500
+class:Druid/Feral Combat	783	Travel Form	SL,SU	0
+class:Druid/Restoration	2893	Abolish Poison	CL	0
+class:Druid/Restoration	3137	Abolish Poison Effect	CL	0
+class:Druid/Restoration	8946	Cure Poison	CL	0
+class:Druid/Restoration	48470	Gift of the Wild	DEF	0
+class:Druid/Restoration	48378	Healing Touch	H	0
+class:Druid/Restoration	48451	Lifebloom	DUM,HOT	0
+class:Druid/Restoration	48469	Mark of the Wild	DEF	0
+class:Druid/Restoration	17116	Nature's Swiftness		180000
+class:Druid/Restoration	50464	Nourish	H	0
+class:Druid/Restoration	48477	Rebirth		600000
+class:Druid/Restoration	48443	Regrowth	H,HOT	0
+class:Druid/Restoration	64801	Rejuvenation	H	0
+class:Druid/Restoration	2782	Remove Curse	CL	0
+class:Druid/Restoration	50769	Revive		0
+class:Druid/Restoration	18562	Swiftmend	H	15000
+class:Druid/Restoration	48447	Tranquility	DUM,MH	480000
+class:Druid/Restoration	65139	Tree of Life	H	0
+class:Druid/Restoration	53251	Wild Growth	DUM,HOT	6000
+class:Hunter/Beast Mastery	13161	Aspect of the Beast	DU	1000
+class:Hunter/Beast Mastery	5118	Aspect of the Cheetah	SU	1000
+class:Hunter/Beast Mastery	61847	Aspect of the Dragonhawk	DG,DU	1000
+class:Hunter/Beast Mastery	27044	Aspect of the Hawk	DU	1000
+class:Hunter/Beast Mastery	13163	Aspect of the Monkey	DG,VU	1000
+class:Hunter/Beast Mastery	13159	Aspect of the Pack	SU	1000
+class:Hunter/Beast Mastery	34074	Aspect of the Viper	DU	1000
+class:Hunter/Beast Mastery	49071	Aspect of the Wild		1000
+class:Hunter/Beast Mastery	1462	Beast Lore		0
+class:Hunter/Beast Mastery	19574	Bestial Wrath	DU,SL	120000
+class:Hunter/Beast Mastery	883	Call Pet		0
+class:Hunter/Beast Mastery	62757	Call Stabled Pet		300000
+class:Hunter/Beast Mastery	2641	Dismiss Pet		0
+class:Hunter/Beast Mastery	6197	Eagle Eye	DUM	0
+class:Hunter/Beast Mastery	1002	Eyes of the Beast	DU,DUM,SL	0
+class:Hunter/Beast Mastery	6991	Feed Pet		10000
+class:Hunter/Beast Mastery	24406	Improved Mend Pet	CL	0
+class:Hunter/Beast Mastery	19577	Intimidation	SL	60000
+class:Hunter/Beast Mastery	34026	Kill Command	DU,DUM	60000
+class:Hunter/Beast Mastery	53271	Master's Call	DUM,R	60000
+class:Hunter/Beast Mastery	48990	Mend Pet	HOT,SL	0
+class:Hunter/Beast Mastery	982	Revive Pet	DUM	0
+class:Hunter/Beast Mastery	14327	Scare Beast	SL,SU	30000
+class:Hunter/Beast Mastery	24529	Spirit Bond		0
+class:Hunter/Beast Mastery	13481	Tame Beast		0
+class:Hunter/Beast Mastery	34471	The Beast Within	DU	0
+class:Hunter/Marksmanship	49050	Aimed Shot	D	10000
+class:Hunter/Marksmanship	49045	Arcane Shot	D	6000
+class:Hunter/Marksmanship	75	Auto Shot	D	0
+class:Hunter/Marksmanship	53209	Chimera Shot	D	10000
+class:Hunter/Marksmanship	35101	Concussive Barrage	SD	0
+class:Hunter/Marksmanship	5116	Concussive Shot	SD	12000
+class:Hunter/Marksmanship	20736	Distracting Shot		8000
+class:Hunter/Marksmanship	1543	Flare	A	20000
+class:Hunter/Marksmanship	53338	Hunter's Mark	DU	0
+class:Hunter/Marksmanship	53220	Improved Steady Shot	DU	0
+class:Hunter/Marksmanship	61006	Kill Shot	D	15000
+class:Hunter/Marksmanship	49048	Multi-Shot	D	10000
+class:Hunter/Marksmanship	3045	Rapid Fire	SU	300000
+class:Hunter/Marksmanship	35099	Rapid Killing	DU	0
+class:Hunter/Marksmanship	53230	Rapid Recuperation Effect		0
+class:Hunter/Marksmanship	23989	Readiness	DUM	180000
+class:Hunter/Marksmanship	3043	Scorpid Sting	AD	0
+class:Hunter/Marksmanship	49001	Serpent Sting	P	0
+class:Hunter/Marksmanship	34490	Silencing Shot	D	20000
+class:Hunter/Marksmanship	56641	Steady Shot	D,DUM	0
+class:Hunter/Marksmanship	19801	Tranquilizing Shot	CL	8000
+class:Hunter/Marksmanship	19506	Trueshot Aura	DU	0
+class:Hunter/Marksmanship	3034	Viper Sting		15000
+class:Hunter/Marksmanship	58434	Volley	A,DUM,MH	0
+class:Hunter/Marksmanship	53254	Wild Quiver Auto Shot	D	0
+class:Hunter/Survival	63672	Black Arrow	P	30000
+class:Hunter/Survival	48999	Counterattack	D,R	5000
+class:Hunter/Survival	19263	Deterrence		90000
+class:Hunter/Survival	781	Disengage		25000
+class:Hunter/Survival	19185	Entrapment	A,R	0
+class:Hunter/Survival	60053	Explosive Shot	DU,P	6000
+class:Hunter/Survival	49067	Explosive Trap	DU,P	30000
+class:Hunter/Survival	49065	Explosive Trap Effect	A,D,P	0
+class:Hunter/Survival	34501	Expose Weakness	DU	0
+class:Hunter/Survival	5384	Feign Death		30000
+class:Hunter/Survival	60202	Freezing Arrow		30000
+class:Hunter/Survival	60210	Freezing Arrow Effect	S	0
+class:Hunter/Survival	14311	Freezing Trap		30000
+class:Hunter/Survival	13809	Frost Trap	SD	30000
+class:Hunter/Survival	49056	Immolation Trap	P	30000
+class:Hunter/Survival	56453	Lock and Load		22000
+class:Hunter/Survival	34837	Master Tactician	CR	0
+class:Hunter/Survival	34477	Misdirection	DUM	30000
+class:Hunter/Survival	53339	Mongoose Bite	D	5000
+class:Hunter/Survival	48996	Raptor Strike	D	6000
+class:Hunter/Survival	19503	Scatter Shot	D,SL	30000
+class:Hunter/Survival	34600	Snake Trap		30000
+class:Hunter/Survival	1494	Track Beasts		1500
+class:Hunter/Survival	19878	Track Demons		1500
+class:Hunter/Survival	19879	Track Dragonkin		1500
+class:Hunter/Survival	19880	Track Elementals		1500
+class:Hunter/Survival	19882	Track Giants		1500
+class:Hunter/Survival	19885	Track Hidden	ST	1500
+class:Hunter/Survival	19883	Track Humanoids		1500
+class:Hunter/Survival	19884	Track Undead		1500
+class:Hunter/Survival	2974	Wing Clip	SD	0
+class:Hunter/Survival	49012	Wyvern Sting	S,SL	60000
+class:Mage/Arcane	43017	Amplify Magic	VU	0
+class:Mage/Arcane	44781	Arcane Barrage	D	3000
+class:Mage/Arcane	42897	Arcane Blast	D	0
+class:Mage/Arcane	43002	Arcane Brilliance		0
+class:Mage/Arcane	42921	Arcane Explosion	A,D	0
+class:Mage/Arcane	42995	Arcane Intellect		0
+class:Mage/Arcane	7268	Arcane Missile	D	0
+class:Mage/Arcane	42846	Arcane Missiles	DUM,MH	0
+class:Mage/Arcane	12042	Arcane Power	DU	120000
+class:Mage/Arcane	1953	Blink		15000
+class:Mage/Arcane	12536	Clearcasting		0
+class:Mage/Arcane	33717	Conjure Food		0
+class:Mage/Arcane	42985	Conjure Mana Gem	DUM	0
+class:Mage/Arcane	42956	Conjure Refreshment		0
+class:Mage/Arcane	37420	Conjure Water		0
+class:Mage/Arcane	2139	Counterspell		24000
+class:Mage/Arcane	61316	Dalaran Brilliance		0
+class:Mage/Arcane	61024	Dalaran Intellect		0
+class:Mage/Arcane	43015	Dampen Magic	VU	0
+class:Mage/Arcane	12051	Evocation		240000
+class:Mage/Arcane	54648	Focus Magic		0
+class:Mage/Arcane	44413	Incanter's Absorption	DU	0
+class:Mage/Arcane	66	Invisibility	ST	180000
+class:Mage/Arcane	43024	Mage Armor	DEF	0
+class:Mage/Arcane	29442	Magic Absorption		0
+class:Mage/Arcane	43020	Mana Shield	DEF	0
+class:Mage/Arcane	55342	Mirror Image		180000
+class:Mage/Arcane	44401	Missile Barrage		0
+class:Mage/Arcane	61780	Polymorph	SL	0
+class:Mage/Arcane	53142	Portal: Dalaran		60000
+class:Mage/Arcane	11419	Portal: Darnassus		60000
+class:Mage/Arcane	32266	Portal: Exodar		60000
+class:Mage/Arcane	11416	Portal: Ironforge		60000
+class:Mage/Arcane	11417	Portal: Orgrimmar		60000
+class:Mage/Arcane	35717	Portal: Shattrath		60000
+class:Mage/Arcane	32267	Portal: Silvermoon		60000
+class:Mage/Arcane	49361	Portal: Stonard		60000
+class:Mage/Arcane	10059	Portal: Stormwind		60000
+class:Mage/Arcane	49360	Portal: Theramore		60000
+class:Mage/Arcane	11420	Portal: Thunder Bluff		60000
+class:Mage/Arcane	11418	Portal: Undercity		60000
+class:Mage/Arcane	12043	Presence of Mind		120000
+class:Mage/Arcane	475	Remove Curse	CL	0
+class:Mage/Arcane	58659	Ritual of Refreshment		300000
+class:Mage/Arcane	31589	Slow	SD,SU	0
+class:Mage/Arcane	130	Slow Fall	SD	0
+class:Mage/Arcane	30449	Spellsteal		0
+class:Mage/Arcane	53140	Teleport: Dalaran		0
+class:Mage/Arcane	3565	Teleport: Darnassus		0
+class:Mage/Arcane	32271	Teleport: Exodar		0
+class:Mage/Arcane	3562	Teleport: Ironforge		0
+class:Mage/Arcane	3567	Teleport: Orgrimmar		0
+class:Mage/Arcane	35715	Teleport: Shattrath		0
+class:Mage/Arcane	32272	Teleport: Silvermoon		0
+class:Mage/Arcane	49358	Teleport: Stonard		0
+class:Mage/Arcane	3561	Teleport: Stormwind		0
+class:Mage/Arcane	49359	Teleport: Theramore		0
+class:Mage/Arcane	3566	Teleport: Thunder Bluff		0
+class:Mage/Arcane	3563	Teleport: Undercity		0
+class:Mage/Fire	42945	Blast Wave	A,D,SD,SUM	30000
+class:Mage/Fire	31643	Blazing Speed	SU	0
+class:Mage/Fire	54748	Burning Determination		0
+class:Mage/Fire	44450	Burnout	DU,DUM	0
+class:Mage/Fire	11129	Combustion	CR,DU	120000
+class:Mage/Fire	42950	Dragon's Breath	D,SD,SL	20000
+class:Mage/Fire	24530	Felfire	D	0
+class:Mage/Fire	64357	Fiery Payback	DEF	0
+class:Mage/Fire	42873	Fire Blast	D	8000
+class:Mage/Fire	43010	Fire Ward	DEF	30000
+class:Mage/Fire	42833	Fireball	D,P	0
+class:Mage/Fire	54741	Firestarter		0
+class:Mage/Fire	42926	Flamestrike	A,D,P	0
+class:Mage/Fire	47610	Frostfire Bolt	D,P,SD	0
+class:Mage/Fire	12654	Ignite	DUM,P	0
+class:Mage/Fire	12355	Impact	S	0
+class:Mage/Fire	22959	Improved Scorch	CR	0
+class:Mage/Fire	55362	Living Bomb	A,D	0
+class:Mage/Fire	29077	Master of Elements		0
+class:Mage/Fire	43046	Molten Armor	CR,SH	0
+class:Mage/Fire	42891	Pyroblast	D,P	0
+class:Mage/Fire	42859	Scorch	D	0
+class:Mage/Frost	42940	Blizzard	A,DUM,MH	0
+class:Mage/Frost	12486	Chilled	SD	0
+class:Mage/Frost	11958	Cold Snap	DUM	480000
+class:Mage/Frost	42931	Cone of Cold	D,SD	10000
+class:Mage/Frost	44572	Deep Freeze	S	30000
+class:Mage/Frost	44544	Fingers of Frost		0
+class:Mage/Frost	7301	Frost Armor	DEF	0
+class:Mage/Frost	42917	Frost Nova	A,D,R	25000
+class:Mage/Frost	43012	Frost Ward	DEF	30000
+class:Mage/Frost	12494	Frostbite	R	0
+class:Mage/Frost	42842	Frostbolt	D,SD	0
+class:Mage/Frost	43008	Ice Armor	DEF	0
+class:Mage/Frost	43039	Ice Barrier	DEF	30000
+class:Mage/Frost	45438	Ice Block	IM,S	300000
+class:Mage/Frost	42914	Ice Lance	D	0
+class:Mage/Frost	12472	Icy Veins	SU	180000
+class:Mage/Frost	31687	Summon Water Elemental	DUM	180000
+class:Mage/Frost	70909	Summon Water Elemental (Prototype)	DUM	180000
+class:Paladin/Holy	31821	Aura Mastery		120000
+class:Paladin/Holy	53654	Beacon of Light	H	0
+class:Paladin/Holy	48936	Blessing of Wisdom		0
+class:Paladin/Holy	23214	Charger		0
+class:Paladin/Holy	4987	Cleanse	CL	0
+class:Paladin/Holy	19746	Concentration Aura		0
+class:Paladin/Holy	48819	Consecration	A,P	8000
+class:Paladin/Holy	20216	Divine Favor		120000
+class:Paladin/Holy	31842	Divine Illumination		180000
+class:Paladin/Holy	54428	Divine Plea	VU	60000
+class:Paladin/Holy	48801	Exorcism	D	15000
+class:Paladin/Holy	66922	Flash of Light	HOT	0
+class:Paladin/Holy	48938	Greater Blessing of Wisdom		0
+class:Paladin/Holy	48782	Holy Light	H	0
+class:Paladin/Holy	64891	Holy Mending	HOT	0
+class:Paladin/Holy	48825	Holy Shock	DUM,H	6000
+class:Paladin/Holy	48817	Holy Wrath	A,D,S	30000
+class:Paladin/Holy	54149	Infusion of Light		0
+class:Paladin/Holy	20185	Judgement of Light	DUM,H	0
+class:Paladin/Holy	20187	Judgement of Righteousness	D,DUM	0
+class:Paladin/Holy	20186	Judgement of Wisdom	DUM	0
+class:Paladin/Holy	54153	Judgements of the Pure	SU	0
+class:Paladin/Holy	48788	Lay on Hands	H	1200000
+class:Paladin/Holy	53651	Light's Beacon	DUM,H	0
+class:Paladin/Holy	31834	Light's Grace		0
+class:Paladin/Holy	32841	Mass Resurrection		0
+class:Paladin/Holy	1152	Purify	CL	0
+class:Paladin/Holy	48950	Redemption		0
+class:Paladin/Holy	53659	Sacred Cleansing		0
+class:Paladin/Holy	53601	Sacred Shield	DEF,DUM	0
+class:Paladin/Holy	20165	Seal of Light	H	0
+class:Paladin/Holy	21084	Seal of Righteousness	DU,DUM	0
+class:Paladin/Holy	20166	Seal of Wisdom		0
+class:Paladin/Holy	5502	Sense Undead		0
+class:Paladin/Holy	34767	Summon Charger		0
+class:Paladin/Holy	34769	Summon Warhorse		0
+class:Paladin/Holy	10326	Turn Evil	SL,SU	0
+class:Paladin/Holy	13819	Warhorse		0
+class:Paladin/Protection	48827	Avenger's Shield	D,SD	30000
+class:Paladin/Protection	20217	Blessing of Kings		0
+class:Paladin/Protection	20911	Blessing of Sanctuary	DEF,DG,DU,DUM	0
+class:Paladin/Protection	48942	Devotion Aura	DEF	0
+class:Paladin/Protection	19752	Divine Intervention		600000
+class:Paladin/Protection	498	Divine Protection	VU	180000
+class:Paladin/Protection	64205	Divine Sacrifice		120000
+class:Paladin/Protection	642	Divine Shield	DU,IM	300000
+class:Paladin/Protection	48947	Fire Resistance Aura		0
+class:Paladin/Protection	48945	Frost Resistance Aura		0
+class:Paladin/Protection	25898	Greater Blessing of Kings		0
+class:Paladin/Protection	25899	Greater Blessing of Sanctuary	DEF,DG,DU,DUM	0
+class:Paladin/Protection	10308	Hammer of Justice	S	60000
+class:Paladin/Protection	53595	Hammer of the Righteous	D	6000
+class:Paladin/Protection	1044	Hand of Freedom		25000
+class:Paladin/Protection	10278	Hand of Protection	IM	300000
+class:Paladin/Protection	62124	Hand of Reckoning		8000
+class:Paladin/Protection	6940	Hand of Sacrifice		120000
+class:Paladin/Protection	1038	Hand of Salvation	VU	120000
+class:Paladin/Protection	48952	Holy Shield	BL	8000
+class:Paladin/Protection	20184	Judgement of Justice		0
+class:Paladin/Protection	31789	Righteous Defense	DUM	8000
+class:Paladin/Protection	25781	Righteous Fury		0
+class:Paladin/Protection	20164	Seal of Justice	S	0
+class:Paladin/Protection	48943	Shadow Resistance Aura		0
+class:Paladin/Protection	61411	Shield of Righteousness	D	6000
+class:Paladin/Retribution	31884	Avenging Wrath	DU	180000
+class:Paladin/Retribution	48932	Blessing of Might	DU	0
+class:Paladin/Retribution	53742	Blood Corruption	P	0
+class:Paladin/Retribution	32223	Crusader Aura	SU	0
+class:Paladin/Retribution	35395	Crusader Strike	D,DUM	4000
+class:Paladin/Retribution	53385	Divine Storm	A,D,DUM	10000
+class:Paladin/Retribution	25997	Eye for an Eye	D	0
+class:Paladin/Retribution	48934	Greater Blessing of Might	DU	0
+class:Paladin/Retribution	48806	Hammer of Wrath	D	6000
+class:Paladin/Retribution	31803	Holy Vengeance	P	0
+class:Paladin/Retribution	31898	Judgement of Blood	D	0
+class:Paladin/Retribution	20467	Judgement of Command	D	0
+class:Paladin/Retribution	53733	Judgement of Corruption	D	0
+class:Paladin/Retribution	53407	Judgement of Justice		10000
+class:Paladin/Retribution	20271	Judgement of Light	H	10000
+class:Paladin/Retribution	31804	Judgement of Vengeance	D	0
+class:Paladin/Retribution	53408	Judgement of Wisdom		10000
+class:Paladin/Retribution	53726	Judgement of the Martyr	D	0
+class:Paladin/Retribution	20066	Repentance	S	60000
+class:Paladin/Retribution	54043	Retribution Aura	DU,SH,SU	0
+class:Paladin/Retribution	20375	Seal of Command	DU,DUM	0
+class:Paladin/Retribution	53736	Seal of Corruption	DU,DUM,P	0
+class:Paladin/Retribution	31801	Seal of Vengeance	DU,DUM,P	0
+class:Paladin/Retribution	59578	The Art of War	CR,DU	0
+class:Paladin/Retribution	20053	Vengeance	DU	0
+class:Paladin/Retribution	26017	Vindication	DD	0
+class:Priest/Discipline	988	Dispel Magic	CL	0
+class:Priest/Discipline	48073	Divine Spirit		0
+class:Priest/Discipline	6346	Fear Ward	SL	180000
+class:Priest/Discipline	27828	Focused Casting		0
+class:Priest/Discipline	45242	Focused Will	VU	0
+class:Priest/Discipline	48168	Inner Fire	DEF,DU	0
+class:Priest/Discipline	14751	Inner Focus		180000
+class:Priest/Discipline	1706	Levitate	SD	0
+class:Priest/Discipline	8129	Mana Burn		0
+class:Priest/Discipline	32375	Mass Dispel	CL	0
+class:Priest/Discipline	44416	Pain Suppression	A	0
+class:Priest/Discipline	53007	Penance	DUM,H	12000
+class:Priest/Discipline	10060	Power Infusion	SU	120000
+class:Priest/Discipline	48161	Power Word: Fortitude		0
+class:Priest/Discipline	48066	Power Word: Shield	DEF	4000
+class:Priest/Discipline	48162	Prayer of Fortitude		0
+class:Priest/Discipline	48074	Prayer of Spirit		0
+class:Priest/Discipline	33619	Reflective Shield	D	0
+class:Priest/Discipline	10955	Shackle Undead	S	0
+class:Priest/Holy	552	Abolish Disease	CL	0
+class:Priest/Holy	48120	Binding Heal	H	0
+class:Priest/Holy	70772	Blessed Healing	HOT	0
+class:Priest/Holy	27818	Blessed Recovery	HOT	0
+class:Priest/Holy	33143	Blessed Resilience		0
+class:Priest/Holy	48089	Circle of Healing	H	6000
+class:Priest/Holy	528	Cure Disease	CL	0
+class:Priest/Holy	48173	Desperate Prayer	H	120000
+class:Priest/Holy	64844	Divine Hymn	H	0
+class:Priest/Holy	48071	Flash Heal	H	0
+class:Priest/Holy	48063	Greater Heal	H	0
+class:Priest/Holy	48153	Guardian Spirit	H	0
+class:Priest/Holy	6064	Heal	H	0
+class:Priest/Holy	34754	Holy Concentration	H	0
+class:Priest/Holy	48135	Holy Fire	D,P	10000
+class:Priest/Holy	48078	Holy Nova	A,D	0
+class:Priest/Holy	64904	Hymn of Hope		0
+class:Priest/Holy	2053	Lesser Heal	H	0
+class:Priest/Holy	48087	Lightwell	SUM	180000
+class:Priest/Holy	48085	Lightwell Renew	HOT	0
+class:Priest/Holy	48072	Prayer of Healing	H	0
+class:Priest/Holy	48113	Prayer of Mending	H	10000
+class:Priest/Holy	48068	Renew	HOT	0
+class:Priest/Holy	48171	Resurrection		0
+class:Priest/Holy	63735	Serendipity	H	0
+class:Priest/Holy	48123	Smite	D	0
+class:Priest/Holy	33151	Surge of Light	H	0
+class:Priest/Shadow Magic	48300	Devouring Plague	L	0
+class:Priest/Shadow Magic	47585	Dispersion	VU	120000
+class:Priest/Shadow Magic	586	Fade		30000
+class:Priest/Shadow Magic	48127	Mind Blast	D	8000
+class:Priest/Shadow Magic	605	Mind Control	DUM	0
+class:Priest/Shadow Magic	58381	Mind Flay	D	0
+class:Priest/Shadow Magic	53023	Mind Sear	MH	0
+class:Priest/Shadow Magic	453	Mind Soothe		0
+class:Priest/Shadow Magic	10909	Mind Vision	DUM	0
+class:Priest/Shadow Magic	33198	Misery		0
+class:Priest/Shadow Magic	48170	Prayer of Shadow Protection		0
+class:Priest/Shadow Magic	64058	Psychic Horror	DD	0
+class:Priest/Shadow Magic	10890	Psychic Scream	A,SL,SU	30000
+class:Priest/Shadow Magic	48169	Shadow Protection		0
+class:Priest/Shadow Magic	48158	Shadow Word: Death	D	12000
+class:Priest/Shadow Magic	48125	Shadow Word: Pain	P	0
+class:Priest/Shadow Magic	34433	Shadowfiend	SUM	300000
+class:Priest/Shadow Magic	15473	Shadowform	DU,VU	1500
+class:Priest/Shadow Magic	15487	Silence		45000
+class:Priest/Shadow Magic	15286	Vampiric Embrace	DUM,H	0
+class:Priest/Shadow Magic	48160	Vampiric Touch	DUM,P	0
+class:Rogue/Assassination	48691	Ambush	D	0
+class:Rogue/Assassination	1833	Cheap Shot	S	0
+class:Rogue/Assassination	14177	Cold Blood	CR	180000
+class:Rogue/Assassination	48674	Deadly Throw	D,DUM,SD	0
+class:Rogue/Assassination	51722	Dismantle	DD	60000
+class:Rogue/Assassination	57993	Envenom	D	0
+class:Rogue/Assassination	48668	Eviscerate	D,DUM	0
+class:Rogue/Assassination	8647	Expose Armor	DEF,DUM	0
+class:Rogue/Assassination	51637	Focused Attacks	CR	0
+class:Rogue/Assassination	48676	Garrote	P	0
+class:Rogue/Assassination	51662	Hunger For Blood	DU,DUM	0
+class:Rogue/Assassination	8643	Kidney Shot	DUM,S,VU	20000
+class:Rogue/Assassination	48666	Mutilate		0
+class:Rogue/Assassination	58427	Overkill	ST	0
+class:Rogue/Assassination	48672	Rupture	DUM,P	0
+class:Rogue/Assassination	6774	Slice and Dice	DUM,SU	0
+class:Rogue/Combat	13750	Adrenaline Rush		180000
+class:Rogue/Combat	48657	Backstab	D	0
+class:Rogue/Combat	13877	Blade Flurry	SU	120000
+class:Rogue/Combat	31125	Blade Twisting	SD	0
+class:Rogue/Combat	26669	Evasion	DG	180000
+class:Rogue/Combat	51723	Fan of Knives	A,D	0
+class:Rogue/Combat	48659	Feint	DEF	10000
+class:Rogue/Combat	1776	Gouge	D,S	10000
+class:Rogue/Combat	1766	Kick		10000
+class:Rogue/Combat	51690	Killing Spree	A,DUM	120000
+class:Rogue/Combat	14251	Riposte	D	6000
+class:Rogue/Combat	5938	Shiv	CR,DUM,SD	0
+class:Rogue/Combat	48638	Sinister Strike	D	0
+class:Rogue/Combat	11305	Sprint	SU	180000
+class:Rogue/Combat	51680	Throwing Specialization		0
+class:Rogue/Combat	51677	Unfair Advantage	D	0
+class:Rogue/Subtlety	2094	Blind	SD,SL	180000
+class:Rogue/Subtlety	31224	Cloak of Shadows	VU	90000
+class:Rogue/Subtlety	1842	Disarm Trap		0
+class:Rogue/Subtlety	1725	Distract	ST	30000
+class:Rogue/Subtlety	14278	Ghostly Strike	D,DG	20000
+class:Rogue/Subtlety	48660	Hemorrhage	D,VU	0
+class:Rogue/Subtlety	51699	Honor Among Thieves	DUM	0
+class:Rogue/Subtlety	13977	Initiative		0
+class:Rogue/Subtlety	921	Pick Pocket		0
+class:Rogue/Subtlety	14183	Premeditation		20000
+class:Rogue/Subtlety	14185	Preparation	DUM	480000
+class:Rogue/Subtlety	14181	Relentless Strikes Effect		0
+class:Rogue/Subtlety	51724	Sap	S	0
+class:Rogue/Subtlety	51713	Shadow Dance	ST	60000
+class:Rogue/Subtlety	36554	Shadowstep	SU	30000
+class:Rogue/Subtlety	1784	Stealth	SD,ST	10000
+class:Rogue/Subtlety	57934	Tricks of the Trade	DUM	30000
+class:Rogue/Subtlety	26889	Vanish	ST	180000
+class:Rogue/Subtlety	14093	Vanished		0
+class:Rogue/Subtlety	51693	Waylay	SD,SU	0
+class:Shaman/Elemental Combat	66843	Call of the Ancestors		0
+class:Shaman/Elemental Combat	66842	Call of the Elements		0
+class:Shaman/Elemental Combat	66844	Call of the Spirits		0
+class:Shaman/Elemental Combat	49271	Chain Lightning	D	6000
+class:Shaman/Elemental Combat	49231	Earth Shock	D	6000
+class:Shaman/Elemental Combat	2484	Earthbind Totem	SUM	15000
+class:Shaman/Elemental Combat	30165	Elemental Devastation	CR	0
+class:Shaman/Elemental Combat	16166	Elemental Mastery	SU	180000
+class:Shaman/Elemental Combat	2894	Fire Elemental Totem	SUM	600000
+class:Shaman/Elemental Combat	61657	Fire Nova	DUM	10000
+class:Shaman/Elemental Combat	49233	Flame Shock	D,P	6000
+class:Shaman/Elemental Combat	63685	Freeze	R	0
+class:Shaman/Elemental Combat	49236	Frost Shock	D,SD	6000
+class:Shaman/Elemental Combat	51514	Hex	SL	45000
+class:Shaman/Elemental Combat	60043	Lava Burst	D	8000
+class:Shaman/Elemental Combat	49240	Lightning Bolt	D	0
+class:Shaman/Elemental Combat	58734	Magma Totem	SUM	0
+class:Shaman/Elemental Combat	8012	Purge	CL	0
+class:Shaman/Elemental Combat	58704	Searing Totem	SUM	0
+class:Shaman/Elemental Combat	58582	Stoneclaw Totem	SUM	30000
+class:Shaman/Elemental Combat	59159	Thunderstorm	A,D,SUM	45000
+class:Shaman/Elemental Combat	57722	Totem of Wrath	SUM	0
+class:Shaman/Elemental Combat	57994	Wind Shear		6000
+class:Shaman/Enhancement	556	Astral Recall		900000
+class:Shaman/Enhancement	2825	Bloodlust	SU	300000
+class:Shaman/Enhancement	30798	Dual Wield		0
+class:Shaman/Enhancement	2062	Earth Elemental Totem	SUM	600000
+class:Shaman/Enhancement	6196	Far Sight	DUM	0
+class:Shaman/Enhancement	51533	Feral Spirit	SUM	180000
+class:Shaman/Enhancement	58739	Fire Resistance Totem	SUM	0
+class:Shaman/Enhancement	58656	Flametongue Totem	SUM	0
+class:Shaman/Enhancement	58790	Flametongue Weapon	CR,DU,SD	0
+class:Shaman/Enhancement	43339	Focused	CR	0
+class:Shaman/Enhancement	58745	Frost Resistance Totem	SUM	0
+class:Shaman/Enhancement	58796	Frostbrand Weapon	DU,SD	0
+class:Shaman/Enhancement	2645	Ghost Wolf	SU	0
+class:Shaman/Enhancement	8177	Grounding Totem	SUM	15000
+class:Shaman/Enhancement	32182	Heroism	SU	300000
+class:Shaman/Enhancement	60103	Lava Lash	D,DUM	6000
+class:Shaman/Enhancement	49281	Lightning Shield	SH	0
+class:Shaman/Enhancement	58749	Nature Resistance Totem	SUM	0
+class:Shaman/Enhancement	10399	Rockbiter Weapon	DU	0
+class:Shaman/Enhancement	6495	Sentry Totem	DUM,SUM	0
+class:Shaman/Enhancement	30824	Shamanistic Rage	DEF,S	0
+class:Shaman/Enhancement	16268	Spirit Weapons		0
+class:Shaman/Enhancement	58753	Stoneskin Totem	SUM	0
+class:Shaman/Enhancement	32176	Stormstrike	D	0
+class:Shaman/Enhancement	58643	Strength of Earth Totem	SUM	0
+class:Shaman/Enhancement	131	Water Breathing		0
+class:Shaman/Enhancement	546	Water Walking		0
+class:Shaman/Enhancement	8512	Windfury Totem	SUM	0
+class:Shaman/Enhancement	58804	Windfury Weapon	DU	0
+class:Shaman/Enhancement	3738	Wrath of Air Totem	SUM	0
+class:Shaman/Restoration	16237	Ancestral Fortitude	VU	0
+class:Shaman/Restoration	49277	Ancestral Spirit		0
+class:Shaman/Restoration	55459	Chain Heal	H	0
+class:Shaman/Restoration	70809	Chained Heal	HOT	0
+class:Shaman/Restoration	51886	Cleanse Spirit	CL	0
+class:Shaman/Restoration	8170	Cleansing Totem	SUM	0
+class:Shaman/Restoration	526	Cure Toxins	CL	0
+class:Shaman/Restoration	49284	Earth Shield	DUM,H	0
+class:Shaman/Restoration	51994	Earthliving Weapon	H	0
+class:Shaman/Restoration	30874	Gift of the Water Spirit		300000
+class:Shaman/Restoration	58757	Healing Stream Totem	SUM	0
+class:Shaman/Restoration	49273	Healing Wave	H	0
+class:Shaman/Restoration	49276	Lesser Healing Wave	H	0
+class:Shaman/Restoration	58774	Mana Spring Totem	SUM	0
+class:Shaman/Restoration	16190	Mana Tide Totem	SUM	300000
+class:Shaman/Restoration	16188	Nature's Swiftness		120000
+class:Shaman/Restoration	21169	Reincarnation		1800000
+class:Shaman/Restoration	61301	Riptide	H,HOT	6000
+class:Shaman/Restoration	55198	Tidal Force	DUM,H	180000
+class:Shaman/Restoration	36936	Totemic Recall		0
+class:Shaman/Restoration	8143	Tremor Totem	SUM	0
+class:Shaman/Restoration	57960	Water Shield		0
+class:Warlock/Affliction	47206	Atrocity	A,P	0
+class:Warlock/Affliction	47813	Corruption	P	0
+class:Warlock/Affliction	47864	Curse of Agony	P	0
+class:Warlock/Affliction	47867	Curse of Doom	P	60000
+class:Warlock/Affliction	18662	Curse of Doom Effect	SUM	0
+class:Warlock/Affliction	18223	Curse of Exhaustion	SD	0
+class:Warlock/Affliction	1010	Curse of Idiocy		0
+class:Warlock/Affliction	11719	Curse of Tongues	SU	0
+class:Warlock/Affliction	50511	Curse of Weakness	DEF	0
+class:Warlock/Affliction	47865	Curse of the Elements	DEF,VU	0
+class:Warlock/Affliction	59092	Dark Pact		0
+class:Warlock/Affliction	47860	Death Coil	SL	120000
+class:Warlock/Affliction	47857	Drain Life	L	0
+class:Warlock/Affliction	5138	Drain Mana	DUM	0
+class:Warlock/Affliction	47855	Drain Soul	MH,P	0
+class:Warlock/Affliction	6215	Fear	SL,SU	0
+class:Warlock/Affliction	59164	Haunt	D,DUM	8000
+class:Warlock/Affliction	17928	Howl of Terror	A,SL,SU	40000
+class:Warlock/Affliction	57946	Life Tap	DUM	0
+class:Warlock/Affliction	47836	Seed of Corruption	DUM,P	0
+class:Warlock/Affliction	32391	Shadow Embrace	DU,H,VU	0
+class:Warlock/Affliction	53756	Sudden Fear	SL	0
+class:Warlock/Affliction	47843	Unstable Affliction	P	0
+class:Warlock/Demonology	18647	Banish	IM,S	0
+class:Warlock/Demonology	59671	Challenging Howl	A	15000
+class:Warlock/Demonology	60220	Create Firestone	CR,DU	0
+class:Warlock/Demonology	47878	Create Healthstone	H	0
+class:Warlock/Demonology	47884	Create Soulstone		0
+class:Warlock/Demonology	58889	Create Soulwell		0
+class:Warlock/Demonology	47888	Create Spellstone	DU,SU	0
+class:Warlock/Demonology	47889	Demon Armor	DEF	0
+class:Warlock/Demonology	54785	Demon Charge	S	45000
+class:Warlock/Demonology	696	Demon Skin	DEF	0
+class:Warlock/Demonology	48018	Demonic Circle: Summon		0
+class:Warlock/Demonology	48020	Demonic Circle: Teleport	CL	30000
+class:Warlock/Demonology	47193	Demonic Empowerment	CL,CR,S,ST,SU	60000
+class:Warlock/Demonology	132	Detect Invisibility	ST	0
+class:Warlock/Demonology	23161	Dreadsteed		0
+class:Warlock/Demonology	61191	Enslave Demon	SD,SU	0
+class:Warlock/Demonology	126	Eye of Kilrogg	DUM,SUM	0
+class:Warlock/Demonology	47893	Fel Armor	DU	0
+class:Warlock/Demonology	18708	Fel Domination		180000
+class:Warlock/Demonology	5784	Felsteed		0
+class:Warlock/Demonology	47856	Health Funnel	HOT,SL,VU	0
+class:Warlock/Demonology	20153	Immolation	A,D	0
+class:Warlock/Demonology	50589	Immolation Aura	P	30000
+class:Warlock/Demonology	1122	Inferno	SUM	600000
+class:Warlock/Demonology	35706	Master Demonologist	DEF,DU	0
+class:Warlock/Demonology	61610	Metamorphosis		180000
+class:Warlock/Demonology	18540	Ritual of Doom		1800000
+class:Warlock/Demonology	18541	Ritual of Doom Effect	DUM	0
+class:Warlock/Demonology	58887	Ritual of Souls		300000
+class:Warlock/Demonology	698	Ritual of Summoning		120000
+class:Warlock/Demonology	5500	Sense Demons		0
+class:Warlock/Demonology	50581	Shadow Cleave	D	6000
+class:Warlock/Demonology	47891	Shadow Ward	DEF	30000
+class:Warlock/Demonology	19028	Soul Link	DUM	0
+class:Warlock/Demonology	29858	Soulshatter	A,DUM	180000
+class:Warlock/Demonology	30146	Summon Felguard		0
+class:Warlock/Demonology	691	Summon Felhunter		0
+class:Warlock/Demonology	688	Summon Imp		0
+class:Warlock/Demonology	712	Summon Succubus		0
+class:Warlock/Demonology	697	Summon Voidwalker		0
+class:Warlock/Demonology	5697	Unending Breath		0
+class:Warlock/Destruction	34936	Backlash	CR	0
+class:Warlock/Destruction	59172	Chaos Bolt	D	12000
+class:Warlock/Destruction	17962	Conflagrate	D,P	10000
+class:Warlock/Destruction	47823	Hellfire	MH,P	0
+class:Warlock/Destruction	47822	Hellfire Effect	A,D	0
+class:Warlock/Destruction	47811	Immolate	D,P	0
+class:Warlock/Destruction	47838	Incinerate	D	0
+class:Warlock/Destruction	18093	Pyroclasm	DU	0
+class:Warlock/Destruction	47820	Rain of Fire	A,DUM,MH	0
+class:Warlock/Destruction	47815	Searing Pain	D	0
+class:Warlock/Destruction	47809	Shadow Bolt	D	0
+class:Warlock/Destruction	47827	Shadowburn	D	15000
+class:Warlock/Destruction	61290	Shadowflame	D	15000
+class:Warlock/Destruction	47847	Shadowfury	D,S	20000
+class:Warlock/Destruction	47825	Soul Fire	D	0
+class:Warrior/Arms	2457	Battle Stance		1000
+class:Warrior/Arms	46924	Bladestorm	SL	90000
+class:Warrior/Arms	11578	Charge	DUM,S	15000
+class:Warrior/Arms	12696	Charge Rage Bonus Effect		0
+class:Warrior/Arms	1715	Hamstring	SD	0
+class:Warrior/Arms	47450	Heroic Strike	D	0
+class:Warrior/Arms	57755	Heroic Throw	D	60000
+class:Warrior/Arms	12705	Long Daze	SD	0
+class:Warrior/Arms	5530	Mace Specialization		0
+class:Warrior/Arms	694	Mocking Blow	D	60000
+class:Warrior/Arms	47486	Mortal Strike	D	6000
+class:Warrior/Arms	7384	Overpower	D,DUM	5000
+class:Warrior/Arms	47465	Rend	P	0
+class:Warrior/Arms	20230	Retaliation	DUM	300000
+class:Warrior/Arms	29842	Second Wind	H,R,S	0
+class:Warrior/Arms	64382	Shattering Throw	D,DEF	300000
+class:Warrior/Arms	26654	Sweeping Strikes	D	0
+class:Warrior/Arms	47502	Thunder Clap	A,D	6000
+class:Warrior/Arms	46857	Trauma	CR,DU	0
+class:Warrior/Fury	47436	Battle Shout	DU	0
+class:Warrior/Fury	18499	Berserker Rage	DU,SL	30000
+class:Warrior/Fury	2458	Berserker Stance	DU,VU	1000
+class:Warrior/Fury	23885	Bloodthirst	H	0
+class:Warrior/Fury	1161	Challenging Shout	A	180000
+class:Warrior/Fury	47520	Cleave	D	0
+class:Warrior/Fury	47440	Commanding Shout		0
+class:Warrior/Fury	12292	Death Wish	DU,VU	180000
+class:Warrior/Fury	47437	Demoralizing Shout	A	0
+class:Warrior/Fury	55694	Enraged Regeneration		180000
+class:Warrior/Fury	47471	Execute	DU,DUM	0
+class:Warrior/Fury	12970	Flurry	CR,SU	0
+class:Warrior/Fury	56112	Furious Attacks	H	0
+class:Warrior/Fury	60970	Heroic Fury	CL,R	45000
+class:Warrior/Fury	20252	Intercept	S	30000
+class:Warrior/Fury	5246	Intimidating Shout	A,SL,SU	120000
+class:Warrior/Fury	12323	Piercing Howl	A,SD	0
+class:Warrior/Fury	6552	Pummel		10000
+class:Warrior/Fury	1719	Recklessness	VU	300000
+class:Warrior/Fury	47475	Slam	DUM	0
+class:Warrior/Fury	46916	Slam!		0
+class:Warrior/Fury	12964	Unbridled Wrath		0
+class:Warrior/Fury	34428	Victory Rush	D	0
+class:Warrior/Fury	1680	Whirlwind	A,D	10000
+class:Warrior/Protection	2687	Bloodrage		60000
+class:Warrior/Protection	12809	Concussion Blow	D,DUM,S	30000
+class:Warrior/Protection	71	Defensive Stance		1000
+class:Warrior/Protection	47498	Devastate	D	0
+class:Warrior/Protection	676	Disarm	DD,VU	60000
+class:Warrior/Protection	3411	Intervene		30000
+class:Warrior/Protection	12976	Last Stand		0
+class:Warrior/Protection	57823	Revenge	D	5000
+class:Warrior/Protection	12798	Revenge Stun	S	0
+class:Warrior/Protection	46947	Safeguard	VU	0
+class:Warrior/Protection	72	Shield Bash		12000
+class:Warrior/Protection	2565	Shield Block	BL	60000
+class:Warrior/Protection	47488	Shield Slam	CL,D	6000
+class:Warrior/Protection	871	Shield Wall	VU	300000
+class:Warrior/Protection	46968	Shockwave	D,DUM,S	20000
+class:Warrior/Protection	18498	Silenced - Gag Order	DU	0
+class:Warrior/Protection	23920	Spell Reflection		10000
+class:Warrior/Protection	7386	Sunder Armor	DU	0
+class:Warrior/Protection	355	Taunt		8000
+class:Warrior/Protection	50720	Vigilance	DEF,SH	0
+pet:Bat	52474	Bite	D	0
+pet:Bat	23145	Dive	SU	32000
+pet:Bat	53568	Sonic Blast	D,S	60000
+pet:Bear	61685	Charge	DU,R	25000
+pet:Bear	52472	Claw	D	0
+pet:Bear	53533	Swipe	D	5000
+pet:Bird of Prey	52472	Claw	D	0
+pet:Bird of Prey	23145	Dive	SU	32000
+pet:Bird of Prey	53543	Snatch	D	60000
+pet:Boar	52474	Bite	D	0
+pet:Boar	61685	Charge	DU,R	25000
+pet:Boar	35295	Gore	D	10000
+pet:Carrion Bird	52474	Bite	D	0
+pet:Carrion Bird	55487	Demoralizing Screech	A,D	10000
+pet:Carrion Bird	23145	Dive	SU	32000
+pet:Carrion Bird	52825	Swoop	R	25000
+pet:Cat	61685	Charge	DU,R	25000
+pet:Cat	52472	Claw	D	0
+pet:Cat	61684	Dash	SU	32000
+pet:Cat	24453	Prowl	DU,SD,ST	10000
+pet:Cat	59886	Rake	D,P	10000
+pet:Chimaera	52474	Bite	D	0
+pet:Chimaera	23145	Dive	SU	32000
+pet:Chimaera	55492	Froststorm Breath	D,SD	10000
+pet:Core Hound	52474	Bite	D	0
+pet:Core Hound	61685	Charge	DU,R	25000
+pet:Core Hound	61684	Dash	SU	32000
+pet:Core Hound	58611	Lava Breath	D,SU	10000
+pet:Crab	61685	Charge	DU,R	25000
+pet:Crab	52472	Claw	D	0
+pet:Crab	53548	Pin	MH,P,R	40000
+pet:Crocolisk	52399	Bad Attitude	SH	120000
+pet:Crocolisk	52474	Bite	D	0
+pet:Crocolisk	61685	Charge	DU,R	25000
+pet:Devilsaur	52474	Bite	D	0
+pet:Devilsaur	61685	Charge	DU,R	25000
+pet:Devilsaur	61684	Dash	SU	32000
+pet:Devilsaur	55499	Monstrous Bite	D	10000
+pet:Dragonhawk	52474	Bite	D	0
+pet:Dragonhawk	23145	Dive	SU	32000
+pet:Dragonhawk	55485	Fire Breath	D,P	10000
+pet:Felguard	47993	Anguish		5000
+pet:Felguard	47994	Cleave	D	6000
+pet:Felguard	32851	Demonic Frenzy	DU	0
+pet:Felguard	47996	Intercept	S	30000
+pet:Felhunter	48011	Devour Magic	CL	8000
+pet:Felhunter	19658	Devour Magic Effect	H	0
+pet:Felhunter	57567	Fel Intelligence		0
+pet:Felhunter	54053	Shadow Bite	D	6000
+pet:Felhunter	19647	Spell Lock		24000
+pet:Ghoul	47468	Claw	D	0
+pet:Ghoul	47481	Gnaw	D,S	60000
+pet:Ghoul	47484	Huddle	VU	45000
+pet:Ghoul	47482	Leap	SUM	20000
+pet:Gorilla	61685	Charge	DU,R	25000
+pet:Gorilla	26090	Pummel		30000
+pet:Gorilla	52476	Smack	D	0
+pet:Hyena	52474	Bite	D	0
+pet:Hyena	61685	Charge	DU,R	25000
+pet:Hyena	61684	Dash	SU	32000
+pet:Hyena	53575	Tendon Rip	D,SD	20000
+pet:Imp	47982	Blood Pact		0
+pet:Imp	47983	Fire Shield	SH	0
+pet:Imp	47964	Firebolt	D	0
+pet:Imp	4511	Phase Shift		10000
+pet:Moth	23145	Dive	SU	32000
+pet:Moth	52016	Serenity Dust	HOT	60000
+pet:Moth	52476	Smack	D	0
+pet:Moth	52825	Swoop	R	25000
+pet:Nether Ray	52474	Bite	D	0
+pet:Nether Ray	23145	Dive	SU	32000
+pet:Nether Ray	53589	Nether Shock	D	40000
+pet:Raptor	61685	Charge	DU,R	25000
+pet:Raptor	52472	Claw	D	0
+pet:Raptor	61684	Dash	SU	32000
+pet:Raptor	53582	Savage Rend	D,P	60000
+pet:Ravager	52474	Bite	D	0
+pet:Ravager	61684	Dash	SU	32000
+pet:Ravager	53562	Ravage	D,S	40000
+pet:Remote Control	25026	Activate MG Turret	P	10000
+pet:Remote Control	25027	Flamethrower	P,SD	2000
+pet:Rhino	61685	Charge	DU,R	25000
+pet:Rhino	52476	Smack	D	0
+pet:Rhino	57393	Stampede	D	60000
+pet:Scorpid	61685	Charge	DU,R	25000
+pet:Scorpid	52472	Claw	D	0
+pet:Scorpid	55728	Scorpid Poison	DUM,P	10000
+pet:Serpent	52474	Bite	D	0
+pet:Serpent	61684	Dash	SU	32000
+pet:Serpent	55557	Poison Spit	P,SU	10000
+pet:Silithid	52472	Claw	D	0
+pet:Silithid	61684	Dash	SU	32000
+pet:Silithid	55509	Venom Web Spray	P,R	40000
+pet:Spider	52474	Bite	D	0
+pet:Spider	61684	Dash	SU	32000
+pet:Spider	4167	Web	R	40000
+pet:Spirit Beast	61685	Charge	DU,R	25000
+pet:Spirit Beast	52472	Claw	D	0
+pet:Spirit Beast	61684	Dash	SU	32000
+pet:Spirit Beast	24453	Prowl	DU,SD,ST	10000
+pet:Spirit Beast	61198	Spirit Strike	D,P	10000
+pet:Sporebat	23145	Dive	SU	32000
+pet:Sporebat	52476	Smack	D	0
+pet:Sporebat	53598	Spore Cloud	A,DEF,P	10000
+pet:Succubus	47992	Lash of Pain	D	12000
+pet:Succubus	7870	Lesser Invisibility	ST	0
+pet:Succubus	6358	Seduction	S	0
+pet:Succubus	27275	Soothing Kiss	SD	4000
+pet:Tallstrider	61685	Charge	DU,R	25000
+pet:Tallstrider	52472	Claw	D	0
+pet:Tallstrider	61684	Dash	SU	32000
+pet:Tallstrider	50285	Dust Cloud	A	40000
+pet:Turtle	52474	Bite	D	0
+pet:Turtle	61685	Charge	DU,R	25000
+pet:Turtle	26064	Shell Shield	VU	60000
+pet:Voidwalker	47988	Consume Shadows	HOT	0
+pet:Voidwalker	47986	Sacrifice	DEF,DUM	60000
+pet:Voidwalker	47990	Suffering	A,AD	120000
+pet:Voidwalker	47984	Torment		5000
+pet:Warp Stalker	52474	Bite	D	0
+pet:Warp Stalker	61685	Charge	DU,R	25000
+pet:Warp Stalker	61684	Dash	SU	32000
+pet:Warp Stalker	35346	Warp		15000
+pet:Wasp	23145	Dive	SU	32000
+pet:Wasp	52476	Smack	D	0
+pet:Wasp	56631	Sting	D,DEF	6000
+pet:Wasp	52825	Swoop	R	25000
+pet:Wind Serpent	52474	Bite	D	0
+pet:Wind Serpent	23145	Dive	SU	32000
+pet:Wind Serpent	25012	Lightning Breath	D	10000
+pet:Wolf	52474	Bite	D	0
+pet:Wolf	61685	Charge	DU,R	25000
+pet:Wolf	61684	Dash	SU	32000
+pet:Wolf	64495	Furious Howl	DU	40000
+pet:Worm	55754	Acid Spit	D,DEF	10000
+pet:Worm	52474	Bite	D	0
+pet:Worm	61685	Charge	DU,R	25000
+pet:generic	53490	Bullheaded	CL,DD	180000
+pet:generic	53434	Call of the Wild	DU	300000
+pet:generic	54044	Carrion Feeder	DUM	30000
+pet:generic	1742	Cower	SD,VU	45000
+pet:generic	75593	Ferocious Inspiration	DU	0
+pet:generic	61676	Growl		5000
+pet:generic	55709	Heart of the Phoenix		480000
+pet:generic	53476	Intervene		30000
+pet:generic	24394	Intimidation	S	0
+pet:generic	53478	Last Stand	DUM	360000
+pet:generic	53426	Lick Your Wounds	H	180000
+pet:generic	53401	Rabid	DU	45000
+pet:generic	53517	Roar of Recovery		180000
+pet:generic	53480	Roar of Sacrifice	CR	60000
+pet:generic	53477	Taunt		180000
+pet:generic	63900	Thunderstomp	A,D	10000
+pet:generic	53508	Wolverine Bite	D	10000
+race:Blood Elf	50613	Arcane Torrent	A	120000
+race:Draenei	59548	Gift of the Naaru	HOT	180000
+race:Dwarven	2481	Find Treasure		1500
+race:Dwarven	20594	Stoneform	CL	120000
+race:Gnome	20589	Escape Artist	R	105000
+race:Human	59752	Every Man for Himself	CL	120000
+race:Night Elf	58984	Shadowmeld	DUM,ST	120000
+race:Orc	33702	Blood Fury	DU	120000
+race:Tauren	20549	War Stomp	A,S	120000
+race:Troll	26297	Berserking	SU	180000
+race:Undead	20577	Cannibalize	DUM	120000
+race:Undead	7744	Will of the Forsaken	SL	120000

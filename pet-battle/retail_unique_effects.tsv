@@ -1,0 +1,189 @@
+effect_id	retail_abilities	effects	states	examples
+E001	255	DMG		Bite; Punch; Peck; Burn; Beam
+E002	22	HEAL		Healing Wave; Healing Flame; Cauterize; Inspiring Song; Bleat
+E003	21	DMG,MULTI		Quills; Flank; Thrash; Tongue Lash; Flurry
+E004	20	DMG,HEAL		Death Coil; Consume; Leech Life; Absorb; Devour
+E005	20	DMG	Mod_DamageTakenPercent	Stampede; Reckless Strike; Zergling Rush; Flyby; Flock
+E006	19	DMG	Mod_SpeedPercent	Hiss; Adrenaline Rush; Metabolic Boost; Screech; Leap
+E007	16		Add_FlatDamageTaken	Exposed Wounds; Shell Shield; Mangle; Jadeskin; Stoneskin
+E008	15	DMG,aura:APPLY,aura:p22	Mechanic_IsStunned,turnLock	Fury of 1,000 Fists; Headbutt; Deep Freeze; Shock and Awe; Soulrush
+E009	15	DMG	Mod_DamageDealtPercent	Roar; Trumpet Strike; Drain Power; Squawk; Competitive Spirit
+E010	12	DMG,aura:DMG,p54	Mechanic_IsPoisoned	Poison Fang; Poison Spit; Poison Lash; Creeping Ooze; Poisoned Branch
+E011	12	AOE		Dreadful Breath; Whirlwind; Thunderbolt; Avalanche; Cleave
+E012	11		Stat_Dodge	Dodge; Evanescence; Phase Shift; Cute Face; Frolick
+E013	10	DMG,p49	Mechanic_IsFlying,untargettable	Lift-Off; Meteor Strike; Devastate; Proto-Strike; Launch
+E014	10	aura:APPLY,aura:p22	Mechanic_IsStunned,turnLock	Blackout Kick; Bash; Clobber; Crystal Prison; Time Stop
+E015	10	aura:DMG		Thorns; Immolation; Lightning Shield; Heat Up; Pheromones
+E016	10			Apocalypse; Aged Yolk; Sear Magic; Eggnog; High Fiber
+E017	10	DMG,p139		Death Grip; Inferno Herding; Inferno Herding; Wing Buffet; Wind Buffet
+E018	9	DMG,aura:DMG,p54	Mechanic_IsBurning	Immolate; Flame Breath; Flamethrower; Fel Immolate; Flame Jet
+E019	9	DMG	swapOutLock	Grasp; Sticky Goo; Surge of Power; Super Sticky Goo; Bone Prison
+E020	9	DMG,aura:APPLY,aura:p22,p131	Mechanic_IsStunned,turnLock	Kick; Counterspell; Interrupting Gaze; Horn Attack; Backflip
+E021	7	p150	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount,Special_BlockedFriendlyMode,Special_ObjectRedirectionAuraID	Beaver Dam; Jade Barrier; Prismatic Barrier; Illusionary Barrier; Ice Barrier
+E022	7	DMG,aura:DMG,p54		Wild Winds; Toxic Smoke; Acid Touch; Gale Slash; Corrupted Touch
+E023	6		Mod_DamageTakenPercent	Crouch; Staggered Steps; Unholy Ascension; Extra Plating; Tough n' Cuddly
+E024	6	DMG,aura:DMG		Nut Barrage; Banana Barrage; Rock Barrage; Egg Barrage; Make it Rain
+E025	6		Stat_CritChance	Adrenal Glands; Hawk Eye; Stimpack; Caw; Going Bonkers!
+E026	6	DMG,aura:DMG,p54	Mechanic_IsBleeding	Woodchipper; Rip; Huge, Sharp Teeth!; Chop; Gnash
+E027	6	DMG,p145		Sweep; Frill Blast; Incineration Security Measures; Retrieve; Void Gate
+E028	6		Special_BlockedAttackCount	Soul Ward; Shield Block; Bubble; Shieldstorm; Bubble X
+E029	5	aura:DMG,p54		Death and Decay; Swarm of Flies; Agony; Swarm of Bees; Corrupted Ground
+E030	5	p76		Barrel Toss; Cannon Shot; Flame Shot; Frost Shot; Arcane Shot
+E031	5	aura:APPLY,aura:DMG		Entangling Roots; Whirlpool; Sewage Eruption; Whirlpool X; Void Tremors
+E032	5	DMG	Mechanic_IsBlind,Stat_Accuracy	Flash; Spectral Spine; Lens Flare; Ashes of Outland; Dazzle
+E033	4	DMG,p49	Mechanic_IsUnderground,untargettable	Burrow; Dive; Glop; Ambystan Snap
+E034	4		Stat_Accuracy	Accuracy; Stench; Inebriate; Nimbus
+E035	4		Stat_Accuracy,Stat_CritChance	Uncanny Luck; Lucky Dance; Uncertainty; Unstable Engineering
+E036	4	aura:DMG,p54	Mechanic_IsPoisoned	Sting; Confusing Sting; Tentacle Stab; Great Sting
+E037	4	aura:p49	Mod_DamageTakenPercent	Howl; Roar of the Dead; Howl X; Howl
+E038	4		Mod_SpeedPercent	Dazzling Dance; Moon Dance; Temporal Anomaly; Sticky Surge
+E039	4	aura:APPLY,aura:DMG,aura:p22		Stun Seed; Geyser; Time Bomb; Ice Tomb
+E040	4	DMG	Mod_DamageDealtPercent,Mod_SpeedPercent	Weakness; Jar of Smelly Liquid; Terrify; Tremble in Fear
+E041	4	DMG,p49	Stat_Speed	Surge; Belly Slide; When Elekks Fly; Bubble Blast
+E042	4	p53		Buried Treasure; Restoration; Love Potion; Healing Crash
+E043	4	DMG,aura:HEAL		Plagued Blood; Touch of the Animus; Siphon Gear; Double Zap
+E044	3	MULTI		Tail Sweep; Arcane Slash; Scrabble
+E045	3	aura:p49	Mod_DamageDealtPercent	Supercharge; Dominance; Overpowered
+E046	3		Mod_DamageDealtPercent	Inner Vision; Focus Chi; Amplify Magic
+E047	3	aura:DMG,aura:p22		Curse of Doom; Chew; Creeping Insanity
+E048	3	aura:HEAL	swapInLock,swapOutLock,turnLock	Hibernate; Reforge; Nap Time
+E049	3	DMG,p59		Comeback; Early Advantage; Arcane Riposte
+E050	3	aura:APPLY,aura:p22		Invisibility; Elementium Bolt; Void Crash
+E051	3	aura:DMG	Add_FlatDamageTaken	Spiked Skin; Spirit Spikes; Spiked Shell
+E052	3	aura:HEAL		Soothing Mists; Light of Creation; Nut-trition
+E053	3	DMG,p80	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunlight	Sunlight; Illuminate; Sunshell
+E054	3	p49	Stat_Dodge,Stat_Speed	Deflection; Ethereal; Smoke Bomb
+E055	3	DMG,aura:DMG,aura:p49	Mechanic_IsBleeding,Mod_DamageDealtPercent	Rake; Bark; Blazing Yip
+E056	3	HEAL,p100		Rebuild; Healing Stream; Draconic Remedy
+E057	3	aura:p49	Mod_DamageDealtPercent,Mod_SpeedPercent	Prowl; Shadowmeld; Glade Prowl
+E058	3	DMG,aura:APPLY,p80	Critical_Damage_Bonus,Weather_Mud	Mudslide; Mud Rake; Swamp Mud
+E059	3	HEAL,aura:p22	maxHealthBonus	Perk Up; Ancient Blessing; Ancient Knowledge
+E060	3	aura:APPLY,aura:p49	turnLock	Food Coma; Lullaby; Stay a While and Listen
+E061	3	DMG,aura:p22	Mechanic_IsStunned,turnLock	Ghostly Bite; Haymaker; Falling Murloc
+E062	3	DMG	Mod_DamageDealtPercent,Mod_DamageTakenPercent	Rabid Strike; Greed Before Need; Fel Corruption
+E063	3	aura:APPLY,aura:DMG,aura:p22,aura:p49	Mechanic_IsObject	Snap Trap; Magma Trap; Table of Discontents
+E064	3	aura:DMG,p54	Mechanic_IsObject	Build Turret; Raise Ally; Rapid Turret
+E065	3		Mod_DamageDealtPercent,Mod_DamageTakenPercent	Wild Rage; Enrage; Primal Rage
+E066	3	DMG	Mod_HealingTakenPercent	Darkflame; Breath of Sorrow; Nightmare
+E067	3	DMG	Add_FlatDamageTaken	Ironbark; Goldskin; First Croak
+E068	3	HEAL	Mod_DamageDealtPercent	Giant's Blood; Preen; I Am Broot!
+E069	3	DMG	Add_PeriodicDamageTaken	Toxic Bite; Toxic Spray; Toxic Spray X
+E070	2	DMG,aura:APPLY	Mechanic_IsInvisible,turnLock	Alexander's Hand; Frog Kiss
+E071	2	aura:DMG	Mechanic_IsObject	Cyclone; Void Cyclone
+E072	2	DMG,aura:p169,p80	Add_FlatDamageDealt,Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_LightningStorm	Call Lightning; Call Lightning X
+E073	2	DMG,p80	Mechanic_IsChilled,Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Blizzard	Call Blizzard; Call of Winter
+E074	2	aura:HEAL,p63		Tranquility; Renewing Mists
+E075	2	DMG,HEAL,p80	Mod_HealingTakenPercent,Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Moonlight	Starfall; Moon Tears
+E076	2	aura:DMG	Mechanic_IsPoisoned	Glowing Toxin; Slow Unmaking
+E077	2	HEAL,p22,p49		Repair; Reboot
+E078	2	p76	Mod_DamageDealtPercent	Pump; Wind-Up
+E079	2	aura:DMG	Mechanic_IsObject,Mechanic_IsUnderground,swapInLock,swapOutLock,turnLock,untargettable	Sons of the Flame; Sons of the Root
+E080	2		Mechanic_IsObject,Special_BlockedAttackCount,Special_ObjectRedirectionAuraID	Decoy; Decoy X
+E081	2	DMG	Mechanic_IsWebbed,swapOutLock	Sticky Web; Icy Web
+E082	2	aura:DMG,p54	Mechanic_IsPoisoned,Mod_DamageTakenPercent	Acidic Goo; Super Acidic Goo
+E083	2	DMG,aura:DMG,aura:p22	Mechanic_IsWebbed	Brittle Webbing; Frostbite Webbing
+E084	2	DMG	Mechanic_IsChilled,Mod_SpeedPercent	Frost Shock; Flash Freeze
+E085	2	DMG,aura:DMG,p54	Add_FlatDamageTaken	Corrosion; Corrosion X
+E086	2	DMG,aura:p49	Special_TypeOverride	Rot; Discharge
+E087	2	aura:APPLY,aura:p49		Soothe; Celestial Blessing
+E088	2	DMG	Mod_SpeedPercent,Special_BlockedAttackCount,swapOutLock	Cocoon Strike; Mummy Wrap
+E089	2	DMG,aura:APPLY,aura:p49	Mechanic_IsStunned,turnLock	Moth Dust; Sleeping Gas
+E090	2	p145,p49	Stat_Dodge	Feign Death; Warning!
+E091	2	AOE,p80	Weather_ArcaneStorm	Arcane Storm; Psionic Storm
+E092	2	aura:HEAL	swapOutLock,turnLock	Emerald Dream; Spa Day
+E093	2	aura:DMG,aura:p49,p49	Mechanic_IsBomb,Mechanic_IsObject	Minefield; Booby-Trapped Presents
+E094	2	aura:DMG,aura:p22	Mechanic_IsBomb	Sticky Grenade; Explosive Brew
+E095	2	aura:DMG,aura:p165,aura:p49,p230		Haunt; Deadly Dreaming
+E096	2	DMG,p22		Omnislash; Tea Party
+E097	2	p145,p49	Mod_DamageDealtPercent,Mod_SpeedPercent,Stat_Speed	Righteous Inspiration; Righteous Inspiration
+E098	2	p145,p22,p49	Stat_Dodge	Portal; Warp
+E099	2	p112		Raise Dead; Mass Resurrection
+E100	2	aura:p373		Mind Games; Too Big!
+E101	1	DMG,p138		Howling Blast
+E102	1	DMG,aura:p169,p80	Mechanic_IsBurning,Weather_BurntEarth	Scorched Earth
+E103	1	aura:APPLY,aura:DMG,aura:p22	Mechanic_IsObject	Volcano
+E104	1	aura:DMG,aura:HEAL,p54		Siphon Life
+E105	1	HEAL,p80	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	Cleansing Rain
+E106	1	DMG,p80	Mechanic_IsBlind,Mod_HealingTakenPercent,Stat_Accuracy,Weather_Darkness	Call Darkness
+E107	1	aura:DMG,aura:p49	Mod_DamageDealtPercent	Crystal Overload
+E108	1	DMG	Mechanic_IsFlying	Boulder Toss
+E109	1	aura:HEAL,aura:p171,p63		Photosynthesis
+E110	1	aura:p22,aura:p53,p63		Wish
+E111	1	p67		Life Exchange
+E112	1	aura:APPLY	Mod_DamageTakenPercent	Heartbroken
+E113	1		unkillable	Survival
+E114	1	p75	Mechanic_IsObject	Launch Rocket
+E115	1	p77		Lock-On
+E116	1	p78	swapOutLock	Plant
+E117	1	p86	Mechanic_IsFlying,swapOutLock	Gravity
+E118	1	aura:DMG,aura:p22	Mechanic_IsBomb,Mechanic_IsObject	XE-321 Boombot
+E119	1	DMG	Mechanic_IsChilled,swapOutLock	Frost Nova
+E120	1		Mod_SpeedPercent,Stat_Accuracy,Stat_CritChance	Focus
+E121	1	p150,p49	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount,Special_BlockedFriendlyMode,Special_ObjectRedirectionAuraID	Onyx Wall
+E122	1	DMG,p80	Add_FlatDamageTaken,Stat_Accuracy,Weather_Sandstorm	Sandstorm
+E123	1	aura:p129,aura:p22,aura:p49,p168		Nevermore
+E124	1	aura:HEAL,aura:p49	Special_TypeOverride	Nature's Ward
+E125	1	DMG	Mechanic_IsChilled,Stat_Accuracy	Slippery Ice
+E126	1	DMG,p80	Mod_HealingTakenPercent,Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Moonlight	Moonfire
+E127	1	DMG,aura:DMG,p256,p54	Mechanic_IsBleeding,Mechanic_IsBurning,Mechanic_IsPoisoned	DATA ERROR
+E128	1	DMG,aura:DMG	Mechanic_IsObject	Bombing Run
+E129	1	p144,p61		Consume Corpse
+E130	1	aura:p65,p54		Creeping Fungus
+E131	1	DMG,HEAL,aura:DMG,aura:HEAL,p54		Leech Seed
+E132	1	aura:p54	Mechanic_IsObject	Spore Shrooms
+E133	1	aura:p140,aura:p54	Mechanic_IsChilled	Blistering Cold
+E134	1	aura:APPLY,aura:p111,aura:p138,aura:p49		Dark Rebirth
+E135	1	DMG	Stat_CritChance	Croak
+E136	1	HEAL	Stat_Accuracy	Autumn Breeze
+E137	1		Mechanic_IsBlind,Stat_Accuracy	Blinding Powder
+E138	1		Mechanic_IsBlind,Mechanic_IsPoisoned,Stat_Accuracy	Blinding Poison
+E139	1	DMG,p80	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	Acid Rain
+E140	1	HEAL	Stat_Accuracy,Stat_CritChance	Rain Dance
+E141	1		Add_FlatDamageTaken,Mod_SpeedPercent	Forboding Curse
+E142	1	p49	Stat_Dodge	Fade
+E143	1	DMG,aura:DMG,p49	Mechanic_IsBleeding,Stat_CritChance	Magic Sword
+E144	1	aura:p204		Reflective Shield
+E145	1		Mod_DamageDealtPercent,Stat_Accuracy	Anzu's Blessing
+E146	1	AOE,aura:DMG	Mechanic_IsObject	Carpnado
+E147	1	p223	Special_BlockedAttackCount	Refuge
+E148	1	aura:p49	Mechanic_IsStunned,turnLock	Nap Time
+E149	1	aura:DMG	Mechanic_IsObject,swapInLock,swapOutLock,turnLock,untargettable	Puppies of the Flame
+E150	1	DMG	Mod_DamageDealtPercent,Special_TypeOverride	Feathered Frenzy
+E151	1		Mod_DamageDealtPercent,Stat_CritChance	Murkmorphosis
+E152	1	DMG,aura:p49,p145	Mod_DamageTakenPercent	Arcane Annihilator
+E153	1	DMG,p145	Mod_DamageDealtPercent	Lightning Conductor
+E154	1	aura:p246,aura:p49		Bend Time
+E155	1	DMG,p145,p49	Stat_Dodge	Void Portal
+E156	1	p45		Slow Digestion
+E157	1	p97		Rapid Consumption
+E158	1	aura:p254		Aura of Gonk
+E159	1	p254		Eat the Fly
+E160	1	HEAL,p248,p358	Mod_DamageDealtPercent,Mod_SpeedPercent	Evolving Bite
+E161	1	aura:APPLY,aura:p22,p139	Mechanic_IsStunned,turnLock	Stunning Peck
+E162	1	p49	Special_BlockedAttackCount,Special_ObjectRedirectionAuraID,Stat_Speed	Annoying Shield
+E163	1	DMG,aura:APPLY,aura:p111,aura:p360,aura:p49,p139,p248,p360		The Biggest Hammer
+E164	1	DMG	Mechanic_IsChilled,Mod_SpeedPercent,swapOutLock	Coolant Flush
+E165	1	AOE	Mod_DamageTakenPercent	Akunda's Wrath
+E166	1	AOE,p139		Krag'wa's Wrath
+E167	1	p370		Dragon's Call
+E168	1	HEAL,p363		Torment
+E169	1	DMG,aura:DMG,aura:HEAL		Necrotic Bomb
+E170	1	DMG	Critical_Damage_Bonus	Overcharge
+E171	1	DMG,p80	Mechanic_IsPoisoned,Weather_Toxic_Gas	Toxic Fumes
+E172	1	AOE,aura:APPLY,aura:DMG		Void Slap
+E173	1	DMG,aura:DMG,p49,p54	Mechanic_IsBleeding,Mod_DamageTakenPercent	Sloth Strike
+E174	1	HEAL,p80	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunlight	Ray of Hope
+E175	1	p22	Special_BlockedAttackCount	Deep Research
+E176	1	p139,p49	Stat_Dodge	Return to Rest
+E177	1	DMG,p49	Stat_CritChance	Wombo Combo
+E178	1	DMG,aura:APPLY,aura:p49	Mechanic_IsObject	Whirlwind Dance
+E179	1	DMG,aura:APPLY,aura:DMG,aura:p22,p54	Mechanic_IsBurning,Mechanic_IsStunned,turnLock	Unrelenting Flames
+E180	1	HEAL,p145		Deliberate Retreat
+E181	1	DMG,aura:DMG,p139,p54	Mechanic_IsPoisoned	Terrifying Toxicity
+E182	1	aura:DMG,p54	Mechanic_IsBleeding	Whirling Talons
+E183	1	p49	Mechanic_IsStunned,Stat_Dodge,Stat_Speed	Shell Fortress
+E184	1	HEAL,aura:p169,p80	Mechanic_IsBurning,Weather_BurntEarth	Stoke the Flames
+E185	1	aura:APPLY,aura:p22,p128	Mechanic_IsStunned,turnLock	[DNT] TRAP HELP
+E186	1	DMG,p145	Mod_DamageTakenPercent	Fight and Flight
+E187	1	p128		[DNT] INSTADEAD
+E188	1	DMG,aura:DMG	Mechanic_IsBurning	Flamethrower

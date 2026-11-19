@@ -1,0 +1,78 @@
+type	all_retail	runnable_in_engine	examples
+DMG	273	268	Bite; Punch; Peck; Burn; Beam; Breath; Zap; Infected Claw; Water Jet; Scratch; Howling Bla
+DMG + DoT	39	25	Poison Fang; Immolate; Poison Spit; Poison Lash; Woodchipper; Creeping Ooze; Flame Breath;
+OBJECT (wall/decoy/trap/turret/bomb) - parked	32	18	Volcano; Cyclone; Launch Rocket; Beaver Dam; Sons of the Flame; Decoy; XE-321 Boombot; Jad
+other	32	26	Invisibility; Wish; Life Exchange; Lock-On; Barrel Toss; Soothe; Apocalypse; Nevermore; Bu
+heal	30	29	Healing Wave; Healing Flame; Cauterize; Repair; Inspiring Song; Rebuild; Bleat; Nature's T
+X  not in engine / special	30	0	Gravity; Sweep; Feign Death; Frill Blast; Righteous Inspiration; Portal; Warning!; Inciner
+DMG + stun	29	15	Fury of 1,000 Fists; Kick; Counterspell; Headbutt; Interrupting Gaze; Deep Freeze; Moth Du
+DMG + drain/heal	24	22	Death Coil; Consume; Leech Life; Absorb; Devour; Plagued Blood; Ravage; Bloodfang; Siphon 
+MULTI	24	24	Tail Sweep; Quills; Flank; Thrash; Tongue Lash; Flurry; Lash; Gnaw; Rend; Batter; Alpha St
+damage shield / retaliation	24	11	Curse of Doom; Thorns; Entangling Roots; Stun Seed; Immolation; Geyser; Whirlpool; Chew; T
+WEATHER (area state for N rounds)	23	16	Scorched Earth; Call Lightning; Call Blizzard; Cleansing Rain; Call Darkness; Starfall; Su
+DMG + vulnerability (target takes more)	21	9	Stampede; Reckless Strike; Zergling Rush; Flyby; Flock; Swarm; Murder; Hunting Party; Infl
+DMG + untargetable round	15	15	Burrow; Lift-Off; Boulder Toss; Meteor Strike; Dive; Devastate; Proto-Strike; Launch; Hero
+defense (takes less)	15	15	Crouch; Staggered Steps; Shell Shield; Extra Plating; Jadeskin; Stoneskin; Emerald Presenc
+stun	15	13	Blackout Kick; Bash; Clobber; Crystal Prison; Food Coma; Time Stop; Holy Justice; Lovestru
+DoT	14	8	Death and Decay; Swarm of Flies; Glowing Toxin; Sting; Agony; Confusing Sting; Creeping Fu
+DMG + speed buff	13	11	Adrenaline Rush; Metabolic Boost; Leap; Overtune; Surge; Belly Slide; Rush; Gobble Strike;
+dodge/avoid	13	13	Dodge; Evanescence; Phase Shift; Cute Face; Frolick; Fade; Cute As A Button; Where's the B
+AOE	13	13	Dreadful Breath; Whirlwind; Thunderbolt; Avalanche; Cleave; Grave Destruction; Thunderclap
+DMG + speed debuff	12	10	Hiss; Screech; Frost Shock; Eyeblast; Moth Balls; Sand Bolt; Quicksand; Primal Cry; Slithe
+DMG + swap-lock	12	10	Grasp; Sticky Web; Sticky Goo; Frost Nova; Surge of Power; Super Sticky Goo; Bone Prison; 
+vulnerability (target takes more)	12	11	Heartbroken; Exposed Wounds; Mangle; Unholy Ascension; Howl; Wild Magic; Black Claw; Roar 
+DMG + damage buff	11	11	Roar; Trumpet Strike; Competitive Spirit; Frenzyheart Brew; Roll; Evolution; Feathered Fre
+damage buff	8	8	Supercharge; Inner Vision; Focus Chi; Pump; Wind-Up; Amplify Magic; Dominance; Overpowered
+block N attacks	8	7	Soul Ward; Shield Block; Bubble; Shieldstorm; Refuge; Bubble X; Deep Research; Metal Shiel
+heal over time	7	5	Tranquility; Photosynthesis; Soothing Mists; Renewing Mists; Nature's Ward; Light of Creat
+DMG + damage shield / retaliation	6	6	Nut Barrage; Banana Barrage; Rock Barrage; Egg Barrage; Make it Rain; Bone Barrage
+crit buff	6	6	Adrenal Glands; Hawk Eye; Stimpack; Caw; Going Bonkers!; Warning Squawk
+DMG + accuracy debuff	6	5	Flash; Slippery Ice; Spectral Spine; Lens Flare; Ashes of Outland; Dazzle
+stun + swap-lock + heal over time	5	5	Hibernate; Emerald Dream; Reforge; Nap Time; Spa Day
+DMG + damage debuff + speed debuff	4	3	Weakness; Jar of Smelly Liquid; Terrify; Tremble in Fear
+defense (takes less) + damage shield / retaliation	3	0	Spiked Skin; Spirit Spikes; Spiked Shell
+dodge/avoid + speed buff	3	3	Deflection; Ethereal; Smoke Bomb
+DMG + DoT + damage debuff	3	1	Rake; Bark; Blazing Yip
+DMG + damage debuff	3	3	Squawk; Shriek; Cluck
+accuracy debuff	3	2	Stench; Inebriate; Blinding Powder
+damage buff + speed debuff	3	3	Prowl; Shadowmeld; Glade Prowl
+vulnerability (target takes more) + damage buff	3	3	Wild Rage; Enrage; Primal Rage
+DMG + healing-taken down	3	3	Darkflame; Breath of Sorrow; Nightmare
+heal + damage buff	3	3	Giant's Blood; Preen; I Am Broot!
+DMG + untargetable round + stun	2	2	Alexander's Hand; Frog Kiss
+accuracy buff	2	2	Accuracy; Nimbus
+accuracy buff + crit buff	2	2	Uncanny Luck; Lucky Dance
+speed buff	2	1	Dazzling Dance; Moon Dance
+DoT + vulnerability (target takes more)	2	2	Acidic Goo; Super Acidic Goo
+DMG + swap-lock + damage shield / retaliation	2	2	Brittle Webbing; Frostbite Webbing
+DMG + DoT + vulnerability (target takes more)	2	1	Corrosion; Corrosion X
+DMG + damage buff + damage debuff	2	2	Drain Power; Darkmoon Curse
+DMG + swap-lock + block N attacks + speed debuff	2	2	Cocoon Strike; Mummy Wrap
+DMG + vulnerability (target takes more) + damage buff	2	2	Rabid Strike; Greed Before Need
+DMG + defense (takes less)	2	2	Ironbark; Goldskin
+accuracy debuff + crit buff	2	2	Uncertainty; Unstable Engineering
+speed debuff	2	0	Temporal Anomaly; Sticky Surge
+DMG + crit buff	2	2	Overcharge; Wombo Combo
+DoT + heal over time	1	1	Siphon Life
+damage buff + damage shield / retaliation	1	1	Crystal Overload
+SURVIVE (cannot drop below 1 HP)	1	1	Survival
+swap-lock	1	1	Plant
+speed buff + accuracy buff + crit buff	1	1	Focus
+DMG + DoT + drain/heal	1	1	Leech Seed
+DMG + crit debuff	1	1	Croak
+heal + accuracy debuff	1	1	Autumn Breeze
+DoT + accuracy debuff	1	1	Blinding Poison
+heal + accuracy buff + crit buff	1	1	Rain Dance
+vulnerability (target takes more) + speed debuff	1	1	Forboding Curse
+DMG + DoT + crit buff	1	0	Magic Sword
+damage buff + accuracy buff	1	1	Anzu's Blessing
+DMG + defense (takes less) + damage buff	1	1	Fel Corruption
+damage buff + crit buff	1	1	Murkmorphosis
+block N attacks + speed buff	1	1	Annoying Shield
+DMG + swap-lock + speed debuff	1	0	Coolant Flush
+AOE + vulnerability (target takes more)	1	1	Akunda's Wrath
+DMG + drain/heal + damage shield / retaliation	1	0	Necrotic Bomb
+AOE + damage shield / retaliation	1	0	Void Slap
+DMG + DoT + defense (takes less)	1	1	Sloth Strike
+DMG + stun + DoT	1	0	Unrelenting Flames
+stun + dodge/avoid + speed buff	1	1	Shell Fortress

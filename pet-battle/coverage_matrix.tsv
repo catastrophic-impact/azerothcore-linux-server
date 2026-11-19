@@ -1,0 +1,47 @@
+realm	theme	creatures	shipped_abil	candidate_abil	total_abil	creatures_per_ability
+Outland	fel/demon	60	13	21	34	1.8
+Outland	arcane/mana	95	28	25	53	1.8
+Outland	void/shadow	88	17	29	46	1.9
+Outland	frost/ice	13	19	15	34	0.4
+Outland	fire/magma	34	22	26	48	0.7
+Outland	nature/spore	56	29	21	50	1.1
+Outland	storm/lightning	35	12	29	41	0.9
+Outland	earth/stone	41	16	13	29	1.4
+Outland	holy/light	56	79	79	158	0.4
+Outland	scourge undead	54	19	22	41	1.3
+Outland	web/poison	22	26	25	51	0.4
+Outland	bite/pack	56	31	32	63	0.9
+Outland	charge/stomp	32	27	24	51	0.6
+Outland	flying/talon	77	17	22	39	2.0
+Outland	worm/burrow	23	26	23	49	0.5
+Outland	dragonkin	36	22	21	43	0.8
+Outland	troll/voodoo	5	92	85	177	0.0
+Outland	orc/ogre melee	153	69	63	132	1.2
+Outland	ranged/hunter	41	14	31	45	0.9
+Outland	shaman/healer	33	71	67	138	0.2
+Outland	rogue/stealth	37	26	23	49	0.8
+Outland	mechanical	17	14	42	56	0.3
+Outland	murloc/aquatic	23	22	18	40	0.6
+Northrend	fel/demon	15	13	21	34	0.4
+Northrend	arcane/mana	38	28	25	53	0.7
+Northrend	void/shadow	40	17	29	46	0.9
+Northrend	frost/ice	155	19	15	34	4.6
+Northrend	fire/magma	13	22	26	48	0.3
+Northrend	nature/spore	25	29	21	50	0.5
+Northrend	storm/lightning	50	12	29	41	1.2
+Northrend	earth/stone	25	16	13	29	0.9
+Northrend	holy/light	97	79	79	158	0.6
+Northrend	scourge undead	181	19	22	41	4.4
+Northrend	web/poison	29	26	25	51	0.6
+Northrend	bite/pack	54	31	32	63	0.9
+Northrend	charge/stomp	52	27	24	51	1.0
+Northrend	flying/talon	71	17	22	39	1.8
+Northrend	worm/burrow	20	26	23	49	0.4
+Northrend	dragonkin	64	22	21	43	1.5
+Northrend	troll/voodoo	34	92	85	177	0.2
+Northrend	orc/ogre melee	169	69	63	132	1.3
+Northrend	ranged/hunter	44	14	31	45	1.0
+Northrend	shaman/healer	47	71	67	138	0.3
+Northrend	rogue/stealth	23	26	23	49	0.5
+Northrend	mechanical	51	14	42	56	0.9
+Northrend	murloc/aquatic	37	22	18	40	0.9

@@ -1,0 +1,95 @@
+# The Storm Peaks pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	29407	Snowblind Devotee	76-77	Humanoid	0	0	25	0	Melee		composed kit: Humanoid
+Y	29554	Snowblind Devotee	76-77	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	29413	Snowblind Digger	76-77	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	29618	Snowblind Follower	76-77	Humanoid	0	0	74	0	Melee		composed kit: Humanoid
+Y	29412	Crystalweb Spitter	77-78	Beast	3	0	14	0	Melee		composed kit: Beast
+Y	29411	Crystalweb Weaver	77-78	Beast	3	0	14	0	Melee		composed kit: Beast
+Y	29619	Garm Invader	77-78	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	29409	Garm Watcher	77-78	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	29553	Garm Watcher	77-78	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	30448	Plains Mammoth	77-78	Beast	0	0	11	0	Melee		composed kit: Beast
+Y	30260	Stoic Mammoth	77-78	Beast	0	0	12	0	Melee		composed kit: Beast
+Y	29808	Stormcrest Hatchling	77	Beast	0	0	17	0	Melee		composed kit: Critter
+Y	30146	Exhausted Vrykul	78-80	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	29792	Frostfeather Screecher	78-79	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	29793	Frostfeather Witch	78-79	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	29849	Frozen Orb	78-80	Elemental	0	0	8	0	Melee		composed kit: Elemental
+Y	29466	Goblin Prisoner	78-79	Humanoid	0	0	10	0	Melee		composed kit: Critter
+Y	30445	Ice Steppe Bull	78-79	Beast	43	0	5	0	Melee		composed kit: Beast
+Y	29469	Ice Steppe Rhino	78-79	Beast	43	0	28	0	Melee		composed kit: Beast
+Y	29844	Icebound Revenant	78-80	Elemental	0	0	12	0	Melee		composed kit: Elemental
+Y	29461	Icetip Crawler	78	Beast	3	0	3	0	Melee		composed kit: Critter
+Y	29978	Iron Dwarf Assailant	78-79	Humanoid	0	0	82	0	Melee		composed kit: Humanoid
+Y	29979	Iron Dwarf Magus	78-79	Humanoid	0	0	35	0	Melee		composed kit: Magic
+Y	34947	Kvaldir Berserker	78-80	Humanoid	0	0	9	0	Melee		composed kit: Aquatic
+Y	34907	Kvaldir Harpooner	78-80	Humanoid	0	0	10	0	Melee		composed kit: Aquatic
+Y	30170	Mechagnome Attendant	78-79	Mechanical	0	0	4	0	Melee		composed kit: Mechanical
+Y	29389	Mechagnome Laborer	78-79	Mechanical	0	0	11	0	Melee		composed kit: Mechanical
+Y	30144	Restless Frostborn Ghost	78-79	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	30135	Restless Frostborn Warrior	78-79	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	30447	Romping Rhino	78-79	Beast	43	0	8	0	Melee		composed kit: Beast
+Y	29323	Sifreldar Storm Maiden	78-79	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	29376	Stormforged Artificer	78-79	Humanoid	0	0	31	0	Melee		composed kit: Mechanical
+Y	29843	Stormforged Loreseeker	78-79	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	29374	Stormforged Magus	78-79	Humanoid	0	0	9	0	Melee		composed kit: Magic
+Y	29377	Stormforged Raider	78-79	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	30136	Stormforged Soldier	78-79	Humanoid	0	0	73	0	Melee		composed kit: Humanoid
+Y	29369	Stormforged Taskmaster	78-79	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	29652	Stormforged Tracker	78-79	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	29366	Brunnhildar Challenger	79-80	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	29427	Captive Vrykul	79-80	Humanoid	0	0	21	0	Melee		composed kit: Critter
+Y	30164	Cavedweller Worg	79-80	Beast	1	0	20	0	Melee		composed kit: Beast
+Y	30292	Dead Icemaw Bear	79-80	Beast	4	0	14	0	Melee		composed kit: Beast
+Y	30480	Disturbed Taunka Ancestor	79-80	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	29477	Earthen Defender	79-80	Humanoid	0	0	24	0	Melee		composed kit: Elemental
+Y	30322	Earthen Jormungar Handler	79-80	Humanoid	0	0	3	0	Melee		composed kit: Elemental
+Y	30035	Fallen Earthen Defender	79-80	Humanoid	0	0	25	0	Melee		composed kit: Elemental
+Y	35070	Firehawk Mariner	79-80	Humanoid	0	0	9	0	Melee		composed kit: Aquatic
+Y	35083	Firehawk Mariner Male (Dead)	79-80	Humanoid	0	0	7	0	Melee		composed kit: Aquatic
+Y	29426	Hyldnir Overseer	79-80	Humanoid	0	0	3	0	Melee		composed kit: Elemental
+Y	29875	Icemane Yeti	79-80	Humanoid	0	0	27	0	Melee		composed kit: Humanoid
+Y	29562	Icemaw Bear	79-80	Beast	4	0	16	0	Melee		composed kit: Beast
+Y	35080	Kvaldir Berserker (dead)	79-80	Humanoid	0	0	15	0	Melee		composed kit: Aquatic
+Y	35092	Kvaldir Deepcaller	79-80	Humanoid	0	0	12	0	Melee		composed kit: Aquatic
+Y	35084	Kvaldir Harpooner (Dead)	79-80	Humanoid	0	0	14	0	Melee		composed kit: Aquatic
+Y	34839	Kvaldir Mist Binder	79-80	Humanoid	0	0	32	0	Melee		composed kit: Aquatic
+Y	34838	Kvaldir Reaver	79-80	Humanoid	0	0	46	0	Melee		composed kit: Aquatic
+Y	29570	Nascent Val'kyr	79-80	Undead	0	0	27	0	Melee		composed kit: Undead
+Y	29974	Niffelem Forefather	79-80	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	29605	Ravenous Jormungar	79-80	Beast	42	0	20	0	Melee		composed kit: Flying
+Y	30291	Ravenous Jormungar	79-80	Beast	42	0	16	0	Melee		composed kit: Flying
+Y	30422	Roaming Jormungar	79-80	Beast	42	0	15	0	Melee		composed kit: Aquatic
+Y	30184	Scion of Storm	79-80	Elemental	0	0	17	0	Melee		composed kit: Elemental
+Y	29331	Sifreldar Runekeeper	79-80	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	29390	Snowdrift Jormungar	79-80	Beast	42	0	9	0	Melee		composed kit: Aquatic
+Y	30591	Stormforged Amplifier	79-80	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	29370	Stormforged Champion	79	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	29382	Stormforged Reaver	79-80	Mechanical	0	0	14	0	Melee		composed kit: Mechanical
+Y	31693	Stormforged Saboteur	79-80	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	29380	Stormforged War Golem	79-80	Mechanical	0	0	23	0	Melee		composed kit: Mechanical
+Y	30060	Stormforged Warmonger	79-80	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	29624	Stormrider	79-80	Elemental	0	0	26	0	Melee		composed kit: Elemental
+Y	29569	Valkyrion Aspirant	79-80	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	30450	Wailing Winds	79-80	Elemental	0	0	13	0	Melee		composed kit: Elemental
+Y	35098	Wavecrest Mariner	79-80	Humanoid	0	0	10	0	Melee		composed kit: Aquatic
+Y	35104	Wavecrest Mariner Female (Dead)	79-80	Humanoid	0	0	8	0	Melee		composed kit: Aquatic
+Y	35105	Wavecrest Mariner Male (Dead)	79-80	Humanoid	0	0	8	0	Melee		composed kit: Aquatic
+Y	29590	Blighted Proto-Drake	80	Beast	0	0	4	0	Melee		composed kit: Flying
+Y	29639	Brunnhildar Prisoner	80	Humanoid	0	0	10	0	Melee		composed kit: Critter
+Y	29500	Brunnhildar Warbear	80	Beast	4	0	13	0	Melee		composed kit: Beast
+Y	29708	Captive Proto-Drake	80	Dragonkin	0	0	7	0	Melee		composed kit: Dragonkin
+Y	29746	Databank	80	Mechanical	0	0	17	0	Melee		composed kit: Mechanical
+Y	29752	Databank Core	80	Mechanical	0	0	17	0	Melee		composed kit: Mechanical
+Y	29981	Earthen Warder	80	Humanoid	0	0	37	0	Melee		composed kit: Elemental
+Y	35079	Firehawk Mariner Female (Dead)	80	Humanoid	0	0	8	0	Melee		composed kit: Aquatic
+Y	29460	Frigid Proto-Drake	80	Dragonkin	0	0	7	0	Melee		composed kit: Dragonkin
+Y	29625	Hyldsmeet Proto-Drake	80	Beast	0	0	21	0	Melee		composed kit: Flying
+Y	29798	Hyldsmeet Proto-Drake	80	Beast	0	0	3	0	Melee		composed kit: Flying
+Y	30174	Hyldsmeet Warbear	80	Beast	4	0	8	0	Melee		composed kit: Beast
+Y	30148	Infesting Jormungar	80	Beast	42	0	12	0	Melee		composed kit: Aquatic
+Y	29755	Stormpeak Hatchling	80	Dragonkin	0	0	24	0	Melee		composed kit: Dragonkin
+Y	29753	Stormpeak Wyrm	80	Dragonkin	0	0	40	0	Melee		composed kit: Dragonkin
+Y	29942	Warsong Hold Grunt	80	Humanoid	0	0	4	0	Melee		composed kit: Humanoid

@@ -1,0 +1,1850 @@
+realm	entry	name	ctype	cfamily	pet_family	reason
+shipped	3	Flesh Eater	6	0	Undead	shipped species recomposed
+shipped	6	Kobold Vermin	7	0	Magic	shipped species recomposed
+shipped	30	Forest Spider	1	3	Beast	shipped species recomposed
+shipped	36	Harvest Golem	9	0	Mechanical	shipped species recomposed
+shipped	38	Defias Thug	7	0	Humanoid	shipped species recomposed
+shipped	40	Kobold Miner	7	0	Humanoid	shipped species recomposed
+shipped	43	Mine Spider	1	3	Beast	shipped species recomposed
+shipped	46	Murloc Forager	7	0	Humanoid	shipped species recomposed
+shipped	48	Skeletal Warrior	6	0	Undead	shipped species recomposed
+shipped	69	Timber Wolf	1	1	Beast	shipped species recomposed
+shipped	80	Kobold Laborer	7	0	Humanoid	shipped species recomposed
+shipped	92	Rock Elemental	4	0	Elemental	shipped species recomposed
+shipped	94	Defias Cutpurse	7	0	Humanoid	shipped species recomposed
+shipped	95	Defias Smuggler	7	0	Humanoid	shipped species recomposed
+shipped	97	Riverpaw Runt	7	0	Humanoid	shipped species recomposed
+shipped	98	Riverpaw Taskmaster	7	0	Humanoid	shipped species recomposed
+shipped	113	Stonetusk Boar	1	5	Beast	shipped species recomposed
+shipped	114	Harvest Watcher	9	0	Mechanical	shipped species recomposed
+shipped	115	Harvest Reaper	9	0	Mechanical	shipped species recomposed
+shipped	116	Defias Bandit	7	0	Humanoid	shipped species recomposed
+shipped	117	Riverpaw Gnoll	7	0	Humanoid	shipped species recomposed
+shipped	118	Prowler	1	1	Beast	shipped species recomposed
+shipped	119	Longsnout	1	5	Beast	shipped species recomposed
+shipped	121	Defias Pathstalker	7	0	Humanoid	shipped species recomposed
+shipped	122	Defias Highwayman	7	0	Humanoid	shipped species recomposed
+shipped	123	Riverpaw Mongrel	7	0	Humanoid	shipped species recomposed
+shipped	124	Riverpaw Brute	7	0	Humanoid	shipped species recomposed
+shipped	126	Murloc Coastrunner	7	0	Aquatic	shipped species recomposed
+shipped	127	Murloc Tidehunter	7	0	Aquatic	shipped species recomposed
+shipped	154	Greater Fleshripper	1	7	Flying	shipped species recomposed
+shipped	157	Goretusk	1	5	Beast	shipped species recomposed
+shipped	171	Murloc Warrior	7	0	Aquatic	shipped species recomposed
+shipped	199	Young Fleshripper	1	7	Flying	shipped species recomposed
+shipped	202	Skeletal Horror	6	0	Undead	shipped species recomposed
+shipped	203	Skeletal Mage	6	0	Undead	shipped species recomposed
+shipped	205	Nightbane Dark Runner	7	0	Humanoid	shipped species recomposed
+shipped	206	Nightbane Vile Fang	7	0	Humanoid	shipped species recomposed
+shipped	210	Bone Chewer	6	0	Undead	shipped species recomposed
+shipped	212	Splinter Fist Warrior	7	0	Humanoid	shipped species recomposed
+shipped	213	Starving Dire Wolf	1	1	Beast	shipped species recomposed
+shipped	215	Defias Night Runner	7	0	Humanoid	shipped species recomposed
+shipped	217	Venom Web Spider	1	3	Beast	shipped species recomposed
+shipped	257	Kobold Worker	7	0	Humanoid	shipped species recomposed
+shipped	285	Murloc	7	0	Humanoid	shipped species recomposed
+shipped	299	Young Wolf	1	1	Beast	shipped species recomposed
+shipped	422	Murloc Flesheater	7	0	Humanoid	shipped species recomposed
+shipped	423	Redridge Mongrel	7	0	Humanoid	shipped species recomposed
+shipped	424	Redridge Poacher	7	0	Humanoid	shipped species recomposed
+shipped	426	Redridge Brute	7	0	Humanoid	shipped species recomposed
+shipped	428	Dire Condor	1	7	Beast	shipped species recomposed
+shipped	430	Redridge Mystic	7	0	Humanoid	shipped species recomposed
+shipped	435	Blackrock Champion	7	0	Humanoid	shipped species recomposed
+shipped	437	Blackrock Renegade	7	0	Humanoid	shipped species recomposed
+shipped	440	Blackrock Grunt	7	0	Humanoid	shipped species recomposed
+shipped	441	Black Dragon Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	442	Tarantula	1	3	Beast	shipped species recomposed
+shipped	445	Redridge Alpha	7	0	Humanoid	shipped species recomposed
+shipped	446	Redridge Basher	7	0	Humanoid	shipped species recomposed
+shipped	449	Defias Knuckleduster	7	0	Humanoid	shipped species recomposed
+shipped	452	Riverpaw Bandit	7	0	Humanoid	shipped species recomposed
+shipped	453	Riverpaw Mystic	7	0	Magic	shipped species recomposed
+shipped	454	Young Goretusk	1	5	Beast	shipped species recomposed
+shipped	456	Murloc Minor Oracle	7	0	Aquatic	shipped species recomposed
+shipped	458	Murloc Hunter	7	0	Aquatic	shipped species recomposed
+shipped	474	Defias Rogue Wizard	7	0	Magic	shipped species recomposed
+shipped	476	Kobold Geomancer	7	0	Magic	shipped species recomposed
+shipped	478	Riverpaw Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	480	Rusty Harvest Golem	9	0	Mechanical	shipped species recomposed
+shipped	481	Defias Footpad	7	0	Humanoid	shipped species recomposed
+shipped	485	Blackrock Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	500	Riverpaw Scout	7	0	Humanoid	shipped species recomposed
+shipped	501	Riverpaw Herbalist	7	0	Humanoid	shipped species recomposed
+shipped	504	Defias Trapper	7	0	Humanoid	shipped species recomposed
+shipped	505	Greater Tarantula	1	3	Beast	shipped species recomposed
+shipped	513	Murloc Netter	7	0	Aquatic	shipped species recomposed
+shipped	515	Murloc Raider	7	0	Aquatic	shipped species recomposed
+shipped	517	Murloc Oracle	7	0	Aquatic	shipped species recomposed
+shipped	524	Rockhide Boar	1	5	Beast	shipped species recomposed
+shipped	525	Mangy Wolf	1	1	Beast	shipped species recomposed
+shipped	533	Nightbane Shadow Weaver	7	0	Humanoid	shipped species recomposed
+shipped	539	Pygmy Venom Web Spider	1	3	Beast	shipped species recomposed
+shipped	545	Murloc Tidecaller	7	0	Humanoid	shipped species recomposed
+shipped	547	Great Goretusk	1	5	Beast	shipped species recomposed
+shipped	548	Murloc Minor Tidecaller	7	0	Humanoid	shipped species recomposed
+shipped	565	Rabid Dire Wolf	1	1	Beast	shipped species recomposed
+shipped	569	Green Recluse	1	3	Flying	shipped species recomposed
+shipped	570	Brain Eater	6	0	Undead	shipped species recomposed
+shipped	578	Murloc Scout	7	0	Humanoid	shipped species recomposed
+shipped	580	Redridge Drudger	7	0	Humanoid	shipped species recomposed
+shipped	587	Bloodscalp Warrior	7	0	Humanoid	shipped species recomposed
+shipped	588	Bloodscalp Scout	7	0	Humanoid	shipped species recomposed
+shipped	589	Defias Pillager	7	0	Magic	shipped species recomposed
+shipped	590	Defias Looter	7	0	Humanoid	shipped species recomposed
+shipped	595	Bloodscalp Hunter	7	0	Humanoid	shipped species recomposed
+shipped	597	Bloodscalp Berserker	7	0	Humanoid	shipped species recomposed
+shipped	604	Plague Spreader	6	0	Undead	shipped species recomposed
+shipped	615	Blackrock Tracker	7	0	Humanoid	shipped species recomposed
+shipped	628	Black Ravager	1	1	Beast	shipped species recomposed
+shipped	660	Bloodscalp Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	667	Skullsplitter Warrior	7	0	Humanoid	shipped species recomposed
+shipped	669	Skullsplitter Hunter	7	0	Humanoid	shipped species recomposed
+shipped	670	Skullsplitter Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	671	Bloodscalp Headhunter	7	0	Humanoid	shipped species recomposed
+shipped	674	Venture Co. Strip Miner	7	0	Humanoid	shipped species recomposed
+shipped	676	Venture Co. Surveyor	7	0	Humanoid	shipped species recomposed
+shipped	677	Venture Co. Tinkerer	7	0	Humanoid	shipped species recomposed
+shipped	681	Young Stranglethorn Tiger	1	2	Flying	shipped species recomposed
+shipped	682	Stranglethorn Tiger	1	2	Beast	shipped species recomposed
+shipped	683	Young Panther	1	2	Beast	shipped species recomposed
+shipped	684	Shadowmaw Panther	1	2	Beast	shipped species recomposed
+shipped	685	Stranglethorn Raptor	1	11	Beast	shipped species recomposed
+shipped	686	Lashtail Raptor	1	11	Beast	shipped species recomposed
+shipped	687	Jungle Stalker	1	11	Flying	shipped species recomposed
+shipped	688	Stone Maw Basilisk	1	0	Beast	shipped species recomposed
+shipped	689	Crystal Spine Basilisk	1	0	Beast	shipped species recomposed
+shipped	690	Cold Eye Basilisk	1	0	Beast	shipped species recomposed
+shipped	691	Lesser Water Elemental	4	0	Elemental	shipped species recomposed
+shipped	694	Bloodscalp Axe Thrower	7	0	Humanoid	shipped species recomposed
+shipped	696	Skullsplitter Axe Thrower	7	0	Humanoid	shipped species recomposed
+shipped	697	Bloodscalp Shaman	7	0	Humanoid	shipped species recomposed
+shipped	698	Bloodscalp Tiger	1	2	Beast	shipped species recomposed
+shipped	699	Bloodscalp Beastmaster	7	0	Humanoid	shipped species recomposed
+shipped	701	Bloodscalp Mystic	7	0	Humanoid	shipped species recomposed
+shipped	702	Bloodscalp Scavenger	7	0	Humanoid	shipped species recomposed
+shipped	704	Ragged Timber Wolf	1	1	Beast	shipped species recomposed
+shipped	705	Ragged Young Wolf	1	1	Beast	shipped species recomposed
+shipped	706	Frostmane Troll Whelp	7	0	Humanoid	shipped species recomposed
+shipped	707	Rockjaw Trogg	7	0	Humanoid	shipped species recomposed
+shipped	708	Small Crag Boar	1	5	Beast	shipped species recomposed
+shipped	712	Redridge Thrasher	7	0	Humanoid	shipped species recomposed
+shipped	721	Rabbit	8	0	Critter	shipped species recomposed
+shipped	724	Burly Rockjaw Trogg	7	0	Humanoid	shipped species recomposed
+shipped	732	Murloc Lurker	7	0	Aquatic	shipped species recomposed
+shipped	735	Murloc Streamrunner	7	0	Aquatic	shipped species recomposed
+shipped	736	Panther	1	2	Beast	shipped species recomposed
+shipped	740	Adolescent Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	741	Dreaming Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	747	Marsh Murloc	7	0	Humanoid	shipped species recomposed
+shipped	750	Marsh Inkspewer	7	0	Humanoid	shipped species recomposed
+shipped	751	Marsh Flesheater	7	0	Humanoid	shipped species recomposed
+shipped	752	Marsh Oracle	7	0	Humanoid	shipped species recomposed
+shipped	755	Lost One Mudlurker	7	0	Beast	shipped species recomposed
+shipped	757	Lost One Fisherman	7	0	Humanoid	shipped species recomposed
+shipped	759	Lost One Hunter	7	0	Humanoid	shipped species recomposed
+shipped	760	Lost One Muckdweller	7	0	Humanoid	shipped species recomposed
+shipped	762	Lost One Riftseeker	7	0	Humanoid	shipped species recomposed
+shipped	764	Swampwalker	4	0	Elemental	shipped species recomposed
+shipped	766	Tangled Horror	4	0	Elemental	shipped species recomposed
+shipped	767	Swamp Jaguar	1	2	Beast	shipped species recomposed
+shipped	768	Shadow Panther	1	2	Beast	shipped species recomposed
+shipped	769	Deathstrike Tarantula	1	3	Beast	shipped species recomposed
+shipped	772	Stranglethorn Tigress	1	2	Beast	shipped species recomposed
+shipped	780	Skullsplitter Mystic	7	0	Humanoid	shipped species recomposed
+shipped	781	Skullsplitter Headhunter	7	0	Humanoid	shipped species recomposed
+shipped	782	Skullsplitter Scout	7	0	Humanoid	shipped species recomposed
+shipped	783	Skullsplitter Berserker	7	0	Humanoid	shipped species recomposed
+shipped	784	Skullsplitter Beastmaster	7	0	Humanoid	shipped species recomposed
+shipped	822	Young Forest Bear	1	4	Beast	shipped species recomposed
+shipped	824	Defias Digger	7	0	Humanoid	shipped species recomposed
+shipped	830	Sand Crawler	1	8	Aquatic	shipped species recomposed
+shipped	831	Sea Crawler	1	8	Aquatic	shipped species recomposed
+shipped	832	Dust Devil	4	0	Elemental	shipped species recomposed
+shipped	833	Coyote Packleader	1	1	Beast	shipped species recomposed
+shipped	834	Coyote	1	1	Beast	shipped species recomposed
+shipped	846	Rotten Ghoul	6	0	Undead	shipped species recomposed
+shipped	854	Young Jungle Stalker	1	11	Beast	shipped species recomposed
+shipped	855	Young Stranglethorn Raptor	1	11	Beast	shipped species recomposed
+shipped	858	Sorrow Spinner	1	3	Beast	shipped species recomposed
+shipped	861	Stonard Scout	7	0	Humanoid	shipped species recomposed
+shipped	862	Stonard Explorer	7	0	Humanoid	shipped species recomposed
+shipped	883	Deer	8	0	Critter	shipped species recomposed
+shipped	889	Splinter Fist Ogre	7	0	Humanoid	shipped species recomposed
+shipped	890	Fawn	8	0	Critter	shipped species recomposed
+shipped	891	Splinter Fist Fire Weaver	7	0	Humanoid	shipped species recomposed
+shipped	892	Splinter Fist Taskmaster	7	0	Humanoid	shipped species recomposed
+shipped	898	Nightbane Worgen	7	0	Humanoid	shipped species recomposed
+shipped	905	Sharptooth Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	909	Defias Night Blade	7	0	Humanoid	shipped species recomposed
+shipped	910	Defias Enchanter	7	0	Humanoid	shipped species recomposed
+shipped	920	Nightbane Tainted One	7	0	Humanoid	shipped species recomposed
+shipped	922	Silt Crawler	1	8	Aquatic	shipped species recomposed
+shipped	923	Young Black Ravager	1	1	Beast	shipped species recomposed
+shipped	930	Black Widow Hatchling	1	3	Beast	shipped species recomposed
+shipped	937	Kurzen Jungle Fighter	7	0	Humanoid	shipped species recomposed
+shipped	938	Kurzen Commando	7	0	Humanoid	shipped species recomposed
+shipped	939	Kurzen Elite	7	0	Humanoid	shipped species recomposed
+shipped	940	Kurzen Medicine Man	7	0	Humanoid	shipped species recomposed
+shipped	941	Kurzen Headshrinker	7	0	Humanoid	shipped species recomposed
+shipped	942	Kurzen Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	943	Kurzen Wrangler	7	0	Humanoid	shipped species recomposed
+shipped	946	Frostmane Novice	7	0	Humanoid	shipped species recomposed
+shipped	948	Rotted One	6	0	Undead	shipped species recomposed
+shipped	949	Carrion Recluse	1	3	Beast	shipped species recomposed
+shipped	978	Kurzen Subchief	7	0	Humanoid	shipped species recomposed
+shipped	979	Kurzen Shadow Hunter	7	0	Humanoid	shipped species recomposed
+shipped	1007	Mosshide Gnoll	7	0	Humanoid	shipped species recomposed
+shipped	1008	Mosshide Mongrel	7	0	Humanoid	shipped species recomposed
+shipped	1009	Mosshide Mistweaver	7	0	Humanoid	shipped species recomposed
+shipped	1010	Mosshide Fenrunner	7	0	Humanoid	shipped species recomposed
+shipped	1011	Mosshide Trapper	7	0	Humanoid	shipped species recomposed
+shipped	1012	Mosshide Brute	7	0	Humanoid	shipped species recomposed
+shipped	1013	Mosshide Mystic	7	0	Humanoid	shipped species recomposed
+shipped	1014	Mosshide Alpha	7	0	Humanoid	shipped species recomposed
+shipped	1015	Highland Raptor	1	11	Beast	shipped species recomposed
+shipped	1016	Highland Lashtail	1	11	Beast	shipped species recomposed
+shipped	1017	Highland Scytheclaw	1	11	Beast	shipped species recomposed
+shipped	1018	Highland Razormaw	1	11	Beast	shipped species recomposed
+shipped	1019	Elder Razormaw	1	11	Flying	shipped species recomposed
+shipped	1020	Mottled Raptor	1	11	Flying	shipped species recomposed
+shipped	1021	Mottled Screecher	1	11	Beast	shipped species recomposed
+shipped	1022	Mottled Scytheclaw	1	11	Beast	shipped species recomposed
+shipped	1023	Mottled Razormaw	1	11	Beast	shipped species recomposed
+shipped	1024	Bluegill Murloc	7	0	Humanoid	shipped species recomposed
+shipped	1025	Bluegill Puddlejumper	7	0	Humanoid	shipped species recomposed
+shipped	1026	Bluegill Forager	7	0	Humanoid	shipped species recomposed
+shipped	1027	Bluegill Warrior	7	0	Humanoid	shipped species recomposed
+shipped	1028	Bluegill Muckdweller	7	0	Humanoid	shipped species recomposed
+shipped	1034	Dragonmaw Raider	7	0	Dragonkin	shipped species recomposed
+shipped	1035	Dragonmaw Swamprunner	7	0	Dragonkin	shipped species recomposed
+shipped	1036	Dragonmaw Centurion	7	0	Dragonkin	shipped species recomposed
+shipped	1038	Dragonmaw Shadowwarder	7	0	Dragonkin	shipped species recomposed
+shipped	1039	Fen Dweller	4	0	Elemental	shipped species recomposed
+shipped	1040	Fen Creeper	4	0	Elemental	shipped species recomposed
+shipped	1041	Fen Lord	4	0	Elemental	shipped species recomposed
+shipped	1042	Red Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	1043	Lost Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	1044	Flamesnorting Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	1057	Dragonmaw Bonewarder	7	0	Dragonkin	shipped species recomposed
+shipped	1069	Crimson Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	1082	Sawtooth Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1083	Murloc Shorestriker	7	0	Humanoid	shipped species recomposed
+shipped	1084	Young Sawtooth Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1085	Elder Stranglethorn Tiger	1	2	Flying	shipped species recomposed
+shipped	1087	Sawtooth Snapper	1	6	Flying	shipped species recomposed
+shipped	1088	Monstrous Crawler	1	8	Aquatic	shipped species recomposed
+shipped	1094	Venture Co. Miner	7	0	Humanoid	shipped species recomposed
+shipped	1096	Venture Co. Geologist	7	0	Humanoid	shipped species recomposed
+shipped	1097	Venture Co. Mechanic	7	0	Humanoid	shipped species recomposed
+shipped	1108	Mistvale Gorilla	1	9	Beast	shipped species recomposed
+shipped	1109	Fleshripper	1	7	Flying	shipped species recomposed
+shipped	1111	Leech Stalker	1	3	Beast	shipped species recomposed
+shipped	1114	Jungle Thunderer	1	9	Beast	shipped species recomposed
+shipped	1115	Rockjaw Skullthumper	7	0	Humanoid	shipped species recomposed
+shipped	1116	Rockjaw Ambusher	7	0	Humanoid	shipped species recomposed
+shipped	1117	Rockjaw Bonesnapper	7	0	Humanoid	shipped species recomposed
+shipped	1120	Frostmane Troll	7	0	Humanoid	shipped species recomposed
+shipped	1121	Frostmane Snowstrider	7	0	Humanoid	shipped species recomposed
+shipped	1122	Frostmane Hideskinner	7	0	Humanoid	shipped species recomposed
+shipped	1123	Frostmane Headhunter	7	0	Humanoid	shipped species recomposed
+shipped	1124	Frostmane Shadowcaster	7	0	Humanoid	shipped species recomposed
+shipped	1125	Crag Boar	1	5	Beast	shipped species recomposed
+shipped	1126	Large Crag Boar	1	5	Beast	shipped species recomposed
+shipped	1127	Elder Crag Boar	1	5	Beast	shipped species recomposed
+shipped	1128	Young Black Bear	1	4	Beast	shipped species recomposed
+shipped	1131	Winter Wolf	1	1	Beast	shipped species recomposed
+shipped	1133	Starving Winter Wolf	1	1	Beast	shipped species recomposed
+shipped	1134	Young Wendigo	7	0	Humanoid	shipped species recomposed
+shipped	1135	Wendigo	7	0	Humanoid	shipped species recomposed
+shipped	1138	Snow Tracker Wolf	1	1	Beast	shipped species recomposed
+shipped	1142	Mosh'Ogg Brute	7	0	Humanoid	shipped species recomposed
+shipped	1144	Mosh'Ogg Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	1150	River Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1151	Saltwater Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1152	Snapjaw Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1157	Cursed Sailor	6	0	Undead	shipped species recomposed
+shipped	1158	Cursed Marine	6	0	Undead	shipped species recomposed
+shipped	1161	Stonesplinter Trogg	7	0	Humanoid	shipped species recomposed
+shipped	1162	Stonesplinter Scout	7	0	Humanoid	shipped species recomposed
+shipped	1163	Stonesplinter Skullthumper	7	0	Humanoid	shipped species recomposed
+shipped	1164	Stonesplinter Bonesnapper	7	0	Humanoid	shipped species recomposed
+shipped	1165	Stonesplinter Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	1166	Stonesplinter Seer	7	0	Humanoid	shipped species recomposed
+shipped	1167	Stonesplinter Digger	7	0	Humanoid	shipped species recomposed
+shipped	1169	Dark Iron Insurgent	7	0	Humanoid	shipped species recomposed
+shipped	1172	Tunnel Rat Vermin	7	0	Humanoid	shipped species recomposed
+shipped	1173	Tunnel Rat Scout	7	0	Humanoid	shipped species recomposed
+shipped	1174	Tunnel Rat Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	1175	Tunnel Rat Digger	7	0	Humanoid	shipped species recomposed
+shipped	1176	Tunnel Rat Forager	7	0	Humanoid	shipped species recomposed
+shipped	1177	Tunnel Rat Surveyor	7	0	Humanoid	shipped species recomposed
+shipped	1184	Cliff Lurker	1	3	Beast	shipped species recomposed
+shipped	1185	Wood Lurker	1	3	Beast	shipped species recomposed
+shipped	1186	Elder Black Bear	1	4	Beast	shipped species recomposed
+shipped	1188	Grizzled Black Bear	1	4	Beast	shipped species recomposed
+shipped	1189	Black Bear Patriarch	1	4	Beast	shipped species recomposed
+shipped	1190	Mountain Boar	1	5	Beast	shipped species recomposed
+shipped	1191	Mangy Mountain Boar	1	5	Beast	shipped species recomposed
+shipped	1192	Elder Mountain Boar	1	5	Beast	shipped species recomposed
+shipped	1193	Loch Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	1194	Mountain Buzzard	1	7	Flying	shipped species recomposed
+shipped	1195	Forest Lurker	1	3	Beast	shipped species recomposed
+shipped	1196	Ice Claw Bear	1	4	Beast	shipped species recomposed
+shipped	1197	Stonesplinter Shaman	7	0	Humanoid	shipped species recomposed
+shipped	1199	Juvenile Snow Leopard	1	2	Beast	shipped species recomposed
+shipped	1201	Snow Leopard	1	2	Beast	shipped species recomposed
+shipped	1202	Tunnel Rat Kobold	7	0	Humanoid	shipped species recomposed
+shipped	1211	Leper Gnome	7	0	Humanoid	shipped species recomposed
+shipped	1216	Shore Crawler	1	8	Aquatic	shipped species recomposed
+shipped	1224	Young Threshadon	1	0	Aquatic	shipped species recomposed
+shipped	1236	Kobold Digger	7	0	Humanoid	shipped species recomposed
+shipped	1251	Splinter Fist Firemonger	7	0	Humanoid	shipped species recomposed
+shipped	1258	Black Ravager Mastiff	1	1	Beast	shipped species recomposed
+shipped	1393	Berserk Trogg	7	0	Humanoid	shipped species recomposed
+shipped	1397	Frostmane Seer	7	0	Humanoid	shipped species recomposed
+shipped	1400	Wetlands Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1412	Squirrel	8	0	Critter	shipped species recomposed
+shipped	1417	Young Wetlands Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1418	Bluegill Raider	7	0	Humanoid	shipped species recomposed
+shipped	1420	Toad	8	0	Aquatic	shipped species recomposed
+shipped	1426	Riverpaw Miner	7	0	Humanoid	shipped species recomposed
+shipped	1488	Zanzil Zombie	6	0	Undead	shipped species recomposed
+shipped	1490	Zanzil Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	1491	Zanzil Naga	6	0	Humanoid	shipped species recomposed
+shipped	1501	Mindless Zombie	6	0	Undead	shipped species recomposed
+shipped	1502	Wretched Zombie	6	0	Undead	shipped species recomposed
+shipped	1504	Young Night Web Spider	1	3	Beast	shipped species recomposed
+shipped	1505	Night Web Spider	1	3	Beast	shipped species recomposed
+shipped	1506	Scarlet Convert	7	0	Humanoid	shipped species recomposed
+shipped	1507	Scarlet Initiate	7	0	Humanoid	shipped species recomposed
+shipped	1508	Young Scavenger	1	1	Beast	shipped species recomposed
+shipped	1509	Ragged Scavenger	1	1	Beast	shipped species recomposed
+shipped	1512	Duskbat	1	24	Flying	shipped species recomposed
+shipped	1513	Mangy Duskbat	1	24	Flying	shipped species recomposed
+shipped	1520	Rattlecage Soldier	6	0	Undead	shipped species recomposed
+shipped	1522	Darkeye Bonecaster	6	0	Undead	shipped species recomposed
+shipped	1523	Cracked Skull Soldier	6	0	Undead	shipped species recomposed
+shipped	1525	Rotting Dead	6	0	Undead	shipped species recomposed
+shipped	1526	Ravaged Corpse	6	0	Undead	shipped species recomposed
+shipped	1530	Rotting Ancestor	6	0	Undead	shipped species recomposed
+shipped	1534	Wailing Ancestor	6	0	Undead	shipped species recomposed
+shipped	1535	Scarlet Warrior	7	0	Humanoid	shipped species recomposed
+shipped	1536	Scarlet Missionary	7	0	Magic	shipped species recomposed
+shipped	1537	Scarlet Zealot	7	0	Humanoid	shipped species recomposed
+shipped	1543	Vile Fin Puddlejumper	7	0	Aquatic	shipped species recomposed
+shipped	1544	Vile Fin Minor Oracle	7	0	Aquatic	shipped species recomposed
+shipped	1545	Vile Fin Muckdweller	7	0	Aquatic	shipped species recomposed
+shipped	1547	Decrepit Darkhound	3	0	Beast	shipped species recomposed
+shipped	1548	Cursed Darkhound	3	0	Humanoid	shipped species recomposed
+shipped	1550	Thrashtail Basilisk	1	0	Beast	shipped species recomposed
+shipped	1551	Ironjaw Basilisk	1	0	Beast	shipped species recomposed
+shipped	1553	Greater Duskbat	1	24	Flying	shipped species recomposed
+shipped	1554	Vampiric Duskbat	1	24	Flying	shipped species recomposed
+shipped	1557	Elder Mistvale Gorilla	1	9	Beast	shipped species recomposed
+shipped	1558	Silverback Patriarch	1	9	Beast	shipped species recomposed
+shipped	1561	Bloodsail Raider	7	0	Humanoid	shipped species recomposed
+shipped	1562	Bloodsail Mage	7	0	Humanoid	shipped species recomposed
+shipped	1563	Bloodsail Swashbuckler	7	0	Humanoid	shipped species recomposed
+shipped	1564	Bloodsail Warlock	7	0	Humanoid	shipped species recomposed
+shipped	1653	Bloodsail Elder Magus	7	0	Humanoid	shipped species recomposed
+shipped	1674	Rot Hide Gnoll	6	0	Undead	shipped species recomposed
+shipped	1675	Rot Hide Mongrel	6	0	Undead	shipped species recomposed
+shipped	1693	Loch Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	1713	Elder Shadowmaw Panther	1	2	Beast	shipped species recomposed
+shipped	1718	Rockjaw Raider	7	0	Humanoid	shipped species recomposed
+shipped	1727	Defias Worker	7	0	Humanoid	shipped species recomposed
+shipped	1765	Worg	1	1	Beast	shipped species recomposed
+shipped	1766	Mottled Worg	1	1	Beast	shipped species recomposed
+shipped	1767	Vile Fin Shredder	7	0	Aquatic	shipped species recomposed
+shipped	1768	Vile Fin Tidehunter	7	0	Aquatic	shipped species recomposed
+shipped	1769	Moonrage Whitescalp	7	0	Humanoid	shipped species recomposed
+shipped	1770	Moonrage Darkrunner	7	0	Humanoid	shipped species recomposed
+shipped	1772	Rot Hide Gladerunner	6	0	Undead	shipped species recomposed
+shipped	1773	Rot Hide Mystic	6	0	Undead	shipped species recomposed
+shipped	1778	Ferocious Grizzled Bear	1	4	Beast	shipped species recomposed
+shipped	1779	Moonrage Glutton	7	0	Humanoid	shipped species recomposed
+shipped	1780	Moss Stalker	1	3	Beast	shipped species recomposed
+shipped	1781	Mist Creeper	1	3	Beast	shipped species recomposed
+shipped	1782	Moonrage Darksoul	7	0	Humanoid	shipped species recomposed
+shipped	1783	Skeletal Flayer	6	0	Undead	shipped species recomposed
+shipped	1784	Skeletal Sorcerer	6	0	Undead	shipped species recomposed
+shipped	1785	Skeletal Terror	6	0	Undead	shipped species recomposed
+shipped	1787	Skeletal Executioner	6	0	Undead	shipped species recomposed
+shipped	1789	Skeletal Acolyte	6	0	Undead	shipped species recomposed
+shipped	1791	Slavering Ghoul	6	0	Undead	shipped species recomposed
+shipped	1793	Rotting Ghoul	6	0	Undead	shipped species recomposed
+shipped	1794	Soulless Ghoul	6	0	Undead	shipped species recomposed
+shipped	1795	Searing Ghoul	6	0	Undead	shipped species recomposed
+shipped	1796	Freezing Ghoul	6	0	Undead	shipped species recomposed
+shipped	1797	Giant Grizzled Bear	1	4	Beast	shipped species recomposed
+shipped	1802	Hungering Wraith	6	0	Undead	shipped species recomposed
+shipped	1804	Wailing Death	6	0	Undead	shipped species recomposed
+shipped	1812	Rotting Behemoth	4	0	Flying	shipped species recomposed
+shipped	1816	Diseased Grizzly	1	4	Beast	shipped species recomposed
+shipped	1817	Diseased Wolf	1	1	Beast	shipped species recomposed
+shipped	1821	Carrion Lurker	1	3	Beast	shipped species recomposed
+shipped	1824	Plague Lurker	1	3	Beast	shipped species recomposed
+shipped	1826	Scarlet Mage	7	0	Humanoid	shipped species recomposed
+shipped	1831	Scarlet Hunter	7	0	Humanoid	shipped species recomposed
+shipped	1833	Scarlet Knight	7	0	Humanoid	shipped species recomposed
+shipped	1835	Scarlet Invoker	7	0	Humanoid	shipped species recomposed
+shipped	1865	Ravenclaw Raider	6	0	Undead	shipped species recomposed
+shipped	1866	Ravenclaw Slave	6	0	Undead	shipped species recomposed
+shipped	1867	Dalaran Apprentice	7	0	Magic	shipped species recomposed
+shipped	1868	Ravenclaw Servant	6	0	Undead	shipped species recomposed
+shipped	1869	Ravenclaw Champion	6	0	Undead	shipped species recomposed
+shipped	1870	Hand of Ravenclaw	6	0	Undead	shipped species recomposed
+shipped	1888	Dalaran Watcher	7	0	Magic	shipped species recomposed
+shipped	1889	Dalaran Wizard	7	0	Magic	shipped species recomposed
+shipped	1890	Rattlecage Skeleton	6	0	Undead	shipped species recomposed
+shipped	1907	Naga Explorer	7	0	Humanoid	shipped species recomposed
+shipped	1908	Vile Fin Oracle	7	0	Aquatic	shipped species recomposed
+shipped	1909	Vile Fin Lakestalker	7	0	Humanoid	shipped species recomposed
+shipped	1913	Dalaran Warder	7	0	Magic	shipped species recomposed
+shipped	1914	Dalaran Mage	7	0	Magic	shipped species recomposed
+shipped	1915	Dalaran Conjuror	7	0	Magic	shipped species recomposed
+shipped	1922	Gray Forest Wolf	1	1	Beast	shipped species recomposed
+shipped	1924	Moonrage Bloodhowler	7	0	Flying	shipped species recomposed
+shipped	1933	Sheep	8	0	Critter	shipped species recomposed
+shipped	1935	Tirisfal Farmhand	7	0	Humanoid	shipped species recomposed
+shipped	1939	Rot Hide Brute	6	0	Undead	shipped species recomposed
+shipped	1940	Rot Hide Plague Weaver	6	0	Undead	shipped species recomposed
+shipped	1941	Rot Hide Graverobber	6	0	Undead	shipped species recomposed
+shipped	1942	Rot Hide Savage	6	0	Undead	shipped species recomposed
+shipped	1943	Raging Rot Hide	6	0	Undead	shipped species recomposed
+shipped	1953	Lake Skulker	4	0	Elemental	shipped species recomposed
+shipped	1954	Elder Lake Skulker	4	0	Elemental	shipped species recomposed
+shipped	1955	Lake Creeper	4	0	Elemental	shipped species recomposed
+shipped	1956	Elder Lake Creeper	4	0	Elemental	shipped species recomposed
+shipped	1957	Vile Fin Shorecreeper	7	0	Humanoid	shipped species recomposed
+shipped	1958	Vile Fin Tidecaller	7	0	Humanoid	shipped species recomposed
+shipped	1984	Young Thistle Boar	1	5	Beast	shipped species recomposed
+shipped	1985	Thistle Boar	1	5	Beast	shipped species recomposed
+shipped	1986	Webwood Spider	1	3	Beast	shipped species recomposed
+shipped	1988	Grell	3	0	Humanoid	shipped species recomposed
+shipped	1989	Grellkin	3	0	Humanoid	shipped species recomposed
+shipped	1995	Strigid Owl	1	26	Flying	shipped species recomposed
+shipped	1996	Strigid Screecher	1	26	Flying	shipped species recomposed
+shipped	1997	Strigid Hunter	1	26	Flying	shipped species recomposed
+shipped	1998	Webwood Lurker	1	3	Beast	shipped species recomposed
+shipped	1999	Webwood Venomfang	1	3	Beast	shipped species recomposed
+shipped	2000	Webwood Silkspinner	1	3	Beast	shipped species recomposed
+shipped	2001	Giant Webwood Spider	1	3	Beast	shipped species recomposed
+shipped	2002	Rascal Sprite	3	0	Humanoid	shipped species recomposed
+shipped	2003	Shadow Sprite	3	0	Magic	shipped species recomposed
+shipped	2004	Dark Sprite	3	0	Magic	shipped species recomposed
+shipped	2005	Vicious Grell	3	0	Humanoid	shipped species recomposed
+shipped	2006	Gnarlpine Ursa	7	0	Humanoid	shipped species recomposed
+shipped	2007	Gnarlpine Gardener	7	0	Humanoid	shipped species recomposed
+shipped	2008	Gnarlpine Warrior	7	0	Humanoid	shipped species recomposed
+shipped	2009	Gnarlpine Shaman	7	0	Magic	shipped species recomposed
+shipped	2010	Gnarlpine Defender	7	0	Humanoid	shipped species recomposed
+shipped	2011	Gnarlpine Augur	7	0	Magic	shipped species recomposed
+shipped	2012	Gnarlpine Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	2013	Gnarlpine Avenger	7	0	Humanoid	shipped species recomposed
+shipped	2014	Gnarlpine Totemic	7	0	Magic	shipped species recomposed
+shipped	2015	Bloodfeather Harpy	7	0	Humanoid	shipped species recomposed
+shipped	2017	Bloodfeather Rogue	7	0	Humanoid	shipped species recomposed
+shipped	2018	Bloodfeather Sorceress	7	0	Magic	shipped species recomposed
+shipped	2019	Bloodfeather Fury	7	0	Humanoid	shipped species recomposed
+shipped	2020	Bloodfeather Wind Witch	7	0	Magic	shipped species recomposed
+shipped	2021	Bloodfeather Matriarch	7	0	Humanoid	shipped species recomposed
+shipped	2022	Timberling	4	0	Elemental	shipped species recomposed
+shipped	2025	Timberling Bark Ripper	4	0	Elemental	shipped species recomposed
+shipped	2027	Timberling Trampler	4	0	Elemental	shipped species recomposed
+shipped	2029	Timberling Mire Beast	4	0	Elemental	shipped species recomposed
+shipped	2030	Elder Timberling	4	0	Elemental	shipped species recomposed
+shipped	2031	Young Nightsaber	1	2	Beast	shipped species recomposed
+shipped	2032	Mangy Nightsaber	1	2	Beast	shipped species recomposed
+shipped	2033	Elder Nightsaber	1	2	Beast	shipped species recomposed
+shipped	2034	Feral Nightsaber	1	2	Beast	shipped species recomposed
+shipped	2042	Nightsaber	1	2	Beast	shipped species recomposed
+shipped	2043	Nightsaber Stalker	1	2	Beast	shipped species recomposed
+shipped	2069	Moonstalker	1	2	Beast	shipped species recomposed
+shipped	2070	Moonstalker Runt	1	2	Beast	shipped species recomposed
+shipped	2071	Moonstalker Matriarch	1	2	Beast	shipped species recomposed
+shipped	2089	Giant Wetlands Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	2098	Ram	8	0	Beast	shipped species recomposed
+shipped	2102	Dragonmaw Grunt	7	0	Dragonkin	shipped species recomposed
+shipped	2103	Dragonmaw Scout	7	0	Dragonkin	shipped species recomposed
+shipped	2110	Black Rat	8	0	Critter	shipped species recomposed
+shipped	2152	Gnarlpine Ambusher	7	0	Humanoid	shipped species recomposed
+shipped	2156	Cracked Golem	4	0	Elemental	shipped species recomposed
+shipped	2157	Stone Behemoth	4	0	Aquatic	shipped species recomposed
+shipped	2163	Thistle Bear	1	4	Beast	shipped species recomposed
+shipped	2164	Rabid Thistle Bear	1	0	Beast	shipped species recomposed
+shipped	2165	Grizzled Thistle Bear	1	4	Beast	shipped species recomposed
+shipped	2167	Blackwood Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	2168	Blackwood Warrior	7	0	Humanoid	shipped species recomposed
+shipped	2169	Blackwood Totemic	7	0	Beast	shipped species recomposed
+shipped	2170	Blackwood Ursa	7	0	Beast	shipped species recomposed
+shipped	2171	Blackwood Shaman	7	0	Humanoid	shipped species recomposed
+shipped	2173	Reef Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	2174	Coastal Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	2176	Cursed Highborne	6	0	Undead	shipped species recomposed
+shipped	2177	Writhing Highborne	6	0	Undead	shipped species recomposed
+shipped	2178	Wailing Highborne	6	0	Undead	shipped species recomposed
+shipped	2179	Stormscale Wave Rider	7	0	Humanoid	shipped species recomposed
+shipped	2180	Stormscale Siren	7	0	Humanoid	shipped species recomposed
+shipped	2181	Stormscale Myrmidon	7	0	Humanoid	shipped species recomposed
+shipped	2182	Stormscale Sorceress	7	0	Humanoid	shipped species recomposed
+shipped	2183	Stormscale Warrior	7	0	Humanoid	shipped species recomposed
+shipped	2185	Darkshore Thresher	1	0	Aquatic	shipped species recomposed
+shipped	2187	Elder Darkshore Thresher	1	0	Aquatic	shipped species recomposed
+shipped	2189	Vile Sprite	7	0	Humanoid	shipped species recomposed
+shipped	2190	Wild Grell	7	0	Humanoid	shipped species recomposed
+shipped	2202	Greymist Coastrunner	7	0	Humanoid	shipped species recomposed
+shipped	2203	Greymist Seer	7	0	Humanoid	shipped species recomposed
+shipped	2204	Greymist Netter	7	0	Humanoid	shipped species recomposed
+shipped	2205	Greymist Warrior	7	0	Humanoid	shipped species recomposed
+shipped	2206	Greymist Hunter	7	0	Humanoid	shipped species recomposed
+shipped	2207	Greymist Oracle	7	0	Humanoid	shipped species recomposed
+shipped	2208	Greymist Tidehunter	7	0	Aquatic	shipped species recomposed
+shipped	2212	Deth'ryll Satyr	7	0	Humanoid	shipped species recomposed
+shipped	2231	Pygmy Tide Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2232	Tide Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2233	Encrusted Tide Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2234	Young Reef Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2235	Reef Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2236	Raging Reef Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2237	Moonstalker Sire	1	2	Beast	shipped species recomposed
+shipped	2240	Syndicate Footpad	7	0	Humanoid	shipped species recomposed
+shipped	2241	Syndicate Thief	7	0	Humanoid	shipped species recomposed
+shipped	2242	Syndicate Spy	7	0	Humanoid	shipped species recomposed
+shipped	2243	Syndicate Sentry	7	0	Humanoid	shipped species recomposed
+shipped	2244	Syndicate Shadow Mage	7	0	Humanoid	shipped species recomposed
+shipped	2245	Syndicate Saboteur	7	0	Humanoid	shipped species recomposed
+shipped	2246	Syndicate Assassin	7	0	Humanoid	shipped species recomposed
+shipped	2247	Syndicate Enforcer	7	0	Humanoid	shipped species recomposed
+shipped	2248	Cave Yeti	7	0	Humanoid	shipped species recomposed
+shipped	2250	Mountain Yeti	7	0	Humanoid	shipped species recomposed
+shipped	2251	Giant Yeti	7	0	Humanoid	shipped species recomposed
+shipped	2252	Crushridge Ogre	7	0	Humanoid	shipped species recomposed
+shipped	2253	Crushridge Brute	7	0	Humanoid	shipped species recomposed
+shipped	2260	Syndicate Rogue	7	0	Humanoid	shipped species recomposed
+shipped	2268	Hillsbrad Footman	7	0	Humanoid	shipped species recomposed
+shipped	2269	Hillsbrad Miner	7	0	Humanoid	shipped species recomposed
+shipped	2270	Hillsbrad Sentry	7	0	Humanoid	shipped species recomposed
+shipped	2318	Argus Shadow Mage	7	0	Humanoid	shipped species recomposed
+shipped	2319	Syndicate Wizard	7	0	Humanoid	shipped species recomposed
+shipped	2321	Foreststrider Fledgling	1	12	Flying	shipped species recomposed
+shipped	2322	Foreststrider	1	12	Flying	shipped species recomposed
+shipped	2323	Giant Foreststrider	1	12	Flying	shipped species recomposed
+shipped	2324	Blackwood Windtalker	7	0	Humanoid	shipped species recomposed
+shipped	2336	Dark Strand Fanatic	7	0	Humanoid	shipped species recomposed
+shipped	2338	Twilight Disciple	7	0	Humanoid	shipped species recomposed
+shipped	2339	Twilight Thug	7	0	Humanoid	shipped species recomposed
+shipped	2348	Elder Moss Creeper	1	3	Beast	shipped species recomposed
+shipped	2349	Giant Moss Creeper	1	3	Flying	shipped species recomposed
+shipped	2350	Forest Moss Creeper	1	3	Beast	shipped species recomposed
+shipped	2351	Gray Bear	1	4	Beast	shipped species recomposed
+shipped	2354	Vicious Gray Bear	1	4	Beast	shipped species recomposed
+shipped	2356	Elder Gray Bear	1	4	Beast	shipped species recomposed
+shipped	2360	Hillsbrad Farmhand	7	0	Humanoid	shipped species recomposed
+shipped	2368	Daggerspine Shorestalker	7	0	Humanoid	shipped species recomposed
+shipped	2369	Daggerspine Shorehunter	7	0	Humanoid	shipped species recomposed
+shipped	2370	Daggerspine Screamer	7	0	Humanoid	shipped species recomposed
+shipped	2372	Mudsnout Gnoll	7	0	Humanoid	shipped species recomposed
+shipped	2373	Mudsnout Shaman	7	0	Humanoid	shipped species recomposed
+shipped	2374	Torn Fin Muckdweller	7	0	Aquatic	shipped species recomposed
+shipped	2375	Torn Fin Coastrunner	7	0	Aquatic	shipped species recomposed
+shipped	2376	Torn Fin Oracle	7	0	Aquatic	shipped species recomposed
+shipped	2384	Starving Mountain Lion	1	2	Beast	shipped species recomposed
+shipped	2385	Feral Mountain Lion	1	2	Beast	shipped species recomposed
+shipped	2387	Hillsbrad Councilman	7	0	Humanoid	shipped species recomposed
+shipped	2407	Hulking Mountain Lion	1	2	Beast	shipped species recomposed
+shipped	2408	Snapjaw	1	21	Beast	shipped species recomposed
+shipped	2442	Cow	8	0	Critter	shipped species recomposed
+shipped	2450	Miner Hackett	7	0	Humanoid	shipped species recomposed
+shipped	2503	Hillsbrad Foreman	7	0	Humanoid	shipped species recomposed
+shipped	2505	Saltwater Snapjaw	1	21	Beast	shipped species recomposed
+shipped	2544	Southern Sand Crawler	1	8	Aquatic	shipped species recomposed
+shipped	2552	Witherbark Troll	7	0	Humanoid	shipped species recomposed
+shipped	2554	Witherbark Axe Thrower	7	0	Humanoid	shipped species recomposed
+shipped	2555	Witherbark Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	2556	Witherbark Headhunter	7	0	Humanoid	shipped species recomposed
+shipped	2557	Witherbark Shadow Hunter	7	0	Humanoid	shipped species recomposed
+shipped	2559	Highland Strider	1	11	Flying	shipped species recomposed
+shipped	2560	Highland Thrasher	1	11	Beast	shipped species recomposed
+shipped	2561	Highland Fleshstalker	1	11	Beast	shipped species recomposed
+shipped	2562	Boulderfist Ogre	7	0	Humanoid	shipped species recomposed
+shipped	2563	Plains Creeper	1	3	Beast	shipped species recomposed
+shipped	2564	Boulderfist Enforcer	7	0	Humanoid	shipped species recomposed
+shipped	2565	Giant Plains Creeper	1	3	Flying	shipped species recomposed
+shipped	2566	Boulderfist Brute	7	0	Humanoid	shipped species recomposed
+shipped	2567	Boulderfist Magus	7	0	Humanoid	shipped species recomposed
+shipped	2572	Drywhisker Kobold	7	0	Humanoid	shipped species recomposed
+shipped	2577	Dark Iron Shadowcaster	7	0	Humanoid	shipped species recomposed
+shipped	2578	Young Mesa Buzzard	1	7	Flying	shipped species recomposed
+shipped	2579	Mesa Buzzard	1	7	Flying	shipped species recomposed
+shipped	2582	Dabyrie Laborer	7	0	Humanoid	shipped species recomposed
+shipped	2586	Syndicate Highwayman	7	0	Humanoid	shipped species recomposed
+shipped	2587	Syndicate Pathstalker	7	0	Humanoid	shipped species recomposed
+shipped	2589	Syndicate Mercenary	7	0	Humanoid	shipped species recomposed
+shipped	2592	Rumbling Exile	4	0	Elemental	shipped species recomposed
+shipped	2618	Hammerfall Peon	7	0	Humanoid	shipped species recomposed
+shipped	2619	Hammerfall Grunt	7	0	Humanoid	shipped species recomposed
+shipped	2620	Prairie Dog	8	0	Critter	shipped species recomposed
+shipped	2639	Vilebranch Axe Thrower	7	0	Humanoid	shipped species recomposed
+shipped	2640	Vilebranch Witch Doctor	7	0	Humanoid	shipped species recomposed
+shipped	2651	Witherbark Hideskinner	7	0	Humanoid	shipped species recomposed
+shipped	2652	Witherbark Venomblood	7	0	Humanoid	shipped species recomposed
+shipped	2653	Witherbark Sadist	7	0	Humanoid	shipped species recomposed
+shipped	2654	Witherbark Caller	7	0	Humanoid	shipped species recomposed
+shipped	2671	Mechanical Squirrel	12	0	Mechanical	shipped species recomposed
+shipped	2680	Vilebranch Wolf Pup	1	1	Beast	shipped species recomposed
+shipped	2691	Highvale Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	2692	Highvale Scout	7	0	Humanoid	shipped species recomposed
+shipped	2693	Highvale Marksman	7	0	Humanoid	shipped species recomposed
+shipped	2694	Highvale Ranger	7	0	Humanoid	shipped species recomposed
+shipped	2701	Dustbelcher Ogre	7	0	Humanoid	shipped species recomposed
+shipped	2716	Dustbelcher Wyrmhunter	7	0	Humanoid	shipped species recomposed
+shipped	2717	Dustbelcher Mauler	7	0	Humanoid	shipped species recomposed
+shipped	2718	Dustbelcher Shaman	7	0	Humanoid	shipped species recomposed
+shipped	2723	Stone Golem	4	0	Elemental	shipped species recomposed
+shipped	2725	Scalding Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	2727	Crag Coyote	1	1	Beast	shipped species recomposed
+shipped	2728	Feral Crag Coyote	1	1	Flying	shipped species recomposed
+shipped	2729	Elder Crag Coyote	1	1	Beast	shipped species recomposed
+shipped	2730	Rabid Crag Coyote	1	1	Beast	shipped species recomposed
+shipped	2731	Ridge Stalker	1	2	Beast	shipped species recomposed
+shipped	2732	Ridge Huntress	1	2	Beast	shipped species recomposed
+shipped	2734	Ridge Stalker Patriarch	1	2	Beast	shipped species recomposed
+shipped	2735	Lesser Rock Elemental	4	0	Elemental	shipped species recomposed
+shipped	2736	Greater Rock Elemental	4	0	Elemental	shipped species recomposed
+shipped	2739	Shadowforge Tunneler	7	0	Humanoid	shipped species recomposed
+shipped	2740	Shadowforge Darkweaver	7	0	Humanoid	shipped species recomposed
+shipped	2742	Shadowforge Chanter	7	0	Humanoid	shipped species recomposed
+shipped	2743	Shadowforge Warrior	7	0	Humanoid	shipped species recomposed
+shipped	2761	Cresting Exile	4	0	Elemental	shipped species recomposed
+shipped	2762	Thundering Exile	4	0	Elemental	shipped species recomposed
+shipped	2791	Enraged Rock Elemental	4	0	Elemental	shipped species recomposed
+shipped	2829	Starving Buzzard	1	7	Flying	shipped species recomposed
+shipped	2830	Buzzard	1	7	Flying	shipped species recomposed
+shipped	2831	Giant Buzzard	1	7	Flying	shipped species recomposed
+shipped	2893	Stonevault Bonesnapper	7	0	Humanoid	shipped species recomposed
+shipped	2894	Stonevault Shaman	7	0	Humanoid	shipped species recomposed
+shipped	2914	Snake	8	0	Beast	shipped species recomposed
+shipped	2924	Silvermane Wolf	1	1	Beast	shipped species recomposed
+shipped	2925	Silvermane Howler	1	1	Flying	shipped species recomposed
+shipped	2926	Silvermane Stalker	1	1	Flying	shipped species recomposed
+shipped	2927	Vicious Owlbeast	7	0	Flying	shipped species recomposed
+shipped	2928	Primitive Owlbeast	7	0	Flying	shipped species recomposed
+shipped	2929	Savage Owlbeast	7	0	Flying	shipped species recomposed
+shipped	2949	Palemane Tanner	7	0	Humanoid	shipped species recomposed
+shipped	2950	Palemane Skinner	7	0	Humanoid	shipped species recomposed
+shipped	2951	Palemane Poacher	7	0	Humanoid	shipped species recomposed
+shipped	2952	Bristleback Quilboar	7	0	Humanoid	shipped species recomposed
+shipped	2953	Bristleback Shaman	7	0	Magic	shipped species recomposed
+shipped	2954	Bristleback Battleboar	1	5	Beast	shipped species recomposed
+shipped	2955	Plainstrider	1	12	Flying	shipped species recomposed
+shipped	2956	Adult Plainstrider	1	12	Flying	shipped species recomposed
+shipped	2957	Elder Plainstrider	1	12	Flying	shipped species recomposed
+shipped	2958	Prairie Wolf	1	1	Beast	shipped species recomposed
+shipped	2959	Prairie Stalker	1	1	Beast	shipped species recomposed
+shipped	2960	Prairie Wolf Alpha	1	1	Beast	shipped species recomposed
+shipped	2961	Mountain Cougar	1	2	Beast	shipped species recomposed
+shipped	2962	Windfury Harpy	7	0	Humanoid	shipped species recomposed
+shipped	2963	Windfury Wind Witch	7	0	Magic	shipped species recomposed
+shipped	2966	Battleboar	1	5	Beast	shipped species recomposed
+shipped	2967	Galak Centaur	7	0	Humanoid	shipped species recomposed
+shipped	2968	Galak Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	2969	Wiry Swoop	1	7	Flying	shipped species recomposed
+shipped	2970	Swoop	1	7	Flying	shipped species recomposed
+shipped	2975	Venture Co. Hireling	7	0	Humanoid	shipped species recomposed
+shipped	2976	Venture Co. Laborer	7	0	Humanoid	shipped species recomposed
+shipped	2977	Venture Co. Taskmaster	7	0	Humanoid	shipped species recomposed
+shipped	2978	Venture Co. Worker	7	0	Humanoid	shipped species recomposed
+shipped	2979	Venture Co. Supervisor	7	0	Humanoid	shipped species recomposed
+shipped	2989	Bael'dun Digger	7	0	Humanoid	shipped species recomposed
+shipped	2990	Bael'dun Appraiser	7	0	Humanoid	shipped species recomposed
+shipped	3035	Flatland Cougar	1	2	Beast	shipped species recomposed
+shipped	3098	Mottled Boar	1	5	Beast	shipped species recomposed
+shipped	3099	Dire Mottled Boar	1	5	Beast	shipped species recomposed
+shipped	3100	Elder Mottled Boar	1	5	Beast	shipped species recomposed
+shipped	3101	Vile Familiar	7	0	Humanoid	shipped species recomposed
+shipped	3103	Makrura Clacker	7	0	Aquatic	shipped species recomposed
+shipped	3104	Makrura Shellhide	7	0	Aquatic	shipped species recomposed
+shipped	3105	Makrura Snapclaw	7	0	Aquatic	shipped species recomposed
+shipped	3106	Pygmy Surf Crawler	1	8	Aquatic	shipped species recomposed
+shipped	3107	Surf Crawler	1	8	Aquatic	shipped species recomposed
+shipped	3108	Encrusted Surf Crawler	1	8	Aquatic	shipped species recomposed
+shipped	3110	Dreadmaw Crocolisk	1	6	Beast	shipped species recomposed
+shipped	3111	Razormane Quilboar	7	0	Humanoid	shipped species recomposed
+shipped	3112	Razormane Scout	7	0	Humanoid	shipped species recomposed
+shipped	3113	Razormane Dustrunner	7	0	Humanoid	shipped species recomposed
+shipped	3114	Razormane Battleguard	7	0	Humanoid	shipped species recomposed
+shipped	3115	Dustwind Harpy	7	0	Humanoid	shipped species recomposed
+shipped	3116	Dustwind Pillager	7	0	Humanoid	shipped species recomposed
+shipped	3117	Dustwind Savage	7	0	Humanoid	shipped species recomposed
+shipped	3118	Dustwind Storm Witch	7	0	Humanoid	shipped species recomposed
+shipped	3119	Kolkar Drudge	7	0	Humanoid	shipped species recomposed
+shipped	3120	Kolkar Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	3121	Durotar Tiger	1	2	Beast	shipped species recomposed
+shipped	3122	Bloodtalon Taillasher	1	11	Beast	shipped species recomposed
+shipped	3123	Bloodtalon Scythemaw	1	11	Beast	shipped species recomposed
+shipped	3124	Scorpid Worker	1	20	Beast	shipped species recomposed
+shipped	3125	Clattering Scorpid	1	20	Beast	shipped species recomposed
+shipped	3126	Armored Scorpid	1	20	Beast	shipped species recomposed
+shipped	3127	Venomtail Scorpid	1	20	Beast	shipped species recomposed
+shipped	3130	Thunder Lizard	1	0	Beast	shipped species recomposed
+shipped	3131	Lightning Hide	1	0	Beast	shipped species recomposed
+shipped	3195	Burning Blade Thug	7	0	Humanoid	shipped species recomposed
+shipped	3196	Burning Blade Neophyte	7	0	Humanoid	shipped species recomposed
+shipped	3197	Burning Blade Fanatic	7	0	Humanoid	shipped species recomposed
+shipped	3198	Burning Blade Apprentice	7	0	Humanoid	shipped species recomposed
+shipped	3199	Burning Blade Cultist	7	0	Humanoid	shipped species recomposed
+shipped	3206	Voodoo Troll	7	0	Humanoid	shipped species recomposed
+shipped	3207	Hexed Troll	7	0	Humanoid	shipped species recomposed
+shipped	3234	Lost Barrens Kodo	1	0	Beast	shipped species recomposed
+shipped	3235	Greater Barrens Kodo	1	0	Beast	shipped species recomposed
+shipped	3236	Barrens Kodo	1	0	Beast	shipped species recomposed
+shipped	3237	Wooly Kodo	1	0	Beast	shipped species recomposed
+shipped	3238	Stormhide	1	0	Beast	shipped species recomposed
+shipped	3239	Thunderhead	1	0	Beast	shipped species recomposed
+shipped	3240	Stormsnout	1	0	Beast	shipped species recomposed
+shipped	3241	Savannah Patriarch	1	2	Flying	shipped species recomposed
+shipped	3242	Zhevra Runner	1	0	Beast	shipped species recomposed
+shipped	3243	Savannah Highmane	1	2	Flying	shipped species recomposed
+shipped	3244	Greater Plainstrider	1	12	Flying	shipped species recomposed
+shipped	3245	Ornery Plainstrider	1	12	Flying	shipped species recomposed
+shipped	3246	Fleeting Plainstrider	1	12	Flying	shipped species recomposed
+shipped	3247	Thunderhawk Hatchling	1	27	Flying	shipped species recomposed
+shipped	3248	Barrens Giraffe	1	0	Beast	shipped species recomposed
+shipped	3249	Greater Thunderhawk	1	27	Flying	shipped species recomposed
+shipped	3250	Silithid Creeper	1	20	Beast	shipped species recomposed
+shipped	3251	Silithid Grub	1	0	Flying	shipped species recomposed
+shipped	3252	Silithid Swarmer	1	20	Beast	shipped species recomposed
+shipped	3254	Sunscale Lashtail	1	11	Beast	shipped species recomposed
+shipped	3255	Sunscale Screecher	1	11	Beast	shipped species recomposed
+shipped	3256	Sunscale Scytheclaw	1	11	Beast	shipped species recomposed
+shipped	3258	Bristleback Hunter	7	0	Humanoid	shipped species recomposed
+shipped	3260	Bristleback Water Seeker	7	0	Humanoid	shipped species recomposed
+shipped	3261	Bristleback Thornweaver	7	0	Humanoid	shipped species recomposed
+shipped	3263	Bristleback Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	3265	Razormane Hunter	7	0	Humanoid	shipped species recomposed
+shipped	3266	Razormane Defender	7	0	Humanoid	shipped species recomposed
+shipped	3267	Razormane Water Seeker	7	0	Humanoid	shipped species recomposed
+shipped	3268	Razormane Thornweaver	7	0	Humanoid	shipped species recomposed
+shipped	3269	Razormane Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	3271	Razormane Mystic	7	0	Humanoid	shipped species recomposed
+shipped	3272	Kolkar Wrangler	7	0	Humanoid	shipped species recomposed
+shipped	3273	Kolkar Stormer	7	0	Humanoid	shipped species recomposed
+shipped	3274	Kolkar Pack Runner	7	0	Humanoid	shipped species recomposed
+shipped	3275	Kolkar Marauder	7	0	Humanoid	shipped species recomposed
+shipped	3276	Witchwing Harpy	7	0	Humanoid	shipped species recomposed
+shipped	3277	Witchwing Roguefeather	7	0	Humanoid	shipped species recomposed
+shipped	3282	Venture Co. Mercenary	7	0	Humanoid	shipped species recomposed
+shipped	3300	Adder	8	0	Beast	shipped species recomposed
+shipped	3374	Bael'dun Excavator	7	0	Humanoid	shipped species recomposed
+shipped	3375	Bael'dun Foreman	7	0	Humanoid	shipped species recomposed
+shipped	3376	Bael'dun Soldier	7	0	Humanoid	shipped species recomposed
+shipped	3377	Bael'dun Rifleman	7	0	Humanoid	shipped species recomposed
+shipped	3378	Bael'dun Officer	7	0	Humanoid	shipped species recomposed
+shipped	3379	Burning Blade Bruiser	7	0	Humanoid	shipped species recomposed
+shipped	3380	Burning Blade Acolyte	7	0	Humanoid	shipped species recomposed
+shipped	3397	Kolkar Bloodcharger	7	0	Humanoid	shipped species recomposed
+shipped	3415	Savannah Huntress	1	2	Beast	shipped species recomposed
+shipped	3424	Thunderhawk Cloudscraper	1	27	Flying	shipped species recomposed
+shipped	3425	Savannah Prowler	1	2	Flying	shipped species recomposed
+shipped	3426	Zhevra Charger	1	0	Beast	shipped species recomposed
+shipped	3444	Dig Rat	8	0	Critter	shipped species recomposed
+shipped	3456	Razormane Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	3457	Razormane Stalker	7	0	Humanoid	shipped species recomposed
+shipped	3458	Razormane Seer	7	0	Humanoid	shipped species recomposed
+shipped	3459	Razormane Warfrenzy	7	0	Aquatic	shipped species recomposed
+shipped	3461	Oasis Snapjaw	1	21	Beast	shipped species recomposed
+shipped	3463	Wandering Barrens Giraffe	1	0	Beast	shipped species recomposed
+shipped	3466	Zhevra Courser	1	0	Beast	shipped species recomposed
+shipped	3472	Washte Pawne	1	27	Flying	shipped species recomposed
+shipped	3474	Lakota'mani	1	0	Beast	shipped species recomposed
+shipped	3737	Saltspittle Puddlejumper	7	0	Humanoid	shipped species recomposed
+shipped	3739	Saltspittle Warrior	7	0	Humanoid	shipped species recomposed
+shipped	3742	Saltspittle Oracle	7	0	Humanoid	shipped species recomposed
+shipped	3743	Foulweald Warrior	7	0	Humanoid	shipped species recomposed
+shipped	3745	Foulweald Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	3746	Foulweald Den Watcher	7	0	Humanoid	shipped species recomposed
+shipped	3748	Foulweald Shaman	7	0	Humanoid	shipped species recomposed
+shipped	3749	Foulweald Ursa	7	0	Beast	shipped species recomposed
+shipped	3750	Foulweald Totemic	7	0	Humanoid	shipped species recomposed
+shipped	3752	Xavian Rogue	3	0	Humanoid	shipped species recomposed
+shipped	3755	Xavian Felsworn	3	0	Humanoid	shipped species recomposed
+shipped	3757	Xavian Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	3758	Felmusk Satyr	3	0	Humanoid	shipped species recomposed
+shipped	3759	Felmusk Rogue	3	0	Humanoid	shipped species recomposed
+shipped	3762	Felmusk Felsworn	3	0	Humanoid	shipped species recomposed
+shipped	3763	Felmusk Shadowstalker	3	0	Humanoid	shipped species recomposed
+shipped	3765	Bleakheart Satyr	3	0	Humanoid	shipped species recomposed
+shipped	3767	Bleakheart Trickster	3	0	Humanoid	shipped species recomposed
+shipped	3770	Bleakheart Shadowstalker	3	0	Humanoid	shipped species recomposed
+shipped	3771	Bleakheart Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	3774	Felslayer	3	0	Humanoid	shipped species recomposed
+shipped	3780	Shadethicket Moss Eater	4	0	Elemental	shipped species recomposed
+shipped	3781	Shadethicket Wood Shaper	4	0	Elemental	shipped species recomposed
+shipped	3782	Shadethicket Stone Mover	4	0	Elemental	shipped species recomposed
+shipped	3783	Shadethicket Raincaller	4	0	Elemental	shipped species recomposed
+shipped	3784	Shadethicket Bark Ripper	4	0	Elemental	shipped species recomposed
+shipped	3789	Terrowulf Fleshripper	7	0	Humanoid	shipped species recomposed
+shipped	3791	Terrowulf Shadow Weaver	7	0	Humanoid	shipped species recomposed
+shipped	3801	Severed Sleeper	6	0	Undead	shipped species recomposed
+shipped	3803	Severed Keeper	6	0	Undead	shipped species recomposed
+shipped	3804	Forsaken Intruder	7	0	Humanoid	shipped species recomposed
+shipped	3806	Forsaken Infiltrator	7	0	Humanoid	shipped species recomposed
+shipped	3807	Forsaken Assassin	7	0	Humanoid	shipped species recomposed
+shipped	3808	Forsaken Dark Stalker	7	0	Humanoid	shipped species recomposed
+shipped	3809	Ashenvale Bear	1	4	Beast	shipped species recomposed
+shipped	3810	Elder Ashenvale Bear	1	4	Beast	shipped species recomposed
+shipped	3811	Giant Ashenvale Bear	1	4	Beast	shipped species recomposed
+shipped	3812	Clattering Crawler	1	8	Aquatic	shipped species recomposed
+shipped	3814	Spined Crawler	1	8	Aquatic	shipped species recomposed
+shipped	3815	Blink Dragon	2	0	Dragonkin	shipped species recomposed
+shipped	3816	Wild Buck	1	0	Beast	shipped species recomposed
+shipped	3817	Shadowhorn Stag	1	0	Beast	shipped species recomposed
+shipped	3818	Elder Shadowhorn Stag	1	0	Beast	shipped species recomposed
+shipped	3819	Wildthorn Stalker	1	3	Flying	shipped species recomposed
+shipped	3820	Wildthorn Venomspitter	1	3	Beast	shipped species recomposed
+shipped	3821	Wildthorn Lurker	1	3	Beast	shipped species recomposed
+shipped	3823	Ghostpaw Runner	1	1	Undead	shipped species recomposed
+shipped	3824	Ghostpaw Howler	1	1	Flying	shipped species recomposed
+shipped	3825	Ghostpaw Alpha	1	1	Undead	shipped species recomposed
+shipped	3834	Crazed Ancient	4	0	Elemental	shipped species recomposed
+shipped	3835	Biletoad	8	0	Critter	shipped species recomposed
+shipped	3917	Befouled Water Elemental	4	0	Elemental	shipped species recomposed
+shipped	3919	Withered Ancient	4	0	Elemental	shipped species recomposed
+shipped	3921	Thistlefur Ursa	7	0	Beast	shipped species recomposed
+shipped	3922	Thistlefur Totemic	7	0	Beast	shipped species recomposed
+shipped	3923	Thistlefur Den Watcher	7	0	Beast	shipped species recomposed
+shipped	3924	Thistlefur Shaman	7	0	Beast	shipped species recomposed
+shipped	3925	Thistlefur Avenger	7	0	Beast	shipped species recomposed
+shipped	3926	Thistlefur Pathfinder	7	0	Beast	shipped species recomposed
+shipped	3988	Venture Co. Operator	7	0	Humanoid	shipped species recomposed
+shipped	3989	Venture Co. Logger	7	0	Humanoid	shipped species recomposed
+shipped	3991	Venture Co. Deforester	7	0	Humanoid	shipped species recomposed
+shipped	3999	Windshear Digger	7	0	Humanoid	shipped species recomposed
+shipped	4003	Windshear Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	4004	Windshear Overlord	7	0	Humanoid	shipped species recomposed
+shipped	4005	Deepmoss Creeper	1	3	Beast	shipped species recomposed
+shipped	4006	Deepmoss Webspinner	1	3	Beast	shipped species recomposed
+shipped	4007	Deepmoss Venomspitter	1	3	Flying	shipped species recomposed
+shipped	4008	Cliff Stormer	1	0	Beast	shipped species recomposed
+shipped	4009	Raging Cliff Stormer	1	0	Beast	shipped species recomposed
+shipped	4011	Young Pridewing	1	0	Beast	shipped species recomposed
+shipped	4012	Pridewing Wyvern	1	0	Flying	shipped species recomposed
+shipped	4013	Pridewing Skyhunter	1	0	Beast	shipped species recomposed
+shipped	4014	Pridewing Consort	1	0	Beast	shipped species recomposed
+shipped	4018	Antlered Courser	1	0	Beast	shipped species recomposed
+shipped	4019	Great Courser	1	0	Beast	shipped species recomposed
+shipped	4024	Bloodfury Slayer	7	0	Humanoid	shipped species recomposed
+shipped	4040	Cave Stalker	1	3	Beast	shipped species recomposed
+shipped	4044	Blackened Basilisk	1	0	Beast	shipped species recomposed
+shipped	4051	Cenarion Botanist	7	0	Humanoid	shipped species recomposed
+shipped	4053	Daughter of Cenarius	7	0	Humanoid	shipped species recomposed
+shipped	4054	Laughing Sister	7	0	Humanoid	shipped species recomposed
+shipped	4057	Son of Cenarius	7	0	Humanoid	shipped species recomposed
+shipped	4072	Prisoner of Jin'Zil	7	0	Humanoid	shipped species recomposed
+shipped	4075	Rat	8	0	Critter	shipped species recomposed
+shipped	4076	Roach	8	0	Critter	shipped species recomposed
+shipped	4093	Galak Wrangler	7	0	Humanoid	shipped species recomposed
+shipped	4094	Galak Scout	7	0	Humanoid	shipped species recomposed
+shipped	4095	Galak Mauler	7	0	Humanoid	shipped species recomposed
+shipped	4096	Galak Windchaser	7	0	Humanoid	shipped species recomposed
+shipped	4097	Galak Stormer	7	0	Humanoid	shipped species recomposed
+shipped	4099	Galak Marauder	7	0	Humanoid	shipped species recomposed
+shipped	4100	Screeching Harpy	7	0	Humanoid	shipped species recomposed
+shipped	4101	Screeching Roguefeather	7	0	Humanoid	shipped species recomposed
+shipped	4104	Screeching Windcaller	7	0	Humanoid	shipped species recomposed
+shipped	4107	Highperch Wyvern	1	0	Flying	shipped species recomposed
+shipped	4109	Highperch Consort	1	0	Beast	shipped species recomposed
+shipped	4111	Gravelsnout Kobold	7	0	Humanoid	shipped species recomposed
+shipped	4114	Gravelsnout Forager	7	0	Humanoid	shipped species recomposed
+shipped	4116	Gravelsnout Surveyor	7	0	Humanoid	shipped species recomposed
+shipped	4117	Cloud Serpent	1	27	Beast	shipped species recomposed
+shipped	4118	Venomous Cloud Serpent	1	27	Beast	shipped species recomposed
+shipped	4119	Elder Cloud Serpent	1	27	Beast	shipped species recomposed
+shipped	4120	Thundering Boulderkin	4	0	Elemental	shipped species recomposed
+shipped	4124	Needles Cougar	1	2	Beast	shipped species recomposed
+shipped	4127	Hecklefang Hyena	1	25	Beast	shipped species recomposed
+shipped	4128	Hecklefang Stalker	1	25	Beast	shipped species recomposed
+shipped	4129	Hecklefang Snarler	1	25	Beast	shipped species recomposed
+shipped	4139	Scorpid Terror	1	20	Beast	shipped species recomposed
+shipped	4140	Scorpid Reaver	1	20	Beast	shipped species recomposed
+shipped	4142	Sparkleshell Tortoise	1	21	Beast	shipped species recomposed
+shipped	4143	Sparkleshell Snapper	1	21	Flying	shipped species recomposed
+shipped	4144	Sparkleshell Borer	1	21	Beast	shipped species recomposed
+shipped	4147	Saltstone Basilisk	1	0	Flying	shipped species recomposed
+shipped	4150	Saltstone Gazer	1	0	Beast	shipped species recomposed
+shipped	4151	Saltstone Crystalhide	1	0	Beast	shipped species recomposed
+shipped	4154	Salt Flats Scavenger	1	7	Beast	shipped species recomposed
+shipped	4158	Salt Flats Vulture	1	7	Beast	shipped species recomposed
+shipped	4166	Gazelle	8	0	Critter	shipped species recomposed
+shipped	4248	Pesterhide Hyena	1	25	Flying	shipped species recomposed
+shipped	4249	Pesterhide Snarler	1	25	Beast	shipped species recomposed
+shipped	4250	Galak Packhound	1	25	Beast	shipped species recomposed
+shipped	4260	Venture Co. Shredder	9	0	Mechanical	shipped species recomposed
+shipped	4316	Kolkar Packhound	1	25	Beast	shipped species recomposed
+shipped	4323	Searing Hatchling	2	0	Dragonkin	shipped species recomposed
+shipped	4324	Searing Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	4341	Drywallow Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	4343	Drywallow Snapper	1	6	Beast	shipped species recomposed
+shipped	4344	Mottled Drywallow Crocolisk	1	6	Aquatic	shipped species recomposed
+shipped	4345	Drywallow Daggermaw	1	6	Beast	shipped species recomposed
+shipped	4346	Noxious Flayer	1	27	Beast	shipped species recomposed
+shipped	4347	Noxious Reaver	1	27	Beast	shipped species recomposed
+shipped	4348	Noxious Shredder	1	27	Beast	shipped species recomposed
+shipped	4351	Bloodfen Raptor	1	11	Beast	shipped species recomposed
+shipped	4352	Bloodfen Screecher	1	11	Flying	shipped species recomposed
+shipped	4356	Bloodfen Razormaw	1	11	Beast	shipped species recomposed
+shipped	4357	Bloodfen Lashtail	1	11	Flying	shipped species recomposed
+shipped	4359	Mirefin Murloc	7	0	Humanoid	shipped species recomposed
+shipped	4362	Mirefin Coastrunner	7	0	Aquatic	shipped species recomposed
+shipped	4376	Darkmist Spider	1	3	Beast	shipped species recomposed
+shipped	4379	Darkmist Silkspinner	1	3	Beast	shipped species recomposed
+shipped	4382	Withervine Creeper	4	0	Elemental	shipped species recomposed
+shipped	4385	Withervine Rager	4	0	Elemental	shipped species recomposed
+shipped	4387	Withervine Mire Beast	4	0	Elemental	shipped species recomposed
+shipped	4388	Young Murk Thresher	1	0	Aquatic	shipped species recomposed
+shipped	4389	Murk Thresher	1	0	Aquatic	shipped species recomposed
+shipped	4397	Mudrock Spikeshell	1	21	Beast	shipped species recomposed
+shipped	4401	Muckshell Clacker	7	0	Humanoid	shipped species recomposed
+shipped	4403	Muckshell Pincer	7	0	Humanoid	shipped species recomposed
+shipped	4404	Muckshell Scrabbler	7	0	Aquatic	shipped species recomposed
+shipped	4412	Darkfang Creeper	1	3	Beast	shipped species recomposed
+shipped	4414	Darkfang Venomspitter	1	3	Beast	shipped species recomposed
+shipped	4415	Giant Darkfang Spider	1	3	Beast	shipped species recomposed
+shipped	4458	Murkgill Hunter	7	0	Humanoid	shipped species recomposed
+shipped	4461	Murkgill Warrior	7	0	Humanoid	shipped species recomposed
+shipped	4463	Blackrock Summoner	7	0	Humanoid	shipped species recomposed
+shipped	4466	Vilebranch Scalper	7	0	Humanoid	shipped species recomposed
+shipped	4467	Vilebranch Soothsayer	7	0	Humanoid	shipped species recomposed
+shipped	4472	Haunting Vision	6	0	Undead	shipped species recomposed
+shipped	4474	Rotting Cadaver	6	0	Undead	shipped species recomposed
+shipped	4475	Blighted Zombie	6	0	Undead	shipped species recomposed
+shipped	4493	Scarlet Avenger	7	0	Humanoid	shipped species recomposed
+shipped	4494	Scarlet Spellbinder	7	0	Humanoid	shipped species recomposed
+shipped	4632	Kolkar Centaur	7	0	Humanoid	shipped species recomposed
+shipped	4633	Kolkar Scout	7	0	Humanoid	shipped species recomposed
+shipped	4634	Kolkar Mauler	7	0	Humanoid	shipped species recomposed
+shipped	4635	Kolkar Windchaser	7	0	Humanoid	shipped species recomposed
+shipped	4636	Kolkar Battle Lord	7	0	Humanoid	shipped species recomposed
+shipped	4637	Kolkar Destroyer	7	0	Humanoid	shipped species recomposed
+shipped	4638	Magram Scout	7	0	Humanoid	shipped species recomposed
+shipped	4639	Magram Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	4640	Magram Wrangler	7	0	Humanoid	shipped species recomposed
+shipped	4641	Magram Windchaser	7	0	Humanoid	shipped species recomposed
+shipped	4642	Magram Stormer	7	0	Humanoid	shipped species recomposed
+shipped	4643	Magram Pack Runner	7	0	Humanoid	shipped species recomposed
+shipped	4644	Magram Marauder	7	0	Humanoid	shipped species recomposed
+shipped	4645	Magram Mauler	7	0	Humanoid	shipped species recomposed
+shipped	4646	Gelkis Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	4647	Gelkis Scout	7	0	Humanoid	shipped species recomposed
+shipped	4648	Gelkis Stamper	7	0	Humanoid	shipped species recomposed
+shipped	4649	Gelkis Windchaser	7	0	Humanoid	shipped species recomposed
+shipped	4651	Gelkis Earthcaller	7	0	Humanoid	shipped species recomposed
+shipped	4652	Gelkis Mauler	7	0	Humanoid	shipped species recomposed
+shipped	4653	Gelkis Marauder	7	0	Humanoid	shipped species recomposed
+shipped	4654	Maraudine Scout	7	0	Humanoid	shipped species recomposed
+shipped	4655	Maraudine Wrangler	7	0	Humanoid	shipped species recomposed
+shipped	4656	Maraudine Mauler	7	0	Humanoid	shipped species recomposed
+shipped	4657	Maraudine Windchaser	7	0	Humanoid	shipped species recomposed
+shipped	4658	Maraudine Stormer	7	0	Humanoid	shipped species recomposed
+shipped	4661	Gelkis Rumbler	4	0	Elemental	shipped species recomposed
+shipped	4662	Magram Bonepaw	1	25	Beast	shipped species recomposed
+shipped	4663	Burning Blade Augur	7	0	Humanoid	shipped species recomposed
+shipped	4664	Burning Blade Reaver	7	0	Humanoid	shipped species recomposed
+shipped	4665	Burning Blade Adept	7	0	Humanoid	shipped species recomposed
+shipped	4666	Burning Blade Felsworn	7	0	Humanoid	shipped species recomposed
+shipped	4668	Burning Blade Summoner	7	0	Humanoid	shipped species recomposed
+shipped	4670	Hatefury Rogue	3	0	Humanoid	shipped species recomposed
+shipped	4671	Hatefury Trickster	3	0	Humanoid	shipped species recomposed
+shipped	4672	Hatefury Felsworn	3	0	Humanoid	shipped species recomposed
+shipped	4673	Hatefury Betrayer	3	0	Humanoid	shipped species recomposed
+shipped	4674	Hatefury Shadowstalker	3	0	Humanoid	shipped species recomposed
+shipped	4675	Hatefury Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	4676	Lesser Infernal	3	0	Humanoid	shipped species recomposed
+shipped	4677	Doomwarder	3	0	Humanoid	shipped species recomposed
+shipped	4679	Nether Maiden	3	0	Humanoid	shipped species recomposed
+shipped	4680	Doomwarder Captain	3	0	Humanoid	shipped species recomposed
+shipped	4681	Mage Hunter	3	0	Humanoid	shipped species recomposed
+shipped	4682	Nether Sister	3	0	Humanoid	shipped species recomposed
+shipped	4684	Nether Sorceress	3	0	Humanoid	shipped species recomposed
+shipped	4685	Ley Hunter	3	0	Humanoid	shipped species recomposed
+shipped	4688	Bonepaw Hyena	1	25	Beast	shipped species recomposed
+shipped	4689	Starving Bonepaw	1	25	Beast	shipped species recomposed
+shipped	4690	Rabid Bonepaw	1	25	Beast	shipped species recomposed
+shipped	4692	Dread Swoop	1	7	Beast	shipped species recomposed
+shipped	4693	Dread Flyer	1	7	Beast	shipped species recomposed
+shipped	4694	Dread Ripper	1	7	Flying	shipped species recomposed
+shipped	4695	Carrion Horror	1	7	Beast	shipped species recomposed
+shipped	4696	Scorpashi Snapper	1	20	Beast	shipped species recomposed
+shipped	4697	Scorpashi Lasher	1	20	Beast	shipped species recomposed
+shipped	4699	Scorpashi Venomlash	1	20	Beast	shipped species recomposed
+shipped	4700	Aged Kodo	1	0	Beast	shipped species recomposed
+shipped	4701	Dying Kodo	1	0	Beast	shipped species recomposed
+shipped	4702	Ancient Kodo	1	0	Beast	shipped species recomposed
+shipped	4705	Burning Blade Invoker	7	0	Humanoid	shipped species recomposed
+shipped	4711	Slitherblade Naga	7	0	Humanoid	shipped species recomposed
+shipped	4712	Slitherblade Sorceress	7	0	Humanoid	shipped species recomposed
+shipped	4713	Slitherblade Warrior	7	0	Humanoid	shipped species recomposed
+shipped	4714	Slitherblade Myrmidon	7	0	Humanoid	shipped species recomposed
+shipped	4715	Slitherblade Razortail	7	0	Humanoid	shipped species recomposed
+shipped	4716	Slitherblade Tidehunter	7	0	Aquatic	shipped species recomposed
+shipped	4718	Slitherblade Oracle	7	0	Humanoid	shipped species recomposed
+shipped	4719	Slitherblade Sea Witch	7	0	Humanoid	shipped species recomposed
+shipped	4726	Raging Thunder Lizard	1	0	Beast	shipped species recomposed
+shipped	4727	Elder Thunder Lizard	1	0	Beast	shipped species recomposed
+shipped	4728	Gritjaw Basilisk	1	0	Flying	shipped species recomposed
+shipped	4729	Hulking Gritjaw Basilisk	1	0	Beast	shipped species recomposed
+shipped	4953	Moccasin	8	0	Critter	shipped species recomposed
+shipped	5229	Gordunni Ogre	7	0	Humanoid	shipped species recomposed
+shipped	5232	Gordunni Brute	7	0	Humanoid	shipped species recomposed
+shipped	5234	Gordunni Mauler	7	0	Humanoid	shipped species recomposed
+shipped	5236	Gordunni Shaman	7	0	Humanoid	shipped species recomposed
+shipped	5237	Gordunni Ogre Mage	7	0	Humanoid	shipped species recomposed
+shipped	5238	Gordunni Battlemaster	7	0	Humanoid	shipped species recomposed
+shipped	5239	Gordunni Mage-Lord	7	0	Humanoid	shipped species recomposed
+shipped	5240	Gordunni Warlock	7	0	Humanoid	shipped species recomposed
+shipped	5241	Gordunni Warlord	7	0	Humanoid	shipped species recomposed
+shipped	5249	Woodpaw Mongrel	7	0	Humanoid	shipped species recomposed
+shipped	5251	Woodpaw Trapper	7	0	Humanoid	shipped species recomposed
+shipped	5253	Woodpaw Brute	7	0	Humanoid	shipped species recomposed
+shipped	5254	Woodpaw Mystic	7	0	Humanoid	shipped species recomposed
+shipped	5255	Woodpaw Reaver	7	0	Humanoid	shipped species recomposed
+shipped	5258	Woodpaw Alpha	7	0	Humanoid	shipped species recomposed
+shipped	5260	Groddoc Ape	1	9	Flying	shipped species recomposed
+shipped	5262	Groddoc Thunderer	1	9	Flying	shipped species recomposed
+shipped	5268	Ironfur Bear	1	4	Beast	shipped species recomposed
+shipped	5272	Grizzled Ironfur Bear	1	4	Beast	shipped species recomposed
+shipped	5274	Ironfur Patriarch	1	4	Beast	shipped species recomposed
+shipped	5276	Sprite Dragon	2	0	Dragonkin	shipped species recomposed
+shipped	5278	Sprite Darter	2	0	Dragonkin	shipped species recomposed
+shipped	5286	Longtooth Runner	1	1	Beast	shipped species recomposed
+shipped	5287	Longtooth Howler	1	1	Flying	shipped species recomposed
+shipped	5288	Rabid Longtooth	1	1	Beast	shipped species recomposed
+shipped	5292	Feral Scar Yeti	7	0	Humanoid	shipped species recomposed
+shipped	5293	Hulking Feral Scar	7	0	Humanoid	shipped species recomposed
+shipped	5295	Enraged Feral Scar	7	0	Humanoid	shipped species recomposed
+shipped	5296	Rage Scar Yeti	7	0	Humanoid	shipped species recomposed
+shipped	5297	Elder Rage Scar	7	0	Humanoid	shipped species recomposed
+shipped	5299	Ferocious Rage Scar	7	0	Humanoid	shipped species recomposed
+shipped	5300	Frayfeather Hippogryph	1	0	Beast	shipped species recomposed
+shipped	5304	Frayfeather Stagwing	1	0	Beast	shipped species recomposed
+shipped	5305	Frayfeather Skystormer	1	0	Beast	shipped species recomposed
+shipped	5306	Frayfeather Patriarch	1	0	Beast	shipped species recomposed
+shipped	5307	Vale Screecher	1	27	Beast	shipped species recomposed
+shipped	5308	Rogue Vale Screecher	1	27	Beast	shipped species recomposed
+shipped	5327	Coast Crawl Snapclaw	7	0	Humanoid	shipped species recomposed
+shipped	5328	Coast Crawl Deepseer	7	0	Humanoid	shipped species recomposed
+shipped	5331	Hatecrest Warrior	7	0	Humanoid	shipped species recomposed
+shipped	5332	Hatecrest Wave Rider	7	0	Humanoid	shipped species recomposed
+shipped	5334	Hatecrest Myrmidon	7	0	Humanoid	shipped species recomposed
+shipped	5335	Hatecrest Screamer	7	0	Humanoid	shipped species recomposed
+shipped	5336	Hatecrest Sorceress	7	0	Humanoid	shipped species recomposed
+shipped	5337	Hatecrest Siren	7	0	Humanoid	shipped species recomposed
+shipped	5403	Riding White Stallion	1	0	Beast	shipped species recomposed
+shipped	5419	Glasshide Basilisk	1	0	Beast	shipped species recomposed
+shipped	5420	Glasshide Gazer	1	0	Beast	shipped species recomposed
+shipped	5421	Glasshide Petrifier	1	0	Beast	shipped species recomposed
+shipped	5422	Scorpid Hunter	1	20	Beast	shipped species recomposed
+shipped	5423	Scorpid Tail Lasher	1	20	Beast	shipped species recomposed
+shipped	5424	Scorpid Dunestalker	1	20	Flying	shipped species recomposed
+shipped	5425	Starving Blisterpaw	1	25	Beast	shipped species recomposed
+shipped	5426	Blisterpaw Hyena	1	25	Beast	shipped species recomposed
+shipped	5427	Rabid Blisterpaw	1	25	Beast	shipped species recomposed
+shipped	5428	Roc	1	7	Flying	shipped species recomposed
+shipped	5429	Fire Roc	1	7	Beast	shipped species recomposed
+shipped	5430	Searing Roc	1	7	Beast	shipped species recomposed
+shipped	5431	Surf Glider	1	21	Beast	shipped species recomposed
+shipped	5454	Hazzali Sandreaver	1	41	Beast	shipped species recomposed
+shipped	5460	Centipaar Sandreaver	1	41	Beast	shipped species recomposed
+shipped	5461	Sea Elemental	4	0	Elemental	shipped species recomposed
+shipped	5462	Sea Spray	4	0	Elemental	shipped species recomposed
+shipped	5465	Land Rager	4	0	Elemental	shipped species recomposed
+shipped	5471	Dunemaul Ogre	7	0	Humanoid	shipped species recomposed
+shipped	5472	Dunemaul Enforcer	7	0	Humanoid	shipped species recomposed
+shipped	5473	Dunemaul Ogre Mage	7	0	Humanoid	shipped species recomposed
+shipped	5474	Dunemaul Brute	7	0	Humanoid	shipped species recomposed
+shipped	5475	Dunemaul Warlock	7	0	Humanoid	shipped species recomposed
+shipped	5523	War Party Kodo	1	0	Beast	shipped species recomposed
+shipped	5600	Khan Dez'hepah	7	0	Humanoid	shipped species recomposed
+shipped	5615	Wastewander Rogue	7	0	Humanoid	shipped species recomposed
+shipped	5616	Wastewander Thief	7	0	Humanoid	shipped species recomposed
+shipped	5617	Wastewander Shadow Mage	7	0	Humanoid	shipped species recomposed
+shipped	5618	Wastewander Bandit	7	0	Humanoid	shipped species recomposed
+shipped	5623	Wastewander Assassin	7	0	Humanoid	shipped species recomposed
+shipped	5839	Dark Iron Geologist	7	0	Humanoid	shipped species recomposed
+shipped	5840	Dark Iron Steamsmith	7	0	Humanoid	shipped species recomposed
+shipped	5844	Dark Iron Slaver	7	0	Humanoid	shipped species recomposed
+shipped	5846	Dark Iron Taskmaster	7	0	Humanoid	shipped species recomposed
+shipped	5850	Blazing Elemental	4	0	Elemental	shipped species recomposed
+shipped	5852	Inferno Elemental	4	0	Elemental	shipped species recomposed
+shipped	5853	Tempered War Golem	4	0	Elemental	shipped species recomposed
+shipped	5854	Heavy War Golem	9	0	Elemental	shipped species recomposed
+shipped	5855	Magma Elemental	4	0	Elemental	shipped species recomposed
+shipped	5856	Glassweb Spider	1	3	Beast	shipped species recomposed
+shipped	5857	Searing Lava Spider	1	3	Beast	shipped species recomposed
+shipped	5858	Greater Lava Spider	1	3	Beast	shipped species recomposed
+shipped	5951	Hare	8	0	Critter	shipped species recomposed
+shipped	5974	Dreadmaul Ogre	7	0	Humanoid	shipped species recomposed
+shipped	5977	Dreadmaul Mauler	7	0	Humanoid	shipped species recomposed
+shipped	5978	Dreadmaul Warlock	7	0	Humanoid	shipped species recomposed
+shipped	5979	Wretched Lost One	7	0	Humanoid	shipped species recomposed
+shipped	5982	Black Slayer	1	7	Beast	shipped species recomposed
+shipped	5983	Bonepicker	1	7	Beast	shipped species recomposed
+shipped	5984	Starving Snickerfang	1	25	Beast	shipped species recomposed
+shipped	5985	Snickerfang Hyena	1	25	Beast	shipped species recomposed
+shipped	5988	Scorpok Stinger	1	20	Beast	shipped species recomposed
+shipped	5990	Redstone Basilisk	1	0	Flying	shipped species recomposed
+shipped	5991	Redstone Crystalhide	1	0	Beast	shipped species recomposed
+shipped	5992	Ashmane Boar	1	5	Beast	shipped species recomposed
+shipped	5993	Helboar	3	0	Beast	shipped species recomposed
+shipped	6004	Shadowsworn Cultist	7	0	Humanoid	shipped species recomposed
+shipped	6005	Shadowsworn Thug	7	0	Humanoid	shipped species recomposed
+shipped	6006	Shadowsworn Adept	7	0	Humanoid	shipped species recomposed
+shipped	6007	Shadowsworn Enforcer	7	0	Humanoid	shipped species recomposed
+shipped	6008	Shadowsworn Warlock	7	0	Humanoid	shipped species recomposed
+shipped	6010	Felhound	3	0	Humanoid	shipped species recomposed
+shipped	6073	Searing Infernal	3	0	Humanoid	shipped species recomposed
+shipped	6135	Arkkoran Clacker	7	0	Humanoid	shipped species recomposed
+shipped	6136	Arkkoran Muckdweller	7	0	Humanoid	shipped species recomposed
+shipped	6137	Arkkoran Pincer	7	0	Humanoid	shipped species recomposed
+shipped	6138	Arkkoran Oracle	7	0	Humanoid	shipped species recomposed
+shipped	6145	School of Fish	8	0	Critter	shipped species recomposed
+shipped	6184	Timbermaw Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	6185	Timbermaw Warrior	7	0	Humanoid	shipped species recomposed
+shipped	6187	Timbermaw Den Watcher	7	0	Humanoid	shipped species recomposed
+shipped	6188	Timbermaw Shaman	7	0	Humanoid	shipped species recomposed
+shipped	6189	Timbermaw Ursa	7	0	Beast	shipped species recomposed
+shipped	6190	Spitelash Warrior	7	0	Humanoid	shipped species recomposed
+shipped	6193	Spitelash Screamer	7	0	Humanoid	shipped species recomposed
+shipped	6195	Spitelash Siren	7	0	Humanoid	shipped species recomposed
+shipped	6196	Spitelash Myrmidon	7	0	Humanoid	shipped species recomposed
+shipped	6200	Legashi Satyr	3	0	Humanoid	shipped species recomposed
+shipped	6201	Legashi Rogue	3	0	Humanoid	shipped species recomposed
+shipped	6202	Legashi Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	6271	Mouse	8	0	Critter	shipped species recomposed
+shipped	6347	Young Wavethrasher	1	0	Beast	shipped species recomposed
+shipped	6348	Wavethrasher	1	0	Beast	shipped species recomposed
+shipped	6349	Great Wavethrasher	1	0	Beast	shipped species recomposed
+shipped	6350	Makrinni Razorclaw	7	0	Humanoid	shipped species recomposed
+shipped	6351	Storm Bay Oracle	7	0	Humanoid	shipped species recomposed
+shipped	6352	Coralshell Lurker	1	21	Beast	shipped species recomposed
+shipped	6368	Cat	8	0	Beast	shipped species recomposed
+shipped	6369	Coralshell Tortoise	1	21	Beast	shipped species recomposed
+shipped	6370	Makrinni Scrabbler	7	0	Aquatic	shipped species recomposed
+shipped	6371	Storm Bay Warrior	7	0	Humanoid	shipped species recomposed
+shipped	6372	Makrinni Snapclaw	7	0	Humanoid	shipped species recomposed
+shipped	6377	Thunderhead Stagwing	1	0	Flying	shipped species recomposed
+shipped	6378	Thunderhead Skystormer	1	0	Beast	shipped species recomposed
+shipped	6379	Thunderhead Patriarch	1	0	Beast	shipped species recomposed
+shipped	6380	Thunderhead Consort	1	0	Flying	shipped species recomposed
+shipped	6505	Ravasaur	1	11	Beast	shipped species recomposed
+shipped	6506	Ravasaur Runner	1	11	Beast	shipped species recomposed
+shipped	6507	Ravasaur Hunter	1	11	Flying	shipped species recomposed
+shipped	6508	Venomhide Ravasaur	1	11	Beast	shipped species recomposed
+shipped	6509	Bloodpetal Lasher	4	0	Elemental	shipped species recomposed
+shipped	6510	Bloodpetal Flayer	4	0	Elemental	shipped species recomposed
+shipped	6511	Bloodpetal Thresher	4	0	Aquatic	shipped species recomposed
+shipped	6512	Bloodpetal Trapper	4	0	Elemental	shipped species recomposed
+shipped	6513	Un'Goro Stomper	1	9	Flying	shipped species recomposed
+shipped	6514	Un'Goro Gorilla	1	9	Beast	shipped species recomposed
+shipped	6516	Un'Goro Thunderer	1	9	Beast	shipped species recomposed
+shipped	6517	Tar Beast	4	0	Elemental	shipped species recomposed
+shipped	6518	Tar Lurker	4	0	Beast	shipped species recomposed
+shipped	6519	Tar Lord	4	0	Elemental	shipped species recomposed
+shipped	6520	Scorching Elemental	4	0	Elemental	shipped species recomposed
+shipped	6521	Living Blaze	4	0	Elemental	shipped species recomposed
+shipped	6527	Tar Creeper	4	0	Elemental	shipped species recomposed
+shipped	6553	Gorishi Reaver	1	41	Beast	shipped species recomposed
+shipped	6653	Huge Toad	8	0	Critter	shipped species recomposed
+shipped	6789	Thistle Cub	1	4	Beast	shipped species recomposed
+shipped	6827	Crab	8	8	Aquatic	shipped species recomposed
+shipped	7025	Blackrock Soldier	7	0	Humanoid	shipped species recomposed
+shipped	7026	Blackrock Sorcerer	7	0	Humanoid	shipped species recomposed
+shipped	7027	Blackrock Slayer	7	0	Humanoid	shipped species recomposed
+shipped	7028	Blackrock Warlock	7	0	Humanoid	shipped species recomposed
+shipped	7029	Blackrock Battlemaster	7	0	Humanoid	shipped species recomposed
+shipped	7031	Obsidian Elemental	4	0	Elemental	shipped species recomposed
+shipped	7032	Greater Obsidian Elemental	4	0	Elemental	shipped species recomposed
+shipped	7033	Firegut Ogre	7	0	Humanoid	shipped species recomposed
+shipped	7034	Firegut Ogre Mage	7	0	Humanoid	shipped species recomposed
+shipped	7035	Firegut Brute	7	0	Humanoid	shipped species recomposed
+shipped	7036	Thaurissan Spy	7	0	Humanoid	shipped species recomposed
+shipped	7037	Thaurissan Firewalker	7	0	Humanoid	shipped species recomposed
+shipped	7038	Thaurissan Agent	7	0	Humanoid	shipped species recomposed
+shipped	7039	War Reaver	4	0	Elemental	shipped species recomposed
+shipped	7047	Black Broodling	2	0	Dragonkin	shipped species recomposed
+shipped	7048	Scalding Broodling	2	0	Dragonkin	shipped species recomposed
+shipped	7049	Flamescale Broodling	2	0	Dragonkin	shipped species recomposed
+shipped	7055	Blackrock Worg	1	1	Beast	shipped species recomposed
+shipped	7097	Ironbeak Owl	1	26	Flying	shipped species recomposed
+shipped	7098	Ironbeak Screecher	1	26	Beast	shipped species recomposed
+shipped	7099	Ironbeak Hunter	1	26	Beast	shipped species recomposed
+shipped	7100	Warpwood Moss Flayer	4	0	Elemental	shipped species recomposed
+shipped	7101	Warpwood Shredder	4	0	Elemental	shipped species recomposed
+shipped	7105	Jadefire Satyr	3	0	Humanoid	shipped species recomposed
+shipped	7106	Jadefire Rogue	3	0	Humanoid	shipped species recomposed
+shipped	7107	Jadefire Trickster	3	0	Humanoid	shipped species recomposed
+shipped	7109	Jadefire Felsworn	3	0	Humanoid	shipped species recomposed
+shipped	7110	Jadefire Shadowstalker	3	0	Humanoid	shipped species recomposed
+shipped	7111	Jadefire Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	7112	Jaedenar Cultist	7	0	Humanoid	shipped species recomposed
+shipped	7114	Jaedenar Enforcer	7	0	Humanoid	shipped species recomposed
+shipped	7115	Jaedenar Adept	7	0	Humanoid	shipped species recomposed
+shipped	7118	Jaedenar Darkweaver	7	0	Humanoid	shipped species recomposed
+shipped	7120	Jaedenar Warlock	7	0	Humanoid	shipped species recomposed
+shipped	7125	Jaedenar Hound	3	0	Humanoid	shipped species recomposed
+shipped	7126	Jaedenar Hunter	3	0	Humanoid	shipped species recomposed
+shipped	7132	Toxic Horror	4	0	Elemental	shipped species recomposed
+shipped	7138	Irontree Wanderer	4	0	Elemental	shipped species recomposed
+shipped	7139	Irontree Stomper	4	0	Elemental	shipped species recomposed
+shipped	7153	Deadwood Warrior	7	0	Humanoid	shipped species recomposed
+shipped	7154	Deadwood Gardener	7	0	Humanoid	shipped species recomposed
+shipped	7155	Deadwood Pathfinder	7	0	Humanoid	shipped species recomposed
+shipped	7235	Gnarlpine Mystic	7	0	Magic	shipped species recomposed
+shipped	7369	Deadwind Brute	7	0	Humanoid	shipped species recomposed
+shipped	7370	Restless Shade	6	0	Undead	shipped species recomposed
+shipped	7371	Deadwind Mauler	7	0	Humanoid	shipped species recomposed
+shipped	7372	Deadwind Warlock	7	0	Humanoid	shipped species recomposed
+shipped	7376	Sky Shadow	1	7	Beast	shipped species recomposed
+shipped	7379	Deadwind Ogre Mage	7	0	Humanoid	shipped species recomposed
+shipped	7380	Siamese Cat	12	0	Beast	shipped species recomposed
+shipped	7381	Silver Tabby Cat	12	0	Beast	shipped species recomposed
+shipped	7382	Orange Tabby Cat	12	0	Beast	shipped species recomposed
+shipped	7383	Black Tabby Cat	12	0	Beast	shipped species recomposed
+shipped	7384	Cornish Rex Cat	12	0	Beast	shipped species recomposed
+shipped	7385	Bombay Cat	12	0	Beast	shipped species recomposed
+shipped	7386	White Kitten	12	0	Beast	shipped species recomposed
+shipped	7387	Green Wing Macaw	12	0	Flying	shipped species recomposed
+shipped	7388	Cockatoo	12	0	Flying	shipped species recomposed
+shipped	7389	Senegal	12	0	Flying	shipped species recomposed
+shipped	7390	Cockatiel	12	0	Flying	shipped species recomposed
+shipped	7391	Hyacinth Macaw	12	0	Flying	shipped species recomposed
+shipped	7392	Prairie Chicken	12	0	Flying	shipped species recomposed
+shipped	7393	White Plymouth Rock	12	0	Flying	shipped species recomposed
+shipped	7394	Ancona Chicken	12	0	Flying	shipped species recomposed
+shipped	7395	Cockroach	12	0	Critter	shipped species recomposed
+shipped	7430	Frostsaber Cub	1	2	Beast	shipped species recomposed
+shipped	7431	Frostsaber	1	2	Beast	shipped species recomposed
+shipped	7432	Frostsaber Stalker	1	2	Beast	shipped species recomposed
+shipped	7433	Frostsaber Huntress	1	2	Beast	shipped species recomposed
+shipped	7434	Frostsaber Pride Watcher	1	2	Beast	shipped species recomposed
+shipped	7438	Winterfall Ursa	7	0	Beast	shipped species recomposed
+shipped	7439	Winterfall Shaman	7	0	Humanoid	shipped species recomposed
+shipped	7440	Winterfall Den Watcher	7	0	Humanoid	shipped species recomposed
+shipped	7443	Shardtooth Mauler	1	4	Flying	shipped species recomposed
+shipped	7444	Shardtooth Bear	1	4	Beast	shipped species recomposed
+shipped	7445	Elder Shardtooth	1	4	Beast	shipped species recomposed
+shipped	7447	Fledgling Chillwind	1	38	Flying	shipped species recomposed
+shipped	7448	Chillwind Chimaera	1	38	Beast	shipped species recomposed
+shipped	7449	Chillwind Ravager	1	38	Beast	shipped species recomposed
+shipped	7450	Ragged Owlbeast	7	0	Flying	shipped species recomposed
+shipped	7451	Raging Owlbeast	7	0	Flying	shipped species recomposed
+shipped	7452	Crazed Owlbeast	7	0	Flying	shipped species recomposed
+shipped	7453	Moontouched Owlbeast	7	0	Flying	shipped species recomposed
+shipped	7454	Berserk Owlbeast	7	0	Flying	shipped species recomposed
+shipped	7455	Winterspring Owl	1	26	Flying	shipped species recomposed
+shipped	7456	Winterspring Screecher	1	26	Beast	shipped species recomposed
+shipped	7457	Rogue Ice Thistle	7	0	Beast	shipped species recomposed
+shipped	7458	Ice Thistle Yeti	7	0	Beast	shipped species recomposed
+shipped	7459	Ice Thistle Matriarch	7	0	Beast	shipped species recomposed
+shipped	7460	Ice Thistle Patriarch	7	0	Beast	shipped species recomposed
+shipped	7523	Suffering Highborne	6	0	Undead	shipped species recomposed
+shipped	7524	Anguished Highborne	6	0	Undead	shipped species recomposed
+shipped	7543	Dark Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	7544	Crimson Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	7545	Emerald Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	7546	Bronze Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	7547	Azure Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	7548	Faeling	12	0	Dragonkin	shipped species recomposed
+shipped	7549	Tree Frog	12	0	Aquatic	shipped species recomposed
+shipped	7550	Wood Frog	12	0	Aquatic	shipped species recomposed
+shipped	7551	Dart Frog	12	0	Aquatic	shipped species recomposed
+shipped	7552	Island Frog	12	0	Aquatic	shipped species recomposed
+shipped	7553	Great Horned Owl	12	0	Flying	shipped species recomposed
+shipped	7554	Snowy Owl	12	0	Flying	shipped species recomposed
+shipped	7555	Hawk Owl	12	0	Flying	shipped species recomposed
+shipped	7556	Eagle Owl	12	0	Flying	shipped species recomposed
+shipped	7558	Cottontail Rabbit	12	0	Critter	shipped species recomposed
+shipped	7559	Spotted Rabbit	12	0	Critter	shipped species recomposed
+shipped	7560	Snowshoe Rabbit	12	0	Critter	shipped species recomposed
+shipped	7561	Albino Snake	12	0	Beast	shipped species recomposed
+shipped	7562	Brown Snake	12	0	Beast	shipped species recomposed
+shipped	7563	Blue Racer	12	0	Beast	shipped species recomposed
+shipped	7565	Black Kingsnake	12	0	Beast	shipped species recomposed
+shipped	7566	Scarlet Snake	12	0	Beast	shipped species recomposed
+shipped	7567	Crimson Snake	12	0	Beast	shipped species recomposed
+shipped	7568	Ribbon Snake	12	0	Beast	shipped species recomposed
+shipped	7569	Green Water Snake	12	0	Beast	shipped species recomposed
+shipped	7570	Elven Wisp	12	0	Magic	shipped species recomposed
+shipped	7584	Wandering Forest Walker	4	0	Elemental	shipped species recomposed
+shipped	7725	Grimtotem Raider	7	0	Humanoid	shipped species recomposed
+shipped	7726	Grimtotem Naturalist	7	0	Humanoid	shipped species recomposed
+shipped	7727	Grimtotem Shaman	7	0	Humanoid	shipped species recomposed
+shipped	7855	Southsea Pirate	7	0	Humanoid	shipped species recomposed
+shipped	7856	Southsea Freebooter	7	0	Humanoid	shipped species recomposed
+shipped	7858	Southsea Swashbuckler	7	0	Humanoid	shipped species recomposed
+shipped	7864	Lingering Highborne	6	0	Undead	shipped species recomposed
+shipped	7885	Spitelash Battlemaster	7	0	Humanoid	shipped species recomposed
+shipped	7886	Spitelash Enchantress	7	0	Humanoid	shipped species recomposed
+shipped	7997	Captured Sprite Darter	2	0	Dragonkin	shipped species recomposed
+shipped	8376	Mechanical Chicken	12	0	Mechanical	shipped species recomposed
+shipped	8402	Enslaved Archaeologist	7	0	Humanoid	shipped species recomposed
+shipped	8442	Shadowsilk Poacher	7	0	Humanoid	shipped species recomposed
+shipped	8519	Blighted Surge	4	0	Elemental	shipped species recomposed
+shipped	8520	Plague Ravager	4	0	Elemental	shipped species recomposed
+shipped	8521	Blighted Horror	4	0	Elemental	shipped species recomposed
+shipped	8522	Plague Monstrosity	4	0	Elemental	shipped species recomposed
+shipped	8523	Scourge Soldier	6	0	Undead	shipped species recomposed
+shipped	8524	Cursed Mage	6	0	Undead	shipped species recomposed
+shipped	8525	Scourge Warder	6	0	Undead	shipped species recomposed
+shipped	8526	Dark Caster	6	0	Undead	shipped species recomposed
+shipped	8528	Dread Weaver	6	0	Undead	shipped species recomposed
+shipped	8530	Cannibal Ghoul	6	0	Undead	shipped species recomposed
+shipped	8531	Gibbering Ghoul	6	0	Undead	shipped species recomposed
+shipped	8532	Diseased Flayer	6	0	Undead	shipped species recomposed
+shipped	8534	Putrid Gargoyle	6	0	Undead	shipped species recomposed
+shipped	8535	Putrid Shrieker	6	0	Undead	shipped species recomposed
+shipped	8539	Eyeless Watcher	6	0	Undead	shipped species recomposed
+shipped	8540	Torn Screamer	6	0	Undead	shipped species recomposed
+shipped	8541	Hate Shrieker	6	0	Undead	shipped species recomposed
+shipped	8542	Death Singer	6	0	Undead	shipped species recomposed
+shipped	8543	Stitched Horror	6	0	Undead	shipped species recomposed
+shipped	8546	Dark Adept	7	0	Humanoid	shipped species recomposed
+shipped	8548	Vile Tutor	7	0	Humanoid	shipped species recomposed
+shipped	8551	Dark Summoner	7	0	Humanoid	shipped species recomposed
+shipped	8553	Necromancer	7	0	Humanoid	shipped species recomposed
+shipped	8555	Crypt Stalker	6	0	Undead	shipped species recomposed
+shipped	8556	Crypt Walker	6	0	Undead	shipped species recomposed
+shipped	8557	Crypt Horror	6	0	Undead	shipped species recomposed
+shipped	8558	Crypt Slayer	6	0	Undead	shipped species recomposed
+shipped	8560	Mossflayer Scout	7	0	Humanoid	shipped species recomposed
+shipped	8561	Mossflayer Shadowhunter	7	0	Humanoid	shipped species recomposed
+shipped	8562	Mossflayer Cannibal	7	0	Humanoid	shipped species recomposed
+shipped	8565	Pathstrider	7	0	Flying	shipped species recomposed
+shipped	8566	Dark Iron Lookout	7	0	Humanoid	shipped species recomposed
+shipped	8596	Plaguehound Runt	3	0	Humanoid	shipped species recomposed
+shipped	8597	Plaguehound	3	0	Humanoid	shipped species recomposed
+shipped	8598	Frenzied Plaguehound	3	0	Humanoid	shipped species recomposed
+shipped	8600	Plaguebat	1	24	Flying	shipped species recomposed
+shipped	8601	Noxious Plaguebat	1	24	Flying	shipped species recomposed
+shipped	8602	Monstrous Plaguebat	1	24	Flying	shipped species recomposed
+shipped	8603	Carrion Grub	1	0	Beast	shipped species recomposed
+shipped	8605	Carrion Devourer	1	0	Beast	shipped species recomposed
+shipped	8667	Gusting Vortex	4	0	Elemental	shipped species recomposed
+shipped	8675	Felbeast	3	0	Humanoid	shipped species recomposed
+shipped	8759	Mosshoof Runner	1	0	Beast	shipped species recomposed
+shipped	8760	Mosshoof Stag	1	0	Beast	shipped species recomposed
+shipped	8761	Mosshoof Courser	1	0	Beast	shipped species recomposed
+shipped	8762	Timberweb Recluse	1	3	Beast	shipped species recomposed
+shipped	8763	Mistwing Rogue	1	38	Beast	shipped species recomposed
+shipped	8764	Mistwing Ravager	1	38	Beast	shipped species recomposed
+shipped	8956	Angerclaw Bear	1	4	Beast	shipped species recomposed
+shipped	8957	Angerclaw Grizzly	1	4	Beast	shipped species recomposed
+shipped	8958	Angerclaw Mauler	1	4	Beast	shipped species recomposed
+shipped	8959	Felpaw Wolf	1	1	Beast	shipped species recomposed
+shipped	8960	Felpaw Scavenger	1	1	Flying	shipped species recomposed
+shipped	8961	Felpaw Ravager	1	1	Beast	shipped species recomposed
+shipped	8977	Krom'Grul	7	0	Humanoid	shipped species recomposed
+shipped	9162	Young Diemetradon	1	0	Beast	shipped species recomposed
+shipped	9163	Diemetradon	1	0	Beast	shipped species recomposed
+shipped	9164	Elder Diemetradon	1	0	Beast	shipped species recomposed
+shipped	9165	Fledgling Pterrordax	1	0	Flying	shipped species recomposed
+shipped	9166	Pterrordax	1	0	Beast	shipped species recomposed
+shipped	9167	Frenzied Pterrordax	1	0	Beast	shipped species recomposed
+shipped	9318	Incendosaur	1	0	Beast	shipped species recomposed
+shipped	9377	Swirling Vortex	4	0	Elemental	shipped species recomposed
+shipped	9600	Parrot	8	0	Critter	shipped species recomposed
+shipped	9656	Pet Bombling	12	0	Mechanical	shipped species recomposed
+shipped	9657	Lil' Smoky	12	0	Mechanical	shipped species recomposed
+shipped	9662	Sprite Darter Hatchling	12	0	Dragonkin	shipped species recomposed
+shipped	9690	Ember Worg	1	1	Beast	shipped species recomposed
+shipped	9691	Venomtip Scorpid	1	20	Beast	shipped species recomposed
+shipped	9694	Slavering Ember Worg	1	1	Flying	shipped species recomposed
+shipped	9695	Deathlash Scorpid	1	20	Beast	shipped species recomposed
+shipped	9697	Giant Ember Worg	1	1	Beast	shipped species recomposed
+shipped	9698	Firetail Scorpid	1	20	Beast	shipped species recomposed
+shipped	9699	Fire Beetle	8	0	Critter	shipped species recomposed
+shipped	9700	Lava Crab	8	0	Aquatic	shipped species recomposed
+shipped	9776	Flamekin Spitter	3	0	Humanoid	shipped species recomposed
+shipped	9777	Flamekin Sprite	3	0	Humanoid	shipped species recomposed
+shipped	9778	Flamekin Torcher	3	0	Humanoid	shipped species recomposed
+shipped	9779	Flamekin Rager	3	0	Humanoid	shipped species recomposed
+shipped	9862	Jaedenar Legionnaire	3	0	Humanoid	shipped species recomposed
+shipped	9878	Entropic Beast	4	0	Elemental	shipped species recomposed
+shipped	9879	Entropic Horror	4	0	Elemental	shipped species recomposed
+shipped	9936	Corrupted Kitten	12	0	Beast	shipped species recomposed
+shipped	10016	Tainted Rat	8	0	Critter	shipped species recomposed
+shipped	10017	Tainted Cockroach	8	0	Critter	shipped species recomposed
+shipped	10157	Moonkin Oracle	7	0	Humanoid	shipped species recomposed
+shipped	10158	Moonkin	7	0	Humanoid	shipped species recomposed
+shipped	10159	Young Moonkin	7	0	Humanoid	shipped species recomposed
+shipped	10160	Raging Moonkin	7	0	Humanoid	shipped species recomposed
+shipped	10259	Worg Pup	12	0	Beast	shipped species recomposed
+shipped	10541	Krakle's Thermometer	8	0	Critter	shipped species recomposed
+shipped	10580	Fetid Zombie	6	0	Undead	shipped species recomposed
+shipped	10598	Smolderweb Hatchling	12	0	Beast	shipped species recomposed
+shipped	10605	Scarlet Medic	7	0	Humanoid	shipped species recomposed
+shipped	10659	Cobalt Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	10660	Cobalt Broodling	2	0	Dragonkin	shipped species recomposed
+shipped	10661	Spell Eater	2	0	Dragonkin	shipped species recomposed
+shipped	10685	Swine	8	0	Critter	shipped species recomposed
+shipped	10716	Belfry Bat	8	0	Flying	shipped species recomposed
+shipped	10756	Scalding Elemental	4	0	Elemental	shipped species recomposed
+shipped	10757	Boiling Elemental	4	0	Elemental	shipped species recomposed
+shipped	10758	Grimtotem Bandit	7	0	Humanoid	shipped species recomposed
+shipped	10759	Grimtotem Stomper	7	0	Humanoid	shipped species recomposed
+shipped	10760	Grimtotem Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	10761	Grimtotem Reaver	7	0	Humanoid	shipped species recomposed
+shipped	10779	Infected Squirrel	8	0	Critter	shipped species recomposed
+shipped	10780	Infected Deer	8	0	Critter	shipped species recomposed
+shipped	10916	Winterfall Runner	7	0	Humanoid	shipped species recomposed
+shipped	11198	Broken Exile	7	0	Humanoid	shipped species recomposed
+shipped	11236	Blood Parrot	12	0	Flying	shipped species recomposed
+shipped	11288	Spectral Betrayer	6	0	Undead	shipped species recomposed
+shipped	11289	Spectral Defender	6	0	Undead	shipped species recomposed
+shipped	11290	Mossflayer Zombie	6	0	Undead	shipped species recomposed
+shipped	11291	Unliving Mossflayer	6	0	Undead	shipped species recomposed
+shipped	11325	Panda Cub	12	0	Beast	shipped species recomposed
+shipped	11326	Mini Diablo	12	0	Humanoid	shipped species recomposed
+shipped	11327	Zergling	12	0	Beast	shipped species recomposed
+shipped	11559	Outcast Necromancer	7	0	Humanoid	shipped species recomposed
+shipped	11561	Undead Ravager	6	0	Undead	shipped species recomposed
+shipped	11562	Drysnap Crawler	7	0	Aquatic	shipped species recomposed
+shipped	11563	Drysnap Pincer	7	0	Humanoid	shipped species recomposed
+shipped	11564	Gizelton Caravan Kodo	1	0	Flying	shipped species recomposed
+shipped	11576	Whirlwind Ripper	4	0	Elemental	shipped species recomposed
+shipped	11577	Whirlwind Stormwalker	4	0	Elemental	shipped species recomposed
+shipped	11578	Whirlwind Shredder	4	0	Elemental	shipped species recomposed
+shipped	11620	Spectral Marauder	6	0	Undead	shipped species recomposed
+shipped	11621	Spectral Corpse	6	0	Undead	shipped species recomposed
+shipped	11656	Warsong Peon	7	0	Humanoid	shipped species recomposed
+shipped	11680	Horde Scout	7	0	Humanoid	shipped species recomposed
+shipped	11681	Horde Deforester	7	0	Humanoid	shipped species recomposed
+shipped	11682	Warsong Grunt	7	0	Humanoid	shipped species recomposed
+shipped	11683	Warsong Shaman	7	0	Humanoid	shipped species recomposed
+shipped	11684	Warsong Shredder	9	0	Mechanical	shipped species recomposed
+shipped	11686	Ghostly Raider	6	0	Undead	shipped species recomposed
+shipped	11687	Ghostly Marauder	6	0	Undead	shipped species recomposed
+shipped	11697	Mannoroc Lasher	3	0	Humanoid	shipped species recomposed
+shipped	11735	Stonelash Scorpid	1	20	Beast	shipped species recomposed
+shipped	11736	Stonelash Pincer	1	20	Beast	shipped species recomposed
+shipped	11737	Stonelash Flayer	1	20	Beast	shipped species recomposed
+shipped	11738	Sand Skitterer	1	3	Flying	shipped species recomposed
+shipped	11739	Rock Stalker	1	3	Beast	shipped species recomposed
+shipped	11740	Dredge Striker	1	42	Beast	shipped species recomposed
+shipped	11744	Dust Stormer	4	0	Elemental	shipped species recomposed
+shipped	11745	Cyclone Warrior	4	0	Elemental	shipped species recomposed
+shipped	11746	Desert Rumbler	4	0	Elemental	shipped species recomposed
+shipped	11747	Desert Rager	4	0	Elemental	shipped species recomposed
+shipped	11880	Twilight Avenger	7	0	Humanoid	shipped species recomposed
+shipped	11881	Twilight Geolord	7	0	Humanoid	shipped species recomposed
+shipped	11882	Twilight Stonecaller	7	0	Humanoid	shipped species recomposed
+shipped	11883	Twilight Master	7	0	Humanoid	shipped species recomposed
+shipped	11910	Grimtotem Ruffian	7	0	Humanoid	shipped species recomposed
+shipped	11911	Grimtotem Mercenary	7	0	Humanoid	shipped species recomposed
+shipped	11912	Grimtotem Brute	7	0	Humanoid	shipped species recomposed
+shipped	11913	Grimtotem Sorcerer	7	0	Humanoid	shipped species recomposed
+shipped	11915	Gogger Rock Keeper	7	0	Humanoid	shipped species recomposed
+shipped	11917	Gogger Geomancer	7	0	Humanoid	shipped species recomposed
+shipped	11918	Gogger Stonepounder	7	0	Humanoid	shipped species recomposed
+shipped	12178	Tortured Druid	6	0	Undead	shipped species recomposed
+shipped	12179	Tortured Sentinel	6	0	Undead	shipped species recomposed
+shipped	12296	Sickly Gazelle	8	0	Critter	shipped species recomposed
+shipped	12298	Sickly Deer	8	0	Critter	shipped species recomposed
+shipped	12347	Enraged Reef Crawler	1	8	Aquatic	shipped species recomposed
+shipped	12377	Wailing Spectre	6	0	Undead	shipped species recomposed
+shipped	12378	Damned Soul	6	0	Undead	shipped species recomposed
+shipped	12379	Unliving Caretaker	6	0	Undead	shipped species recomposed
+shipped	12380	Unliving Resident	6	0	Undead	shipped species recomposed
+shipped	12419	Lifelike Toad	12	0	Mechanical	shipped species recomposed
+shipped	12856	Ashenvale Outrunner	7	0	Humanoid	shipped species recomposed
+shipped	12859	Splintertree Raider	7	0	Humanoid	shipped species recomposed
+shipped	12896	Silverwing Sentinel	7	0	Humanoid	shipped species recomposed
+shipped	12897	Silverwing Warrior	7	0	Humanoid	shipped species recomposed
+shipped	13321	Frog	8	0	Aquatic	shipped species recomposed
+shipped	13737	Marandis' Sister	7	0	Humanoid	shipped species recomposed
+shipped	13836	Burning Blade Nightmare	3	0	Humanoid	shipped species recomposed
+shipped	14123	Steeljaw Snapper	1	21	Beast	shipped species recomposed
+shipped	14143	Ar'lia	12	0	Humanoid	shipped species recomposed
+shipped	14305	Human Orphan	12	0	Humanoid	shipped species recomposed
+shipped	14356	Sawfin Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	14421	Brown Prairie Dog	12	0	Critter	shipped species recomposed
+shipped	14444	Orcish Orphan	12	0	Humanoid	shipped species recomposed
+shipped	14455	Whirling Invader	4	0	Elemental	shipped species recomposed
+shipped	14458	Watery Invader	4	0	Elemental	shipped species recomposed
+shipped	14460	Blazing Invader	4	0	Elemental	shipped species recomposed
+shipped	14629	Loggerhead Snapjaw	12	0	Aquatic	shipped species recomposed
+shipped	14630	Leatherback Snapjaw	12	0	Aquatic	shipped species recomposed
+shipped	14631	Olive Snapjaw	12	0	Aquatic	shipped species recomposed
+shipped	14632	Hawksbill Snapjaw	12	0	Aquatic	shipped species recomposed
+shipped	14633	Albino Snapjaw	12	0	Aquatic	shipped species recomposed
+shipped	14734	Revantusk Drummer	7	0	Humanoid	shipped species recomposed
+shipped	14755	Tiny Green Dragon	12	0	Dragonkin	shipped species recomposed
+shipped	14756	Tiny Red Dragon	12	0	Dragonkin	shipped species recomposed
+shipped	14864	Khaz Modan Ram	1	0	Beast	shipped species recomposed
+shipped	14869	Pygmy Cockatrice	1	0	Flying	shipped species recomposed
+shipped	14878	Jubling	12	0	Aquatic	shipped species recomposed
+shipped	14881	Spider	8	0	Beast	shipped species recomposed
+shipped	15186	Murky	12	0	Humanoid	shipped species recomposed
+shipped	15201	Twilight Flamereaver	7	0	Humanoid	shipped species recomposed
+shipped	15213	Twilight Overlord	7	0	Humanoid	shipped species recomposed
+shipped	15271	Tender	4	0	Elemental	shipped species recomposed
+shipped	15273	Arcane Wraith	4	0	Magic	shipped species recomposed
+shipped	15274	Mana Wyrm	1	0	Magic	shipped species recomposed
+shipped	15294	Feral Tender	4	0	Elemental	shipped species recomposed
+shipped	15298	Tainted Arcane Wraith	4	0	Magic	shipped species recomposed
+shipped	15356	Blue Baby Murloc	12	0	Humanoid	shipped species recomposed
+shipped	15357	Purple Baby Murloc	12	0	Humanoid	shipped species recomposed
+shipped	15358	Lurky	12	0	Humanoid	shipped species recomposed
+shipped	15359	Pink Baby Murloc	12	0	Humanoid	shipped species recomposed
+shipped	15360	Green Baby Murloc	12	0	Humanoid	shipped species recomposed
+shipped	15361	Murki	12	0	Humanoid	shipped species recomposed
+shipped	15366	Springpaw Cub	1	2	Beast	shipped species recomposed
+shipped	15372	Springpaw Lynx	1	2	Beast	shipped species recomposed
+shipped	15429	Disgusting Oozeling	12	0	Magic	shipped species recomposed
+shipped	15441	Ironforge Brigade Rifleman	7	0	Humanoid	shipped species recomposed
+shipped	15542	Twilight Marauder	7	0	Humanoid	shipped species recomposed
+shipped	15545	Cenarion Outrider	7	0	Humanoid	shipped species recomposed
+shipped	15635	Eversong Tender	4	0	Elemental	shipped species recomposed
+shipped	15636	Eversong Green Keeper	4	0	Elemental	shipped species recomposed
+shipped	15637	Withered Green Keeper	4	0	Elemental	shipped species recomposed
+shipped	15638	Arcane Patroller	4	0	Magic	shipped species recomposed
+shipped	15641	Amani Axe Thrower	7	0	Humanoid	shipped species recomposed
+shipped	15642	Amani Shadowpriest	7	0	Humanoid	shipped species recomposed
+shipped	15643	Amani Berserker	7	0	Humanoid	shipped species recomposed
+shipped	15644	Wretched Urchin	7	0	Humanoid	shipped species recomposed
+shipped	15645	Wretched Thug	7	0	Humanoid	shipped species recomposed
+shipped	15647	Mana Stalker	4	0	Magic	shipped species recomposed
+shipped	15648	Manawraith	4	0	Magic	shipped species recomposed
+shipped	15649	Feral Dragonhawk Hatchling	1	30	Dragonkin	shipped species recomposed
+shipped	15650	Crazed Dragonhawk	1	30	Dragonkin	shipped species recomposed
+shipped	15651	Springpaw Stalker	1	2	Beast	shipped species recomposed
+shipped	15652	Elder Springpaw	1	2	Beast	shipped species recomposed
+shipped	15654	Plaguebone Pillager	6	0	Undead	shipped species recomposed
+shipped	15655	Rotlimb Cannibal	6	0	Undead	shipped species recomposed
+shipped	15656	Angershade	6	0	Undead	shipped species recomposed
+shipped	15657	Darkwraith	6	0	Undead	shipped species recomposed
+shipped	15658	Rotlimb Marauder	6	0	Undead	shipped species recomposed
+shipped	15661	Baby Shark	12	0	Aquatic	shipped species recomposed
+shipped	15668	Grimscale Murloc	7	0	Humanoid	shipped species recomposed
+shipped	15670	Grimscale Forager	7	0	Humanoid	shipped species recomposed
+shipped	15685	Southsea Kidnapper	7	0	Humanoid	shipped species recomposed
+shipped	15692	Dark Iron Kidnapper	7	0	Humanoid	shipped species recomposed
+shipped	15698	Father Winter's Helper	12	0	Humanoid	shipped species recomposed
+shipped	15699	Tranquil Mechanical Yeti	12	0	Mechanical	shipped species recomposed
+shipped	15705	Winter's Little Helper	12	0	Humanoid	shipped species recomposed
+shipped	15706	Winter Reindeer	12	0	Critter	shipped species recomposed
+shipped	15710	Tiny Snowman	12	0	Elemental	shipped species recomposed
+shipped	15919	Jade Owl	12	0	Magic	shipped species recomposed
+shipped	15923	Golden Hare	8	0	Critter	shipped species recomposed
+shipped	15926	Black Pearl Panther	12	0	Magic	shipped species recomposed
+shipped	15927	Truesilver Crab	12	0	Aquatic	shipped species recomposed
+shipped	15944	Ruby Serpent	12	0	Beast	shipped species recomposed
+shipped	15948	Emerald Owl	12	0	Magic	shipped species recomposed
+shipped	15955	Black Diamond Crab	12	0	Aquatic	shipped species recomposed
+shipped	15959	Dark Iron Scorpid	12	0	Beast	shipped species recomposed
+shipped	15966	Mana Serpent	1	0	Beast	shipped species recomposed
+shipped	15967	Ether Fiend	4	0	Magic	shipped species recomposed
+shipped	16030	Maggot	8	0	Beast	shipped species recomposed
+shipped	16068	Larva	8	0	Beast	shipped species recomposed
+shipped	16069	Gurky	12	0	Humanoid	shipped species recomposed
+shipped	16085	Peddlefeet	12	0	Humanoid	shipped species recomposed
+shipped	16162	Wretched Hooligan	7	0	Humanoid	shipped species recomposed
+shipped	16300	Risen Creeper	6	0	Undead	shipped species recomposed
+shipped	16301	Risen Hungerer	6	0	Undead	shipped species recomposed
+shipped	16302	Risen Stalker	6	0	Undead	shipped species recomposed
+shipped	16303	Dreadbone Skeleton	6	0	Undead	shipped species recomposed
+shipped	16304	Arcane Devourer	4	0	Magic	shipped species recomposed
+shipped	16305	Dreadbone Sentinel	6	0	Undead	shipped species recomposed
+shipped	16309	Gangled Cannibal	6	0	Undead	shipped species recomposed
+shipped	16310	Mana Shifter	1	0	Magic	shipped species recomposed
+shipped	16311	Phantasmal Watcher	6	0	Undead	shipped species recomposed
+shipped	16314	Fallen Ranger	6	0	Undead	shipped species recomposed
+shipped	16315	Deatholme Acolyte	7	0	Humanoid	shipped species recomposed
+shipped	16316	Stonewing Tracker	6	0	Undead	shipped species recomposed
+shipped	16317	Deatholme Necromancer	7	0	Humanoid	shipped species recomposed
+shipped	16318	Deatholme Darkmage	7	0	Humanoid	shipped species recomposed
+shipped	16319	Nerubis Centurion	6	0	Undead	shipped species recomposed
+shipped	16321	Wailer	6	0	Undead	shipped species recomposed
+shipped	16322	Gangled Flesheater	6	0	Undead	shipped species recomposed
+shipped	16323	Phantasmal Seeker	6	0	Undead	shipped species recomposed
+shipped	16324	Stonewing Slayer	6	0	Undead	shipped species recomposed
+shipped	16325	Quel'dorei Ghost	6	0	Undead	shipped species recomposed
+shipped	16326	Quel'dorei Wraith	6	0	Undead	shipped species recomposed
+shipped	16327	Ravening Apparition	6	0	Undead	shipped species recomposed
+shipped	16328	Vengeful Apparition	6	0	Undead	shipped species recomposed
+shipped	16334	Blackpaw Gnoll	7	0	Humanoid	shipped species recomposed
+shipped	16335	Blackpaw Scavenger	7	0	Humanoid	shipped species recomposed
+shipped	16337	Blackpaw Shaman	7	0	Humanoid	shipped species recomposed
+shipped	16340	Shadowpine Ripper	7	0	Humanoid	shipped species recomposed
+shipped	16341	Shadowpine Witch	7	0	Humanoid	shipped species recomposed
+shipped	16344	Shadowpine Headhunter	7	0	Humanoid	shipped species recomposed
+shipped	16345	Shadowpine Catlord	7	0	Humanoid	shipped species recomposed
+shipped	16346	Shadowpine Hexxer	7	0	Humanoid	shipped species recomposed
+shipped	16347	Starving Ghostclaw	1	2	Beast	shipped species recomposed
+shipped	16348	Ghostclaw Lynx	1	2	Beast	shipped species recomposed
+shipped	16349	Ghostclaw Ravager	1	2	Undead	shipped species recomposed
+shipped	16350	Spindleweb Spider	1	3	Beast	shipped species recomposed
+shipped	16351	Spindleweb Lurker	1	3	Beast	shipped species recomposed
+shipped	16352	Greater Spindleweb	1	3	Beast	shipped species recomposed
+shipped	16353	Mistbat	1	24	Flying	shipped species recomposed
+shipped	16354	Vampiric Mistbat	1	24	Flying	shipped species recomposed
+shipped	16355	Lesser Scourgebat	1	24	Flying	shipped species recomposed
+shipped	16402	Zombified Grimscale	6	0	Humanoid	shipped species recomposed
+shipped	16403	Withered Grimscale	6	0	Humanoid	shipped species recomposed
+shipped	16405	Whitetail Frenzy	1	0	Aquatic	shipped species recomposed
+shipped	16422	Skeletal Soldier	6	0	Undead	shipped species recomposed
+shipped	16423	Spectral Apparition	6	0	Undead	shipped species recomposed
+shipped	16445	Terky	12	0	Humanoid	shipped species recomposed
+shipped	16456	Poley	12	0	Beast	shipped species recomposed
+shipped	16469	Shadowpine Shadowcaster	7	0	Humanoid	shipped species recomposed
+shipped	16516	Volatile Mutation	4	0	Magic	shipped species recomposed
+shipped	16517	Mutated Root Lasher	4	0	Elemental	shipped species recomposed
+shipped	16518	Nestlewood Owlkin	7	0	Flying	shipped species recomposed
+shipped	16520	Vale Moth	1	37	Flying	shipped species recomposed
+shipped	16521	Blood Elf Scout	7	0	Humanoid	shipped species recomposed
+shipped	16537	Mutated Owlkin	7	0	Flying	shipped species recomposed
+shipped	16547	Speedy	12	0	Aquatic	shipped species recomposed
+shipped	16548	Mr. Wiggles	12	0	Critter	shipped species recomposed
+shipped	16549	Whiskers the Rat	12	0	Critter	shipped species recomposed
+shipped	16701	Spirit of Summer	12	0	Elemental	shipped species recomposed
+shipped	17108	Forsaken Raider	7	0	Humanoid	shipped species recomposed
+shipped	17115	Cursed Lost One	7	0	Humanoid	shipped species recomposed
+shipped	17183	Bristlelimb Furbolg	7	0	Humanoid	shipped species recomposed
+shipped	17184	Bristlelimb Windcaller	7	0	Humanoid	shipped species recomposed
+shipped	17185	Bristlelimb Ursa	7	0	Beast	shipped species recomposed
+shipped	17189	Crazed Wildkin	7	0	Humanoid	shipped species recomposed
+shipped	17190	Siltfin Murloc	7	0	Humanoid	shipped species recomposed
+shipped	17191	Siltfin Oracle	7	0	Humanoid	shipped species recomposed
+shipped	17192	Siltfin Hunter	7	0	Humanoid	shipped species recomposed
+shipped	17193	Wrathscale Naga	7	0	Humanoid	shipped species recomposed
+shipped	17194	Wrathscale Myrmidon	7	0	Humanoid	shipped species recomposed
+shipped	17195	Wrathscale Siren	7	0	Humanoid	shipped species recomposed
+shipped	17196	Root Trapper	4	0	Elemental	shipped species recomposed
+shipped	17197	Root Thresher	4	0	Elemental	shipped species recomposed
+shipped	17199	Ravager Specimen	1	31	Beast	shipped species recomposed
+shipped	17200	Moongraze Stag	1	0	Critter	shipped species recomposed
+shipped	17201	Moongraze Buck	1	0	Critter	shipped species recomposed
+shipped	17202	Infected Nightstalker Runt	1	2	Beast	shipped species recomposed
+shipped	17203	Nightstalker	1	2	Beast	shipped species recomposed
+shipped	17216	Skittering Crawler	1	8	Beast	shipped species recomposed
+shipped	17217	Barbed Crawler	1	8	Aquatic	shipped species recomposed
+shipped	17254	White Tiger Cub	12	0	Beast	shipped species recomposed
+shipped	17255	Hippogryph Hatchling	12	0	Flying	shipped species recomposed
+shipped	17278	Venture Co. Saboteur	7	0	Humanoid	shipped species recomposed
+shipped	17279	Venture Co. Gemologist	7	0	Humanoid	shipped species recomposed
+shipped	17320	Bristlelimb Shaman	7	0	Humanoid	shipped species recomposed
+shipped	17321	Bristlelimb Warrior	7	0	Humanoid	shipped species recomposed
+shipped	17322	Infected Wildkin	7	0	Humanoid	shipped species recomposed
+shipped	17323	Contaminated Wildkin	7	0	Humanoid	shipped species recomposed
+shipped	17324	Irradiated Wildkin	7	0	Humanoid	shipped species recomposed
+shipped	17325	Blacksilt Forager	7	0	Humanoid	shipped species recomposed
+shipped	17326	Blacksilt Scout	7	0	Humanoid	shipped species recomposed
+shipped	17327	Blacksilt Tidecaller	7	0	Humanoid	shipped species recomposed
+shipped	17328	Blacksilt Shorestriker	7	0	Humanoid	shipped species recomposed
+shipped	17330	Blacksilt Seer	7	0	Humanoid	shipped species recomposed
+shipped	17331	Wrathscale Shorestalker	7	0	Humanoid	shipped species recomposed
+shipped	17333	Wrathscale Screamer	7	0	Humanoid	shipped species recomposed
+shipped	17334	Wrathscale Marauder	7	0	Humanoid	shipped species recomposed
+shipped	17336	Wrathscale Sorceress	7	0	Humanoid	shipped species recomposed
+shipped	17337	Nazzivus Satyr	3	0	Humanoid	shipped species recomposed
+shipped	17338	Nazzivus Rogue	3	0	Humanoid	shipped species recomposed
+shipped	17339	Nazzivus Felsworn	3	0	Humanoid	shipped species recomposed
+shipped	17340	Axxarien Shadowstalker	3	0	Humanoid	shipped species recomposed
+shipped	17341	Axxarien Trickster	3	0	Humanoid	shipped species recomposed
+shipped	17342	Axxarien Hellcaller	3	0	Humanoid	shipped species recomposed
+shipped	17343	Thistle Lasher	4	0	Beast	shipped species recomposed
+shipped	17344	Mutated Constrictor	4	0	Elemental	shipped species recomposed
+shipped	17345	Brown Bear	1	4	Beast	shipped species recomposed
+shipped	17346	Mutated Tangler	4	0	Elemental	shipped species recomposed
+shipped	17347	Grizzled Brown Bear	1	4	Beast	shipped species recomposed
+shipped	17348	Elder Brown Bear	1	4	Beast	shipped species recomposed
+shipped	17349	Blue Flutterer	1	37	Flying	shipped species recomposed
+shipped	17350	Royal Blue Flutterer	1	37	Flying	shipped species recomposed
+shipped	17352	Corrupted Treant	4	0	Elemental	shipped species recomposed
+shipped	17353	Corrupted Stomper	4	0	Elemental	shipped species recomposed
+shipped	17372	Timberstrider Fledgling	1	12	Flying	shipped species recomposed
+shipped	17373	Timberstrider	1	12	Flying	shipped species recomposed
+shipped	17374	Greater Timberstrider	1	12	Flying	shipped species recomposed
+shipped	17432	Stillpine Defender	7	0	Humanoid	shipped species recomposed
+shipped	17439	Stillpine Hunter	7	0	Humanoid	shipped species recomposed
+shipped	17467	Skunk	8	0	Critter	shipped species recomposed
+shipped	17495	Stillpine Raider	7	0	Humanoid	shipped species recomposed
+shipped	17522	Myst Spinner	1	3	Beast	shipped species recomposed
+shipped	17523	Myst Leecher	1	3	Beast	shipped species recomposed
+shipped	17524	Nazzivus Summoner	3	0	Humanoid	shipped species recomposed
+shipped	17525	Bloodmyst Hatchling	1	31	Beast	shipped species recomposed
+shipped	17527	Enraged Ravager	1	31	Flying	shipped species recomposed
+shipped	17530	Elekk	1	0	Beast	shipped species recomposed
+shipped	17550	Void Anomaly	3	0	Humanoid	shipped species recomposed
+shipped	17588	Veridian Whelp	6	0	Dragonkin	shipped species recomposed
+shipped	17589	Veridian Broodling	6	0	Dragonkin	shipped species recomposed
+shipped	17591	Blood Elf Bandit	7	0	Humanoid	shipped species recomposed
+shipped	17673	Stinkhorn Striker	1	0	Beast	shipped species recomposed
+shipped	17707	Dawnstone Crab	12	0	Aquatic	shipped species recomposed
+shipped	17708	Living Ruby Serpent	12	0	Beast	shipped species recomposed
+shipped	17709	Talasite Owl	12	0	Magic	shipped species recomposed
+shipped	17710	Nightseye Panther	12	0	Magic	shipped species recomposed
+shipped	17713	Bloodcursed Naga	7	0	Humanoid	shipped species recomposed
+shipped	17714	Bloodcursed Voyager	6	0	Undead	shipped species recomposed
+shipped	18381	Netherwhelp	12	0	Dragonkin	shipped species recomposed
+shipped	18839	Magical Crawdad	12	0	Aquatic	shipped species recomposed
+shipped	20025	Sable Jaguar Specimen	1	2	Beast	shipped species recomposed
+shipped	20245	Mr. Kitty	12	0	Beast	shipped species recomposed
+shipped	20246	Manny	12	0	Beast	shipped species recomposed
+shipped	20247	Kitty	12	0	Beast	shipped species recomposed
+shipped	20408	Mana Wyrmling	12	0	Magic	shipped species recomposed
+shipped	20472	Brown Rabbit	12	0	Critter	shipped species recomposed
+shipped	21008	Yellow Moth	12	0	Flying	shipped species recomposed
+shipped	21009	Red Moth	12	0	Flying	shipped species recomposed
+shipped	21010	Blue Moth	12	0	Flying	shipped species recomposed
+shipped	21018	White Moth	12	0	Flying	shipped species recomposed
+shipped	21055	Golden Dragonhawk Hatchling	12	0	Dragonkin	shipped species recomposed
+shipped	21056	Blue Dragonhawk Hatchling	12	0	Dragonkin	shipped species recomposed
+shipped	21063	Silver Dragonhawk Hatchling	12	0	Dragonkin	shipped species recomposed
+shipped	21064	Red Dragonhawk Hatchling	12	0	Dragonkin	shipped species recomposed
+shipped	21076	Firefly	12	0	Flying	shipped species recomposed
+shipped	21266	Ravager Hatchling	12	0	Beast	shipped species recomposed
+shipped	21847	Fel Guard Hound	3	0	Beast	shipped species recomposed
+shipped	22328	Toy RC Mortar Tank	12	0	Mechanical	shipped species recomposed
+shipped	22445	Miniwing	12	0	Flying	shipped species recomposed
+shipped	22484	Zeppit	12	0	Flying	shipped species recomposed
+shipped	22817	Blood Elf Orphan	12	0	Humanoid	shipped species recomposed
+shipped	22818	Draenei Orphan	12	0	Humanoid	shipped species recomposed
+shipped	22943	Wolpertinger	12	0	Critter	shipped species recomposed
+shipped	23060	Netherwing Whelp	2	0	Dragonkin	shipped species recomposed
+shipped	23114	Lucky	12	0	Critter	shipped species recomposed
+shipped	23198	Lucky	12	0	Critter	shipped species recomposed
+shipped	23231	Willy	12	0	Magic	shipped species recomposed
+shipped	23234	Bananas	12	0	Beast	shipped species recomposed
+shipped	23258	Egbert	12	0	Flying	shipped species recomposed
+shipped	23266	Peanut	12	0	Critter	shipped species recomposed
+shipped	23274	Stinker	12	0	Critter	shipped species recomposed
+shipped	23439	Hungry Nether Ray	12	0	Flying	shipped species recomposed
+shipped	23442	Nether Ray Desummoner	10	0	Flying	shipped species recomposed
+shipped	23528	Azuremyst Pink Elekk	1	0	Critter	shipped species recomposed
+shipped	23531	Eversong Pink Elekk	1	0	Critter	shipped species recomposed
+shipped	23555	Risen Husk	6	0	Undead	shipped species recomposed
+shipped	23590	Defias Conjuror	7	0	Humanoid	shipped species recomposed
+shipped	23591	Defias Diver	7	0	Humanoid	shipped species recomposed
+shipped	23592	Grimtotem Breaker	7	0	Humanoid	shipped species recomposed
+shipped	23594	Grimtotem Destroyer	7	0	Humanoid	shipped species recomposed
+shipped	23595	Grimtotem Earthbinder	7	0	Humanoid	shipped species recomposed
+shipped	23787	Mister Manny	1	0	Beast	shipped species recomposed
+shipped	23909	Sinister Squashling	12	0	Elemental	shipped species recomposed
+shipped	23979	Giant Marsh Frog	8	0	Critter	shipped species recomposed
+shipped	24388	Toothy	12	0	Aquatic	shipped species recomposed
+shipped	24389	Muckbreath	12	0	Aquatic	shipped species recomposed
+shipped	24480	Mojo	12	0	Aquatic	shipped species recomposed
+shipped	24753	Pint-Sized Pink Pachyderm	12	0	Critter	shipped species recomposed
+shipped	24916	Living Flare	4	0	Elemental	shipped species recomposed
+shipped	24968	Clockwork Rocket Bot	12	0	Mechanical	shipped species recomposed
+shipped	25062	Tiny Sporebat	12	0	Flying	shipped species recomposed
+shipped	25109	Rocket Chicken	12	0	Mechanical	shipped species recomposed
+shipped	25110	Dragon Kite	12	0	Flying	shipped species recomposed
+shipped	25146	Golden Pig	12	0	Critter	shipped species recomposed
+shipped	25147	Silver Pig	12	0	Critter	shipped species recomposed
+shipped	25706	Scorchling	12	0	Elemental	shipped species recomposed
+shipped	25761	Alliance Deserter	7	0	Humanoid	shipped species recomposed
+shipped	25861	Orphaned Mammoth Calf	1	0	Beast	shipped species recomposed
+shipped	26050	Snarly	12	0	Aquatic	shipped species recomposed
+shipped	26056	Chuck	12	0	Aquatic	shipped species recomposed
+shipped	26119	Phoenix Hatchling	12	0	Elemental	shipped species recomposed
+shipped	26240	Seaspray Albatross	12	0	Flying	shipped species recomposed
+shipped	26242	Empyrean Tortoise	12	0	Aquatic	shipped species recomposed
+shipped	26243	Crimson Serpent	12	0	Beast	shipped species recomposed
+shipped	26244	Shadowsong Panther	12	0	Magic	shipped species recomposed
+shipped	27017	Depleted War Golem	12	0	Mechanical	shipped species recomposed
+shipped	27217	Spirit of Competition	12	0	Dragonkin	shipped species recomposed
+shipped	27346	Essence of Competition	12	0	Dragonkin	shipped species recomposed
+shipped	28120	Lafoo	7	0	Beast	shipped species recomposed
+shipped	28121	Jaloot	7	0	Beast	shipped species recomposed
+shipped	28122	Moodle	7	0	Beast	shipped species recomposed
+shipped	28214	Goregek the Gorilla Hunter	7	0	Beast	shipped species recomposed
+shipped	28215	Dajik the Wasp Hunter	7	0	Beast	shipped species recomposed
+shipped	28216	Zepik the Gorloc Hunter	7	0	Beast	shipped species recomposed
+shipped	28267	Coyote Spirit	12	1	Beast	shipped species recomposed
+shipped	28470	Nether Ray Fry	12	0	Flying	shipped species recomposed
+shipped	28488	Coldwraith	6	0	Undead	shipped species recomposed
+shipped	28489	Disciple of Blood	7	0	Humanoid	shipped species recomposed
+shipped	28490	Disciple of Frost	7	0	Humanoid	shipped species recomposed
+shipped	28491	Disciple of the Unholy	7	0	Humanoid	shipped species recomposed
+shipped	28513	Vampiric Batling	12	0	Undead	shipped species recomposed
+shipped	28883	Frosty	12	0	Elemental	shipped species recomposed
+shipped	29089	Mini Tyrael	12	0	Humanoid	shipped species recomposed
+shipped	29147	Ghostly Skull	12	0	Undead	shipped species recomposed
+shipped	29212	Risen Drudge	6	0	Undead	shipped species recomposed
+shipped	29726	Mr. Chilly	12	0	Aquatic	shipped species recomposed
+shipped	30191	Deep Twilight Serpent	12	0	Beast	shipped species recomposed
+shipped	30192	Sapphire Owl	12	0	Magic	shipped species recomposed
+shipped	30379	Westfall Chicken	12	0	Flying	shipped species recomposed
+shipped	31575	Giant Sewer Rat	12	0	Critter	shipped species recomposed
+shipped	32589	Tickbird Hatchling	12	0	Flying	shipped species recomposed
+shipped	32590	White Tickbird Hatchling	12	0	Flying	shipped species recomposed
+shipped	32591	Cobra Hatchling	12	0	Beast	shipped species recomposed
+shipped	32592	Proto-Drake Whelp	12	0	Dragonkin	shipped species recomposed
+shipped	32595	Pengu	12	0	Aquatic	shipped species recomposed
+shipped	32643	Kirin Tor Familiar	12	0	Magic	shipped species recomposed
+shipped	32791	Spring Rabbit	12	0	Critter	shipped species recomposed
+shipped	32818	Plump Turkey	12	0	Flying	shipped species recomposed
+shipped	32820	Wild Turkey	1	0	Flying	shipped species recomposed
+shipped	32841	Baby Blizzard Bear	12	0	Beast	shipped species recomposed
+shipped	32939	Little Fawn	12	0	Critter	shipped species recomposed
+shipped	32980	Faithful Mule	1	0	Beast	shipped species recomposed
+shipped	32983	Rented Pack Mule	1	0	Beast	shipped species recomposed
+shipped	33188	Teldrassil Sproutling	12	0	Elemental	shipped species recomposed
+shipped	33194	Dun Morogh Cub	12	0	Beast	shipped species recomposed
+shipped	33197	Tirisfal Batling	12	0	Flying	shipped species recomposed
+shipped	33198	Durotar Scorpion	12	0	Beast	shipped species recomposed
+shipped	33199	Alarming Clockbot	12	0	Mechanical	shipped species recomposed
+shipped	33200	Elwynn Lamb	12	0	Critter	shipped species recomposed
+shipped	33205	Ammen Vale Lashling	12	0	Elemental	shipped species recomposed
+shipped	33219	Mulgore Hatchling	12	0	Flying	shipped species recomposed
+shipped	33226	Strand Crawler	12	0	Aquatic	shipped species recomposed
+shipped	33227	Enchanted Broom	12	0	Magic	shipped species recomposed
+shipped	33274	Mechanopeep	12	0	Mechanical	shipped species recomposed
+shipped	33529	Curious Wolvar Pup	12	0	Humanoid	shipped species recomposed
+shipped	33530	Curious Oracle Hatchling	12	0	Humanoid	shipped species recomposed
+shipped	33532	Wolvar Orphan	12	0	Humanoid	shipped species recomposed
+shipped	33533	Oracle Orphan	12	0	Humanoid	shipped species recomposed
+shipped	33578	Murkimus the Gladiator	12	0	Humanoid	shipped species recomposed
+shipped	33712	Golden Crawler	1	8	Aquatic	shipped species recomposed
+shipped	33713	Rotting Crawler	1	8	Aquatic	shipped species recomposed
+shipped	33810	Sen'jin Fetish	12	0	Undead	shipped species recomposed
+shipped	34031	XS-001 Constructor Bot	12	0	Mechanical	shipped species recomposed
+shipped	34279	Ruby Hare	8	0	Critter	shipped species recomposed
+shipped	34320	Venomhide Hatchling	12	0	Beast	shipped species recomposed
+shipped	34364	Calico Cat	12	0	Beast	shipped species recomposed
+shipped	34587	Warbot	12	0	Mechanical	shipped species recomposed
+shipped	34694	Grunty	12	0	Humanoid	shipped species recomposed
+shipped	34724	Shimmering Wyrmling	12	0	Magic	shipped species recomposed
+shipped	34770	Macabre Marionette	12	0	Undead	shipped species recomposed
+shipped	34930	Jade Tiger	12	0	Magic	shipped species recomposed
+shipped	35387	Leaping Hatchling	12	0	Beast	shipped species recomposed
+shipped	35394	Razzashi Hatchling	12	0	Beast	shipped species recomposed
+shipped	35395	Deviate Hatchling	12	0	Beast	shipped species recomposed
+shipped	35396	Darting Hatchling	12	0	Beast	shipped species recomposed
+shipped	35397	Ravasaur Hatchling	12	0	Beast	shipped species recomposed
+shipped	35398	Razormaw Hatchling	12	0	Beast	shipped species recomposed
+shipped	35399	Obsidian Hatchling	12	0	Beast	shipped species recomposed
+shipped	35400	Gundrak Hatchling	12	0	Beast	shipped species recomposed
+shipped	35468	Onyx Panther	12	0	Magic	shipped species recomposed
+shipped	36482	Tuskarr Kite	12	0	Flying	shipped species recomposed
+shipped	36511	Spectral Tiger Cub	12	0	Magic	shipped species recomposed
+shipped	36607	Onyxian Whelpling	12	0	Dragonkin	shipped species recomposed
+shipped	36871	Core Hound Pup	12	0	Beast	shipped species recomposed
+shipped	36908	Gryphon Hatchling	12	0	Flying	shipped species recomposed
+shipped	36909	Wind Rider Cub	12	0	Beast	shipped species recomposed
+shipped	36910	Zipao Tiger	12	0	Magic	shipped species recomposed
+shipped	36911	Pandaren Monk	12	0	Humanoid	shipped species recomposed
+shipped	36979	Lil' K.T.	12	0	Undead	shipped species recomposed
+shipped	37865	Perky Pug	12	0	Beast	shipped species recomposed
+shipped	37984	Crown Duster	7	0	Humanoid	shipped species recomposed
+shipped	38374	Toxic Wasteling	12	0	Magic	shipped species recomposed
+shipped	40198	Frigid Frostling	12	0	Elemental	shipped species recomposed
+shipped	40295	Clockwork Rocket Bot	12	0	Mechanical	shipped species recomposed
+shipped	40624	Celestial Dragon	12	0	Dragonkin	shipped species recomposed
+shipped	40703	Lil' XT	12	0	Mechanical	shipped species recomposed
+shipped	40721	Murkimus the Gladiator	12	0	Humanoid	shipped species recomposed
+shipped	42078	Mini Thor	12	0	Mechanical	shipped species recomposed

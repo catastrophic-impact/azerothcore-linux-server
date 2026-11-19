@@ -1,0 +1,742 @@
+class	spec	spell_id	name	catalog_role	pet_shape	note
+DeathKnight	DeathKnight/Blood	49941	Blood Boil	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Blood	61158	Blood Gorged	other	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Blood	48266	Blood Presence	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+DeathKnight	DeathKnight/Blood	66215	Blood Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Blood	45529	Blood Tap	buff/debuff	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+DeathKnight	DeathKnight/Blood	50449	Bloody Vengeance	buff/debuff	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Blood	49028	Dancing Rune Weapon	summon	PARK	no retail shape or parked by user
+DeathKnight	DeathKnight/Blood	56222	Dark Command	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+DeathKnight	DeathKnight/Blood	62904	Death Coil	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Blood	48743	Death Pact	heal	HEAL	heal
+DeathKnight	DeathKnight/Blood	55262	Heart Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Blood	49016	Hysteria	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+DeathKnight	DeathKnight/Blood	49005	Mark of Blood	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+DeathKnight	DeathKnight/Blood	50842	Pestilence	dummy	AOE	area/multi hit
+DeathKnight	DeathKnight/Blood	48982	Rune Tap	other	HEAL	heal
+DeathKnight	DeathKnight/Blood	53331	Rune of Lichbane	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Blood	53323	Rune of Swordshattering	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Blood	47476	Strangulate	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+DeathKnight	DeathKnight/Blood	55233	Vampiric Blood	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+DeathKnight	DeathKnight/Blood	50150	Will of the Necropolis	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Frost	45524	Chains of Ice	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+DeathKnight	DeathKnight/Frost	66188	Death Strike	dmg	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+DeathKnight	DeathKnight/Frost	49796	Deathchill	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+DeathKnight	DeathKnight/Frost	47568	Empower Rune Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+DeathKnight	DeathKnight/Frost	57532	Eye of Acherus	summon	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Frost	48263	Frost Presence	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+DeathKnight	DeathKnight/Frost	66196	Frost Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Frost	49142	Frozen Rune Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+DeathKnight	DeathKnight/Frost	57623	Horn of Winter	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+DeathKnight	DeathKnight/Frost	51411	Howling Blast	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Frost	49203	Hungering Cold	dummy	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+DeathKnight	DeathKnight/Frost	48792	Icebound Fortitude	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+DeathKnight	DeathKnight/Frost	52372	Icy Touch	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Frost	49039	Lichborne	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+DeathKnight	DeathKnight/Frost	47528	Mind Freeze	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+DeathKnight	DeathKnight/Frost	66198	Obliterate	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Frost	3714	Path of Frost	buff/debuff	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Frost	66217	Rune Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Frost	53341	Rune of Cinderglacier	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Frost	53343	Rune of Razorice	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Frost	51271	Unbreakable Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+DeathKnight	DeathKnight/Unholy	48778	Acherus Deathcharger	buff/debuff	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Unholy	48707	Anti-Magic Shell	shield	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+DeathKnight	DeathKnight/Unholy	51052	Anti-Magic Zone	summon	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+DeathKnight	DeathKnight/Unholy	42651	Army of the Dead	summon	PARK	no retail shape or parked by user
+DeathKnight	DeathKnight/Unholy	49222	Bone Shield	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+DeathKnight	DeathKnight/Unholy	51328	Corpse Explosion	dummy	PARK	no retail shape or parked by user
+DeathKnight	DeathKnight/Unholy	50977	Death Gate	summon	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Unholy	49576	Death Grip	dummy	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+DeathKnight	DeathKnight/Unholy	49938	Death and Decay	buff/debuff	AOE	area/multi hit
+DeathKnight	DeathKnight/Unholy	63560	Ghoul Frenzy	hot	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Unholy	51267	On a Pale Horse	other	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Unholy	66216	Plague Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Unholy	61999	Raise Ally	dummy	EXCL	travel/economy/passive/duplicate
+DeathKnight	DeathKnight/Unholy	46584	Raise Dead	dummy	PARK	no retail shape or parked by user
+DeathKnight	DeathKnight/Unholy	55271	Scourge Strike	dmg	DMG	default from catalog role dmg
+DeathKnight	DeathKnight/Unholy	49206	Summon Gargoyle	summon	PARK	no retail shape or parked by user
+DeathKnight	DeathKnight/Unholy	50536	Unholy Blight	dot	DOT	default from catalog role dot
+DeathKnight	DeathKnight/Unholy	48265	Unholy Presence	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Balance	22812	Barkskin	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Druid	Druid/Balance	33786	Cyclone	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Druid	Druid/Balance	53308	Entangling Roots	root	SLOW	slow/root -> retail dmg+slow or swap-lock
+Druid	Druid/Balance	770	Faerie Fire	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Druid	Druid/Balance	33831	Force of Nature	summon	PARK	no retail shape or parked by user
+Druid	Druid/Balance	18658	Hibernate	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Druid	Druid/Balance	48467	Hurricane	slow	AOE	area/multi hit
+Druid	Druid/Balance	29166	Innervate	hot	HEAL	heal
+Druid	Druid/Balance	48468	Insect Swarm	dot	DOT	default from catalog role dot
+Druid	Druid/Balance	48463	Moonfire	dot	DOT	default from catalog role dot
+Druid	Druid/Balance	24907	Moonkin Aura	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Balance	24858	Moonkin Form	buff/debuff	PARK	no retail shape or parked by user
+Druid	Druid/Balance	53312	Nature's Grasp	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Druid	Druid/Balance	26995	Soothe Animal	buff/debuff	PARK	no retail shape or parked by user
+Druid	Druid/Balance	53201	Starfall	buff/debuff	AOE	area/multi hit
+Druid	Druid/Balance	48465	Starfire	dmg	DMG	default from catalog role dmg
+Druid	Druid/Balance	18960	Teleport: Moonglade	other	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Balance	53307	Thorns	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Druid	Druid/Balance	61391	Typhoon	dmg	DMG	default from catalog role dmg
+Druid	Druid/Balance	48461	Wrath	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	1066	Aquatic Form	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	8983	Bash	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Druid	Druid/Feral Combat	5487	Bear Form	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Druid	Druid/Feral Combat	50334	Berserk	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Feral Combat	768	Cat Form	buff/debuff	PARK	no retail shape or parked by user
+Druid	Druid/Feral Combat	5209	Challenging Roar	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Druid	Druid/Feral Combat	48570	Claw	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	48575	Cower	other	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Druid	Druid/Feral Combat	33357	Dash	buff/debuff	SPEED	speed up, retail cd 0, refresh not stack
+Druid	Druid/Feral Combat	48560	Demoralizing Roar	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Druid	Druid/Feral Combat	9634	Dire Bear Form	buff/debuff	PARK	no retail shape or parked by user
+Druid	Druid/Feral Combat	5229	Enrage	hot	HOT	default from catalog role hot
+Druid	Druid/Feral Combat	16857	Faerie Fire (Feral)	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Druid	Druid/Feral Combat	49377	Feral Charge	other	SPEED	speed up, retail cd 0, refresh not stack
+Druid	Druid/Feral Combat	16979	Feral Charge - Bear	other	SPEED	speed up, retail cd 0, refresh not stack
+Druid	Druid/Feral Combat	49376	Feral Charge - Cat	summon	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	48577	Ferocious Bite	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	33943	Flight Form	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	22845	Frenzied Regeneration	heal	HEAL	heal
+Druid	Druid/Feral Combat	6795	Growl	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Druid	Druid/Feral Combat	34299	Improved Leader of the Pack	heal	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	48568	Lacerate	dot	DOT	default from catalog role dot
+Druid	Druid/Feral Combat	49802	Maim	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Druid	Druid/Feral Combat	33917	Mangle	other	DMG	plain attack
+Druid	Druid/Feral Combat	48564	Mangle (Bear)	dmg	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	48566	Mangle (Cat)	dmg	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	48480	Maul	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	49803	Pounce	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Druid	Druid/Feral Combat	49804	Pounce Bleed	dot	DOT	default from catalog role dot
+Druid	Druid/Feral Combat	37117	Primal Fury	other	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	5215	Prowl	stealth	PARK	retail Prowl cd5 shape exists: check
+Druid	Druid/Feral Combat	48574	Rake	dot	DOT	default from catalog role dot
+Druid	Druid/Feral Combat	48579	Ravage	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	49800	Rip	dot	DOT	default from catalog role dot
+Druid	Druid/Feral Combat	52610	Savage Roar	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Feral Combat	48572	Shred	dmg	DMG	default from catalog role dmg
+Druid	Druid/Feral Combat	61336	Survival Instincts	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Druid	Druid/Feral Combat	40120	Swift Flight Form	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	48562	Swipe (Bear)	dmg	AOE	area/multi hit
+Druid	Druid/Feral Combat	62078	Swipe (Cat)	dmg	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	50213	Tiger's Fury	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Feral Combat	5225	Track Humanoids	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Feral Combat	783	Travel Form	buff/debuff	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Restoration	2893	Abolish Poison	dispel	CLEANSE	default from catalog role dispel
+Druid	Druid/Restoration	3137	Abolish Poison Effect	dispel	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Restoration	8946	Cure Poison	dispel	CLEANSE	default from catalog role dispel
+Druid	Druid/Restoration	48470	Gift of the Wild	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Druid	Druid/Restoration	48378	Healing Touch	heal	HEAL	default from catalog role heal
+Druid	Druid/Restoration	48451	Lifebloom	hot	HOT	default from catalog role hot
+Druid	Druid/Restoration	48469	Mark of the Wild	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Restoration	17116	Nature's Swiftness	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Druid	Druid/Restoration	50464	Nourish	heal	HEAL	default from catalog role heal
+Druid	Druid/Restoration	48477	Rebirth	other	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Restoration	48443	Regrowth	hot	HOT	default from catalog role hot
+Druid	Druid/Restoration	64801	Rejuvenation	heal	HEAL	default from catalog role heal
+Druid	Druid/Restoration	2782	Remove Curse	dispel	CLEANSE	default from catalog role dispel
+Druid	Druid/Restoration	50769	Revive	other	EXCL	travel/economy/passive/duplicate
+Druid	Druid/Restoration	18562	Swiftmend	heal	HEAL	heal
+Druid	Druid/Restoration	48447	Tranquility	heal	HEAL	heal
+Druid	Druid/Restoration	65139	Tree of Life	other	HEAL	heal
+Druid	Druid/Restoration	53251	Wild Growth	hot	HOT	default from catalog role hot
+Hunter	Hunter/Beast Mastery	13161	Aspect of the Beast	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	5118	Aspect of the Cheetah	buff/debuff	SPEED	speed up, retail cd 0, refresh not stack
+Hunter	Hunter/Beast Mastery	61847	Aspect of the Dragonhawk	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	27044	Aspect of the Hawk	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	13163	Aspect of the Monkey	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	13159	Aspect of the Pack	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Hunter	Hunter/Beast Mastery	34074	Aspect of the Viper	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	49071	Aspect of the Wild	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	1462	Beast Lore	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	19574	Bestial Wrath	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	883	Call Pet	summon	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	62757	Call Stabled Pet	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	2641	Dismiss Pet	other	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	6197	Eagle Eye	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	1002	Eyes of the Beast	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	6991	Feed Pet	other	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	24406	Improved Mend Pet	dispel	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	19577	Intimidation	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Hunter	Hunter/Beast Mastery	34026	Kill Command	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Beast Mastery	53271	Master's Call	dummy	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	48990	Mend Pet	hot	HEAL	heal
+Hunter	Hunter/Beast Mastery	982	Revive Pet	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	14327	Scare Beast	fear	PARK	no retail shape or parked by user
+Hunter	Hunter/Beast Mastery	24529	Spirit Bond	hot	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	13481	Tame Beast	other	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Beast Mastery	34471	The Beast Within	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Marksmanship	49050	Aimed Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	49045	Arcane Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	75	Auto Shot	dmg	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Marksmanship	53209	Chimera Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	35101	Concussive Barrage	slow	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Marksmanship	5116	Concussive Shot	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Hunter	Hunter/Marksmanship	20736	Distracting Shot	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Hunter	Hunter/Marksmanship	1543	Flare	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Hunter	Hunter/Marksmanship	53338	Hunter's Mark	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Hunter	Hunter/Marksmanship	53220	Improved Steady Shot	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Marksmanship	61006	Kill Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	49048	Multi-Shot	dmg	AOE	area/multi hit
+Hunter	Hunter/Marksmanship	3045	Rapid Fire	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Marksmanship	35099	Rapid Killing	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Marksmanship	53230	Rapid Recuperation Effect	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Marksmanship	23989	Readiness	dummy	PARK	no retail shape or parked by user
+Hunter	Hunter/Marksmanship	3043	Scorpid Sting	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Hunter	Hunter/Marksmanship	49001	Serpent Sting	dot	DOT	default from catalog role dot
+Hunter	Hunter/Marksmanship	34490	Silencing Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	56641	Steady Shot	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Marksmanship	19801	Tranquilizing Shot	dispel	CLEANSE	default from catalog role dispel
+Hunter	Hunter/Marksmanship	19506	Trueshot Aura	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Marksmanship	3034	Viper Sting	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Hunter	Hunter/Marksmanship	58434	Volley	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Marksmanship	53254	Wild Quiver Auto Shot	dmg	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	63672	Black Arrow	dot	DOT	default from catalog role dot
+Hunter	Hunter/Survival	48999	Counterattack	root	SLOW	slow/root -> retail dmg+slow or swap-lock
+Hunter	Hunter/Survival	19263	Deterrence	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Hunter	Hunter/Survival	781	Disengage	other	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Hunter	Hunter/Survival	19185	Entrapment	root	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	60053	Explosive Shot	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Hunter	Hunter/Survival	49067	Explosive Trap	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	49065	Explosive Trap Effect	dot	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	34501	Expose Weakness	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	5384	Feign Death	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Hunter	Hunter/Survival	60202	Freezing Arrow	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	60210	Freezing Arrow Effect	stun	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	14311	Freezing Trap	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	13809	Frost Trap	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	49056	Immolation Trap	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	56453	Lock and Load	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	34837	Master Tactician	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	34477	Misdirection	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Hunter	Hunter/Survival	53339	Mongoose Bite	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Survival	48996	Raptor Strike	dmg	DMG	default from catalog role dmg
+Hunter	Hunter/Survival	19503	Scatter Shot	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Hunter	Hunter/Survival	34600	Snake Trap	other	PARK	no retail totem/trap shape
+Hunter	Hunter/Survival	1494	Track Beasts	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19878	Track Demons	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19879	Track Dragonkin	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19880	Track Elementals	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19882	Track Giants	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19885	Track Hidden	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	19884	Track Undead	buff/debuff	EXCL	travel/economy/passive/duplicate
+Hunter	Hunter/Survival	2974	Wing Clip	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Hunter	Hunter/Survival	49012	Wyvern Sting	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Mage	Mage/Arcane	43017	Amplify Magic	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	44781	Arcane Barrage	dmg	DMG	default from catalog role dmg
+Mage	Mage/Arcane	42897	Arcane Blast	dmg	DMG	default from catalog role dmg
+Mage	Mage/Arcane	43002	Arcane Brilliance	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	42921	Arcane Explosion	dmg	AOE	area/multi hit
+Mage	Mage/Arcane	42995	Arcane Intellect	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	7268	Arcane Missile	dmg	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	42846	Arcane Missiles	buff/debuff	DMG	fixed by hand
+Mage	Mage/Arcane	12042	Arcane Power	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	1953	Blink	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Mage	Mage/Arcane	12536	Clearcasting	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	33717	Conjure Food	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	42985	Conjure Mana Gem	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	42956	Conjure Refreshment	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	37420	Conjure Water	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	2139	Counterspell	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Mage	Mage/Arcane	61316	Dalaran Brilliance	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	61024	Dalaran Intellect	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	43015	Dampen Magic	buff/debuff	DEFENSE	fixed by hand
+Mage	Mage/Arcane	12051	Evocation	hot	HEAL	heal
+Mage	Mage/Arcane	54648	Focus Magic	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	44413	Incanter's Absorption	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	66	Invisibility	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Mage	Mage/Arcane	43024	Mage Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Arcane	29442	Magic Absorption	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	43020	Mana Shield	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Mage	Mage/Arcane	55342	Mirror Image	buff/debuff	PARK	no retail shape or parked by user
+Mage	Mage/Arcane	44401	Missile Barrage	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	61780	Polymorph	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Mage	Mage/Arcane	53142	Portal: Dalaran	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	11419	Portal: Darnassus	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	32266	Portal: Exodar	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	11416	Portal: Ironforge	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	11417	Portal: Orgrimmar	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	35717	Portal: Shattrath	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	32267	Portal: Silvermoon	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	49361	Portal: Stonard	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	10059	Portal: Stormwind	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	49360	Portal: Theramore	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	11420	Portal: Thunder Bluff	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	11418	Portal: Undercity	summon	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	12043	Presence of Mind	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Arcane	58659	Ritual of Refreshment	summon	PARK	default from catalog role summon
+Mage	Mage/Arcane	31589	Slow	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Mage	Mage/Arcane	130	Slow Fall	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	30449	Spellsteal	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Mage	Mage/Arcane	53140	Teleport: Dalaran	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3565	Teleport: Darnassus	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	32271	Teleport: Exodar	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3562	Teleport: Ironforge	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3567	Teleport: Orgrimmar	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	35715	Teleport: Shattrath	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	32272	Teleport: Silvermoon	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	49358	Teleport: Stonard	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3561	Teleport: Stormwind	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	49359	Teleport: Theramore	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3566	Teleport: Thunder Bluff	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Arcane	3563	Teleport: Undercity	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	42945	Blast Wave	dmg	AOE	area/multi hit
+Mage	Mage/Fire	31643	Blazing Speed	buff/debuff	SPEED	speed up, retail cd 0, refresh not stack
+Mage	Mage/Fire	54748	Burning Determination	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	44450	Burnout	dummy	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	11129	Combustion	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Fire	42950	Dragon's Breath	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Mage	Mage/Fire	24530	Felfire	dmg	DMG	default from catalog role dmg
+Mage	Mage/Fire	64357	Fiery Payback	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	42873	Fire Blast	dmg	DMG	default from catalog role dmg
+Mage	Mage/Fire	43010	Fire Ward	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Fire	42833	Fireball	dot	DOT	default from catalog role dot
+Mage	Mage/Fire	54741	Firestarter	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	42926	Flamestrike	dot	AOE	area/multi hit
+Mage	Mage/Fire	47610	Frostfire Bolt	dot	DOT	default from catalog role dot
+Mage	Mage/Fire	12654	Ignite	dot	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	12355	Impact	stun	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	22959	Improved Scorch	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	55362	Living Bomb	dmg	DMG	default from catalog role dmg
+Mage	Mage/Fire	29077	Master of Elements	other	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Fire	43046	Molten Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Fire	42891	Pyroblast	dot	DOT	default from catalog role dot
+Mage	Mage/Fire	42859	Scorch	dmg	DMG	default from catalog role dmg
+Mage	Mage/Frost	42940	Blizzard	buff/debuff	AOE	area/multi hit
+Mage	Mage/Frost	12486	Chilled	slow	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Frost	11958	Cold Snap	dummy	PARK	no retail shape or parked by user
+Mage	Mage/Frost	42931	Cone of Cold	dmg	AOE	area/multi hit
+Mage	Mage/Frost	44572	Deep Freeze	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Mage	Mage/Frost	44544	Fingers of Frost	buff/debuff	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Frost	7301	Frost Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Frost	42917	Frost Nova	root	SLOW	slow/root -> retail dmg+slow or swap-lock
+Mage	Mage/Frost	43012	Frost Ward	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Frost	12494	Frostbite	root	EXCL	travel/economy/passive/duplicate
+Mage	Mage/Frost	42842	Frostbolt	dmg	DMG	default from catalog role dmg
+Mage	Mage/Frost	43008	Ice Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Frost	43039	Ice Barrier	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Mage	Mage/Frost	45438	Ice Block	stun	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Mage	Mage/Frost	42914	Ice Lance	dmg	DMG	default from catalog role dmg
+Mage	Mage/Frost	12472	Icy Veins	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Mage	Mage/Frost	31687	Summon Water Elemental	dummy	PARK	no retail shape or parked by user
+Mage	Mage/Frost	70909	Summon Water Elemental (Prototype)	dummy	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	31821	Aura Mastery	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Holy	53654	Beacon of Light	heal	HEAL	default from catalog role heal
+Paladin	Paladin/Holy	48936	Blessing of Wisdom	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	23214	Charger	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	4987	Cleanse	dispel	CLEANSE	default from catalog role dispel
+Paladin	Paladin/Holy	19746	Concentration Aura	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Holy	48819	Consecration	dot	AOE	area/multi hit
+Paladin	Paladin/Holy	20216	Divine Favor	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	31842	Divine Illumination	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	54428	Divine Plea	buff/debuff	HEAL	heal
+Paladin	Paladin/Holy	48801	Exorcism	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Holy	66922	Flash of Light	hot	HOT	default from catalog role hot
+Paladin	Paladin/Holy	48938	Greater Blessing of Wisdom	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Holy	48782	Holy Light	heal	HEAL	default from catalog role heal
+Paladin	Paladin/Holy	64891	Holy Mending	hot	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	48825	Holy Shock	dummy	DMG	plain attack
+Paladin	Paladin/Holy	48817	Holy Wrath	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Paladin	Paladin/Holy	54149	Infusion of Light	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	20185	Judgement of Light	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	20187	Judgement of Righteousness	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Holy	20186	Judgement of Wisdom	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	54153	Judgements of the Pure	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	48788	Lay on Hands	other	HEAL	heal
+Paladin	Paladin/Holy	53651	Light's Beacon	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	31834	Light's Grace	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	32841	Mass Resurrection	other	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	1152	Purify	dispel	CLEANSE	default from catalog role dispel
+Paladin	Paladin/Holy	48950	Redemption	other	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	53659	Sacred Cleansing	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	53601	Sacred Shield	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Paladin	Paladin/Holy	20165	Seal of Light	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	21084	Seal of Righteousness	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	20166	Seal of Wisdom	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Holy	5502	Sense Undead	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	34767	Summon Charger	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	34769	Summon Warhorse	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Holy	10326	Turn Evil	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Paladin	Paladin/Holy	13819	Warhorse	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Protection	48827	Avenger's Shield	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Protection	20217	Blessing of Kings	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Protection	20911	Blessing of Sanctuary	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Protection	48942	Devotion Aura	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	19752	Divine Intervention	other	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Protection	498	Divine Protection	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Paladin	Paladin/Protection	64205	Divine Sacrifice	heal	HEAL	default from catalog role heal
+Paladin	Paladin/Protection	642	Divine Shield	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Paladin	Paladin/Protection	48947	Fire Resistance Aura	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	48945	Frost Resistance Aura	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	25898	Greater Blessing of Kings	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	25899	Greater Blessing of Sanctuary	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	10308	Hammer of Justice	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Paladin	Paladin/Protection	53595	Hammer of the Righteous	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Protection	1044	Hand of Freedom	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Protection	10278	Hand of Protection	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Paladin	Paladin/Protection	62124	Hand of Reckoning	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Protection	6940	Hand of Sacrifice	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Paladin	Paladin/Protection	1038	Hand of Salvation	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Protection	48952	Holy Shield	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Paladin	Paladin/Protection	20184	Judgement of Justice	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Protection	31789	Righteous Defense	dummy	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Protection	25781	Righteous Fury	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Paladin	Paladin/Protection	20164	Seal of Justice	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Protection	48943	Shadow Resistance Aura	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Protection	61411	Shield of Righteousness	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	31884	Avenging Wrath	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Retribution	48932	Blessing of Might	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Retribution	53742	Blood Corruption	dot	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Retribution	32223	Crusader Aura	heal	HEAL	default from catalog role heal
+Paladin	Paladin/Retribution	35395	Crusader Strike	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	53385	Divine Storm	dmg	AOE	area/multi hit
+Paladin	Paladin/Retribution	25997	Eye for an Eye	dmg	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Retribution	48934	Greater Blessing of Might	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Retribution	48806	Hammer of Wrath	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	31803	Holy Vengeance	dot	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Retribution	31898	Judgement of Blood	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	20467	Judgement of Command	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	53733	Judgement of Corruption	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	31804	Judgement of Vengeance	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	53726	Judgement of the Martyr	dmg	DMG	default from catalog role dmg
+Paladin	Paladin/Retribution	20066	Repentance	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Paladin	Paladin/Retribution	54043	Retribution Aura	shield	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Paladin	Paladin/Retribution	20375	Seal of Command	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Retribution	53736	Seal of Corruption	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Retribution	31801	Seal of Vengeance	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Paladin	Paladin/Retribution	59578	The Art of War	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Retribution	20053	Vengeance	buff/debuff	EXCL	travel/economy/passive/duplicate
+Paladin	Paladin/Retribution	26017	Vindication	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Discipline	988	Dispel Magic	dispel	CLEANSE	default from catalog role dispel
+Priest	Priest/Discipline	48073	Divine Spirit	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Discipline	6346	Fear Ward	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Priest	Priest/Discipline	27828	Focused Casting	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Discipline	45242	Focused Will	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Discipline	48168	Inner Fire	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Discipline	14751	Inner Focus	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Discipline	1706	Levitate	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Discipline	8129	Mana Burn	dmg	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Priest	Priest/Discipline	32375	Mass Dispel	dispel	CLEANSE	default from catalog role dispel
+Priest	Priest/Discipline	44416	Pain Suppression	other	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Priest	Priest/Discipline	53007	Penance	dummy	DMG	plain attack
+Priest	Priest/Discipline	10060	Power Infusion	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Discipline	48161	Power Word: Fortitude	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Discipline	48066	Power Word: Shield	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Priest	Priest/Discipline	48162	Prayer of Fortitude	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Priest	Priest/Discipline	48074	Prayer of Spirit	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Priest	Priest/Discipline	33619	Reflective Shield	dmg	DMG	default from catalog role dmg
+Priest	Priest/Discipline	10955	Shackle Undead	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Priest	Priest/Holy	552	Abolish Disease	dispel	CLEANSE	default from catalog role dispel
+Priest	Priest/Holy	48120	Binding Heal	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	70772	Blessed Healing	hot	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	27818	Blessed Recovery	hot	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	33143	Blessed Resilience	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	48089	Circle of Healing	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	528	Cure Disease	dispel	CLEANSE	default from catalog role dispel
+Priest	Priest/Holy	48173	Desperate Prayer	heal	HEAL	heal
+Priest	Priest/Holy	64844	Divine Hymn	heal	HEAL	heal
+Priest	Priest/Holy	48071	Flash Heal	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	48063	Greater Heal	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	48153	Guardian Spirit	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	6064	Heal	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	34754	Holy Concentration	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	48135	Holy Fire	dot	DOT	default from catalog role dot
+Priest	Priest/Holy	48078	Holy Nova	dmg	AOE	area/multi hit
+Priest	Priest/Holy	64904	Hymn of Hope	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Priest	Priest/Holy	2053	Lesser Heal	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	48087	Lightwell	summon	PARK	no retail shape or parked by user
+Priest	Priest/Holy	48085	Lightwell Renew	hot	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	48072	Prayer of Healing	heal	HEAL	default from catalog role heal
+Priest	Priest/Holy	48113	Prayer of Mending	other	HEAL	heal
+Priest	Priest/Holy	48068	Renew	hot	HOT	default from catalog role hot
+Priest	Priest/Holy	48171	Resurrection	other	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	63735	Serendipity	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Holy	48123	Smite	dmg	DMG	default from catalog role dmg
+Priest	Priest/Holy	33151	Surge of Light	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Shadow Magic	48300	Devouring Plague	buff/debuff	DRAIN	fixed by hand
+Priest	Priest/Shadow Magic	47585	Dispersion	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Priest	Priest/Shadow Magic	586	Fade	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Priest	Priest/Shadow Magic	48127	Mind Blast	dmg	DMG	default from catalog role dmg
+Priest	Priest/Shadow Magic	605	Mind Control	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Priest	Priest/Shadow Magic	58381	Mind Flay	dmg	DMG	default from catalog role dmg
+Priest	Priest/Shadow Magic	53023	Mind Sear	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Priest	Priest/Shadow Magic	453	Mind Soothe	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Priest	Priest/Shadow Magic	10909	Mind Vision	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Shadow Magic	33198	Misery	buff/debuff	EXCL	travel/economy/passive/duplicate
+Priest	Priest/Shadow Magic	48170	Prayer of Shadow Protection	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Priest	Priest/Shadow Magic	64058	Psychic Horror	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Priest	Priest/Shadow Magic	10890	Psychic Scream	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Priest	Priest/Shadow Magic	48169	Shadow Protection	buff/debuff	DEFENSE	fixed by hand
+Priest	Priest/Shadow Magic	48158	Shadow Word: Death	dmg	DMG	default from catalog role dmg
+Priest	Priest/Shadow Magic	48125	Shadow Word: Pain	dot	DOT	default from catalog role dot
+Priest	Priest/Shadow Magic	34433	Shadowfiend	summon	PARK	no retail shape or parked by user
+Priest	Priest/Shadow Magic	15473	Shadowform	buff/debuff	PARK	no retail shape or parked by user
+Priest	Priest/Shadow Magic	15487	Silence	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Priest	Priest/Shadow Magic	15286	Vampiric Embrace	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Priest	Priest/Shadow Magic	48160	Vampiric Touch	dot	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Rogue	Rogue/Assassination	48691	Ambush	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Assassination	1833	Cheap Shot	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Assassination	14177	Cold Blood	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Assassination	48674	Deadly Throw	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Assassination	51722	Dismantle	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Rogue	Rogue/Assassination	57993	Envenom	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Assassination	48668	Eviscerate	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Assassination	8647	Expose Armor	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Rogue	Rogue/Assassination	51637	Focused Attacks	other	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Assassination	48676	Garrote	dot	DOT	default from catalog role dot
+Rogue	Rogue/Assassination	51662	Hunger For Blood	dummy	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Assassination	8643	Kidney Shot	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Assassination	48666	Mutilate	other	DMG	plain attack
+Rogue	Rogue/Assassination	58427	Overkill	buff/debuff	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Assassination	48672	Rupture	dot	DOT	default from catalog role dot
+Rogue	Rogue/Assassination	6774	Slice and Dice	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Combat	13750	Adrenaline Rush	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Combat	48657	Backstab	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Combat	13877	Blade Flurry	buff/debuff	AOE	area/multi hit
+Rogue	Rogue/Combat	31125	Blade Twisting	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Rogue	Rogue/Combat	26669	Evasion	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Rogue	Rogue/Combat	51723	Fan of Knives	dmg	AOE	area/multi hit
+Rogue	Rogue/Combat	48659	Feint	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Rogue	Rogue/Combat	1776	Gouge	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Combat	1766	Kick	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Combat	51690	Killing Spree	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Combat	14251	Riposte	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Combat	5938	Shiv	dummy	DMG	plain attack
+Rogue	Rogue/Combat	48638	Sinister Strike	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Combat	11305	Sprint	buff/debuff	SPEED	speed up, retail cd 0, refresh not stack
+Rogue	Rogue/Combat	51680	Throwing Specialization	other	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Combat	51677	Unfair Advantage	dmg	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Subtlety	2094	Blind	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Subtlety	31224	Cloak of Shadows	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Rogue	Rogue/Subtlety	1842	Disarm Trap	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Rogue	Rogue/Subtlety	1725	Distract	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Rogue	Rogue/Subtlety	14278	Ghostly Strike	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Subtlety	48660	Hemorrhage	dmg	DMG	default from catalog role dmg
+Rogue	Rogue/Subtlety	51699	Honor Among Thieves	buff/debuff	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Subtlety	13977	Initiative	other	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Subtlety	921	Pick Pocket	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Rogue	Rogue/Subtlety	14183	Premeditation	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Subtlety	14185	Preparation	dummy	PARK	no retail shape or parked by user
+Rogue	Rogue/Subtlety	14181	Relentless Strikes Effect	other	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Subtlety	51724	Sap	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Rogue	Rogue/Subtlety	51713	Shadow Dance	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Rogue	Rogue/Subtlety	36554	Shadowstep	buff/debuff	SPEED	speed up, retail cd 0, refresh not stack
+Rogue	Rogue/Subtlety	1784	Stealth	stealth	PARK	retail stealth shape (Prowl cd5) exists but check
+Rogue	Rogue/Subtlety	57934	Tricks of the Trade	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Rogue	Rogue/Subtlety	26889	Vanish	other	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Rogue	Rogue/Subtlety	14093	Vanished	other	EXCL	travel/economy/passive/duplicate
+Rogue	Rogue/Subtlety	51693	Waylay	slow	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Elemental Combat	66843	Call of the Ancestors	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Elemental Combat	66842	Call of the Elements	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Elemental Combat	66844	Call of the Spirits	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Elemental Combat	49271	Chain Lightning	dmg	AOE	area/multi hit
+Shaman	Shaman/Elemental Combat	49231	Earth Shock	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Elemental Combat	2484	Earthbind Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Elemental Combat	30165	Elemental Devastation	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Elemental Combat	16166	Elemental Mastery	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Shaman	Shaman/Elemental Combat	2894	Fire Elemental Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Elemental Combat	61657	Fire Nova	dummy	AOE	area/multi hit
+Shaman	Shaman/Elemental Combat	49233	Flame Shock	dot	DOT	default from catalog role dot
+Shaman	Shaman/Elemental Combat	63685	Freeze	root	SLOW	slow/root -> retail dmg+slow or swap-lock
+Shaman	Shaman/Elemental Combat	49236	Frost Shock	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Elemental Combat	51514	Hex	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Shaman	Shaman/Elemental Combat	60043	Lava Burst	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Elemental Combat	49240	Lightning Bolt	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Elemental Combat	58734	Magma Totem	summon	AOE	area/multi hit
+Shaman	Shaman/Elemental Combat	8012	Purge	dispel	CLEANSE	default from catalog role dispel
+Shaman	Shaman/Elemental Combat	58704	Searing Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Elemental Combat	58582	Stoneclaw Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Elemental Combat	59159	Thunderstorm	dmg	AOE	area/multi hit
+Shaman	Shaman/Elemental Combat	57722	Totem of Wrath	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Elemental Combat	57994	Wind Shear	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Shaman	Shaman/Enhancement	556	Astral Recall	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	2825	Bloodlust	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Shaman	Shaman/Enhancement	30798	Dual Wield	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	2062	Earth Elemental Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	6196	Far Sight	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	51533	Feral Spirit	summon	PARK	no retail shape or parked by user
+Shaman	Shaman/Enhancement	58739	Fire Resistance Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	58656	Flametongue Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	58790	Flametongue Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Shaman	Shaman/Enhancement	43339	Focused	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	58745	Frost Resistance Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	58796	Frostbrand Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Shaman	Shaman/Enhancement	2645	Ghost Wolf	hot	HOT	default from catalog role hot
+Shaman	Shaman/Enhancement	8177	Grounding Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	32182	Heroism	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Shaman	Shaman/Enhancement	60103	Lava Lash	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Enhancement	49281	Lightning Shield	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Shaman	Shaman/Enhancement	58749	Nature Resistance Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	10399	Rockbiter Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Shaman	Shaman/Enhancement	6495	Sentry Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	30824	Shamanistic Rage	other	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Shaman	Shaman/Enhancement	16268	Spirit Weapons	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	58753	Stoneskin Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	32176	Stormstrike	dmg	DMG	default from catalog role dmg
+Shaman	Shaman/Enhancement	58643	Strength of Earth Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	131	Water Breathing	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	546	Water Walking	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Enhancement	8512	Windfury Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Enhancement	58804	Windfury Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Shaman	Shaman/Enhancement	3738	Wrath of Air Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	16237	Ancestral Fortitude	buff/debuff	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	49277	Ancestral Spirit	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	55459	Chain Heal	heal	HEAL	default from catalog role heal
+Shaman	Shaman/Restoration	70809	Chained Heal	hot	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	51886	Cleanse Spirit	dispel	CLEANSE	default from catalog role dispel
+Shaman	Shaman/Restoration	8170	Cleansing Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	526	Cure Toxins	dispel	CLEANSE	default from catalog role dispel
+Shaman	Shaman/Restoration	49284	Earth Shield	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Shaman	Shaman/Restoration	51994	Earthliving Weapon	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Shaman	Shaman/Restoration	30874	Gift of the Water Spirit	hot	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	58757	Healing Stream Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	49273	Healing Wave	heal	HEAL	default from catalog role heal
+Shaman	Shaman/Restoration	49276	Lesser Healing Wave	heal	HEAL	default from catalog role heal
+Shaman	Shaman/Restoration	58774	Mana Spring Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	16190	Mana Tide Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	21169	Reincarnation	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	61301	Riptide	hot	HOT	default from catalog role hot
+Shaman	Shaman/Restoration	55198	Tidal Force	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Shaman	Shaman/Restoration	36936	Totemic Recall	other	EXCL	travel/economy/passive/duplicate
+Shaman	Shaman/Restoration	8143	Tremor Totem	summon	PARK	no retail totem/trap shape
+Shaman	Shaman/Restoration	57960	Water Shield	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warlock	Warlock/Affliction	47206	Atrocity	dot	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Affliction	47813	Corruption	dot	DOT	default from catalog role dot
+Warlock	Warlock/Affliction	47864	Curse of Agony	dot	DOT	default from catalog role dot
+Warlock	Warlock/Affliction	47867	Curse of Doom	dot	DOT	default from catalog role dot
+Warlock	Warlock/Affliction	18662	Curse of Doom Effect	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Affliction	18223	Curse of Exhaustion	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Warlock	Warlock/Affliction	1010	Curse of Idiocy	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warlock	Warlock/Affliction	11719	Curse of Tongues	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warlock	Warlock/Affliction	50511	Curse of Weakness	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warlock	Warlock/Affliction	47865	Curse of the Elements	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warlock	Warlock/Affliction	59092	Dark Pact	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warlock	Warlock/Affliction	47857	Drain Life	buff/debuff	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Warlock	Warlock/Affliction	5138	Drain Mana	buff/debuff	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Warlock	Warlock/Affliction	47855	Drain Soul	dot	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Warlock	Warlock/Affliction	6215	Fear	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warlock	Warlock/Affliction	59164	Haunt	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Affliction	17928	Howl of Terror	fear	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warlock	Warlock/Affliction	57946	Life Tap	dummy	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warlock	Warlock/Affliction	47836	Seed of Corruption	dot	DOT	default from catalog role dot
+Warlock	Warlock/Affliction	32391	Shadow Embrace	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Affliction	53756	Sudden Fear	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Affliction	47843	Unstable Affliction	dot	DOT	default from catalog role dot
+Warlock	Warlock/Demonology	18647	Banish	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warlock	Warlock/Demonology	59671	Challenging Howl	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warlock	Warlock/Demonology	60220	Create Firestone	other	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47878	Create Healthstone	dummy	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47884	Create Soulstone	other	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	58889	Create Soulwell	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47888	Create Spellstone	other	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47889	Demon Armor	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warlock	Warlock/Demonology	54785	Demon Charge	other	SPEED	speed up, retail cd 0, refresh not stack
+Warlock	Warlock/Demonology	696	Demon Skin	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warlock	Warlock/Demonology	48018	Demonic Circle: Summon	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	48020	Demonic Circle: Teleport	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47193	Demonic Empowerment	dummy	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	132	Detect Invisibility	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	23161	Dreadsteed	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	61191	Enslave Demon	buff/debuff	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warlock	Warlock/Demonology	126	Eye of Kilrogg	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47893	Fel Armor	hot	HOT	default from catalog role hot
+Warlock	Warlock/Demonology	18708	Fel Domination	buff/debuff	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	5784	Felsteed	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	47856	Health Funnel	hot	DRAIN	damage + heal (retail Siphon Life, Death Coil, Leech Seed)
+Warlock	Warlock/Demonology	20153	Immolation	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Demonology	50589	Immolation Aura	buff/debuff	AOE	area/multi hit
+Warlock	Warlock/Demonology	1122	Inferno	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	35706	Master Demonologist	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	61610	Metamorphosis	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warlock	Warlock/Demonology	18540	Ritual of Doom	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	18541	Ritual of Doom Effect	dummy	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	58887	Ritual of Souls	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	698	Ritual of Summoning	summon	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	5500	Sense Demons	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	50581	Shadow Cleave	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Demonology	47891	Shadow Ward	shield	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warlock	Warlock/Demonology	19028	Soul Link	dummy	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Demonology	29858	Soulshatter	dummy	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	30146	Summon Felguard	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	691	Summon Felhunter	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	688	Summon Imp	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	712	Summon Succubus	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	697	Summon Voidwalker	summon	PARK	no retail shape or parked by user
+Warlock	Warlock/Demonology	5697	Unending Breath	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Destruction	34936	Backlash	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Destruction	59172	Chaos Bolt	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Destruction	17962	Conflagrate	dot	DOT	default from catalog role dot
+Warlock	Warlock/Destruction	47823	Hellfire	dot	AOE	area/multi hit
+Warlock	Warlock/Destruction	47822	Hellfire Effect	dmg	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Destruction	47811	Immolate	dot	DOT	default from catalog role dot
+Warlock	Warlock/Destruction	47838	Incinerate	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Destruction	18093	Pyroclasm	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warlock	Warlock/Destruction	47820	Rain of Fire	buff/debuff	AOE	area/multi hit
+Warlock	Warlock/Destruction	47815	Searing Pain	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Destruction	47809	Shadow Bolt	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Destruction	47827	Shadowburn	dmg	DMG	default from catalog role dmg
+Warlock	Warlock/Destruction	61290	Shadowflame	dmg	AOE	area/multi hit
+Warlock	Warlock/Destruction	47847	Shadowfury	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warlock	Warlock/Destruction	47825	Soul Fire	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	2457	Battle Stance	buff/debuff	PARK	no retail shape or parked by user
+Warrior	Warrior/Arms	46924	Bladestorm	buff/debuff	AOE	area/multi hit
+Warrior	Warrior/Arms	11578	Charge	dummy	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warrior	Warrior/Arms	12696	Charge Rage Bonus Effect	other	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Arms	1715	Hamstring	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Warrior	Warrior/Arms	47450	Heroic Strike	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	57755	Heroic Throw	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	12705	Long Daze	slow	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Arms	5530	Mace Specialization	other	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Arms	694	Mocking Blow	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	47486	Mortal Strike	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	7384	Overpower	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	47465	Rend	dot	DOT	default from catalog role dot
+Warrior	Warrior/Arms	20230	Retaliation	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warrior	Warrior/Arms	29842	Second Wind	hot	HEAL	heal
+Warrior	Warrior/Arms	64382	Shattering Throw	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Arms	26654	Sweeping Strikes	dmg	AOE	area/multi hit
+Warrior	Warrior/Arms	47502	Thunder Clap	dmg	AOE	area/multi hit
+Warrior	Warrior/Arms	46857	Trauma	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Fury	47436	Battle Shout	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Warrior	Warrior/Fury	18499	Berserker Rage	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Fury	2458	Berserker Stance	buff/debuff	PARK	no retail shape or parked by user
+Warrior	Warrior/Fury	23885	Bloodthirst	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Fury	1161	Challenging Shout	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warrior	Warrior/Fury	47520	Cleave	dmg	AOE	area/multi hit
+Warrior	Warrior/Fury	47440	Commanding Shout	buff/debuff	TEAM	team-wide buff: retail shape must be checked (Dazzling Dance = team speed)
+Warrior	Warrior/Fury	12292	Death Wish	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Fury	47437	Demoralizing Shout	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warrior	Warrior/Fury	55694	Enraged Regeneration	hot	HEAL	heal
+Warrior	Warrior/Fury	47471	Execute	dummy	DMG	plain attack
+Warrior	Warrior/Fury	12970	Flurry	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Fury	56112	Furious Attacks	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Fury	60970	Heroic Fury	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Fury	20252	Intercept	other	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warrior	Warrior/Fury	5246	Intimidating Shout	fear	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warrior	Warrior/Fury	12323	Piercing Howl	slow	SLOW	slow/root -> retail dmg+slow or swap-lock
+Warrior	Warrior/Fury	6552	Pummel	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warrior	Warrior/Fury	1719	Recklessness	buff/debuff	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Fury	47475	Slam	dummy	DMG	plain attack
+Warrior	Warrior/Fury	46916	Slam!	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Fury	12964	Unbridled Wrath	other	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Fury	34428	Victory Rush	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Fury	1680	Whirlwind	dmg	AOE	area/multi hit
+Warrior	Warrior/Protection	2687	Bloodrage	other	DMGUP	self damage-up for N rounds (retail: Supercharge/Roar-type)
+Warrior	Warrior/Protection	12809	Concussion Blow	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warrior	Warrior/Protection	71	Defensive Stance	buff/debuff	PARK	no retail shape or parked by user
+Warrior	Warrior/Protection	47498	Devastate	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Protection	676	Disarm	buff/debuff	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warrior	Warrior/Protection	3411	Intervene	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warrior	Warrior/Protection	12976	Last Stand	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Warrior	Warrior/Protection	57823	Revenge	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Protection	12798	Revenge Stun	stun	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Protection	46947	Safeguard	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)
+Warrior	Warrior/Protection	72	Shield Bash	other	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warrior	Warrior/Protection	2565	Shield Block	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Warrior	Warrior/Protection	47488	Shield Slam	dmg	DMG	default from catalog role dmg
+Warrior	Warrior/Protection	871	Shield Wall	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Warrior	Warrior/Protection	46968	Shockwave	stun	STUN	CC -> retail stun/sleep (kick-type interrupts map to dmg+stun)
+Warrior	Warrior/Protection	18498	Silenced - Gag Order	buff/debuff	EXCL	travel/economy/passive/duplicate
+Warrior	Warrior/Protection	23920	Spell Reflection	buff/debuff	AVOID	avoid / reduce damage a round (retail Burrow/Deflection/Dodge/Shield Block)
+Warrior	Warrior/Protection	7386	Sunder Armor	other	DEBUFF	enemy takes more / deals less damage (retail Howl 1725, Black Claw, Mod_DamageDealt)
+Warrior	Warrior/Protection	355	Taunt	buff/debuff	DROP	drop: threat/utility/weapon-enchant or no retail shape (Lay on Hands/Mangle/Execute etc. are plain attacks/heals handled below)
+Warrior	Warrior/Protection	50720	Vigilance	buff/debuff	DEFENSE	damage reduction / shield / thorns (retail Spiked Skin, Thorns, Shield Block)

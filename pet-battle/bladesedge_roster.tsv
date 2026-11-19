@@ -1,0 +1,100 @@
+# Blade's Edge Mountains pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	22480	Brown Marmot	1	Critter	0	0	3	0	Melee		composed kit: Critter
+Y	3681	Wisp	1	Critter	0	0	10	0	Melee		composed kit: Magic
+Y	22141	Quilbeast	60	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	22135	Tame Clefthoof	60	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	21423	Gore-Scythe Ravager	63	Beast	0	0	14	0	Melee		composed kit: Beast
+Y	22123	Rip-Blade Ravager	63	Beast	31	0	20	0	Melee		composed kit: Beast
+Y	19995	Bladespire Brute	65-66	Humanoid	0	0	36	0	Melee		composed kit: Humanoid
+Y	20334	Bladespire Cook	65-66	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	20728	Bladespire Raptor	65-66	Beast	11	0	14	0	Melee		composed kit: Beast
+Y	19998	Bladespire Shaman	65-66	Humanoid	0	0	15	0	Melee		composed kit: Elemental
+Y	21033	Bladewing Bloodletter	65-66	Beast	38	0	26	0	Melee		composed kit: Beast
+Y	19957	Bloodmaul Brewmaster	65-66	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	19991	Bloodmaul Brute	65-66	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	20058	Bloodmaul Dire Wolf	65	Beast	1	0	14	0	Melee		composed kit: Beast
+Y	19952	Bloodmaul Geomancer	65-66	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	19956	Bloodmaul Lookout	65-66	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	19948	Bloodmaul Skirmisher	65-66	Humanoid	0	0	38	0	Melee		composed kit: Humanoid
+Y	22052	Daggermaw Blackhide	65-66	Beast	11	0	9	0	Melee		composed kit: Beast
+Y	21254	Dullgrom Dredger	65-66	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	20713	Fey Drake	65-66	Dragonkin	0	0	19	0	Melee		composed kit: Dragonkin
+Y	21022	Grovestalker Lynx	65-66	Beast	2	0	19	0	Melee		composed kit: Beast
+Y	19943	Lashh'an Talonite	65-66	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	19945	Lashh'an Windwalker	65-66	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	21839	Mature Silkwing	65-66	Beast	37	0	16	0	Melee		composed kit: Flying
+Y	20747	Silkwing Larva	65-66	Beast	0	0	32	0	Melee		composed kit: Beast
+Y	19500	Sylvanaar Sentinel	65	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	20748	Thunderlord Dire Wolf	65-66	Beast	1	0	20	0	Melee		composed kit: Beast
+Y	19984	Vekh'nir Dreadhawk	65-66	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	19982	Vekh'nir Keeneye	65-66	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	19983	Vekh'nir Stormcaller	65-66	Humanoid	0	0	18	0	Melee		composed kit: Elemental
+Y	21296	Bladespire Champion	66	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	20330	Bloodmaul Battle Worg	66-67	Beast	1	0	11	0	Melee		composed kit: Beast
+Y	19993	Bloodmaul Mauler	66-67	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	22384	Bloodmaul Soothsayer	66-67	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	22160	Bloodmaul Taskmaster	66-67	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	19994	Bloodmaul Warlock	66-67	Humanoid	0	0	14	0	Melee		composed kit: Magic
+Y	21189	Crystal Flayer	66-67	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	20751	Daggermaw Lashtail	66-67	Beast	11	0	15	0	Melee		composed kit: Beast
+Y	21300	Fel Corrupter	66-67	Humanoid	0	0	13	0	Melee		composed kit: Magic
+Y	21123	Felsworn Scalewing	66-67	Beast	27	0	8	0	Melee		composed kit: Flying
+Y	21004	Lesser Nether Drake	66-67	Dragonkin	0	0	22	0	Melee		composed kit: Dragonkin
+Y	21040	Outraged Raven's Wood Sapling	66-67	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	20714	Ridgespine Stalker	66-67	Beast	3	0	12	0	Melee		composed kit: Beast
+Y	20987	Ruuan Weald Basilisk	66	Beast	0	0	5	0	Melee		composed kit: Aquatic
+Y	19985	Ruuan'ok Cloudgazer	66-67	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	19986	Ruuan'ok Skyfury	66-67	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	20749	Scalewing Serpent	66-67	Beast	27	0	20	0	Melee		composed kit: Flying
+Y	21810	Wyrmcult Hewer	66-67	Humanoid	0	0	41	0	Melee		composed kit: Undead
+Y	22308	Wyrmcult Hunter	66-67	Humanoid	0	0	3	0	Melee		composed kit: Undead
+Y	21809	Wyrmcult Poacher	66-67	Humanoid	0	0	51	0	Melee		composed kit: Undead
+Y	21757	Big Electromental Flavor	67	Elemental	0	0	6	0	Melee		composed kit: Magic
+Y	21757	Big Electromental Flavor	67	Elemental	0	0	5	0	Melee		composed kit: Magic
+Y	20765	Bladespire Crusher	67	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	20766	Bladespire Mystic	67	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	21046	Boulder'mok Brute	67-68	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	21047	Boulder'mok Shaman	67-68	Humanoid	0	0	6	0	Melee		composed kit: Elemental
+Y	19979	Deathforge Technician	67-68	Demon	0	0	18	0	Melee		composed kit: Magic
+Y	21042	Dire Raven	67-68	Beast	7	0	14	0	Melee		composed kit: Flying
+Y	21124	Felsworn Daggermaw	67-68	Beast	11	0	28	0	Melee		composed kit: Beast
+Y	19988	Grishna Falconwing	67-68	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	19989	Grishna Harbinger	67-68	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	19990	Grishna Scorncrow	67-68	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	20924	Grishnath Basilisk	67	Beast	0	0	9	0	Melee		composed kit: Aquatic
+Y	21737	Mini-Electromental Flavor	67	Elemental	0	0	9	0	Melee		composed kit: Magic
+Y	21326	Raven's Wood Leafbeard	67-68	Elemental	0	0	15	0	Melee		composed kit: Elemental
+Y	20609	Razaani Nexus Stalker	67-68	Humanoid	0	0	10	0	Melee		composed kit: Beast
+Y	20601	Razaani Raider	67-68	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	20614	Razaani Spell-Thief	67-68	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	20998	Ridgespine Horror	67-68	Beast	3	0	3	0	Melee		composed kit: Beast
+Y	20925	Scalded Basilisk	67-68	Beast	0	0	8	0	Melee		composed kit: Aquatic
+Y	21021	Scorch Imp	67-68	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	20514	Searing Elemental	67-68	Elemental	0	0	16	0	Melee		composed kit: Elemental
+Y	21152	Station Bot-Jock	67-68	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	21114	Station Technician	67-68	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	21387	Wyrmcult Blackwhelp	67-68	Dragonkin	0	0	9	0	Melee		composed kit: Dragonkin
+Y	21519	Death's Might	68	Demon	0	0	22	0	Melee		composed kit: Magic
+Y	21516	Death's Watch	68	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	19961	Doomforge Attendant	68	Demon	0	0	7	0	Melee		composed kit: Magic
+Y	19960	Doomforge Engineer	68	Demon	0	0	5	0	Melee		composed kit: Mechanical
+Y	22181	Aether Ray	70-71	Beast	34	0	50	0	Melee		composed kit: Flying
+Y	22241	Bash'ir Raider	70-71	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	22242	Bash'ir Spell-Thief	70-71	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	22289	Darkflame Infernal	70-71	Demon	0	0	16	0	Melee		composed kit: Mechanical
+Y	22286	Fel Rager	70-71	Elemental	0	0	9	0	Melee		composed kit: Elemental
+Y	22217	Felstorm Corruptor	70-71	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	23386	Gan'arg Analyzer	70	Demon	0	0	24	0	Melee		composed kit: Mechanical
+Y	22218	Insidious Familiar	70-71	Demon	0	0	29	0	Melee		composed kit: Magic
+Y	22182	Lightning Wasp	70-71	Beast	44	0	21	0	Melee		composed kit: Flying
+Y	22180	Shard-Hide Boar	70-71	Demon	0	0	26	0	Melee		composed kit: Beast
+Y	22244	Unbound Ethereal	70-71	Elemental	0	0	13	0	Melee		composed kit: Magic
+Y	22254	Wrath Corruptor	70-72	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	20557	Wrath Hound	70-71	Demon	0	0	13	0	Melee		composed kit: Beast
+Y	22195	Wrath Speaker	70-71	Demon	0	0	4	0	Melee		composed kit: Magic
+Y	22287	Amberpelt Clefthoof	71-72	Beast	0	0	8	0	Melee		composed kit: Beast
+Y	22243	Bash'ir Arcanist	71-72	Humanoid	0	0	18	0	Melee		composed kit: Magic
+Y	22221	Felstorm Overseer	71	Demon	0	0	3	0	Melee		composed kit: Magic
+Y	22392	Wrath Fiend	71-72	Demon	0	0	3	0	Melee		composed kit: Magic

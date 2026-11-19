@@ -1,0 +1,33 @@
+shown_name	flags	pet	family	effect
+Chimera Shot	ANIMAL(chimera)	Broken-down Shredder	Mechanical	damage-vuln-p3-cd0
+Chimera Shot	ANIMAL(chimera)	Databank	Mechanical	damage-untargetable-delayed-p30-cd4#2
+Chimera Shot	ANIMAL(chimera)	Defendo-tank 66D	Mechanical	damage-dot-vuln-p10-cd0
+Chimera Shot	ANIMAL(chimera)	Destroyed Siege Tank	Mechanical	damage-noswap-p15-cd0
+Chimera Shot	ANIMAL(chimera)	Fizzcrank Mechagnome	Mechanical	damage-vuln-p3-cd0
+Chimera Shot	ANIMAL(chimera)	Harvest Collector	Mechanical	damage-stunchance-p30-cd4
+Chimera Shot	ANIMAL(chimera)	Harvest Reaper	Mechanical	damage-conditional-p15-cd0#4
+Chimera Shot	ANIMAL(chimera)	Harvest Watcher	Mechanical	damage-speedup-p15-cd0
+Chimera Shot	ANIMAL(chimera)	Jotunheim Rapid-Fire Harpoon	Mechanical	damage-forceswap-p10-cd4
+Chimera Shot	ANIMAL(chimera)	Mechagnome Attendant	Mechanical	damage-forceswap-p20-cd5#2
+Chimera Shot	ANIMAL(chimera)	Refurbished Shredder	Mechanical	damage-conditional-p18-cd0
+Chimera Shot	ANIMAL(chimera)	Rusty Harvest Golem	Mechanical	damage-p100-cd2
+Chimera Shot	ANIMAL(chimera)	Scavenge-bot 004-A8	Mechanical	damage-conditional-p30-cd4#2
+Chimera Shot	ANIMAL(chimera)	Scavenge-bot 005-B6	Mechanical	damage-noswap-p15-cd0
+Chimera Shot	ANIMAL(chimera)	Sentry-bot 57-K	Mechanical	damage-conditional-p40-cd3#2
+Chimera Shot	ANIMAL(chimera)	Skybreaker Recon Fighter	Mechanical	damage-backline-p15-cd3
+Chimera Shot	ANIMAL(chimera)	Steel Gate Flying Machine	Mechanical	damage-drain-p18-cd3
+Chimera Shot	ANIMAL(chimera)	Stormforged Reaver	Mechanical	damage-speeddown-p30-cd4
+Chimera Shot	ANIMAL(chimera)	Stormforged War Golem	Mechanical	damage-dot-p10-cd0
+Chimera Shot	ANIMAL(chimera)	Venture Co. Shredder	Mechanical	damage-dmgup-p10-cd0
+Chimera Shot	ANIMAL(chimera)	Warsong Shredder	Mechanical	damage-delayed-p50-cd4#2
+Chimera Shot	ANIMAL(chimera)	Wintergrasp Control Arms	Mechanical	damage-dot-delayed-p9-cd1
+Chimera Shot	ANIMAL(chimera)	Wintergrasp Detection Unit	Mechanical	damage-conditional-p10-cd3
+Chimera Shot	ANIMAL(chimera)	Ymirheim Spear Gun	Mechanical	damage-p25-cd3
+Pin	FAMILY(Crab vs -)	Murloc Streamrunner	Aquatic	dot-cd3
+Scorpid Sting	ANIMAL(scorpid)	Defendo-tank 66D	Mechanical	accdown-cd0
+Serpent Sting	ANIMAL(serpent)	Heavy War Golem	Elemental	dot-cd5#3
+Serpent Sting	ANIMAL(serpent)	Mechagnome Attendant	Mechanical	dot-cd0#2
+Serpent Sting	ANIMAL(serpent)	Refurbished Shredder	Mechanical	dot-cd0
+Serpent Sting	ANIMAL(serpent)	Scavenge-bot 004-A8	Mechanical	dot-cd4#2
+Serpent Sting	ANIMAL(serpent)	Scavenge-bot 005-B6	Mechanical	dot-accdown-cd4
+Serpent Sting	ANIMAL(serpent)	Skybreaker Recon Fighter	Mechanical	dot-cd3

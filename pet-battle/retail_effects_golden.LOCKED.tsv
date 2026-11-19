@@ -1,0 +1,572 @@
+golden_id	cooldown	retail_abilities	effect	ability_ids	names
+G001	0	37	T0[p24(20,100)]	110,111,112,114,116,118,119,356,378,384,445,452,477,478,484,528,584,626,648,655,771,782,801,1079,1082,1094,1223,1465,1737,2025,2027,2028,2029,2228,2234,2240,2475	Bite; Punch; Peck; Beam; Zap; Water Jet; Scratch; Snap; Strike; Metal Fist; Ooze Touch; Broom; Snowball; Magic Hat; Feed
+G002	0	27	T0[p222(21,100,40)]	113,115,210,219,429,432,493,499,525,712,765,777,1004,1021,1095,1099,1238,1518,1570,1682,1719,1724,1934,2242,2307,2399,2522	Burn; Breath; Shadow Slash; Jab; Claw; Jade Claw; Hoof; Diseased Bite; Emerald Bite; Railgun; Holy Sword; Missile; Gilde
+G003	0	22	T0[p222(22,100,60)]	117,349,367,393,406,422,424,437,788,812,978,1008,1056,1060,1066,1370,1483,1625,1880,1964,2340,2470	Infected Claw; Smash; Chomp; Shadowflame; Crush; Shadow Shock; Tail Slap; Onyx Bite; Gauss Rifle; Sulfuras Smash; Moon F
+G004	0	14	T0[p24(10,100) p158(-) p24(10,50) p384(10,100)]	184,193,202,228,360,394,441,455,617,713,789,1027,1840,2433	Quills; Flank; Thrash; Tongue Lash; Flurry; Lash; Rend; Batter; Spark; Blitz; U-238 Rounds; Fire Quills; Arcane Barrage
+G005	0	10	T0[p27(15,100,5,25)]	156,421,473,608,1088,1578,1958,2067,2452,2462	Vicious Fang; Arcane Blast; Focused Beams; Nether Blast; Nairn!; Hot Soup; Empowering Strikes; Pinch; Trenchant Claws; A
+G006	5	8	T0[p178(1,100,1,149,1)+aura:Mechanic_IsStunned=1/turnLock=1]	227,348,350,569,766,772,1026,2446	Blackout Kick; Bash; Clobber; Crystal Prison; Holy Justice; Lovestruck; Amber Prison; Faceroll
+G007	4	7	T0[p26(100,1)+aura:Stat_Dodge=100]	312,440,764,1401,1722,2059,2239	Dodge; Evanescence; Phase Shift; Where's the Beef?; Queue Dodge; Dust Cloud; Smoke Cloud
+G008	4	6	T0[p24(30,100) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	376,646,752,814,1052,1400	Headbutt; Shock and Awe; Soulrush; Rupture; Tornado Punch; Udder Destruction
+G009	0	5	T0[p24(3,100) p24(3,100,1) p24(3,100,1) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(5,100,1) p24(5,100,1) p24(5,100,1) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(7,100,1) p24(7,100,1) p24(7,100,1) p50(100,2)+aura:Mod_DamageTakenPercent=50]	163,1093,1681,1796,2023	Stampede; Dead Man's Party; Puppy Parade; Family Reunion; Junk Mail
+G010	0	5	T0[p26(100,5)+aura:Add_FlatDamageTaken=-5]	310,431,436,597,1045	Shell Shield; Jadeskin; Stoneskin; Emerald Presence; Barkskin
+G011	0	5	T0[p24(10,100) p26(100,3)+aura:Mod_DamageDealtPercent=25]	347,375,614,740,809	Roar; Trumpet Strike; Competitive Spirit; Frenzyheart Brew; Roll
+G012	0	5	T1[] T0[p76(45,100)+aura]	354,1860,1862,1865,1867	Barrel Toss; Cannon Shot; Flame Shot; Frost Shot; Arcane Shot
+G013	4	5	T0[p26(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p222(30,100,40) p49(100)+aura:Mechanic_IsFlying=1/untargettable=1]	407,645,761,1797,2338	Meteor Strike; Launch; Heroic Leap; Dumpster Dive; Vault Drop
+G014	3	4	T0[p23(20,100,20) p44(50,100)]	168,173,1078,1933	Healing Flame; Cauterize; Bandage; Rewind Time
+G015	0	4	T0[p24(15,100) p26(100,1)+aura:Mod_SpeedPercent=100]	194,364,567,2068	Metabolic Boost; Leap; Rush; Face Bite
+G016	0	4	T0[p24(3,100) p24(3,100,1) p24(3,100,1) p50(100,2,1)+aura:Mod_DamageTakenPercent=50] T0[p24(5,100) p24(5,100,1) p24(5,100,1) p50(100,2,1)+aura:Mod_DamageTakenPercent=50] T0[p24(7,100) p24(7,100,1) p24(7,100,1) p50(100,2,1)+aura:Mod_DamageTakenPercent=50]	198,706,870,1002	Zergling Rush; Swarm; Murder; Inflation
+G017	3	4	T0[p24(15,100) p177(149) p131(100)+aura:Mechanic_IsStunned=1/turnLock=1]	307,474,669,1559	Kick; Interrupting Gaze; Backflip; Paralyzing Venom
+G018	0	4	T0[p24(14,100) p54(1,100,3)+aura:Mechanic_IsPoisoned=1]	380,448,2375,2479	Poison Spit; Creeping Ooze; Needle Claw; Venomsleet Spit
+G019	0	4	T0[p24(18,200)]	482,1233,1938,2013	Laser; Dark Talon; Chaos Beam; Package Drop
+G020	1	4	T0[p24(25,100)]	908,975,1763,2098	Jolt; Logic; Slime; Azerite Bolt
+G021	3	4	T0[p24(15,100) p24(9,100) p24(9,100)]	923,1738,2356,2364	Flux; Chaos Nova; Void Nova; Chain Lightning
+G022	5	4	T0[p141(45,100)]	1110,1960,2341,2463	Avalanche; Twilight Meteorite; Money Meteor; Dive Bomb
+G023	3	3	T0[p23(30,100,20)]	123,573,1065	Healing Wave; Nature's Touch; Digest Brains
+G024	4	3	T0[p85(161) p26(100,3)+aura:Mod_DamageTakenPercent=-50]	165,392,1733	Crouch; Extra Plating
+G025	0	3	T0[p24(12,100) p54(1,100,4)+aura:Mechanic_IsBurning=1]	178,901,1937	Immolate; Fel Immolate; Fel Exhaust
+G026	0	3	T0[p68(40,100) p135(100,100)]	282,836,2209	Explode; Baneling Burst; Burst
+G027	3	3	T0[p50(100,2)+aura:Mod_DamageTakenPercent=100]	362,2071,2205	Howl; Roar of the Dead
+G028	0	3	T0[p24(10,100) p26(100,2)+aura:Mod_SpeedPercent=100]	389,838,851	Overtune; Centrifugal Hooks; Vicious Streak
+G029	3	3	T0[p50(100,2)+aura]	513,2062,2360	Whirlpool; Sewage Eruption; Void Tremors
+G030	5	3	T0[p178(1,100,2,149,1)+aura:turnLock=1]	580,996,2380	Food Coma; Lullaby; Stay a While and Listen
+G031	5	3	T0[p24(40,100)]	586,1076,1343	Gift of Winter Veil; Greench's Gift; Fist of the Forest
+G032	2	3	T0[p31(141,1) p136(1) p136(1) p31(141)]	667,763,835	Aged Yolk; Sear Magic; Eggnog
+G033	4	3	T0[p24(10,100) p158(-) p139(100)]	780,1356,1963	Death Grip; Inferno Herding; Wind Buffet
+G034	3	3	T0[p24(25,100) p50(1,100,2)+aura:Mod_HealingTakenPercent=-50]	792,1055,1731	Darkflame; Breath of Sorrow; Nightmare
+G035	4	3	T0[p31(113,1) p31(113)] T0[p24(50,100)]	1019,1360,2010	Niuzao's Charge; Slow and Steady; Snail Mail
+G036	0	3	T0[p24(7,100) p24(7,100) p24(7,100)]	1022,1100,1585	Plot Twist; Blessed Hammer; Alert!
+G037	0	3	T0[p27(10,100,5,30)]	1372,2377,2473	Deep Bite; Holy Blast; Otter Breath
+G038	0	2	T0[p24(14,100) p158(-) p32(50,100)]	121,2294	Death Coil; Soul Steal
+G039	3	2	T0[p24(25,100)] T0[p24(25,100)] T0[p24(25,100)]	124,1533	Rampage; Eye Beam
+G040	0	2	T0[p24(10,100) p54(1,100,5)+aura:Mechanic_IsPoisoned=1]	152,398	Poison Fang; Poison Lash
+G041	1	2	T0[p24(9,80) p24(9,80,1) p24(9,80,1) p50(200,4)+aura]	167,985	Nut Barrage; Make it Rain
+G042	1	2	T0[p222(25,100,40) p158(-) p26(100,1)+aura:Mod_DamageTakenPercent=25]	186,2511	Reckless Strike; Hubris
+G043	5	2	T0[p50(100,5)+aura:Mechanic_IsObject=1]	190,2102	Cyclone; Void Cyclone
+G044	0	2	T0[p26(100,5)+aura:Stat_CritChance=50]	197,791	Adrenal Glands; Stimpack
+G045	3	2	T0[p26(100,1)+aura:Mod_DamageDealtPercent=125]	208,1720	Supercharge; Overpowered
+G046	1	2	T0[p26(100,1)+aura:Mod_DamageDealtPercent=100]	216,223	Inner Vision; Focus Chi
+G047	0	2	T0[p54(100,5)+aura]	232,2101	Swarm of Flies; Swarm of Bees
+G048	3	2	T0[p24(10,100,1) p29(10,100,64) p24(10,100,1) p29(10,100,64)]	250,2477	Spiderling Swarm; Shiverweb Swarm
+G049	0	2	T0[p24(15,100) p59(10,100)]	253,2518	Comeback; Arcane Riposte
+G050	4	2	T0[p24(6,100) p24(6,100) p24(6,100) p23(6,101) p23(6,101) p23(6,101) p80(200,9)+aura:Mod_HealingTakenPercent=25/Mod_PetTypeDamageDealtPercent=10/Mod_PetType_ID=6/Weather_Moonlight=1]	258,979	Starfall; Moon Tears
+G051	0	2	T0[p50(100,4)+aura:Mechanic_IsPoisoned=1]	270,2442	Glowing Toxin; Slow Unmaking
+G052	5	2	T0[p26(100,2)+aura] T0[p22(100)] T0[p23(70,100,20) p49(100)+aura]	278,1024	Repair; Reboot
+G053	0	2	T1[] T0[p76(45,100)+aura:Mod_DamageDealtPercent=10]	297,459	Pump; Wind-Up
+G054	3	2	T0[p23(12,100,20) p23(12,100,20) p23(12,100,20)]	298,1736	Inspiring Song; For Adventure!
+G055	0	2	T0[p50(100,5)+aura:Add_FlatDamageTaken=5]	305,592	Exposed Wounds; Wild Magic
+G056	2	2	T0[p24(10,100) p177(149) p131(100)+aura:Mechanic_IsStunned=1/turnLock=1]	308,2404	Counterspell; Nibble
+G057	0	2	T0[p24(7,100) p24(7,100) p24(7,100) p85(69,100) p85(69,100)]	319,419	Magma Wave; Tidal Wave
+G058	5	2	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=326]	325,2398	Beaver Dam; Weald Wall
+G059	8	2	T0[p26(200,2)+aura:Mechanic_IsUnderground=1/swapInLock=1/swapOutLock=1/turnLock=1/untargettable=1 p26(100,2)+aura:Mechanic_IsObject=1]	330,828	Sons of the Flame; Sons of the Root
+G060	0	2	T0[p24(15,100) p52(1,100,2)+aura:Mechanic_IsWebbed=1/swapOutLock=1]	339,2476	Sticky Web; Icy Web
+G061	0	2	T0[p24(10,100) p158(-) p24(10,66) p24(10,33)]	355,420	Triple Snap; Slicing Wind
+G062	0	2	T0[p26(100,9)+aura:Mod_SpeedPercent=25 p26(200,9)+aura:Mod_SpeedPercent=25 p26(200,9)+aura:Mod_SpeedPercent=25]	366,980	Dazzling Dance; Moon Dance
+G063	0	2	T0[p24(10,100) p50(1,100,3)+aura:Mechanic_IsWebbed=1]	382,2478	Brittle Webbing; Frostbite Webbing
+G064	0	2	T0[p24(40,50)]	390,625	Demolish; Ice Spike
+G065	0	2	T0[p24(15,100) p158(-) p384(10,100)]	412,504	Gnaw; Alpha Strike
+G066	3	2	T0[p96(40,50,77)]	423,2431	Blood in the Water; Feast
+G067	3	2	T0[p96(40,50,82)]	442,517	Spectral Strike; Nocturnal Strike
+G068	0	2	T1[p31(32)] T0[p24(10,100) p32(100,100)]	449,2509	Absorb; Life Sap
+G069	3	2	T0[p222(25,100,40) p85(69,100) p85(69,100)]	456,1895	Clean-Up; Sniff Out
+G070	3	2	T0[p24(10,100) p50(1,100,2)+aura:Mechanic_IsBlind=1/Stat_Accuracy=-50]	463,1020	Flash; Lens Flare
+G071	5	2	T0[p24(20,100) p158(-) p107(100)]	466,2012	Nether Gate; Return to Sender
+G072	4	2	T0[p24(10,100) p50(1,100,2)+aura:Mod_DamageDealtPercent=-25 p26(100,2)+aura:Mod_DamageDealtPercent=25]	486,869	Drain Power; Darkmoon Curse
+G073	3	2	T0[p24(10,100) p26(100,1)+aura:Mod_SpeedPercent=-100/Special_BlockedAttackCount=1/swapOutLock=1]	506,2084	Cocoon Strike; Mummy Wrap
+G074	0	2	T0[p24(18,100) p54(100,2,1)+aura]	514,2082	Wild Winds; Gale Slash
+G075	0	2	T0[p24(10,100) p50(1,100,3)+aura:Mod_DamageDealtPercent=-25]	524,784	Squawk; Shriek
+G076	0	2	T0[p50(100,4,1)+aura:Stat_Accuracy=-25 p159(-) p50(100,4,1)+aura:Stat_Accuracy=-25 p159(-) p50(100,4,1)+aura:Stat_Accuracy=-25]	527,1010	Stench; Inebriate
+G077	5	2	T0[p26(100,2)+aura:Mod_DamageDealtPercent=150/Mod_SpeedPercent=-30]	536,2253	Prowl; Shadowmeld
+G078	0	2	T1[p79(20,10000) p116(-)] T1[p79(20,-10000) p116(-)] T0[p24(15,100)]	563,2009	Quick Attack; Express Delivery
+G079	8	2	T1[p28(100)+aura:Stat_Dodge=100] T1[p49(100)+aura:Stat_Dodge=100 p145(100)] T0[]	568,1583	Feign Death; Warning!
+G080	3	2	T0[p26(100,9)+aura:maxHealthBonus=500 p116(-) p116(-) p116(-) p23(28,100,20)]	576,611	Perk Up; Ancient Blessing
+G081	5	2	T0[p26(100,2)+aura:swapOutLock=1/turnLock=1]	598,2480	Emerald Dream; Spa Day
+G082	5	2	T0[p52(100,1)+aura:Mechanic_IsStunned=1/turnLock=1]	600,2058	Time Stop; Knot of Snakes
+G083	1	2	T0[p24(45,50)]	607,609	Cataclysm; Instability
+G084	1	2	T0[p24(35,100) p158(-) p24(15,200)]	621,1003	Stone Rush; Gold Rush
+G085	5	2	T0[p50(100,9)+aura:Mechanic_IsBomb=1/Mechanic_IsObject=1 p49(200)+aura:Mechanic_IsBomb=1/Mechanic_IsObject=1]	634,1080	Minefield; Booby-Trapped Presents
+G086	0	2	T0[p50(100,3)+aura:Mechanic_IsBomb=1]	636,1072	Sticky Grenade; Explosive Brew
+G087	4	2	T0[p230(100,4,68,1)+aura p158(-) p135(100,1)]	652,2500	Haunt; Deadly Dreaming
+G088	5	2	T0[p50(100,9,1)+aura:Mechanic_IsObject=1]	670,811	Snap Trap; Magma Trap
+G089	3	2	T0[p141(27,100)]	741,1922	Whirlwind; Storm Coil
+G090	1	2	T0[p24(20,100) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	754,942	Screeching Gears; Frying Pan
+G091	3	2	T0[p31(113,1) p31(113)] T0[p24(50,100)]	767,773	Holy Charge; Shot Through The Heart
+G092	0	2	T0[p24(4,100) p24(4,100) p24(4,100) p24(3,100,1) p24(3,100) p24(3,100) p22(7)]	768,2064	Omnislash; Tea Party
+G093	3	2	T1[p79(20,10000) p116(-)] T1[p79(20,-10000) p116(-)] T0[p53(25,100)]	770,776	Restoration; Love Potion
+G094	4	2	T0[p141(36,100)]	779,1786	Thunderbolt; Thunderclap
+G095	0	2	T0[p24(10,100)+aura:Mechanic_IsBleeding=1 p54(1,100,5,1)+aura:Mechanic_IsBleeding=1]	803,943	Rip; Chop
+G096	4	2	T0[p24(30,100) p50(1,100,2)+aura:Mod_SpeedPercent=-50]	912,1572	Quicksand; Squeeze
+G097	0	2	T0[p50(100,3)+aura:Add_FlatDamageTaken=8]	919,2237	Black Claw; Razor Talons
+G098	4	2	T0[p24(20,100) p177(149) p131(100)+aura:Mechanic_IsStunned=1/turnLock=1]	938,1077	Interrupting Jolt; Spin Kick
+G099	0	2	T0[p24(15,100) p26(100,1)+aura:Add_FlatDamageTaken=-5]	962,1005	Ironbark; Goldskin
+G100	3	2	T0[p23(22,100,20) p26(100,3)+aura:Mod_DamageDealtPercent=25]	1012,1573	Giant's Blood; I Am Broot!
+G101	4	2	T1[p31(32)] T0[p24(20,100) p158(-) p32(100,100)]	1016,2403	Feed; Unleash Life
+G102	8	2	T1[p26(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-)] T0[p145(100) p26(100,1)+aura:Mod_DamageDealtPercent=100/Mod_SpeedPercent=100]	1103,1378	Righteous Inspiration
+G103	0	2	T0[p24(15,100)+aura:Mechanic_IsBleeding=1 p50(1,100,1,1)+aura:Mod_DamageDealtPercent=-25]	1108,1359	Bark; Blazing Yip
+G104	4	2	T0[p23(100) p23(24,100,20) p23(24,100,20)]	1109,1402	The Good Stuff; Mother's Milk
+G105	3	2	T0[p24(8,100) p24(7,100) p24(6,100) p50(100,1)+aura:Mod_DamageTakenPercent=50]	1116,1443	Call the Pack
+G106	8	2	T1[p28(100)+aura:Stat_Dodge=100] T1[p145(100) p49(100)+aura:Stat_Dodge=100] T0[p22(-)]	1125,1936	Portal; Warp
+G107	0	2	T0[p24(100)]	1334,1335	Plushie Rush; Rawr!
+G108	0	2	T0[p23(100)]	1336,1338	Who's The Best Elekk In The Whole World?; Cute As A Button
+G109	0	2	T0[p384(25,100) p385(18,100)]	1353,2430	Arcane Slash; Scrabble
+G110	0	2	T0[p226(13,100,13,34)]	1407,2467	Deep Burn; Personal Inferno
+G111	5	2	T0[p24(40,100) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	1536,2512	Arcane Dash; Ice Age
+G112	2	2	T0[p24(10,100) p158(-) p139(100)]	1687,2289	Inferno Herding; Meat Hook
+G113	1	2	T0[p24(20,100) p26(100,3)+aura:Mod_DamageDealtPercent=25]	1740,1741	For The Alliance!; For The Horde!
+G114	4	2	T0[p24(10,100) p158(-) p107(100)]	1765,2384	Phase Punch; Hammer
+G115	1	2	T0[p24(15,100) p26(100,3)+aura:Mod_DamageDealtPercent=25]	1965,2011	Frenzy; Hate Mail
+G116	4	2	T0[p24(40,100)]	2097,2471	Azerite Spike; Rend Flesh
+G117	0	2	T0[p24(10,100) p50(100,5,1)+aura:Add_PeriodicDamageTaken=7]	2113,2232	Toxic Bite; Toxic Spray
+G118	0	2	T0[p85(71) p24(12,100) p24(12,100) p24(12,100) p24(12,100)]	2247,2526	Jackhammer; Hammering Drill
+G119	8	2	T0[p112(5,100,1) p112(5,100,1)]	2347,2348	Raise Dead; Mass Resurrection
+G120	1	2	T0[p27(10,100,10,30)]	2400,2401	Furious Flapping; Face Punch
+G121	0	1	T0[p52(100,2)+aura:Mechanic_IsInvisible=1/turnLock=1 p24(50,100)]	7	Alexander's Hand
+G122	3	1	T1[p31(91)] T0[p24(25,100) p158(-) p138(91,1,52) p29(5,100,91) p29(5,100,91) p29(5,100,91)]	120	Howling Blast
+G123	0	1	T0[p385(25,100) p384(18,100)]	122	Tail Sweep
+G124	3	1	T0[p24(20,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25]	155	Hiss
+G125	2	1	T1[p31(28)] T1[p31(28,100)] T0[p24(20,100) p29(10,100,28)]	158	Counterstrike
+G126	4	1	T0[p26(100,1)+aura:Mechanic_IsUnderground=1/untargettable=1] T0[p222(30,100,40) p49(200)+aura:Mechanic_IsUnderground=1/untargettable=1]	159	Burrow
+G127	1	1	T1[p31(32)] T0[p24(12,100) p158(-) p32(100,100)]	160	Consume
+G128	0	1	T0[p24(10,100) p26(100,3)+aura:Mod_SpeedPercent=75]	162	Adrenaline Rush
+G129	0	1	T0[p31(113,1) p31(113)] T0[p24(50,100)]	169	Deep Breath
+G130	4	1	T0[p26(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p222(30,100,40) p49(200)+aura:Mechanic_IsFlying=1/untargettable=1]	170	Lift-Off
+G131	3	1	T0[p24(27,100) p80(200,9)+aura:Mechanic_IsBurning=1/Weather_BurntEarth=1]	172	Scorched Earth
+G132	5	1	T0[p50(100,3,3)+aura:Mechanic_IsObject=1]	176	Volcano
+G133	4	1	T0[p24(30,100) p158(-) p29(10,100,34)]	179	Conflagrate
+G134	0	1	T0[p26(100,5)+aura:Stat_Accuracy=25 p26(100,5)+aura:Stat_Accuracy=25 p26(100,5)+aura:Stat_Accuracy=25]	188	Accuracy
+G135	5	1	T0[p24(45,100) p80(200,5)+aura:Add_FlatDamageDealt=0/Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=10/Weather_LightningStorm=1]	204	Call Lightning
+G136	3	1	T0[p24(27,100) p80(200,9)+aura:Mechanic_IsChilled=1/Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=7/Weather_Blizzard=1]	206	Call Blizzard
+G137	5	1	T0[p24(50,100)] T0[p31(114,1) p31(114)] T0[p31(114,1) p31(114)]	209	Ion Cannon
+G138	0	1	T0[p54(100,3)+aura]	212	Siphon Life
+G139	0	1	T0[p54(100,9)+aura]	214	Death and Decay
+G140	5	1	T0[p50(100,4)+aura]	218	Curse of Doom
+G141	0	1	T0[p24(18,100) p29(18,100,22)]	221	Takedown
+G142	3	1	T0[p85(161) p26(100,2)+aura:Mod_DamageTakenPercent=-50]	225	Staggered Steps
+G143	4	1	T0[p24(30,100) p177(149) p172(1,82,1)+aura:Mechanic_IsStunned=1/turnLock=1]	226	Fury of 1,000 Fists
+G144	3	1	T0[p23(9,100) p23(9,100) p23(9,100) p80(200,9)+aura:Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=9/Weather_Rain=1]	230	Cleansing Rain
+G145	1	1	T0[p27(10,100,10,30) p177(149) p52(1,25,1)+aura:Mechanic_IsInvisible=1/turnLock=1]	233	Frog Kiss
+G146	5	1	T0[p26(100,2)+aura:swapInLock=1/swapOutLock=1/turnLock=1]	247	Hibernate
+G147	0	1	T0[p24(15,100) p52(1,100,2)+aura:swapOutLock=1]	249	Grasp
+G148	0	1	T0[p26(200,4)+aura:Stat_Accuracy=50/Stat_CritChance=25 p26(200,4)+aura:Stat_Accuracy=50/Stat_CritChance=25 p26(200,4)+aura:Stat_Accuracy=50/Stat_CritChance=25]	252	Uncanny Luck
+G149	0	1	T0[p63(100,2)+aura]	254	Tranquility
+G150	5	1	T0[p24(45,100) p80(200,5)+aura:Mechanic_IsBlind=1/Mod_HealingTakenPercent=-50/Stat_Accuracy=-10/Weather_Darkness=1]	256	Call Darkness
+G151	4	1	T0[p26(100,2)+aura]	259	Invisibility
+G152	1	1	T0[p26(100,2)+aura:Mod_DamageDealtPercent=100]	263	Crystal Overload
+G153	0	1	T0[p52(100,2)+aura:Mechanic_IsFlying=-1 p24(20,100)]	265	Boulder Toss
+G154	0	1	T0[p63(100,5)+aura]	268	Photosynthesis
+G155	5	1	T0[p63(100,1)+aura]	273	Wish
+G156	0	1	T0[p66(20,100,100)]	276	Swallow You Whole
+G157	5	1	T0[p67(100)]	277	Life Exchange
+G158	2	1	T0[p26(100,1)+aura:Mod_DamageTakenPercent=50]	279	Heartbroken
+G159	3	1	T0[p26(100,1)+aura:unkillable=1]	283	Survival
+G160	0	1	T0[p75(45,100)+aura:Mechanic_IsObject=1]	293	Launch Rocket
+G161	0	1	T0[p24(10,100) p24(6,100) p24(6,100)]	299	Arcane Explosion
+G162	0	1	T1[] T0[p77(45,100,1)+aura]	301	Lock-On
+G163	0	1	T1[] T0[p78(12,70,10,70)+aura:swapOutLock=1]	303	Plant
+G164	0	1	T0[p50(100,10)+aura:Add_FlatDamageTaken=3]	314	Mangle
+G165	0	1	T0[p26(100,5)+aura:Add_FlatDamageTaken=-4]	315	Spiked Skin
+G166	0	1	T0[p26(100,5)+aura]	318	Thorns
+G167	0	1	T0[p50(100,9)+aura:Mod_DamageTakenPercent=25 p159(-) p50(100,9)+aura:Mod_DamageTakenPercent=25 p159(-) p50(100,9)+aura:Mod_DamageTakenPercent=25 p159(-) p135(200,100)]	321	Unholy Ascension
+G168	1	1	T0[p86(25,100,2,324,2)+aura:Mechanic_IsFlying=1/swapOutLock=1]	323	Gravity
+G169	8	1	T0[p28(100)+aura:Mechanic_IsObject=1/Special_BlockedAttackCount=2/Special_ObjectRedirectionAuraID=333]	334	Decoy
+G170	3	1	T0[p24(30,100) p158(-) p29(20,100,77)]	345	Maul
+G171	1	1	T0[p24(7,50) p24(8,50) p24(7,50) p24(8,50) p50(200,2)+aura]	352	Banana Barrage
+G172	0	1	T0[p24(10,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25]	357	Screech
+G173	0	1	T0[p54(100,6)+aura:Mechanic_IsPoisoned=1]	359	Sting
+G174	0	1	T0[p54(100,3)+aura:Mechanic_IsPoisoned=1/Mod_DamageTakenPercent=25]	369	Acidic Goo
+G175	0	1	T0[p24(10,100) p52(1,100,5)+aura:swapOutLock=1]	371	Sticky Goo
+G176	0	1	T0[p24(10,100) p62(10,100)]	377	Trample
+G177	1	1	T1[p157(91,1) p23(10,100,20) p104(10,100,64,20) p31(91)] T1[p31(91,1)] T0[p24(10,100)]	383	Leech Life
+G178	3	1	T0[p26(100,3)+aura:Mechanic_IsBomb=1/Mechanic_IsObject=1]	386	XE-321 Boombot
+G179	4	1	T1[p79(30,1)] T1[p79(30,-1)] T0[p24(7,100) p24(7,100) p24(14,100)] T0[p24(7,100) p24(7,100) p24(14,100)] T0[p24(7,100,1) p24(7,100,1) p24(14,100)]	387	Tympanic Tantrum
+G180	0	1	T0[p26(100,5)+aura]	396	Soothing Mists
+G181	3	1	T0[p50(100,1)+aura]	400	Entangling Roots
+G182	5	1	T0[p50(100,2)+aura]	402	Stun Seed
+G183	5	1	T0[p24(15,100) p24(15,100) p24(15,100) p80(200,9)+aura:Mod_HealingDealtPercent=25/Mod_MaxHealthPercent=50/Weather_Sunlight=1]	404	Sunlight
+G184	3	1	T0[p24(20,100) p59(20,100)]	405	Early Advantage
+G185	0	1	T0[p26(100,9)+aura]	409	Immolation
+G186	0	1	T0[p24(12,100) p54(1,100,4)+aura:Mechanic_IsBleeding=1]	411	Woodchipper
+G187	0	1	T0[p24(15,100) p29(10,100,52)]	413	Ice Lance
+G188	3	1	T0[p24(20,100) p52(1,100,2)+aura:Mechanic_IsChilled=1/swapOutLock=1]	414	Frost Nova
+G189	0	1	T0[p24(10,100) p50(1,100,2)+aura:Mechanic_IsChilled=1/Mod_SpeedPercent=-25]	416	Frost Shock
+G190	5	1	T0[p50(100,3)+aura]	418	Geyser
+G191	0	1	T0[p26(100,5)+aura:Mod_SpeedPercent=25/Stat_Accuracy=25/Stat_CritChance=25]	426	Focus
+G192	5	1	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=434]	433	Jade Barrier
+G193	5	1	T1[p49(200)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=438 p49(200)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=438] T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=438]	439	Onyx Wall
+G194	5	1	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=443]	444	Prismatic Barrier
+G195	0	1	T0[p24(10,100) p54(1,100,2)+aura:Add_FlatDamageTaken=2]	447	Corrosion
+G196	3	1	T0[p222(32,100,60)]	450	Expunge
+G197	5	1	T0[p24(45,100) p80(200,5)+aura:Add_FlatDamageTaken=-5/Stat_Accuracy=-10/Weather_Sandstorm=1]	453	Sandstorm
+G198	5	1	T0[p24(20,100) p158(-) p145(100)]	457	Sweep
+G199	5	1	T0[p24(45,100) p80(200,9)+aura:Mod_HealingDealtPercent=25/Mod_MaxHealthPercent=50/Weather_Sunlight=1]	460	Illuminate
+G200	3	1	T0[p24(20,100) p29(20,100,82)]	461	Light
+G201	5	1	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=464]	465	Illusionary Barrier
+G202	0	1	T0[p54(100,2)+aura]	468	Agony
+G203	1	1	T0[p24(10,100) p50(1,100,1)+aura:Mod_DamageDealtPercent=-50/Mod_SpeedPercent=-50]	471	Weakness
+G204	0	1	T1[p31(28)] T1[p31(28,1)] T0[p24(15,100) p29(10,100,28)]	472	Blast of Hatred
+G205	4	1	T0[p24(20,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25]	475	Eyeblast
+G206	3	1	T0[p85(124) p24(25,100) p50(1,100,5)+aura p229(100,1,1,124)+aura:Special_TypeOverride=4]	476	Rot
+G207	5	1	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=480]	479	Ice Barrier
+G208	4	1	T0[p222(25,100,40) p177(149) p172(1,52,1,25)+aura:Mechanic_IsStunned=1/turnLock=1]	481	Deep Freeze
+G209	1	1	T0[p24(20,100) p29(10,100,54)]	483	Psychic Blast
+G210	3	1	T0[p26(100,2)+aura:Mod_DamageDealtPercent=50]	488	Amplify Magic
+G211	3	1	T0[p222(25,100,40) p158(-) p170(10,100,54,54)] T0[p222(25,100,40) p158(-) p170(10,100,54,54)] T0[p222(25,100,40) p158(-) p170(10,100,54,54)]	489	Mana Surge
+G212	3	1	T1[p49(100)+aura:Stat_Speed=99999 p116(-) p49(100)+aura:Stat_Dodge=200] T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T0[p26(100)+aura:Stat_Dodge=200]	490	Deflection
+G213	2	1	T0[p24(15,100)+aura:Mechanic_IsBleeding=1 p50(1,100,-1,1)+aura:Mod_DamageDealtPercent=-50]	492	Rake
+G214	4	1	T0[p50(100,1)+aura]	497	Soothe
+G215	0	1	T0[p24(16,100) p54(1,100,4)+aura:Mechanic_IsBurning=1]	501	Flame Breath
+G216	0	1	T0[p24(15,100) p54(1,100,2)+aura:Mechanic_IsBurning=1]	503	Flamethrower
+G217	1	1	T0[p24(10,50,1) p24(10,50,1) p24(10,50,1) p24(10,50,1) p50(50,3,127)+aura:Mod_SpeedPercent=-25]	507	Moth Balls
+G218	3	1	T0[p222(25,100,40) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	508	Moth Dust
+G219	0	1	T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-)] T0[p24(15,100)]	509	Surge
+G220	0	1	T0[p63(100,3)+aura]	511	Renewing Mists
+G221	0	1	T0[p24(10,100) p50(100,3)+aura:Mod_DamageTakenPercent=25]	515	Flyby
+G222	4	1	T0[p66(30,100,100)]	518	Predatory Strike
+G223	20	1	T0[p50(100,15)+aura p159(-) p50(1,100,15)+aura]	519	Apocalypse
+G224	0	1	T0[p26(100,3)+aura:Stat_CritChance=75]	521	Hawk Eye
+G225	10	1	T0[p168(100,2)+aura]	522	Nevermore
+G226	0	1	T1[p157(58,1) p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(-)+aura:Stat_Speed=99999 p116(-)] T0[p24(40,50)]	529	Belly Slide
+G227	1	1	T0[p24(30,100) p158(-) p24(13,200)]	532	Body Slam
+G228	3	1	T0[p23(24,100,20) p100(12,100,10,10,20) p100(12,100,10,10,20)]	533	Rebuild
+G229	0	1	T0[p24(17,100) p158(-) p384(10,100)]	535	Pounce
+G230	1	1	T0[p24(15,100) p104(30,100,1,20)] T0[p24(15,100) p104(30,100,1,20)]	538	Devour
+G231	4	1	T0[p23(15,100,20) p23(15,100,20) p23(15,100,20)]	539	Bleat
+G232	1	1	T0[p26(100,1)+aura]	541	Chew
+G233	4	1	T0[p26(100,1)+aura:Mechanic_IsUnderground=1/untargettable=1] T0[p222(30,100,40) p49(100)+aura:Mechanic_IsUnderground=1/untargettable=1]	564	Dive
+G234	0	1	T0[p24(15,100) p79(25,20,10000) p28(-)+aura]	566	Powerball
+G235	1	1	T0[p24(20,100) p156(149) p131(1,50)+aura:Mechanic_IsStunned=1/turnLock=1]	571	Horn Attack
+G236	4	1	T0[p24(36,100) p80(200,9)+aura:Critical_Damage_Bonus=25/Weather_Mud=1]	572	Mudslide
+G237	0	1	T0[p85(124) p26(100,5)+aura p229(100,1,1,124)+aura:Special_TypeOverride=7]	574	Nature's Ward
+G238	0	1	T0[p24(10,100) p50(100,4)+aura:Mechanic_IsChilled=1/Stat_Accuracy=-20]	575	Slippery Ice
+G239	3	1	T0[p53(25,100)]	578	Buried Treasure
+G240	0	1	T0[p24(10,100) p26(100,4)+aura:Mod_SpeedPercent=50]	579	Gobble Strike
+G241	0	1	T0[p24(3,100) p24(3,100) p24(3,100) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(5,100) p24(5,100) p24(5,100) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(7,100) p24(7,100) p24(7,100) p50(100,2)+aura:Mod_DamageTakenPercent=50]	581	Flock
+G242	4	1	T0[p26(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p222(30,100,40) p49(100,100)+aura:Mechanic_IsFlying=1/untargettable=1]	588	Devastate
+G243	3	1	T0[p141(24,100,54,4) p80(200,9)+aura:Weather_ArcaneStorm=1]	589	Arcane Storm
+G244	5	1	T0[p24(50,100) p52(100,2)+aura:swapOutLock=1] T0[p31(114,1) p31(114)] T0[p31(114,1) p31(114)]	593	Surge of Power
+G245	1	1	T0[p27(10,100,10,30) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	594	Sleeping Gas
+G246	3	1	T0[p24(27,100) p80(200,9)+aura:Mod_HealingTakenPercent=25/Mod_PetTypeDamageDealtPercent=10/Mod_PetType_ID=6/Weather_Moonlight=1]	595	Moonfire
+G247	5	1	T0[p50(100,3)+aura]	602	Time Bomb
+G248	5	1	T0[p50(100,2)+aura]	606	Elementium Bolt
+G249	4	1	T0[p28(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p222(30,100,40) p49(100,100)+aura:Mechanic_IsFlying=1/untargettable=1]	612	Proto-Strike
+G250	0	1	T1[p79(20,10000) p116(100)] T1[p79(20,-10000) p116(100)] T0[p24(15,100)]	616	Blinkstrike
+G251	5	1	T0[p50(100,2)+aura]	624	Ice Tomb
+G252	2	1	T0[p24(8,50) p24(8,50,1) p24(8,50,1) p24(8,50,1) p50(200,3)+aura]	628	Rock Barrage
+G253	0	1	T0[p24(12,100) p54(1,100,4)+aura:Mechanic_IsPoisoned=1]	630	Poisoned Branch
+G254	0	1	T0[p24(15,100) p52(1,100,2)+aura:swapOutLock=1]	631	Super Sticky Goo
+G255	0	1	T0[p54(10,100,5)+aura:Mechanic_IsPoisoned=1]	632	Confusing Sting
+G256	0	1	T0[p24(16,100) p54(100,2)+aura]	640	Toxic Smoke
+G257	1	1	T0[p24(9,50) p24(8,50,1) p24(9,50,1) p24(8,50,1) p50(200,3)+aura]	642	Egg Barrage
+G258	2	1	T1[p79(30,1)] T1[p79(30,-1)] T0[p24(12,100) p24(6,100,1) p24(6,100,1)] T0[p24(14,100) p24(7,100) p24(7,100)] T0[p24(16,100) p24(8,100,1) p24(8,100,1)]	644	Quake
+G259	3	1	T0[p24(10,100) p50(100,3)+aura:Mechanic_IsObject=1]	647	Bombing Run
+G260	3	1	T0[p24(13,100) p24(13,100) p24(13,100) p62(10,100)]	649	BONESTORM
+G261	0	1	T0[p24(17,100) p52(1,100,2)+aura:swapOutLock=1]	650	Bone Prison
+G262	3	1	T0[p24(40,100) p52(1,100,1)+aura:Mechanic_IsStunned=1/turnLock=1]	654	Ghostly Bite
+G263	0	1	T0[p24(16,100) p50(1,100,5)+aura]	657	Plagued Blood
+G264	0	1	T0[p68(15,100) p54(100,4)+aura:Mechanic_IsPoisoned=1 p135(100,100)]	663	Corpse Explosion
+G265	3	1	T0[p144(-) p61(50,100,120) p31(120)]	665	Consume Corpse
+G266	0	1	T0[p24(13,100) p50(1,100,3)+aura:Mod_DamageDealtPercent=25/Mod_DamageTakenPercent=50]	666	Rabid Strike
+G267	0	1	T0[p141(19,100,60,5)] T0[p141(19,100,60,5)] T0[p141(19,100,60,5)]	668	Dreadful Breath
+G268	2	1	T1[] T0[p54(100,4,3)+aura:Mechanic_IsObject=1]	710	Build Turret
+G269	0	1	T0[p54(100,4)+aura]	743	Creeping Fungus
+G270	4	1	T0[p24(10,100) p23(10,100) p54(1,100,1)+aura]	745	Leech Seed
+G271	2	1	T0[p50(100,2,3)+aura:Mechanic_IsObject=1]	746	Spore Shrooms
+G272	3	1	T0[p26(100,-1)+aura:Special_BlockedAttackCount=1]	751	Soul Ward
+G273	0	1	T0[p24(40,100) p158(-) p170(20,100,61)] T0[p31(114,1) p31(114)] T0[p31(114,1) p31(114)]	753	Solar Beam
+G274	0	1	T0[p24(12,100) p54(1,100,4)+aura]	756	Acid Touch
+G275	0	1	T0[p26(100,4)+aura:Stat_Accuracy=50/Stat_CritChance=25]	757	Lucky Dance
+G276	3	1	T0[p28(100)+aura:Special_BlockedAttackCount=1]	760	Shield Block
+G277	3	1	T0[p24(50,50) p194(-) p159(-) p52(100,1)+aura:Mechanic_IsStunned=1/turnLock=1]	762	Haymaker
+G278	3	1	T0[p24(25,100) p177(149) p172(56,1,56,1,25)+aura:Mechanic_IsStunned=1/turnLock=1]	769	Surge of Light
+G279	0	1	T0[p24(4,100) p24(4,100) p24(4,100) p24(3,100) p24(3,100) p24(3,100)]	774	Rapid Fire
+G280	2	1	T0[p24(20,100) p177(149) p52(1,25,1)+aura:Mechanic_IsStunned=1/turnLock=1]	775	Perfumed Arrow
+G281	0	1	T1[p79(20,10000,10000) p116(100)] T1[p79(20,-10000,10000) p116(100)] T0[p24(15,100)]	778	Charge
+G282	2	1	T0[p50(100,4)+aura:Mechanic_IsChilled=1]	786	Blistering Cold
+G283	5	1	T0[p26(100,-1)+aura]	794	Dark Rebirth
+G284	2	1	T0[p66(25,100,100)]	800	Impale
+G285	1	1	T0[p24(20,100) p104(20,100,1,20)] T0[p24(20,100) p104(20,100,1,20)]	802	Ravage
+G286	0	1	T0[p149(20,100)]	826	Weakening Blow
+G287	0	1	T0[p24(12,100)+aura:Mechanic_IsBleeding=1 p54(1,100,4,1)+aura:Mechanic_IsBleeding=1]	849	Huge, Sharp Teeth!
+G288	0	1	T0[p24(15,100) p50(1,100,2)+aura:Mechanic_IsBurning=1]	860	Flamethrower
+G289	0	1	T0[p26(100,4)+aura:Stat_Dodge=25]	905	Cute Face
+G290	4	1	T0[p26(100,2)+aura]	906	Lightning Shield
+G291	5	1	T0[p24(30,100) p52(1,100,3)+aura:swapOutLock=1]	909	Paralyzing Shock
+G292	0	1	T0[p24(18,100) p50(1,100,1)+aura:Mod_SpeedPercent=-25]	910	Sand Bolt
+G293	3	1	T0[p24(25,100) p50(1,50,1)+aura:Mechanic_IsBlind=1/Stat_Accuracy=-50]	913	Spectral Spine
+G294	4	1	T0[p26(100,1)+aura:Add_FlatDamageTaken=-10]	914	Spirit Spikes
+G295	3	1	T0[p24(25,100)] T0[p24(25,100)]	916	Haywire
+G296	3	1	T0[p24(25,100) p158(-) p104(25,100,1,20)]	917	Bloodfang
+G297	3	1	T0[p24(10,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25 p24(10,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25 p24(10,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25]	920	Primal Cry
+G298	4	1	T0[p24(5,100) p24(5,100,1) p24(5,100,1) p50(100,1)+aura:Mod_DamageTakenPercent=50] T0[p24(5,100) p24(5,100,1) p24(5,100,1) p50(100,1)+aura:Mod_DamageTakenPercent=50]	921	Hunting Party
+G299	3	1	T0[p23(24,100,20) p100(12,100,9,20) p100(12,100,9,20)]	922	Healing Stream
+G300	3	1	T0[p222(25,100,40) p50(1,100,2)+aura:Mod_SpeedPercent=-50]	929	Slither
+G301	1	1	T0[p27(20,100,5,40)]	930	Huge Fang
+G302	4	1	T0[p24(20,100) p50(100,4)+aura:Stat_CritChance=-100]	932	Croak
+G303	8	1	T0[p26(100,-1)+aura:Special_BlockedAttackCount=2]	934	Bubble
+G304	0	1	T0[p26(100,3)+aura:Stat_CritChance=50]	936	Caw
+G305	3	1	T1[p31(32)] T0[p24(18,100) p158(-) p32(100,100)]	937	Siphon Anima
+G306	4	1	T0[p24(20,100) p50(1,100,2)+aura]	940	Touch of the Animus
+G307	4	1	T0[p31(141,1) p31(141,1) p31(141,1) p136(1) p136(1) p136(1) p136(1) p31(141) p31(141) p31(141)]	941	High Fiber
+G308	4	1	T0[p26(100,3)+aura]	945	Heat Up
+G309	5	1	T0[p24(30,100) p26(100,3)+aura:Mod_DamageDealtPercent=25]	957	Evolution
+G310	1	1	T1[p79(20,10000,10000) p116(100)] T1[p79(20,-10000,10000) p116(100)] T0[p24(20,85)]	958	Trihorn Charge
+G311	5	1	T0[p26(100,3)+aura:Add_FlatDamageTaken=-10]	960	Trihorn Shield
+G312	4	1	T0[p23(12,100,20) p23(12,100,20) p23(12,100,20) p50(100,2)+aura:Stat_Accuracy=-25 p50(100,2)+aura:Stat_Accuracy=-25 p50(100,2)+aura:Stat_Accuracy=-25]	964	Autumn Breeze
+G313	0	1	T0[p26(100,3)+aura:Mod_DamageDealtPercent=100/Mod_DamageTakenPercent=100]	971	Wild Rage
+G314	0	1	T0[p96(28,80,55)]	974	Spirit Claws
+G315	3	1	T0[p26(100,1)+aura:Stat_Accuracy=-25/Stat_CritChance=100]	977	Uncertainty
+G316	0	1	T0[p24(17,100) p158(-) p384(8,100)]	983	SMCKTHAT.EXE
+G317	3	1	T0[p24(30,50) p194(-) p159(-) p23(30,100,20)]	989	Blingtron Gift Package
+G318	2	1	T0[p197(100,100)]	997	Vengeance
+G319	3	1	T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-) p49(100)+aura:Stat_Dodge=200] T0[p26(100)+aura:Stat_Dodge=200]	998	Ethereal
+G320	2	1	T0[p26(100,1)+aura] T0[p24(15,100) p24(15,100) p24(15,100)]	1007	Locust Swarm
+G321	3	1	T0[p24(8,100) p29(2,100,52) p24(8,100) p29(2,100,52) p24(8,100) p29(2,100,52) p80(200,9)+aura:Mechanic_IsChilled=1/Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=7/Weather_Blizzard=1]	1013	Call of Winter
+G322	3	1	T0[p50(1,100,1)+aura:Mechanic_IsBlind=1/Stat_Accuracy=-100]	1015	Blinding Powder
+G323	0	1	T0[p24(20,100) p24(20,100) p24(20,100) p135(200,100)]	1025	Armageddon
+G324	2	1	T0[p26(100,2)+aura:Mod_DamageDealtPercent=100]	1029	Dominance
+G325	2	1	T0[p24(9,100) p24(9,100) p24(9,100)]	1031	Jadefire Lightning
+G326	0	1	T0[p26(100,5)+aura]	1032	Celestial Blessing
+G327	3	1	T0[p24(11,100) p24(11,100) p24(11,100)]	1035	Spiritfire Beam
+G328	5	1	T0[p24(40,100) p158(-) p145(100)]	1036	Frill Blast
+G329	0	1	T0[p26(100,9)+aura:Stat_Accuracy=20 p26(100,9)+aura:Stat_Accuracy=20 p26(100,9)+aura:Stat_Accuracy=20]	1040	Nimbus
+G330	4	1	T0[p24(30,100) p54(50,3)+aura:Mechanic_IsBurning=1]	1041	Flame Jet
+G331	3	1	T1[p31(32)] T0[p62(10,100) p158(-) p32(300,100)]	1043	Drain Blood
+G332	4	1	T0[p26(100,2)+aura:Stat_Dodge=50]	1047	Frolick
+G333	4	1	T0[p50(1,100,1)+aura:Mechanic_IsBlind=1/Mechanic_IsPoisoned=1/Stat_Accuracy=-100]	1049	Blinding Poison
+G334	3	1	T0[p24(20,100) p29(20,100,21)]	1050	Puncture Wound
+G335	3	1	T0[p24(9,100) p24(9,100) p24(9,100) p80(200,9)+aura:Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=9/Weather_Rain=1]	1051	Acid Rain
+G336	3	1	T0[p26(100,2)+aura:Stat_CritChance=100]	1054	Going Bonkers!
+G337	4	1	T0[p23(20,100,20) p26(100,2)+aura:Stat_Accuracy=50/Stat_CritChance=50]	1062	Rain Dance
+G338	5	1	T0[p50(100,3)+aura]	1063	Pheromones
+G339	0	1	T0[p50(100,4)+aura:Add_FlatDamageTaken=4/Mod_SpeedPercent=-25]	1068	Forboding Curse
+G340	3	1	T0[p24(20,100) p52(1,100,5)+aura:swapOutLock=1]	1070	Skunky Brew
+G341	2	1	T0[p137(158,1,1)+aura p26(100,5)+aura]	1073	Spiny Carapace
+G342	8	1	T1[p28(100)+aura:Stat_Dodge=100] T1[p49(100)+aura:Stat_Dodge=100 p107(100)] T0[]	1084	Fade
+G343	0	1	T1[p26(100)+aura:Stat_CritChance=45] T1[p49(100)+aura:Stat_CritChance=45] T0[p24(17,100)+aura:Mechanic_IsBleeding=1]	1085	Magic Sword
+G344	0	1	T0[p26(200,5)+aura]	1087	Toxic Skin
+G345	1	1	T0[p24(9,80) p24(9,80) p24(9,80) p50(200,4)+aura]	1091	Bone Barrage
+G346	6	1	T0[p28(100,8)+aura:Special_BlockedAttackCount=1 p28(100,8)+aura:Special_BlockedAttackCount=1 p28(100,8)+aura:Special_BlockedAttackCount=1]	1101	Shieldstorm
+G347	3	1	T0[p85(161) p26(100,2)+aura]	1105	Reflective Shield
+G348	4	1	T0[p24(40,100) p52(100,1)+aura:Mechanic_IsStunned=1/turnLock=1]	1106	Falling Murloc
+G349	4	1	T0[p85(161) p26(100,3)+aura:Mod_DamageTakenPercent=-50]	1112	Tough n' Cuddly
+G350	0	1	T1[p50(1,100,3)+aura:Mod_DamageDealtPercent=25/Mod_DamageTakenPercent=50] T0[p24(13,100)]	1121	Greed Before Need
+G351	4	1	T0[p31(141,1) p136(1) p136(1) p31(141)]	1123	Disruption
+G352	4	1	T0[p31(141,1) p136(1) p136(1) p31(141) p23(20,100,20)]	1231	Consume Magic
+G353	0	1	T0[p26(100,4)+aura:Mod_DamageDealtPercent=25 p26(100,4)+aura:Stat_Accuracy=25]	1232	Anzu's Blessing
+G354	0	1	T0[p141(20,100)]	1273	Cleave
+G355	5	1	T0[p141(33,100)+aura:Mechanic_IsObject=1]	1287	Carpnado
+G356	1	1	T0[p24(14,100) p158(-) p32(100,100)]	1301	Pig Out
+G357	0	1	T0[p107(-)]	1337	Itchin' for a Stitchin'
+G358	6	1	T0[p26(100,6)+aura:Special_BlockedAttackCount=1 p223(100,6,5)+aura:Special_BlockedAttackCount=1 p223(100,6,5)+aura:Special_BlockedAttackCount=1]	1344	Refuge
+G359	0	1	T0[p52(100,1)+aura:Mechanic_IsStunned=1/turnLock=1]	1345	Nap Time
+G360	3	1	T0[p26(100,2)+aura:Stat_Dodge=33]	1347	Cute As A Button
+G361	8	1	T0[p26(200,2)+aura:swapInLock=1/swapOutLock=1/turnLock=1/untargettable=1 p26(100,2)+aura:Mechanic_IsObject=1]	1354	Puppies of the Flame
+G362	4	1	T0[p149(35,100)]	1357	Superbark
+G363	20	1	T0[p50(1,200,20)+aura p50(1,200,20)+aura p50(1,200,20)+aura]	1367	Greater Apocalypse
+G364	0	1	T0[p24(19,100) p54(1,20,1)+aura:Mechanic_IsPoisoned=1]	1369	Barbed Stinger
+G365	0	1	T0[p226(17,100,8,82)]	1371	Sneak Attack
+G366	5	1	T0[p26(100,2)+aura:Add_FlatDamageTaken=-15]	1380	Shell Armor
+G367	8	1	T0[p31(113,1) p31(113)] T0[p24(150,100)]	1381	Death Bleat
+G368	0	1	T0[p26(100,1)+aura:Mod_DamageDealtPercent=100/Mod_DamageTakenPercent=50]	1392	Enrage
+G369	4	1	T0[p23(16,100,20) p23(16,100,20) p23(16,100,20)]	1397	Haunting Song
+G370	3	1	T0[p85(124) p222(25,100,60) p158(-) p26(100,1)+aura:Mod_DamageDealtPercent=50 p229(100,1,124)+aura:Special_TypeOverride=3]	1398	Feathered Frenzy
+G371	5	1	T0[p26(100,2)+aura:swapInLock=1/swapOutLock=1/turnLock=1]	1408	Reforge
+G372	4	1	T0[p23(40,100,20)]	1410	Gift of the Naaru
+G373	5	1	T0[p141(36,100) p85(69) p85(69)]	1411	Grave Destruction
+G374	0	1	T1[p157(55,1) p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(-)+aura:Stat_Speed=99999 p116(-)] T0[p24(40,50)]	1412	When Elekks Fly
+G375	4	1	T0[p24(32,100)]	1438	Mighty Charge
+G376	6	1	T0[p23(45,100,20)] T0[p23(45,100,20)] T0[p23(45,100,20)]	1466	Stone Form
+G377	3	1	T0[p24(20,100) p24(20,100) p24(20,100) p26(100,10)+aura:Mod_DamageDealtPercent=50/Mod_DamageTakenPercent=-50 p26(100,10)+aura:Mod_DamageDealtPercent=50/Mod_DamageTakenPercent=-50]	1517	Fel Corruption
+G378	0	1	T0[p24(14,100) p24(4,100) p24(4,100)]	1531	Psionic Shockwave
+G379	5	1	T0[p141(40,100,54,10) p80(200,9)+aura:Weather_ArcaneStorm=1]	1532	Psionic Storm
+G380	5	1	T0[p26(100,5)+aura:Mod_DamageDealtPercent=25/Stat_CritChance=25]	1535	Murkmorphosis
+G381	3	1	T0[p23(22,100,20) p26(100,2)+aura:Mod_DamageDealtPercent=25]	1545	Preen
+G382	3	1	T0[p96(40,50,35)]	1555	Worst Fear
+G383	2	1	T0[p24(15,100) p50(100,1)+aura:Mod_DamageDealtPercent=-50/Mod_SpeedPercent=-50]	1556	Jar of Smelly Liquid
+G384	4	1	T0[p24(30,100) p54(1,100,2)+aura:Mechanic_IsPoisoned=1]	1557	Buuurp!
+G385	4	1	T0[p31(113,1) p31(113) p50(100,1)+aura] T0[p24(50,100)]	1560	Lumbering Charge
+G386	0	1	T0[p24(20,100) p24(10,100) p24(10,100)]	1587	Pound
+G387	0	1	T0[p24(15,100) p24(10,100) p24(10,100) p145(100)]	1594	Incineration Security Measures
+G388	0	1	T0[p24(20,100) p50(100,1)+aura:Mod_DamageTakenPercent=50 p145(100)]	1597	Arcane Annihilator
+G389	4	1	T0[p26(100,2)+aura]	1598	Unstable Shield
+G390	0	1	T0[p26(100,5)+aura:Mod_DamageDealtPercent=50/Mod_DamageTakenPercent=25]	1626	Primal Rage
+G391	4	1	T0[p26(100,2)+aura:Add_FlatDamageTaken=-15]	1627	Barrier Projector
+G392	0	1	T0[p24(20,100) p50(100,1)+aura:Mod_DamageDealtPercent=-25 p145(100)]	1670	Lightning Conductor
+G393	5	1	T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-) p49(100)+aura:Stat_Dodge=200 p49(100)+aura:Stat_Dodge=200 p49(100)+aura:Stat_Dodge=200] T0[p26(100)+aura:Stat_Dodge=200 p26(100)+aura:Stat_Dodge=200 p26(100)+aura:Stat_Dodge=200]	1679	Smoke Bomb
+G394	5	1	T0[p24(40,100) p85(124) p26(100,2)+aura p229(100,1,1,124)+aura:Special_TypeOverride=5]	1717	Discharge
+G395	5	1	T0[p26(100,3)+aura]	1754	Fire Shield
+G396	5	1	T0[p24(20,100) p158(-) p139(-)]	1756	Wing Buffet
+G397	4	1	T0[p26(15,100,2)+aura:Add_FlatDamageTaken=-15]	1758	Ironskin
+G398	5	1	T0[p50(100,3)+aura]	1760	Creeping Insanity
+G399	3	1	T0[p24(13,100) p24(13,100) p24(13,100) p62(30,100)]	1761	BONESTORM!
+G400	3	1	T0[p24(13,100) p24(13,100) p24(13,100) p62(50,100)]	1762	BONESTORM!!
+G401	2	1	T0[p24(11,100) p24(8,100) p24(8,100)]	1764	Cosmic Smash
+G402	5	1	T0[p26(100,3)+aura:Stat_CritChance=75]	1772	Warning Squawk
+G403	0	1	T0[p24(5,100) p24(5,100) p24(5,100) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(5,100) p24(5,100) p24(5,100) p50(100,2)+aura:Mod_DamageTakenPercent=50]	1773	Falcosaur Swarm!
+G404	0	1	T0[p24(25,100) p158(-) p24(12,200)]	1787	Feral Strike
+G405	3	1	T0[p50(200,9)+aura:Mod_SpeedPercent=-25 p50(200,9)+aura:Mod_SpeedPercent=-25 p50(200,9)+aura:Mod_SpeedPercent=-25]	1810	Temporal Anomaly
+G406	1	1	T0[p24(15,100) p54(1,100,2)+aura:Mechanic_IsBurning=1]	1890	Twilight Fire
+G407	6	1	T0[p26(2)+aura]	1905	Bend Time
+G408	4	1	T1[p24(20,200) p28(100)+aura:Stat_Dodge=100] T1[p145(100) p49(100)+aura:Stat_Dodge=100] T0[]	1912	Void Portal
+G409	0	1	T0[p24(30,100) p158(-) p107(100)]	1917	Hammer
+G410	0	1	T0[p24(20,100) p54(1,100,9,9)+aura:Mechanic_IsBurning=1]	1919	Firebomb
+G411	4	1	T0[p24(25,100) p52(1,100,3)+aura:swapOutLock=1]	1920	Clamp
+G412	2	1	T1[p79(20,10000,10000) p116(100)] T1[p79(20,-10000,10000) p116(100)] T0[p24(25,100)]	1921	Drill Charge
+G413	4	1	T0[p24(10,100) p158(-) p145(100)]	1944	Retrieve
+G414	0	1	T0[p24(15,100) p50(1,100,4)+aura:Mod_SpeedPercent=-25]	1945	Lick
+G415	5	1	T0[p24(5,100) p24(5,100) p24(5,100) p54(1,100,2)+aura:Mechanic_IsPoisoned=1 p54(1,100,2)+aura:Mechanic_IsPoisoned=1 p54(1,100,2)+aura:Mechanic_IsPoisoned=1]	1954	Poison Protocol
+G416	3	1	T0[p24(30,100) p50(1,100,5)+aura:Mechanic_IsChilled=1/Mod_SpeedPercent=-25]	1955	Flash Freeze
+G417	4	1	T0[p23(30,100,20) p100(15,100,2,20) p100(15,100,2,20)]	1956	Draconic Remedy
+G418	8	1	T0[p23(25,100,20)+aura] T0[p23(25,100,20)+aura] T0[p23(25,100,20)+aura]	1957	Reanimate
+G419	2	1	T0[p141(23,100)]	1959	Great Cleave
+G420	0	1	T0[p54(10,100,3)+aura:Mechanic_IsPoisoned=1]	1962	Tentacle Stab
+G421	4	1	T0[p54(100,2)+aura:Mechanic_IsPoisoned=1 p54(100,2)+aura:Mechanic_IsPoisoned=1 p54(100,2)+aura:Mechanic_IsPoisoned=1]	1966	Great Sting
+G422	2	1	T0[p24(20,100) p158(-) p145(-)]	1967	Void Gate
+G423	5	1	T0[p24(100,100)] T0[p31(114,1) p31(114)] T0[p31(114,1) p31(114)]	1968	Antaen Cannon
+G424	5	1	T0[p24(12,100) p24(12,100) p24(12,100) p145(100)]	1989	Shell Rush
+G425	5	1	T0[p26(100,5)+aura:maxHealthBonus=1000 p116(-)+aura:maxHealthBonus=1000 p116(-) p116(-) p23(35,100,20)]	1991	Ancient Knowledge
+G426	3	1	T0[p45(20,100,150)]	2024	Slow Digestion
+G427	3	1	T0[p97(20,100,150)]	2026	Rapid Consumption
+G428	5	1	T0[p26(100,2)+aura:swapInLock=1/swapOutLock=1/turnLock=1]	2065	Nap Time
+G429	8	1	T0[p26(25,100,4)+aura]	2070	Aura of Gonk
+G430	3	1	T0[p24(16,100) p24(16,100) p24(16,100) p24(16,100) p24(16,100)]	2086	Flame Cannon
+G431	3	1	T0[p24(16,100) p24(16,100) p24(16,100) p24(16,100) p24(16,100) p24(16,100)]	2087	Quaking Drill
+G432	2	1	T0[p24(30,100) p24(30,100) p24(30,100) p24(30,100) p24(30,100) p24(30,100)]	2089	The Big One
+G433	2	1	T0[p135(100)]	2090	Full Team Repair
+G434	2	1	T0[p24(10,100) p50(100,1)+aura:Mod_DamageDealtPercent=-50/Mod_SpeedPercent=-50 p50(100,1)+aura:Mod_DamageDealtPercent=-50/Mod_SpeedPercent=-50]	2092	Terrify
+G435	0	1	T0[p24(10,100) p24(10,50) p24(10,50) p24(10,50)]	2093	Multi-Stab
+G436	3	1	T0[p222(35,100,80) p222(35,100,80)]	2094	Zap
+G437	10	1	T0[p24(35,100) p135(100)]	2099	Sting
+G438	4	1	T0[p24(20,100) p24(20,100) p24(20,100)]	2104	Megalodon
+G439	3	1	T0[p254(10,100,33,300,20)]	2206	Eat the Fly
+G440	0	1	T0[p358(5,100,10,500,50) p104(5000,100,1) p248(100,5,302)+aura:Mod_DamageDealtPercent=25 p248(100,5,302)+aura:Mod_SpeedPercent=50]	2207	Evolving Bite
+G441	0	1	T0[p135(200)]	2210	Murder the Innocent
+G442	15	1	T0[p52(100,5)+aura:Mechanic_IsStunned=1/turnLock=1 p139(100)]	2212	Stunning Peck
+G443	4	1	T0[p24(10,100) p139(100)]	2214	Tail Smash
+G444	3	1	T0[p62(30,100)]	2223	Murder the Innocent
+G445	4	1	T1[p26(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-)] T0[p26(100,1)+aura:Special_BlockedAttackCount=100/Special_ObjectRedirectionAuraID=333]	2225	Annoying Shield
+G446	3	1	T0[p24(20,100) p24(5,100) p24(5,100)]	2229	Sonic Detonator
+G447	0	1	T0[p24(25,100)]	2230	Sonic Blast
+G448	0	1	T0[p26(100,4)+aura:Stat_Accuracy=-25/Stat_CritChance=75]	2236	Unstable Engineering
+G449	3	1	T0[p24(6,100) p24(6,100) p24(6,100) p24(6,100)]	2241	Omni Pummel
+G450	2	1	T0[p24(6,75) p24(6,75) p24(6,75) p24(6,75) p24(6,75) p24(6,75)]	2243	Elemental Gatling Gun
+G451	4	1	T0[p24(25,100) p139(100) p248(100,100,304)+aura p360(304)]	2246	The Biggest Hammer
+G452	2	1	T0[p24(15,100) p24(10,100) p24(10,100) p50(100,2)+aura:Mechanic_IsChilled=1/swapOutLock=1 p50(100,2)+aura:Mod_SpeedPercent=-50]	2248	Coolant Flush
+G453	5	1	T0[p141(33,100) p26(100,3)+aura:Mod_DamageTakenPercent=25] T0[p141(33,100)] T0[p141(33,100)]	2250	Akunda's Wrath
+G454	4	1	T0[p141(25,100) p139(100)]	2251	Krag'wa's Wrath
+G455	0	1	T0[p54(100,9)+aura]	2255	Corrupted Ground
+G456	0	1	T0[p24(14,100) p54(1,100,3)+aura]	2258	Corrupted Touch
+G457	3	1	T0[p370(25,100,7)]	2283	Dragon's Call
+G458	2	1	T0[p24(20,100) p50(1,100,4)+aura:Mod_DamageDealtPercent=-25]	2288	Cluck
+G459	1	1	T0[p24(15,100) p54(1,100,2)+aura:Mechanic_IsPoisoned=1]	2291	Sludge Belch
+G460	5	1	T0[p363(20,100) p32(100,100) p363(20,100) p156(1) p32(100,100) p363(20,100) p156(1) p32(100,100)]	2292	Torment
+G461	3	1	T0[p24(25,100) p24(7,100) p24(7,100) p50(100,6)+aura:Mod_SpeedPercent=-50 p50(100,6)+aura:Mod_DamageDealtPercent=-25]	2293	Tremble in Fear
+G462	2	1	T0[p23(25,100,20)]	2297	Healing Wrap
+G463	2	1	T1[] T0[p54(100,4,3)+aura:Mechanic_IsObject=1]	2298	Raise Ally
+G464	3	1	T0[p24(10,100) p50(100,3)+aura]	2300	Necrotic Bomb
+G465	0	1	T0[p222(15,100,40) p222(15,100,40)]	2302	Hoof Pummel
+G466	3	1	T0[p24(15,100) p24(5,100) p24(5,100)]	2303	Wild Stallions
+G467	0	1	T0[p24(18,100) p52(1,100,1)+aura:swapOutLock=1]	2308	Slime Trail
+G468	2	1	T0[p24(14,100) p24(14,100) p24(14,100) p85(69,100) p85(69,100)]	2309	Tidal Wave X
+G469	3	1	T0[p24(25,100) p104(100,100,1,20)] T0[p24(25,100) p104(100,100,1,20)]	2310	Devour X
+G470	0	1	T0[p24(20,100) p50(100,5)+aura:Mod_DamageTakenPercent=25]	2311	Flyby X
+G471	3	1	T0[p50(100,2)+aura p50(100,2)+aura p50(100,2)+aura]	2312	Whirlpool X
+G472	0	1	T0[p27(15,100,5,50)]	2313	Pinch X
+G473	5	1	T0[p26(100,-1)+aura:Special_BlockedAttackCount=3]	2315	Bubble X
+G474	3	1	T0[p50(100,2)+aura:Mod_DamageTakenPercent=200]	2317	Howl X
+G475	3	1	T0[p150(100)+aura:Mechanic_IsObject=1/Mechanic_IsWall=1/Special_BlockedAttackCount=2/Special_BlockedFriendlyMode=1/Special_ObjectRedirectionAuraID=464]	2318	Illusionary Barrier X
+G476	2	1	T0[p23(40,100,20)]	2319	Healing Wrap X
+G477	5	1	T0[p24(35,100) p80(200,5)+aura:Add_FlatDamageDealt=0/Mod_PetTypeDamageDealtPercent=25/Mod_PetType_ID=10/Weather_LightningStorm=1]	2321	Call Lightning X
+G478	0	1	T0[p24(18,100)+aura:Mechanic_IsBleeding=1 p54(1,100,2,1)+aura:Mechanic_IsBleeding=1]	2322	Gnash
+G479	3	1	T0[p26(100,2)+aura:Add_FlatDamageTaken=-7]	2324	Spiked Shell
+G480	3	1	T0[p24(20,100) p139(100)]	2325	Tail Smash X
+G481	8	1	T0[p24(100,100) p54(1,100,2)+aura:Add_FlatDamageTaken=2]	2326	Corrosion X
+G482	5	1	T0[p24(50,100) p50(100,5,1)+aura:Add_PeriodicDamageTaken=7]	2327	Toxic Spray X
+G483	0	1	T0[p24(5,100) p24(5,100) p24(5,100) p24(5,100) p24(5,100)]	2328	Alert!!
+G484	0	1	T0[p24(17,100) p50(1,100,3)+aura]	2330	Siphon Gear
+G485	3	1	T0[p96(70,25,77)]	2331	Blood in the Water X
+G486	1	1	T0[p24(10,100) p158(-) p24(10,50) p384(20,100)]	2332	Spark X
+G487	3	1	T0[p28(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p222(30,100,40) p49(200)+aura:Mechanic_IsFlying=1/untargettable=1]	2333	Lift-Off X
+G488	0	1	T0[p24(2,100) p24(2,100) p24(2,100) p24(2,100) p24(2,100) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(2,100) p24(2,100) p24(2,100) p24(2,100) p24(2,100) p50(100,2)+aura:Mod_DamageTakenPercent=50] T0[p24(2,100) p24(2,100) p24(2,100) p24(2,100) p24(2,100) p50(100,2)+aura:Mod_DamageTakenPercent=50]	2334	Flock X
+G489	2	1	T1[p31(28,100)] T1[p31(28)] T0[p24(10,100) p29(50,100,28)]	2335	Counterstrike X
+G490	4	1	T0[p28(100)+aura:Mechanic_IsObject=1/Special_BlockedAttackCount=2/Special_ObjectRedirectionAuraID=333]	2336	Decoy X
+G491	0	1	T0[p24(10,100) p26(100,2)+aura:Critical_Damage_Bonus=50]	2342	Overcharge
+G492	0	1	T0[p24(12,100) p54(100,4)+aura]	2344	Mega Jolt
+G493	0	1	T0[p24(12,100) p24(5,100) p24(5,100)]	2346	Swipe
+G494	3	1	T0[p24(27,100) p80(200,9)+aura:Mechanic_IsPoisoned=1/Weather_Toxic_Gas=1]	2349	Toxic Fumes
+G495	5	1	T0[p24(12,100) p24(12,100) p24(12,100) p139(100)]	2351	Whirling Gears
+G496	3	1	T0[p226(20,100,20,21)]	2352	Sludge Claw
+G497	0	1	T0[p24(15,100) p157(21,1) p29(10,100,21)]	2353	Contagion Strike
+G498	5	1	T0[p50(100,2)+aura]	2358	Void Crash
+G499	3	1	T0[p141(27,100)+aura]	2361	Void Slap
+G500	5	1	T0[p24(30,100) p24(15,100) p24(15,100) p50(100,1)+aura:Mod_DamageTakenPercent=50]	2365	Mega Discharge
+G501	2	1	T0[p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50) p24(12,50)]	2366	MAYHEM
+G502	0	1	T0[p24(12,100) p24(12,100) p50(100,1)+aura]	2368	Double Zap
+G503	0	1	T0[p26(100,2)+aura:Mod_DamageTakenPercent=-25 p31(113,1) p31(113)] T0[p31(113,1) p31(113)] T0[p24(50,100) p54(100,3)+aura:Mechanic_IsBleeding=1 p49(100)+aura:Mod_DamageTakenPercent=-25]	2370	Sloth Strike
+G504	5	1	T0[p23(15,100) p23(15,100) p23(15,100) p80(200,9)+aura:Mod_HealingDealtPercent=25/Mod_MaxHealthPercent=50/Weather_Sunlight=1]	2376	Ray of Hope
+G505	4	1	T0[p24(12,100) p23(5,100,20) p24(7,100) p23(5,100,20) p24(7,100) p23(5,100,20)]	2378	Rays of Light
+G506	1	1	T0[p24(30,70)]	2381	Dark Bolt
+G507	5	1	T0[p26(100,-1)+aura:Special_BlockedAttackCount=2] T0[p22(-)]	2382	Deep Research
+G508	3	1	T0[p24(13,100) p24(10,100) p24(10,100)]	2385	Holy Nova
+G509	4	1	T0[p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p50(100,3)+aura p26(100,3)+aura]	2387	Mind Games
+G510	5	1	T0[p24(25,100) p50(1,100,1)+aura:Mechanic_IsBlind=1/Stat_Accuracy=-100]	2396	Ashes of Outland
+G511	0	1	T0[p24(10,100) p158(-) p24(10,50) p385(10,100)]	2402	Steady Snap
+G512	7	1	T1[p28(100)+aura:Stat_Dodge=100] T1[p49(100)+aura:Stat_Dodge=100 p139(100)] T0[]	2405	Return to Rest
+G513	3	1	T0[p24(27,100) p80(200,9)+aura:Critical_Damage_Bonus=25/Weather_Mud=1]	2406	Mud Rake
+G514	5	1	T0[p26(100,1)+aura:Mechanic_IsUnderground=1/untargettable=1] T0[p222(40,100,40) p49(100)+aura:Mechanic_IsUnderground=1/untargettable=1]	2407	Glop
+G515	3	1	T0[p24(5,100) p24(5,100) p24(5,100) p80(200,9)+aura:Mod_HealingDealtPercent=25/Mod_MaxHealthPercent=50/Weather_Sunlight=1]	2410	Sunshell
+G516	1	1	T0[p27(10,100,10,200)]	2411	Deep Snap
+G517	3	1	T0[p53(50,100)]	2412	Healing Crash
+G518	0	1	T1[] T0[p54(100,4,3)+aura:Mechanic_IsObject=1]	2413	Rapid Turret
+G519	2	1	T0[p24(120,100)]	2414	Hateful Strike
+G520	2	1	T0[p26(100,-1)+aura:Special_BlockedAttackCount=3]	2416	Metal Shield
+G521	3	1	T0[p24(10,100) p24(50,100) p24(50,100)]	2417	Slime Time
+G522	3	1	T0[p26(100,5)+aura:Add_FlatDamageTaken=-20]	2419	Gorm Chitin
+G523	0	1	T0[p54(100,3)+aura:Mechanic_IsPoisoned=1/Mod_DamageTakenPercent=25 p54(100,3)+aura:Mechanic_IsPoisoned=1/Mod_DamageTakenPercent=25 p54(100,3)+aura:Mechanic_IsPoisoned=1/Mod_DamageTakenPercent=25]	2420	Super Acidic Goo
+G524	2	1	T0[p26(100,2)+aura:Mod_DamageDealtPercent=150/Mod_SpeedPercent=-30]	2421	Glade Prowl
+G525	2	1	T0[p26(100,1)+aura:Stat_Dodge=100]	2422	Quick Dodge
+G526	2	1	T1[p31(32)] T0[p24(30,100) p158(-) p32(200,100)]	2423	Hungry Bite
+G527	0	1	T0[p226(10,100,20,21) p226(10,100,20,34)]	2424	Exposing Claw
+G528	1	1	T0[p24(24,100) p80(200,9)+aura:Critical_Damage_Bonus=25/Weather_Mud=1]	2425	Swamp Mud
+G529	2	1	T0[p24(20,100) p104(60,100,1,20)] T0[p24(20,100) p104(60,100,1,20)]	2426	Bloody Revenge
+G530	0	1	T0[p68(50,100) p68(50,100) p68(50,100) p135(100,100)]	2429	Massive Explosion
+G531	3	1	T0[p197(150,100)]	2432	Dark Fate
+G532	3	1	T0[p26(100,1)+aura]	2435	Mana Flare
+G533	5	1	T0[p26(100,2)+aura]	2440	Light of Creation
+G534	0	1	T0[p24(4,100) p24(6,100) p26(100,1)+aura:Stat_CritChance=100 p24(5,100) p49(100)+aura:Stat_CritChance=100]	2444	Wombo Combo
+G535	4	1	T0[p24(25,100) p50(100,2)+aura:Mechanic_IsObject=1]	2448	Whirlwind Dance
+G536	4	1	T0[p222(30,100,40) p54(1,25,3)+aura:Mechanic_IsBurning=1 p178(1,25,1,149,1,1)+aura:Mechanic_IsStunned=1/turnLock=1]	2449	Unrelenting Flames
+G537	3	1	T1[p50(100,2)+aura:Add_FlatDamageTaken=5] T0[p24(6,100)]	2451	First Croak
+G538	4	1	T0[p222(25,100,40) p26(100,1)+aura:Mechanic_IsUnderground=1/untargettable=1] T0[p49(100)+aura:Mechanic_IsUnderground=1/untargettable=1]	2453	Ambystan Snap
+G539	3	1	T0[p24(15,100) p29(15,100,64) p29(15,100,21)]	2454	Devour the Weak
+G540	6	1	T1[p145(100)] T0[p23(25,100,20) p23(25,100,20)]	2455	Deliberate Retreat
+G541	5	1	T1[p139(100)] T0[p24(15,100) p54(1,100,5)+aura:Mechanic_IsPoisoned=1]	2456	Terrifying Toxicity
+G542	2	1	T0[p24(10,100) p32(100,100) p24(10,100) p32(100,100) p24(10,100) p32(100,100)]	2457	Blood Harvest
+G543	5	1	T0[p54(1,100,4,1)+aura:Mechanic_IsBleeding=1 p54(1,100,4,1)+aura:Mechanic_IsBleeding=1 p54(1,100,4,1)+aura:Mechanic_IsBleeding=1]	2458	Whirling Talons
+G544	6	1	T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-) p49(100)+aura:Stat_Dodge=200] T0[p26(100,1)+aura:Mechanic_IsStunned=1/Stat_Dodge=200] T0[]	2460	Shell Fortress
+G545	0	1	T1[p79(25,20,10000) p28(-)+aura] T0[p24(5,100) p24(5,100) p24(5,100)]	2465	Furious Surge
+G546	3	1	T0[p23(30,100) p80(200,7)+aura:Mechanic_IsBurning=1/Weather_BurntEarth=1]	2466	Stoke the Flames
+G547	4	1	T0[p24(50,100) p158(-) p139(100)]	2469	Reaping Hook
+G548	2	1	T0[p24(15,100) p384(15,100)]	2472	Thundertongue
+G549	3	1	T0[p24(16,100) p54(1,100,4)+aura:Mechanic_IsBurning=1]	2474	Ottest Breath
+G550	5	1	T0[p50(200,9)+aura:Mod_SpeedPercent=-25 p50(200,9)+aura:Mod_SpeedPercent=-25 p50(200,9)+aura:Mod_SpeedPercent=-25 p85(69) p85(69)]	2482	Sticky Surge
+G551	2	1	T0[p26(100,1)+aura:Mechanic_IsFlying=1/untargettable=1] T0[p24(16,100) p24(8,100,1) p24(8,100,1) p49(100)+aura:Mechanic_IsFlying=1/untargettable=1]	2483	Anvil Drop
+G552	5	1	T0[p24(12,100) p26(100,3)+aura:Mod_DamageTakenPercent=25 p145(100)]	2484	Fight and Flight
+G553	6	1	T0[p50(100,9,1)+aura:Mechanic_IsObject=1]	2489	Table of Discontents
+G554	5	1	T0[p26(1)+aura]	2491	Nut-trition
+G555	3	1	T1[p79(25,10,10000)] T1[p26(100,2)+aura] T0[p24(5,85) p24(5,85) p24(5,85) p24(5,85) p24(5,85)]	2493	Zoomies
+G556	0	1	T0[p24(10,100) p54(1,100,5,1)+aura:Mechanic_IsBleeding=1]	2495	Feral Clawstorm
+G557	0	1	T0[p27(10,100,10,30)]	2498	Face Punch X
+G558	0	1	T0[p24(30,100)]	2499	Quantum Strike
+G559	5	1	T0[p23(18,100) p23(18,100) p23(18,100)]	2503	Elune's Grace
+G560	5	1	T0[p50(100,4)+aura:Add_FlatDamageTaken=7]	2505	Hatred Manifest
+G561	0	1	T0[p24(20,100) p158(-) p170(5,100,62,62)]	2508	Storm Breath
+G562	0	1	T0[p24(6,100) p24(5,100) p24(5,100)]	2513	Ravenholdt Rush
+G563	0	1	T0[p24(9,100) p24(9,100)]	2515	Windfury
+G564	1	1	T1[p28(100)+aura:Stat_Speed=99999 p116(-)] T1[p49(100)+aura:Stat_Speed=99999 p116(-)] T0[p24(20,100)]	2519	Bubble Blast
+G565	4	1	T0[p24(25,100) p50(1,100,2)+aura:Mechanic_IsBlind=1/Stat_Accuracy=-50]	2520	Dazzle
+G566	3	1	T0[p222(15,100,30) p222(15,100,30) p222(15,100,30)]	2523	Shadow Bolt Volley
+G567	0	1	T0[p24(13,100) p54(100,2)+aura]	2525	Alluring Spores
+G568	3	1	T0[p24(25,100) p177(149) p172(61,1,61,1,25)+aura:Mechanic_IsStunned=1/turnLock=1]	2527	Surge of Darkness
+G569	0	1	T0[p24(40,100) p158(-) p170(20,100,56)] T0[p31(114,1) p31(114)] T0[p31(114,1) p31(114)]	2528	Void Burst
+G570	3	1	T0[p24(8,100) p24(8,100) p24(8,100)]	2539	Fel Nova
+G571	20	1	T0[p50(1,100,19)+aura p26(30)+aura]	2542	Too Big!

@@ -87,14 +87,6 @@ test("Compare: not collected / upgrade / same-or-better, same rule as Capture; C
     eq((Store.Compare(pl2, 9699, 1, 40)), 2, "lower quality never an upgrade")
     local _, kept2 = Store.Capture(pl2, { species = 9699, name = "Fire Beetle", level = 4, quality = 2, display = 1 }); eq(kept2, false, "worse capture released -> not kept")
 end)
-test("Rename (nickname): validation, persistence, wire name 'nick|species', clear restores", function()
-    eq(Store.CleanNick("  Fluffy  Boy "), "Fluffy Boy", "trims and collapses spaces"); eq(Store.CleanNick(""), "", "empty clears"); eq(Store.CleanNick("ThisNameIsWayTooLong"), nil, "over 12 characters refused")
-    eq(Store.CleanNick("Bob'); DROP"), nil, "punctuation refused"); eq(Store.CleanNick("R2D2"), nil, "digits refused")
-    Store.AddPet(player, 2442, 3, nil, 1, 0)
-    eq(Store.SetNick(player, 2442, "Bessie"), true, "set"); eq(Store.Nick(player, 2442), "Bessie", "stored")
-    eq(Store.SetNick(player, 99999, "Nope"), false, "unowned species refused"); eq(Store.SetNick(player, 2442, "bad!"), false, "invalid refused"); eq(Store.Nick(player, 2442), "Bessie", "invalid keeps the old name")
-    eq(Store.SetNick(player, 2442, ""), true, "clear"); eq(Store.Nick(player, 2442), nil, "cleared")
-end)
 test("SyncCompanions: a known companion spell adds ONE level-1 journal pet; repeated syncs never duplicate or reset it", function()
     Store.COMP[1933] = { 55501 }
     local known = {}; local pl = setmetatable({ HasSpell = function(_, sp) return known[sp] == true end }, { __index = player })
@@ -121,6 +113,72 @@ test("XP gain keeps the pet's current health value", function()
     Store.AddPet(player, 257, 10, nil, 1, 0); at(9000); Store.SetHp(42, 257, 50)
     local p = Store.Pets(player)[257]; Store.GrantXP(player, 257, 10)
     eq(p.hp, 50, "health untouched by xp"); os.time = realTime
+end)
+-- ---------------------------------------------------------------- feeding (well fed)
+local FOODS = { [1001] = 1, [1002] = 25, [1003] = 10 }   -- entry -> food level (RequiredLevel; 0 counts as 1); anything else is not food (or a drink)
+function WorldDBQuery(sql)
+    local e = tonumber(sql:match("entry=(%d+)")); local lv = FOODS[e]
+    if not lv then return nil end
+    return { GetUInt32 = function() return lv end }
+end
+local bag = { [1001] = 5, [1002] = 5, [1003] = 5 }; local removed = {}
+local feeder = setmetatable({ GetItemCount = function(_, e) return bag[e] or 0 end, RemoveItem = function(_, e, n) bag[e] = bag[e] - n; removed[#removed + 1] = e end,
+                              GetGUID = function() return 42 end }, { __index = player })
+local FEEDSP = {}; do local ids = {}; for e in pairs(D.species) do if e > 100000 or e > 5000 then ids[#ids + 1] = e end end table.sort(ids); for i = 1, 5 do FEEDSP[500 + i - 1] = ids[i] end end
+local function pet(sp, lvl, hp, t) sp = FEEDSP[sp] or sp; Store.AddPet(player, sp, lvl, nil, 1, 0); at(t); Store.SetHp(42, sp, hp); return Store.Pets(player)[sp] end
+test("feeding: food of a lower level than the pet is refused and NOT consumed", function()
+    local p = pet(500, 10, 100, 2000); removed = {}
+    local ok, msg = Store.Feed(feeder, FEEDSP[500], 1001)
+    eq(ok, false); truthy(msg:find("too weak"), msg); eq(#removed, 0, "no food used"); eq(p.fed, nil)
+end)
+test("feeding: good food consumes ONE item and heals 10% of max every 2 s for 20 s", function()
+    local p = pet(501, 10, 100, 3000); local _, max = Store.PetHp(FEEDSP[501], p, 3000); removed = {}
+    local ok, msg = Store.Feed(feeder, FEEDSP[501], 1002)
+    eq(ok, true, msg); eq(#removed, 1); eq(bag[1002], 4)
+    local step = math.floor(max * 0.10)
+    eq(Store.PetHp(FEEDSP[501], p, 3001), 100, "1 s: no step yet"); eq(Store.PetHp(FEEDSP[501], p, 3002), 100 + step, "2 s: +10%")
+    eq(Store.PetHp(FEEDSP[501], p, 3008), 100 + 4 * step, "8 s: +40% (regen adds nothing yet: 10 s)")
+    local a, b = Store.PetHp(FEEDSP[501], p, 3020), Store.PetHp(FEEDSP[501], p, 3100)
+    truthy(a >= 100 + 10 * step or a == max, "20 s: ten steps"); eq(b, math.min(max, 100 + 10 * step + math.floor((3100 - 3000) / 10) * math.floor(max * 0.01)), "after the buff only the slow regen continues")
+    os.time = realTime
+end)
+test("feeding: not food, drinks, missing item, full health, unowned pet and a running battle are all refused", function()
+    local p = pet(502, 10, 100, 4000)
+    eq((Store.Feed(feeder, FEEDSP[502], 9999)), false, "not food"); bag[1003] = 0; eq((Store.Feed(feeder, FEEDSP[502], 1003)), false, "no item"); bag[1003] = 5
+    eq((Store.Feed(feeder, 77777, 1002)), false, "unowned pet")
+    Store.SetHp(42, FEEDSP[502], 10000); at(4000); eq((Store.Feed(feeder, FEEDSP[502], 1002)), false, "full health")
+    Store.SetHp(42, FEEDSP[502], 100); PB_BATTLE = { InBattle = function() return true end }; eq((Store.Feed(feeder, FEEDSP[502], 1002)), false, "in battle"); PB_BATTLE = nil
+    os.time = realTime
+end)
+test("feeding: a battle result or a level up cancels the remaining buff; feeding again restarts it", function()
+    local p = pet(503, 10, 100, 5000); Store.Feed(feeder, FEEDSP[503], 1002)
+    at(5004); local mid = Store.PetHp(FEEDSP[503], p, 5004); truthy(mid > 100, "buff running")
+    Store.SetHp(42, FEEDSP[503], 100); at(5010); eq(Store.PetHp(FEEDSP[503], p, 5010), 100, "after a battle the old buff is gone (only regen after 10 s)")
+    Store.Feed(feeder, FEEDSP[503], 1002); at(5015)
+    local ok, msg = Store.Feed(feeder, FEEDSP[503], 1002); eq(ok, true, msg); eq(p.fed.from, 5015, "a re-feed restarts the buff")
+    os.time = realTime
+end)
+test("feeding: the client message pbj|feed answers with the result text", function()
+    pet(504, 10, 100, 6000); outbox = {}; handlers["pbj|feed"](feeder, FEEDSP[504] .. ",1001")
+    local last = outbox[#outbox]; eq(last.m, "pbt"); truthy(last.p:find("too weak"), last.p)
+    outbox = {}; handlers["pbj|feed"](feeder, "garbage"); eq(#outbox, 0)
+    os.time = realTime
+end)
+test("pet size: tall thin models are capped by HEIGHT, not scaled up past their normal size (Defias Bandit was 1.3x)", function()
+    local S = Store.ScaleFor
+    truthy(S(0.306, 1.5) < 0.6, "Defias Bandit (radius .306, reach 1.5): " .. S(0.306, 1.5))
+    truthy(S(0.235, 1.0) < 0.8, "Rabbit: " .. S(0.235, 1.0))
+    eq(S(1.05, 0.875) == 0.4 / 1.05, true, "a wolf is still sized by its radius (it was already small)")
+    eq(S(0, 0), 0.4, "no model data: default")
+    eq(S(3, 4) >= 0.1, true, "never below the minimum"); truthy(7.5 * S(1.5, 7.5) <= 0.95, "Great Wavethrasher (reach 7.5) is small too")
+    for _, m in ipairs({ { 0.306, 1.5 }, { 0.208, 1.5 }, { 0.376, 1.5 }, { 0.235, 1 }, { 2.5, 3.75 }, { 0.5, 2.25 }, { 0.3, 2.9 } }) do
+        local sc = S(m[1], m[2]); truthy(m[2] * sc <= 0.95, "final height " .. m[2] * sc .. " for reach " .. m[2])
+    end
+end)
+test("pet size: companion creatures keep their natural (already pet) size, the Dun Morogh Cub was microscopic", function()
+    local n = 0
+    for entry, sp in pairs(D.species) do if sp.companion then n = n + 1; eq(Store.Scale(entry), sp.scale or 1.0, sp.name) end end
+    truthy(n > 200, "companions checked: " .. n); eq(Store.Scale(33194), 1.0, "Dun Morogh Cub")
 end)
 print(string.format("store: %d passed, %d failed", passed, #failed))
 for _, f in ipairs(failed) do print("  FAIL " .. f) end

@@ -1,0 +1,106 @@
+# Grizzly Hills pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	31889	Grizzly Squirrel	1	Critter	0	0	66	0	Melee		composed kit: Critter
+Y	33211	Lake Frog	1	Critter	0	0	26	0	Melee		composed kit: Aquatic
+Y	31890	Mountain Skunk	1	Critter	0	0	49	0	Melee		composed kit: Critter
+Y	27438	Rainbow Trout	1	Critter	0	0	11	0	Melee		composed kit: Critter
+Y	385	Horse	5	Critter	0	0	12	0	Melee		composed kit: Beast
+Y	23747	Overworked Nag	12-20	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	24035	Gjalerbron Prisoner	65-70	Humanoid	0	0	36	0	Melee		composed kit: Critter
+Y	29301	Camp Winterhoof Wayfarer	66-71	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	24459	Chillmere Coastrunner	70-71	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	24461	Chillmere Oracle	70-71	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	24460	Chillmere Tidehunter	70-71	Humanoid	0	0	11	0	Melee		composed kit: Beast
+Y	23959	Darkclaw Bat	70-71	Beast	24	0	31	0	Melee		composed kit: Flying
+Y	24013	Deathless Watcher	70-71	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	24669	Dormant Vrykul	70-71	Humanoid	0	0	66	0	Melee		composed kit: Humanoid
+Y	24073	Fearsome Horror	70-71	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	24863	Frosthorn Kid	70	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	23740	Frosthorn Ram	70-71	Beast	0	0	144	0	Melee		composed kit: Beast
+Y	23990	Gjalerbron Rune-Caster	70-71	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	23989	Gjalerbron Sleep-Watcher	70-71	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	23991	Gjalerbron Warrior	70-71	Humanoid	0	0	27	0	Melee		composed kit: Humanoid
+Y	27699	Gjalerhorn Scavenger	70-71	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	24229	Howling Cyclone	70-71	Elemental	0	0	12	0	Melee		composed kit: Elemental
+Y	24228	Iceshard Elemental	70-71	Elemental	0	0	26	0	Melee		composed kit: Elemental
+Y	24901	Maddened Frosthorn	70-71	Beast	0	0	20	0	Melee		composed kit: Beast
+Y	24014	Necrolord	70-71	Humanoid	0	0	31	0	Melee		composed kit: Undead
+Y	23992	Putrid Wight	70-71	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	23958	Riven Widow	70-71	Beast	3	0	13	0	Melee		composed kit: Beast
+Y	24485	Servitor Shade	70	Undead	0	0	22	0	Melee		composed kit: Undead
+Y	23643	Unstable Mur'ghoul	70	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	24262	Vrykul Soul	70-71	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	27072	Amberpine Footman	71-74	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	23644	Mur'ghoul Flesheater	71	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	24540	Necrotech	71	Humanoid	0	0	12	0	Melee		composed kit: Undead
+Y	27475	Westfall Brigade Infantry	71	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	27354	Broken-down Shredder	72	Mechanical	0	0	4	0	Melee		composed kit: Mechanical
+Y	27408	Duskhowl Prowler	72-73	Beast	1	0	73	0	Melee		composed kit: Flying
+Y	26446	Ice Serpent	72-73	Beast	27	0	12	0	Melee		composed kit: Flying
+Y	26369	Imperial Eagle	72-73	Beast	26	0	80	0	Melee		composed kit: Flying
+Y	27496	Refurbished Shredder	72	Mechanical	0	0	4	0	Melee		composed kit: Mechanical
+Y	27615	Scourge Deathspeaker	72-73	Humanoid	0	0	8	0	Melee		composed kit: Undead
+Y	29693	Serpent Defender	72-73	Beast	27	0	15	0	Melee		composed kit: Flying
+Y	27613	Slaughtered Drakkari	72-73	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	26363	Tallhorn Stag	72-73	Beast	0	0	317	0	Melee		composed kit: Beast
+Y	26644	Ursus Mauler	72-73	Beast	4	0	7	0	Melee		composed kit: Beast
+Y	27117	Amberpine Scout	73-74	Humanoid	0	0	22	0	Melee		composed kit: Beast
+Y	27293	Amberpine Woodsman	73	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	26812	Ancient Drakkari Soothsayer	73	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	26811	Ancient Drakkari Warmonger	73	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	29492	Ashwood Trapper	73-74	Humanoid	0	0	3	0	Melee		composed kit: Beast
+Y	29269	Aspen Grove Trapper	73-74	Humanoid	0	0	4	0	Melee		composed kit: Beast
+Y	27024	Bloodmoon Cultist	73-74	Humanoid	0	0	22	0	Melee		composed kit: Undead
+Y	27020	Bloodmoon Worgen	73-74	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	27500	Conquest Hold Berserker	73-74	Humanoid	0	0	59	0	Melee		composed kit: Humanoid
+Y	26839	Conquest Hold Legionnaire	73-74	Humanoid	0	0	25	0	Melee		composed kit: Magic
+Y	27424	Conquest Hold Marauder	73-74	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	27118	Conquest Hold Raider	73-74	Humanoid	0	0	23	0	Melee		composed kit: Humanoid
+Y	27456	Conquest Hold Skirmisher	73-74	Humanoid	0	0	39	0	Melee		composed kit: Humanoid
+Y	26457	Diseased Drakkari	73	Undead	0	0	22	0	Melee		composed kit: Undead
+Y	27259	Dragonflayer Flamebinder	73-74	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	27260	Dragonflayer Huscarl	73-74	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	26795	Drakkari Oracle	73	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	27941	Drakkari Plague Spreader	73	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	26447	Drakkari Shaman	73	Humanoid	0	0	12	0	Melee		composed kit: Elemental
+Y	26425	Drakkari Warrior	73	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	27555	Drakkari Witch Doctor	73	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	26282	Earthen Warrior	73-74	Humanoid	0	0	35	0	Melee		composed kit: Elemental
+Y	27421	Fern Feeder Moth	73	Beast	37	0	43	0	Melee		composed kit: Flying
+Y	26592	Graymist Hunter	73-74	Beast	1	0	56	0	Melee		composed kit: Beast
+Y	26270	Iron Rune-Shaper	73-74	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	26418	Longhoof Grazer	73-74	Beast	0	0	36	0	Melee		composed kit: Beast
+Y	26869	Pit-Fighting Spectator	73-74	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	26284	Runic Battle Golem	73-74	Elemental	0	0	19	0	Melee		composed kit: Elemental
+Y	26461	Scourge Corpserender	73	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	27676	Silverbrook Defender	73-74	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	27546	Silverbrook Hunter	73-74	Humanoid	0	0	22	0	Melee		composed kit: Beast
+Y	26679	Silverbrook Trapper	73-74	Humanoid	0	0	28	0	Melee		composed kit: Beast
+Y	27479	Slain Trapper	73-74	Humanoid	0	0	6	0	Melee		composed kit: Beast
+Y	26389	Solstice Hunter	73-74	Humanoid	0	0	21	0	Melee		composed kit: Beast
+Y	27830	Venture Co. Evacuee	73	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	27570	Venture Co. Straggler	73	Humanoid	0	0	33	0	Melee		composed kit: Humanoid
+Y	27501	Westfall Brigade Marine	73	Humanoid	0	0	54	0	Melee		composed kit: Humanoid
+Y	27463	Wounded Skirmisher	73-74	Humanoid	0	0	15	0	Melee		composed kit: Critter
+Y	27482	Wounded Westfall Infantry	73-74	Humanoid	0	0	8	0	Melee		composed kit: Critter
+Y	26704	Drakkari Defender	74	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	26472	Highland Mustang	74-75	Beast	0	0	91	0	Melee		composed kit: Beast
+Y	26706	Infected Grizzly Bear	74	Beast	4	0	12	0	Melee		composed kit: Beast
+Y	27554	Injured Drakkari Refugee	74	Humanoid	0	0	28	0	Melee		composed kit: Critter
+Y	26408	Iron Rune-Smith	74-75	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	26407	Lightning Sentry	74-75	Elemental	0	0	31	0	Melee		composed kit: Elemental
+Y	26356	Redfang Hunter	74-75	Humanoid	0	0	29	0	Melee		composed kit: Beast
+Y	27617	River Thresher	74	Beast	0	0	8	0	Melee		composed kit: Beast
+Y	26268	Rune Reaver	74-75	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	26414	Runic Lightning Gunner	74-75	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	26347	Runic War Golem	74-75	Elemental	0	0	17	0	Melee		composed kit: Elemental
+Y	27230	Silvercoat Stag	74-75	Beast	0	0	102	0	Melee		composed kit: Beast
+Y	26522	Subterranean Thresher	74	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	26891	Undead Miner	74-75	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	26428	Frostpaw Shaman	75	Humanoid	0	0	3	0	Melee		composed kit: Elemental
+Y	26357	Frostpaw Warrior	75	Humanoid	0	0	34	0	Melee		composed kit: Humanoid
+Y	28258	Hath'ar Skimmer	75-76	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	26820	Iron Rune-Weaver	75	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	26436	Redfang Elder	75	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	26217	Westfall Brigade Footman	75	Humanoid	0	0	27	0	Melee		composed kit: Humanoid

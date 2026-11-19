@@ -1,0 +1,163 @@
+# Icecrown pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	26525	Cockroach	1	Critter	0	0	137	0	Melee		composed kit: Critter
+Y	32498	Glacier Penguin	1	Critter	0	0	81	0	Melee		composed kit: Critter
+Y	36173	Innocuous Scarab	1	Undead	0	0	50	0	Melee		composed kit: Undead
+Y	34788	Gormok Zealot	72-73	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	32189	Skybreaker Recon Fighter	75	Mechanical	0	0	17	0	Melee		composed kit: Mechanical
+Y	29649	Captured Death's Rise Spy	77-80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	30186	Ebon Blade Prisoner	77	Humanoid	0	0	9	0	Melee		composed kit: Undead
+Y	30194	Ebon Blade Prisoner	77	Humanoid	0	0	11	0	Melee		composed kit: Undead
+Y	30195	Ebon Blade Prisoner	77	Humanoid	0	0	11	0	Melee		composed kit: Undead
+Y	30196	Ebon Blade Prisoner	77	Humanoid	0	0	15	0	Melee		composed kit: Undead
+Y	30203	Forgotten Depths High Priest	77-78	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	30543	Forgotten Depths High Priest	77-78	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	31037	Forgotten Depths High Priest	77-78	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	30202	Reanimated Crusader	77-78	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	31043	Reanimated Crusader	77-78	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	30430	Sentry Worg	77-78	Beast	1	0	5	0	Melee		composed kit: Beast
+Y	31251	Shadow Vault Skirmisher	77-79	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	33778	Tournament Hippogryph	77-79	Beast	0	0	18	0	Melee		composed kit: Flying
+Y	30642	Water Terror	77-78	Elemental	0	0	13	0	Melee		composed kit: Elemental
+Y	30482	Wrathstrike Gargoyle	77-78	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	31040	Wrathstrike Gargoyle	77-78	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	32267	Animated Laborer	78-79	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	30541	Forgotten Depths Underking	78	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	30544	Forgotten Depths Underking	78	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	31039	Forgotten Depths Underking	78	Undead	0	0	14	0	Melee		composed kit: Undead
+Y	29710	Onslaught Destrier	78-79	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	31843	Reanimated Miner	78-79	Undead	0	0	26	0	Melee		composed kit: Undead
+Y	32164	Skeletal Craftsman	78-79	Undead	0	0	14	0	Melee		composed kit: Undead
+Y	32275	Wracked Prisoner	78-79	Humanoid	0	0	15	0	Melee		composed kit: Critter
+Y	32323	Aldur'thar Sentry	79-80	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	31787	Citadel Watcher	79-80	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	35318	Crimson Dawn Sailor	79-80	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	32290	Cult Alchemist	79-80	Humanoid	0	0	9	0	Melee		composed kit: Undead
+Y	32297	Cult Researcher	79-80	Humanoid	0	0	23	0	Melee		composed kit: Undead
+Y	32268	Cult Taskmaster	79-80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	32289	Damned Apothecary	79-80	Humanoid	0	0	9	0	Melee		composed kit: Undead
+Y	34734	Dark Ritualist	79-80	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	29515	Dead Death's Rise Vrykul	79-80	Humanoid	0	0	10	0	Melee		composed kit: Undead
+Y	29738	Death Knight Master	79-80	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	31812	Decomposed Ghoul	79-80	Undead	0	0	307	0	Melee		composed kit: Undead
+Y	31411	Hulking Horror	79-80	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	31413	Hulking Horror	79-80	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	30725	Jotunheim Sleep-Watcher	79-80	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	29880	Jotunheim Warrior	79-80	Humanoid	0	0	56	0	Melee		composed kit: Humanoid
+Y	30037	Mjordin Combatant	79-80	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	30632	Mjordin Water Magus	79-80	Humanoid	0	0	24	0	Melee		composed kit: Magic
+Y	29719	Morbid Carcass	79-80	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	31747	Necrotic Webspinner	79-80	Beast	3	0	7	0	Melee		composed kit: Beast
+Y	30243	Njorndar Spear-Sister	79-80	Humanoid	0	0	68	0	Melee		composed kit: Humanoid
+Y	35324	North Sea Shark	79-80	Beast	0	0	6	0	Melee		composed kit: Aquatic
+Y	29333	Onslaught Gryphon Rider	79-80	Humanoid	0	0	47	0	Melee		composed kit: Humanoid
+Y	29329	Onslaught Paladin	79-80	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	29338	Onslaught Raven Bishop	79-80	Humanoid	0	0	25	0	Melee		composed kit: Humanoid
+Y	29722	Rabid Cannibal	79-80	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	29392	Ravenous Jaws	79-80	Beast	0	0	18	0	Melee		composed kit: Flying
+Y	31847	Scavenging Geist	79-80	Undead	0	0	47	0	Melee		composed kit: Undead
+Y	32262	Shadow Channeler	79-80	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	29717	Shadow Cultist	79-80	Humanoid	0	0	12	0	Melee		composed kit: Undead
+Y	35319	Silver Blade Sailor	79-80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	30250	Valhalas Vargul	79-80	Undead	0	0	29	0	Melee		composed kit: Undead
+Y	31414	Valiance Commando	79-80	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	29720	Vault Geist	79-80	Undead	0	0	16	0	Melee		composed kit: Undead
+Y	30701	Vile Creeper	79	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	32279	Vile Torturer	79-80	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	32259	Void Summoner	79-80	Humanoid	0	0	6	0	Melee		composed kit: Magic
+Y	32238	Bitter Initiate	80	Humanoid	0	0	15	0	Melee		composed kit: Critter
+Y	34716	Captive Aspirant	80	Humanoid	0	0	16	0	Melee		composed kit: Critter
+Y	30407	Captured Crusader	80	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	31263	Carrion Hunter	80	Undead	0	0	47	0	Melee		composed kit: Undead
+Y	30689	Chained Abomination	80	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	32255	Converted Hero	80	Undead	0	0	235	0	Melee		composed kit: Undead
+Y	30696	Corpulent Horror	80	Undead	0	0	30	0	Melee		composed kit: Undead
+Y	31853	Cruel Overseer	80	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	33537	Cult Conspirator	80	Humanoid	0	0	3	0	Melee		composed kit: Undead
+Y	32507	Cultist Acolyte	80	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	31738	Cultist Corrupter	80	Humanoid	0	0	37	0	Melee		composed kit: Undead
+Y	32349	Cultist Shard Watcher	80	Humanoid	0	0	15	0	Melee		composed kit: Undead
+Y	32236	Dark Subjugator	80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	34728	Dark Zealot	80	Humanoid	0	0	35	0	Melee		composed kit: Humanoid
+Y	33565	Darnassus Valiant	80	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	31042	Death Knight Adept	80	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	31325	Death Knight Adept	80	Undead	0	0	16	0	Melee		composed kit: Undead
+Y	30957	Death Knight Initiate	80	Undead	0	0	31	0	Melee		composed kit: Undead
+Y	30958	Death Knight Initiate	80	Undead	0	0	18	0	Melee		composed kit: Undead
+Y	31326	Death Knight Initiate	80	Undead	0	0	37	0	Melee		composed kit: Undead
+Y	31327	Death Knight Initiate	80	Undead	0	0	31	0	Melee		composed kit: Undead
+Y	32241	Disguised Crusader	80	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	31250	Ebon Blade Defender	80	Humanoid	0	0	5	0	Melee		composed kit: Undead
+Y	32472	Ebon Blade Gargoyle	80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	32469	Ebon Blade Geist	80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	32468	Ebon Blade Initiate	80	Humanoid	0	0	6	0	Melee		composed kit: Undead
+Y	31314	Ebon Blade Veteran	80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	32488	Ebon Blade Vindicator	80	Humanoid	0	0	4	0	Melee		composed kit: Undead
+Y	31257	Ebon Blade Winged Defender	80	Humanoid	0	0	3	0	Melee		composed kit: Undead
+Y	33566	Exodar Valiant	80	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	32767	Frostbrood Sentry	80	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	31702	Frostbrood Spawn	80	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	31718	Frostbrood Whelp	80	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	31813	Frostskull Magus	80	Undead	0	0	51	0	Melee		composed kit: Undead
+Y	32769	Gargoyle Ambusher	80	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	31754	Glacial Bonelord	80	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	33463	Gnomeregan Valiant	80	Humanoid	0	0	7	0	Melee		composed kit: Mechanical
+Y	31140	Hulking Abomination	80	Undead	0	0	22	0	Melee		composed kit: Undead
+Y	30952	Hungering Plaguehound	80	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	31556	Hungering Plaguehound	80	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	31012	Iceskin Sentry	80	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	31324	Iceskin Sentry	80	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	31142	Icy Ghoul	80	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	33481	Ironforge Valiant	80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	30337	Jotunheim Rapid-Fire Harpoon	80	Mechanical	0	0	24	0	Melee		composed kit: Mechanical
+Y	31832	Kor'kron Infantry	80	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	30894	Lithe Stalker	80	Undead	0	0	18	0	Melee		composed kit: Undead
+Y	31323	Lithe Stalker	80	Undead	0	0	18	0	Melee		composed kit: Undead
+Y	31254	Lordaeron Footsoldier	80	Humanoid	0	0	81	0	Melee		composed kit: Humanoid
+Y	30920	Lumbering Atrocity	80	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	31226	Lumbering Atrocity	80	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	31155	Malefic Necromancer	80	Undead	0	0	14	0	Melee		composed kit: Undead
+Y	32201	Orgrim's Hammer Scout	80	Humanoid	0	0	24	0	Melee		composed kit: Beast
+Y	33460	Orgrimmar Valiant	80	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	31150	Plagued Fiend	80	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	32502	Ravaged Ghoul	80	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	30951	Restless Lookout	80	Undead	0	0	32	0	Melee		composed kit: Undead
+Y	31554	Restless Lookout	80	Undead	0	0	3	0	Melee		composed kit: Undead
+Y	31205	Risen Alliance Soldier	80	Undead	0	0	47	0	Melee		composed kit: Undead
+Y	30949	Risen Laborer	80	Undead	0	0	70	0	Melee		composed kit: Undead
+Y	31555	Risen Laborer	80	Undead	0	0	21	0	Melee		composed kit: Undead
+Y	30960	Risen Soldier	80	Undead	0	0	24	0	Melee		composed kit: Undead
+Y	35097	Sacrificed Aspirant	80	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	31265	Savage Proto-Drake	80	Beast	0	0	6	0	Melee		composed kit: Flying
+Y	31900	Scourge Banner-Bearer	80	Undead	0	0	34	0	Melee		composed kit: Undead
+Y	32257	Scourge Converter	80	Undead	0	0	26	0	Melee		composed kit: Undead
+Y	32284	Scourge Soulbinder	80	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	32161	Scourge War Engineer	80	Undead	0	0	16	0	Melee		composed kit: Undead
+Y	30988	Scourgebeak Fleshripper	80	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	33476	Sen'jin Valiant	80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	31145	Shadow Adept	80	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	33468	Silvermoon Valiant	80	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	31779	Skeletal Archmage	80	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	30687	Skeletal Constructor	80	Undead	0	0	34	0	Melee		composed kit: Undead
+Y	30921	Skeletal Runesmith	80	Undead	0	0	21	0	Melee		composed kit: Undead
+Y	31321	Skeletal Runesmith	80	Undead	0	0	21	0	Melee		composed kit: Undead
+Y	31701	Skybreaker Infantry	80	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	31177	Slain Alliance Soldier	80	Humanoid	0	0	69	0	Melee		composed kit: Humanoid
+Y	30597	Spiked Ghoul	80	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	33479	Stormwind Valiant	80	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	30985	Summoned Soldier	80	Undead	0	0	5	0	Melee		composed kit: Undead
+Y	33473	Thunder Bluff Valiant	80	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	30922	Umbral Brute	80	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	31320	Umbral Brute	80	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	33469	Undercity Valiant	80	Humanoid	0	0	6	0	Melee		composed kit: Undead
+Y	31152	Undying Minion	80	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	31396	Val'kyr Taskmistress	80	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	32505	Vargul Wanderer	80	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	31147	Vicious Geist	80	Undead	0	0	32	0	Melee		composed kit: Undead
+Y	31783	Vrykul Necrolord	80	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	31731	Wyrm Reanimator	80	Humanoid	0	0	21	0	Melee		composed kit: Undead
+Y	31258	Ymirheim Chosen Warrior	80	Humanoid	0	0	35	0	Melee		composed kit: Humanoid
+Y	31746	Ymirheim Defender	80	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	31280	Ymirheim Spear Gun	80	Mechanical	0	0	21	0	Melee		composed kit: Mechanical
+Y	31267	Ymirjar Element Shaper	80	Humanoid	0	0	23	0	Melee		composed kit: Humanoid

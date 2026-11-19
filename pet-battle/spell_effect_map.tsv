@@ -1,0 +1,539 @@
+source	spell_id	name	effect_tokens	basis	cooldown_ms
+class:DeathKnight/Blood	49941	Blood Boil	aoe damage	data	0
+class:DeathKnight/Blood	48266	Blood Presence	dmgup	data	1000
+class:DeathKnight/Blood	66215	Blood Strike	damage	data	0
+class:DeathKnight/Blood	55262	Heart Strike	damage	data	0
+class:DeathKnight/Blood	49016	Hysteria	dmgup	ruling	180000
+class:DeathKnight/Blood	50842	Pestilence	dot	ruling	0
+class:DeathKnight/Blood	47476	Strangulate	damage interrupt	ruling	120000
+class:DeathKnight/Blood	55233	Vampiric Blood	heal	tooltip	60000
+class:DeathKnight/Frost	45524	Chains of Ice	speeddown	data	0
+class:DeathKnight/Frost	66188	Death Strike	damage	data	0
+class:DeathKnight/Frost	49796	Deathchill	critup	ruling	120000
+class:DeathKnight/Frost	48263	Frost Presence	vuln	data	1000
+class:DeathKnight/Frost	66196	Frost Strike	damage	data	0
+class:DeathKnight/Frost	57623	Horn of Winter	dmgup	ruling	20000
+class:DeathKnight/Frost	51411	Howling Blast	aoe damage	data	8000
+class:DeathKnight/Frost	49203	Hungering Cold	stun	ruling	60000
+class:DeathKnight/Frost	48792	Icebound Fortitude	defense	ruling	120000
+class:DeathKnight/Frost	52372	Icy Touch	damage	data	6000
+class:DeathKnight/Frost	47528	Mind Freeze	damage interrupt	ruling	10000
+class:DeathKnight/Frost	66198	Obliterate	damage	data	0
+class:DeathKnight/Frost	66217	Rune Strike	damage	data	0
+class:DeathKnight/Frost	51271	Unbreakable Armor	defense	data	60000
+class:DeathKnight/Unholy	48707	Anti-Magic Shell	defense	data	45000
+class:DeathKnight/Unholy	49222	Bone Shield	dmgup vuln	data	60000
+class:DeathKnight/Unholy	49938	Death and Decay	dot	ruling	30000
+class:DeathKnight/Unholy	66216	Plague Strike	damage	data	0
+class:DeathKnight/Unholy	55271	Scourge Strike	damage	data	0
+class:DeathKnight/Unholy	50536	Unholy Blight	dot	data	0
+class:DeathKnight/Unholy	48265	Unholy Presence	dmgup	ruling	1000
+class:Druid/Balance	22812	Barkskin	defense	ruling	60000
+class:Druid/Balance	33786	Cyclone	untargetable stun	data	0
+class:Druid/Balance	53308	Entangling Roots	dot noswap	data	0
+class:Druid/Balance	770	Faerie Fire	vuln	ruling	0
+class:Druid/Balance	18658	Hibernate	stun stun sleepdelay	data	0
+class:Druid/Balance	48467	Hurricane	aoe multihit speeddown	data	0
+class:Druid/Balance	48468	Insect Swarm	accdown dot	data	0
+class:Druid/Balance	48463	Moonfire	damage dot	data	0
+class:Druid/Balance	53312	Nature's Grasp	damageshield	ruling	60000
+class:Druid/Balance	53201	Starfall	aoe delayedhit	ruling	90000
+class:Druid/Balance	48465	Starfire	damage twostep	data	0
+class:Druid/Balance	53307	Thorns	damageshield	ruling	0
+class:Druid/Balance	61391	Typhoon	damage speeddown	data	0
+class:Druid/Balance	48461	Wrath	damage	data	0
+class:Druid/Feral Combat	8983	Bash	stun	data	60000
+class:Druid/Feral Combat	50334	Berserk	dmgup	ruling	180000
+class:Druid/Feral Combat	48570	Claw	damage	data	0
+class:Druid/Feral Combat	33357	Dash	speedup	ruling	180000
+class:Druid/Feral Combat	48560	Demoralizing Roar	dmgdown	ruling	0
+class:Druid/Feral Combat	16857	Faerie Fire (Feral)	vuln	ruling	6000
+class:Druid/Feral Combat	16979	Feral Charge - Bear	damage noswap	ruling	15000
+class:Druid/Feral Combat	48577	Ferocious Bite	damage	data	0
+class:Druid/Feral Combat	22845	Frenzied Regeneration	heal	data	0
+class:Druid/Feral Combat	48568	Lacerate	damage dot	data	0
+class:Druid/Feral Combat	49802	Maim	damage stun	data	10000
+class:Druid/Feral Combat	33917	Mangle	damage vuln	ruling	0
+class:Druid/Feral Combat	48480	Maul	damage	data	0
+class:Druid/Feral Combat	49803	Pounce	stun	data	0
+class:Druid/Feral Combat	49804	Pounce Bleed	dot	data	0
+class:Druid/Feral Combat	48574	Rake	damage dot	data	0
+class:Druid/Feral Combat	48579	Ravage	damage	data	0
+class:Druid/Feral Combat	49800	Rip	dot	data	0
+class:Druid/Feral Combat	52610	Savage Roar	dmgup	ruling	0
+class:Druid/Feral Combat	48572	Shred	damage	data	0
+class:Druid/Feral Combat	61336	Survival Instincts	defense	ruling	180000
+class:Druid/Feral Combat	48562	Swipe (Bear)	aoe damage	data	0
+class:Druid/Feral Combat	50213	Tiger's Fury	dmgup	ruling	30000
+class:Druid/Restoration	2893	Abolish Poison	cleanse	ruling	0
+class:Druid/Restoration	8946	Cure Poison	cleanse	ruling	0
+class:Druid/Restoration	48470	Gift of the Wild	defense	data	0
+class:Druid/Restoration	48378	Healing Touch	heal heal	data	0
+class:Druid/Restoration	48451	Lifebloom	hot heal	ruling	0
+class:Druid/Restoration	48469	Mark of the Wild	defense	data	0
+class:Druid/Restoration	17116	Nature's Swiftness	speedup	ruling	180000
+class:Druid/Restoration	50464	Nourish	heal heal	data	0
+class:Druid/Restoration	48443	Regrowth	hot heal	ruling	0
+class:Druid/Restoration	64801	Rejuvenation	hot heal	ruling	0
+class:Druid/Restoration	2782	Remove Curse	cleanse	ruling	0
+class:Druid/Restoration	18562	Swiftmend	heal heal	data	15000
+class:Druid/Restoration	48447	Tranquility	heal	ruling	480000
+class:Druid/Restoration	53251	Wild Growth	hot	ruling	6000
+class:Hunter/Beast Mastery	13161	Aspect of the Beast	dmgup	ruling	1000
+class:Hunter/Beast Mastery	5118	Aspect of the Cheetah	speedup	ruling	1000
+class:Hunter/Beast Mastery	61847	Aspect of the Dragonhawk	dmgup accup	ruling	1000
+class:Hunter/Beast Mastery	27044	Aspect of the Hawk	dmgup accup	ruling	1000
+class:Hunter/Beast Mastery	13163	Aspect of the Monkey	dodge vuln	data	1000
+class:Hunter/Beast Mastery	13159	Aspect of the Pack	speedup	data	1000
+class:Hunter/Beast Mastery	34074	Aspect of the Viper	dmgup	data	1000
+class:Hunter/Beast Mastery	19574	Bestial Wrath	dmgup	ruling	120000
+class:Hunter/Beast Mastery	19577	Intimidation	stun	data	60000
+class:Hunter/Beast Mastery	34026	Kill Command	dmgup	ruling	60000
+class:Hunter/Beast Mastery	48990	Mend Pet	hot stun heal	data	0
+class:Hunter/Beast Mastery	34471	The Beast Within	dmgup	ruling	0
+class:Hunter/Marksmanship	49050	Aimed Shot	damage	data	10000
+class:Hunter/Marksmanship	49045	Arcane Shot	damage	data	6000
+class:Hunter/Marksmanship	53209	Chimera Shot	damage	data	10000
+class:Hunter/Marksmanship	5116	Concussive Shot	speeddown	data	12000
+class:Hunter/Marksmanship	53338	Hunter's Mark	vuln	ruling	0
+class:Hunter/Marksmanship	61006	Kill Shot	damage	data	15000
+class:Hunter/Marksmanship	49048	Multi-Shot	damage	data	10000
+class:Hunter/Marksmanship	3045	Rapid Fire	dmgup	ruling	300000
+class:Hunter/Marksmanship	3043	Scorpid Sting	accdown	ruling	0
+class:Hunter/Marksmanship	49001	Serpent Sting	dot	data	0
+class:Hunter/Marksmanship	34490	Silencing Shot	damage	data	20000
+class:Hunter/Marksmanship	56641	Steady Shot	damage	data	0
+class:Hunter/Marksmanship	19801	Tranquilizing Shot	cleanse	data	8000
+class:Hunter/Marksmanship	19506	Trueshot Aura	dmgup accup	ruling	0
+class:Hunter/Marksmanship	58434	Volley	aoe dot	ruling	0
+class:Hunter/Survival	63672	Black Arrow	dot	data	30000
+class:Hunter/Survival	48999	Counterattack	damage noswap	data	5000
+class:Hunter/Survival	19263	Deterrence	dodge	ruling	90000
+class:Hunter/Survival	781	Disengage	untargetable avoidswap	ruling	25000
+class:Hunter/Survival	60053	Explosive Shot	damage dot	ruling	6000
+class:Hunter/Survival	5384	Feign Death	untargetable avoidswap	ruling	30000
+class:Hunter/Survival	53339	Mongoose Bite	damage	data	5000
+class:Hunter/Survival	48996	Raptor Strike	damage	data	6000
+class:Hunter/Survival	19503	Scatter Shot	damage stun	data	30000
+class:Hunter/Survival	2974	Wing Clip	speeddown	data	0
+class:Hunter/Survival	49012	Wyvern Sting	stun stun	data	60000
+class:Mage/Arcane	43017	Amplify Magic	dmgup	ruling	0
+class:Mage/Arcane	44781	Arcane Barrage	damage	data	3000
+class:Mage/Arcane	42897	Arcane Blast	damage twostep	data	0
+class:Mage/Arcane	42921	Arcane Explosion	aoe damage	data	0
+class:Mage/Arcane	42846	Arcane Missiles	multihit	ruling	0
+class:Mage/Arcane	12042	Arcane Power	dmgup	ruling	120000
+class:Mage/Arcane	1953	Blink	untargetable avoidswap	ruling	15000
+class:Mage/Arcane	2139	Counterspell	damage interrupt	ruling	24000
+class:Mage/Arcane	43015	Dampen Magic	vuln	data	0
+class:Mage/Arcane	54648	Focus Magic	dmgup	ruling	0
+class:Mage/Arcane	66	Invisibility	untargetable	ruling	180000
+class:Mage/Arcane	43024	Mage Armor	defense	ruling	0
+class:Mage/Arcane	43020	Mana Shield	defense	ruling	0
+class:Mage/Arcane	61780	Polymorph	stun sleepdelay	data	0
+class:Mage/Arcane	31589	Slow	speeddown speedup	data	0
+class:Mage/Fire	42945	Blast Wave	aoe damage speeddown	data	30000
+class:Mage/Fire	31643	Blazing Speed	speedup	ruling	0
+class:Mage/Fire	11129	Combustion	critup	ruling	120000
+class:Mage/Fire	42950	Dragon's Breath	damage speeddown stun	data	20000
+class:Mage/Fire	24530	Felfire	damage	data	0
+class:Mage/Fire	42873	Fire Blast	damage	data	8000
+class:Mage/Fire	43010	Fire Ward	defense	ruling	30000
+class:Mage/Fire	42833	Fireball	damage dot twostep	data	0
+class:Mage/Fire	42926	Flamestrike	aoe damage dot	data	0
+class:Mage/Fire	47610	Frostfire Bolt	damage dot speeddown twostep	data	0
+class:Mage/Fire	55362	Living Bomb	aoe damage	data	0
+class:Mage/Fire	43046	Molten Armor	defense	ruling	0
+class:Mage/Fire	42891	Pyroblast	damage dot delayedhit twostep	data	0
+class:Mage/Fire	42859	Scorch	damage	data	0
+class:Mage/Frost	42940	Blizzard	aoe dot	ruling	0
+class:Mage/Frost	42931	Cone of Cold	damage speeddown	data	10000
+class:Mage/Frost	44572	Deep Freeze	stun	data	30000
+class:Mage/Frost	7301	Frost Armor	defense	ruling	0
+class:Mage/Frost	42917	Frost Nova	aoe damage noswap	data	25000
+class:Mage/Frost	43012	Frost Ward	defense	ruling	30000
+class:Mage/Frost	42842	Frostbolt	damage speeddown twostep	data	0
+class:Mage/Frost	43008	Ice Armor	defense	ruling	0
+class:Mage/Frost	43039	Ice Barrier	defense	ruling	30000
+class:Mage/Frost	45438	Ice Block	untargetable	ruling	300000
+class:Mage/Frost	42914	Ice Lance	damage	data	0
+class:Mage/Frost	12472	Icy Veins	dmgup	ruling	180000
+class:Paladin/Holy	53654	Beacon of Light	heal	data	0
+class:Paladin/Holy	4987	Cleanse	cleanse	ruling	0
+class:Paladin/Holy	48819	Consecration	aoe dot	data	8000
+class:Paladin/Holy	20216	Divine Favor	critup	ruling	120000
+class:Paladin/Holy	54428	Divine Plea	vuln	data	60000
+class:Paladin/Holy	48801	Exorcism	damage	data	15000
+class:Paladin/Holy	66922	Flash of Light	hot	data	0
+class:Paladin/Holy	48782	Holy Light	heal	data	0
+class:Paladin/Holy	48825	Holy Shock	damage	ruling	6000
+class:Paladin/Holy	48817	Holy Wrath	aoe damage stun	data	30000
+class:Paladin/Holy	20187	Judgement of Righteousness	damage	data	0
+class:Paladin/Holy	48788	Lay on Hands	heal	data	1200000
+class:Paladin/Holy	1152	Purify	cleanse	ruling	0
+class:Paladin/Holy	53601	Sacred Shield	defense	ruling	0
+class:Paladin/Holy	20165	Seal of Light	heal	ruling	0
+class:Paladin/Holy	21084	Seal of Righteousness	dmgup	ruling	0
+class:Paladin/Holy	10326	Turn Evil	stun speedup	data	0
+class:Paladin/Protection	48827	Avenger's Shield	damage speeddown	data	30000
+class:Paladin/Protection	20911	Blessing of Sanctuary	defense	ruling	0
+class:Paladin/Protection	498	Divine Protection	defense	ruling	180000
+class:Paladin/Protection	642	Divine Shield	untargetable	ruling	300000
+class:Paladin/Protection	10308	Hammer of Justice	stun	data	60000
+class:Paladin/Protection	53595	Hammer of the Righteous	damage	data	6000
+class:Paladin/Protection	10278	Hand of Protection	untargetable	ruling	300000
+class:Paladin/Protection	48952	Holy Shield	block	ruling	8000
+class:Paladin/Protection	20164	Seal of Justice	stunchance	ruling	0
+class:Paladin/Protection	61411	Shield of Righteousness	damage	data	6000
+class:Paladin/Retribution	31884	Avenging Wrath	dmgup	ruling	180000
+class:Paladin/Retribution	48932	Blessing of Might	dmgup	ruling	0
+class:Paladin/Retribution	35395	Crusader Strike	damage	data	4000
+class:Paladin/Retribution	53385	Divine Storm	aoe damage	data	10000
+class:Paladin/Retribution	48806	Hammer of Wrath	damage	data	6000
+class:Paladin/Retribution	31898	Judgement of Blood	damage	data	0
+class:Paladin/Retribution	20467	Judgement of Command	damage	data	0
+class:Paladin/Retribution	53733	Judgement of Corruption	damage	data	0
+class:Paladin/Retribution	31804	Judgement of Vengeance	damage	data	0
+class:Paladin/Retribution	53726	Judgement of the Martyr	damage	data	0
+class:Paladin/Retribution	20066	Repentance	stun	data	60000
+class:Paladin/Retribution	20375	Seal of Command	dmgup	ruling	0
+class:Paladin/Retribution	53736	Seal of Corruption	dmgup	ruling	0
+class:Paladin/Retribution	31801	Seal of Vengeance	dmgup	ruling	0
+class:Priest/Discipline	988	Dispel Magic	cleanse	ruling	0
+class:Priest/Discipline	48168	Inner Fire	dmgup	ruling	0
+class:Priest/Discipline	32375	Mass Dispel	cleanse	data	0
+class:Priest/Discipline	44416	Pain Suppression	defense	ruling	0
+class:Priest/Discipline	53007	Penance	damage	ruling	12000
+class:Priest/Discipline	10060	Power Infusion	dmgup	ruling	120000
+class:Priest/Discipline	48066	Power Word: Shield	defense	ruling	4000
+class:Priest/Discipline	33619	Reflective Shield	damage	data	0
+class:Priest/Discipline	10955	Shackle Undead	stun	data	0
+class:Priest/Holy	552	Abolish Disease	cleanse	data	0
+class:Priest/Holy	48120	Binding Heal	heal	data	0
+class:Priest/Holy	48089	Circle of Healing	heal	data	6000
+class:Priest/Holy	528	Cure Disease	cleanse	data	0
+class:Priest/Holy	48173	Desperate Prayer	heal	data	120000
+class:Priest/Holy	64844	Divine Hymn	heal	data	0
+class:Priest/Holy	48071	Flash Heal	heal	data	0
+class:Priest/Holy	48063	Greater Heal	heal	data	0
+class:Priest/Holy	48153	Guardian Spirit	heal survive	data	0
+class:Priest/Holy	6064	Heal	heal	data	0
+class:Priest/Holy	48135	Holy Fire	damage dot	data	10000
+class:Priest/Holy	48078	Holy Nova	aoe damage	data	0
+class:Priest/Holy	2053	Lesser Heal	heal	data	0
+class:Priest/Holy	48072	Prayer of Healing	heal	data	0
+class:Priest/Holy	48113	Prayer of Mending	heal	ruling	10000
+class:Priest/Holy	48068	Renew	hot	ruling	0
+class:Priest/Holy	48123	Smite	damage twostep	data	0
+class:Priest/Shadow Magic	48300	Devouring Plague	drain	data	0
+class:Priest/Shadow Magic	47585	Dispersion	untargetable	ruling	120000
+class:Priest/Shadow Magic	586	Fade	defense	ruling	30000
+class:Priest/Shadow Magic	48127	Mind Blast	damage	data	8000
+class:Priest/Shadow Magic	605	Mind Control	stun	ruling	0
+class:Priest/Shadow Magic	58381	Mind Flay	damage	data	0
+class:Priest/Shadow Magic	53023	Mind Sear	aoe dot	ruling	0
+class:Priest/Shadow Magic	453	Mind Soothe	dmgdown sleepdelay	ruling	0
+class:Priest/Shadow Magic	64058	Psychic Horror	stun	ruling	0
+class:Priest/Shadow Magic	10890	Psychic Scream	aoe stun speedup sleepdelay	data	30000
+class:Priest/Shadow Magic	48158	Shadow Word: Death	damage	data	12000
+class:Priest/Shadow Magic	48125	Shadow Word: Pain	dot	data	0
+class:Priest/Shadow Magic	15487	Silence	damage interrupt	ruling	45000
+class:Priest/Shadow Magic	15286	Vampiric Embrace	heal	ruling	0
+class:Priest/Shadow Magic	48160	Vampiric Touch	dot	data	0
+class:Rogue/Assassination	48691	Ambush	damage	data	0
+class:Rogue/Assassination	1833	Cheap Shot	stun	data	0
+class:Rogue/Assassination	14177	Cold Blood	critup	ruling	180000
+class:Rogue/Assassination	48674	Deadly Throw	damage speeddown	data	0
+class:Rogue/Assassination	51722	Dismantle	dmgdown	ruling	60000
+class:Rogue/Assassination	57993	Envenom	damage	data	0
+class:Rogue/Assassination	48668	Eviscerate	damage	data	0
+class:Rogue/Assassination	8647	Expose Armor	vuln	ruling	0
+class:Rogue/Assassination	48676	Garrote	dot	data	0
+class:Rogue/Assassination	51662	Hunger For Blood	dmgup	ruling	0
+class:Rogue/Assassination	8643	Kidney Shot	stun vuln	data	20000
+class:Rogue/Assassination	48672	Rupture	dot	data	0
+class:Rogue/Assassination	6774	Slice and Dice	dmgup	ruling	0
+class:Rogue/Combat	13750	Adrenaline Rush	dmgup	ruling	180000
+class:Rogue/Combat	48657	Backstab	damage	data	0
+class:Rogue/Combat	13877	Blade Flurry	dmgup	ruling	120000
+class:Rogue/Combat	31125	Blade Twisting	speeddown	data	0
+class:Rogue/Combat	26669	Evasion	untargetable	ruling	180000
+class:Rogue/Combat	51723	Fan of Knives	aoe damage	data	0
+class:Rogue/Combat	48659	Feint	defense	ruling	10000
+class:Rogue/Combat	1776	Gouge	damage stun	data	10000
+class:Rogue/Combat	1766	Kick	damage interrupt	ruling	10000
+class:Rogue/Combat	51690	Killing Spree	multihit	ruling	120000
+class:Rogue/Combat	14251	Riposte	damage	data	6000
+class:Rogue/Combat	5938	Shiv	damage dot	ruling	0
+class:Rogue/Combat	48638	Sinister Strike	damage	data	0
+class:Rogue/Combat	11305	Sprint	speedup	ruling	180000
+class:Rogue/Subtlety	2094	Blind	speeddown stun	data	180000
+class:Rogue/Subtlety	31224	Cloak of Shadows	untargetable	ruling	90000
+class:Rogue/Subtlety	14278	Ghostly Strike	damage dodge	data	20000
+class:Rogue/Subtlety	48660	Hemorrhage	damage vuln	data	0
+class:Rogue/Subtlety	51724	Sap	stun	data	0
+class:Rogue/Subtlety	36554	Shadowstep	speedup	ruling	30000
+class:Rogue/Subtlety	26889	Vanish	untargetable avoidswap	ruling	180000
+class:Shaman/Elemental Combat	49271	Chain Lightning	damage	data	6000
+class:Shaman/Elemental Combat	49231	Earth Shock	damage	data	6000
+class:Shaman/Elemental Combat	16166	Elemental Mastery	dmgup	ruling	180000
+class:Shaman/Elemental Combat	61657	Fire Nova	aoe	ruling	10000
+class:Shaman/Elemental Combat	49233	Flame Shock	damage dot	data	6000
+class:Shaman/Elemental Combat	63685	Freeze	noswap	data	0
+class:Shaman/Elemental Combat	49236	Frost Shock	damage speeddown	data	6000
+class:Shaman/Elemental Combat	51514	Hex	stun sleepdelay	data	45000
+class:Shaman/Elemental Combat	60043	Lava Burst	damage	data	8000
+class:Shaman/Elemental Combat	49240	Lightning Bolt	damage	data	0
+class:Shaman/Elemental Combat	8012	Purge	cleanse	ruling	0
+class:Shaman/Elemental Combat	59159	Thunderstorm	aoe damage	data	45000
+class:Shaman/Elemental Combat	57994	Wind Shear	damage interrupt	ruling	6000
+class:Shaman/Enhancement	2825	Bloodlust	speedup	data	300000
+class:Shaman/Enhancement	2645	Ghost Wolf	speedup	data	0
+class:Shaman/Enhancement	32182	Heroism	speedup	data	300000
+class:Shaman/Enhancement	60103	Lava Lash	damage	data	6000
+class:Shaman/Enhancement	49281	Lightning Shield	damageshield	ruling	0
+class:Shaman/Enhancement	30824	Shamanistic Rage	defense	ruling	0
+class:Shaman/Enhancement	32176	Stormstrike	damage	data	0
+class:Shaman/Restoration	55459	Chain Heal	heal	data	0
+class:Shaman/Restoration	51886	Cleanse Spirit	cleanse	ruling	0
+class:Shaman/Restoration	526	Cure Toxins	cleanse	ruling	0
+class:Shaman/Restoration	49284	Earth Shield	heal	ruling	0
+class:Shaman/Restoration	49273	Healing Wave	heal	data	0
+class:Shaman/Restoration	49276	Lesser Healing Wave	heal	data	0
+class:Shaman/Restoration	61301	Riptide	heal hot	data	6000
+class:Shaman/Restoration	55198	Tidal Force	critup	ruling	180000
+class:Warlock/Affliction	47813	Corruption	dot	data	0
+class:Warlock/Affliction	47864	Curse of Agony	dot	data	0
+class:Warlock/Affliction	47867	Curse of Doom	dot	data	60000
+class:Warlock/Affliction	18223	Curse of Exhaustion	speeddown	data	0
+class:Warlock/Affliction	1010	Curse of Idiocy	dmgdown	ruling	0
+class:Warlock/Affliction	50511	Curse of Weakness	dmgdown	ruling	0
+class:Warlock/Affliction	47865	Curse of the Elements	defense vuln	data	0
+class:Warlock/Affliction	47857	Drain Life	drain	ruling	0
+class:Warlock/Affliction	47855	Drain Soul	multihit dot	data	0
+class:Warlock/Affliction	6215	Fear	stun speedup sleepdelay	data	0
+class:Warlock/Affliction	59164	Haunt	damage	data	8000
+class:Warlock/Affliction	17928	Howl of Terror	aoe stun speedup	data	40000
+class:Warlock/Affliction	47836	Seed of Corruption	dot	data	0
+class:Warlock/Affliction	47843	Unstable Affliction	dot delayedhit	data	0
+class:Warlock/Demonology	18647	Banish	untargetable stun	data	0
+class:Warlock/Demonology	47889	Demon Armor	defense	ruling	0
+class:Warlock/Demonology	54785	Demon Charge	damage stun	ruling	45000
+class:Warlock/Demonology	696	Demon Skin	defense	data	0
+class:Warlock/Demonology	61191	Enslave Demon	stun	ruling	0
+class:Warlock/Demonology	47893	Fel Armor	dmgup	data	0
+class:Warlock/Demonology	47856	Health Funnel	hot stun vuln	data	0
+class:Warlock/Demonology	20153	Immolation	aoe damage	data	0
+class:Warlock/Demonology	50589	Immolation Aura	aoe dot	ruling	30000
+class:Warlock/Demonology	61610	Metamorphosis	dmgup	ruling	180000
+class:Warlock/Demonology	50581	Shadow Cleave	damage	data	6000
+class:Warlock/Demonology	47891	Shadow Ward	defense	ruling	30000
+class:Warlock/Destruction	59172	Chaos Bolt	damage delayedhit twostep	data	12000
+class:Warlock/Destruction	17962	Conflagrate	damage dot	data	10000
+class:Warlock/Destruction	47823	Hellfire	multihit dot	data	0
+class:Warlock/Destruction	47811	Immolate	damage dot	data	0
+class:Warlock/Destruction	47838	Incinerate	damage twostep	data	0
+class:Warlock/Destruction	47820	Rain of Fire	aoe dot meteor	ruling	0
+class:Warlock/Destruction	47815	Searing Pain	damage	data	0
+class:Warlock/Destruction	47809	Shadow Bolt	damage twostep	data	0
+class:Warlock/Destruction	47827	Shadowburn	damage	data	15000
+class:Warlock/Destruction	61290	Shadowflame	damage	data	15000
+class:Warlock/Destruction	47847	Shadowfury	damage stun	data	20000
+class:Warlock/Destruction	47825	Soul Fire	damage twostep	data	0
+class:Warrior/Arms	46924	Bladestorm	aoe	ruling	90000
+class:Warrior/Arms	11578	Charge	damage stun	ruling	15000
+class:Warrior/Arms	1715	Hamstring	speeddown	data	0
+class:Warrior/Arms	47450	Heroic Strike	damage	data	0
+class:Warrior/Arms	57755	Heroic Throw	damage	data	60000
+class:Warrior/Arms	694	Mocking Blow	damage	data	60000
+class:Warrior/Arms	47486	Mortal Strike	damage	data	6000
+class:Warrior/Arms	7384	Overpower	damage	data	5000
+class:Warrior/Arms	47465	Rend	dot	data	0
+class:Warrior/Arms	20230	Retaliation	damageshield	ruling	300000
+class:Warrior/Arms	29842	Second Wind	hot	ruling	0
+class:Warrior/Arms	64382	Shattering Throw	damage defense	data	300000
+class:Warrior/Arms	26654	Sweeping Strikes	damage	data	0
+class:Warrior/Arms	47502	Thunder Clap	aoe damage	data	6000
+class:Warrior/Fury	47436	Battle Shout	dmgup	ruling	0
+class:Warrior/Fury	18499	Berserker Rage	dmgup	ruling	30000
+class:Warrior/Fury	23885	Bloodthirst	drain	ruling	0
+class:Warrior/Fury	47520	Cleave	damage	data	0
+class:Warrior/Fury	47440	Commanding Shout	dmgup	ruling	0
+class:Warrior/Fury	12292	Death Wish	dmgup	ruling	180000
+class:Warrior/Fury	47437	Demoralizing Shout	dmgdown	ruling	0
+class:Warrior/Fury	55694	Enraged Regeneration	hot	ruling	180000
+class:Warrior/Fury	47471	Execute	damage conditional	ruling	0
+class:Warrior/Fury	60970	Heroic Fury	cleanse	ruling	45000
+class:Warrior/Fury	5246	Intimidating Shout	aoe stun speedup	data	120000
+class:Warrior/Fury	12323	Piercing Howl	aoe speeddown	data	0
+class:Warrior/Fury	6552	Pummel	damage interrupt	ruling	10000
+class:Warrior/Fury	1719	Recklessness	dmgup	ruling	300000
+class:Warrior/Fury	47475	Slam	damage	ruling	0
+class:Warrior/Fury	34428	Victory Rush	damage	data	0
+class:Warrior/Fury	1680	Whirlwind	aoe damage	data	10000
+class:Warrior/Protection	12809	Concussion Blow	damage stun	data	30000
+class:Warrior/Protection	47498	Devastate	damage	data	0
+class:Warrior/Protection	676	Disarm	dmgdown vuln	data	60000
+class:Warrior/Protection	12976	Last Stand	defense survive	ruling	0
+class:Warrior/Protection	57823	Revenge	damage	data	5000
+class:Warrior/Protection	46947	Safeguard	vuln	data	0
+class:Warrior/Protection	72	Shield Bash	damage interrupt	ruling	12000
+class:Warrior/Protection	2565	Shield Block	block	ruling	60000
+class:Warrior/Protection	47488	Shield Slam	cleanse damage	data	6000
+class:Warrior/Protection	871	Shield Wall	defense	ruling	300000
+class:Warrior/Protection	46968	Shockwave	damage stun	data	20000
+class:Warrior/Protection	23920	Spell Reflection	damageshield	ruling	10000
+class:Warrior/Protection	7386	Sunder Armor	vuln	ruling	0
+class:Warrior/Protection	50720	Vigilance	defense	ruling	0
+pet:Bat	52474	Bite	damage	data	0
+pet:Bat	23145	Dive	speedup	data	32000
+pet:Bat	53568	Sonic Blast	damage stun	data	60000
+pet:Bear	61685	Charge	damage stun	ruling	25000
+pet:Bear	52472	Claw	damage	data	0
+pet:Bear	53533	Swipe	damage	data	5000
+pet:Bird of Prey	52472	Claw	damage	data	0
+pet:Bird of Prey	23145	Dive	speedup	data	32000
+pet:Bird of Prey	53543	Snatch	damage	data	60000
+pet:Boar	52474	Bite	damage	data	0
+pet:Boar	61685	Charge	damage stun	ruling	25000
+pet:Boar	35295	Gore	damage	data	10000
+pet:Carrion Bird	52474	Bite	damage	data	0
+pet:Carrion Bird	55487	Demoralizing Screech	aoe damage	data	10000
+pet:Carrion Bird	23145	Dive	speedup	data	32000
+pet:Carrion Bird	52825	Swoop	damage noswap	ruling	25000
+pet:Cat	61685	Charge	damage stun	ruling	25000
+pet:Cat	52472	Claw	damage	data	0
+pet:Cat	61684	Dash	speedup	ruling	32000
+pet:Cat	24453	Prowl	dmgup speeddown	data	10000
+pet:Cat	59886	Rake	damage dot	data	10000
+pet:Chimaera	52474	Bite	damage	data	0
+pet:Chimaera	23145	Dive	speedup	data	32000
+pet:Chimaera	55492	Froststorm Breath	damage speeddown	data	10000
+pet:Core Hound	52474	Bite	damage	data	0
+pet:Core Hound	61685	Charge	damage stun	ruling	25000
+pet:Core Hound	61684	Dash	speedup	ruling	32000
+pet:Core Hound	58611	Lava Breath	damage speedup	data	10000
+pet:Crab	61685	Charge	damage stun	ruling	25000
+pet:Crab	52472	Claw	damage	data	0
+pet:Crab	53548	Pin	multihit dot noswap	data	40000
+pet:Crocolisk	52399	Bad Attitude	damageshield	data	120000
+pet:Crocolisk	52474	Bite	damage	data	0
+pet:Crocolisk	61685	Charge	damage stun	ruling	25000
+pet:Devilsaur	52474	Bite	damage	data	0
+pet:Devilsaur	61685	Charge	damage stun	ruling	25000
+pet:Devilsaur	61684	Dash	speedup	ruling	32000
+pet:Devilsaur	55499	Monstrous Bite	damage	data	10000
+pet:Dragonhawk	52474	Bite	damage	data	0
+pet:Dragonhawk	23145	Dive	speedup	data	32000
+pet:Dragonhawk	55485	Fire Breath	damage dot	data	10000
+pet:Felguard	47994	Cleave	damage	data	6000
+pet:Felguard	32851	Demonic Frenzy	dmgup	ruling	0
+pet:Felhunter	48011	Devour Magic	cleanse	data	8000
+pet:Felhunter	19658	Devour Magic Effect	heal	data	0
+pet:Felhunter	54053	Shadow Bite	damage	data	6000
+pet:Felhunter	19647	Spell Lock	damage interrupt	ruling	24000
+pet:Ghoul	47468	Claw	damage	data	0
+pet:Ghoul	47481	Gnaw	damage stun	data	60000
+pet:Ghoul	47484	Huddle	vuln	data	45000
+pet:Gorilla	61685	Charge	damage stun	ruling	25000
+pet:Gorilla	26090	Pummel	damage interrupt	ruling	30000
+pet:Gorilla	52476	Smack	damage	data	0
+pet:Hyena	52474	Bite	damage	data	0
+pet:Hyena	61685	Charge	damage stun	ruling	25000
+pet:Hyena	61684	Dash	speedup	ruling	32000
+pet:Hyena	53575	Tendon Rip	damage speeddown	data	20000
+pet:Imp	47982	Blood Pact	heal	ruling	0
+pet:Imp	47983	Fire Shield	damageshield	data	0
+pet:Imp	47964	Firebolt	damage twostep	data	0
+pet:Imp	4511	Phase Shift	untargetable avoidswap	ruling	10000
+pet:Moth	23145	Dive	speedup	data	32000
+pet:Moth	52016	Serenity Dust	hot	data	60000
+pet:Moth	52476	Smack	damage	data	0
+pet:Moth	52825	Swoop	damage noswap	ruling	25000
+pet:Nether Ray	52474	Bite	damage	data	0
+pet:Nether Ray	23145	Dive	speedup	data	32000
+pet:Nether Ray	53589	Nether Shock	damage	data	40000
+pet:Raptor	61685	Charge	damage stun	ruling	25000
+pet:Raptor	52472	Claw	damage	data	0
+pet:Raptor	61684	Dash	speedup	ruling	32000
+pet:Raptor	53582	Savage Rend	damage dot	data	60000
+pet:Ravager	52474	Bite	damage	data	0
+pet:Ravager	61684	Dash	speedup	ruling	32000
+pet:Ravager	53562	Ravage	damage stun	data	40000
+pet:Rhino	61685	Charge	damage stun	ruling	25000
+pet:Rhino	52476	Smack	damage	data	0
+pet:Rhino	57393	Stampede	damage	data	60000
+pet:Scorpid	61685	Charge	damage stun	ruling	25000
+pet:Scorpid	52472	Claw	damage	data	0
+pet:Scorpid	55728	Scorpid Poison	dot	data	10000
+pet:Serpent	52474	Bite	damage	data	0
+pet:Serpent	61684	Dash	speedup	ruling	32000
+pet:Serpent	55557	Poison Spit	dot speedup	data	10000
+pet:Silithid	52472	Claw	damage	data	0
+pet:Silithid	61684	Dash	speedup	ruling	32000
+pet:Silithid	55509	Venom Web Spray	dot noswap	data	40000
+pet:Spider	52474	Bite	damage	data	0
+pet:Spider	61684	Dash	speedup	ruling	32000
+pet:Spider	4167	Web	noswap	data	40000
+pet:Spirit Beast	61685	Charge	damage stun	ruling	25000
+pet:Spirit Beast	52472	Claw	damage	data	0
+pet:Spirit Beast	61684	Dash	speedup	ruling	32000
+pet:Spirit Beast	24453	Prowl	dmgup speeddown	data	10000
+pet:Spirit Beast	61198	Spirit Strike	damage dot	data	10000
+pet:Sporebat	23145	Dive	speedup	data	32000
+pet:Sporebat	52476	Smack	damage	data	0
+pet:Sporebat	53598	Spore Cloud	aoe defense dot	data	10000
+pet:Succubus	47992	Lash of Pain	damage	data	12000
+pet:Succubus	6358	Seduction	stun	data	0
+pet:Succubus	27275	Soothing Kiss	defense	ruling	4000
+pet:Tallstrider	61685	Charge	damage stun	ruling	25000
+pet:Tallstrider	52472	Claw	damage	data	0
+pet:Tallstrider	61684	Dash	speedup	ruling	32000
+pet:Tallstrider	50285	Dust Cloud	accdown	ruling	40000
+pet:Turtle	52474	Bite	damage	data	0
+pet:Turtle	61685	Charge	damage stun	ruling	25000
+pet:Turtle	26064	Shell Shield	vuln	data	60000
+pet:Voidwalker	47988	Consume Shadows	hot	data	0
+pet:Voidwalker	47986	Sacrifice	defense	data	60000
+pet:Warp Stalker	52474	Bite	damage	data	0
+pet:Warp Stalker	61685	Charge	damage stun	ruling	25000
+pet:Warp Stalker	61684	Dash	speedup	ruling	32000
+pet:Warp Stalker	35346	Warp	untargetable avoidswap	ruling	15000
+pet:Wasp	23145	Dive	speedup	data	32000
+pet:Wasp	52476	Smack	damage	data	0
+pet:Wasp	56631	Sting	damage defense	data	6000
+pet:Wasp	52825	Swoop	damage noswap	ruling	25000
+pet:Wind Serpent	52474	Bite	damage	data	0
+pet:Wind Serpent	23145	Dive	speedup	data	32000
+pet:Wind Serpent	25012	Lightning Breath	damage	data	10000
+pet:Wolf	52474	Bite	damage	data	0
+pet:Wolf	61685	Charge	damage stun	ruling	25000
+pet:Wolf	61684	Dash	speedup	ruling	32000
+pet:Wolf	64495	Furious Howl	dmgup	ruling	40000
+pet:Worm	55754	Acid Spit	damage defense	data	10000
+pet:Worm	52474	Bite	damage	data	0
+pet:Worm	61685	Charge	damage stun	ruling	25000
+pet:generic	53490	Bullheaded	cleanse	ruling	180000
+pet:generic	53434	Call of the Wild	dmgup	ruling	300000
+pet:generic	54044	Carrion Feeder	hot	ruling	30000
+pet:generic	75593	Ferocious Inspiration	dmgup	data	0
+pet:generic	55709	Heart of the Phoenix	rebirth survive	ruling	480000
+pet:generic	24394	Intimidation	stun	data	0
+pet:generic	53478	Last Stand	defense survive	ruling	360000
+pet:generic	53426	Lick Your Wounds	hot heal	ruling	180000
+pet:generic	53401	Rabid	dmgup	ruling	45000
+pet:generic	53480	Roar of Sacrifice	defense	ruling	60000
+pet:generic	63900	Thunderstomp	aoe damage	data	10000
+pet:generic	53508	Wolverine Bite	damage	data	10000
+race:Blood Elf	50613	Arcane Torrent	aoe	data	120000
+race:Draenei	59548	Gift of the Naaru	hot	data	180000
+race:Dwarven	20594	Stoneform	cleanse	ruling	120000
+race:Gnome	20589	Escape Artist	cleanse	ruling	105000
+race:Human	59752	Every Man for Himself	cleanse	ruling	120000
+race:Orc	33702	Blood Fury	dmgup	data	120000
+race:Tauren	20549	War Stomp	aoe stun	data	120000
+race:Troll	26297	Berserking	speedup	data	180000
+race:Undead	20577	Cannibalize	hot	ruling	120000
+race:Undead	7744	Will of the Forsaken	cleanse	ruling	120000
+class:Warlock/Demonology	1122	Inferno	meteor	ruling	600000
+class:Hunter/Beast Mastery	6197	Eagle Eye	accup	ruling	0

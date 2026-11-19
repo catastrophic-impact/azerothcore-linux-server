@@ -1,0 +1,37 @@
+# Wintergrasp pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	25386	En'kilah Crypt Fiend	70-71	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	25393	En'kilah Ghoul	70	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	27671	Fordragon Armored Gryphon	70	Beast	0	0	5	0	Melee		composed kit: Flying
+Y	25615	Plagued Magnataur	70-71	Humanoid	0	0	24	0	Melee		composed kit: Undead
+Y	25452	Scourged Mammoth	70-71	Undead	0	0	55	0	Melee		composed kit: Undead
+Y	25454	Tundra Crawler	70	Beast	42	0	7	0	Melee		composed kit: Critter
+Y	26607	Anub'ar Blightbeast	71-72	Undead	0	0	42	0	Melee		composed kit: Undead
+Y	26319	Anub'ar Cultist	71-72	Humanoid	0	0	42	0	Melee		composed kit: Undead
+Y	26606	Anub'ar Slayer	71-72	Undead	0	0	83	0	Melee		composed kit: Undead
+Y	25383	En'kilah Abomination	71	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	25387	En'kilah Gargoyle	71	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	25378	En'kilah Necromancer	71-72	Humanoid	0	0	6	0	Melee		composed kit: Undead
+Y	26772	Icemist Warrior	71-72	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	26103	Darkfallen Deathblade	72	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	27358	Burning Depths Necromancer	73-74	Humanoid	0	0	10	0	Melee		composed kit: Undead
+Y	27362	Smoldering Construct	73-74	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	27363	Smoldering Geist	73-74	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	30849	Chilled Earth Elemental	80	Elemental	0	0	54	0	Melee		composed kit: Elemental
+Y	30876	Earthbound Revenant	80	Elemental	0	0	15	0	Melee		composed kit: Elemental
+Y	30873	Flame Revenant	80	Elemental	0	0	7	0	Melee		composed kit: Elemental
+Y	30845	Living Lasher	80	Elemental	0	0	20	0	Melee		composed kit: Elemental
+Y	34300	Mature Lasher	80	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	30847	Raging Flame	80	Elemental	0	0	21	0	Melee		composed kit: Elemental
+Y	30872	Shadow Revenant	80	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	36656	Silver Covenant Sentinel	80	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	36657	Sunreaver War Mage	80	Humanoid	0	0	4	0	Melee		composed kit: Magic
+Y	30875	Tempest Revenant	80	Elemental	0	0	7	0	Melee		composed kit: Elemental
+Y	30842	Wandering Shadow	80	Elemental	0	0	44	0	Melee		composed kit: Elemental
+Y	30877	Water Revenant	80	Elemental	0	0	27	0	Melee		composed kit: Elemental
+Y	30848	Whispering Wind	80	Elemental	0	0	42	0	Melee		composed kit: Elemental
+Y	27852	Wintergrasp Control Arms	80	Mechanical	0	0	6	0	Melee		composed kit: Mechanical
+Y	27869	Wintergrasp Detection Unit	80	Mechanical	0	0	40	0	Melee		composed kit: Mechanical
+Y	37965	Argent Commander	81	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	37967	Ebon Blade Commander	81	Humanoid	0	0	20	0	Melee		composed kit: Undead

@@ -1,0 +1,374 @@
+template	role	members	shipped	cooldown	turns	dmg_points	dmg_acc	heal_points	auras	families	example_names	member_ids
+M001	dmg	35	22	0	1	20	100	-	-	Elemental:8,Humanoid:6,Magic:4,Mechanical:4	Bite; Punch; Peck; Beam; Zap; Water Jet	110,111,112,114,116,118,119,356,378,384,445,452,477,478,484,528,584,626,648,655,771,782,801,1079,1094,1223,1465,1737,2025,2027,2028,2029,2228,2234,2240
+M002	dmg	25	15	0	1	21	100	-	-	Humanoid:7,Beast:3,Magic:3,Elemental:2	Burn; Breath; Shadow Slash; Jab; Claw; Jade Claw	113,115,210,219,429,432,493,499,525,712,765,777,1004,1095,1099,1238,1570,1682,1719,1934,2242,2307,2399,2522,1518
+M003	dmg	19	14	0	1	22	100	-	-	Undead:3,Magic:3,Elemental:3,Dragonkin:2	Infected Claw; Smash; Chomp; Shadowflame; Crush; Shadow Shock	117,349,367,393,406,422,424,437,788,812,978,1056,1060,1066,1370,1483,1625,1880,1964
+M004	dmg	14	10	0	1	10/10	100/50	-	-	Critter:3,Elemental:3,Beast:2,Mechanical:2	Quills; Flank; Thrash; Tongue Lash; Flurry; Lash	184,193,202,228,360,394,441,455,617,713,789,1027,2433,1840
+M005	buff/debuff	9	7	0	1	-	-	-	Stat_CritChance	Magic:4,Humanoid:2,Beast:1,Dragonkin:1	Adrenal Glands; Shell Shield; Focus; Jadeskin; Stoneskin; Emerald Presence	197,310,426,431,436,597,791,1045,1626
+M006	dmg	8	6	0	1	15	100	-	-	Magic:3,Beast:1,Undead:1,Aquatic:1	Vicious Fang; Arcane Blast; Focused Beams; Nether Blast; Empowering Strikes; Pinch	156,421,473,608,1958,2067,2452,2462
+M007	stun	7	7	5	1	-	-	-	Mechanic_IsStunned,resilient,turnLock	Humanoid:4,Beast:3	Blackout Kick; Bash; Clobber; Crystal Prison; Holy Justice; Lovestruck	227,348,350,569,766,772,2446
+M008	buff/debuff	7	3	0	2	-	-	-	Mod_DamageDealtPercent	Aquatic:2,Mechanical:2,Beast:1,Elemental:1	Pump; Barrel Toss; Wind-Up; Cannon Shot; Flame Shot; Frost Shot	297,354,459,1860,1862,1865,1867
+M009	special	7	6	4	1	-	-	-	Stat_Dodge	Humanoid:2,Magic:2,Beast:2,Mechanical:1	Dodge; Evanescence; Phase Shift; Where's the Beef?; Queue Dodge; Smoke Cloud	312,440,764,1401,1722,2239,2059
+M010	dmg+dot	6	5	0	1	12	100	-	Mechanic_IsBurning	Elemental:3,Beast:1,Aquatic:1,Mechanical:1	Immolate; Woodchipper; Poisoned Branch; Acid Touch; Fel Immolate; Fel Exhaust	178,411,630,756,901,1937
+M011	dmg+buff/debuff	5	4	0	1	10	100	-	Mod_SpeedPercent	Beast:2,Critter:1,Magic:1,Dragonkin:1	Adrenaline Rush; Roar; Trumpet Strike; Competitive Spirit; Roll	162,347,375,614,809
+M012	dmg+buff/debuff	5	4	0	1	15	100	-	Mod_SpeedPercent	Beast:3,Magic:1,Elemental:1	Metabolic Boost; Leap; Rush; Ironbark; Face Bite	194,364,567,962,2068
+M013	dmg+stun	5	5	4	1	30	100	-	Mechanic_IsStunned,resilient,turnLock	Beast:2,Magic:1,Elemental:1,Humanoid:1	Headbutt; Soulrush; Rupture; Tornado Punch; Udder Destruction	376,752,814,1052,1400
+M014	heal	4	3	3	1	-	-	20/50	-	Dragonkin:1,Elemental:1,Humanoid:1,Magic:1	Healing Flame; Cauterize; Bandage; Rewind Time	168,173,1078,1933
+M015	dmg+swaplock	4	3	0	1	15	100	-	swapOutLock	Elemental:2,Aquatic:1,Beast:1	Grasp; Sticky Web; Super Sticky Goo; Icy Web	249,339,631,2476
+M016	defense	4	3	5	1	-	-	-	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount	Elemental:2,Critter:1,Magic:1	Beaver Dam; Illusionary Barrier; Ice Barrier; Weald Wall	325,465,479,2398
+M017	dmg+buff/debuff	4	1	0	1	10	100	-	Mod_SpeedPercent	Mechanical:2,Magic:1,Critter:1	Overtune; Centrifugal Hooks; Vicious Streak; Overcharge	389,838,851,2342
+M018	dmg-multiturn+defense	4	4	4	2	30	100	-	Mechanic_IsFlying,untargettable	Magic:1,Aquatic:1,Mechanical:1,Humanoid:1	Meteor Strike; Dive; Launch; Heroic Leap	407,564,645,761
+M019	dmg	4	2	0	1	18	200	-	-	Magic:2,Mechanical:1,Humanoid:1	Laser; Dark Talon; Chaos Beam; Package Drop	482,1233,1938,2013
+M020	dmg	4	2	3	1	15/9/9	100/100/100	-	-	Mechanical:2,Elemental:1,Magic:1	Flux; Chaos Nova; Void Nova; Chain Lightning	923,1738,2356,2364
+M021	heal	3	2	3	1	-	-	30	-	Aquatic:1,Critter:1,Beast:1	Healing Wave; Nature's Touch; Digest Brains	123,573,1065
+M022	defense	3	2	4	1	-	-	-	Mod_DamageTakenPercent	Mechanical:2,Critter:1	Crouch; Extra Plating; Extra Plating	165,392,1733
+M023	dmg+slow+weather	3	2	3	1	27	100	-	Mechanic_IsChilled,Mod_PetTypeDamageDealtPercent,Mod_PetType	Elemental:1,Magic:1,Dragonkin:1	Call Blizzard; Moonfire; Toxic Fumes	206,595,2349
+M024	dmg+stun	3	3	3	1	15	100	-	Mechanic_IsStunned,resilient,turnLock	Humanoid:2,Magic:1	Kick; Interrupting Gaze; Backflip	307,474,669
+M025	defense	3	2	3	1	-	-	-	Mod_DamageTakenPercent	Beast:2,Undead:1	Howl; Roar of the Dead; Howl	362,2071,2205
+M026	buff/debuff	3	3	3	1	-	-	-	Mod_DamageDealtPercent	Magic:1,Beast:1,Critter:1	Amplify Magic; Going Bonkers!; Cute As A Button	488,1054,1347
+M027	buff/debuff	3	1	0	1	-	-	-	Stat_CritChance	Flying:2,Beast:1	Hawk Eye; Wild Rage; Caw	521,971,936
+M028	special	3	3	2	1	-	-	-	-	Humanoid:2,Magic:1	Aged Yolk; Sear Magic; Eggnog	667,763,835
+M029	dmg	3	1	4	1	10	100	-	-	Undead:1,Elemental:1,Flying:1	Death Grip; Inferno Herding; Wind Buffet	780,1356,1963
+M030	dmg	3	3	3	1	25	100	-	Mod_HealingTakenPercent	Elemental:2,Magic:1	Darkflame; Breath of Sorrow; Nightmare	792,1055,1731
+M031	aoe-dmg	3	0	5	1	45	100	-	-	Elemental:1,Dragonkin:1,Mechanical:1	Avalanche; Twilight Meteorite; Dive Bomb	1110,1960,2463
+M032	dmg+heal	2	1	0	1	14	100	50	-	Undead:2	Death Coil; Soul Steal	121,2294
+M033	dmg-multiturn	2	1	3	3	25/25/25	100/100/100	-	-	Beast:1,Humanoid:1	Rampage; Eye Beam	124,1533
+M034	dmg+dot	2	2	0	1	10	100	-	Mechanic_IsPoisoned	Beast:1,Elemental:1	Poison Fang; Poison Lash	152,398
+M035	dmg-multiturn+defense	2	2	4	2	30	100	-	Mechanic_IsUnderground,untargettable	Beast:1,Flying:1	Burrow; Lift-Off	159,170
+M036	dmg	2	1	1	1	9/9/9	80/80/80	-	-	Critter:1,Mechanical:1	Nut Barrage; Make it Rain	167,985
+M037	buff/debuff	2	2	3	1	-	-	-	Mod_DamageDealtPercent	Mechanical:1,Humanoid:1	Supercharge; Overpowered	208,1720
+M038	dmg+dot	2	1	0	1	-	-	-	-	Critter:2	Swarm of Flies; Swarm of Bees	232,2101
+M039	heal+stun+swaplock	2	2	5	1	-	-	-	swapInLock,swapOutLock,turnLock	Beast:1,Dragonkin:1	Hibernate; Emerald Dream	247,598
+M040	dmg	2	1	3	1	10/10	100/100	-	-	Beast:1,Elemental:1	Spiderling Swarm; Shiverweb Swarm	250,2477
+M041	dmg	2	1	0	1	15	100	-	-	Critter:1,Magic:1	Comeback; Arcane Riposte	253,2518
+M042	dmg+blind+buff/debuff+weather	2	2	5	1	45	100	-	Mechanic_IsBlind,Mod_HealingTakenPercent,Stat_Accuracy,Weath	Humanoid:1,Flying:1	Call Darkness; Sandstorm	256,453
+M043	dmg+heal+weather	2	1	4	1	6/6/6	100/100/100	6/6/6	Mod_HealingTakenPercent,Mod_PetTypeDamageDealtPercent,Mod_Pe	Dragonkin:1,Magic:1	Starfall; Moon Tears	258,979
+M044	dmg	2	1	0	1	40	100	-	-	Mechanical:1,Critter:1	Explode; Burst	282,2209
+M045	defense	2	2	0	1	-	-	-	Add_FlatDamageTaken	Beast:1,Magic:1	Exposed Wounds; Wild Magic	305,592
+M046	dmg	2	2	0	1	7/7/7	100/100/100	-	-	Elemental:1,Aquatic:1	Magma Wave; Tidal Wave	319,419
+M047	dmg	2	2	0	1	10/10/10	100/66/33	-	-	Beast:1,Flying:1	Triple Snap; Slicing Wind	355,420
+M048	dmg+dot	2	2	0	1	14	100	-	Mechanic_IsPoisoned	Beast:1,Aquatic:1	Poison Spit; Creeping Ooze	380,448
+M049	dmg+slow	2	1	0	1	10	100	-	Mechanic_IsWebbed	Beast:1,Elemental:1	Brittle Webbing; Frostbite Webbing	382,2478
+M050	dmg	2	2	0	1	40	50	-	-	Mechanical:1,Elemental:1	Demolish; Ice Spike	390,625
+M051	dmg	2	2	0	1	15	100	-	-	Beast:1,Flying:1	Gnaw; Alpha Strike	412,504
+M052	dmg-multiturn+heal	2	1	0	2	10	100	100	-	Undead:1,Dragonkin:1	Absorb; Life Sap	449,2509
+M053	dmg	2	1	3	1	40	50	-	-	Aquatic:1,Beast:1	Blood in the Water; Feast	423,2431
+M054	dmg	2	2	3	1	40	50	-	-	Magic:1,Flying:1	Spectral Strike; Nocturnal Strike	442,517
+M055	dmg	2	2	3	1	25	100	-	-	Magic:1,Critter:1	Clean-Up; Sniff Out	456,1895
+M056	dmg+swaplock	2	2	3	1	-	-	-	swapOutLock	Aquatic:1,Magic:1	Whirlpool; Sewage Eruption	513,2062
+M057	dmg+buff/debuff	2	2	0	1	10	100	-	Mod_DamageDealtPercent	Flying:1,Dragonkin:1	Squawk; Shriek	524,784
+M058	buff/debuff	2	1	0	1	-	-	-	Stat_Accuracy	Critter:1,Elemental:1	Stench; Inebriate	527,1010
+M059	buff/debuff	2	1	5	1	-	-	-	Cosmetic_Stealthed,Mod_DamageDealtPercent,Mod_SpeedPercent	Beast:1,Flying:1	Prowl; Shadowmeld	536,2253
+M060	heal	2	2	3	1	-	-	28	maxHealthBonus	Critter:1,Dragonkin:1	Perk Up; Ancient Blessing	576,611
+M061	stun	2	1	5	1	-	-	-	resilient,turnLock	Critter:2	Food Coma; Lullaby	580,996
+M062	dmg	2	2	5	1	40	100	-	-	Magic:1,Elemental:1	Gift of Winter Veil; Fist of the Forest	586,1343
+M063	dmg	2	1	1	1	45	50	-	-	Dragonkin:2	Cataclysm; Instability	607,609
+M064	dmg-multiturn+defense	2	2	0	3	3/3/3/5/5/5/7/7/7	100/100/100/100/100/100/100/100/100	-	Mod_DamageTakenPercent	Critter:1,Flying:1	Swarm; Murder	706,870
+M065	aoe-dmg	2	1	3	1	27	100	-	-	Humanoid:1,Mechanical:1	Whirlwind; Storm Coil	741,1922
+M066	buff/debuff	2	1	0	1	-	-	-	Stat_Accuracy,Stat_CritChance	Critter:1,Mechanical:1	Lucky Dance; Unstable Engineering	757,2236
+M067	dmg-multiturn	2	1	3	2	50	100	-	-	Humanoid:2	Holy Charge; Shot Through The Heart	767,773
+M068	special	2	0	3	3	-	-	-	-	Humanoid:2	Restoration; Love Potion	770,776
+M069	aoe-dmg	2	0	4	1	36	100	-	-	Elemental:2	Thunderbolt; Thunderclap	779,1786
+M070	dmg+dot	2	2	0	1	10	100	-	Mechanic_IsBleeding	Beast:1,Mechanical:1	Rip; Chop	803,943
+M071	dmg	2	1	1	1	25	100	-	-	Elemental:1,Undead:1	Jolt; Slime	908,1763
+M072	dmg+buff/debuff	2	1	4	1	30	100	-	Mod_SpeedPercent	Elemental:1,Aquatic:1	Quicksand; Squeeze	912,1572
+M073	defense	2	1	0	1	-	-	-	Add_FlatDamageTaken	Beast:1,Mechanical:1	Black Claw; Razor Talons	919,2237
+M074	defense	2	1	5	1	-	-	-	Add_FlatDamageTaken	Beast:1,Flying:1	Trihorn Shield; Warning Squawk	960,1772
+M075	dmg-multiturn+heal	2	1	4	2	20	100	100	-	Beast:1,Elemental:1	Feed; Unleash Life	1016,2403
+M076	special	2	1	4	1	-	-	-	Stat_Dodge	Humanoid:2	Frolick; Barrier Projector	1047,1627
+M077	dmg	2	1	0	1	7/7/7	100/100/100	-	-	Magic:1,Mechanical:1	Blessed Hammer; Alert!	1100,1585
+M078	dmg	2	2	0	1	-	-	-	-	Magic:1,Critter:1	Arcane Slash; Scrabble	1353,2430
+M079	dmg-multiturn	2	1	4	2	50	100	-	-	Critter:2	Slow and Steady; Snail Mail	1360,2010
+M080	dmg	2	0	0	1	10	100	-	-	Aquatic:1,Elemental:1	Deep Bite; Holy Blast	1372,2377
+M081	dmg	2	1	0	1	13	100	-	-	Elemental:1,Mechanical:1	Deep Burn; Personal Inferno	1407,2467
+M082	dmg	2	1	2	1	10	100	-	-	Elemental:1,Undead:1	Inferno Herding; Meat Hook	1687,2289
+M083	dmg	2	0	4	1	10	100	-	-	Magic:1,Mechanical:1	Phase Punch; Hammer	1765,2384
+M084	dmg	2	0	0	1	12/12/12/12	100/100/100/100	-	-	Mechanical:2	Jackhammer; Hammering Drill	2247,2526
+M085	dmg	2	1	1	1	10	100	-	-	Flying:1,Humanoid:1	Furious Flapping; Face Punch	2400,2401
+M086	dmg-multiturn	1	1	3	2	25	100	-	-	Elemental:1	Howling Blast	120
+M087	dmg	1	1	0	1	-	-	-	-	Dragonkin:1	Tail Sweep	122
+M088	dmg+buff/debuff	1	1	3	1	20	100	-	Mod_SpeedPercent	Beast:1	Hiss	155
+M089	dmg-multiturn	1	1	2	3	20	100	-	-	Humanoid:1	Counterstrike	158
+M090	dmg-multiturn+heal	1	1	1	2	12	100	100	-	Undead:1	Consume	160
+M091	dmg-multiturn	1	1	0	2	50	100	-	-	Dragonkin:1	Deep Breath	169
+M092	dmg	1	1	4	1	30	100	-	-	Elemental:1	Conflagrate	179
+M093	dmg+defense	1	1	1	1	25	100	-	Mod_DamageTakenPercent	Flying:1	Reckless Strike	186
+M094	buff/debuff	1	1	0	1	-	-	-	Stat_Accuracy	Flying:1	Accuracy	188
+M095	dmg	1	1	5	1	-	-	-	Mechanic_IsObject	Flying:1	Cyclone	190
+M096	dmg-multiturn	1	1	5	3	50	100	-	-	Mechanical:1	Ion Cannon	209
+M097	dmg+dot+heal	1	1	0	1	-	-	-	-	Undead:1	Siphon Life	212
+M098	dmg+dot	1	1	0	1	-	-	-	-	Undead:1	Death and Decay	214
+M099	buff/debuff	1	1	1	1	-	-	-	Mod_DamageDealtPercent	Magic:1	Inner Vision	216
+M100	dmg	1	1	5	1	-	-	-	-	Undead:1	Curse of Doom	218
+M101	dmg	1	1	0	1	18	100	-	-	Humanoid:1	Takedown	221
+M102	defense	1	0	3	1	-	-	-	Mod_DamageTakenPercent	Humanoid:1	Staggered Steps	225
+M103	heal+weather	1	1	3	1	-	-	9/9/9	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	Aquatic:1	Cleansing Rain	230
+M104	dmg+stun	1	1	1	1	10	100	-	Cosmetic_Stealthed,Mechanic_IsInvisible,resilient,turnLock	Aquatic:1	Frog Kiss	233
+M105	buff/debuff	1	1	0	1	-	-	-	Stat_Accuracy,Stat_CritChance	Critter:1	Uncanny Luck	252
+M106	heal+hot	1	1	0	1	-	-	-	-	Critter:1	Tranquility	254
+M107	defense	1	0	4	1	-	-	-	Mechanic_IsInvisible,untargettable	Magic:1	Invisibility	259
+M108	dmg+buff/debuff	1	0	1	1	-	-	-	Mod_DamageDealtPercent	Elemental:1	Crystal Overload	263
+M109	dmg+defense	1	0	0	1	20	100	-	Mechanic_IsFlying	Elemental:1	Boulder Toss	265
+M110	dmg+dot	1	0	0	1	-	-	-	Mechanic_IsPoisoned	Flying:1	Glowing Toxin	270
+M111	hot	1	1	5	1	-	-	-	-	Magic:1	Wish	273
+M112	dmg	1	1	0	1	20	100	-	-	Aquatic:1	Swallow You Whole	276
+M113	special	1	1	5	1	-	-	-	-	Magic:1	Life Exchange	277
+M114	heal	1	1	5	3	-	-	70	-	Mechanical:1	Repair	278
+M115	special	1	1	3	1	-	-	-	unkillable	Critter:1	Survival	283
+M116	special	1	1	0	1	-	-	-	Mechanic_IsObject	Mechanical:1	Launch Rocket	293
+M117	heal	1	0	3	1	-	-	12/12/12	-	Elemental:1	Inspiring Song	298
+M118	dmg	1	1	0	1	10/6/6	100/100/100	-	-	Magic:1	Arcane Explosion	299
+M119	special	1	1	0	2	-	-	-	-	Mechanical:1	Lock-On	301
+M120	swaplock	1	1	0	2	-	-	-	swapOutLock	Elemental:1	Plant	303
+M121	defense	1	1	0	1	-	-	-	Add_FlatDamageTaken	Beast:1	Mangle	314
+M122	defense	1	1	0	1	-	-	-	Mod_DamageTakenPercent	Undead:1	Unholy Ascension	321
+M123	defense	1	0	8	1	-	-	-	Mechanic_IsObject,Special_BlockedAttackCount,Special_ObjectR	Mechanical:1	Decoy	334
+M124	dmg	1	1	3	1	30	100	-	-	Beast:1	Maul	345
+M125	dmg	1	1	1	1	7/8/7/8	50/50/50/50	-	-	Beast:1	Banana Barrage	352
+M126	dmg+buff/debuff	1	1	0	1	10	100	-	Mod_SpeedPercent	Beast:1	Screech	357
+M127	dmg+dot	1	1	0	1	-	-	-	Mechanic_IsPoisoned	Beast:1	Sting	359
+M128	buff/debuff	1	1	0	1	-	-	-	Mod_SpeedPercent	Critter:1	Dazzling Dance	366
+M129	dmg+dot+defense	1	1	0	1	-	-	-	Mechanic_IsPoisoned,Mod_DamageTakenPercent	Critter:1	Acidic Goo	369
+M130	dmg+swaplock	1	1	0	1	10	100	-	swapOutLock	Elemental:1	Sticky Goo	371
+M131	dmg	1	1	0	1	10/10	100/100	-	-	Beast:1	Trample	377
+M132	dmg-multiturn+heal	1	1	1	3	10	100	10/10	-	Undead:1	Leech Life	383
+M133	dmg-multiturn	1	0	4	5	7/7/14/7/7/14/7/7/14	100/100/100/100/100/100/100/100/100	-	-	Mechanical:1	Tympanic Tantrum	387
+M134	heal	1	1	0	1	-	-	-	-	Elemental:1	Soothing Mists	396
+M135	dmg+swaplock	1	1	3	1	-	-	-	swapOutLock	Elemental:1	Entangling Roots	400
+M136	dmg+stun	1	1	5	1	-	-	-	Mechanic_IsStunned,resilient,turnLock	Elemental:1	Stun Seed	402
+M137	dmg+buff/debuff+weather	1	1	5	1	15/15/15	100/100/100	-	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	Elemental:1	Sunlight	404
+M138	dmg	1	1	3	1	20	100	-	-	Elemental:1	Early Advantage	405
+M139	dmg	1	1	0	1	-	-	-	-	Elemental:1	Immolation	409
+M140	dmg	1	1	0	1	15	100	-	-	Elemental:1	Ice Lance	413
+M141	dmg+swaplock+slow	1	1	3	1	20	100	-	Mechanic_IsChilled,swapOutLock	Elemental:1	Frost Nova	414
+M142	dmg+slow+buff/debuff	1	1	0	1	10	100	-	Mechanic_IsChilled,Mod_SpeedPercent	Elemental:1	Frost Shock	416
+M143	dmg+stun	1	1	5	1	-	-	-	Mechanic_IsStunned,resilient,turnLock	Elemental:1	Geyser	418
+M144	defense	1	1	5	2	-	-	-	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount	Magic:1	Onyx Wall	439
+M145	dmg+dot+defense	1	1	0	1	10	100	-	Add_FlatDamageTaken	Magic:1	Corrosion	447
+M146	dmg	1	1	3	1	32	100	-	-	Magic:1	Expunge	450
+M147	dmg+buff/debuff+weather	1	0	5	1	45	100	-	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	Magic:1	Illuminate	460
+M148	dmg+blind+buff/debuff	1	1	3	1	10	100	-	Mechanic_IsBlind,Stat_Accuracy	Magic:1	Flash	463
+M149	dmg	1	1	5	1	20	100	-	-	Magic:1	Nether Gate	466
+M150	dmg+dot	1	1	0	1	-	-	-	-	Undead:1	Agony	468
+M151	dmg+buff/debuff	1	1	1	1	10	100	-	Mod_DamageDealtPercent,Mod_SpeedPercent	Magic:1	Weakness	471
+M152	dmg-multiturn	1	0	0	3	15	100	-	-	Magic:1	Blast of Hatred	472
+M153	dmg+buff/debuff	1	1	4	1	20	100	-	Mod_SpeedPercent	Magic:1	Eyeblast	475
+M154	dmg	1	1	3	1	25	100	-	Special_TypeOverride	Undead:1	Rot	476
+M155	dmg+stun	1	1	4	1	25	100	-	Mechanic_IsStunned,resilient,turnLock	Elemental:1	Deep Freeze	481
+M156	dmg	1	1	1	1	20	100	-	-	Magic:1	Psychic Blast	483
+M157	dmg+buff/debuff	1	1	4	1	10	100	-	Mod_DamageDealtPercent	Magic:1	Drain Power	486
+M158	dmg-multiturn	1	1	3	3	25/25/25	100/100/100	-	-	Magic:1	Mana Surge	489
+M159	cleanse	1	1	3	3	-	-	-	Stat_Dodge,Stat_Speed	Humanoid:1	Deflection	490
+M160	dmg+dot+buff/debuff	1	1	2	1	15	100	-	Mechanic_IsBleeding,Mod_DamageDealtPercent	Beast:1	Rake	492
+M161	stun	1	1	4	1	-	-	-	resilient,turnLock	Critter:1	Soothe	497
+M162	dmg+dot	1	1	0	1	16	100	-	Mechanic_IsBurning	Dragonkin:1	Flame Breath	501
+M163	dmg+dot	1	1	0	1	15	100	-	Mechanic_IsBurning	Elemental:1	Flamethrower	503
+M164	dmg+swaplock+defense+buff/debuff	1	1	3	1	10	100	-	Mod_SpeedPercent,Special_BlockedAttackCount,swapOutLock	Flying:1	Cocoon Strike	506
+M165	dmg+buff/debuff	1	1	1	1	10/10/10/10	50/50/50/50	-	Mod_SpeedPercent	Flying:1	Moth Balls	507
+M166	dmg+stun	1	1	3	1	25	100	-	Mechanic_IsStunned,resilient,turnLock	Flying:1	Moth Dust	508
+M167	dmg-multiturn	1	1	0	3	15	100	-	Stat_Speed	Aquatic:1	Surge	509
+M168	heal+hot	1	1	0	1	-	-	-	-	Aquatic:1	Renewing Mists	511
+M169	dmg+dot	1	1	0	1	18	100	-	-	Flying:1	Wild Winds	514
+M170	dmg+defense	1	1	0	1	10	100	-	Mod_DamageTakenPercent	Flying:1	Flyby	515
+M171	dmg	1	1	4	1	30	100	-	-	Flying:1	Predatory Strike	518
+M172	special	1	1	20	1	-	-	-	-	Critter:1	Apocalypse	519
+M173	dmg	1	1	1	1	30/13	100/200	-	-	Humanoid:1	Body Slam	532
+M174	heal	1	1	3	1	-	-	24	-	Mechanical:1	Rebuild	533
+M175	dmg	1	1	0	1	17	100	-	-	Beast:1	Pounce	535
+M176	dmg-multiturn+heal	1	1	1	2	15/15	100/100	30/30	-	Beast:1	Devour	538
+M177	heal	1	1	4	1	-	-	15/15/15	-	Critter:1	Bleat	539
+M178	dmg	1	1	1	1	-	-	-	-	Critter:1	Chew	541
+M179	dmg-multiturn	1	1	0	3	15	100	-	-	Critter:1	Quick Attack	563
+M180	dmg	1	1	0	1	15	100	-	-	Critter:1	Powerball	566
+M181	dmg+stun	1	1	1	1	20	100	-	Mechanic_IsStunned,resilient,turnLock	Beast:1	Horn Attack	571
+M182	dmg+slow+buff/debuff	1	1	0	1	10	100	-	Mechanic_IsChilled,Stat_Accuracy	Elemental:1	Slippery Ice	575
+M183	special	1	1	3	1	-	-	-	-	Critter:1	Buried Treasure	578
+M184	dmg+buff/debuff	1	1	0	1	10	100	-	Mod_SpeedPercent	Critter:1	Gobble Strike	579
+M185	dmg-multiturn+defense	1	1	0	3	3/3/3/5/5/5/7/7/7	100/100/100/100/100/100/100/100/100	-	Mod_DamageTakenPercent	Flying:1	Flock	581
+M186	dmg-multiturn+defense	1	1	4	2	30	100	-	Mechanic_IsFlying,untargettable	Dragonkin:1	Devastate	588
+M187	aoe-dmg+weather	1	1	3	1	24	100	-	Weather_ArcaneStorm	Magic:1	Arcane Storm	589
+M188	dmg-multiturn+swaplock	1	1	5	3	50	100	-	swapOutLock	Magic:1	Surge of Power	593
+M189	dmg+stun	1	1	1	1	10	100	-	Mechanic_IsStunned,resilient,turnLock	Dragonkin:1	Sleeping Gas	594
+M190	dmg-multiturn+defense	1	0	4	2	30	100	-	Mechanic_IsFlying,untargettable	Dragonkin:1	Proto-Strike	612
+M191	dmg-multiturn	1	1	0	3	15	100	-	-	Magic:1	Blinkstrike	616
+M192	dmg	1	1	1	1	35/15	100/200	-	-	Elemental:1	Stone Rush	621
+M193	dmg+stun	1	1	5	1	-	-	-	Mechanic_IsStunned,resilient,turnLock	Elemental:1	Ice Tomb	624
+M194	dmg	1	1	2	1	8/8/8/8	50/50/50/50	-	-	Elemental:1	Rock Barrage	628
+M195	dmg+dot	1	0	0	1	-	-	-	Mechanic_IsPoisoned	Flying:1	Confusing Sting	632
+M196	dmg+dot	1	1	0	1	16	100	-	-	Mechanical:1	Toxic Smoke	640
+M197	dmg	1	1	1	1	9/8/9/8	50/50/50/50	-	-	Critter:1	Egg Barrage	642
+M198	dmg-multiturn	1	1	2	5	12/6/6/14/7/7/16/8/8	100/100/100/100/100/100/100/100/100	-	-	Mechanical:1	Quake	644
+M199	dmg	1	0	3	1	13/13/13/10	100/100/100/100	-	-	Undead:1	BONESTORM	649
+M200	dmg+swaplock	1	1	0	1	17	100	-	swapOutLock	Undead:1	Bone Prison	650
+M201	dmg+stun	1	1	3	1	40	100	-	Mechanic_IsStunned,turnLock	Undead:1	Ghostly Bite	654
+M202	dmg+heal	1	1	0	1	16	100	-	-	Undead:1	Plagued Blood	657
+M203	special	1	1	3	1	-	-	-	-	Undead:1	Consume Corpse	665
+M204	dmg+defense+buff/debuff	1	1	0	1	13	100	-	Mod_DamageDealtPercent,Mod_DamageTakenPercent	Undead:1	Rabid Strike	666
+M205	aoe-dmg	1	1	0	3	19/19/19	100/100/100	-	-	Humanoid:1	Dreadful Breath	668
+M206	dmg-multiturn+dot	1	1	2	2	-	-	-	Mechanic_IsObject	Mechanical:1	Build Turret	710
+M207	dmg+dot+heal	1	1	4	1	10	100	10	-	Elemental:1	Leech Seed	745
+M208	defense	1	1	3	1	-	-	-	Special_BlockedAttackCount	Humanoid:1	Soul Ward	751
+M209	dmg-multiturn	1	1	0	3	40	100	-	-	Elemental:1	Solar Beam	753
+M210	dmg+stun	1	1	1	1	20	100	-	Mechanic_IsStunned,resilient,turnLock	Mechanical:1	Screeching Gears	754
+M211	defense	1	1	3	1	-	-	-	Special_BlockedAttackCount	Humanoid:1	Shield Block	760
+M212	dmg+stun	1	1	3	1	50	50	-	Mechanic_IsStunned,turnLock	Humanoid:1	Haymaker	762
+M213	dmg-multiturn	1	1	0	3	15	100	-	-	Humanoid:1	Charge	778
+M214	dmg	1	1	2	1	25	100	-	-	Beast:1	Impale	800
+M215	dmg-multiturn+heal	1	1	1	2	20/20	100/100	20/20	-	Beast:1	Ravage	802
+M216	dmg	1	1	0	1	20	100	-	-	Humanoid:1	Weakening Blow	826
+M217	dmg+blind+buff/debuff	1	0	3	1	25	100	-	Mechanic_IsBlind,Stat_Accuracy	Magic:1	Spectral Spine	913
+M218	dmg-multiturn	1	0	3	2	25/25	100/100	-	-	Mechanical:1	Haywire	916
+M219	dmg+heal	1	0	3	1	25	100	25	-	Beast:1	Bloodfang	917
+M220	dmg+buff/debuff	1	1	3	1	10/10/10	100/100/100	-	Mod_SpeedPercent	Beast:1	Primal Cry	920
+M221	dmg	1	1	0	1	28	80	-	-	Beast:1	Spirit Claws	974
+M222	dmg+buff/debuff	1	0	3	1	25	100	-	Mod_SpeedPercent	Beast:1	Slither	929
+M223	dmg	1	0	1	1	20	100	-	-	Beast:1	Huge Fang	930
+M224	dmg+buff/debuff	1	0	4	1	20	100	-	Stat_CritChance	Aquatic:1	Croak	932
+M225	defense	1	1	8	1	-	-	-	Special_BlockedAttackCount	Humanoid:1	Bubble	934
+M226	dmg+heal	1	0	4	1	20	100	-	-	Mechanical:1	Touch of the Animus	940
+M227	dmg-multiturn	1	0	1	3	20	85	-	-	Beast:1	Trihorn Charge	958
+M228	heal+buff/debuff	1	0	4	1	-	-	12/12/12	Stat_Accuracy	Elemental:1	Autumn Breeze	964
+M229	dmg	1	1	2	1	100	100	-	-	Beast:1	Vengeance	997
+M230	cleanse	1	1	3	3	-	-	-	Stat_Dodge,Stat_Speed	Magic:1	Ethereal	998
+M231	dmg-multiturn	1	0	2	2	15/15/15	100/100/100	-	-	Critter:1	Locust Swarm	1007
+M232	heal+buff/debuff	1	0	3	1	-	-	22	Mod_DamageDealtPercent	Humanoid:1	Giant's Blood	1012
+M233	dmg+slow+weather	1	1	3	1	8/8/8	100/100/100	-	Mechanic_IsChilled,Mod_PetTypeDamageDealtPercent,Mod_PetType	Elemental:1	Call of Winter	1013
+M234	dmg	1	1	3	1	11/11/11	100/100/100	-	-	Magic:1	Spiritfire Beam	1035
+M235	buff/debuff	1	0	0	1	-	-	-	Stat_Accuracy	Magic:1	Nimbus	1040
+M236	dmg+dot	1	0	4	1	30	100	-	Mechanic_IsBurning	Elemental:1	Flame Jet	1041
+M237	dmg-multiturn+heal	1	0	3	2	10	100	300	-	Undead:1	Drain Blood	1043
+M238	blind+dot+buff/debuff	1	1	4	1	-	-	-	Mechanic_IsBlind,Mechanic_IsPoisoned,Stat_Accuracy	Beast:1	Blinding Poison	1049
+M239	dmg	1	0	3	1	20	100	-	-	Beast:1	Puncture Wound	1050
+M240	dmg+weather	1	0	3	1	9/9/9	100/100/100	-	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	Aquatic:1	Acid Rain	1051
+M241	heal+buff/debuff	1	1	4	1	-	-	20	Stat_Accuracy,Stat_CritChance	Aquatic:1	Rain Dance	1062
+M242	defense+buff/debuff	1	0	0	1	-	-	-	Add_FlatDamageTaken,Mod_SpeedPercent	Magic:1	Forboding Curse	1068
+M243	cleanse	1	1	8	3	-	-	-	Stat_Dodge	Magic:1	Fade	1084
+M244	dmg+dot	1	1	0	1	-	-	-	Mechanic_IsPoisoned	Aquatic:1	Toxic Skin	1087
+M245	dmg	1	1	1	1	9/9/9	80/80/80	-	-	Undead:1	Bone Barrage	1091
+M246	dmg-multiturn+defense	1	1	0	3	3/3/3/5/5/5/7/7/7	100/100/100/100/100/100/100/100/100	-	Mod_DamageTakenPercent	Undead:1	Dead Man's Party	1093
+M247	dmg-multiturn+defense+buff/debuff	1	0	0	2	13	100	-	Mod_DamageDealtPercent,Mod_DamageTakenPercent	Magic:1	Greed Before Need	1121
+M248	special	1	0	4	1	-	-	-	-	Magic:1	Disruption	1123
+M249	heal	1	1	4	1	-	-	20	-	Magic:1	Consume Magic	1231
+M250	aoe-dmg	1	0	0	1	20	100	-	-	Undead:1	Cleave	1273
+M251	aoe-dmg	1	1	5	1	33	100	-	Mechanic_IsObject	Aquatic:1	Carpnado	1287
+M252	dmg+heal	1	1	1	1	14	100	100	-	Beast:1	Pig Out	1301
+M253	dmg	1	0	0	1	0	100	-	-	Magic:1	Rawr!	1335
+M254	defense	1	1	6	1	-	-	-	Special_BlockedAttackCount	Critter:1	Refuge	1344
+M255	dmg	1	0	4	1	35	100	-	-	Beast:1	Superbark	1357
+M256	special	1	0	20	1	-	-	-	-	Critter:1	Greater Apocalypse	1367
+M257	dmg	1	1	0	1	17	100	-	-	Critter:1	Sneak Attack	1371
+M258	defense	1	1	5	1	-	-	-	Add_FlatDamageTaken	Beast:1	Shell Armor	1380
+M259	dmg-multiturn	1	0	8	2	150	100	-	-	Undead:1	Death Bleat	1381
+M260	defense+buff/debuff	1	0	0	1	-	-	-	Mod_DamageDealtPercent,Mod_DamageTakenPercent	Beast:1	Enrage	1392
+M261	heal	1	1	4	1	-	-	16/16/16	-	Undead:1	Haunting Song	1397
+M262	dmg+buff/debuff	1	0	3	1	25	100	-	Mod_DamageDealtPercent,Special_TypeOverride	Flying:1	Feathered Frenzy	1398
+M263	heal	1	1	4	1	-	-	0/24/24	-	Beast:1	Mother's Milk	1402
+M264	heal	1	0	4	1	-	-	40	-	Humanoid:1	Gift of the Naaru	1410
+M265	aoe-dmg	1	0	5	1	36	100	-	-	Undead:1	Grave Destruction	1411
+M266	dmg	1	0	4	1	32	100	-	-	Humanoid:1	Mighty Charge	1438
+M267	heal	1	1	6	3	-	-	45/45/45	-	Undead:1	Stone Form	1466
+M268	dmg+defense+buff/debuff	1	0	3	1	20/20/20	100/100/100	-	Mod_DamageDealtPercent,Mod_DamageTakenPercent	Elemental:1	Fel Corruption	1517
+M269	dmg	1	0	0	1	14/4/4	100/100/100	-	-	Magic:1	Psionic Shockwave	1531
+M270	aoe-dmg+weather	1	0	5	1	40	100	-	Weather_ArcaneStorm	Magic:1	Psionic Storm	1532
+M271	buff/debuff	1	0	5	1	-	-	-	Mod_DamageDealtPercent,Stat_CritChance	Humanoid:1	Murkmorphosis	1535
+M272	heal+buff/debuff	1	1	3	1	-	-	22	Mod_DamageDealtPercent	Flying:1	Preen	1545
+M273	dmg	1	0	3	1	40	50	-	-	Magic:1	Worst Fear	1555
+M274	dmg+buff/debuff	1	1	2	1	15	100	-	Mod_DamageDealtPercent,Mod_SpeedPercent	Humanoid:1	Jar of Smelly Liquid	1556
+M275	dmg+dot	1	1	4	1	30	100	-	Mechanic_IsPoisoned	Elemental:1	Buuurp!	1557
+M276	dmg-multiturn	1	0	4	2	50	100	-	-	Beast:1	Lumbering Charge	1560
+M277	dmg	1	0	0	1	20/10/10	100/100/100	-	-	Elemental:1	Pound	1587
+M278	cleanse	1	0	5	3	-	-	-	Stat_Dodge,Stat_Speed	Humanoid:1	Smoke Bomb	1679
+M279	dmg	1	0	5	1	40	100	-	Special_TypeOverride	Elemental:1	Discharge	1717
+M280	dmg	1	0	5	1	20	100	-	-	Magic:1	Wing Buffet	1756
+M281	defense	1	1	4	1	-	-	-	Add_FlatDamageTaken	Magic:1	Ironskin	1758
+M282	dmg	1	0	5	1	-	-	-	-	Magic:1	Creeping Insanity	1760
+M283	dmg	1	0	3	1	13/13/13/30	100/100/100/100	-	-	Undead:1	BONESTORM!	1761
+M284	dmg	1	0	3	1	13/13/13/50	100/100/100/100	-	-	Undead:1	BONESTORM!!	1762
+M285	dmg	1	0	2	1	11/8/8	100/100/100	-	-	Elemental:1	Cosmic Smash	1764
+M286	dmg-multiturn+defense	1	1	0	2	5/5/5/5/5/5	100/100/100/100/100/100	-	Mod_DamageTakenPercent	Flying:1	Falcosaur Swarm!	1773
+M287	dmg	1	0	0	1	25/12	100/200	-	-	Beast:1	Feral Strike	1787
+M288	dmg+dot	1	0	1	1	15	100	-	Mechanic_IsBurning	Elemental:1	Twilight Fire	1890
+M289	dmg	1	0	0	1	30	100	-	-	Mechanical:1	Hammer	1917
+M290	dmg+dot	1	0	0	1	20	100	-	Mechanic_IsBurning	Mechanical:1	Firebomb	1919
+M291	dmg-multiturn	1	0	2	3	25	100	-	-	Mechanical:1	Drill Charge	1921
+M292	dmg+dot	1	1	5	1	5/5/5	100/100/100	-	Mechanic_IsPoisoned	Beast:1	Poison Protocol	1954
+M293	dmg+slow+buff/debuff	1	1	3	1	30	100	-	Mechanic_IsChilled,Mod_SpeedPercent	Elemental:1	Flash Freeze	1955
+M294	heal	1	1	4	1	-	-	30	-	Dragonkin:1	Draconic Remedy	1956
+M295	heal	1	1	8	3	-	-	25/25/25	-	Undead:1	Reanimate	1957
+M296	aoe-dmg	1	1	2	1	23	100	-	-	Undead:1	Great Cleave	1959
+M297	dmg+buff/debuff	1	0	1	1	15	100	-	Mod_DamageDealtPercent	Elemental:1	Frenzy	1965
+M298	heal	1	0	5	1	-	-	35	maxHealthBonus	Dragonkin:1	Ancient Knowledge	1991
+M299	stun	1	0	5	1	-	-	-	Mechanic_IsStunned,resilient,turnLock	Beast:1	Knot of Snakes	2058
+M300	heal+stun+swaplock	1	1	5	1	-	-	-	swapInLock,swapOutLock,turnLock	Beast:1	Nap Time	2065
+M301	dmg	1	0	3	1	16/16/16/16/16	100/100/100/100/100	-	-	Mechanical:1	Flame Cannon	2086
+M302	dmg	1	0	3	1	16/16/16/16/16/16	100/100/100/100/100/100	-	-	Mechanical:1	Quaking Drill	2087
+M303	dmg	1	0	2	1	30/30/30/30/30/30	100/100/100/100/100/100	-	-	Mechanical:1	The Big One	2089
+M304	dmg+buff/debuff	1	0	2	1	10	100	-	Mod_DamageDealtPercent,Mod_SpeedPercent	Mechanical:1	Terrify	2092
+M305	dmg	1	0	0	1	10/10/10/10	100/50/50/50	-	-	Mechanical:1	Multi-Stab	2093
+M306	dmg	1	0	3	1	35/35	100/100	-	-	Mechanical:1	Zap	2094
+M307	dmg	1	0	10	1	35	100	-	-	Flying:1	Sting	2099
+M308	dmg	1	0	4	1	20/20/20	100/100/100	-	-	Aquatic:1	Megalodon	2104
+M309	special	1	0	0	1	-	-	-	-	Magic:1	Murder the Innocent	2210
+M310	dmg	1	1	4	1	10	100	-	-	Beast:1	Tail Smash	2214
+M311	dmg	1	0	3	1	30	100	-	-	Magic:1	Murder the Innocent	2223
+M312	defense	1	0	4	3	-	-	-	Special_BlockedAttackCount,Special_ObjectRedirectionAuraID,S	Mechanical:1	Annoying Shield	2225
+M313	dmg	1	0	3	1	20/5/5	100/100/100	-	-	Mechanical:1	Sonic Detonator	2229
+M314	dmg	1	0	0	1	25	100	-	-	Elemental:1	Sonic Blast	2230
+M315	special	1	0	3	1	-	-	-	-	Aquatic:1	Healing Crash	2412
+M316	dmg	1	0	3	1	6/6/6/6	100/100/100/100	-	-	Mechanical:1	Omni Pummel	2241
+M317	dmg	1	0	2	1	6/6/6/6/6/6	75/75/75/75/75/75	-	-	Aquatic:1	Elemental Gatling Gun	2243
+M318	dmg+dot	1	0	0	1	-	-	-	-	Elemental:1	Corrupted Ground	2255
+M319	dmg+buff/debuff	1	0	2	1	20	100	-	Mod_DamageDealtPercent	Flying:1	Cluck	2288
+M320	dmg+dot	1	1	1	1	15	100	-	Mechanic_IsPoisoned	Undead:1	Sludge Belch	2291
+M321	heal	1	0	2	1	-	-	25	-	Aquatic:1	Healing Wrap	2297
+M322	dmg-multiturn+dot	1	0	2	2	-	-	-	Mechanic_IsObject	Undead:1	Raise Ally	2298
+M323	dmg	1	0	0	1	15/15	100/100	-	-	Beast:1	Hoof Pummel	2302
+M324	dmg	1	0	3	1	15/5/5	100/100/100	-	-	Beast:1	Wild Stallions	2303
+M325	dmg+swaplock	1	0	0	1	18	100	-	swapOutLock	Critter:1	Slime Trail	2308
+M326	dmg	1	0	0	1	5/5/5/5/5	100/100/100/100/100	-	-	Mechanical:1	Alert!!	2328
+M327	dmg+dot	1	0	0	1	12	100	-	-	Mechanical:1	Mega Jolt	2344
+M328	dmg	1	0	0	1	12/5/5	100/100/100	-	-	Beast:1	Swipe	2346
+M329	dmg	1	0	5	1	12/12/12	100/100/100	-	-	Mechanical:1	Whirling Gears	2351
+M330	dmg	1	0	0	1	15	100	-	-	Humanoid:1	Contagion Strike	2353
+M331	dmg+heal	1	0	0	1	12/12	100/100	-	-	Mechanical:1	Double Zap	2368
+M332	heal+buff/debuff+weather	1	0	5	1	-	-	15/15/15	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	Aquatic:1	Ray of Hope	2376
+M333	dmg	1	0	1	1	30	70	-	-	Magic:1	Dark Bolt	2381
+M334	dmg	1	0	3	1	13/10/10	100/100/100	-	-	Elemental:1	Holy Nova	2385
+M335	dmg	1	1	0	1	10/10	100/50	-	-	Aquatic:1	Steady Snap	2402
+M336	cleanse	1	0	7	3	-	-	-	Stat_Dodge	Undead:1	Return to Rest	2405
+M337	dmg-multiturn+defense	1	0	5	2	40	100	-	Mechanic_IsUnderground,untargettable	Magic:1	Glop	2407
+M338	dmg+buff/debuff+weather	1	0	3	1	5/5/5	100/100/100	-	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	Elemental:1	Sunshell	2410
+M339	dmg	1	0	1	1	10	100	-	-	Aquatic:1	Deep Snap	2411
+M340	dmg	1	0	2	1	120	100	-	-	Undead:1	Hateful Strike	2414
+M341	defense	1	0	2	1	-	-	-	Special_BlockedAttackCount	Mechanical:1	Metal Shield	2416
+M342	dmg	1	0	3	1	10/50/50	100/100/100	-	-	Magic:1	Slime Time	2417
+M343	defense	1	0	3	1	-	-	-	Add_FlatDamageTaken	Critter:1	Gorm Chitin	2419
+M344	dmg+dot+defense	1	0	0	1	-	-	-	Mechanic_IsPoisoned,Mod_DamageTakenPercent	Critter:1	Super Acidic Goo	2420
+M345	buff/debuff	1	0	2	1	-	-	-	Cosmetic_Stealthed,Mod_DamageDealtPercent,Mod_SpeedPercent	Beast:1	Glade Prowl	2421
+M346	special	1	0	2	1	-	-	-	Stat_Dodge	Humanoid:1	Quick Dodge	2422
+M347	dmg-multiturn+heal	1	0	2	2	30	100	200	-	Beast:1	Hungry Bite	2423
+M348	dmg	1	0	0	1	10/10	100/100	-	-	Dragonkin:1	Exposing Claw	2424
+M349	dmg-multiturn+heal	1	0	2	2	20/20	100/100	60/60	-	Beast:1	Bloody Revenge	2426
+M350	dmg	1	0	0	1	50/50/50	100/100/100	-	-	Mechanical:1	Massive Explosion	2429
+M351	heal	1	0	5	1	-	-	-	-	Magic:1	Light of Creation	2440
+M352	dmg+buff/debuff	1	1	0	1	4/6/5	100/100/100	-	Stat_CritChance	Beast:1	Wombo Combo	2444
+M353	dmg-multiturn+defense	1	0	4	2	25	100	-	Mechanic_IsUnderground,untargettable	Aquatic:1	Ambystan Snap	2453
+M354	dmg	1	0	3	1	15	100	-	-	Beast:1	Devour the Weak	2454
+M355	dmg+heal	1	0	2	1	10/10/10	100/100/100	100/100/100	-	Flying:1	Blood Harvest	2457
+M356	stun	1	0	6	4	-	-	-	Mechanic_IsStunned,Stat_Dodge,Stat_Speed	Aquatic:1	Shell Fortress	2460
+M357	dmg-multiturn	1	0	0	2	5/5/5	100/100/100	-	-	Dragonkin:1	Furious Surge	2465
+M358	dmg	1	0	4	1	50	100	-	-	Mechanical:1	Reaping Hook	2469
+M359	dmg	1	0	4	1	40	100	-	-	Beast:1	Rend Flesh	2471
+M360	dmg	1	0	2	1	15	100	-	-	Aquatic:1	Thundertongue	2472
+M361	dmg-multiturn+defense	1	0	2	2	16/8/8	100/100/100	-	Mechanic_IsFlying,untargettable	Mechanical:1	Anvil Drop	2483
+M362	dmg	1	0	0	1	30	100	-	-	Magic:1	Quantum Strike	2499
+M363	heal	1	0	5	1	-	-	18/18/18	-	Magic:1	Elune's Grace	2503
+M364	defense	1	0	5	1	-	-	-	Add_FlatDamageTaken	Magic:1	Hatred Manifest	2505
+M365	dmg	1	0	0	1	20	100	-	-	Elemental:1	Storm Breath	2508
+M366	dmg	1	0	0	1	9/9	100/100	-	-	Elemental:1	Windfury	2515
+M367	dmg-multiturn	1	0	1	3	20	100	-	Stat_Speed	Aquatic:1	Bubble Blast	2519
+M368	dmg+blind+buff/debuff	1	0	4	1	25	100	-	Mechanic_IsBlind,Stat_Accuracy	Humanoid:1	Dazzle	2520
+M369	dmg	1	0	3	1	15/15/15	100/100/100	-	-	Magic:1	Shadow Bolt Volley	2523
+M370	dmg+dot	1	0	0	1	13	100	-	-	Elemental:1	Alluring Spores	2525
+M371	dmg-multiturn	1	0	0	3	40	100	-	-	Magic:1	Void Burst	2528
+M372	dmg	1	0	3	1	8/8/8	100/100/100	-	-	Elemental:1	Fel Nova	2539
+M373	dmg+dot	1	1	0	1	15	100	-	Mechanic_IsBurning	Elemental:1	Flamethrower	860

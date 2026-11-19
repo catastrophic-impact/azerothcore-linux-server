@@ -1,0 +1,116 @@
+# Dragonblight pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	29328	Arctic Hare	1	Critter	0	0	172	0	Melee		composed kit: Critter
+Y	26614	Snowshoe Hare	5	Beast	0	0	33	0	Melee		composed kit: Beast
+Y	27517	Wounded Fordragon Soldier	57-58	Humanoid	0	0	5	0	Melee		composed kit: Critter
+Y	26507	Forsaken Chemist	68-72	Humanoid	0	0	3	0	Melee		composed kit: Undead
+Y	26643	Rabid Grizzly	68-72	Beast	4	0	27	0	Melee		composed kit: Beast
+Y	27361	Wintergarde Blacksmith	68-70	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	26613	Arctic Grizzly Cub	69-70	Beast	0	0	47	0	Melee		composed kit: Critter
+Y	26870	Darkspear Dragon Hunter	70-72	Humanoid	0	0	8	0	Melee		composed kit: Beast
+Y	27165	Drained Moonrest Highborne	70	Undead	0	0	5	0	Melee		composed kit: Undead
+Y	26273	Emaciated Mammoth Calf	70	Beast	0	0	31	0	Melee		composed kit: Critter
+Y	27516	Fordragon Stallion	70	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	25715	Frozen Elemental	70-71	Elemental	0	0	48	0	Melee		composed kit: Elemental
+Y	27290	Hungering Dead	70-71	Undead	0	0	127	0	Melee		composed kit: Undead
+Y	27712	Mindless Ghoul	70	Undead	0	0	52	0	Melee		composed kit: Undead
+Y	26488	Taunka Pack Kodo	70	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	27164	7th Legion Battle Mage	71-73	Humanoid	0	0	10	0	Melee		composed kit: Magic
+Y	26565	Agmar's Siegesmith	71-72	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	26402	Anub'ar Ambusher	71-72	Undead	0	0	39	0	Melee		composed kit: Undead
+Y	26413	Anub'ar Dreadweaver	71-72	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	26605	Anub'ar Underlord	71-72	Undead	0	0	26	0	Melee		composed kit: Undead
+Y	26322	Arcane Wyrm	71-72	Dragonkin	0	0	72	0	Melee		composed kit: Dragonkin
+Y	26616	Blighted Elk	71-72	Beast	0	0	41	0	Melee		composed kit: Beast
+Y	27340	Bloodpaw Marauder	71-72	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	27343	Bloodpaw Shaman	71-72	Humanoid	0	0	22	0	Melee		composed kit: Elemental
+Y	27342	Bloodpaw Warrior	71-72	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	21223	Corrupted Rager	71-72	Elemental	0	0	21	0	Melee		composed kit: Elemental
+Y	27513	Covetous Geist	71-72	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	26280	Dragonblight Mage Hunter	71-72	Humanoid	0	0	91	0	Melee		composed kit: Magic
+Y	32572	Dragonblight Mage Hunter	71-72	Dragonkin	0	0	17	0	Melee		composed kit: Dragonkin
+Y	26483	Dragonbone Condor	71-72	Beast	7	0	104	0	Melee		composed kit: Flying
+Y	26272	Emaciated Mammoth	71	Beast	0	0	17	0	Melee		composed kit: Beast
+Y	27551	Enraged Apparition	71-72	Undead	0	0	3	0	Melee		composed kit: Undead
+Y	26816	Focus Wizard	71-72	Humanoid	0	0	82	0	Melee		composed kit: Magic
+Y	26343	Indu'le Fisherman	71-72	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	26344	Indu'le Warrior	71-72	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	27800	Leprous Servant	71	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	26511	Moa'ki Bottom Thresher	71-72	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	26455	Moonrest Highborne	71-72	Undead	0	0	28	0	Melee		composed kit: Undead
+Y	26281	Moonrest Stalker	71-72	Demon	0	0	46	0	Melee		composed kit: Beast
+Y	27329	Onslaught Bloodhound	71-72	Beast	25	0	12	0	Melee		composed kit: Beast
+Y	27233	Onslaught Deckhand	71-72	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	27203	Onslaught Footman	71-72	Humanoid	0	0	71	0	Melee		composed kit: Humanoid
+Y	27202	Onslaught Raven Priest	71-72	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	27332	Onslaught Scout	71-72	Humanoid	0	0	12	0	Melee		composed kit: Beast
+Y	27213	Onslaught Warhorse	71-72	Beast	0	0	19	0	Melee		composed kit: Beast
+Y	27207	Onslaught Workman	71-72	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	27552	Reanimated Noble	71-72	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	27284	Risen Wintergarde Defender	71-72	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	27283	Risen Wintergarde Mage	71-72	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	27401	Risen Wintergarde Miner	71-72	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	27822	Scourge Test Subject	71-72	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	26615	Snowfall Elk	71-72	Beast	0	0	195	0	Melee		composed kit: Beast
+Y	26199	Snowfall Glade Den Mother	71-72	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	26197	Snowfall Glade Reaver	71-72	Humanoid	0	0	34	0	Melee		composed kit: Humanoid
+Y	26201	Snowfall Glade Shaman	71-72	Humanoid	0	0	8	0	Melee		composed kit: Elemental
+Y	26198	Snowfall Glade Wolvar	71-72	Humanoid	0	0	44	0	Melee		composed kit: Humanoid
+Y	26257	Surge Needle Sorcerer	71-72	Humanoid	0	0	20	0	Melee		composed kit: Magic
+Y	26437	Taunka Soldier	71-73	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	27370	Vengeful Geist	71-72	Undead	0	0	43	0	Melee		composed kit: Undead
+Y	27574	War Kodo	71-74	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	26456	Winter's Sister	71-72	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	26780	7th Legion Cleric	72-73	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	26779	7th Legion Wyrm Hunter	72-73	Humanoid	0	0	11	0	Melee		composed kit: Magic
+Y	26482	Arctic Grizzly	72-73	Beast	4	0	48	0	Melee		composed kit: Beast
+Y	26426	Arctic Ram	72-73	Beast	0	0	46	0	Melee		composed kit: Beast
+Y	27288	Death Knight Champion	72	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	27835	Dreadbone Construct	72-73	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	27286	Dreadbone Invader	72	Undead	0	0	22	0	Melee		composed kit: Undead
+Y	27220	Forgotten Captain	72-73	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	27533	Frigid Geist	72-73	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	27686	Frigid Geist Attacker	72-73	Undead	0	0	20	0	Melee		composed kit: Undead
+Y	26283	Ice Revenant	72-73	Elemental	0	0	11	0	Melee		composed kit: Elemental
+Y	26711	Injured Mammoth	72	Beast	0	0	8	0	Melee		composed kit: Beast
+Y	26295	Magnataur Patriarch	72	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	26480	Magnataur Youngling	72	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	27287	Mindless Wight	72	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	27824	Naxxramas Shade	72-73	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	27330	Onslaught Infantry	72-73	Humanoid	0	0	42	0	Melee		composed kit: Humanoid
+Y	27333	Onslaught Mason	72-73	Humanoid	0	0	32	0	Melee		composed kit: Humanoid
+Y	27410	Scourge Siegesmith	72	Undead	0	0	31	0	Melee		composed kit: Undead
+Y	27799	Scourge Technician	72-73	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	26966	Shadowy Tormentor	72-73	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	26705	Snowplain Disciple	72-73	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	27279	Snowplain Shaman	72-73	Humanoid	0	0	13	0	Melee		composed kit: Elemental
+Y	27278	Snowplain Zealot	72-73	Humanoid	0	0	36	0	Melee		composed kit: Humanoid
+Y	27294	Tundra Scavenger	72-73	Beast	25	0	45	0	Melee		composed kit: Critter
+Y	27836	Wailing Soul	72-73	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	26492	Wastes Digger	72-73	Undead	0	0	41	0	Melee		composed kit: Undead
+Y	27791	7th Legion Rifleman	73	Humanoid	0	0	4	0	Melee		composed kit: Magic
+Y	27162	7th Legion Sentinel	73-74	Humanoid	0	0	15	0	Melee		composed kit: Magic
+Y	27351	Argent Crusade Rifleman	73-74	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	27356	Burning Depths Necrolyte	73-74	Humanoid	0	0	18	0	Melee		composed kit: Undead
+Y	26271	Emaciated Mammoth Bull	73	Beast	0	0	16	0	Melee		composed kit: Beast
+Y	27254	Emerald Lasher	73-74	Elemental	0	0	18	0	Melee		composed kit: Elemental
+Y	27244	Emerald Skytalon	73-74	Beast	26	0	13	0	Melee		composed kit: Flying
+Y	27539	Frigid Necromancer	73-74	Humanoid	0	0	13	0	Melee		composed kit: Undead
+Y	26467	Jormungar Tunneler	73-74	Beast	0	0	8	0	Melee		composed kit: Aquatic
+Y	26481	Magnataur Alpha	73	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	27367	Onslaught Death Knight	73-74	Humanoid	0	0	13	0	Melee		composed kit: Undead
+Y	27357	Onslaught Raven Archon	73-74	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	27360	Smoldering Skeleton	73-74	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	27797	Tattered Abomination	73	Undead	0	0	6	0	Melee		composed kit: Undead
+Y	28005	Wastes Scavenger	73-74	Undead	0	0	33	0	Melee		composed kit: Undead
+Y	26493	Wastes Taskmaster	73	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	27251	Moa'ki Fisherman	74	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	28247	Argent Crusader	75-76	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	31269	Kor'kron Battle Wyvern	75	Beast	0	0	8	0	Melee		composed kit: Flying
+Y	26572	Kor'kron War Rider	75	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	29953	Moa'ki Turtle Rider	75	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	27178	Moa'ki Warrior	75	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	27573	Taunka Huntsman	75-76	Humanoid	0	0	4	0	Melee		composed kit: Beast
+Y	27661	Wintergarde Gryphon	75	Beast	0	0	4	0	Melee		composed kit: Flying
+Y	30058	Warden of the Chamber	76	Dragonkin	0	0	10	0	Melee		composed kit: Dragonkin

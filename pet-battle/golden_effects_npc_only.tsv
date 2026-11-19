@@ -1,0 +1,80 @@
+label	cooldown	golden_id	retail_abilities	status	ability_ids	reason	plain_text
+damage-backline-p15-cd0	0	G387	1	engine-gap	1594	npc-only	Deals X damage to the enemy's active pet and X damage to the enemy's backline pets.
+damage-backline-p20-cd0	0	G386	1	keep	1587	npc-only	Deals X damage to the enemy's active pet and X damage to the enemy's backline pets.
+damage-conditional-p10-cd0	0	G527	1	keep	2424	npc-only	Deals X damage, twice. The first strike deals additional damage if the target is Poisoned. The second strike deals additional damage if the target is Burning.
+damage-dot-p20-cd0	0	G410	1	keep	1919	npc-only	Turns the battlefield into a raging inferno, dealing X damage. Fire continues to Burn the enemy, dealing X damage each round for N rounds. This effect can be applied up to 9 times.
+damage-escalating-p10-cd0#2	0	G557	1	keep	2498	npc-only	Quickly the enemy directly in the face as hard as you can, dealing X damage. Damage increases by X each time it is used. Max X damage.
+damage-escalating-p15-cd0	0	G472	1	keep	2313	npc-only	Pinch the target with your massive claw, dealing X X damage. Damage increases by X each time it is used. Max X damage.
+damage-escalating-p5000-cd0	0	G440	1	engine-gap	2207	npc-only	Bites deeply into the enemy, dealing X damage. Damage increases by X each time it is used. Max X damage.
+damage-hot-p12-cd0	0	G502	1	keep	2368	npc-only	Zap the target from both claws, dealing X damage to the enemy pet. Double Zap has a X chance to apply Healing Jolt to the caster for N turns, causing any attack against the Gigacharged Mayhem Maker to heal the target.
+damage-p10-cd0#3	0	G435	1	keep	2093	npc-only	Stab the target many times with your many legs, dealing X damage. Prone to malfunction.
+damage-p15-cd0#2	0	G465	1	keep	2302	npc-only	Stomps the enemy, dealing X damage.
+damage-p25-cd0#2	0	G447	1	keep	2230	npc-only	Release a blast of sonic energy at your target, dealing X damage.
+damage-p30-cd0	0	G409	1	keep	1917	npc-only	Deals X damage and forces an opponent's pet to swap into battle.
+damage-p30-cd0#2	0	G558	1	keep	2499	npc-only	Strikes at the enemy, dealing X X damage.
+damage-p5-cd0	0	G483	1	keep	2328	npc-only	Surprises the enemy with several mechanostriders, dealing X damage.
+damage-p50-cd0	0	G530	1	keep	2429	npc-only	Instantly kills the caster, dealing damage equal to X% of the user's total health to the enemy team. Using explode will prevent the caster from activating Failsafe mechanisms.
+damage-plain-p50-cd0	0	G121	1	keep	7	npc-only	Rushes at the enemy to inflict damage.
+damage-swap-dmgdown-p20-cd0	0	G392	1	engine-gap	1670	npc-only	Launches an electrical bolt at the target, dealing X damage. Reduces the target's damage done by X% for N rounds.
+damage-swap-vuln-conditional-p20-cd0	0	G388	1	engine-gap	1597	npc-only	Blasts the enemy with a surge of arcane power, dealing X damage. Opponents struck by the blast take 50% extra damage for N rounds.
+damage-untargetable-p20-cd0	0	G153	1	keep	265	npc-only	Deals X damage. Can hit flying pets and will bring them to the ground for two |4round:rounds.
+damage-vuln-p2-cd0	0	G488	1	keep	2334	npc-only	Flocks the target, causing X damage every round. Lasts X rounds. Opponents struck by the flock take X% increased damage for N rounds.
+damage-vuln-p20-cd0	0	G470	1	keep	2311	npc-only	Deals X damage and increases the target's damage taken by X% for N rounds.
+dot-object-cd0	0	G518	1	objects	2413	npc-only	Builds a turret that assaults the enemy team's front pet, dealing X damage each round. Each turret lasts N rounds.
+dot-vuln-cd0#2	0	G523	1	keep	2420	npc-only	Spits Poison goo onto the enemy team, dealing X damage each round and increasing damage taken by X% for N rounds.
+instakill-cd0	0	G441	1	keep	2210	removed by decision	Instantly kills the enemy pet.
+block-cd2	2	G520	1	keep	2416	npc-only	A heavy metallic shield blocks the next 3 attacks.
+damage-conditional-p10-cd2	2	G489	1	keep	2335	npc-only	Deals X damage. Deals X additional damage if you were struck this round.
+damage-drain-conditional-p20-cd2	2	G529	1	keep	2426	npc-only	Deals X damage. If the user kills an enemy with Ravage, they restore X health. Ravage continues for X rounds.
+damage-drain-p30-cd2	2	G526	1	keep	2423	npc-only	Deals X damage. The user is healed for X% of the damage dealt.
+damage-forceswap-p20-cd2	2	G422	1	engine-gap	1967	npc-only	Deals X damage and forces the opponent's highest health pet to swap into battle.
+damage-noswap-speeddown-p15-cd2	2	G452	1	keep	2248	npc-only	Deals X damage to the primary enemy pet and rooting it in place for N rounds, and deals X to any other enemy pets. All enemy pets are also slowed by X% for N rounds.
+damage-p12-cd2	2	G501	1	keep	2366	npc-only	Fire a cluster of unguided rockets into the air, dealing X X damage to whatever they manages to actually hit.
+damage-p120-cd2	2	G519	1	keep	2414	npc-only	Strikes at the enemy, dealing X X damage.
+damage-p14-cd2	2	G468	1	keep	2309	npc-only	Deals X damage to the enemy's pets. Destroys objects created by both teams.
+damage-p30-cd2	2	G432	1	keep	2089	npc-only	The Rocket Chicken releases "The Big One", dealing X X damage to the enemy team. Prone to malfunction.
+damage-p6-cd2	2	G450	1	keep	2243	npc-only	Unleash the attached Gatling Gun, dealing, dealing X damage.
+damage-speeddown-dmgdown-p10-cd2	2	G434	1	keep	2092	npc-only	Deals X damage and reduces the target's speed by X% and damage done by X% for N rounds. Prone to malfunction.
+dodge-cd2	2	G525	1	keep	2422	npc-only	Increases your chance to dodge an attack by X%. Lasts N rounds.
+heal-p40-cd2	2	G476	1	keep	2319	npc-only	Restores X health to the user.
+multihit-conditional-p15-cd2	2	G548	1	keep	2472	npc-only	Swog lashes out with her massive tongue, dealing X damage Deals X additional damage if Swog attacks first.
+reviveteam-boost-cd2	2	G433	1	keep	2090	npc-only	Instantly revive and repair your whole team to 200% maximum health and increase damage by 500% for the next ERRORDIVIDEBYZERO rounds. Prone to malfunction.
+speeddown-dmgup-cd2	2	G524	1	keep	2421	npc-only	Reduces your speed by 30% and increases the damage of your next attack made within N rounds by 150%.
+block-object-cd3	3	G475	1	objects	2318	npc-only	Creates an illusion that blocks two attacks. Allied and enemy attacks both count.
+damage-backline-p10-cd3	3	G521	1	keep	2417	npc-only	Deals X damage to the enemy's active pet and X damage to the enemy's backline pets.
+damage-conditional-p70-cd3	3	G485	1	keep	2331	npc-only	Deals X damage. Always hits if the target is Bleeding.
+damage-conditional-speedcompare-cd3#2	3	G427	1	engine-gap	2026	npc-only	Consume the target, dealing X damage, and 150% bonus damage if the caster is faster than the target.
+damage-dmgup-defense-p20-cd3	3	G377	1	keep	1517	npc-only	Calls forth a wave of fel power, dealing X damage to all enemy pets, and empowering allied backline pets, increasing damage dealt and reducing damage taken by 50% for 10 rounds.
+damage-drain-conditional-p25-cd3#2	3	G469	1	keep	2310	npc-only	Deals X damage. If the user kills an enemy with Devour, they restore X health. Devour X continues for X rounds.
+damage-forceswap-p20-cd3	3	G480	1	keep	2325	npc-only	Deals X damage and forces the opponent's lowest health pet to swap into battle.
+damage-hot-dot-p10-cd3	3	G464	1	engine-gap	2300	npc-only	Deals X damage and defiles the area with an aura of necromancy. After N |4round:rounds the area will erupt in a burst of necrotic energy, dealing X damage to all enemy pets and healing for X% of the damage dealt.
+damage-p15-cd3	3	G466	1	keep	2303	npc-only	Trample the enemy team with a herd of warhorses, dealing X damage the primary enemy pet and X damage to all back line pets.
+damage-p16-cd3	3	G430	1	keep	2086	npc-only	Deals X X damage instantly to all enemy pets. Prone to malfunction.
+damage-p16-cd3#2	3	G431	1	keep	2087	npc-only	Deals X X damage instantly to all enemy pets. Prone to malfunction.
+damage-p20-cd3	3	G446	1	keep	2229	npc-only	Toss a sonic detonator at your target, dealing X to your enemy and an additional X damage to any other enemies when it detonates.
+damage-p35-cd3	3	G436	1	keep	2094	npc-only	Discharge all power and launches an electrical bolt at the target, dealing X damage. Prone to malfunction.
+damage-speeddown-dmgdown-p25-cd3	3	G461	1	engine-gap	2293	npc-only	Deals X damage and reducing their speed by X% and damage by X% for N |4round:rounds. Deals X damage to all other enemy pets.
+damage-untargetable-delayed-p30-cd3	3	G487	1	keep	2333	npc-only	Fly up high, becoming unattackable for one round. On the next round, you attack, dealing X damage.
+damage-weather-p5-cd3	3	G515	1	keep	2410	npc-only	Reflect the light of Bastion at all enemies, dealing X damage and transforming the weather into a sunny day for N rounds. During a sunny day, the maximum health of all pets is increased by X%. and healing done is increased by X%.
+defense-cd3#2	3	G522	1	keep	2419	npc-only	Reduces up to X damage from each attack against you for N rounds.
+dot-cd3#2	3	G471	1	keep	2312	npc-only	Causes a whirlpool to form under the enemy team. In two |4round:rounds, the opponent's pets will take X damage and be rooted for N rounds.
+healpct-p50-cd3	3	G517	1	keep	2412	npc-only	Restores X% of the caster's health.
+vuln-cd3#2	3	G474	1	keep	2317	npc-only	A distant howl frightens the target, increasing the damage they take on the next attack by 200%, lasts N rounds.
+block-object-cd4	4	G490	1	objects	2336	npc-only	Creates a wooden decoy that protects your team from two attacks.
+choosedebuff-cd4	4	G509	1	engine-gap	2387	removed by decision	Addius has cursed your pet team. Choose which detriment you want to your team to suffer!
+damage-forceswap-p25-cd4	4	G451	1	engine-gap	2246	npc-only	Deals X damage and forces the opponent's lowest health pet to swap into battle.
+speedup-block-goesfirst-cd4	4	G445	1	keep	2225	npc-only	The Prototype Annoy-O-Tron's defensive mechanism activates, surrounding it with an impenetrable shield, blocking all incoming damage. Lasts N rounds. This always goes first.
+aoe-drain-pctcurrent-p100-cd5	5	G460	1	engine-gap	2292	npc-only	Damage all enemy targets for X% of their current health, and heal for X% of that amount.
+block-cd5	5	G473	1	keep	2315	npc-only	A bubble surrounds you, blocking the next three attacks.
+damage-backline-p30-cd5	5	G500	1	keep	2365	npc-only	Discharge a massive amount of electricity at the enemy team, dealing dealing X damage to the active pet and X damage to the enemy's backline pets. After discharging all of this energy, the Gigacharged Mayhem Maker will be vulnerable for N turns and receive an additional X% damage from all sources.
+damage-dot-p50-cd5	5	G482	1	keep	2327	npc-only	Instantly deals X damage and causes harmful damage over time effects to deal X more damage each time they deal damage for N |4round:rounds.
+damage-forceswap-p40-cd5	5	G328	1	engine-gap	1036	npc-only	Deals X damage and forces the opponent's highest health pet to swap into battle.
+damage-recharge-p100-cd5	5	G423	1	keep	1968	npc-only	Instantly deals X Mechanical damage. The user must recharge for two rounds afterwards. While recharging, you cannot perform any other actions.
+damage-swap-p12-cd5	5	G495	1	keep	2351	npc-only	Deals X damage to the enemy team and swaps the current enemy pet with the lowest health enemy pet.
+damage-weather-p35-cd5	5	G477	1	engine-gap	2321	npc-only	Deals X damage and causes a Lightning Storm for N rounds. During a Lightning Storm, all pets deal X bonus X damage on each attack and Mechanical abilities deal 25% additional damage.
+damage-delayed-p150-cd8	8	G367	1	keep	1381	npc-only	Summons the strength of the undead during the first round. The next round the user unleashes a mournful bleat, dealing X damage.
+damage-dot-vuln-p100-cd8	8	G481	1	keep	2326	npc-only	Splashes the target with corrosive acid, causing X damage instantly and X damage each round and increases damage taken by up to X for N rounds.
+damage-p35-cd10	10	G437	1	keep	2099	npc-only	Plunge your stinger straight into the enemy's chest, dealing X damage. Then die a horrible death.
+forceswap-stun-cd15	15	G442	1	engine-gap	2212	npc-only	Stun the target for N rounds and forces the opponent's lowest health pet to swap into battle. Why is it always the seagulls?
+delayed-cd20#2	20	G363	1	keep	1367	npc-only	Calls down three meteors, which will fall N |4round:rounds from now, instantly killing the enemy team.
+forcedexit-cd20	20	G571	1	engine-gap	2542	removed by decision	After too many turns, your pets are at risk of serious injury, and you need to pull them out.

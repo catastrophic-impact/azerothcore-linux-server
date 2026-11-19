@@ -1,0 +1,101 @@
+# Shadowmoon Valley pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	19355	Shadowmoon Peon	60	Humanoid	0	0	19	0	Melee		composed kit: Critter
+Y	21195	Domesticated Felboar	65-66	Demon	0	0	35	0	Melee		composed kit: Beast
+Y	21386	Dark Conclave Hawkeye	67	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	22138	Dark Conclave Ritualist	67-68	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	21385	Dark Conclave Scorncrow	67-68	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	19826	Dark Conclave Shadowmancer	67-68	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	19825	Dark Conclave Talonite	67	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	20887	Deathforge Imp	67	Demon	0	0	9	0	Melee		composed kit: Magic
+Y	20502	Eclipsion Dragonhawk	67-68	Beast	30	0	35	0	Melee		composed kit: Flying
+Y	21878	Felboar	67-68	Demon	0	0	41	0	Melee		composed kit: Beast
+Y	21408	Felfire Diemetradon	67-68	Beast	0	0	54	0	Melee		composed kit: Beast
+Y	23142	Goblin Merc	67-69	Humanoid	0	0	4	0	Melee		composed kit: Mechanical
+Y	19801	Illidari Agonizer	67	Demon	0	0	16	0	Melee		composed kit: Magic
+Y	21753	Shadow Council Felsworn	67	Humanoid	0	0	27	0	Melee		composed kit: Magic
+Y	21754	Shadow Council Zealot	67	Humanoid	0	0	21	0	Melee		composed kit: Magic
+Y	21749	Shadowmoon Scout	67	Humanoid	0	0	129	0	Melee		composed kit: Beast
+Y	21742	Sunfury Eradicator	67-68	Humanoid	0	0	26	0	Melee		composed kit: Magic
+Y	21314	Terrormaster	67-68	Demon	0	0	15	0	Melee		composed kit: Magic
+Y	21736	Wildhammer Defender	67	Humanoid	0	0	126	0	Melee		composed kit: Humanoid
+Y	23453	Altar Defender	68-70	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	19784	Coilskar Cobra	68	Beast	35	0	30	0	Melee		composed kit: Beast
+Y	19762	Coilskar Defender	68	Humanoid	0	0	9	0	Melee		composed kit: Aquatic
+Y	19768	Coilskar Siren	68-69	Humanoid	0	0	14	0	Melee		composed kit: Aquatic
+Y	19760	Cooling Infernal	68-69	Demon	0	0	3	0	Melee		composed kit: Mechanical
+Y	19756	Deathforge Smith	68-69	Demon	0	0	6	0	Melee		composed kit: Mechanical
+Y	20872	Deathforge Summoner	68-69	Humanoid	0	0	12	0	Melee		composed kit: Magic
+Y	19754	Deathforge Tinkerer	68-69	Demon	0	0	6	0	Melee		composed kit: Mechanical
+Y	23311	Disobedient Dragonmaw Peon	68-69	Humanoid	0	0	45	0	Melee		composed kit: Critter
+Y	22252	Dragonmaw Peon	68-69	Humanoid	0	0	185	0	Melee		composed kit: Critter
+Y	21717	Dragonmaw Wrangler	68-69	Humanoid	0	0	31	0	Melee		composed kit: Humanoid
+Y	19796	Eclipsion Archmage	68-69	Humanoid	0	0	20	0	Melee		composed kit: Magic
+Y	19792	Eclipsion Centurion	68-69	Humanoid	0	0	34	0	Melee		composed kit: Humanoid
+Y	22016	Eclipsion Soldier	68-69	Humanoid	0	0	99	0	Melee		composed kit: Humanoid
+Y	22017	Eclipsion Spellbinder	68-69	Humanoid	0	0	30	0	Melee		composed kit: Magic
+Y	21462	Greater Felfire Diemetradon	68-69	Beast	0	0	44	0	Melee		composed kit: Beast
+Y	19800	Illidari Painlasher	68-69	Demon	0	0	4	0	Melee		composed kit: Magic
+Y	19802	Illidari Shocktrooper	68-69	Demon	0	0	30	0	Melee		composed kit: Magic
+Y	19759	Newly Crafted Infernal	68-69	Demon	0	0	3	0	Melee		composed kit: Mechanical
+Y	21478	Rocknail Ripper	68-69	Humanoid	0	0	33	0	Melee		composed kit: Humanoid
+Y	23435	Sanctum Defender	68-70	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	21864	Scorchshell Pincer	68-69	Beast	20	0	8	0	Melee		composed kit: Beast
+Y	21795	Shadowmoon Harbinger	68-69	Undead	0	0	53	0	Melee		composed kit: Undead
+Y	22082	Shadowmoon Slayer	68-69	Humanoid	0	0	84	0	Melee		composed kit: Humanoid
+Y	21788	Shadowmoon Zealot	68-69	Undead	0	0	41	0	Melee		composed kit: Undead
+Y	21450	Skethyl Owl	68-69	Undead	0	0	28	0	Melee		composed kit: Undead
+Y	21743	Sunfury Blood Lord	68	Humanoid	0	0	3	0	Melee		composed kit: Magic
+Y	21879	Vilewing Chimaera	68	Beast	38	0	5	0	Melee		composed kit: Beast
+Y	21803	Ashtongue Handler	69	Humanoid	0	0	8	0	Melee		composed kit: Beast
+Y	21453	Ashtongue Shaman	69-70	Humanoid	0	0	17	0	Melee		composed kit: Elemental
+Y	21454	Ashtongue Warrior	69-70	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	21815	Cleric of Karabor	69-70	Undead	0	0	30	0	Melee		composed kit: Undead
+Y	19765	Coilskar Myrmidon	69-70	Humanoid	0	0	20	0	Melee		composed kit: Aquatic
+Y	19767	Coilskar Sorceress	69-70	Humanoid	0	0	11	0	Melee		composed kit: Aquatic
+Y	19789	Coilskar Waterkeeper	69	Humanoid	0	0	3	0	Melee		composed kit: Aquatic
+Y	23150	Dragonmaw Pitfighter	69-71	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	21720	Dragonmaw Shaman	69-70	Humanoid	0	0	13	0	Melee		composed kit: Elemental
+Y	21718	Dragonmaw Subjugator	69-70	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	19795	Eclipsion Blood Knight	69	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	22018	Eclipsion Cavalier	69	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	21802	Elekk Demolisher	69	Beast	0	0	8	0	Melee		composed kit: Beast
+Y	21722	Enslaved Netherwing Drake	69	Dragonkin	0	0	15	0	Melee		composed kit: Dragonkin
+Y	21721	Enslaved Netherwing Whelp	69	Dragonkin	0	0	7	0	Melee		composed kit: Dragonkin
+Y	19799	Illidari Dreadbringer	69	Demon	0	0	3	0	Melee		composed kit: Magic
+Y	21808	Illidari Overseer	69	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	21656	Illidari Satyr	69	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	21337	Illidari Shadowstalker	69	Demon	0	0	4	0	Melee		composed kit: Beast
+Y	21901	Netherskate	69-70	Beast	34	0	7	0	Melee		composed kit: Flying
+Y	21196	Ravenous Flayer	69-70	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	21477	Rocknail Flayer	69	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	23020	Shadow Serpent	69-70	Beast	0	0	38	0	Melee		composed kit: Aquatic
+Y	22859	Shadowhoof Summoner	69	Demon	0	0	6	0	Melee		composed kit: Magic
+Y	22081	Shadowmoon Darkweaver	69-70	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	21701	Ashtongue Deathsworn	70	Humanoid	0	0	7	0	Melee		composed kit: Undead
+Y	19788	Coilskar Muckwatcher	70	Humanoid	0	0	9	0	Melee		composed kit: Aquatic
+Y	23324	Crazed Murkblood Miner	70	Humanoid	0	0	10	0	Melee		composed kit: Critter
+Y	21180	Demon Hunter Initiate	70	Humanoid	0	0	30	0	Melee		composed kit: Beast
+Y	21179	Demon Hunter Supplicant	70	Humanoid	0	0	32	0	Melee		composed kit: Beast
+Y	21719	Dragonmaw Drake-Rider	70	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	22331	Dragonmaw Elite	70	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	22274	Dragonmaw Skybreaker	70	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	23440	Dragonmaw Skybreaker	70	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	23441	Dragonmaw Skybreaker	70	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	19806	Eclipsion Bloodwarder	70	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	21784	Ghostrider of Karabor	70	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	21520	Illidari Jailor	70	Demon	0	0	7	0	Melee		composed kit: Magic
+Y	22861	Lightsworn Vindicator	70	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	23287	Murkblood Miner	70	Humanoid	0	0	115	0	Melee		composed kit: Critter
+Y	23169	Nethermine Flayer	70-71	Beast	0	0	46	0	Melee		composed kit: Flying
+Y	23326	Nethermine Ravager	70	Beast	31	0	36	0	Melee		composed kit: Beast
+Y	23264	Overmine Flayer	70-71	Beast	0	0	16	0	Melee		composed kit: Flying
+Y	22863	Seasoned Magister	70	Humanoid	0	0	8	0	Melee		composed kit: Magic
+Y	22084	Shadowmoon Chosen	70	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	21804	Skettis Kaliri	70	Beast	26	0	30	0	Melee		composed kit: Flying
+Y	21650	Skettis Talonite	70	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	21505	Sunfury Summoner	70	Humanoid	0	0	6	0	Melee		composed kit: Magic
+Y	21503	Sunfury Warlock	70	Humanoid	0	0	9	0	Melee		composed kit: Magic
+Y	19384	Wildhammer Scout	70	Humanoid	0	0	13	0	Melee		composed kit: Beast
+Y	21912	Skettis Sentinel	71-72	Humanoid	0	0	21	0	Melee		composed kit: Humanoid

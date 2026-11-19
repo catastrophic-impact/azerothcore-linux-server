@@ -1,0 +1,917 @@
+source	spell_id	name	role	school	cast_ms	level	icon
+class:DeathKnight/Blood	49941	Blood Boil	dmg	shadow	0	78	Spell_DeathKnight_BloodBoil
+class:DeathKnight/Blood	61158	Blood Gorged	other	physical	0	0	Spell_Nature_Reincarnation
+class:DeathKnight/Blood	48266	Blood Presence	buff/debuff	physical	0	55	Spell_Deathknight_BloodPresence
+class:DeathKnight/Blood	66215	Blood Strike	dmg	physical	0	0	Spell_Deathknight_DeathStrike
+class:DeathKnight/Blood	45529	Blood Tap	buff/debuff	physical	0	64	Spell_DeathKnight_BloodTap
+class:DeathKnight/Blood	50449	Bloody Vengeance	buff/debuff	physical	0	0	Spell_DeathKnight_Butcher
+class:DeathKnight/Blood	49028	Dancing Rune Weapon	summon	physical	0	55	INV_Sword_07
+class:DeathKnight/Blood	56222	Dark Command	buff/debuff	physical	0	65	Spell_Nature_ShamanRage
+class:DeathKnight/Blood	62904	Death Coil	dummy	shadow	0	80	Spell_Shadow_DeathCoil
+class:DeathKnight/Blood	48743	Death Pact	heal	shadow	0	66	Spell_Shadow_DeathPact
+class:DeathKnight/Blood	55262	Heart Strike	dmg	physical	0	80	INV_Weapon_Shortblade_40
+class:DeathKnight/Blood	49016	Hysteria	buff/debuff	physical	0	55	Spell_DeathKnight_BladedArmor
+class:DeathKnight/Blood	49005	Mark of Blood	buff/debuff	shadow	0	55	Ability_Hunter_RapidKilling
+class:DeathKnight/Blood	50842	Pestilence	dummy	shadow	0	56	Spell_Shadow_PlagueCloud
+class:DeathKnight/Blood	48982	Rune Tap	other	shadow	0	55	Spell_DeathKnight_RuneTap
+class:DeathKnight/Blood	53331	Rune of Lichbane	dummy	physical	5000	0	Spell_Holy_HarmUndeadAura
+class:DeathKnight/Blood	53323	Rune of Swordshattering	dummy	physical	5000	0	Ability_Parry
+class:DeathKnight/Blood	47476	Strangulate	buff/debuff	shadow	0	59	Spell_Shadow_SoulLeech_3
+class:DeathKnight/Blood	55233	Vampiric Blood	buff/debuff	physical	0	0	Spell_Shadow_LifeDrain
+class:DeathKnight/Blood	50150	Will of the Necropolis	dummy	physical	0	55	Ability_Creature_Cursed_02
+class:DeathKnight/Frost	45524	Chains of Ice	slow	frost	0	58	Spell_Frost_ChainsOfIce
+class:DeathKnight/Frost	66188	Death Strike	dmg	physical	0	0	Spell_DeathKnight_Butcher2
+class:DeathKnight/Frost	49796	Deathchill	buff/debuff	frost	0	55	Spell_Shadow_SoulLeech_2
+class:DeathKnight/Frost	47568	Empower Rune Weapon	other	mixed	0	75	INV_Sword_62
+class:DeathKnight/Frost	57532	Eye of Acherus	summon	physical	0	69	Spell_Frost_FrozenCore
+class:DeathKnight/Frost	48263	Frost Presence	buff/debuff	frost	0	57	Spell_Deathknight_FrostPresence
+class:DeathKnight/Frost	66196	Frost Strike	dmg	frost	0	0	Spell_DeathKnight_EmpowerRuneBlade2
+class:DeathKnight/Frost	49142	Frozen Rune Weapon	other	frost	0	55	Spell_DeathKnight_FrozenRuneWeapon
+class:DeathKnight/Frost	57623	Horn of Winter	buff/debuff	physical	0	75	INV_Misc_Horn_02
+class:DeathKnight/Frost	51411	Howling Blast	dmg	frost	0	80	Spell_Frost_ArcticWinds
+class:DeathKnight/Frost	49203	Hungering Cold	dummy	frost	0	55	INV_Staff_15
+class:DeathKnight/Frost	48792	Icebound Fortitude	buff/debuff	physical	0	62	Spell_DeathKnight_IceBoundFortitude
+class:DeathKnight/Frost	52372	Icy Touch	dmg	frost	0	55	Spell_DeathKnight_IceTouch
+class:DeathKnight/Frost	49039	Lichborne	buff/debuff	shadow	0	55	Spell_Shadow_RaiseDead
+class:DeathKnight/Frost	47528	Mind Freeze	other	frost	0	57	Spell_DeathKnight_MindFreeze
+class:DeathKnight/Frost	66198	Obliterate	dmg	physical	0	0	Spell_Deathknight_ClassIcon
+class:DeathKnight/Frost	3714	Path of Frost	buff/debuff	physical	0	61	Spell_DeathKnight_PathOfFrost
+class:DeathKnight/Frost	66217	Rune Strike	dmg	physical	0	0	Spell_DeathKnight_DarkConviction
+class:DeathKnight/Frost	53341	Rune of Cinderglacier	dummy	physical	5000	0	Spell_Shadow_ChillTouch
+class:DeathKnight/Frost	53343	Rune of Razorice	dummy	physical	5000	0	Spell_Frost_FrostArmor
+class:DeathKnight/Frost	51271	Unbreakable Armor	buff/debuff	physical	0	0	INV_Armor_Helm_Plate_Naxxramas_RaidWarrior_C_01
+class:DeathKnight/Unholy	48778	Acherus Deathcharger	buff/debuff	shadow	1500	55	Spell_DeathKnight_SummonDeathCharger
+class:DeathKnight/Unholy	48707	Anti-Magic Shell	shield	shadow	0	68	Spell_Shadow_AntiMagicShell
+class:DeathKnight/Unholy	51052	Anti-Magic Zone	summon	shadow	0	55	Spell_DeathKnight_AntiMagicZone
+class:DeathKnight/Unholy	42651	Army of the Dead	summon	shadow	0	0	Spell_Shadow_ConeOfSilence
+class:DeathKnight/Unholy	49222	Bone Shield	buff/debuff	nature	0	0	INV_Chest_Leather_13
+class:DeathKnight/Unholy	51328	Corpse Explosion	dummy	shadow	0	80	Ability_Creature_Disease_02
+class:DeathKnight/Unholy	52375	Death Coil	dummy	shadow	0	55	Spell_Shadow_DeathCoil
+class:DeathKnight/Unholy	50977	Death Gate	summon	shadow	10000	55	Spell_Arcane_TeleportUnderCity
+class:DeathKnight/Unholy	49576	Death Grip	dummy	physical	0	55	Spell_DeathKnight_Strangulate
+class:DeathKnight/Unholy	49999	Death Strike	dmg	physical	0	63	Spell_DeathKnight_Butcher2
+class:DeathKnight/Unholy	49938	Death and Decay	buff/debuff	shadow	0	80	Spell_Shadow_DeathAndDecay
+class:DeathKnight/Unholy	63560	Ghoul Frenzy	hot	nature	0	26	Ability_GhoulFrenzy
+class:DeathKnight/Unholy	51267	On a Pale Horse	other	physical	0	0	Spell_DeathKnight_SummonDeathCharger
+class:DeathKnight/Unholy	66216	Plague Strike	dmg	physical	0	0	Spell_DeathKnight_EmpowerRuneBlade
+class:DeathKnight/Unholy	61999	Raise Ally	dummy	physical	0	72	Spell_Shadow_DeadofNight
+class:DeathKnight/Unholy	46584	Raise Dead	dummy	physical	0	56	Spell_Shadow_AnimateDead
+class:DeathKnight/Unholy	55271	Scourge Strike	dmg	physical	0	79	Spell_DeathKnight_ScourgeStrike
+class:DeathKnight/Unholy	49206	Summon Gargoyle	summon	shadow	0	55	Ability_Hunter_Pet_Bat
+class:DeathKnight/Unholy	50536	Unholy Blight	dot	shadow	0	55	Spell_Shadow_Contagion
+class:DeathKnight/Unholy	48265	Unholy Presence	buff/debuff	shadow	0	70	Spell_Deathknight_UnholyPresence
+class:Druid/Balance	22812	Barkskin	buff/debuff	nature	0	44	Spell_Nature_StoneClawTotem
+class:Druid/Balance	33786	Cyclone	stun	nature	1500	70	Spell_Nature_EarthBind
+class:Druid/Balance	53308	Entangling Roots	root	nature	1500	78	Spell_Nature_StrangleVines
+class:Druid/Balance	770	Faerie Fire	buff/debuff	nature	0	18	Spell_Nature_FaerieFire
+class:Druid/Balance	33831	Force of Nature	summon	nature	0	50	Ability_Druid_ForceofNature
+class:Druid/Balance	18658	Hibernate	stun	nature	1500	58	Spell_Nature_Sleep
+class:Druid/Balance	48467	Hurricane	slow	nature	0	80	Spell_Nature_Cyclone
+class:Druid/Balance	29166	Innervate	hot	nature	0	40	Spell_Nature_Lightning
+class:Druid/Balance	48468	Insect Swarm	dot	nature	0	80	Spell_Nature_InsectSwarm
+class:Druid/Balance	48463	Moonfire	dot	arcane	0	80	Spell_Nature_StarFall
+class:Druid/Balance	24907	Moonkin Aura	buff/debuff	nature	0	40	Spell_Nature_MoonGlow
+class:Druid/Balance	24858	Moonkin Form	buff/debuff	physical	0	40	Spell_Nature_ForceOfNature
+class:Druid/Balance	53312	Nature's Grasp	buff/debuff	nature	0	78	Spell_Nature_NaturesWrath
+class:Druid/Balance	26995	Soothe Animal	buff/debuff	nature	0	70	Ability_Hunter_BeastSoothe
+class:Druid/Balance	53201	Starfall	buff/debuff	arcane	0	80	Ability_Druid_Starfall
+class:Druid/Balance	48465	Starfire	dmg	arcane	3500	78	Spell_Arcane_StarFire
+class:Druid/Balance	18960	Teleport: Moonglade	other	arcane	10000	10	Spell_Arcane_TeleportMoonglade
+class:Druid/Balance	53307	Thorns	shield	nature	0	74	Spell_Nature_Thorns
+class:Druid/Balance	61391	Typhoon	dmg	nature	0	50	Spell_Frost_Stun
+class:Druid/Balance	48461	Wrath	dmg	nature	2000	79	Spell_Nature_AbolishMagic
+class:Druid/Feral Combat	1066	Aquatic Form	buff/debuff	physical	0	16	Ability_Druid_AquaticForm
+class:Druid/Feral Combat	8983	Bash	stun	physical	0	46	Ability_Druid_Bash
+class:Druid/Feral Combat	5487	Bear Form	buff/debuff	physical	0	10	Ability_Racial_BearForm
+class:Druid/Feral Combat	50334	Berserk	buff/debuff	physical	0	60	Ability_Druid_Berserk
+class:Druid/Feral Combat	768	Cat Form	buff/debuff	physical	0	20	Ability_Druid_CatForm
+class:Druid/Feral Combat	5209	Challenging Roar	buff/debuff	physical	0	28	Ability_Druid_ChallangingRoar
+class:Druid/Feral Combat	48570	Claw	dmg	physical	0	79	Ability_Druid_Rake
+class:Druid/Feral Combat	48575	Cower	other	physical	0	76	Ability_Druid_Cower
+class:Druid/Feral Combat	33357	Dash	buff/debuff	physical	0	65	Ability_Druid_Dash
+class:Druid/Feral Combat	48560	Demoralizing Roar	buff/debuff	physical	0	77	Ability_Druid_DemoralizingRoar
+class:Druid/Feral Combat	9634	Dire Bear Form	buff/debuff	physical	0	40	Ability_Racial_BearForm
+class:Druid/Feral Combat	5229	Enrage	hot	physical	0	12	Ability_Druid_Enrage
+class:Druid/Feral Combat	16857	Faerie Fire (Feral)	buff/debuff	nature	0	18	Spell_Nature_FaerieFire
+class:Druid/Feral Combat	49377	Feral Charge	other	physical	0	0	Ability_Hunter_Pet_Bear
+class:Druid/Feral Combat	16979	Feral Charge - Bear	other	physical	0	20	Ability_Hunter_Pet_Bear
+class:Druid/Feral Combat	49376	Feral Charge - Cat	summon	physical	0	20	spell_druid_feralchargecat
+class:Druid/Feral Combat	48577	Ferocious Bite	dmg	physical	0	78	Ability_Druid_FerociousBite
+class:Druid/Feral Combat	33943	Flight Form	buff/debuff	physical	0	60	Ability_Druid_FlightForm
+class:Druid/Feral Combat	22845	Frenzied Regeneration	heal	physical	0	0	Ability_BullRush
+class:Druid/Feral Combat	6795	Growl	buff/debuff	physical	0	10	Ability_Physical_Taunt
+class:Druid/Feral Combat	34299	Improved Leader of the Pack	heal	physical	0	0	Spell_Nature_UnyeildingStamina
+class:Druid/Feral Combat	48568	Lacerate	dot	physical	0	80	Ability_Druid_Lacerate
+class:Druid/Feral Combat	49802	Maim	stun	physical	0	74	Ability_Druid_Mangle.tga
+class:Druid/Feral Combat	33917	Mangle	other	physical	0	0	Ability_Druid_Mangle2
+class:Druid/Feral Combat	48564	Mangle (Bear)	dmg	physical	0	80	Ability_Druid_Mangle2
+class:Druid/Feral Combat	48566	Mangle (Cat)	dmg	physical	0	80	Ability_Druid_Mangle2
+class:Druid/Feral Combat	48480	Maul	dmg	physical	0	79	Ability_Druid_Maul
+class:Druid/Feral Combat	49803	Pounce	stun	physical	0	77	Ability_Druid_SupriseAttack
+class:Druid/Feral Combat	49804	Pounce Bleed	dot	physical	0	77	Spell_Shadow_VampiricAura
+class:Druid/Feral Combat	37117	Primal Fury	other	physical	0	0	Ability_Racial_Cannibalize
+class:Druid/Feral Combat	5215	Prowl	stealth	physical	0	20	Ability_Ambush
+class:Druid/Feral Combat	48574	Rake	dot	physical	0	78	Ability_Druid_Disembowel
+class:Druid/Feral Combat	48579	Ravage	dmg	physical	0	79	Ability_Druid_Ravage
+class:Druid/Feral Combat	49800	Rip	dot	physical	0	80	Ability_GhoulFrenzy
+class:Druid/Feral Combat	52610	Savage Roar	buff/debuff	physical	0	75	Ability_Druid_SkinTeeth
+class:Druid/Feral Combat	48572	Shred	dmg	physical	0	80	Spell_Shadow_VampiricAura
+class:Druid/Feral Combat	61336	Survival Instincts	buff/debuff	physical	0	20	Ability_Druid_TigersRoar
+class:Druid/Feral Combat	40120	Swift Flight Form	buff/debuff	physical	0	70	Ability_Druid_FlightForm
+class:Druid/Feral Combat	48562	Swipe (Bear)	dmg	physical	0	77	INV_Misc_MonsterClaw_03
+class:Druid/Feral Combat	62078	Swipe (Cat)	dmg	physical	0	71	INV_Misc_MonsterClaw_03
+class:Druid/Feral Combat	50213	Tiger's Fury	buff/debuff	physical	0	79	Ability_Mount_JungleTiger
+class:Druid/Feral Combat	5225	Track Humanoids	buff/debuff	physical	0	32	Ability_Tracking
+class:Druid/Feral Combat	783	Travel Form	buff/debuff	physical	0	16	Ability_Druid_TravelForm
+class:Druid/Restoration	2893	Abolish Poison	dispel	nature	0	26	Spell_Nature_NullifyPoison_02
+class:Druid/Restoration	3137	Abolish Poison Effect	dispel	nature	0	26	Spell_Nature_NullifyPoison_02
+class:Druid/Restoration	8946	Cure Poison	dispel	nature	0	14	Spell_Nature_NullifyPoison
+class:Druid/Restoration	48470	Gift of the Wild	buff/debuff	nature	0	80	Spell_Nature_GiftoftheWild
+class:Druid/Restoration	48378	Healing Touch	heal	nature	3000	79	Spell_Nature_HealingTouch
+class:Druid/Restoration	48451	Lifebloom	hot	nature	0	80	INV_Misc_Herb_Felblossom
+class:Druid/Restoration	48469	Mark of the Wild	buff/debuff	nature	0	80	Spell_Nature_Regeneration
+class:Druid/Restoration	17116	Nature's Swiftness	buff/debuff	physical	0	1	Spell_Nature_RavenForm
+class:Druid/Restoration	50464	Nourish	heal	nature	1500	80	Ability_Druid_Nourish
+class:Druid/Restoration	48477	Rebirth	other	nature	2000	79	Spell_Nature_Reincarnation
+class:Druid/Restoration	48443	Regrowth	hot	nature	2000	77	Spell_Nature_ResistNature
+class:Druid/Restoration	64801	Rejuvenation	heal	nature	0	80	Spell_Nature_Rejuvenation
+class:Druid/Restoration	2782	Remove Curse	dispel	arcane	0	24	Spell_Holy_RemoveCurse
+class:Druid/Restoration	50769	Revive	other	nature	10000	12	Ability_Druid_LunarGuidance
+class:Druid/Restoration	18562	Swiftmend	heal	nature	0	1	INV_Relics_IdolofRejuvenation
+class:Druid/Restoration	48447	Tranquility	heal	nature	0	80	Spell_Nature_Tranquility
+class:Druid/Restoration	65139	Tree of Life	other	physical	0	0	Ability_Druid_TreeofLife
+class:Druid/Restoration	53251	Wild Growth	hot	nature	0	80	Ability_Druid_Flourish
+class:Hunter/Beast Mastery	13161	Aspect of the Beast	buff/debuff	nature	0	30	Ability_Mount_PinkTiger
+class:Hunter/Beast Mastery	5118	Aspect of the Cheetah	buff/debuff	nature	0	16	Ability_Mount_JungleTiger
+class:Hunter/Beast Mastery	61847	Aspect of the Dragonhawk	buff/debuff	nature	0	80	Ability_Hunter_Pet_DragonHawk
+class:Hunter/Beast Mastery	27044	Aspect of the Hawk	buff/debuff	nature	0	68	Spell_Nature_RavenForm
+class:Hunter/Beast Mastery	13163	Aspect of the Monkey	buff/debuff	nature	0	4	Ability_Hunter_AspectOfTheMonkey
+class:Hunter/Beast Mastery	13159	Aspect of the Pack	buff/debuff	nature	0	40	Ability_Mount_WhiteTiger
+class:Hunter/Beast Mastery	34074	Aspect of the Viper	buff/debuff	nature	0	20	Ability_Hunter_AspectoftheViper
+class:Hunter/Beast Mastery	49071	Aspect of the Wild	buff/debuff	nature	0	76	Spell_Nature_ProtectionformNature
+class:Hunter/Beast Mastery	1462	Beast Lore	buff/debuff	nature	0	24	Ability_Physical_Taunt
+class:Hunter/Beast Mastery	19574	Bestial Wrath	buff/debuff	physical	0	40	Ability_Druid_FerociousBite
+class:Hunter/Beast Mastery	883	Call Pet	summon	physical	0	10	Ability_Hunter_BeastCall
+class:Hunter/Beast Mastery	62757	Call Stabled Pet	buff/debuff	physical	0	80	INV_Box_PetCarrier_01
+class:Hunter/Beast Mastery	2641	Dismiss Pet	other	physical	5000	10	Spell_Nature_SpiritWolf
+class:Hunter/Beast Mastery	6197	Eagle Eye	buff/debuff	arcane	0	14	Ability_Hunter_EagleEye
+class:Hunter/Beast Mastery	1002	Eyes of the Beast	buff/debuff	nature	2000	14	Ability_EyeOfTheOwl
+class:Hunter/Beast Mastery	6991	Feed Pet	other	physical	0	10	Ability_Hunter_BeastTraining
+class:Hunter/Beast Mastery	24406	Improved Mend Pet	dispel	nature	0	60	Ability_Hunter_MendPet
+class:Hunter/Beast Mastery	19577	Intimidation	buff/debuff	nature	0	30	Ability_Devour
+class:Hunter/Beast Mastery	34026	Kill Command	buff/debuff	physical	0	66	Ability_Hunter_KillCommand
+class:Hunter/Beast Mastery	53271	Master's Call	dummy	physical	0	75	Ability_Hunter_MastersCall
+class:Hunter/Beast Mastery	48990	Mend Pet	hot	nature	0	80	Ability_Hunter_MendPet
+class:Hunter/Beast Mastery	982	Revive Pet	buff/debuff	nature	10000	10	Ability_Hunter_BeastSoothe
+class:Hunter/Beast Mastery	14327	Scare Beast	fear	nature	1500	46	Ability_Druid_Cower
+class:Hunter/Beast Mastery	24529	Spirit Bond	hot	nature	0	0	Ability_Druid_DemoralizingRoar
+class:Hunter/Beast Mastery	13481	Tame Beast	other	nature	0	10	Ability_Hunter_BeastTaming
+class:Hunter/Beast Mastery	34471	The Beast Within	buff/debuff	physical	0	50	Ability_Hunter_BeastWithin
+class:Hunter/Marksmanship	49050	Aimed Shot	dmg	physical	-1000000	80	INV_Spear_07
+class:Hunter/Marksmanship	49045	Arcane Shot	dmg	arcane	-1000000	79	Ability_ImpalingBolt
+class:Hunter/Marksmanship	75	Auto Shot	dmg	physical	-1000000	1	Ability_Whirlwind
+class:Hunter/Marksmanship	53209	Chimera Shot	dmg	nature	-1000000	60	Ability_Hunter_ChimeraShot2
+class:Hunter/Marksmanship	35101	Concussive Barrage	slow	arcane	0	0	Spell_Frost_Stun
+class:Hunter/Marksmanship	5116	Concussive Shot	slow	arcane	-1000000	8	Spell_Frost_Stun
+class:Hunter/Marksmanship	20736	Distracting Shot	buff/debuff	arcane	-1000000	12	Spell_Arcane_Blink
+class:Hunter/Marksmanship	1543	Flare	buff/debuff	arcane	0	32	Spell_Fire_Flare
+class:Hunter/Marksmanship	53338	Hunter's Mark	buff/debuff	arcane	0	76	Ability_Hunter_SniperShot
+class:Hunter/Marksmanship	53220	Improved Steady Shot	buff/debuff	physical	0	0	Ability_Hunter_ImprovedSteadyShot
+class:Hunter/Marksmanship	61006	Kill Shot	dmg	physical	-1000000	80	Ability_Hunter_Assassinate2
+class:Hunter/Marksmanship	49048	Multi-Shot	dmg	physical	0	80	Ability_UpgradeMoonGlaive
+class:Hunter/Marksmanship	3045	Rapid Fire	buff/debuff	physical	0	26	Ability_Hunter_RunningShot
+class:Hunter/Marksmanship	35099	Rapid Killing	buff/debuff	physical	0	0	Ability_Hunter_RapidKilling
+class:Hunter/Marksmanship	53230	Rapid Recuperation Effect	buff/debuff	physical	0	0	Ability_Hunter_RapidRegeneration
+class:Hunter/Marksmanship	23989	Readiness	dummy	physical	0	0	Ability_Hunter_Readiness
+class:Hunter/Marksmanship	3043	Scorpid Sting	buff/debuff	nature	-1000000	22	Ability_Hunter_CriticalShot
+class:Hunter/Marksmanship	49001	Serpent Sting	dot	nature	-1000000	79	Ability_Hunter_Quickshot
+class:Hunter/Marksmanship	34490	Silencing Shot	dmg	physical	-1000000	30	Ability_TheBlackArrow
+class:Hunter/Marksmanship	56641	Steady Shot	dmg	physical	1500	50	Ability_Hunter_SteadyShot
+class:Hunter/Marksmanship	19801	Tranquilizing Shot	dispel	nature	-1000000	60	Spell_Nature_Drowsy
+class:Hunter/Marksmanship	19506	Trueshot Aura	buff/debuff	arcane	0	40	Ability_TrueShot
+class:Hunter/Marksmanship	3034	Viper Sting	buff/debuff	nature	-1000000	36	Ability_Hunter_AimedShot
+class:Hunter/Marksmanship	58434	Volley	buff/debuff	arcane	-1000000	80	Ability_Marksmanship
+class:Hunter/Marksmanship	53254	Wild Quiver Auto Shot	dmg	nature	-1000000	1	Ability_Whirlwind
+class:Hunter/Survival	63672	Black Arrow	dot	shadow	-1000000	80	Spell_Shadow_PainSpike
+class:Hunter/Survival	48999	Counterattack	root	physical	0	78	Ability_Warrior_Challange
+class:Hunter/Survival	19263	Deterrence	buff/debuff	physical	0	60	Ability_Whirlwind
+class:Hunter/Survival	781	Disengage	other	physical	0	20	Ability_Rogue_Feint
+class:Hunter/Survival	19185	Entrapment	root	physical	0	0	Spell_Nature_StrangleVines
+class:Hunter/Survival	60053	Explosive Shot	buff/debuff	fire	-1000000	80	Ability_Hunter_ExplosiveShot
+class:Hunter/Survival	49067	Explosive Trap	other	fire	0	77	Spell_Fire_SelfDestruct
+class:Hunter/Survival	49065	Explosive Trap Effect	dot	fire	0	77	Spell_Fire_SelfDestruct
+class:Hunter/Survival	34501	Expose Weakness	buff/debuff	arcane	0	0	Ability_Rogue_FindWeakness
+class:Hunter/Survival	5384	Feign Death	buff/debuff	physical	0	30	Ability_Rogue_FeignDeath
+class:Hunter/Survival	60202	Freezing Arrow	other	frost	0	60	Spell_Frost_ChainsOfIce
+class:Hunter/Survival	60210	Freezing Arrow Effect	stun	frost	0	60	Spell_Frost_ChainsOfIce
+class:Hunter/Survival	14311	Freezing Trap	other	frost	0	60	Spell_Frost_ChainsOfIce
+class:Hunter/Survival	13809	Frost Trap	other	frost	0	28	Spell_Frost_FreezingBreath
+class:Hunter/Survival	49056	Immolation Trap	other	fire	0	78	Spell_Fire_FlameShock
+class:Hunter/Survival	56453	Lock and Load	buff/debuff	physical	0	0	Ability_Hunter_LockAndLoad
+class:Hunter/Survival	34837	Master Tactician	buff/debuff	arcane	0	0	Ability_Hunter_MasterTactitian
+class:Hunter/Survival	34477	Misdirection	buff/debuff	physical	0	70	Ability_Hunter_Misdirection
+class:Hunter/Survival	53339	Mongoose Bite	dmg	physical	0	80	Ability_Hunter_SwiftStrike
+class:Hunter/Survival	48996	Raptor Strike	dmg	physical	0	77	Ability_MeleeDamage
+class:Hunter/Survival	19503	Scatter Shot	fear	physical	-1000000	15	Ability_GolemStormBolt
+class:Hunter/Survival	34600	Snake Trap	other	fire	0	68	Ability_Hunter_SnakeTrap
+class:Hunter/Survival	1494	Track Beasts	buff/debuff	physical	0	1	Ability_Tracking
+class:Hunter/Survival	19878	Track Demons	buff/debuff	physical	0	32	Spell_Shadow_SummonFelHunter
+class:Hunter/Survival	19879	Track Dragonkin	buff/debuff	physical	0	50	INV_Misc_Head_Dragon_01
+class:Hunter/Survival	19880	Track Elementals	buff/debuff	physical	0	26	Spell_Frost_SummonWaterElemental
+class:Hunter/Survival	19882	Track Giants	buff/debuff	physical	0	40	Ability_Racial_Avatar
+class:Hunter/Survival	19885	Track Hidden	buff/debuff	physical	0	24	Ability_Stealth
+class:Hunter/Survival	19883	Track Humanoids	buff/debuff	physical	0	10	Spell_Holy_PrayerOfHealing
+class:Hunter/Survival	19884	Track Undead	buff/debuff	physical	0	18	Spell_Shadow_DarkSummoning
+class:Hunter/Survival	2974	Wing Clip	slow	physical	0	12	Ability_Rogue_Trip
+class:Hunter/Survival	49012	Wyvern Sting	stun	nature	-1000000	80	INV_Spear_02
+class:Mage/Arcane	43017	Amplify Magic	buff/debuff	arcane	0	77	Spell_Holy_FlashHeal
+class:Mage/Arcane	44781	Arcane Barrage	dmg	arcane	0	80	Ability_Mage_ArcaneBarrage
+class:Mage/Arcane	42897	Arcane Blast	dmg	arcane	2500	80	Spell_Arcane_Blast
+class:Mage/Arcane	43002	Arcane Brilliance	buff/debuff	arcane	0	80	Spell_Holy_ArcaneIntellect
+class:Mage/Arcane	42921	Arcane Explosion	dmg	arcane	0	80	Spell_Nature_WispSplode
+class:Mage/Arcane	42995	Arcane Intellect	buff/debuff	arcane	0	80	Spell_Holy_MagicalSentry
+class:Mage/Arcane	7268	Arcane Missile	dmg	arcane	0	8	Spell_Nature_StarFall
+class:Mage/Arcane	42846	Arcane Missiles	buff/debuff	arcane	0	79	Spell_Nature_StarFall
+class:Mage/Arcane	12042	Arcane Power	buff/debuff	arcane	0	1	Spell_Nature_Lightning
+class:Mage/Arcane	1953	Blink	buff/debuff	arcane	0	20	Spell_Arcane_Blink
+class:Mage/Arcane	12536	Clearcasting	buff/debuff	arcane	0	10	Spell_Shadow_ManaBurn
+class:Mage/Arcane	33717	Conjure Food	other	arcane	3000	70	INV_Misc_Food_32
+class:Mage/Arcane	42985	Conjure Mana Gem	dummy	arcane	3000	77	INV_Misc_Gem_Sapphire_02
+class:Mage/Arcane	42956	Conjure Refreshment	other	arcane	3000	80	Ability_Mage_ConjureFoodRank10
+class:Mage/Arcane	37420	Conjure Water	other	arcane	3000	65	INV_Drink_Waterskin_11
+class:Mage/Arcane	2139	Counterspell	other	arcane	0	24	Spell_Frost_IceShock
+class:Mage/Arcane	61316	Dalaran Brilliance	buff/debuff	arcane	0	80	Achievement_Dungeon_TheVioletHold_Heroic
+class:Mage/Arcane	61024	Dalaran Intellect	buff/debuff	arcane	0	80	Achievement_Dungeon_TheVioletHold
+class:Mage/Arcane	43015	Dampen Magic	buff/debuff	arcane	0	76	Spell_Nature_AbolishMagic
+class:Mage/Arcane	12051	Evocation	hot	arcane	0	20	Spell_Nature_Purge
+class:Mage/Arcane	54648	Focus Magic	buff/debuff	arcane	0	20	Spell_Arcane_StudentOfMagic
+class:Mage/Arcane	44413	Incanter's Absorption	buff/debuff	physical	0	0	Ability_Mage_IncantersAbsorbtion
+class:Mage/Arcane	66	Invisibility	buff/debuff	arcane	0	68	Ability_Mage_Invisibility
+class:Mage/Arcane	43024	Mage Armor	buff/debuff	arcane	0	79	Spell_MageArmor
+class:Mage/Arcane	29442	Magic Absorption	other	physical	0	0	Spell_Nature_AstralRecalGroup
+class:Mage/Arcane	43020	Mana Shield	buff/debuff	arcane	0	79	Spell_Shadow_DetectLesserInvisibility
+class:Mage/Arcane	55342	Mirror Image	buff/debuff	arcane	0	80	Spell_Magic_LesserInvisibilty
+class:Mage/Arcane	44401	Missile Barrage	buff/debuff	arcane	0	0	Ability_Mage_MissileBarrage
+class:Mage/Arcane	61780	Polymorph	fear	arcane	1500	60	Achievement_WorldEvent_Thanksgiving
+class:Mage/Arcane	53142	Portal: Dalaran	summon	arcane	10000	74	Spell_Arcane_PortalDalaran
+class:Mage/Arcane	11419	Portal: Darnassus	summon	arcane	10000	50	Spell_Arcane_PortalDarnassus
+class:Mage/Arcane	32266	Portal: Exodar	summon	arcane	10000	40	Spell_Arcane_PortalExodar
+class:Mage/Arcane	11416	Portal: Ironforge	summon	arcane	10000	40	Spell_Arcane_PortalIronForge
+class:Mage/Arcane	11417	Portal: Orgrimmar	summon	arcane	10000	40	Spell_Arcane_PortalOrgrimmar
+class:Mage/Arcane	35717	Portal: Shattrath	summon	arcane	10000	65	Spell_Arcane_PortalShattrath
+class:Mage/Arcane	32267	Portal: Silvermoon	summon	arcane	10000	40	Spell_Arcane_PortalSilvermoon
+class:Mage/Arcane	49361	Portal: Stonard	summon	arcane	10000	35	Spell_Arcane_PortalStonard
+class:Mage/Arcane	10059	Portal: Stormwind	summon	arcane	10000	40	Spell_Arcane_PortalStormWind
+class:Mage/Arcane	49360	Portal: Theramore	summon	arcane	10000	35	Spell_Arcane_PortalTheramore
+class:Mage/Arcane	11420	Portal: Thunder Bluff	summon	arcane	10000	50	Spell_Arcane_PortalThunderBluff
+class:Mage/Arcane	11418	Portal: Undercity	summon	arcane	10000	40	Spell_Arcane_PortalUnderCity
+class:Mage/Arcane	12043	Presence of Mind	buff/debuff	physical	0	1	Spell_Nature_EnchantArmor
+class:Mage/Arcane	475	Remove Curse	dispel	arcane	0	18	Spell_Nature_RemoveCurse
+class:Mage/Arcane	58659	Ritual of Refreshment	summon	arcane	0	80	Spell_Arcane_MassDispel
+class:Mage/Arcane	31589	Slow	slow	arcane	0	50	Spell_Nature_Slow
+class:Mage/Arcane	130	Slow Fall	buff/debuff	arcane	0	12	Spell_Magic_FeatherFall
+class:Mage/Arcane	30449	Spellsteal	other	arcane	0	70	Spell_Arcane_Arcane02
+class:Mage/Arcane	53140	Teleport: Dalaran	dummy	arcane	10000	71	Spell_Arcane_TeleportDalaran
+class:Mage/Arcane	3565	Teleport: Darnassus	dummy	arcane	10000	30	Spell_Arcane_TeleportDarnassus
+class:Mage/Arcane	32271	Teleport: Exodar	dummy	arcane	10000	20	Spell_Arcane_TeleportExodar
+class:Mage/Arcane	3562	Teleport: Ironforge	dummy	arcane	10000	20	Spell_Arcane_TeleportIronForge
+class:Mage/Arcane	3567	Teleport: Orgrimmar	dummy	arcane	10000	20	Spell_Arcane_TeleportOrgrimmar
+class:Mage/Arcane	35715	Teleport: Shattrath	dummy	arcane	10000	60	Spell_Arcane_TeleportShattrath
+class:Mage/Arcane	32272	Teleport: Silvermoon	dummy	arcane	10000	20	Spell_Arcane_TeleportSilvermoon
+class:Mage/Arcane	49358	Teleport: Stonard	dummy	arcane	10000	35	Spell_Arcane_TeleportStonard
+class:Mage/Arcane	3561	Teleport: Stormwind	dummy	arcane	10000	20	Spell_Arcane_TeleportStormWind
+class:Mage/Arcane	49359	Teleport: Theramore	dummy	arcane	10000	35	Spell_Arcane_TeleportTheramore
+class:Mage/Arcane	3566	Teleport: Thunder Bluff	dummy	arcane	10000	30	Spell_Arcane_TeleportThunderBluff
+class:Mage/Arcane	3563	Teleport: Undercity	dummy	arcane	10000	20	Spell_Arcane_TeleportUnderCity
+class:Mage/Fire	42945	Blast Wave	dmg	fire	0	80	Spell_Holy_Excorcism_02
+class:Mage/Fire	31643	Blazing Speed	buff/debuff	fire	0	1	Spell_Fire_BurningSpeed
+class:Mage/Fire	54748	Burning Determination	buff/debuff	physical	0	0	Spell_Fire_TotemOfWrath
+class:Mage/Fire	44450	Burnout	dummy	fire	0	1	Ability_Mage_Burnout
+class:Mage/Fire	11129	Combustion	buff/debuff	fire	0	40	Spell_Fire_SealOfFire
+class:Mage/Fire	42950	Dragon's Breath	fear	fire	0	80	INV_Misc_Head_Dragon_01
+class:Mage/Fire	24530	Felfire	dmg	mixed	0	60	Spell_Fire_Fireball
+class:Mage/Fire	64357	Fiery Payback	other	physical	0	0	Ability_Mage_FieryPayback
+class:Mage/Fire	42873	Fire Blast	dmg	fire	0	80	Spell_Fire_Fireball
+class:Mage/Fire	43010	Fire Ward	shield	fire	0	78	Spell_Fire_FireArmor
+class:Mage/Fire	42833	Fireball	dot	fire	3500	78	Spell_Fire_FlameBolt
+class:Mage/Fire	54741	Firestarter	buff/debuff	physical	0	0	Ability_Mage_FireStarter
+class:Mage/Fire	42926	Flamestrike	dot	fire	2000	79	Spell_Fire_SelfDestruct
+class:Mage/Fire	47610	Frostfire Bolt	dot	mixed	3000	80	Ability_Mage_FrostFireBolt
+class:Mage/Fire	12654	Ignite	dot	fire	0	99	Spell_Fire_Incinerate
+class:Mage/Fire	12355	Impact	stun	fire	0	10	Spell_Fire_MeteorStorm
+class:Mage/Fire	22959	Improved Scorch	buff/debuff	fire	0	0	Spell_Fire_SoulBurn
+class:Mage/Fire	55362	Living Bomb	dmg	fire	0	80	Ability_Mage_LivingBomb
+class:Mage/Fire	29077	Master of Elements	other	arcane	0	1	Spell_Fire_MasterOfElements
+class:Mage/Fire	43046	Molten Armor	buff/debuff	fire	0	79	Ability_Mage_MoltenArmor
+class:Mage/Fire	42891	Pyroblast	dot	fire	5000	77	Spell_Fire_Fireball02
+class:Mage/Fire	42859	Scorch	dmg	fire	1500	78	Spell_Fire_SoulBurn
+class:Mage/Frost	42940	Blizzard	buff/debuff	frost	0	80	Spell_Frost_IceStorm
+class:Mage/Frost	12486	Chilled	slow	frost	0	10	Spell_Frost_IceStorm
+class:Mage/Frost	11958	Cold Snap	dummy	frost	0	30	Spell_Frost_WizardMark
+class:Mage/Frost	42931	Cone of Cold	dmg	frost	0	79	Spell_Frost_Glacier
+class:Mage/Frost	44572	Deep Freeze	stun	frost	0	60	Ability_Mage_DeepFreeze
+class:Mage/Frost	44544	Fingers of Frost	buff/debuff	frost	0	1	Ability_Mage_WintersGrasp
+class:Mage/Frost	7301	Frost Armor	buff/debuff	frost	0	20	Spell_Frost_FrostArmor02
+class:Mage/Frost	42917	Frost Nova	root	frost	0	75	Spell_Frost_FrostNova
+class:Mage/Frost	43012	Frost Ward	shield	frost	0	79	Spell_Frost_FrostWard
+class:Mage/Frost	12494	Frostbite	root	frost	0	10	Spell_Frost_FrostArmor
+class:Mage/Frost	42842	Frostbolt	dmg	frost	3000	79	Spell_Frost_FrostBolt02
+class:Mage/Frost	43008	Ice Armor	buff/debuff	frost	0	79	Spell_Frost_FrostArmor02
+class:Mage/Frost	43039	Ice Barrier	shield	frost	0	80	Spell_Ice_Lament
+class:Mage/Frost	45438	Ice Block	stun	frost	0	30	Spell_Frost_Frost
+class:Mage/Frost	42914	Ice Lance	dmg	frost	0	78	Spell_Frost_FrostBlast
+class:Mage/Frost	12472	Icy Veins	buff/debuff	frost	0	20	Spell_Frost_ColdHearted
+class:Mage/Frost	31687	Summon Water Elemental	dummy	frost	0	50	Spell_Frost_SummonWaterElemental_2
+class:Mage/Frost	70909	Summon Water Elemental (Prototype)	dummy	frost	0	50	Spell_Frost_SummonWaterElemental_2
+class:Paladin/Holy	31821	Aura Mastery	buff/debuff	physical	0	0	Spell_Holy_AuraMastery
+class:Paladin/Holy	53654	Beacon of Light	heal	holy	0	1	Ability_Paladin_BeaconofLight
+class:Paladin/Holy	48936	Blessing of Wisdom	buff/debuff	holy	0	77	Spell_Holy_SealOfWisdom
+class:Paladin/Holy	23214	Charger	buff/debuff	holy	1500	40	Ability_Mount_Charger
+class:Paladin/Holy	4987	Cleanse	dispel	holy	0	42	Spell_Holy_Renew
+class:Paladin/Holy	19746	Concentration Aura	buff/debuff	holy	0	22	Spell_Holy_MindSooth
+class:Paladin/Holy	48819	Consecration	dot	holy	0	80	Spell_Holy_InnerFire
+class:Paladin/Holy	20216	Divine Favor	buff/debuff	holy	0	0	Spell_Holy_Heal
+class:Paladin/Holy	31842	Divine Illumination	buff/debuff	holy	0	0	Spell_Holy_DivineIllumination
+class:Paladin/Holy	54428	Divine Plea	buff/debuff	holy	0	71	Spell_Holy_Aspiration
+class:Paladin/Holy	48801	Exorcism	dmg	holy	1500	79	Spell_Holy_Excorcism_02
+class:Paladin/Holy	66922	Flash of Light	hot	holy	0	1	Spell_Holy_FlashHeal
+class:Paladin/Holy	48938	Greater Blessing of Wisdom	buff/debuff	holy	0	77	Spell_Holy_GreaterBlessingofWisdom
+class:Paladin/Holy	48782	Holy Light	heal	holy	2500	80	Spell_Holy_HolyBolt
+class:Paladin/Holy	64891	Holy Mending	hot	holy	0	80	Spell_Holy_SearingLight
+class:Paladin/Holy	48825	Holy Shock	dummy	holy	0	80	Spell_Holy_SearingLight
+class:Paladin/Holy	48817	Holy Wrath	stun	holy	0	78	Spell_Holy_Excorcism
+class:Paladin/Holy	54149	Infusion of Light	buff/debuff	holy	0	0	Ability_Paladin_InfusionofLight
+class:Paladin/Holy	20185	Judgement of Light	buff/debuff	holy	0	30	Spell_Holy_RighteousFury
+class:Paladin/Holy	20187	Judgement of Righteousness	dmg	holy	0	1	Ability_ThunderBolt
+class:Paladin/Holy	20186	Judgement of Wisdom	buff/debuff	holy	0	38	Ability_Paladin_JudgementBlue
+class:Paladin/Holy	54153	Judgements of the Pure	buff/debuff	holy	0	0	Ability_Paladin_JudgementofthePure
+class:Paladin/Holy	48788	Lay on Hands	other	holy	0	78	Spell_Holy_LayOnHands
+class:Paladin/Holy	53651	Light's Beacon	buff/debuff	holy	0	60	Ability_Paladin_BeaconofLight
+class:Paladin/Holy	31834	Light's Grace	buff/debuff	holy	0	0	Spell_Holy_LightsGrace
+class:Paladin/Holy	32841	Mass Resurrection	other	holy	1500	70	Spell_Holy_HealingAura
+class:Paladin/Holy	1152	Purify	dispel	holy	0	8	Spell_Holy_Purify
+class:Paladin/Holy	48950	Redemption	other	holy	10000	79	Spell_Holy_Resurrection
+class:Paladin/Holy	53659	Sacred Cleansing	buff/debuff	holy	0	0	Ability_Paladin_SacredCleansing
+class:Paladin/Holy	53601	Sacred Shield	buff/debuff	holy	0	80	Ability_Paladin_BlessedMending
+class:Paladin/Holy	20165	Seal of Light	buff/debuff	holy	0	30	Spell_Holy_HealingAura
+class:Paladin/Holy	21084	Seal of Righteousness	buff/debuff	holy	0	1	Ability_ThunderBolt
+class:Paladin/Holy	20166	Seal of Wisdom	buff/debuff	holy	0	38	Spell_Holy_RighteousnessAura
+class:Paladin/Holy	5502	Sense Undead	buff/debuff	holy	0	20	Spell_Holy_SenseUndead
+class:Paladin/Holy	34767	Summon Charger	buff/debuff	holy	1500	40	Ability_Mount_Charger
+class:Paladin/Holy	34769	Summon Warhorse	buff/debuff	holy	1500	20	Spell_Nature_Swiftness
+class:Paladin/Holy	10326	Turn Evil	fear	holy	1500	24	Spell_Holy_TurnUndead
+class:Paladin/Holy	13819	Warhorse	buff/debuff	holy	1500	20	Spell_Nature_Swiftness
+class:Paladin/Protection	48827	Avenger's Shield	dmg	holy	0	80	Spell_Holy_AvengersShield
+class:Paladin/Protection	20217	Blessing of Kings	buff/debuff	holy	0	20	Spell_Magic_MageArmor
+class:Paladin/Protection	20911	Blessing of Sanctuary	buff/debuff	holy	0	30	Spell_Nature_LightningShield
+class:Paladin/Protection	48942	Devotion Aura	buff/debuff	holy	0	79	Spell_Holy_DevotionAura
+class:Paladin/Protection	19752	Divine Intervention	other	holy	0	30	Spell_Nature_TimeStop
+class:Paladin/Protection	498	Divine Protection	buff/debuff	holy	0	6	Spell_Holy_Restoration
+class:Paladin/Protection	64205	Divine Sacrifice	heal	physical	0	0	spell_holy_powerwordbarrier
+class:Paladin/Protection	642	Divine Shield	buff/debuff	holy	0	34	Spell_Holy_DivineIntervention
+class:Paladin/Protection	48947	Fire Resistance Aura	buff/debuff	holy	0	78	Spell_Fire_SealOfFire
+class:Paladin/Protection	48945	Frost Resistance Aura	buff/debuff	holy	0	77	Spell_Frost_WizardMark
+class:Paladin/Protection	25898	Greater Blessing of Kings	buff/debuff	holy	0	60	Spell_Magic_GreaterBlessingofKings
+class:Paladin/Protection	25899	Greater Blessing of Sanctuary	buff/debuff	holy	0	60	Spell_Holy_GreaterBlessingofSanctuary
+class:Paladin/Protection	10308	Hammer of Justice	stun	holy	0	54	Spell_Holy_SealOfMight
+class:Paladin/Protection	53595	Hammer of the Righteous	dmg	holy	0	50	Ability_Paladin_HammeroftheRighteous
+class:Paladin/Protection	1044	Hand of Freedom	buff/debuff	holy	0	18	Spell_Holy_SealOfValor
+class:Paladin/Protection	10278	Hand of Protection	buff/debuff	holy	0	38	Spell_Holy_SealOfProtection
+class:Paladin/Protection	62124	Hand of Reckoning	buff/debuff	holy	0	16	Spell_Holy_UnyieldingFaith
+class:Paladin/Protection	6940	Hand of Sacrifice	buff/debuff	holy	0	46	Spell_Holy_SealOfSacrifice
+class:Paladin/Protection	1038	Hand of Salvation	buff/debuff	holy	0	26	Spell_Holy_SealOfSalvation
+class:Paladin/Protection	48952	Holy Shield	buff/debuff	holy	0	80	Spell_Holy_BlessingOfProtection
+class:Paladin/Protection	20184	Judgement of Justice	buff/debuff	holy	0	22	Ability_Paladin_JudgementRed
+class:Paladin/Protection	31789	Righteous Defense	dummy	holy	0	14	INV_Shoulder_37
+class:Paladin/Protection	25781	Righteous Fury	other	holy	0	1	Spell_Holy_SealOfFury
+class:Paladin/Protection	20164	Seal of Justice	buff/debuff	holy	0	22	Spell_Holy_SealOfWrath
+class:Paladin/Protection	48943	Shadow Resistance Aura	buff/debuff	holy	0	76	Spell_Shadow_SealOfKings
+class:Paladin/Protection	61411	Shield of Righteousness	dmg	holy	0	80	Ability_Paladin_ShieldofVengeance
+class:Paladin/Retribution	31884	Avenging Wrath	buff/debuff	holy	0	70	Spell_Holy_AvengineWrath
+class:Paladin/Retribution	48932	Blessing of Might	buff/debuff	holy	0	79	Spell_Holy_FistOfJustice
+class:Paladin/Retribution	53742	Blood Corruption	dot	holy	0	66	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	32223	Crusader Aura	heal	holy	0	62	Spell_Holy_CrusaderAura
+class:Paladin/Retribution	35395	Crusader Strike	dmg	physical	0	50	Spell_Holy_CrusaderStrike
+class:Paladin/Retribution	53385	Divine Storm	dmg	physical	0	60	Ability_Paladin_DivineStorm
+class:Paladin/Retribution	25997	Eye for an Eye	dmg	holy	0	1	Spell_Holy_EyeforanEye
+class:Paladin/Retribution	48934	Greater Blessing of Might	buff/debuff	holy	0	79	Spell_Holy_GreaterBlessingofKings
+class:Paladin/Retribution	48806	Hammer of Wrath	dmg	holy	0	80	Ability_ThunderClap
+class:Paladin/Retribution	31803	Holy Vengeance	dot	holy	0	64	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	31898	Judgement of Blood	dmg	holy	0	64	Spell_Shadow_LifeDrain
+class:Paladin/Retribution	20467	Judgement of Command	dmg	holy	0	20	Ability_Warrior_InnerRage
+class:Paladin/Retribution	53733	Judgement of Corruption	dmg	holy	0	66	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	53407	Judgement of Justice	dummy	holy	0	28	Ability_Paladin_JudgementRed
+class:Paladin/Retribution	20271	Judgement of Light	dummy	holy	0	4	Spell_Holy_RighteousFury
+class:Paladin/Retribution	31804	Judgement of Vengeance	dmg	holy	0	64	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	53408	Judgement of Wisdom	dummy	holy	0	12	Ability_Paladin_JudgementBlue
+class:Paladin/Retribution	53726	Judgement of the Martyr	dmg	holy	0	66	Spell_Shadow_LifeDrain
+class:Paladin/Retribution	20066	Repentance	stun	holy	0	20	Spell_Holy_PrayerOfHealing
+class:Paladin/Retribution	54043	Retribution Aura	shield	holy	0	76	Spell_Holy_AuraOfLight
+class:Paladin/Retribution	20375	Seal of Command	buff/debuff	holy	0	20	Ability_Warrior_InnerRage
+class:Paladin/Retribution	53736	Seal of Corruption	buff/debuff	holy	0	66	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	31801	Seal of Vengeance	buff/debuff	holy	0	64	Spell_Holy_SealOfVengeance
+class:Paladin/Retribution	59578	The Art of War	buff/debuff	physical	0	0	Ability_Paladin_ArtofWar
+class:Paladin/Retribution	20053	Vengeance	buff/debuff	physical	0	0	Ability_Racial_Avatar
+class:Paladin/Retribution	26017	Vindication	buff/debuff	holy	0	20	Spell_Holy_Vindication
+class:Priest/Discipline	988	Dispel Magic	dispel	holy	0	36	Spell_Holy_DispelMagic
+class:Priest/Discipline	48073	Divine Spirit	buff/debuff	holy	0	80	Spell_Holy_DivineSpirit
+class:Priest/Discipline	6346	Fear Ward	buff/debuff	holy	0	20	Spell_Holy_Excorcism
+class:Priest/Discipline	27828	Focused Casting	buff/debuff	holy	0	0	Spell_Arcane_Blink
+class:Priest/Discipline	45242	Focused Will	buff/debuff	holy	0	0	Spell_Arcane_FocusedPower
+class:Priest/Discipline	48168	Inner Fire	buff/debuff	holy	0	77	Spell_Holy_InnerFire
+class:Priest/Discipline	14751	Inner Focus	buff/debuff	physical	0	0	Spell_Frost_WindWalkOn
+class:Priest/Discipline	1706	Levitate	buff/debuff	holy	0	34	Spell_Holy_LayOnHands
+class:Priest/Discipline	8129	Mana Burn	dmg	shadow	3000	24	Spell_Shadow_ManaBurn
+class:Priest/Discipline	32375	Mass Dispel	dispel	holy	1500	70	Spell_Arcane_MassDispel
+class:Priest/Discipline	44416	Pain Suppression	other	physical	0	0	Ability_Physical_Taunt
+class:Priest/Discipline	53007	Penance	dummy	holy	0	80	Spell_Holy_Penance
+class:Priest/Discipline	10060	Power Infusion	buff/debuff	holy	0	40	Spell_Holy_PowerInfusion
+class:Priest/Discipline	48161	Power Word: Fortitude	buff/debuff	holy	0	80	Spell_Holy_WordFortitude
+class:Priest/Discipline	48066	Power Word: Shield	shield	holy	0	80	Spell_Holy_PowerWordShield
+class:Priest/Discipline	48162	Prayer of Fortitude	buff/debuff	holy	0	80	Spell_Holy_PrayerOfFortitude
+class:Priest/Discipline	48074	Prayer of Spirit	buff/debuff	holy	0	80	Spell_Holy_PrayerofSpirit
+class:Priest/Discipline	33619	Reflective Shield	dmg	holy	0	1	Spell_Holy_HolySmite
+class:Priest/Discipline	10955	Shackle Undead	stun	holy	1500	60	Spell_Nature_Slow
+class:Priest/Holy	552	Abolish Disease	dispel	holy	0	32	Spell_Nature_NullifyDisease
+class:Priest/Holy	48120	Binding Heal	heal	holy	1500	78	Spell_Holy_BlindingHeal
+class:Priest/Holy	70772	Blessed Healing	hot	holy	0	20	Spell_Holy_FlashHeal
+class:Priest/Holy	27818	Blessed Recovery	hot	holy	0	0	Spell_Holy_BlessedRecovery
+class:Priest/Holy	33143	Blessed Resilience	buff/debuff	holy	0	0	Spell_Holy_BlessedResillience
+class:Priest/Holy	48089	Circle of Healing	heal	holy	0	80	Spell_Holy_CircleOfRenewal
+class:Priest/Holy	528	Cure Disease	dispel	holy	0	14	Spell_Holy_NullifyDisease
+class:Priest/Holy	48173	Desperate Prayer	heal	holy	0	80	Spell_Holy_Restoration
+class:Priest/Holy	64844	Divine Hymn	heal	holy	0	80	Spell_Holy_DivineProvidence
+class:Priest/Holy	48071	Flash Heal	heal	holy	1500	79	Spell_Holy_FlashHeal
+class:Priest/Holy	48063	Greater Heal	heal	holy	3000	78	Spell_Holy_GreaterHeal
+class:Priest/Holy	48153	Guardian Spirit	heal	holy	0	1	Spell_Holy_GuardianSpirit
+class:Priest/Holy	6064	Heal	heal	holy	3000	34	Spell_Holy_Heal02
+class:Priest/Holy	34754	Holy Concentration	buff/debuff	holy	0	10	Spell_Holy_Fanaticism
+class:Priest/Holy	48135	Holy Fire	dot	holy	2000	78	Spell_Holy_SearingLight
+class:Priest/Holy	48078	Holy Nova	dmg	holy	0	80	Spell_Holy_HolyNova
+class:Priest/Holy	64904	Hymn of Hope	buff/debuff	holy	0	80	Spell_Holy_Rapture
+class:Priest/Holy	2053	Lesser Heal	heal	holy	2500	10	Spell_Holy_LesserHeal
+class:Priest/Holy	48087	Lightwell	summon	holy	500	80	Spell_Holy_SummonLightwell
+class:Priest/Holy	48085	Lightwell Renew	hot	holy	0	80	Spell_Holy_SummonLightwell
+class:Priest/Holy	48072	Prayer of Healing	heal	holy	3000	76	Spell_Holy_PrayerOfHealing02
+class:Priest/Holy	48113	Prayer of Mending	other	holy	0	79	Spell_Holy_PrayerOfMendingtga
+class:Priest/Holy	48068	Renew	hot	holy	0	80	Spell_Holy_Renew
+class:Priest/Holy	48171	Resurrection	other	holy	10000	78	Spell_Holy_Resurrection
+class:Priest/Holy	63735	Serendipity	buff/debuff	holy	0	0	Spell_Holy_Serendipity
+class:Priest/Holy	48123	Smite	dmg	holy	2500	79	Spell_Holy_HolySmite
+class:Priest/Holy	33151	Surge of Light	buff/debuff	holy	0	0	Spell_Holy_SurgeOfLight
+class:Priest/Shadow Magic	48300	Devouring Plague	buff/debuff	shadow	0	79	Spell_Shadow_DevouringPlague
+class:Priest/Shadow Magic	47585	Dispersion	buff/debuff	physical	0	60	Spell_Shadow_Dispersion
+class:Priest/Shadow Magic	586	Fade	buff/debuff	shadow	0	8	Spell_Magic_LesserInvisibilty
+class:Priest/Shadow Magic	48127	Mind Blast	dmg	shadow	1500	79	Spell_Shadow_UnholyFrenzy
+class:Priest/Shadow Magic	605	Mind Control	buff/debuff	shadow	3000	30	Spell_Shadow_ShadowWordDominate
+class:Priest/Shadow Magic	58381	Mind Flay	dmg	shadow	0	0	Spell_Shadow_SiphonMana
+class:Priest/Shadow Magic	53023	Mind Sear	buff/debuff	shadow	0	80	Spell_Shadow_MindShear
+class:Priest/Shadow Magic	453	Mind Soothe	buff/debuff	shadow	0	20	Spell_Holy_MindSooth
+class:Priest/Shadow Magic	10909	Mind Vision	buff/debuff	shadow	0	44	Spell_Holy_MindVision
+class:Priest/Shadow Magic	33198	Misery	buff/debuff	shadow	0	0	Spell_Shadow_Misery
+class:Priest/Shadow Magic	48170	Prayer of Shadow Protection	buff/debuff	holy	0	77	Spell_Holy_PrayerofShadowProtection
+class:Priest/Shadow Magic	64058	Psychic Horror	buff/debuff	physical	0	0	Ability_Warrior_Disarm
+class:Priest/Shadow Magic	10890	Psychic Scream	fear	shadow	0	56	Spell_Shadow_PsychicScream
+class:Priest/Shadow Magic	48169	Shadow Protection	buff/debuff	shadow	0	76	Spell_Shadow_AntiShadow
+class:Priest/Shadow Magic	48158	Shadow Word: Death	dmg	shadow	0	80	Spell_Shadow_DemonicFortitude
+class:Priest/Shadow Magic	48125	Shadow Word: Pain	dot	shadow	0	80	Spell_Shadow_ShadowWordPain
+class:Priest/Shadow Magic	34433	Shadowfiend	summon	shadow	0	66	Spell_Shadow_Shadowfiend
+class:Priest/Shadow Magic	15473	Shadowform	buff/debuff	shadow	0	0	Spell_Shadow_Shadowform
+class:Priest/Shadow Magic	15487	Silence	buff/debuff	shadow	0	0	Spell_Shadow_ImpPhaseShift
+class:Priest/Shadow Magic	15286	Vampiric Embrace	buff/debuff	shadow	0	1	Spell_Shadow_UnsummonBuilding
+class:Priest/Shadow Magic	48160	Vampiric Touch	dot	shadow	1500	80	Spell_Holy_Stoicism
+class:Rogue/Assassination	48691	Ambush	dmg	physical	0	80	Ability_Rogue_Ambush
+class:Rogue/Assassination	1833	Cheap Shot	stun	physical	0	26	Ability_CheapShot
+class:Rogue/Assassination	14177	Cold Blood	buff/debuff	physical	0	0	Spell_Ice_Lament
+class:Rogue/Assassination	48674	Deadly Throw	dmg	physical	-1000000	76	INV_ThrowingKnife_06
+class:Rogue/Assassination	51722	Dismantle	buff/debuff	physical	0	20	Ability_Rogue_Dismantle
+class:Rogue/Assassination	57993	Envenom	dmg	nature	0	80	Ability_Rogue_Disembowel
+class:Rogue/Assassination	48668	Eviscerate	dmg	physical	0	79	Ability_Rogue_Eviscerate
+class:Rogue/Assassination	8647	Expose Armor	buff/debuff	physical	0	14	Ability_Warrior_Riposte
+class:Rogue/Assassination	51637	Focused Attacks	other	physical	0	0	Ability_Rogue_FocusedAttacks
+class:Rogue/Assassination	48676	Garrote	dot	physical	0	80	Ability_Rogue_Garrote
+class:Rogue/Assassination	51662	Hunger For Blood	dummy	physical	0	0	Ability_Rogue_HungerforBlood
+class:Rogue/Assassination	8643	Kidney Shot	stun	physical	0	50	Ability_Rogue_KidneyShot
+class:Rogue/Assassination	48666	Mutilate	other	physical	0	80	Ability_Rogue_ShadowStrikes
+class:Rogue/Assassination	58427	Overkill	buff/debuff	physical	0	0	Ability_Hunter_RapidKilling
+class:Rogue/Assassination	48672	Rupture	dot	physical	0	79	Ability_Rogue_Rupture
+class:Rogue/Assassination	6774	Slice and Dice	buff/debuff	physical	0	42	Ability_Rogue_SliceDice
+class:Rogue/Combat	13750	Adrenaline Rush	buff/debuff	physical	0	0	Spell_Shadow_ShadowWordDominate
+class:Rogue/Combat	48657	Backstab	dmg	physical	0	80	Ability_BackStab
+class:Rogue/Combat	13877	Blade Flurry	buff/debuff	physical	0	1	Ability_Warrior_PunishingBlow
+class:Rogue/Combat	31125	Blade Twisting	slow	physical	0	1	Spell_Frost_Stun
+class:Rogue/Combat	26669	Evasion	buff/debuff	physical	0	50	Spell_Shadow_ShadowWard
+class:Rogue/Combat	51723	Fan of Knives	dmg	physical	0	80	Ability_Rogue_FanofKnives
+class:Rogue/Combat	48659	Feint	buff/debuff	physical	0	78	Ability_Rogue_Feint
+class:Rogue/Combat	1776	Gouge	stun	physical	0	6	Ability_Gouge
+class:Rogue/Combat	1766	Kick	other	physical	0	12	Ability_Kick
+class:Rogue/Combat	51690	Killing Spree	buff/debuff	physical	0	0	Ability_Rogue_MurderSpree
+class:Rogue/Combat	14251	Riposte	dmg	physical	0	0	Ability_Warrior_Challange
+class:Rogue/Combat	5938	Shiv	dummy	physical	0	70	INV_ThrowingKnife_04
+class:Rogue/Combat	48638	Sinister Strike	dmg	physical	0	80	Spell_Shadow_RitualOfSacrifice
+class:Rogue/Combat	11305	Sprint	buff/debuff	physical	0	58	Ability_Rogue_Sprint
+class:Rogue/Combat	51680	Throwing Specialization	other	physical	0	0	Ability_Rogue_ThrowingSpecialization
+class:Rogue/Combat	51677	Unfair Advantage	dmg	physical	0	0	Ability_Rogue_UnfairAdvantage
+class:Rogue/Subtlety	2094	Blind	fear	physical	0	34	Spell_Shadow_MindSteal
+class:Rogue/Subtlety	31224	Cloak of Shadows	buff/debuff	physical	0	66	Spell_Shadow_NetherCloak
+class:Rogue/Subtlety	1842	Disarm Trap	other	physical	1000	30	Spell_Shadow_GrimWard
+class:Rogue/Subtlety	1725	Distract	other	physical	0	22	Ability_Rogue_Distract
+class:Rogue/Subtlety	14278	Ghostly Strike	dmg	physical	0	0	Spell_Shadow_Curse
+class:Rogue/Subtlety	48660	Hemorrhage	dmg	physical	0	80	Spell_Shadow_LifeDrain
+class:Rogue/Subtlety	51699	Honor Among Thieves	buff/debuff	physical	0	0	Ability_Rogue_HonorAmongstThieves
+class:Rogue/Subtlety	13977	Initiative	other	physical	0	0	Spell_Shadow_Fumble
+class:Rogue/Subtlety	921	Pick Pocket	other	physical	0	4	INV_Misc_Bag_11
+class:Rogue/Subtlety	14183	Premeditation	buff/debuff	physical	0	20	Spell_Shadow_Possession
+class:Rogue/Subtlety	14185	Preparation	dummy	physical	0	0	Spell_Shadow_AntiShadow
+class:Rogue/Subtlety	14181	Relentless Strikes Effect	other	physical	0	0	Ability_Warrior_DecisiveStrike
+class:Rogue/Subtlety	51724	Sap	stun	physical	0	71	Ability_Sap
+class:Rogue/Subtlety	51713	Shadow Dance	buff/debuff	physical	0	60	Ability_Rogue_ShadowDance
+class:Rogue/Subtlety	36554	Shadowstep	buff/debuff	physical	0	1	Ability_Rogue_Shadowstep
+class:Rogue/Subtlety	1784	Stealth	stealth	physical	0	1	Ability_Stealth
+class:Rogue/Subtlety	57934	Tricks of the Trade	buff/debuff	physical	0	75	Ability_Rogue_TricksOftheTrade
+class:Rogue/Subtlety	26889	Vanish	other	physical	0	62	Ability_Vanish
+class:Rogue/Subtlety	14093	Vanished	other	physical	0	0	Ability_Vanish
+class:Rogue/Subtlety	51693	Waylay	slow	physical	0	0	Ability_Rogue_Waylay
+class:Shaman/Elemental Combat	66843	Call of the Ancestors	other	mixed	0	40	Spell_Shaman_Dropall_02
+class:Shaman/Elemental Combat	66842	Call of the Elements	other	mixed	0	30	Spell_Shaman_Dropall_01
+class:Shaman/Elemental Combat	66844	Call of the Spirits	other	mixed	0	50	Spell_Shaman_Dropall_03
+class:Shaman/Elemental Combat	49271	Chain Lightning	dmg	nature	2000	80	Spell_Nature_ChainLightning
+class:Shaman/Elemental Combat	49231	Earth Shock	dmg	nature	0	79	Spell_Nature_EarthShock
+class:Shaman/Elemental Combat	2484	Earthbind Totem	summon	physical	0	6	Spell_Nature_StrengthOfEarthTotem02
+class:Shaman/Elemental Combat	30165	Elemental Devastation	buff/debuff	physical	0	0	Spell_Fire_ElementalDevastation
+class:Shaman/Elemental Combat	16166	Elemental Mastery	buff/debuff	nature	0	1	Spell_Nature_WispHeal
+class:Shaman/Elemental Combat	2894	Fire Elemental Totem	summon	physical	0	68	Spell_Fire_Elemental_Totem
+class:Shaman/Elemental Combat	61657	Fire Nova	dummy	fire	0	80	Spell_Fire_SealOfFire
+class:Shaman/Elemental Combat	49233	Flame Shock	dot	fire	0	80	Spell_Fire_FlameShock
+class:Shaman/Elemental Combat	63685	Freeze	root	frost	0	1	Spell_Frost_FrostNova
+class:Shaman/Elemental Combat	49236	Frost Shock	dmg	frost	0	78	Spell_Frost_FrostShock
+class:Shaman/Elemental Combat	51514	Hex	buff/debuff	nature	1500	80	Spell_Shaman_Hex
+class:Shaman/Elemental Combat	60043	Lava Burst	dmg	fire	2000	80	Spell_Shaman_LavaBurst
+class:Shaman/Elemental Combat	49240	Lightning Bolt	dmg	nature	0	79	Spell_Nature_Lightning
+class:Shaman/Elemental Combat	58734	Magma Totem	summon	physical	0	78	Spell_Fire_SelfDestruct
+class:Shaman/Elemental Combat	8012	Purge	dispel	nature	0	32	Spell_Nature_Purge
+class:Shaman/Elemental Combat	58704	Searing Totem	summon	physical	0	80	Spell_Fire_SearingTotem
+class:Shaman/Elemental Combat	58582	Stoneclaw Totem	summon	physical	0	78	Spell_Nature_StoneClawTotem
+class:Shaman/Elemental Combat	59159	Thunderstorm	dmg	nature	0	80	Spell_Shaman_ThunderStorm
+class:Shaman/Elemental Combat	57722	Totem of Wrath	summon	physical	0	80	Spell_Fire_TotemOfWrath
+class:Shaman/Elemental Combat	57994	Wind Shear	other	nature	0	16	Spell_Nature_Cyclone
+class:Shaman/Enhancement	556	Astral Recall	other	nature	10000	30	Spell_Nature_AstralRecal
+class:Shaman/Enhancement	2825	Bloodlust	buff/debuff	nature	0	70	Spell_Nature_BloodLust
+class:Shaman/Enhancement	30798	Dual Wield	other	physical	0	0	Ability_DualWield
+class:Shaman/Enhancement	2062	Earth Elemental Totem	summon	physical	0	66	Spell_Nature_EarthElemental_Totem
+class:Shaman/Enhancement	6196	Far Sight	buff/debuff	nature	2000	26	Spell_Nature_FarSight
+class:Shaman/Enhancement	51533	Feral Spirit	summon	nature	0	50	Spell_Shaman_FeralSpirit
+class:Shaman/Enhancement	58739	Fire Resistance Totem	summon	frost	0	80	Spell_FireResistanceTotem_01
+class:Shaman/Enhancement	58656	Flametongue Totem	summon	physical	0	80	Spell_Nature_GuardianWard
+class:Shaman/Enhancement	58790	Flametongue Weapon	other	fire	0	80	Spell_Fire_FlameTounge
+class:Shaman/Enhancement	43339	Focused	buff/debuff	arcane	0	10	Spell_Nature_ElementalAbsorption
+class:Shaman/Enhancement	58745	Frost Resistance Totem	summon	physical	0	80	Spell_FrostResistanceTotem_01
+class:Shaman/Enhancement	58796	Frostbrand Weapon	other	frost	0	80	Spell_Frost_FrostBrand
+class:Shaman/Enhancement	2645	Ghost Wolf	hot	nature	2000	16	Spell_Nature_SpiritWolf
+class:Shaman/Enhancement	8177	Grounding Totem	summon	physical	0	30	Spell_Nature_GroundingTotem
+class:Shaman/Enhancement	32182	Heroism	buff/debuff	nature	0	70	Ability_Shaman_Heroism
+class:Shaman/Enhancement	60103	Lava Lash	dmg	fire	0	41	Ability_Shaman_Lavalash
+class:Shaman/Enhancement	49281	Lightning Shield	buff/debuff	nature	0	80	Spell_Nature_LightningShield
+class:Shaman/Enhancement	58749	Nature Resistance Totem	summon	physical	0	80	Spell_Nature_NatureResistanceTotem
+class:Shaman/Enhancement	10399	Rockbiter Weapon	other	nature	0	24	Spell_Nature_RockBiter
+class:Shaman/Enhancement	6495	Sentry Totem	summon	physical	0	34	Spell_Nature_RemoveCurse
+class:Shaman/Enhancement	30824	Shamanistic Rage	other	physical	0	50	Spell_Nature_ShamanRage
+class:Shaman/Enhancement	16268	Spirit Weapons	other	physical	0	0	Ability_Parry
+class:Shaman/Enhancement	58753	Stoneskin Totem	summon	physical	0	78	Spell_Nature_StoneSkinTotem
+class:Shaman/Enhancement	32176	Stormstrike	dmg	physical	0	40	Ability_Shaman_Stormstrike
+class:Shaman/Enhancement	58643	Strength of Earth Totem	summon	physical	0	80	Spell_Nature_EarthBindTotem
+class:Shaman/Enhancement	131	Water Breathing	buff/debuff	nature	0	22	Spell_Shadow_DemonBreath
+class:Shaman/Enhancement	546	Water Walking	buff/debuff	nature	0	28	Spell_Frost_WindWalkOn
+class:Shaman/Enhancement	8512	Windfury Totem	summon	physical	0	32	Spell_Nature_Windfury
+class:Shaman/Enhancement	58804	Windfury Weapon	other	nature	0	80	Spell_Nature_Cyclone
+class:Shaman/Enhancement	3738	Wrath of Air Totem	summon	physical	0	64	Spell_Nature_SlowingTotem
+class:Shaman/Restoration	16237	Ancestral Fortitude	buff/debuff	holy	0	0	Spell_Nature_UndyingStrength
+class:Shaman/Restoration	49277	Ancestral Spirit	other	nature	10000	80	Spell_Nature_Regenerate
+class:Shaman/Restoration	55459	Chain Heal	heal	nature	2500	80	Spell_Nature_HealingWaveGreater
+class:Shaman/Restoration	70809	Chained Heal	hot	nature	0	20	Spell_Nature_HealingWaveGreater
+class:Shaman/Restoration	51886	Cleanse Spirit	dispel	nature	0	40	Ability_Shaman_CleanseSpirit
+class:Shaman/Restoration	8170	Cleansing Totem	summon	physical	0	38	Spell_Nature_DiseaseCleansingTotem
+class:Shaman/Restoration	526	Cure Toxins	dispel	nature	0	16	Spell_Nature_NullifyPoison
+class:Shaman/Restoration	49284	Earth Shield	buff/debuff	nature	0	80	Spell_Nature_SkinofEarth
+class:Shaman/Restoration	51994	Earthliving Weapon	other	nature	0	80	Spell_Shaman_EarthlivingWeapon
+class:Shaman/Restoration	30874	Gift of the Water Spirit	hot	nature	0	0	Spell_Nature_GiftoftheWaterSpirit
+class:Shaman/Restoration	58757	Healing Stream Totem	summon	frost	0	80	INV_Spear_04
+class:Shaman/Restoration	49273	Healing Wave	heal	nature	3000	80	Spell_Nature_MagicImmunity
+class:Shaman/Restoration	49276	Lesser Healing Wave	heal	nature	1500	77	Spell_Nature_HealingWaveLesser
+class:Shaman/Restoration	58774	Mana Spring Totem	summon	physical	0	80	Spell_Nature_ManaRegenTotem
+class:Shaman/Restoration	16190	Mana Tide Totem	summon	physical	0	40	Spell_Frost_SummonWaterElemental
+class:Shaman/Restoration	16188	Nature's Swiftness	buff/debuff	physical	0	1	Spell_Nature_RavenForm
+class:Shaman/Restoration	21169	Reincarnation	other	nature	0	30	Spell_Nature_Reincarnation
+class:Shaman/Restoration	61301	Riptide	hot	nature	0	80	spell_nature_riptide
+class:Shaman/Restoration	55198	Tidal Force	buff/debuff	physical	0	20	Spell_Frost_Frostbolt
+class:Shaman/Restoration	36936	Totemic Recall	other	nature	0	30	Spell_Shaman_TotemRecall
+class:Shaman/Restoration	8143	Tremor Totem	summon	physical	0	18	Spell_Nature_TremorTotem
+class:Shaman/Restoration	57960	Water Shield	buff/debuff	nature	0	76	Ability_Shaman_WaterShield
+class:Warlock/Affliction	47206	Atrocity	dot	shadow	0	60	Spell_Shadow_Shadesofdarkness
+class:Warlock/Affliction	47813	Corruption	dot	shadow	0	77	Spell_Shadow_AbominationExplosion
+class:Warlock/Affliction	47864	Curse of Agony	dot	shadow	0	79	Spell_Shadow_CurseOfSargeras
+class:Warlock/Affliction	47867	Curse of Doom	dot	shadow	0	80	Spell_Shadow_AuraOfDarkness
+class:Warlock/Affliction	18662	Curse of Doom Effect	summon	shadow	0	60	Spell_Shadow_AuraOfDarkness
+class:Warlock/Affliction	18223	Curse of Exhaustion	slow	shadow	0	0	Spell_Shadow_GrimWard
+class:Warlock/Affliction	1010	Curse of Idiocy	buff/debuff	shadow	0	38	Spell_Shadow_MindRot
+class:Warlock/Affliction	11719	Curse of Tongues	buff/debuff	shadow	0	50	Spell_Shadow_CurseOfTounges
+class:Warlock/Affliction	50511	Curse of Weakness	buff/debuff	shadow	0	71	Spell_Shadow_CurseOfMannoroth
+class:Warlock/Affliction	47865	Curse of the Elements	buff/debuff	shadow	0	78	Spell_Shadow_ChillTouch
+class:Warlock/Affliction	59092	Dark Pact	other	shadow	0	80	Spell_Shadow_DarkRitual
+class:Warlock/Affliction	47860	Death Coil	fear	shadow	0	78	Spell_Shadow_DeathCoil
+class:Warlock/Affliction	47857	Drain Life	buff/debuff	shadow	0	78	Spell_Shadow_LifeDrain02
+class:Warlock/Affliction	5138	Drain Mana	buff/debuff	shadow	0	24	Spell_Shadow_SiphonMana
+class:Warlock/Affliction	47855	Drain Soul	dot	shadow	0	77	Spell_Shadow_Haunting
+class:Warlock/Affliction	6215	Fear	fear	shadow	1500	56	Spell_Shadow_Possession
+class:Warlock/Affliction	59164	Haunt	dmg	shadow	1500	80	Ability_Warlock_Haunt
+class:Warlock/Affliction	17928	Howl of Terror	fear	shadow	1500	54	Spell_Shadow_DeathScream
+class:Warlock/Affliction	57946	Life Tap	dummy	shadow	0	80	Spell_Shadow_BurningSpirit
+class:Warlock/Affliction	47836	Seed of Corruption	dot	shadow	2000	80	Spell_Shadow_SeedOfDestruction
+class:Warlock/Affliction	32391	Shadow Embrace	buff/debuff	shadow	0	0	Spell_Shadow_ShadowEmbrace
+class:Warlock/Affliction	53756	Sudden Fear	buff/debuff	physical	0	1	Spell_Shadow_Possession
+class:Warlock/Affliction	47843	Unstable Affliction	dot	shadow	1500	80	Spell_Shadow_UnstableAffliction_3
+class:Warlock/Demonology	18647	Banish	stun	shadow	1500	48	Spell_Shadow_Cripple
+class:Warlock/Demonology	59671	Challenging Howl	buff/debuff	physical	0	1	Spell_Nature_ShamanRage
+class:Warlock/Demonology	60220	Create Firestone	other	fire	3000	80	INV_Ammo_FireTar
+class:Warlock/Demonology	47878	Create Healthstone	dummy	shadow	3000	79	INV_Stone_04
+class:Warlock/Demonology	47884	Create Soulstone	other	shadow	3000	76	Spell_Shadow_SoulGem
+class:Warlock/Demonology	58889	Create Soulwell	summon	physical	1500	60	Spell_Arcane_PortalDarnassus
+class:Warlock/Demonology	47888	Create Spellstone	other	shadow	5000	78	INV_Misc_Gem_Sapphire_01
+class:Warlock/Demonology	47889	Demon Armor	buff/debuff	shadow	0	80	Spell_Shadow_RagingScream
+class:Warlock/Demonology	54785	Demon Charge	other	physical	0	60	Ability_WarStomp
+class:Warlock/Demonology	696	Demon Skin	buff/debuff	shadow	0	10	Spell_Shadow_RagingScream
+class:Warlock/Demonology	48018	Demonic Circle: Summon	buff/debuff	shadow	500	80	Spell_Shadow_DemonicCircleSummon
+class:Warlock/Demonology	48020	Demonic Circle: Teleport	buff/debuff	shadow	0	80	Spell_Shadow_DemonicCircleTeleport
+class:Warlock/Demonology	47193	Demonic Empowerment	dummy	shadow	0	30	Ability_Warlock_DemonicEmpowerment
+class:Warlock/Demonology	132	Detect Invisibility	buff/debuff	shadow	0	26	Spell_Shadow_DetectLesserInvisibility
+class:Warlock/Demonology	23161	Dreadsteed	buff/debuff	physical	1500	40	Ability_Mount_Dreadsteed
+class:Warlock/Demonology	61191	Enslave Demon	buff/debuff	shadow	3000	72	Spell_Shadow_EnslaveDemon
+class:Warlock/Demonology	126	Eye of Kilrogg	summon	shadow	5000	22	Spell_Shadow_EvilEye
+class:Warlock/Demonology	47893	Fel Armor	hot	shadow	0	79	Spell_Shadow_FelArmour
+class:Warlock/Demonology	18708	Fel Domination	buff/debuff	shadow	0	0	Spell_Nature_RemoveCurse
+class:Warlock/Demonology	5784	Felsteed	buff/debuff	physical	1500	20	Spell_Nature_Swiftness
+class:Warlock/Demonology	47856	Health Funnel	hot	shadow	0	76	Spell_Shadow_LifeDrain
+class:Warlock/Demonology	20153	Immolation	dmg	fire	0	50	Spell_Shadow_SummonInfernal
+class:Warlock/Demonology	50589	Immolation Aura	buff/debuff	fire	0	60	Spell_Fire_Incinerate
+class:Warlock/Demonology	1122	Inferno	summon	shadow	1500	50	Spell_Shadow_SummonInfernal
+class:Warlock/Demonology	35706	Master Demonologist	buff/debuff	shadow	0	0	Spell_Shadow_ShadowPact
+class:Warlock/Demonology	61610	Metamorphosis	buff/debuff	physical	0	0	Spell_Shadow_DemonForm
+class:Warlock/Demonology	18540	Ritual of Doom	summon	shadow	10000	60	Spell_Shadow_AntiMagicShell
+class:Warlock/Demonology	18541	Ritual of Doom Effect	dummy	physical	5000	60	Spell_Arcane_PortalDarnassus
+class:Warlock/Demonology	58887	Ritual of Souls	summon	shadow	0	80	Spell_Shadow_Shadesofdarkness
+class:Warlock/Demonology	698	Ritual of Summoning	summon	shadow	0	20	Spell_Shadow_Twilight
+class:Warlock/Demonology	5500	Sense Demons	buff/debuff	shadow	0	24	Spell_Shadow_Metamorphosis
+class:Warlock/Demonology	50581	Shadow Cleave	dmg	shadow	0	60	Ability_Warlock_Avoidance
+class:Warlock/Demonology	47891	Shadow Ward	shield	shadow	0	78	Spell_Shadow_AntiShadow
+class:Warlock/Demonology	19028	Soul Link	dummy	shadow	0	20	Spell_Shadow_GatherShadows
+class:Warlock/Demonology	29858	Soulshatter	dummy	shadow	0	66	Spell_Arcane_Arcane01
+class:Warlock/Demonology	30146	Summon Felguard	summon	shadow	10000	50	Spell_Shadow_SummonFelGuard
+class:Warlock/Demonology	691	Summon Felhunter	summon	shadow	10000	30	Spell_Shadow_SummonFelHunter
+class:Warlock/Demonology	688	Summon Imp	summon	shadow	10000	1	Spell_Shadow_SummonImp
+class:Warlock/Demonology	712	Summon Succubus	summon	shadow	10000	20	Spell_Shadow_SummonSuccubus
+class:Warlock/Demonology	697	Summon Voidwalker	summon	shadow	10000	10	Spell_Shadow_SummonVoidWalker
+class:Warlock/Demonology	5697	Unending Breath	buff/debuff	shadow	0	16	Spell_Shadow_DemonBreath
+class:Warlock/Destruction	34936	Backlash	buff/debuff	fire	0	1	Spell_Fire_PlayingWithFire
+class:Warlock/Destruction	59172	Chaos Bolt	dmg	fire	2500	80	Ability_Warlock_ChaosBolt
+class:Warlock/Destruction	17962	Conflagrate	dot	fire	0	1	Spell_Fire_Fireball
+class:Warlock/Destruction	47823	Hellfire	dot	fire	0	78	Spell_Fire_Incinerate
+class:Warlock/Destruction	47822	Hellfire Effect	dmg	fire	0	78	Spell_Fire_Incinerate
+class:Warlock/Destruction	47811	Immolate	dot	fire	2000	80	Spell_Fire_Immolation
+class:Warlock/Destruction	47838	Incinerate	dmg	fire	2500	80	Spell_Fire_Burnout
+class:Warlock/Destruction	18093	Pyroclasm	buff/debuff	fire	0	0	Spell_Fire_Volcano
+class:Warlock/Destruction	47820	Rain of Fire	buff/debuff	fire	0	79	Spell_Shadow_RainOfFire
+class:Warlock/Destruction	47815	Searing Pain	dmg	fire	1500	79	Spell_Fire_SoulBurn
+class:Warlock/Destruction	47809	Shadow Bolt	dmg	shadow	3000	79	Spell_Shadow_ShadowBolt
+class:Warlock/Destruction	47827	Shadowburn	dmg	shadow	0	80	Spell_Shadow_ScourgeBuild
+class:Warlock/Destruction	61290	Shadowflame	dmg	shadow	0	80	Ability_Warlock_ShadowFlame
+class:Warlock/Destruction	47847	Shadowfury	stun	shadow	0	80	Spell_Shadow_Shadowfury
+class:Warlock/Destruction	47825	Soul Fire	dmg	fire	6000	80	Spell_Fire_Fireball02
+class:Warrior/Arms	2457	Battle Stance	buff/debuff	physical	0	1	Ability_Warrior_OffensiveStance
+class:Warrior/Arms	46924	Bladestorm	buff/debuff	physical	0	60	Ability_Warrior_Bladestorm
+class:Warrior/Arms	11578	Charge	dummy	physical	0	46	Ability_Warrior_Charge
+class:Warrior/Arms	12696	Charge Rage Bonus Effect	other	physical	0	1	Ability_Warrior_Charge
+class:Warrior/Arms	1715	Hamstring	slow	physical	0	8	Ability_ShockWave
+class:Warrior/Arms	47450	Heroic Strike	dmg	physical	0	76	Ability_Rogue_Ambush
+class:Warrior/Arms	57755	Heroic Throw	dmg	physical	0	80	INV_Axe_66
+class:Warrior/Arms	12705	Long Daze	slow	physical	0	0	Spell_Frost_Stun
+class:Warrior/Arms	5530	Mace Specialization	other	physical	0	0	INV_Mace_01
+class:Warrior/Arms	694	Mocking Blow	dmg	physical	0	16	Ability_Warrior_PunishingBlow
+class:Warrior/Arms	47486	Mortal Strike	dmg	physical	0	80	Ability_Warrior_SavageBlow
+class:Warrior/Arms	7384	Overpower	dmg	physical	0	12	Ability_MeleeDamage
+class:Warrior/Arms	47465	Rend	dot	physical	0	76	Ability_Gouge
+class:Warrior/Arms	20230	Retaliation	buff/debuff	physical	0	20	Ability_Warrior_Challange
+class:Warrior/Arms	29842	Second Wind	hot	physical	0	1	Ability_Hunter_Harass
+class:Warrior/Arms	64382	Shattering Throw	dmg	physical	1500	71	Ability_Warrior_ShatteringThrow
+class:Warrior/Arms	26654	Sweeping Strikes	dmg	physical	0	1	Ability_Rogue_SliceDice
+class:Warrior/Arms	47502	Thunder Clap	dmg	physical	0	78	Spell_Nature_ThunderClap
+class:Warrior/Arms	46857	Trauma	buff/debuff	physical	0	1	Ability_Warrior_BloodNova
+class:Warrior/Fury	47436	Battle Shout	buff/debuff	physical	0	78	Ability_Warrior_BattleShout
+class:Warrior/Fury	18499	Berserker Rage	buff/debuff	physical	0	32	Spell_Nature_AncestralGuardian
+class:Warrior/Fury	2458	Berserker Stance	buff/debuff	physical	0	30	Ability_Racial_Avatar
+class:Warrior/Fury	23885	Bloodthirst	buff/debuff	physical	0	40	Spell_Nature_BloodLust
+class:Warrior/Fury	1161	Challenging Shout	buff/debuff	physical	0	26	Ability_BullRush
+class:Warrior/Fury	47520	Cleave	dmg	physical	0	77	Ability_Warrior_Cleave
+class:Warrior/Fury	47440	Commanding Shout	buff/debuff	physical	0	80	Ability_Warrior_RallyingCry
+class:Warrior/Fury	12292	Death Wish	buff/debuff	physical	0	30	Spell_Shadow_DeathPact
+class:Warrior/Fury	47437	Demoralizing Shout	buff/debuff	physical	0	79	Ability_Warrior_WarCry
+class:Warrior/Fury	55694	Enraged Regeneration	hot	physical	0	75	Ability_Warrior_FocusedRage
+class:Warrior/Fury	47471	Execute	dummy	physical	0	80	INV_Sword_48
+class:Warrior/Fury	12970	Flurry	buff/debuff	physical	0	1	Ability_GhoulFrenzy
+class:Warrior/Fury	56112	Furious Attacks	buff/debuff	physical	0	0	Ability_Warrior_FuriousResolve
+class:Warrior/Fury	60970	Heroic Fury	buff/debuff	physical	0	50	Ability_HeroicLeap
+class:Warrior/Fury	20252	Intercept	other	physical	0	30	Ability_Rogue_Sprint
+class:Warrior/Fury	5246	Intimidating Shout	fear	physical	0	22	Ability_GolemThunderClap
+class:Warrior/Fury	12323	Piercing Howl	slow	physical	0	20	Spell_Shadow_DeathScream
+class:Warrior/Fury	6552	Pummel	other	physical	0	38	INV_Gauntlets_04
+class:Warrior/Fury	1719	Recklessness	buff/debuff	physical	0	50	Ability_CriticalStrike
+class:Warrior/Fury	47475	Slam	dummy	physical	1500	79	Ability_Warrior_DecisiveStrike
+class:Warrior/Fury	46916	Slam!	buff/debuff	physical	0	0	Ability_Warrior_Bloodsurge
+class:Warrior/Fury	12964	Unbridled Wrath	other	physical	0	1	Spell_Nature_StoneClawTotem
+class:Warrior/Fury	34428	Victory Rush	dmg	physical	0	6	Ability_Warrior_Devastate
+class:Warrior/Fury	1680	Whirlwind	dmg	physical	0	36	Ability_Whirlwind
+class:Warrior/Protection	2687	Bloodrage	other	physical	0	10	Ability_Racial_BloodRage
+class:Warrior/Protection	12809	Concussion Blow	stun	physical	0	30	Ability_ThunderBolt
+class:Warrior/Protection	71	Defensive Stance	buff/debuff	physical	0	10	Ability_Warrior_DefensiveStance
+class:Warrior/Protection	47498	Devastate	dmg	physical	0	80	INV_Sword_11
+class:Warrior/Protection	676	Disarm	buff/debuff	physical	0	18	Ability_Warrior_Disarm
+class:Warrior/Protection	3411	Intervene	buff/debuff	physical	0	70	Ability_Warrior_VictoryRush
+class:Warrior/Protection	12976	Last Stand	buff/debuff	physical	0	1	Spell_Holy_AshesToAshes
+class:Warrior/Protection	57823	Revenge	dmg	physical	0	80	Ability_Warrior_Revenge
+class:Warrior/Protection	12798	Revenge Stun	stun	physical	0	10	Ability_Warrior_Revenge
+class:Warrior/Protection	46947	Safeguard	buff/debuff	physical	0	1	Ability_Warrior_Safeguard
+class:Warrior/Protection	72	Shield Bash	other	physical	0	12	Ability_Warrior_ShieldBash
+class:Warrior/Protection	2565	Shield Block	buff/debuff	physical	0	16	Ability_Defend
+class:Warrior/Protection	47488	Shield Slam	dmg	physical	0	80	INV_Shield_05
+class:Warrior/Protection	871	Shield Wall	buff/debuff	physical	0	28	Ability_Warrior_ShieldWall
+class:Warrior/Protection	46968	Shockwave	stun	physical	0	60	Ability_Warrior_Shockwave
+class:Warrior/Protection	18498	Silenced - Gag Order	buff/debuff	physical	0	0	Ability_Warrior_ShieldBash
+class:Warrior/Protection	23920	Spell Reflection	buff/debuff	physical	0	64	Ability_Warrior_ShieldReflection
+class:Warrior/Protection	7386	Sunder Armor	other	physical	0	10	Ability_Warrior_Sunder
+class:Warrior/Protection	355	Taunt	buff/debuff	physical	0	10	Spell_Nature_Reincarnation
+class:Warrior/Protection	50720	Vigilance	buff/debuff	physical	0	40	Ability_Warrior_Vigilance
+pet:Bat	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Bat	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Bat	53568	Sonic Blast	stun	nature	0	80	Ability_Hunter_Pet_Bat
+pet:Bear	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Bear	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Bear	53533	Swipe	dmg	physical	0	80	INV_Misc_MonsterClaw_03
+pet:Bird of Prey	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Bird of Prey	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Bird of Prey	53543	Snatch	dmg	physical	0	80	Spell_Nature_NaturesWrath
+pet:Boar	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Boar	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Boar	35295	Gore	dmg	physical	0	80	Ability_Hunter_Pet_Boar
+pet:Carrion Bird	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Carrion Bird	55487	Demoralizing Screech	dmg	physical	0	80	Ability_Hunter_Pet_Vulture
+pet:Carrion Bird	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Carrion Bird	52825	Swoop	buff/debuff	physical	0	0	Ability_Hunter_Pet_DragonHawk
+pet:Cat	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Cat	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Cat	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Cat	24453	Prowl	stealth	physical	0	50	Ability_Druid_SupriseAttack
+pet:Cat	59886	Rake	dot	physical	0	80	Ability_Druid_Disembowel
+pet:Chimaera	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Chimaera	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Chimaera	55492	Froststorm Breath	dmg	mixed	0	80	Spell_Nature_Lightning
+pet:Core Hound	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Core Hound	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Core Hound	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Core Hound	58611	Lava Breath	dmg	fire	0	80	Spell_Fire_WindsofWoe
+pet:Crab	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Crab	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Crab	53548	Pin	root	physical	0	80	INV_Jewelcrafting_TruesilverCrab
+pet:Crocolisk	52399	Bad Attitude	shield	physical	0	80	Ability_Hunter_Pet_Crocolisk
+pet:Crocolisk	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Crocolisk	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Devilsaur	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Devilsaur	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Devilsaur	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Devilsaur	55499	Monstrous Bite	dmg	physical	0	80	INV_Misc_Bone_09
+pet:Dragonhawk	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Dragonhawk	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Dragonhawk	55485	Fire Breath	dot	fire	0	80	Spell_Fire_Burnout
+pet:Felguard	47993	Anguish	other	shadow	0	78	Spell_Shadow_GatherShadows
+pet:Felguard	47994	Cleave	dmg	physical	0	76	Ability_Warrior_Cleave
+pet:Felguard	32851	Demonic Frenzy	buff/debuff	physical	0	0	Spell_Shadow_DeathPact
+pet:Felguard	47996	Intercept	other	physical	0	79	Ability_Rogue_Sprint
+pet:Felhunter	48011	Devour Magic	dispel	shadow	0	77	Spell_Nature_Purge
+pet:Felhunter	19658	Devour Magic Effect	heal	shadow	0	30	Spell_Nature_Purge
+pet:Felhunter	57567	Fel Intelligence	buff/debuff	shadow	0	72	Spell_Shadow_Brainwash
+pet:Felhunter	54053	Shadow Bite	dmg	shadow	0	74	Spell_Shadow_SoulLeech_3
+pet:Felhunter	19647	Spell Lock	other	shadow	0	52	Spell_Shadow_MindRot
+pet:Ghoul	47468	Claw	dmg	physical	0	50	Spell_DeathKnight_Thrash_Ghoul
+pet:Ghoul	47481	Gnaw	stun	physical	0	50	Spell_DeathKnight_Gnaw_Ghoul
+pet:Ghoul	47484	Huddle	buff/debuff	physical	0	50	Spell_Shadow_RaiseDead
+pet:Ghoul	47482	Leap	summon	physical	0	1	Spell_Shadow_Skull
+pet:Gorilla	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Gorilla	26090	Pummel	other	nature	0	1	Ability_Hunter_Pet_Gorilla
+pet:Gorilla	52476	Smack	dmg	physical	0	80	Ability_Druid_Bash
+pet:Hyena	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Hyena	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Hyena	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Hyena	53575	Tendon Rip	dmg	physical	0	80	Ability_CriticalStrike
+pet:Imp	47982	Blood Pact	buff/debuff	shadow	0	74	Spell_Shadow_BloodBoil
+pet:Imp	47983	Fire Shield	shield	fire	0	76	Spell_Fire_FireArmor
+pet:Imp	47964	Firebolt	dmg	fire	2500	78	Spell_Fire_FireBolt
+pet:Imp	4511	Phase Shift	buff/debuff	physical	0	12	Spell_Shadow_ImpPhaseShift
+pet:Moth	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Moth	52016	Serenity Dust	hot	nature	0	80	Spell_Holy_ElunesGrace
+pet:Moth	52476	Smack	dmg	physical	0	80	Ability_Druid_Bash
+pet:Moth	52825	Swoop	buff/debuff	physical	0	0	Ability_Hunter_Pet_DragonHawk
+pet:Nether Ray	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Nether Ray	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Nether Ray	53589	Nether Shock	dmg	shadow	0	80	Spell_Shadow_SoulLeech_3
+pet:Raptor	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Raptor	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Raptor	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Raptor	53582	Savage Rend	dot	physical	0	80	Ability_Gouge
+pet:Ravager	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Ravager	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Ravager	53562	Ravage	stun	physical	0	80	Ability_Druid_PrimalTenacity
+pet:Remote Control	25026	Activate MG Turret	buff/debuff	fire	0	0	INV_Weapon_Rifle_10
+pet:Remote Control	25027	Flamethrower	buff/debuff	fire	0	0	INV_Musket_01
+pet:Rhino	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Rhino	52476	Smack	dmg	physical	0	80	Ability_Druid_Bash
+pet:Rhino	57393	Stampede	dmg	physical	0	80	Spell_Shaman_AstralShift
+pet:Scorpid	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Scorpid	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Scorpid	55728	Scorpid Poison	dot	nature	0	80	Ability_PoisonSting
+pet:Serpent	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Serpent	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Serpent	55557	Poison Spit	dot	nature	0	80	Spell_Nature_CorrosiveBreath
+pet:Silithid	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Silithid	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Silithid	55509	Venom Web Spray	root	nature	0	80	Spell_Nature_Web
+pet:Spider	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Spider	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Spider	4167	Web	root	physical	0	1	Spell_Nature_Web
+pet:Spirit Beast	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Spirit Beast	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Spirit Beast	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Spirit Beast	24453	Prowl	stealth	physical	0	50	Ability_Druid_SupriseAttack
+pet:Spirit Beast	61198	Spirit Strike	dot	arcane	0	80	Spell_Nature_StarFall
+pet:Sporebat	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Sporebat	52476	Smack	dmg	physical	0	80	Ability_Druid_Bash
+pet:Sporebat	53598	Spore Cloud	dot	nature	0	80	Creature_SporeMushroom
+pet:Succubus	47992	Lash of Pain	dmg	shadow	0	80	Spell_Shadow_Curse
+pet:Succubus	7870	Lesser Invisibility	buff/debuff	shadow	0	32	Spell_Magic_LesserInvisibilty
+pet:Succubus	6358	Seduction	stun	shadow	1500	26	Spell_Shadow_MindSteal
+pet:Succubus	27275	Soothing Kiss	buff/debuff	shadow	0	70	Spell_Shadow_SoothingKiss
+pet:Tallstrider	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Tallstrider	52472	Claw	dmg	physical	0	80	Ability_Druid_Rake
+pet:Tallstrider	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Tallstrider	50285	Dust Cloud	other	nature	0	6	Ability_Hibernation
+pet:Turtle	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Turtle	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Turtle	26064	Shell Shield	buff/debuff	physical	0	1	Ability_Hunter_Pet_Turtle
+pet:Voidwalker	47988	Consume Shadows	hot	shadow	0	78	Spell_Shadow_AntiShadow
+pet:Voidwalker	47986	Sacrifice	shield	shadow	0	79	Spell_Shadow_SacrificialShield
+pet:Voidwalker	47990	Suffering	buff/debuff	shadow	0	80	Spell_Shadow_BlackPlague
+pet:Voidwalker	47984	Torment	other	shadow	0	80	Spell_Shadow_GatherShadows
+pet:Warp Stalker	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Warp Stalker	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Warp Stalker	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Warp Stalker	35346	Warp	buff/debuff	arcane	0	60	Spell_Arcane_Arcane04
+pet:Wasp	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Wasp	52476	Smack	dmg	physical	0	80	Ability_Druid_Bash
+pet:Wasp	56631	Sting	dmg	nature	0	80	Spell_Nature_SlowPoison
+pet:Wasp	52825	Swoop	buff/debuff	physical	0	0	Ability_Hunter_Pet_DragonHawk
+pet:Wind Serpent	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Wind Serpent	23145	Dive	buff/debuff	physical	0	0	Spell_Shadow_BurningSpirit
+pet:Wind Serpent	25012	Lightning Breath	dmg	nature	0	80	Spell_Nature_Lightning
+pet:Wolf	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Wolf	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:Wolf	61684	Dash	buff/debuff	physical	0	0	Ability_Druid_Dash
+pet:Wolf	64495	Furious Howl	buff/debuff	physical	0	80	Ability_Hunter_Pet_Wolf
+pet:Worm	55754	Acid Spit	dmg	nature	0	80	Spell_Nature_Acid_01
+pet:Worm	52474	Bite	dmg	physical	0	80	Ability_Druid_FerociousBite
+pet:Worm	61685	Charge	buff/debuff	physical	0	0	Ability_Hunter_Pet_Bear
+pet:generic	53490	Bullheaded	buff/debuff	physical	0	0	Ability_Warrior_BullRush
+pet:generic	53434	Call of the Wild	buff/debuff	physical	0	0	Ability_Druid_KingoftheJungle
+pet:generic	54044	Carrion Feeder	dummy	physical	0	0	Ability_Racial_Cannibalize
+pet:generic	1742	Cower	slow	physical	0	20	Ability_Druid_Cower
+pet:generic	75593	Ferocious Inspiration	buff/debuff	physical	0	0	Ability_Hunter_FerociousInspiration
+pet:generic	61676	Growl	other	physical	0	80	Ability_Physical_Taunt
+pet:generic	55709	Heart of the Phoenix	dummy	nature	0	0	INV_Misc_PheonixPet_01
+pet:generic	53476	Intervene	buff/debuff	physical	0	0	Ability_Hunter_Pet_Turtle
+pet:generic	24394	Intimidation	stun	physical	0	40	Ability_Devour
+pet:generic	53478	Last Stand	dummy	physical	0	0	Spell_Nature_ShamanRage
+pet:generic	53426	Lick Your Wounds	hot	nature	0	0	Ability_Hunter_MendPet
+pet:generic	53401	Rabid	buff/debuff	physical	0	0	Ability_Druid_Berserk
+pet:generic	53517	Roar of Recovery	buff/debuff	nature	0	0	Ability_Druid_MasterShapeshifter
+pet:generic	53480	Roar of Sacrifice	buff/debuff	nature	0	0	Ability_Druid_DemoralizingRoar
+pet:generic	53477	Taunt	buff/debuff	physical	0	0	Spell_Nature_Reincarnation
+pet:generic	63900	Thunderstomp	dmg	nature	0	1	Ability_GolemThunderClap
+pet:generic	53508	Wolverine Bite	dmg	physical	0	0	Ability_Druid_Lacerate
+race:Blood Elf	50613	Arcane Torrent	buff/debuff	arcane	0	0	Spell_Shadow_Teleport
+race:Draenei	59548	Gift of the Naaru	hot	holy	0	1	Spell_Holy_HolyProtection
+race:Dwarven	2481	Find Treasure	buff/debuff	physical	0	1	Racial_Dwarf_FindTreasure
+race:Dwarven	20594	Stoneform	buff/debuff	physical	0	0	Spell_Shadow_UnholyStrength
+race:Gnome	20589	Escape Artist	dummy	physical	0	0	Ability_Rogue_Trip
+race:Human	59752	Every Man for Himself	buff/debuff	physical	0	0	Spell_Shadow_Charm
+race:Night Elf	58984	Shadowmeld	stealth	physical	0	1	Ability_Ambush
+race:Orc	33702	Blood Fury	buff/debuff	physical	0	1	Racial_Orc_BerserkerStrength
+race:Tauren	20549	War Stomp	stun	physical	500	0	Ability_WarStomp
+race:Troll	26297	Berserking	buff/debuff	physical	0	0	Racial_Troll_Berserk
+race:Undead	20577	Cannibalize	dummy	physical	0	0	Ability_Racial_Cannibalize
+race:Undead	7744	Will of the Forsaken	buff/debuff	physical	0	0	Spell_Shadow_RaiseDead

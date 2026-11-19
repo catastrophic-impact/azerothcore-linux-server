@@ -1,0 +1,82 @@
+# Zangarmarsh pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	22306	Skittering Cavern Crawler	1	Critter	0	0	30	0	Melee		composed kit: Critter
+Y	18130	Marshfang Ripper	60-61	Beast	34	0	61	0	Melee		composed kit: Flying
+Y	18213	Mire Hydra	60-61	Beast	0	0	40	0	Melee		composed kit: Beast
+Y	18358	Sporeggar Spawn	60	Humanoid	0	0	63	0	Melee		composed kit: Humanoid
+Y	20127	Tame Kaliri	60-61	Beast	26	0	3	0	Melee		composed kit: Flying
+Y	18138	Umbrafen Eel	60-61	Beast	0	0	69	0	Melee		composed kit: Aquatic
+Y	18077	Umbrafen Oracle	60-61	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	18079	Umbrafen Seer	60-61	Humanoid	0	0	15	0	Melee		composed kit: Elemental
+Y	18132	Umbraglow Stinger	60-61	Beast	44	0	56	0	Melee		composed kit: Flying
+Y	20387	Young Sporebat	60-61	Beast	33	0	80	0	Melee		composed kit: Flying
+Y	20088	Bloodscale Overseer	61-62	Humanoid	0	0	31	0	Melee		composed kit: Aquatic
+Y	20196	Bloodthirsty Marshfang	61-62	Beast	34	0	37	0	Melee		composed kit: Flying
+Y	20079	Darkcrest Sentry	61-62	Elemental	0	0	9	0	Melee		composed kit: Elemental
+Y	19946	Darkcrest Slaver	61-62	Humanoid	0	0	22	0	Melee		composed kit: Critter
+Y	19947	Darkcrest Sorceress	61-62	Humanoid	0	0	20	0	Melee		composed kit: Magic
+Y	18122	Dreghood Drudge	61-62	Humanoid	0	0	39	0	Melee		composed kit: Humanoid
+Y	18134	Fen Strider	61-62	Beast	0	0	53	0	Melee		composed kit: Beast
+Y	18113	Feralfen Hunter	61-62	Humanoid	0	0	17	0	Melee		composed kit: Beast
+Y	18114	Feralfen Mystic	61-62	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	20290	Lagoon Eel	61-62	Beast	0	0	43	0	Melee		composed kit: Aquatic
+Y	20291	Lagoon Walker	61-62	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	20283	Marshrock Stomper	61-62	Beast	0	0	14	0	Melee		composed kit: Beast
+Y	19706	Marshrock Threshalisk	61-62	Beast	0	0	26	0	Melee		composed kit: Beast
+Y	20324	Parched Hydra	61	Beast	0	0	16	0	Melee		composed kit: Beast
+Y	18128	Sporebat	61-62	Beast	33	0	46	0	Melee		composed kit: Flying
+Y	18124	Withered Giant	61-62	Giant	0	0	35	0	Melee		composed kit: Elemental
+Y	18119	Ango'rosh Brute	62-63	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	18117	Ango'rosh Ogre	62-63	Humanoid	0	0	57	0	Melee		composed kit: Humanoid
+Y	20443	Ango'rosh Sentry	62-63	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	18118	Ango'rosh Shaman	62-63	Humanoid	0	0	18	0	Melee		composed kit: Elemental
+Y	19732	Ango'rosh Warlock	62-63	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	20792	Bloodscale Elemental	62-63	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	20090	Bloodscale Sentry	62-63	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	20089	Bloodscale Wavecaller	62	Humanoid	0	0	14	0	Melee		composed kit: Aquatic
+Y	20197	Bogflare Needler	62	Beast	44	0	21	0	Melee		composed kit: Flying
+Y	20295	Bogstrok Crusher	62-63	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	20294	Bogstrok Razorclaw	62-63	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	18116	Daggerfen Assassin	62-63	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	18115	Daggerfen Muckdweller	62-63	Humanoid	0	0	29	0	Melee		composed kit: Humanoid
+Y	19733	Daggerfen Servant	62	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	18087	Darkcrest Siren	62-63	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	18086	Darkcrest Taskmaster	62-63	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	18214	Fenclaw Thrasher	62-63	Beast	0	0	22	0	Melee		composed kit: Beast
+Y	20198	Fenglow Stinger	62-63	Beast	44	0	12	0	Melee		composed kit: Flying
+Y	20270	Feralfen Druid	62	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	18129	Greater Sporebat	62-63	Beast	33	0	81	0	Melee		composed kit: Flying
+Y	18131	Marshfang Slicer	62-63	Beast	34	0	41	0	Melee		composed kit: Flying
+Y	18133	Marshlight Bleeder	62-63	Beast	44	0	41	0	Melee		composed kit: Flying
+Y	18212	Mudfin Frenzy	62-63	Beast	0	0	271	0	Melee		composed kit: Beast
+Y	20279	Ragestone Threshalisk	62-63	Beast	0	0	21	0	Melee		composed kit: Beast
+Y	20280	Ragestone Trampler	62-63	Beast	0	0	18	0	Melee		composed kit: Beast
+Y	18340	Steam Pump Overseer	62-63	Humanoid	0	0	5	0	Melee		composed kit: Elemental
+Y	19349	Thornfang Ravager	62-63	Beast	31	0	22	0	Melee		composed kit: Beast
+Y	19350	Thornfang Venomspitter	62-63	Beast	31	0	19	0	Melee		composed kit: Beast
+Y	19402	Withered Bog Lord	62	Giant	0	0	25	0	Melee		composed kit: Elemental
+Y	18123	Wrekt Slave	62	Humanoid	0	0	69	0	Melee		composed kit: Critter
+Y	18120	Ango'rosh Mauler	63-64	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	20444	Ango'rosh Shadowmage	63-64	Humanoid	0	0	6	0	Melee		composed kit: Magic
+Y	18121	Ango'rosh Souleater	63-64	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	18088	Bloodscale Enchantress	63-64	Humanoid	0	0	19	0	Melee		composed kit: Aquatic
+Y	18089	Bloodscale Slavedriver	63-64	Humanoid	0	0	51	0	Melee		composed kit: Aquatic
+Y	20293	Bogstrok Clacker	63	Humanoid	0	0	32	0	Melee		composed kit: Humanoid
+Y	20710	Bogstrok Hatchling	63	Humanoid	0	0	85	0	Melee		composed kit: Humanoid
+Y	19734	Fungal Giant	63-64	Giant	0	0	23	0	Melee		composed kit: Elemental
+Y	19730	Ironspine Gazer	63-64	Beast	0	0	13	0	Melee		composed kit: Beast
+Y	19729	Ironspine Threshalisk	63-64	Beast	0	0	19	0	Melee		composed kit: Beast
+Y	18135	Marsh Walker	63-64	Beast	0	0	22	0	Melee		composed kit: Beast
+Y	18140	Sporeggar Harvester	63-64	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	18125	Starving Fungal Giant	63-64	Giant	0	0	28	0	Melee		composed kit: Elemental
+Y	18127	Bog Lord	64	Giant	0	0	10	0	Melee		composed kit: Elemental
+Y	19519	Starving Bog Lord	64	Giant	0	0	10	0	Melee		composed kit: Elemental
+Y	22044	Cavern Crawler	65	Beast	3	0	45	0	Melee		composed kit: Critter
+Y	19973	Abyssal Flamebringer	70-71	Demon	0	0	13	0	Melee		composed kit: Magic
+Y	22202	Nightmare Imp	70	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	22311	Raging Fire-Soul	70-71	Elemental	0	0	17	0	Melee		composed kit: Elemental
+Y	22313	Rumbling Earth-Heart	70-71	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	22310	Storming Wind-Ripper	70-71	Elemental	0	0	15	0	Melee		composed kit: Elemental
+Y	22298	Vile Fire-Soul	70-71	Elemental	0	0	5	0	Melee		composed kit: Elemental
+Y	22204	Fear Fiend	71	Demon	0	0	6	0	Melee		composed kit: Magic

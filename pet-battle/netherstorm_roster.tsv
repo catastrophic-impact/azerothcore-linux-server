@@ -1,0 +1,82 @@
+# Netherstorm pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	20411	Spectral Bovine	5	Critter	0	0	7	0	Melee		composed kit: Critter
+Y	19737	Engineering Crewmember	60-64	Humanoid	0	0	4	0	Melee		composed kit: Mechanical
+Y	19852	Artifact Seeker	67-68	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	21058	Disembodied Exarch	67-68	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	18872	Disembodied Vindicator	67-68	Undead	0	0	23	0	Melee		composed kit: Undead
+Y	21233	Legion Fel Cannon	67-68	Mechanical	0	0	25	0	Melee		composed kit: Mechanical
+Y	18883	Mana Snapper	67-68	Beast	0	0	33	0	Melee		composed kit: Aquatic
+Y	18864	Mana Wraith	67-68	Elemental	0	0	37	0	Melee		composed kit: Magic
+Y	18880	Nether Ray	67-68	Beast	34	0	19	0	Melee		composed kit: Flying
+Y	20203	Nether Technician	67	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	18879	Phase Hunter	67-68	Beast	0	0	66	0	Melee		composed kit: Beast
+Y	20210	Shaleskin Flayer	67-68	Humanoid	0	0	52	0	Melee		composed kit: Humanoid
+Y	18881	Sundered Rumbler	67-68	Elemental	0	0	23	0	Melee		composed kit: Elemental
+Y	20134	Sunfury Arcanist	67-68	Humanoid	0	0	24	0	Melee		composed kit: Magic
+Y	19707	Sunfury Archer	67-68	Humanoid	0	0	25	0	Melee		composed kit: Magic
+Y	18853	Sunfury Bloodwarder	67-68	Humanoid	0	0	47	0	Melee		composed kit: Magic
+Y	19779	Sunfury Geologist	67-68	Humanoid	0	0	60	0	Melee		composed kit: Magic
+Y	18855	Sunfury Magister	67-68	Humanoid	0	0	29	0	Melee		composed kit: Magic
+Y	20136	Sunfury Researcher	67-68	Humanoid	0	0	19	0	Melee		composed kit: Magic
+Y	18852	Sunfury Warp-Engineer	67-68	Humanoid	0	0	29	0	Melee		composed kit: Magic
+Y	18865	Warp Aberration	67-68	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	18884	Warp Chaser	67-68	Beast	32	0	67	0	Melee		composed kit: Beast
+Y	18875	Zaxxis Raider	67-68	Humanoid	0	0	38	0	Melee		composed kit: Humanoid
+Y	20773	Barbscale Crocolisk	68-69	Beast	6	0	12	0	Melee		composed kit: Aquatic
+Y	20607	Craghide Basilisk	68-69	Beast	0	0	33	0	Melee		composed kit: Aquatic
+Y	16943	Cyber-Rage Forgelord	68-69	Demon	0	0	23	0	Melee		composed kit: Mechanical
+Y	20452	Ethereum Assassin	68-69	Humanoid	0	0	9	0	Melee		composed kit: Magic
+Y	20453	Ethereum Shocktrooper	68-69	Humanoid	0	0	10	0	Melee		composed kit: Magic
+Y	20774	Farahlon Lasher	68-69	Elemental	0	0	70	0	Melee		composed kit: Elemental
+Y	16948	Gan'arg Engineer	68-69	Demon	0	0	33	0	Melee		composed kit: Mechanical
+Y	16949	Gan'arg Mekgineer	68-69	Demon	0	0	25	0	Melee		composed kit: Mechanical
+Y	20285	Gan'arg Warp-Tinker	68-69	Demon	0	0	18	0	Melee		composed kit: Mechanical
+Y	18866	Mageslayer	68-69	Elemental	0	0	12	0	Melee		composed kit: Elemental
+Y	18867	Mana Seeker	68-69	Elemental	0	0	13	0	Melee		composed kit: Magic
+Y	16944	Mo'arg Doomsmith	68-69	Demon	0	0	5	0	Melee		composed kit: Mechanical
+Y	18877	Nether Drake	68-69	Dragonkin	0	0	25	0	Melee		composed kit: Dragonkin
+Y	20671	Ripfang Lynx	68-69	Beast	2	0	21	0	Melee		composed kit: Beast
+Y	20634	Scythetooth Raptor	68-69	Beast	11	0	17	0	Melee		composed kit: Beast
+Y	20934	Severed Defender	68	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	20611	Shimmerwing Moth	68-69	Beast	37	0	13	0	Melee		composed kit: Flying
+Y	20495	Skeletal Stallion	68	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	18882	Sundered Thunderer	68-69	Elemental	0	0	16	0	Melee		composed kit: Elemental
+Y	20135	Sunfury Arch Mage	68	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	19643	Sunfury Astromancer	68	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	20207	Sunfury Bowman	68-69	Humanoid	0	0	16	0	Melee		composed kit: Magic
+Y	19453	Sunfury Captain	68	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	20140	Sunfury Centurion	68-69	Humanoid	0	0	11	0	Melee		composed kit: Magic
+Y	20139	Sunfury Conjurer	68-69	Humanoid	0	0	16	0	Melee		composed kit: Magic
+Y	20221	Sunfury Flamekeeper	68	Humanoid	0	0	5	0	Melee		composed kit: Magic
+Y	18857	Sunfury Warp-Master	68	Humanoid	0	0	13	0	Melee		composed kit: Magic
+Y	20673	Swiftwing Shredder	68-69	Beast	27	0	5	0	Melee		composed kit: Flying
+Y	20610	Talbuk Doe	68-69	Beast	0	0	43	0	Melee		composed kit: Beast
+Y	20777	Talbuk Sire	68-69	Beast	0	0	20	0	Melee		composed kit: Beast
+Y	20512	Tormented Soul	68	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	19568	Unending Voidwraith	68-69	Demon	0	0	11	0	Melee		composed kit: Magic
+Y	18869	Unstable Voidwraith	68-69	Demon	0	0	14	0	Melee		composed kit: Magic
+Y	18870	Voidshrieker	68-69	Demon	0	0	7	0	Melee		composed kit: Magic
+Y	20516	Warp Monstrosity	68-69	Elemental	0	0	22	0	Melee		composed kit: Elemental
+Y	18859	Wrath Priestess	68-69	Demon	0	0	4	0	Melee		composed kit: Magic
+Y	18858	Wrathbringer	68-69	Demon	0	0	29	0	Melee		composed kit: Magic
+Y	19642	Zaxxis Stalker	68	Humanoid	0	0	38	0	Melee		composed kit: Beast
+Y	20458	Ethereum Archon	69-70	Humanoid	0	0	8	0	Melee		composed kit: Magic
+Y	22822	Ethereum Nullifier	69-70	Humanoid	0	0	36	0	Melee		composed kit: Magic
+Y	20459	Ethereum Overlord	69-70	Humanoid	0	0	10	0	Melee		composed kit: Magic
+Y	20456	Ethereum Researcher	69-70	Humanoid	0	0	4	0	Melee		composed kit: Magic
+Y	20394	Eye of Culuthas	69-70	Demon	0	0	10	0	Melee		composed kit: Magic
+Y	20141	Hound of Culuthas	69-70	Demon	0	0	21	0	Melee		composed kit: Beast
+Y	20928	Ironspine Forgelord	69	Demon	0	0	3	0	Melee		composed kit: Mechanical
+Y	20409	Kirin'Var Apprentice	69	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	20248	Sunfury Nethermancer	69-70	Humanoid	0	0	33	0	Melee		composed kit: Magic
+Y	20404	Warp-Gate Engineer	69	Demon	0	0	4	0	Melee		composed kit: Mechanical
+Y	18860	Daughter of Destiny	70	Demon	0	0	4	0	Melee		composed kit: Magic
+Y	20474	Ethereum Nexus-Stalker	70	Humanoid	0	0	12	0	Melee		composed kit: Magic
+Y	20930	Hatecryer	70	Demon	0	0	3	0	Melee		composed kit: Magic
+Y	20326	Mo'arg Warp-Master	70	Demon	0	0	9	0	Melee		composed kit: Mechanical
+Y	20332	Nether Dragon	70	Dragonkin	0	0	3	0	Melee		composed kit: Dragonkin
+Y	21089	Sunfury Blood Knight	70	Humanoid	0	0	17	0	Melee		composed kit: Magic
+Y	20929	Wrath Lord	70	Demon	0	0	12	0	Melee		composed kit: Magic
+Y	23008	Ethereum Jailor	71	Humanoid	0	0	21	0	Melee		composed kit: Magic

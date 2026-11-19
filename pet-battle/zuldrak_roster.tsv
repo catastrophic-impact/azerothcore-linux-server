@@ -1,0 +1,92 @@
+# Zul'Drak pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	29848	Rageclaw Pup	1-5	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	16509	Argent Warhorse	60	Beast	0	0	4	0	Melee		composed kit: Beast
+Y	26942	Decrepit Necromancer	73-74	Humanoid	0	0	13	0	Melee		composed kit: Undead
+Y	26570	Famished Scourge Troll	73	Undead	0	0	77	0	Melee		composed kit: Undead
+Y	26946	Reanimated Drakkari Tribesman	73-74	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	26965	Tormented Drakkari	73-74	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	28750	Blight Geist	74-75	Undead	0	0	28	0	Melee		composed kit: Undead
+Y	29686	Captured Rageclaw	74-75	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	29654	Drakuru Blood Drinker	74-75	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	29697	Drakuru Prophet	74-75	Undead	0	0	21	0	Melee		composed kit: Undead
+Y	29698	Drakuru Raptor	74-75	Beast	11	0	12	0	Melee		composed kit: Beast
+Y	26948	Hulking Atrocity	74	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	28599	Plagueroach	74-75	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	28564	Putrid Abomination	74-75	Undead	0	0	28	0	Melee		composed kit: Undead
+Y	29437	Rageclaw Berserker	74-75	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	29439	Rageclaw Hunter	74-75	Humanoid	0	0	6	0	Melee		composed kit: Beast
+Y	29438	Rageclaw Primalist	74-75	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	29452	Vargul Blighthound	74-75	Beast	1	0	16	0	Melee		composed kit: Beast
+Y	29889	Vargul Blighthound	74-75	Beast	1	0	7	0	Melee		composed kit: Beast
+Y	29453	Vargul Plaguetalon	74-75	Undead	0	0	3	0	Melee		composed kit: Undead
+Y	29894	Vargul Plaguetalon	74-75	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	28519	Withered Troll	74-75	Undead	0	0	41	0	Melee		composed kit: Undead
+Y	30102	Amphitheater Spectator	75	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	30193	Amphitheater Spectator	75	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	28029	Argent Crusader	75-76	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	28117	Argent Footman	75-76	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	29646	Banshee Soulclaimer	75-76	Undead	0	0	33	0	Melee		composed kit: Undead
+Y	29893	Banshee Soulclaimer	75-76	Undead	0	0	35	0	Melee		composed kit: Undead
+Y	28843	Bloated Abomination	75-76	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	28022	Carrion Eater	75-76	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	28036	Champion of Sseratus	75-76	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	28852	Dead Mam'toth Disciple	75-76	Humanoid	0	0	40	0	Melee		composed kit: Humanoid
+Y	28565	Decaying Ghoul	75-76	Undead	0	0	28	0	Melee		composed kit: Undead
+Y	28156	Defeated Argent Footman	75-76	Humanoid	0	0	23	0	Melee		composed kit: Humanoid
+Y	28260	Defeated Argent Footman	75-76	Humanoid	0	0	38	0	Melee		composed kit: Humanoid
+Y	29133	Disturbed Soul	75-76	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	29211	Drakkari Native	75-76	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	28844	Drakkari Skullcrusher	75-76	Humanoid	0	0	40	0	Melee		composed kit: Humanoid
+Y	29444	Drakkari Snake	75	Beast	0	0	3	0	Melee		composed kit: Aquatic
+Y	28034	Drakkari Snake Handler	75-76	Humanoid	0	0	8	0	Melee		composed kit: Beast
+Y	28303	Drakkari Water Binder	75-76	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	29656	Drakuru Berserker	75	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	28759	Flying Fiend	75-76	Undead	0	0	36	0	Melee		composed kit: Undead
+Y	28412	Hath'ar Broodmaster	75-76	Undead	0	0	10	0	Melee		composed kit: Undead
+Y	28257	Hath'ar Necromagus	75-76	Undead	0	0	13	0	Melee		composed kit: Undead
+Y	28145	Lurking Basilisk	75-76	Beast	0	0	33	0	Melee		composed kit: Aquatic
+Y	28323	Mossy Rampager	75-76	Elemental	0	0	9	0	Melee		composed kit: Elemental
+Y	28035	Priest of Sseratus	75-76	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	28026	Rampaging Geist	75-76	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	28268	Scourged Argent Footman	75-76	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	28802	Servant of Drakuru	75-76	Undead	0	0	19	0	Melee		composed kit: Undead
+Y	28246	Sky Terror	75-76	Undead	0	0	15	0	Melee		composed kit: Undead
+Y	28221	Trapdoor Crawler	75-76	Beast	3	0	41	0	Melee		composed kit: Critter
+Y	29449	Vargul Deathwaker	75-76	Undead	0	0	7	0	Melee		composed kit: Undead
+Y	29890	Vargul Deathwaker	75-76	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	29450	Vargul Runelord	75-76	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	29891	Vargul Runelord	75-76	Undead	0	0	4	0	Melee		composed kit: Undead
+Y	29451	Vargul Slayer	75-76	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	29892	Vargul Slayer	75-76	Undead	0	0	3	0	Melee		composed kit: Undead
+Y	28158	Withered Argent Footman	75-76	Undead	0	0	25	0	Melee		composed kit: Undead
+Y	28233	Zul'Drak Bat	75-76	Beast	24	0	70	0	Melee		composed kit: Flying
+Y	28988	Akali Subduer	76-77	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	28402	Claw of Har'koa	76-77	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	28404	Cursed Offspring of Har'koa	76-77	Beast	2	0	23	0	Melee		composed kit: Beast
+Y	28418	Drakkari Bear Trapper	76-77	Humanoid	0	0	11	0	Melee		composed kit: Beast
+Y	28851	Enraged Mammoth	76-77	Beast	0	0	12	0	Melee		composed kit: Beast
+Y	28411	Frozen Earth	76-77	Elemental	0	0	21	0	Melee		composed kit: Elemental
+Y	29332	Gundrak Bat Rider	76-77	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	29236	Gundrak Brute	76-77	Humanoid	0	0	27	0	Melee		composed kit: Humanoid
+Y	29237	Gundrak Fire-eater	76-77	Humanoid	0	0	28	0	Melee		composed kit: Humanoid
+Y	29334	Gundrak Raptor	76-77	Beast	11	0	28	0	Melee		composed kit: Beast
+Y	29235	Gundrak Savage	76-77	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	28403	Har'koan Subduer	76-77	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	28600	Heb'Drakkar Headhunter	76-77	Humanoid	0	0	21	0	Melee		composed kit: Beast
+Y	28465	Heb'Drakkar Striker	76-77	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	28504	Jin'Alai Medicine Man	76-77	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	28388	Jin'Alai Warrior	76-77	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	28861	Mam'toth Disciple	76-77	Humanoid	0	0	31	0	Melee		composed kit: Humanoid
+Y	28417	Priest of Rhunok	76-77	Humanoid	0	0	37	0	Melee		composed kit: Humanoid
+Y	28747	Quetz'lun Worshipper	76-77	Undead	0	0	38	0	Melee		composed kit: Undead
+Y	28748	Serpent-Touched Berserker	76-77	Undead	0	0	11	0	Melee		composed kit: Undead
+Y	28387	Zim'Torga Defender	76-77	Elemental	0	0	15	0	Melee		composed kit: Elemental
+Y	28452	Elemental Rift	77	Elemental	0	0	10	0	Melee		composed kit: Elemental
+Y	29555	Goblin Sapper	77-78	Humanoid	0	0	15	0	Melee		composed kit: Mechanical
+Y	29958	Tundra Ram	79-80	Beast	0	0	10	0	Melee		composed kit: Beast
+Y	30160	Brittle Revenant	80	Elemental	0	0	7	0	Melee		composed kit: Elemental
+Y	29504	Seething Revenant	80	Elemental	0	0	18	0	Melee		composed kit: Elemental
+Y	30120	Seething Revenant	80	Elemental	0	0	5	0	Melee		composed kit: Elemental
+Y	30387	Seething Revenant	80	Elemental	0	0	9	0	Melee		composed kit: Elemental

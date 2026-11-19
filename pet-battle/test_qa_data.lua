@@ -35,9 +35,9 @@ for id, sp in pairs(D.species) do
 end
 
 -- 3. zone rosters / picks / D.zones / ZONES
-local zfile = {}   -- data-driven: every zone_ranges.tsv row whose zone id is in D.zones (zone key = the file prefix)
+local zfile, composed = {}, {}   -- data-driven: every zone_ranges.tsv row whose zone id is in D.zones (zone key = the file prefix)
 for l in io.lines("pet-battle/zone_ranges.tsv") do
-    if not l:find("^#") and l:find("%S") then local c = {}; for f in (l .. "\t"):gmatch("(.-)\t") do c[#c + 1] = f end; if D.zones[tonumber(c[2])] then zfile[c[1]] = tonumber(c[2]) end end
+    if not l:find("^#") and l:find("%S") then local c = {}; for f in (l .. "\t"):gmatch("(.-)\t") do c[#c + 1] = f end; if D.zones[tonumber(c[2])] then zfile[c[1]] = tonumber(c[2]); if c[15] == "composed" then composed[c[1]] = true end end end
 end
 local wild = readAll("scripts/pb_wild.lua"):match("local ZONES = {([^}]*)}")
 local zset = {}; for id in wild:gmatch("%[(%d+)%] = true") do check(not zset[id], "dup ZONES id " .. id); zset[id] = true end
@@ -78,7 +78,7 @@ for zn, zid in pairs(zfile) do
             end
         end
     end)
-    if not ok then if zn ~= "westfall" and zn ~= "elwynn" and zn ~= "dunmorogh" and zn ~= "durotar" then check(false, zn .. ": no picks file") end end
+    if not ok and not composed[zn] then if zn ~= "westfall" and zn ~= "elwynn" and zn ~= "dunmorogh" and zn ~= "durotar" then check(false, zn .. ": no picks file") end end
     -- every Y roster row either picked or an older species (defined in another zone) -- count the ones with neither
     if z and hi > 0 then
         -- the mob level span must match D.zones within a small tolerance

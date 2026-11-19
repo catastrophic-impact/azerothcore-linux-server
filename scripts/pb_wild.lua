@@ -7,14 +7,19 @@
 local D = require("pb_data")
 local Store = require("pb_store")
 
-local ZONES = { [36] = true, [493] = true, [618] = true, [361] = true, [15] = true, [17] = true, [16] = true, [28] = true, [8] = true, [33] = true, [139] = true, [41] = true, [4] = true, [406] = true, [1377] = true, [490] = true, [400] = true, [440] = true, [357] = true, [405] = true, [331] = true, [11] = true, [51] = true, [47] = true, [267] = true, [10] = true, [46] = true, [3] = true, [45] = true, [3525] = true, [3433] = true, [44] = true, [38] = true, [148] = true, [130] = true, [3524] = true, [3430] = true, [85] = true, [215] = true, [141] = true, [12] = true, [1] = true, [14] = true, [40] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials), Westfall (40). Add more zones here later (and a D.zones row in pb_data.lua).
-local TICK_MS = 12000
+local ZONES = { [3483] = true, [3521] = true, [3519] = true, [3518] = true, [3522] = true, [3523] = true, [3520] = true, [3537] = true, [495] = true, [65] = true, [394] = true, [66] = true, [3711] = true, [67] = true, [210] = true, [2817] = true, [4197] = true, [36] = true, [493] = true, [618] = true, [361] = true, [15] = true, [17] = true, [16] = true, [28] = true, [8] = true, [33] = true, [139] = true, [41] = true, [4] = true, [406] = true, [1377] = true, [490] = true, [400] = true, [440] = true, [357] = true, [405] = true, [331] = true, [11] = true, [51] = true, [47] = true, [267] = true, [10] = true, [46] = true, [3] = true, [45] = true, [3525] = true, [3433] = true, [44] = true, [38] = true, [148] = true, [130] = true, [3524] = true, [3430] = true, [85] = true, [215] = true, [141] = true, [12] = true, [1] = true, [14] = true, [40] = true }   -- Elwynn Forest (12, includes Northshire Valley), Dun Morogh (1, includes Coldridge Valley), Durotar (14, includes Valley of Trials), Westfall (40). Add more zones here later (and a D.zones row in pb_data.lua).
+local Msg = require("acore_msg")
+local TICK_MS = 5000            -- the fill/despawn tick: cheap, because a player whose area is full (or who stands still with nothing to spawn) costs no world scan at all
+local BLIP_MS = 1000            -- minimap blips for the wild pets around each player (only players that have any)
 local SEARCH = 60               -- how far from a player real mobs are looked for
 local SPACING = 90              -- at most one wild pet per species within this distance of each other
 local MAX_AREA = 3              -- at most this many wild pets within SPACING of a player, all of DIFFERENT species (user: up to 3, never 2-3 of a kind)
 local COOLDOWN = 90             -- seconds before the species re-appears around that spot after a battle
 local LIFETIME = 600            -- an untouched wild pet disappears after this many seconds
-local LEAVE = 110               -- ...or when no player is within this distance
+local LEAVE = 90                -- ...or when no player has been within this distance for AWAY_GRACE seconds (running past and coming back must not wipe the area)
+local AWAY_GRACE = 60
+local MOVE_RESCAN = 25          -- a player below the cap is only rescanned after moving this far, or after RESCAN_IDLE seconds, when the last scan found nothing to spawn
+local RESCAN_IDLE = 45
 local TALK_RANGE = 12           -- how close you must be to challenge it
 local SOLO_MAX_LEVEL = 2        -- wild pets up to this PET level (not mob level: mob level 6 is already pet level 2) fight alone
 local MARKER = 62011            -- the old heart marker: no longer applied (the green friendly name is the cue); only removed from critters that still carry it
@@ -100,6 +105,7 @@ local function Spawn(player, species, mob, types)
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)                 -- friendly to everyone
     pcall(function() obj:SetScale(Store.Scale(species)) end)
+    CreateLuaEvent(function() local o = wild[g] and Obj(wild[g]); if o then pcall(function() o:SetScale(Store.Scale(species)) end) end end, 700, 1)   -- once more shortly after the spawn
     pcall(function() local d = obj:GetDisplayId(); if d and d > 0 then wild[g].display = d end end)   -- the skin the player SEES is the skin they can recruit
     pcall(function() obj:SetNPCFlags(1) end)                 -- gossip: right-click works
     pcall(function() obj:SetPhaseMask(1, true) end)
@@ -118,8 +124,16 @@ local function Adopt(player, species, mob, types)
     pcall(function() mob:SetNPCFlags(flags0 % 2 == 1 and flags0 or flags0 + 1) end)   -- gossip bit ON (never add 1 to a flag that already has it: 1 + 1 = 2 is the quest giver bit)
 end
 
+local scanned = {}   -- player low guid -> { map, x, y, t, spawned }: when this player's surroundings were last searched
 local function Scan(player, now)
     local map, px, py = player:GetMapId(), player:GetX(), player:GetY()
+    local near, here = 0, {}   -- wild pets already around this player (within SPACING of him): the cap and the species that are taken
+    for _, w in pairs(wild) do
+        if w.map == map and (w.x - px) ^ 2 + (w.y - py) ^ 2 < SPACING * SPACING then near = near + 1; here[w.species] = true end
+    end
+    if near >= MAX_AREA then return end   -- full: no world query at all
+    local low = player:GetGUIDLow(); local last = scanned[low]
+    if last and last.map == map and not last.spawned and now - last.t < RESCAN_IDLE and (last.x - px) ^ 2 + (last.y - py) ^ 2 < MOVE_RESCAN * MOVE_RESCAN then return end   -- nothing was spawnable here a moment ago and he has not moved
     local found, types = {}, {}
     -- ONE range query (all creatures within SEARCH, both factions, alive), bucketed by entry: 20x cheaper than one query per species (measured live) and the same result set
     local ok, list = pcall(function() return player:GetCreaturesInRange(SEARCH, 0, 0, 1) end)
@@ -135,21 +149,19 @@ local function Scan(player, now)
             end
         end
     end
-    local near, here = 0, {}   -- wild pets already around this player (within SPACING of him): the cap and the species that are taken
-    for _, w in pairs(wild) do
-        if w.map == map and (w.x - px) ^ 2 + (w.y - py) ^ 2 < SPACING * SPACING then near = near + 1; here[w.species] = true end
-    end
-    if near >= MAX_AREA then return end
     table.sort(types)   -- deterministic order (pairs() order would make the species pick random per run)
+    local spawned = 0
     for _, species in ipairs(types) do
+        if near >= MAX_AREA then break end   -- the whole area is filled in ONE pass (the old one-per-tick trickle made you wait)
         local mobs = found[species]
         local m = mobs[math.random(#mobs)]
         local mx, my = m:GetX(), m:GetY()
         if not here[species] and not WildNear(species, map, mx, my) and not Cooling(species, map, mx, my, now) then
             if D.species[species].wild == "adopt" then Adopt(player, species, m, types) else Spawn(player, species, m, types) end
-            return   -- at most one new wild pet per player per tick: they trickle in
+            near = near + 1; here[species] = true; spawned = spawned + 1
         end
     end
+    scanned[low] = { map = map, x = px, y = py, t = now, spawned = spawned > 0 }
 end
 
 -- critters left friendly/marked by an earlier script instance (reload / crash) that no registry entry owns: give them back
@@ -170,6 +182,7 @@ local function CleanLeftovers(player)
     end
 end
 
+local cleaned = {}   -- player low guid -> true: leftovers around him were already looked for
 local function Tick()
     local now = os.time()
     local players = {}
@@ -177,14 +190,19 @@ local function Tick()
     for g, w in pairs(wild) do
         local live = Obj(w)
         if live then w.x, w.y = live:GetX(), live:GetY() end   -- a wandering critter moves
+        if live and not w.adopted and (w.rescale or 0) < 3 then   -- the pet-sized scale again for the first ticks after the spawn (some pets showed full size for a while)
+            w.rescale = (w.rescale or 0) + 1; pcall(function() live:SetScale(Store.Scale(w.species)) end)
+        end
         local near = false
         for _, pl in ipairs(players) do
             if pl:GetMapId() == w.map and (pl:GetX() - w.x) ^ 2 + (pl:GetY() - w.y) ^ 2 < LEAVE * LEAVE then near = true; break end
         end
-        if not near or now - w.born > LIFETIME or not live then Remove(g, false, false, (not near and "nobody near") or (not live and "object lookup failed") or "lifetime") end
+        if near then w.away = nil elseif not w.away then w.away = now end
+        local gone = (w.away and now - w.away >= AWAY_GRACE)
+        if gone or now - w.born > LIFETIME or not live then Remove(g, false, false, (gone and "nobody near") or (not live and "object lookup failed") or "lifetime") end
     end
     for _, pl in ipairs(players) do
-        if ZONES[pl:GetZoneId()] then pcall(CleanLeftovers, pl) end
+        if ZONES[pl:GetZoneId()] and not cleaned[pl:GetGUIDLow()] then cleaned[pl:GetGUIDLow()] = true; pcall(CleanLeftovers, pl) end   -- ONCE per player per script load (it was a world query every tick)
         if ZONES[pl:GetZoneId()] and pl:IsAlive() and Store.NormalWorld(pl) and not pl:IsInCombat()
            and not (PB_BATTLE and PB_BATTLE.InBattle(pl)) then
             local ok, err = pcall(Scan, pl, now)
@@ -193,6 +211,31 @@ local function Tick()
     end
 end
 CreateLuaEvent(Tick, TICK_MS, 0)
+
+-- MINIMAP BLIPS: each player gets the wild pets of his area as offsets in yards (east/north) so the addon can draw them on the minimap with our own icon.
+-- "pbw|pets|<dxNorth>,<dyWest>,<species>,<level>,<name>;..."  sent every BLIP_MS while there are any, once more (empty) when the last one is gone.
+local hadBlips = {}
+local function BlipTick()
+    for _, pl in ipairs(GetPlayersInWorld() or {}) do
+        if Store.IsHuman(pl) then
+            local map, px, py = pl:GetMapId(), pl:GetX(), pl:GetY()
+            local parts = {}
+            for _, w in pairs(wild) do
+                local dx, dy = w.x - px, w.y - py
+                if w.map == map and dx * dx + dy * dy < (SPACING + 40) ^ 2 then   -- close enough to matter: take the live position (the 5 s tick made blips lag behind a wandering pet)
+                    local live = Obj(w); if live then w.x, w.y = live:GetX(), live:GetY(); dx, dy = w.x - px, w.y - py end
+                end
+                if w.map == map and dx * dx + dy * dy < SPACING * SPACING and #parts < MAX_AREA + 2 then
+                    parts[#parts + 1] = string.format("%d,%d,%d,%d,%s", math.floor(dx + 0.5), math.floor(dy + 0.5), w.species, w.level or 1, D.species[w.species].name)
+                end
+            end
+            local low = pl:GetGUIDLow()
+            if #parts > 0 then Msg.Send(pl, "pbw", "pets", table.concat(parts, ";")); hadBlips[low] = true
+            elseif hadBlips[low] then Msg.Send(pl, "pbw", "pets", "none"); hadBlips[low] = nil end
+        end
+    end
+end
+CreateLuaEvent(BlipTick, BLIP_MS, 0)
 
 ---------------------------------------------------------------- right-click menu
 local function OnHello(event, player, creature)
@@ -239,6 +282,7 @@ end
 -- test hooks (used by pet-battle/smoke_wild.lua)
 PB_WILD.MARKER = MARKER
 PB_WILD.SpawnSpot = SpawnSpot
+PB_WILD.BlipTick, PB_WILD.Scanned, PB_WILD.Cleaned = BlipTick, scanned, cleaned
 PB_WILD.Tick, PB_WILD.Count = Tick, function() local n = 0; for _ in pairs(wild) do n = n + 1 end; return n end
 PB_WILD.OnHello, PB_WILD.OnSelect, PB_WILD.Wild = OnHello, OnSelect, wild
 print("[pb_wild] loaded")

@@ -1,33 +1,56 @@
 #!/bin/sh
-# Run BEFORE every deploy of the pet scripts/addons:  flatpak-spawn --host sh pet-battle/run_tests.sh   (from the project root)
+# NOTE: engine-mechanics tests run with PB_LEGACY=1 (the original hand-picked retail kits as fixtures: Kobold Miner Rust, Cow Stampede ...); data/visual/QA tests run on the composed kits.
+# Pet tests in TIERS (run from the project root: flatpak-spawn --host sh pet-battle/run_tests.sh [tier]):
+#   ui      ~1 s   syntax + addon tests (journal, blips, layout, battle-addon smoke)         use after changing addons/ only
+#   server  ~5 s   ui + store, wild spawns, API guard, world smoke                          use after changing pb_store / pb_wild / pb_battle / pb_cast
+#   quick   ~35 s  server + the engine/data checks (abilities, auras, passives, presentation, data QA, visuals)   DEFAULT; use after pb_core / pb_data / pb_retail
+#   full    ~2.5 min quick + the long simulations (600-battle fuzz, 1849-species presentation sim, QA sweep, label audit)   run before a commit, not after every edit
+#   auto    picks ui / server / quick from the files that changed (deploy.sh uses it)
 set -e
+TIER="${1:-quick}"
+if [ "$TIER" = auto ]; then
+  changed=$( (git diff --name-only HEAD; git ls-files --others --exclude-standard) 2>/dev/null | sort -u)
+  if echo "$changed" | grep -Eq 'scripts/pb_(core|data|retail|rules)\.lua|pet-battle/(test_abilities|test_presentation)'; then TIER=quick
+  elif echo "$changed" | grep -Eq '^scripts/'; then TIER=server
+  else TIER=ui; fi
+  echo "[tests] tier auto -> $TIER"
+fi
+rank=1; case "$TIER" in ui) rank=1;; server) rank=2;; quick) rank=3;; full) rank=4;; *) echo "unknown tier $TIER"; exit 2;; esac
 fail=0
-for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_store.lua scripts/shop_prime.lua scripts/pb_battle.lua scripts/pb_wild.lua pet-battle/lab/pb_fxlab.lua addons/wotlk_petbattle/Battle.lua addons/wotlk_pets/Pets.lua; do
+for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_vis.lua scripts/pb_store.lua scripts/shop_prime.lua scripts/pb_battle.lua scripts/pb_wild.lua pet-battle/lab/pb_fxlab.lua addons/wotlk_petbattle/Battle.lua addons/wotlk_pets/Pets.lua addons/wotlk_pets/WildBlips.lua; do
   luajit -bl "$f" >/dev/null || { echo "SYNTAX FAIL $f"; fail=1; }
 done
-luajit pet-battle/test_store.lua || fail=1
-luajit pet-battle/test_rules.lua || fail=1
-luajit pet-battle/test_levels.lua || fail=1
-luajit pet-battle/test_describe.lua || fail=1
-luajit pet-battle/test_levelup_wiring.lua || fail=1
-luajit pet-battle/test_abilities.lua || fail=1
-luajit pet-battle/test_passives.lua || fail=1
-luajit pet-battle/test_auras.lua || fail=1
-luajit pet-battle/test_api.lua || fail=1
-luajit pet-battle/sim_presentation.lua 3 || fail=1
-luajit pet-battle/test_core.lua || fail=1
-luajit pet-battle/test_qa_data.lua || fail=1   # species vs 016 SQL, zone TSV/picks/D.zones/ZONES cross-checks (QA run 3)
-luajit pet-battle/sim_qa_sweep.lua 20 || fail=1   # every species x levels x quality, 1v1 and 3v3, 20 s budget
-luajit pet-battle/smoke_wild.lua || fail=1
-luajit pet-battle/audit_labels.lua 600 || fail=1   # what the player reads vs what the engine does (buff that hurts, turn counters, label text)
-luajit pet-battle/test_l1_kits.lua || fail=1   # every species can attack at level 1
-luajit pet-battle/test_ability_vis.lua || fail=1   # ability visual spell fits the ability name (Snowball is not a fireball)
-luajit pet-battle/test_ui_pets.lua || fail=1   # /pets journal: filters, search, drag and drop (headless API stub)
-sh pet-battle/check_ui_api.sh || fail=1   # no 3.3.5-missing UI APIs, every .toc file exists
+[ $rank -ge 2 ] && { luajit pet-battle/test_store.lua || fail=1; }
+[ $rank -ge 2 ] && { luajit pet-battle/test_rules.lua || fail=1; }
+[ $rank -ge 2 ] && { luajit pet-battle/test_levels.lua || fail=1; }
+[ $rank -ge 3 ] && { PB_LEGACY=1 luajit pet-battle/test_describe.lua || fail=1; }
+[ $rank -ge 2 ] && { luajit pet-battle/test_levelup_wiring.lua || fail=1; }
+[ $rank -ge 3 ] && { PB_LEGACY=1 luajit pet-battle/test_abilities.lua || fail=1; }
+[ $rank -ge 3 ] && { PB_LEGACY=1 luajit pet-battle/test_passives.lua || fail=1; }
+[ $rank -ge 3 ] && { PB_LEGACY=1 luajit pet-battle/test_auras.lua || fail=1; }
+[ $rank -ge 3 ] && { PB_LEGACY=1 luajit pet-battle/test_presentation.lua || fail=1; }
+[ $rank -ge 1 ] && { luajit pet-battle/test_ui_blips.lua || fail=1; }
+[ $rank -ge 2 ] && { luajit pet-battle/test_api.lua || fail=1; }
+[ $rank -ge 4 ] && { luajit pet-battle/sim_presentation.lua 3 || fail=1; }
+[ $rank -ge 4 ] && { PB_LEGACY=1 luajit pet-battle/test_core.lua || fail=1; }
+[ $rank -ge 3 ] && { luajit pet-battle/test_qa_data.lua || fail=1; }
+[ $rank -ge 4 ] && { luajit pet-battle/sim_qa_sweep.lua 20 || fail=1; }
+[ $rank -ge 2 ] && { luajit pet-battle/smoke_wild.lua || fail=1; }
+[ $rank -ge 4 ] && { luajit pet-battle/audit_labels.lua 600 || fail=1; }
+[ $rank -ge 3 ] && { luajit pet-battle/test_l1_kits.lua || fail=1; }
+[ $rank -ge 3 ] && { luajit pet-battle/test_ability_vis.lua || fail=1; }
+[ $rank -ge 1 ] && { luajit pet-battle/test_ui_pets.lua || fail=1; }
+[ $rank -ge 1 ] && { luajit pet-battle/test_abilab.lua || fail=1; }   # the ability lab (.pblab) y/n handling
+[ $rank -ge 2 ] && { luajit pet-battle/test_cast_retry.lua || fail=1; }   # pb_cast: a missed damaging spell is cast again
+[ $rank -ge 1 ] && { sh pet-battle/check_ui_api.sh || fail=1; }
 python3 -I pet-battle/check_fx.py >/dev/null || { echo "FX FAIL (non-instant visual spell)"; fail=1; }
 for sd in 1 2 3 4 5 6 7 8; do   # real pb_store + engine + battle script, stubbed game API, played to the end incl. XP and recruit
-  out=$(SEED=$sd luajit pet-battle/smoke_world.lua 2>&1) || { echo "WORLD FAIL seed $sd"; echo "$out" | tail -6; fail=1; }
+  out=$(PB_LEGACY=1 SEED=$sd luajit pet-battle/smoke_world.lua 2>&1) || { echo "WORLD FAIL seed $sd"; echo "$out" | tail -6; fail=1; }
   echo "$out" | grep -q "^last:.*\(done|\|end|\)" || { echo "BATTLE DID NOT FINISH seed $sd"; fail=1; }
+done
+for sd in 1 2 3 4 5 6 7 8; do   # the same battles with a recording PB_CAST: self/target/aura/hit presentation modes run and are checked against the engine's act events
+  out=$(PBCAST=1 PB_LEGACY=1 SEED=$sd luajit pet-battle/smoke_world.lua 2>&1) || { echo "PRESENTATION FAIL seed $sd"; echo "$out" | tail -6; fail=1; }
+  echo "$out" | grep "presentation modes"
 done
 MSGS='pbt|begin|
 pbt|st|P,1,10,1535,1535,Ability_Hunter_Pet_Wolf,3,299,29,Young Wolf
@@ -42,6 +65,7 @@ pbt|info|E|Beast|Critter|Aquatic|Flying|Humanoid
 pbt|eabil|1|Ability_Druid_Rake#Bite#100% hit chance. Bites.#0#0
 pbt|eabil|2|Ability_Druid_Rake#Maul#Hits hard.#3#2
 pbt|turn|go;0,2,3;1
+pbt|turn|lock;0,0,0;0;Stampede: round 2 of 3
 pbt|hp|E,1,1400,1535,-135
 pbt|end|win
 pbt|xp|Young Wolf,30,11,1

@@ -1,0 +1,122 @@
+# Terokkar Forest pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	22314	Captive Child	1	Humanoid	0	0	14	0	Melee		composed kit: Critter
+Y	19659	Great Elite Elekk	1	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	19164	Refugee Child	1	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	19163	Refugee Kid	1	Humanoid	0	0	11	0	Melee		composed kit: Critter
+Y	21250	Pink Elekk	5	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	19048	Stonebreaker Peon	50-51	Humanoid	0	0	7	0	Melee		composed kit: Critter
+Y	19689	Draenei Pilgrim	51-58	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	19120	Broken Refugee	60	Humanoid	0	0	7	0	Melee		composed kit: Critter
+Y	19077	Dwarf Refugee	60	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	19076	High Elf Refugee	60	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	20876	Human Refugee	60	Humanoid	0	0	8	0	Melee		composed kit: Critter
+Y	19162	Lost One Refugee	60	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	19144	Mag'har Refugee	60	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	19150	Orc Refugee	60	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	18547	Scryer Arcanist	60-61	Humanoid	0	0	18	0	Melee		composed kit: Magic
+Y	20877	Shattrath Refugee	60	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	19075	Skettis Outcast	60	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	19155	Sporeling Refugee	60	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	20115	Umbrafen Witchdoctor	60-61	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	19289	Vagabond	60	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	19283	Vagrant	60	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	19672	Consortium Laborer	61-64	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	16933	Razorfang Ravager	61	Beast	31	0	12	0	Melee		composed kit: Beast
+Y	21907	Cabal Initiate	62-63	Humanoid	0	0	8	0	Melee		composed kit: Magic
+Y	21902	Cabal Spell-weaver	62-63	Humanoid	0	0	11	0	Melee		composed kit: Magic
+Y	18461	Dampscale Basilisk	62-63	Beast	0	0	12	0	Melee		composed kit: Aquatic
+Y	18490	Fallen Druid	62-65	Humanoid	0	0	23	0	Melee		composed kit: Humanoid
+Y	21854	Ironspine Petrifier	62-63	Beast	0	0	32	0	Melee		composed kit: Beast
+Y	22326	Redeemed Avian	62	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	18450	Shienor Sorcerer	62-63	Humanoid	0	0	12	0	Melee		composed kit: Magic
+Y	18449	Shienor Talonite	62-63	Humanoid	0	0	40	0	Melee		composed kit: Humanoid
+Y	18750	Shimmerscale Eel	62-63	Beast	0	0	15	0	Melee		composed kit: Aquatic
+Y	18468	Teromoth	62-63	Beast	37	0	45	0	Melee		composed kit: Flying
+Y	18476	Timber Worg	62-63	Beast	1	0	42	0	Melee		composed kit: Beast
+Y	18457	Tuurem Hunter	62-63	Humanoid	0	0	11	0	Melee		composed kit: Beast
+Y	18456	Tuurem Scavenger	62-63	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	18437	Vicious Teromoth	62-63	Beast	37	0	13	0	Melee		composed kit: Flying
+Y	18595	Warped Peon	62-63	Humanoid	0	0	26	0	Melee		composed kit: Critter
+Y	16810	Bonechewer Backbreaker	63-64	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	16772	Bonechewer Devastator	63-64	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	21660	Cabal Abjurist	63-64	Humanoid	0	0	16	0	Melee		composed kit: Magic
+Y	21661	Cabal Skirmisher	63	Humanoid	0	0	41	0	Melee		composed kit: Magic
+Y	21662	Cabal Tomb-Raider	63-64	Humanoid	0	0	11	0	Melee		composed kit: Magic
+Y	24437	Consortium Assistant	63-65	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	19673	Consortium Engineer	63-65	Humanoid	0	0	4	0	Melee		composed kit: Mechanical
+Y	38030	Crown Underling	63-64	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	18463	Dampscale Devourer	63-64	Beast	0	0	43	0	Melee		composed kit: Beast
+Y	18466	Dreadfang Lurker	63-64	Beast	3	0	31	0	Melee		composed kit: Beast
+Y	1410	Firewing Bloodwarder	63-64	Humanoid	0	0	22	0	Melee		composed kit: Humanoid
+Y	5355	Firewing Defender	63-64	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	16769	Firewing Warlock	63-64	Humanoid	0	0	23	0	Melee		composed kit: Magic
+Y	21816	Ironspine Chomper	63-64	Beast	0	0	29	0	Melee		composed kit: Beast
+Y	18469	Royal Teromoth	63-64	Beast	37	0	38	0	Melee		composed kit: Flying
+Y	18593	Scryer Retainer	63-66	Humanoid	0	0	14	0	Melee		composed kit: Magic
+Y	18452	Skithian Dreadhawk	63-64	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	18453	Skithian Windripper	63-64	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	18477	Timber Worg Alpha	63-64	Beast	1	0	80	0	Melee		composed kit: Beast
+Y	18464	Warp Stalker	63-64	Beast	32	0	54	0	Melee		composed kit: Beast
+Y	17143	Wrekt Seer	63	Humanoid	0	0	10	0	Melee		composed kit: Elemental
+Y	18999	Allerian Defender	64-66	Humanoid	0	0	12	0	Melee		composed kit: Humanoid
+Y	21242	Auchenai Death-Speaker	64	Humanoid	0	0	17	0	Melee		composed kit: Undead
+Y	21285	Auchenai Doomsayer	64-65	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	18470	Bonelasher	64-65	Beast	7	0	46	0	Melee		composed kit: Flying
+Y	18260	Boulderfist Invader	64-65	Humanoid	0	0	16	0	Melee		composed kit: Humanoid
+Y	16805	Broken Skeleton	64-65	Undead	0	0	42	0	Melee		composed kit: Undead
+Y	22105	Decrepit Clefthoof	64-65	Beast	0	0	20	0	Melee		composed kit: Beast
+Y	18467	Dreadfang Widow	64-65	Beast	3	0	77	0	Melee		composed kit: Beast
+Y	21405	Ethereal Arcanist	64-65	Humanoid	0	0	7	0	Melee		composed kit: Magic
+Y	21370	Ethereal Nethermancer	64-65	Humanoid	0	0	16	0	Melee		composed kit: Magic
+Y	21368	Ethereal Plunderer	64-65	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	22464	Explorers' League Researcher	64-65	Humanoid	0	0	4	0	Melee		composed kit: Beast
+Y	19000	High Elf Ranger	64-66	Humanoid	0	0	6	0	Melee		composed kit: Beast
+Y	22095	Infested Root-Walker	64-65	Elemental	0	0	45	0	Melee		composed kit: Elemental
+Y	22387	Lithic Oracle	64-65	Humanoid	0	0	11	0	Melee		composed kit: Humanoid
+Y	22100	Scorpid Bonecrawler	64-65	Beast	20	0	36	0	Melee		composed kit: Critter
+Y	18455	Shalassi Oracle	64-65	Humanoid	0	0	19	0	Melee		composed kit: Humanoid
+Y	18465	Warp Hunter	64-65	Beast	32	0	79	0	Melee		composed kit: Beast
+Y	17142	Wrekt Warrior	64-65	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	22380	Ambient Minion of Terokk	65	Beast	0	0	3	0	Melee		composed kit: Beast
+Y	21284	Auchenai Initiate	65-66	Humanoid	0	0	13	0	Melee		composed kit: Critter
+Y	22307	Rotting Forest-Rager	65	Elemental	0	0	5	0	Melee		composed kit: Elemental
+Y	18973	Stonebreaker Grunt	65	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	21870	Unliving Initiate	65	Undead	0	0	26	0	Melee		composed kit: Undead
+Y	21636	Vengeful Draenei	65	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	22045	Vengeful Husk	65-66	Undead	0	0	12	0	Melee		composed kit: Undead
+Y	19755	Mo'arg Weaponsmith	66-67	Demon	0	0	14	0	Melee		composed kit: Mechanical
+Y	22265	Shadowwing Owl	66-67	Beast	26	0	18	0	Melee		composed kit: Flying
+Y	21302	Shadow Council Warlock	67	Humanoid	0	0	14	0	Melee		composed kit: Magic
+Y	19740	Wrathwalker	67-68	Demon	0	0	46	0	Melee		composed kit: Magic
+Y	21316	Deathforged Infernal	68	Demon	0	0	39	0	Melee		composed kit: Mechanical
+Y	25155	Shattered Sun Cleric	68-70	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	25153	Shattered Sun Magi	68-70	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	25134	Shattered Sun Trainee	68-70	Humanoid	0	0	5	0	Melee		composed kit: Critter
+Y	25135	Shattered Sun Trainee	68-70	Humanoid	0	0	3	0	Melee		composed kit: Critter
+Y	25136	Shattered Sun Trainee	68-70	Humanoid	0	0	7	0	Melee		composed kit: Critter
+Y	25137	Shattered Sun Trainee	68-70	Humanoid	0	0	9	0	Melee		composed kit: Critter
+Y	23219	Blackwind Warp Chaser	69-70	Beast	32	0	40	0	Melee		composed kit: Beast
+Y	21245	Bonechewer Marauder	69	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	19501	Lower City Operative	69-70	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	19142	Aldor Anchorite	70	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	19337	Aldor Marksman	70	Humanoid	0	0	4	0	Melee		composed kit: Beast
+Y	19153	Aldor Neophyte	70	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	21723	Blackwind Sabercat	70-71	Beast	2	0	20	0	Melee		composed kit: Beast
+Y	18600	Injured Refugee	70	Humanoid	0	0	9	0	Melee		composed kit: Critter
+Y	22807	Lost Torranche	70	Beast	12	0	10	0	Melee		composed kit: Beast
+Y	23094	Minion of Sar'this	70	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	23051	Monstrous Kaliri	70	Beast	26	0	18	0	Melee		composed kit: Flying
+Y	19390	Mounted Neophyte	70	Humanoid	0	0	4	0	Melee		composed kit: Critter
+Y	24922	Razorthorn Ravager	70	Beast	31	0	52	0	Melee		composed kit: Beast
+Y	25142	Shattered Sun Marksman	70	Humanoid	0	0	19	0	Melee		composed kit: Beast
+Y	21911	Skettis Soulcaller	70-71	Humanoid	0	0	39	0	Melee		composed kit: Humanoid
+Y	21728	Skettis Surger	70-71	Elemental	0	0	48	0	Melee		composed kit: Magic
+Y	21649	Skettis Windwalker	70-71	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	21651	Time-Lost Skettis Reaver	70-71	Undead	0	0	30	0	Melee		composed kit: Undead
+Y	21763	Time-Lost Skettis Worshipper	70-71	Undead	0	0	17	0	Melee		composed kit: Undead
+Y	24920	Razorthorn Flayer	71-72	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	21985	Skettis Eviscerator	71-72	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	21652	Skettis Time-Shifter	71-72	Humanoid	0	0	27	0	Melee		composed kit: Humanoid
+Y	21787	Time-Lost Skettis High Priest	71	Undead	0	0	40	0	Melee		composed kit: Undead

@@ -1,0 +1,177 @@
+role	cooldown	turns	auras	retail_abilities	power_variants	examples
+aoe-dmg	5	1	-	4	36@100 45@100	Avalanche, Grave Destruction
+aoe-dmg	3	1	-	2	27@100	Whirlwind
+aoe-dmg	4	1	-	2	36@100	Thunderbolt
+aoe-dmg	0	3	-	1	19/19/19@100/100/100	Dreadful Breath
+aoe-dmg	0	1	-	1	20@100	Cleave
+aoe-dmg	5	1	Mechanic_IsObject	1	33@100	Carpnado
+aoe-dmg	2	1	-	1	23@100	Great Cleave
+aoe-dmg+weather	3	1	Weather_ArcaneStorm	1	24@100	Arcane Storm
+aoe-dmg+weather	5	1	Weather_ArcaneStorm	1	40@100	Psionic Storm
+blind+dot+buff/debuff	4	1	Mechanic_IsBlind,Mechanic_IsPoisoned,Stat_Accuracy	1	-@-	Blinding Poison
+buff/debuff	0	1	Stat_CritChance	12	-@-	Adrenal Glands
+buff/debuff	0	2	Mod_DamageDealtPercent	7	-@-	Pump
+buff/debuff	3	1	Mod_DamageDealtPercent	5	-@-	Amplify Magic
+buff/debuff	0	1	Stat_Accuracy	4	-@-	Stench
+buff/debuff	0	1	Stat_Accuracy,Stat_CritChance	3	-@-	Lucky Dance
+buff/debuff	5	1	Cosmetic_Stealthed,Mod_DamageDealtPercent,Mod_SpeedPercent	2	-@-	Prowl
+buff/debuff	1	1	Mod_DamageDealtPercent	1	-@-	Inner Vision
+buff/debuff	0	1	Mod_SpeedPercent	1	-@-	Dazzling Dance
+buff/debuff	5	1	Mod_DamageDealtPercent,Stat_CritChance	1	-@-	Murkmorphosis
+buff/debuff	2	1	Cosmetic_Stealthed,Mod_DamageDealtPercent,Mod_SpeedPercent	1	-@-	Glade Prowl
+cleanse	3	3	Stat_Dodge,Stat_Speed	2	-@-	Deflection
+cleanse	8	3	Stat_Dodge	1	-@-	Fade
+cleanse	5	3	Stat_Dodge,Stat_Speed	1	-@-	Smoke Bomb
+cleanse	7	3	Stat_Dodge	1	-@-	Return to Rest
+defense	0	1	Add_FlatDamageTaken	5	-@-	Exposed Wounds
+defense	5	1	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount	4	-@-	Beaver Dam
+defense	3	1	Mod_DamageTakenPercent	4	-@-	Howl
+defense	5	1	Add_FlatDamageTaken	4	-@-	Trihorn Shield
+defense	4	1	Mod_DamageTakenPercent	3	-@-	Crouch
+defense	3	1	Special_BlockedAttackCount	2	-@-	Soul Ward
+defense	4	1	Mechanic_IsInvisible,untargettable	1	-@-	Invisibility
+defense	0	1	Mod_DamageTakenPercent	1	-@-	Unholy Ascension
+defense	8	1	Mechanic_IsObject,Special_BlockedAttackCount,Special_ObjectR	1	-@-	Decoy
+defense	5	2	Mechanic_IsObject,Mechanic_IsWall,Special_BlockedAttackCount	1	-@-	Onyx Wall
+defense	8	1	Special_BlockedAttackCount	1	-@-	Bubble
+defense	6	1	Special_BlockedAttackCount	1	-@-	Refuge
+defense	4	1	Add_FlatDamageTaken	1	-@-	Ironskin
+defense	4	3	Special_BlockedAttackCount,Special_ObjectRedirectionAuraID,S	1	-@-	Annoying Shield
+defense	2	1	Special_BlockedAttackCount	1	-@-	Metal Shield
+defense	3	1	Add_FlatDamageTaken	1	-@-	Gorm Chitin
+defense+buff/debuff	0	1	Add_FlatDamageTaken,Mod_SpeedPercent	1	-@-	Forboding Curse
+defense+buff/debuff	0	1	Mod_DamageDealtPercent,Mod_DamageTakenPercent	1	-@-	Enrage
+dmg	0	1	-	156	-@- 0@100 10/10/10/10@100/50/50/50 10/10/10@100/66/33 10/10@100/100 10/10@100/50 10/6/6@100/100/100 10@100 12/12/12/12@100/100/100/100 12/5/5@100/100/100 13@100 14/4/4@100/100/100 15/15@100/100 15@100 17@100 18@200 20/10/10@100/100/100 20@100 21@100 25/12@100/200 25@100 28@80 30@100 40@100 40@50 5/5/5/5/5@100/100/100/100/100 50/50/50@100/100/100 7/7/7@100/100/100	Burn, Bite, Quills, Vicious Fang
+dmg	3	1	-	33	10/10@100/100 10/50/50@100/100/100 11/11/11@100/100/100 13/10/10@100/100/100 13/13/13/10@100/100/100/100 13/13/13/30@100/100/100/100 13/13/13/50@100/100/100/100 15/15/15@100/100/100 15/5/5@100/100/100 15/9/9@100/100/100 15@100 16/16/16/16/16/16@100/100/100/100/100/100 16/16/16/16/16@100/100/100/100/100 20/5/5@100/100/100 20@100 25@100 30@100 32@100 35/35@100/100 40@50 6/6/6/6@100/100/100/100 8/8/8@100/100/100	Blood in the Water, Flux, Spiderling Swarm, Clean-Up
+dmg	1	1	-	18	-@- 10@100 20@100 25@100 30/13@100/200 30@70 35/15@100/200 45@50 7/8/7/8@50/50/50/50 9/8/9/8@50/50/50/50 9/9/9@80/80/80	Nut Barrage, Furious Flapping, Cataclysm, Jolt
+dmg	4	1	-	13	10@100 20/20/20@100/100/100 30@100 33@100 40@100 50@100	Death Grip, Conflagrate, Superbark, Megalodon
+dmg	2	1	-	10	100@100 10@100 11/8/8@100/100/100 120@100 15@100 25@100 30/30/30/30/30/30@100/100/100/100/100/100 6/6/6/6/6/6@75/75/75/75/75/75 8/8/8/8@50/50/50/50	Inferno Herding, Rock Barrage, Impale, Vengeance
+dmg	5	1	-	7	-@- 12/12/12@100/100/100 20@100 40@100	Gift of Winter Veil, Curse of Doom, Nether Gate, Whirling Gears
+dmg	3	1	Mod_HealingTakenPercent	3	25@100	Darkflame
+dmg	5	1	Mechanic_IsObject	1	-@-	Cyclone
+dmg	3	1	Special_TypeOverride	1	25@100	Rot
+dmg	5	1	Special_TypeOverride	1	40@100	Discharge
+dmg	10	1	-	1	35@100	Sting
+dmg+blind+buff/debuff	3	1	Mechanic_IsBlind,Stat_Accuracy	2	10@100 25@100	Flash, Spectral Spine
+dmg+blind+buff/debuff	4	1	Mechanic_IsBlind,Stat_Accuracy	1	25@100	Dazzle
+dmg+blind+buff/debuff+weather	5	1	Mechanic_IsBlind,Mod_HealingTakenPercent,Stat_Accuracy,Weath	2	45@100	Call Darkness
+dmg+buff/debuff	0	1	Mod_SpeedPercent	16	10@100 15@100	Adrenaline Rush, Metabolic Boost
+dmg+buff/debuff	4	1	Mod_SpeedPercent	3	20@100 30@100	Quicksand, Eyeblast
+dmg+buff/debuff	3	1	Mod_SpeedPercent	3	10/10/10@100/100/100 20@100 25@100	Hiss, Primal Cry, Slither
+dmg+buff/debuff	0	1	Mod_DamageDealtPercent	2	10@100	Squawk
+dmg+buff/debuff	1	1	Mod_DamageDealtPercent	2	-@- 15@100	Crystal Overload, Frenzy
+dmg+buff/debuff	2	1	Mod_DamageDealtPercent,Mod_SpeedPercent	2	10@100 15@100	Jar of Smelly Liquid, Terrify
+dmg+buff/debuff	1	1	Mod_DamageDealtPercent,Mod_SpeedPercent	1	10@100	Weakness
+dmg+buff/debuff	4	1	Mod_DamageDealtPercent	1	10@100	Drain Power
+dmg+buff/debuff	1	1	Mod_SpeedPercent	1	10/10/10/10@50/50/50/50	Moth Balls
+dmg+buff/debuff	4	1	Stat_CritChance	1	20@100	Croak
+dmg+buff/debuff	3	1	Mod_DamageDealtPercent,Special_TypeOverride	1	25@100	Feathered Frenzy
+dmg+buff/debuff	2	1	Mod_DamageDealtPercent	1	20@100	Cluck
+dmg+buff/debuff	0	1	Stat_CritChance	1	4/6/5@100/100/100	Wombo Combo
+dmg+buff/debuff+weather	5	1	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	2	15/15/15@100/100/100 45@100	Sunlight, Illuminate
+dmg+buff/debuff+weather	3	1	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	1	5/5/5@100/100/100	Sunshell
+dmg+defense	1	1	Mod_DamageTakenPercent	1	25@100	Reckless Strike
+dmg+defense	0	1	Mechanic_IsFlying	1	20@100	Boulder Toss
+dmg+defense	0	1	Mod_DamageTakenPercent	1	10@100	Flyby
+dmg+defense+buff/debuff	0	1	Mod_DamageDealtPercent,Mod_DamageTakenPercent	1	13@100	Rabid Strike
+dmg+defense+buff/debuff	3	1	Mod_DamageDealtPercent,Mod_DamageTakenPercent	1	20/20/20@100/100/100	Fel Corruption
+dmg+dot	0	1	Mechanic_IsBurning	10	12@100 15@100 16@100 20@100	Immolate, Flamethrower, Flame Breath, Firebomb
+dmg+dot	0	1	-	9	-@- 12@100 16@100 18@100	Swarm of Flies, Mega Jolt, Wild Winds, Toxic Smoke
+dmg+dot	0	1	Mechanic_IsPoisoned	8	-@- 10@100 14@100	Glowing Toxin, Poison Fang, Poison Spit
+dmg+dot	0	1	Mechanic_IsBleeding	2	10@100	Rip
+dmg+dot	4	1	Mechanic_IsBurning	1	30@100	Flame Jet
+dmg+dot	4	1	Mechanic_IsPoisoned	1	30@100	Buuurp!
+dmg+dot	1	1	Mechanic_IsBurning	1	15@100	Twilight Fire
+dmg+dot	5	1	Mechanic_IsPoisoned	1	5/5/5@100/100/100	Poison Protocol
+dmg+dot	1	1	Mechanic_IsPoisoned	1	15@100	Sludge Belch
+dmg+dot+buff/debuff	2	1	Mechanic_IsBleeding,Mod_DamageDealtPercent	1	15@100	Rake
+dmg+dot+defense	0	1	Mechanic_IsPoisoned,Mod_DamageTakenPercent	2	-@-	Acidic Goo
+dmg+dot+defense	0	1	Add_FlatDamageTaken	1	10@100	Corrosion
+dmg+dot+heal	0	1	-	1	-@-	Siphon Life
+dmg+dot+heal	4	1	-	1	10@100/heal10	Leech Seed
+dmg+heal	0	1	-	4	12/12@100/100 14@100/heal50 16@100	Death Coil, Plagued Blood, Double Zap
+dmg+heal	3	1	-	1	25@100/heal25	Bloodfang
+dmg+heal	4	1	-	1	20@100	Touch of the Animus
+dmg+heal	1	1	-	1	14@100/heal100	Pig Out
+dmg+heal	2	1	-	1	10/10/10@100/100/100/heal100/100/100	Blood Harvest
+dmg+heal+weather	4	1	Mod_HealingTakenPercent,Mod_PetTypeDamageDealtPercent,Mod_Pe	2	6/6/6@100/100/100/heal6/6/6	Starfall
+dmg+slow	0	1	Mechanic_IsWebbed	2	10@100	Brittle Webbing
+dmg+slow+buff/debuff	0	1	Mechanic_IsChilled,Mod_SpeedPercent	1	10@100	Frost Shock
+dmg+slow+buff/debuff	0	1	Mechanic_IsChilled,Stat_Accuracy	1	10@100	Slippery Ice
+dmg+slow+buff/debuff	3	1	Mechanic_IsChilled,Mod_SpeedPercent	1	30@100	Flash Freeze
+dmg+slow+weather	3	1	Mechanic_IsChilled,Mod_PetTypeDamageDealtPercent,Mod_PetType	4	27@100 8/8/8@100/100/100	Call Blizzard, Call of Winter
+dmg+stun	4	1	Mechanic_IsStunned,resilient,turnLock	6	25@100 30@100	Headbutt, Deep Freeze
+dmg+stun	3	1	Mechanic_IsStunned,resilient,turnLock	4	15@100 25@100	Kick, Moth Dust
+dmg+stun	5	1	Mechanic_IsStunned,resilient,turnLock	3	-@-	Stun Seed
+dmg+stun	1	1	Mechanic_IsStunned,resilient,turnLock	3	10@100 20@100	Horn Attack, Sleeping Gas
+dmg+stun	3	1	Mechanic_IsStunned,turnLock	2	40@100 50@50	Ghostly Bite, Haymaker
+dmg+stun	1	1	Cosmetic_Stealthed,Mechanic_IsInvisible,resilient,turnLock	1	10@100	Frog Kiss
+dmg+swaplock	0	1	swapOutLock	7	10@100 15@100 17@100 18@100	Grasp, Sticky Goo, Bone Prison, Slime Trail
+dmg+swaplock	3	1	swapOutLock	3	-@-	Whirlpool
+dmg+swaplock+defense+buff/debuff	3	1	Mod_SpeedPercent,Special_BlockedAttackCount,swapOutLock	1	10@100	Cocoon Strike
+dmg+swaplock+slow	3	1	Mechanic_IsChilled,swapOutLock	1	20@100	Frost Nova
+dmg+weather	3	1	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	1	9/9/9@100/100/100	Acid Rain
+dmg-multiturn	0	3	-	6	15@100 40@100	Blast of Hatred, Solar Beam
+dmg-multiturn	3	2	-	4	25/25@100/100 25@100 50@100	Holy Charge, Howling Blast, Haywire
+dmg-multiturn	3	3	-	3	25/25/25@100/100/100	Rampage
+dmg-multiturn	4	2	-	3	50@100	Slow and Steady
+dmg-multiturn	2	3	-	2	20@100 25@100	Counterstrike, Drill Charge
+dmg-multiturn	0	2	-	2	5/5/5@100/100/100 50@100	Deep Breath, Furious Surge
+dmg-multiturn	5	3	-	1	50@100	Ion Cannon
+dmg-multiturn	4	5	-	1	7/7/14/7/7/14/7/7/14@100/100/100/100/100/100/100/100/100	Tympanic Tantrum
+dmg-multiturn	0	3	Stat_Speed	1	15@100	Surge
+dmg-multiturn	2	5	-	1	12/6/6/14/7/7/16/8/8@100/100/100/100/100/100/100/100/100	Quake
+dmg-multiturn	1	3	-	1	20@85	Trihorn Charge
+dmg-multiturn	2	2	-	1	15/15/15@100/100/100	Locust Swarm
+dmg-multiturn	8	2	-	1	150@100	Death Bleat
+dmg-multiturn	1	3	Stat_Speed	1	20@100	Bubble Blast
+dmg-multiturn+defense	4	2	Mechanic_IsFlying,untargettable	6	30@100	Meteor Strike
+dmg-multiturn+defense	0	3	Mod_DamageTakenPercent	4	3/3/3/5/5/5/7/7/7@100/100/100/100/100/100/100/100/100	Swarm
+dmg-multiturn+defense	4	2	Mechanic_IsUnderground,untargettable	3	25@100 30@100	Burrow, Ambystan Snap
+dmg-multiturn+defense	0	2	Mod_DamageTakenPercent	1	5/5/5/5/5/5@100/100/100/100/100/100	Falcosaur Swarm!
+dmg-multiturn+defense	5	2	Mechanic_IsUnderground,untargettable	1	40@100	Glop
+dmg-multiturn+defense	2	2	Mechanic_IsFlying,untargettable	1	16/8/8@100/100/100	Anvil Drop
+dmg-multiturn+defense+buff/debuff	0	2	Mod_DamageDealtPercent,Mod_DamageTakenPercent	1	13@100	Greed Before Need
+dmg-multiturn+dot	2	2	Mechanic_IsObject	2	-@-	Build Turret
+dmg-multiturn+heal	1	2	-	3	12@100/heal100 15/15@100/100/heal30/30 20/20@100/100/heal20/20	Consume, Devour, Ravage
+dmg-multiturn+heal	0	2	-	2	10@100/heal100	Absorb
+dmg-multiturn+heal	4	2	-	2	20@100/heal100	Feed
+dmg-multiturn+heal	2	2	-	2	20/20@100/100/heal60/60 30@100/heal200	Hungry Bite, Bloody Revenge
+dmg-multiturn+heal	1	3	-	1	10@100/heal10/10	Leech Life
+dmg-multiturn+heal	3	2	-	1	10@100/heal300	Drain Blood
+dmg-multiturn+swaplock	5	3	swapOutLock	1	50@100	Surge of Power
+heal	3	1	-	9	-@-/heal12/12/12 -@-/heal20/50 -@-/heal24 -@-/heal30	Healing Flame, Healing Wave, Inspiring Song, Rebuild
+heal	4	1	-	6	-@-/heal0/24/24 -@-/heal15/15/15 -@-/heal16/16/16 -@-/heal20 -@-/heal30 -@-/heal40	Bleat, Consume Magic, Haunting Song, Mother's Milk
+heal	3	1	maxHealthBonus	2	-@-/heal28	Perk Up
+heal	5	1	-	2	-@- -@-/heal18/18/18	Light of Creation, Elune's Grace
+heal	5	3	-	1	-@-/heal70	Repair
+heal	0	1	-	1	-@-	Soothing Mists
+heal	6	3	-	1	-@-/heal45/45/45	Stone Form
+heal	8	3	-	1	-@-/heal25/25/25	Reanimate
+heal	5	1	maxHealthBonus	1	-@-/heal35	Ancient Knowledge
+heal	2	1	-	1	-@-/heal25	Healing Wrap
+heal+buff/debuff	3	1	Mod_DamageDealtPercent	2	-@-/heal22	Giant's Blood
+heal+buff/debuff	4	1	Stat_Accuracy	1	-@-/heal12/12/12	Autumn Breeze
+heal+buff/debuff	4	1	Stat_Accuracy,Stat_CritChance	1	-@-/heal20	Rain Dance
+heal+buff/debuff+weather	5	1	Mod_HealingDealtPercent,Mod_MaxHealthPercent,Weather_Sunligh	1	-@-/heal15/15/15	Ray of Hope
+heal+hot	0	1	-	2	-@-	Tranquility
+heal+stun+swaplock	5	1	swapInLock,swapOutLock,turnLock	3	-@-	Hibernate
+heal+weather	3	1	Mod_PetTypeDamageDealtPercent,Mod_PetType_ID,Weather_Rain	1	-@-/heal9/9/9	Cleansing Rain
+hot	5	1	-	1	-@-	Wish
+special	4	1	Stat_Dodge	9	-@-	Dodge
+special	2	1	-	3	-@-	Aged Yolk
+special	3	1	-	3	-@-	Buried Treasure
+special	3	3	-	2	-@-	Restoration
+special	20	1	-	2	-@-	Apocalypse
+special	5	1	-	1	-@-	Life Exchange
+special	3	1	unkillable	1	-@-	Survival
+special	0	1	Mechanic_IsObject	1	-@-	Launch Rocket
+special	0	2	-	1	-@-	Lock-On
+special	4	1	-	1	-@-	Disruption
+special	0	1	-	1	-@-	Murder the Innocent
+special	2	1	Stat_Dodge	1	-@-	Quick Dodge
+stun	5	1	Mechanic_IsStunned,resilient,turnLock	8	-@-	Blackout Kick
+stun	5	1	resilient,turnLock	2	-@-	Food Coma
+stun	4	1	resilient,turnLock	1	-@-	Soothe
+stun	6	4	Mechanic_IsStunned,Stat_Dodge,Stat_Speed	1	-@-	Shell Fortress
+swaplock	0	2	swapOutLock	1	-@-	Plant

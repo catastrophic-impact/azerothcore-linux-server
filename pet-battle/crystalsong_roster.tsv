@@ -1,0 +1,45 @@
+# Crystalsong Forest pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	30095	Dalaran Sewer Turtle	1	Critter	0	0	4	0	Melee		composed kit: Aquatic
+Y	32470	Sewer Frog	1	Critter	0	0	5	0	Melee		composed kit: Aquatic
+Y	32428	Underbelly Rat	1	Critter	0	0	17	0	Melee		composed kit: Critter
+Y	32320	Argent Mason	50-52	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	27382	Deathbringer Revenant	72-73	Elemental	0	0	5	0	Melee		composed kit: Elemental
+Y	26358	Ice Heart Jormungar Feeder	72	Beast	42	0	17	0	Melee		composed kit: Aquatic
+Y	26359	Ice Heart Jormungar Spawn	72	Beast	42	0	10	0	Melee		composed kit: Aquatic
+Y	26575	Coldwind Waste Huntress	73-74	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	26577	Coldwind Witch	73-74	Humanoid	0	0	9	0	Melee		composed kit: Humanoid
+Y	38032	Crown Sprayer	73-75	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	26316	Crystalline Ice Elemental	73-74	Elemental	0	0	22	0	Melee		composed kit: Elemental
+Y	26943	Battered Drakkari Berserker	74	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	29436	Icetouched Earthrager	74-75	Elemental	0	0	33	0	Melee		composed kit: Elemental
+Y	30206	Carrion Fleshstripper	76-77	Beast	3	0	20	0	Melee		composed kit: Beast
+Y	31236	Dappled Stag	76	Beast	0	0	12	0	Melee		composed kit: Beast
+Y	30242	Injured Crusader	76-79	Humanoid	0	0	6	0	Melee		composed kit: Critter
+Y	31070	Argent Skytalon	77-79	Dragonkin	0	0	4	0	Melee		composed kit: Dragonkin
+Y	30205	Forgotten Depths Acolyte	77-78	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	30333	Forgotten Depths Slayer	77-78	Undead	0	0	9	0	Melee		composed kit: Undead
+Y	29433	Goblin Sapper	77-78	Humanoid	0	0	9	0	Melee		composed kit: Mechanical
+Y	31228	Grove Walker	77-78	Elemental	0	0	19	0	Melee		composed kit: Elemental
+Y	29402	Ironwool Mammoth	77-78	Beast	0	0	19	0	Melee		composed kit: Beast
+Y	29623	Savage Hill Brute	77-78	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	29622	Savage Hill Mystic	77-78	Humanoid	0	0	5	0	Melee		composed kit: Humanoid
+Y	29404	Savage Hill Scavenger	77-78	Humanoid	0	0	18	0	Melee		composed kit: Humanoid
+Y	30862	Unbound Ent	77-78	Elemental	0	0	27	0	Melee		composed kit: Elemental
+Y	31233	Sinewy Wolf	78	Beast	1	0	21	0	Melee		composed kit: Beast
+Y	30868	Unbound Corrupter	78-79	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	30860	Unbound Dryad	78-79	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	33422	Unbound Seer	78-79	Humanoid	0	0	9	0	Melee		composed kit: Elemental
+Y	30856	Unbound Trickster	78-79	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	31401	Azure Manashaper	79-80	Humanoid	0	0	15	0	Melee		composed kit: Magic
+Y	31402	Azure Scalebane	79-80	Dragonkin	0	0	10	0	Melee		composed kit: Dragonkin
+Y	30263	Silver Covenant Horseman	79-80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	30238	Silver Covenant Scout	79-80	Humanoid	0	0	13	0	Melee		composed kit: Beast
+Y	33499	Skeletal Woodcutter	79	Undead	0	0	8	0	Melee		composed kit: Undead
+Y	30265	Sunreaver Hawkrider	79-80	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	30233	Sunreaver Scout	79-80	Humanoid	0	0	12	0	Melee		composed kit: Beast
+Y	33291	Fiery Dancer	80	Elemental	0	0	12	0	Melee		composed kit: Elemental
+Y	29910	K3 Bruiser	80	Humanoid	0	0	10	0	Melee		composed kit: Humanoid
+Y	30281	Silver Covenant Hippogryph	80	Beast	0	0	3	0	Melee		composed kit: Flying
+Y	37881	Wretched Ghoul	80	Undead	0	0	59	0	Melee		composed kit: Undead

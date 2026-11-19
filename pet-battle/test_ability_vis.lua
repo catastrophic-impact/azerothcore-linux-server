@@ -1,7 +1,7 @@
 -- Presentation invariant: the visual spell of an ability must FIT ITS NAME (user QA failure: Snowball cast a Fireball).
 -- luajit pet-battle/test_ability_vis.lua   (project root)
 package.path = "scripts/?.lua;" .. package.path
-local D = require("pb_data"); local C = require("pb_core")
+local D = require("pb_data"); local C = require("pb_core"); local PV = require("pb_vis")
 local fails, passes = {}, 0
 local function check(c, m) if c then passes = passes + 1 else fails[#fails + 1] = m end end
 local FROST, FIRE, SHADOW, NATURE, LEAF, LIGHT, HOLY, ARCANE, WATER, EARTH, WIND = 116, 9053, 686, 9591, 5176, 403, 31759, 7269, 31012, 9483, 3044
@@ -34,8 +34,11 @@ for _, id in ipairs(ids) do
     if ok then for _, k in ipairs(kit) do
         local a = k.ability; total = total + 1
         local theme = C.ThemeVis(a.name)
-        if theme and a.vis and a.vis ~= theme then
-            local ov = D.rename[id] and D.rename[id][a.retailName]
+        local pv = PV[a.id]
+        -- only RULE-made visuals are held to the name theme: lab answers (user-accepted) and same-name player spells are exempt, and so are utility casts (self/aura glows)
+        local ruled = (not pv) or (pv.src == "rule" and (pv.m == "melee" or pv.m == "ranged" or pv.m == "target") and pv.s ~= 64422)
+        if theme and a.vis and a.vis ~= theme and ruled then
+            local ov = D.RenameOf(id, a.retailName, C.Family(id))
             local explicit = ov and ov.vis ~= nil or a.vis == 17253 or a.vis == 16827   -- hand-styled by the species table / the bite+claw styles
             if not explicit then bad[a.name .. " vis " .. a.vis .. " expected " .. theme] = true end
         end
@@ -48,6 +51,15 @@ for _, id in ipairs(ids) do local ok, kit = pcall(C.Kit, id); if ok then for _, 
     if C.ThemeVis(a.name) and a.icon == "Ability_Warrior_Rampage" and a.name ~= "Rampage" then generic[a.name] = true end
 end end end
 local gl = {}; for k in pairs(generic) do gl[#gl + 1] = k end; table.sort(gl)
+-- every icon a kit ability shows must exist in the 3.3.5 client (pet-battle/icons_335.txt = the SpellIcon.dbc list): a missing one is a green question mark
+local ICONS = {}; for l in io.lines("pet-battle/icons_335.txt") do ICONS[l:lower()] = true end
+local badIcon = {}
+for _, id in ipairs(ids) do local ok, kit = pcall(C.Kit, id); if ok then for _, k in ipairs(kit) do
+    local a = k.ability
+    if not ICONS[(a.icon or ""):lower()] then badIcon[a.name .. " = " .. tostring(a.icon)] = true end
+end end end
+local bl = {}; for k in pairs(badIcon) do bl[#bl + 1] = k end; table.sort(bl)
+check(#bl == 0, #bl .. " ability icons are not in the 3.3.5 client: " .. table.concat(bl, "; "))
 check(#gl == 0, #gl .. " themed abilities still show the generic Rampage icon: " .. table.concat(gl, "; "))
 check(#list == 0, #list .. " abilities with a themed name use a different visual: " .. table.concat(list, "; "))
 check(total > 5000, "kit enumeration covered " .. total .. " abilities")

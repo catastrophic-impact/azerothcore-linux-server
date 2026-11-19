@@ -6,7 +6,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"; cd "$ROOT"
 REL="$ROOT/release"; LOG="$REL/logs/world.out"; PIPE="$REL/config/world.in"
 ADDONS="${WOW_ADDONS:-$(cat "$ROOT/local/addons_path.txt" 2>/dev/null)}"   # your client Interface/AddOns folder: env WOW_ADDONS or the one-line file local/addons_path.txt (gitignored)
 [ -n "$ADDONS" ] || { echo "set WOW_ADDONS or write the client AddOns path into local/addons_path.txt"; exit 1; }
-sh pet-battle/run_tests.sh || { echo "NOT DEPLOYED: tests failed"; exit 1; }
+sh pet-battle/run_tests.sh auto || { echo "NOT DEPLOYED: tests failed"; exit 1; }   # tier picked from the changed files; run `run_tests.sh full` before a commit
 cp scripts/pb_*.lua scripts/shop_prime.lua scripts/shop_server.lua "$REL/lua_scripts/"
 rm -f "$REL/lua_scripts/pb_world_test.lua" "$REL/lua_scripts/pb_fxlab.lua"
 mkdir -p "$ADDONS/wotlk_pets" "$ADDONS/wotlk_petbattle"

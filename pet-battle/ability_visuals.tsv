@@ -1,0 +1,107 @@
+abilityId	ability	status	accepted(label=spell)	note	rejected
+112	Peck	ACCEPTED	Bite=17253		
+114	Beam	ACCEPTED	Drain Soul=1120		
+118	Water Jet	ACCEPTED	Water Spout=35499		Chain Heal=1064: nothing happened | Chain Heal=1064: it was good but it was green
+119	Scratch	ACCEPTED	Claw=3009		
+1400	Udder Destruction	ACCEPTED	Water Spout=35499		Chain Heal=1064: nothing played | Chain Heal=1064: its green, is that really what chain heal looksl ike?
+1401	Where's the Beef?	ACCEPTED	Evasion=5277		
+155	Hiss	ACCEPTED	Taunt=355		
+165	Crouch	ACCEPTED	Shield Wall=871		
+170	Lift-Off	ACCEPTED	Vanish=1856		lift the pet up, hold, drop=lift: it was pretty janky but really close. If we cant get it go with the same evasion I saw with wheres the beef
+1758	Ironskin	ACCEPTED	Barkskin=22812		
+186	Reckless Strike	ACCEPTED	Heroic Strike=78		
+193	Flank	ACCEPTED	Sinister Strike=1752		Backstab=53: Yes but I dont see a landing animation
+221	Takedown	ACCEPTED	Bash=5211		
+227	Blackout Kick	ACCEPTED	Kick=1766		
+230	Cleansing Rain	ACCEPTED	Riptide=61295		
+232	Swarm of Flies	ACCEPTED	Insect Swarm=5570		
+233	Frog Kiss	ACCEPTED	Hex=51514		
+250	Spiderling Swarm	not seen			
+253	Comeback	ACCEPTED	Heroic Strike=78		
+273	Wish	ACCEPTED	Heal=2054		Riptide=61295: wish doesnt seem like water, maybe something from holy paladin or priest instead
+283	Survival	ACCEPTED	Shield Wall=871		
+350	Clobber	ACCEPTED	Bash=5211		
+355	Triple Snap	ACCEPTED	Kick=1766		Kick=1766: yes but if it attacked three times it was too fast and I only saw maybe 2 attacks? if there are three it needs a super slight delay | Bash=5211: same thinga s before the first was better with kick
+366	Dazzling Dance	ACCEPTED	Bloodlust=2825		
+371	Sticky Goo	ACCEPTED	Web=4167		
+375	Trumpet Strike	ACCEPTED	Sonic Screech=64422		Horn of Winter=57330: the animation was good on the boar, but nothing happened to the enemy
+376	Headbutt	ACCEPTED	Kick=1766		Bash=5211: make this kick for the animation landing on the enemy | Charge=100: nothing happened
+382	Brittle Webbing	ACCEPTED	Web=4167		
+383	Leech Life	ACCEPTED	Drain Life=689		
+398	Poison Lash	ACCEPTED	Envenom=39967		Envenom=32645: no effect happened on the enemy. The spider in this round of tseting also didnt become the right size, it was huge | Deadly Poison=2823: I didnt see an effect on the enemy
+420	Slicing Wind	ACCEPTED	Whirlwind=1680		
+453	Sandstorm	ACCEPTED	Dust Field=21868		Sand Breath=20716: but this was green skulls on poison on the enemy awesome effect for later
+489	Mana Surge	ACCEPTED	Arcane Blast=30451		
+493	Hoof	ACCEPTED	War Stomp=20549		
+521	Hawk Eye	ALL REJECTED			Aspect of the Hawk=13165: almost, but why did it play something green? It just needs to do the asepct of the hawk animation that appears on top like a hunter would when they turn it on | Aspect of the Dragonhawk=61846: it still plays a green anmation on the caster | Trueshot Aura=19506: no | Hunter's Mark=1130: nothing played, hunter class aspect of the hawk should play | Rapid Fire=3045: no | Aspect of the Hawk#3=13165: nothing played
+524	Squawk	ACCEPTED	Sonic Screech=64422		Screech=31273: the animation on the caster pet is perfect, nothing lands on the enemy?
+539	Bleat	ACCEPTED	Prayer of Healing#2=596		Prayer of Healing=596: Yes but since all allies are off screen, it hsouldnt land on the enemy right?
+541	Chew	ACCEPTED	Ferocious Bite=22568		Bite=17253: what about ferocious bite from druid?
+571	Horn Attack	ACCEPTED	Sinister Strike=1752		Gore=35290: horn attack I am guessing isnt an actual horn but a horn on the head like antlers right? If this is true we need a stab or strike anmation | Bash=5211: nothing animated on the enemy | Charge=100: nothing animated on the enemy
+574	Nature's Ward	ACCEPTED	Rejuvenation=774		
+579	Gobble Strike	ACCEPTED	Bite=17253		
+580	Food Coma	ACCEPTED	Hibernate=2637		
+581	Flock	not seen			
+598	Emerald Dream	ACCEPTED	Hibernate#3=2637		Hibernate=2637: nothing played, but the zzz animation would be good here | Rejuvenation=774: this is a good fall back if zzz doesnt work | Hibernate#2=2637: why did the wolf cast it on the bear? the bear should cast it on itself | Sleep=700: same thing, why is the wofl casting it, use common sense
+668	Dreadful Breath	ACCEPTED	Acid Breath=12533		
+713	Blitz	ACCEPTED	Sinister Strike=1752		
+743	Creeping Fungus	ACCEPTED	Poison Spit=35387		Plague Strike=45462: nothing played
+745	Leech Seed	ACCEPTED	Drain Life=689		
+746	Spore Shrooms	ACCEPTED	Acid Breath=12533		
+751	Soul Ward	ACCEPTED	Shadow Ward=6229		
+756	Acid Touch	ACCEPTED	Acid Spit=55749		Envenom=39967: the pet never attacked | Poison Shock=22595: it seems like he attacked himsefl?
+757	Lucky Dance	ACCEPTED	Divine Hymn=64843		
+763	Sear Magic	ACCEPTED	Dispel Magic=527		
+461	Light	ACCEPTED	Smite=585		
+202	Thrash	ACCEPTED	Swipe=50256		
+492	Rake	ACCEPTED	Rake=1822		
+110	Bite	ACCEPTED	Bite#2=17253		Bite=17253: nothing played on enemy
+314	Mangle	ACCEPTED	Claw=1082		Mangle=33917: no effect on the enemy | Shred=5221: no effect on the enemy
+357	Screech	ALL REJECTED			Screech=31273: no
+360	Flurry	ALL REJECTED			Flurry=12966: this test is super flawed
+362	Howl	ALL REJECTED			Howl=37502: no effects aer playing
+364	Leap	ALL REJECTED			Leap=47482: no effects are playing
+162	Adrenaline Rush	ACCEPTED	Kick=1766		Adrenaline Rush=13750: yes but no effect seemed to happen on the wolf | Enrage=5229: never actaully attacked the enemy but the buff on itself was good | Berserking=26297: even better but never attacked the enemy | Frenzy=3019: good, but not attacking the enemy just stands still
+228	Tongue Lash	ACCEPTED	Kick=1766 [melee run-up]	user (stop guessing): the mob runs up to the other and does Kick. The creature Tongue Lash landed (hp 1000->340) but has no hit visual; Lash of Pain did not land	Tongue Lash=36398: nothing happened animation or effect wise I mean on the enemy | Lash of Pain=7814: nothing happened again, stop guessing and fix this | Poison Spit=35387: honestly have the mob just run up to the other and do kick
+163	Stampede	ALL REJECTED			Stampede=57386: we talkedabout what stampede should be
+706	Swarm	not seen			
+111	Punch	ACCEPTED	Punch=29581		
+123	Healing Wave	ACCEPTED	Healing Wave=331		
+124	Rampage	ACCEPTED	Rampage=25744	user: approved ("does it just do the same thing every round? Okay"): a 3-round ability, the same hit each round, as in retail	Rampage=25744: Yes but does it just do the same thing every round? Okay
+159	Burrow	ACCEPTED	Burrow=26381		
+190	Cyclone	ACCEPTED	Cyclone=33786		
+219	Jab	ACCEPTED	Jab=40895		
+247	Hibernate	ACCEPTED	Hibernate#3=2637 [mode aura]	by analogy with Emerald Dream (the zzz applied as an aura on the pet itself, user y); user: stop wasting time on it	Hibernate=2637: nothing happened, stopw asting time
+254	Tranquility	ACCEPTED	Tranquility=740		
+299	Arcane Explosion	ACCEPTED	Arcane Explosion=1449		
+307	Kick	ACCEPTED	Kick=1766		
+312	Dodge	ACCEPTED	Dodge=62951	buff effect good (user); the rabbit ran away only because the lab made it hostile without holding it in place - fixed in the lab, to be handled the same way in battles	Dodge=62951: the rabbit literally ran away but the effect was good on the buff
+339	Sticky Web	ACCEPTED	Sticky Web=50295	effect good (user: yes); the Forest Spider is HUGE: pet-size rule gives it scale 1.45, user decision pending	Sticky Web=50295: yes bu tthe psider was huge
+345	Maul	ACCEPTED	Maul=6807		
+347	Roar	ACCEPTED	Roar=56748		
+348	Bash	ACCEPTED	Bash=5211		
+349	Smash	ALL REJECTED			Smash=18944: nothing seems to play
+377	Trample	ACCEPTED	Trample=5568		
+378	Strike	not seen			
+380	Poison Spit	not seen			
+406	Crush	not seen			
+416	Frost Shock	not seen			
+421	Arcane Blast	not seen			
+426	Focus	not seen			
+429	Claw	not seen			
+463	Flash	not seen			
+481	Deep Freeze	not seen			
+484	Feedback	not seen			
+486	Drain Power	not seen			
+488	Amplify Magic	not seen			
+490	Deflection	not seen			
+497	Soothe	not seen			
+519	Apocalypse	not seen			
+535	Pounce	not seen			
+536	Prowl	not seen			
+538	Devour	not seen			
+741	Whirlwind	not seen			
+778	Charge	not seen			
+997	Vengeance	not seen			
+1016	Feed	not seen			
+1402	Mother's Milk	not seen			

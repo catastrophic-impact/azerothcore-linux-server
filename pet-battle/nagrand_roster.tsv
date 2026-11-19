@@ -1,0 +1,67 @@
+# Nagrand pet roster (composed kits; census = creature kinds with >= 3 spawns whose most spawns sit in the zone box, rank 0, no npcflag/citizen/guard/event names). Same columns as elwynn_roster.tsv.
+# archetype is obsolete (composed kits: pet-battle/assemble_kits.py).
+include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
+Y	19138	Anchorite Attendant	19	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	18293	Sunspring Post Refugee	35-54	Humanoid	0	0	9	0	Melee		composed kit: Critter
+Y	18292	Bleeding Hollow Refugee	43-65	Humanoid	0	0	11	0	Melee		composed kit: Critter
+Y	18428	Mag'har Prisoner	60-65	Humanoid	0	0	20	0	Melee		composed kit: Critter
+Y	18137	Marsh Dredger	61-62	Elemental	0	0	13	0	Melee		composed kit: Elemental
+Y	18136	Marsh Lurker	61-62	Elemental	0	0	11	0	Melee		composed kit: Elemental
+Y	18912	Sporelok	61-62	Humanoid	0	0	20	0	Melee		composed kit: Humanoid
+Y	17134	Boulderfist Crusher	64-65	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	18352	Boulderfist Hunter	64-65	Humanoid	0	0	6	0	Melee		composed kit: Beast
+Y	17135	Boulderfist Mystic	64-65	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	18205	Clefthoof	64-65	Beast	0	0	111	0	Melee		composed kit: Beast
+Y	18033	Dark Worg	64-65	Beast	1	0	12	0	Melee		composed kit: Beast
+Y	17158	Dust Howler	64-65	Elemental	0	0	27	0	Melee		composed kit: Elemental
+Y	18964	Injured Talbuk	64	Beast	0	0	5	0	Melee		composed kit: Beast
+Y	17154	Muck Spawn	64-66	Elemental	0	0	24	0	Melee		composed kit: Elemental
+Y	18207	Murkblood Scavenger	64	Humanoid	0	0	21	0	Melee		composed kit: Humanoid
+Y	19161	Neophyte Combatant	64-65	Humanoid	0	0	12	0	Melee		composed kit: Critter
+Y	17130	Talbuk Stag	64-65	Beast	0	0	138	0	Melee		composed kit: Beast
+Y	17128	Windroc	64-65	Beast	26	0	57	0	Melee		composed kit: Flying
+Y	17139	Windyreed Scavenger	64-65	Humanoid	0	0	15	0	Melee		composed kit: Humanoid
+Y	17141	Windyreed Wretch	64-65	Humanoid	0	0	13	0	Melee		composed kit: Humanoid
+Y	17137	Boulderfist Mage	65-66	Humanoid	0	0	30	0	Melee		composed kit: Magic
+Y	17136	Boulderfist Warrior	65-66	Humanoid	0	0	26	0	Melee		composed kit: Humanoid
+Y	19151	Captured Halaani Blood Knight	65	Humanoid	0	0	7	0	Melee		composed kit: Humanoid
+Y	19157	Captured Halaani Vindicator	65	Humanoid	0	0	4	0	Melee		composed kit: Humanoid
+Y	17132	Clefthoof Bull	65-66	Beast	0	0	58	0	Melee		composed kit: Beast
+Y	18346	Consortium Claviger	65	Humanoid	0	0	3	0	Melee		composed kit: Humanoid
+Y	18272	Consortium Gemcutter	65	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	18062	Enraged Crusher	65-66	Elemental	0	0	68	0	Melee		composed kit: Elemental
+Y	17147	Kil'sorrow Cultist	65-66	Humanoid	0	0	22	0	Melee		composed kit: Undead
+Y	17148	Kil'sorrow Deathsworn	65-66	Humanoid	0	0	39	0	Melee		composed kit: Undead
+Y	17155	Lake Surger	65-66	Elemental	0	0	28	0	Melee		composed kit: Magic
+Y	18202	Murkblood Putrifier	65-66	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	18220	Ravenous Windroc	65-66	Beast	26	0	34	0	Melee		composed kit: Flying
+Y	17159	Storm Rager	65-66	Elemental	0	0	21	0	Melee		composed kit: Elemental
+Y	17131	Talbuk Thorngrazer	65-66	Beast	0	0	243	0	Melee		composed kit: Beast
+Y	17149	Vir'aani Raider	65-66	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	17981	Voidspawn	65-66	Demon	0	0	57	0	Melee		composed kit: Magic
+Y	17138	Warmaul Reaver	65-66	Humanoid	0	0	24	0	Melee		composed kit: Humanoid
+Y	18064	Warmaul Shaman	65-66	Humanoid	0	0	14	0	Melee		composed kit: Elemental
+Y	17133	Aged Clefthoof	66-67	Beast	0	0	19	0	Melee		composed kit: Beast
+Y	18289	Bull Elekk	66-67	Beast	0	0	23	0	Melee		composed kit: Beast
+Y	17151	Gan'arg Tinkerer	66-68	Demon	0	0	40	0	Melee		composed kit: Mechanical
+Y	17129	Greater Windroc	66-67	Beast	26	0	13	0	Melee		composed kit: Flying
+Y	17146	Kil'sorrow Spellbinder	66-67	Humanoid	0	0	17	0	Melee		composed kit: Magic
+Y	17160	Living Cyclone	66	Elemental	0	0	16	0	Melee		composed kit: Elemental
+Y	18203	Murkblood Raider	66-67	Humanoid	0	0	17	0	Melee		composed kit: Humanoid
+Y	17157	Shattered Rumbler	66-67	Elemental	0	0	101	0	Melee		composed kit: Elemental
+Y	17150	Vir'aani Arcanist	66-67	Humanoid	0	0	21	0	Melee		composed kit: Magic
+Y	18065	Warmaul Brute	66-67	Humanoid	0	0	32	0	Melee		composed kit: Humanoid
+Y	18037	Warmaul Warlock	66-67	Humanoid	0	0	34	0	Melee		composed kit: Magic
+Y	18334	Wild Elekk	66	Beast	0	0	29	0	Melee		composed kit: Beast
+Y	18658	Kil'sorrow Ritualist	67-68	Humanoid	0	0	8	0	Melee		composed kit: Humanoid
+Y	18238	Murkblood Invader	67	Humanoid	0	0	6	0	Melee		composed kit: Humanoid
+Y	23026	Twilight Serpent	69-70	Beast	0	0	20	0	Melee		composed kit: Aquatic
+Y	22341	Deathshadow Acolyte	70-71	Humanoid	0	0	8	0	Melee		composed kit: Undead
+Y	22343	Deathshadow Archon	70-71	Humanoid	0	0	9	0	Melee		composed kit: Undead
+Y	22394	Deathshadow Hound	70-71	Demon	0	0	5	0	Melee		composed kit: Beast
+Y	22342	Deathshadow Spellbinder	70-71	Humanoid	0	0	22	0	Melee		composed kit: Magic
+Y	22363	Deathshadow Warlock	70-71	Humanoid	0	0	20	0	Melee		composed kit: Magic
+Y	22144	Gordunni Elementalist	70-71	Humanoid	0	0	13	0	Melee		composed kit: Elemental
+Y	22979	Wild Sparrowhawk	70	Beast	0	0	5	0	Melee		composed kit: Flying
+Y	22143	Gordunni Back-Breaker	71-72	Humanoid	0	0	14	0	Melee		composed kit: Humanoid
+Y	22148	Gordunni Head-Splitter	71-72	Humanoid	0	0	7	0	Melee		composed kit: Humanoid

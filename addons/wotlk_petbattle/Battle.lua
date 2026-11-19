@@ -1,5 +1,5 @@
 -- Open-world pet battle UI (retail-style top VS bar + bottom action bar). The server (pb_battle.lua) runs everything; wild pets start battles, /pbtest is the GM debug start.
--- /pbtest        start a test battle next to you        /pbtest quit   forfeit        /pbtest fx <spellId>   cast a visual on your pet
+-- /pbtest        start a test battle next to you        /pbtest quit   forfeit        /pbtest fx <spellId>   cast a visual on your pet        /pbtest trace   toggle the battle transcript in world.out (GM)
 local GOLD = { 0.95, 0.78, 0.25 }
 local WHITE = "Interface\\Buttons\\WHITE8X8"
 local BACKDROP = { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
@@ -65,7 +65,7 @@ local function ModelBox(parent, size)
         if self.entry ~= entry then
             self.entry = entry
             self.fallback:SetTexture("Interface\\Icons\\" .. (icon or "INV_Misc_QuestionMark"))
-            if entry and entry > 0 then
+            if false and entry and entry > 0 then   -- 3D previews are off in the battle frames: the pet TYPE icon is shown instead (heads of tall models were cut off)
                 local ok = pcall(function()
                     self.m:SetCreature(entry); self.m:SetRotation(0.61)
                     -- the world scale shrinks big models more than small ones; scaling the preview by the same number evens them out
@@ -130,7 +130,6 @@ local function Panel(name, isRight)
         local s = isRight and "E" or "P"; local pet = S[s][S.act[s]]; local f = S.info[s]
         if not pet then return end
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM"); GameTooltip:SetText(pet.name .. "  (level " .. pet.lv .. ")", 1, 0.82, 0)
-        if pet.species then GameTooltip:AddLine(pet.species, 0.7, 0.7, 0.7) end   -- renamed: the real species
         if f then
             GameTooltip:AddLine("Family: " .. f.name, 1, 1, 1)
             if f.strong ~= "" then GameTooltip:AddLine("Hits harder against: " .. f.strong, 0.4, 1, 0.4) end
@@ -437,8 +436,8 @@ local function Setup()
     AcoreLib.On("pbt", "weather", function(p) local id, n = p:match("^(%d+)|(%d+)"); WxSet(tonumber(id) or 0, tonumber(n) or 0) end)
     AcoreLib.On("pbt", "st", function(p)
         local s, i, lv, hp, max, icon, q, entry, sc, name = p:match("^(%a),(%d+),(%d+),(%d+),(%d+),([^,]+),(%d+),(%d+),(%d+),(.+)$")
-        if s then local nick, species = name:match("^([^|]*)|(.+)$")   -- a renamed pet arrives as "nickname|species"
-            S[s][Num(i)] = { lv = Num(lv), hp = Num(hp), max = Num(max), icon = icon, q = Num(q), entry = Num(entry), scale = Num(sc) / 100, name = nick or name, species = species }; Refresh("all") end
+        if s then
+            S[s][Num(i)] = { lv = Num(lv), hp = Num(hp), max = Num(max), icon = icon, q = Num(q), entry = Num(entry), scale = Num(sc) / 100, name = name }; Refresh("all") end
     end)
     AcoreLib.On("pbt", "own", function(p)   -- the enemy pet i against our collection: status 0 = not collected, 1 = this one would be an upgrade, 2 = we own the same or better
         local i, st, oq, ol = p:match("^(%d+),(%d),(%d),(%d+)$"); if not i then return end
@@ -483,11 +482,11 @@ local function Setup()
     AcoreLib.On("pbt", "fnt", function(p) local s, i = p:match("^(%a),(%d+)"); i = Num(i); S[s][i].hp = 0; Say(S[s][i].name .. " has fainted!"); Refresh() end)
     AcoreLib.On("pbt", "turn", function(p)
         if wxCur and wxCur ~= 0 and wxRounds > 0 then wxRounds = wxRounds - 1; if wxRounds <= 0 then WxSet(0) else WxBadgeUpdate() end end   -- one round passed
-        local mode, c1, c2, c3, trap = p:match("^(%a+);(%d+),(%d+),(%d+);?(%d?)$")
+        local mode, c1, c2, c3, trap, why = p:match("^(%a+);(%d+),(%d+),(%d+);?(%d?);?(.*)$")
         S.canTrap = trap == "1"
         S.cd = { tonumber(c1) or 0, tonumber(c2) or 0, tonumber(c3) or 0 }
-        S.force = (mode == "force"); S.canAct = (mode ~= "stun"); Refresh()   -- "stun": crowd controlled, every button stays grey and the server passes the turn
-        turnTxt:SetText(mode == "stun" and "Stunned - turn passes" or (S.force and "Choose your next pet" or "Your turn"))
+        S.force = (mode == "force"); S.canAct = (mode ~= "stun" and mode ~= "lock"); Refresh()   -- "stun": crowd controlled, every button stays grey and the server passes the turn
+        turnTxt:SetText(mode == "lock" and (why or "") or mode == "stun" and ((why and why ~= "" and why or "Stunned") .. " - turn passes") or (S.force and "Choose your next pet" or "Your turn"))
         bottom.hint:SetText(S.force and "Pick a pet to send out" or "")
         if S.force then Say("Choose your next pet!", 3) end
     end)
@@ -525,5 +524,7 @@ SlashCmdList["PBTEST"] = function(arg)
         WotlkPbMusicOff = not WotlkPbMusicOff; if WotlkPbMusicOff then MusicStop() end
         DEFAULT_CHAT_FRAME:AddMessage("|cffffd100[Pet battle]|r battle music " .. (WotlkPbMusicOff and "off" or "on"))
     elseif cmd == "fx" then AcoreLib.Send("pbt", "fx", rest)
+    elseif cmd == "trace" then AcoreLib.Send("pbt", "trace", "")
+    elseif cmd == "bad" then AcoreLib.Send("pbt", "bad", (rest or ""):sub(1, 120))   -- flags the last abilities that looked wrong (logs/pb_bad.tsv); the comment is optional
     else AcoreLib.Send("pbt", "start", (cmd or "") .. " " .. (rest or "")) end
 end

@@ -29,7 +29,7 @@ setmetatable(player, { __index = function(t, k)
     local f = {
         GetZoneId = function() return t.zone end, GetMapId = function() return t.map end, GetX = function() return t.x end, GetY = function() return t.y end, GetZ = function() return 0 end,
         IsBot = function() return t.isBot == true end, IsAlive = function() return t.alive end, IsInCombat = function() return false end, GetPhaseMask = function() return 1 end, GetGUIDLow = function() return 77 end,
-        GetGUID = function() return setmetatable({ id = 77 }, {}) end, GetCreaturesInRange = function(_, range, entry) local out = {}; local all = {}
+        GetGUID = function() return setmetatable({ id = 77 }, {}) end, GetCreaturesInRange = function(_, range, entry) RANGE_CALLS = (RANGE_CALLS or 0) + 1; local out = {}; local all = {}
             for _, o in pairs(objects) do if entry == 0 or o.entry == entry then all[#all + 1] = o end end   -- script-spawned creatures too (no DB row)
             for _, m in ipairs(all) do if (m.x - t.x) ^ 2 + (m.y - t.y) ^ 2 <= range * range then out[#out + 1] = m end end return out end,
         GossipClearMenu = function() menu = {} end, GossipMenuAddItem = function(_, _, text, _, id) menu[#menu + 1] = { text = text, id = id } end,
@@ -51,7 +51,8 @@ function CharDBExecute() end
 function RegisterPlayerEvent() end
 local gossip = {}
 function RegisterCreatureGossipEvent(entry, ev, f) gossip[entry .. ":" .. ev] = f end
-package.loaded["acore_msg"] = { On = function() end, Send = function() end }
+SENT = {}
+package.loaded["acore_msg"] = { On = function() end, Send = function(_, m, a, payload) SENT[#SENT + 1] = { m = m, a = a, p = payload } end }
 
 dofile("scripts/pb_data.lua"); dofile("scripts/pb_retail.lua"); dofile("scripts/pb_rules.lua"); dofile("scripts/pb_core.lua")
 function PB_DATA_PETLEVEL(l, z) return require("pb_data").PetLevel(l, z) end
@@ -70,9 +71,16 @@ realMob(299, 10, 0, 1); realMob(299, 20, 5, 1)          -- two Young Wolves (lev
 realMob(69, -15, 8, 7)                                   -- a Timber Wolf, level 7 (so its wild pet brings a team)
 realMob(257, 5, -12, 3)                                  -- a Kobold Worker (level 3)
 
-tick(); check(W.Count() == 1, "first tick spawns exactly one wild pet (trickle), got " .. W.Count())
-tick(); tick(); check(W.Count() == 3, "three ticks = one wild pet per species, got " .. W.Count())
+tick(); check(W.Count() == 3, "ONE tick fills the whole area (max 3, one per species), got " .. W.Count())
 tick(); tick(); check(W.Count() == 3, "no duplicates of a species nearby, got " .. W.Count())
+-- COST: a full area costs NO world query; an empty one is not rescanned until the player moves
+local calls0 = RANGE_CALLS or 0; tick(); tick(); check((RANGE_CALLS or 0) == calls0, "area full: no world query at all (" .. ((RANGE_CALLS or 0) - calls0) .. " calls)")
+-- MINIMAP BLIPS: offsets in yards (north, west) of the pets in the area, with species, level and name
+SENT = {}; W.BlipTick()
+local bl = SENT[#SENT]; check(bl and bl.m == "pbw" and bl.a == "pets", "blip message sent to the player")
+local nb = 0; for e in (bl and bl.p or ""):gmatch("[^;]+") do nb = nb + 1; check(e:match("^%-?%d+,%-?%d+,%d+,%d+,.+$") ~= nil, "blip entry format: " .. e) end
+check(nb == 3, "one blip per wild pet in the area, got " .. nb)
+check(#(bl and bl.p or "") < 240, "blip message fits one addon message")
 local list = {}; for g, w in pairs(W.Wild) do list[w.species] = g end
 check(list[299] and list[69] and list[257], "each species has its wild pet")
 local wp = objects[list[299]]
@@ -131,11 +139,12 @@ spy = nil; goTo(ar); W.OnSelect(nil, player, ar, 0, 1)
 check(spy and #spy == 1 and spy[1].species == 721 and spy[1].level == 1, "level 1 rabbit fights alone")
 check(ar.gone == true, "the adopted rabbit is consumed (despawns, real respawn timer brings it back)")
 -- released without a battle: gets the critter back as it was (move the clock past the 90 s cooldown first)
-local realTime = os.time; os.time = function() return realTime() + 200 end
+local realTime = os.time; local clock = 200; os.time = function() return realTime() + clock end
 for _ = 1, 8 do tick() end
 local ar2; for _, r in ipairs({ r1, r2, r3 }) do if r.npcflags == 1 and not r.gone then ar2 = r end end
 if ar2 then
-    player.online = false; tick()
+    player.online = false; tick(); check(W.Count() > 0 and not ar2.gone and ar2.npcflags == 1, "nobody near for a moment: the pet is still there (grace period)")
+    clock = clock + 100; tick()
     check(not ar2.gone and ar2.npcflags == 0 and not ar2.auras[PB_WILD.MARKER] and ar2.faction == 14, "released critter: flags, marker and faction restored, creature kept")
 else check(false, "a second rabbit was not adopted after the cooldown window") end
 player.online = true; os.time = realTime
@@ -143,13 +152,14 @@ player.online = true; os.time = realTime
 PD.species[721].wild = true
 -- LEFTOVER from an earlier script instance: marked (hearts, flag 1, friendly) but owned by no registry entry -> given back, not re-adopted into flag 2
 local lo = realMob(721, 36, 44, 1); lo.npcflags = 1; lo.faction = 35; lo.auras[PB_WILD.MARKER] = true   -- left over from an older script (hearts)
-player.online = true; tick()
+player.online = true; for k in pairs(W.Cleaned) do W.Cleaned[k] = nil end; tick()   -- (leftovers are looked for once per player per script load)
 check(lo.auras[PB_WILD.MARKER] == nil and lo.faction == 14 and lo.npcflags ~= 2, "leftover marked critter is released from the template (flags " .. tostring(lo.npcflags) .. ")")
 for _, r in ipairs({ r1, r2, r3, lo }) do check(r.npcflags ~= 2, "no critter ever ends up with NPC flag 2 (quest giver) instead of gossip") end
 
 -- wrong zone: nothing spawns; nobody near: everything is removed
 player.zone = 1519; realMob(299, 1, 1, 1); local before = W.Count(); tick(); tick(); check(W.Count() <= before, "no new wild pets in a disabled zone")
-player.online = false; tick(); check(W.Count() == 0, "nobody near: all wild pets removed, got " .. W.Count())
+player.online = false; os.time = function() return realTime() + clock end; tick(); local still = W.Count(); clock = clock + 100; tick(); check(still > 0 and W.Count() == 0, "nobody near: removed only after the grace period (" .. still .. " -> " .. W.Count() .. ")")
+os.time = realTime
 -- WESTFALL (zone 40, retail pet levels 3-4): the first zone with 3-pet fights. Mobs 9-14 give pet level 3, 15-19 give pet level 4; a wild pet brings a team of three at that level
 player.zone = 40; player.online = true; player.x, player.y = 3000, 3000
 local coyote = realMob(834, 3003, 3000, 14); local tusk = realMob(157, 3000, 3003, 15)
@@ -172,6 +182,14 @@ player.zone = 12; player.online = true; player.isBot = true; realMob(299, 1, 1, 
 local botBefore = W.Count(); tick(); tick(); tick()
 check(W.Count() == botBefore, "a playerbot next to wild mobs gets no wild pet (before " .. botBefore .. ", after " .. W.Count() .. ")")
 player.isBot = false
+-- IDLE GATING: a player below the cap with nothing spawnable is not rescanned while standing still, and is again after moving 25+ yd
+do
+    for g in pairs(W.Wild) do end
+    local lonely = { x = 90000, y = 90000 }; player.x, player.y = lonely.x, lonely.y   -- nothing around here
+    tick(); local c1 = RANGE_CALLS; tick(); tick(); check(RANGE_CALLS == c1, "standing still with nothing to spawn: no repeated world queries")
+    player.x = player.x + 30; tick(); check(RANGE_CALLS == c1 + 1, "after moving 30 yd the surroundings are searched again")
+    SENT = {}; W.BlipTick(); check(#SENT == 0 or SENT[#SENT].p == "none", "no pets nearby: no blips (or one clearing message)")
+end
 local leaked = 0; for _, o in pairs(objects) do if not o.db then leaked = leaked + 1 end end
 check(leaked == 0, "no creature objects leaked, got " .. leaked)
 
