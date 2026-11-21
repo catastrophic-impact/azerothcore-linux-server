@@ -1,0 +1,315 @@
+# animation tag per real spell used by the kits (pet-battle/name_pools work). tag = what the spell LOOKS like; src = name keyword, or cast type when the name says nothing. TAB: spell, tag, source, cast, slots using it
+Abolish Disease	bolt	cast type	ranged	1
+Acid Spit	breath/spray	name	ranged	8
+Adrenaline Rush	aura	corrected by hand	self	19
+Aimed Shot	bolt	name	ranged	89
+Ambush	strike	cast type	melee	220
+Amplify Magic	spell	cast type	target	6
+Anti-Magic Shell	aura	cast type	self	57
+Arcane Barrage	buff aura	name(ambiguous: buff aura/bolt)	ranged	43
+Arcane Blast	bolt	name	ranged	40
+Arcane Explosion	bolt	name	self	33
+Arcane Missiles	bolt	name	target	20
+Arcane Shot	bolt	name	ranged	87
+Aspect of the Beast	aura	cast type	self	12
+Aspect of the Cheetah	aura	cast type	self	5
+Aspect of the Dragonhawk	aura	cast type	self	2
+Aspect of the Monkey	aura	cast type	self	22
+Avenger's Shield	buff aura	name	ranged	8
+Avenging Wrath	aura	cast type	self	4
+Backstab	strike	cast type	melee	159
+Banish	spell	cast type	target	11
+Barkskin	aura	cast type	self	14
+Bash	strike	cast type	melee	104
+Battle Shout	buff aura	name	self	74
+Beacon of Light	aura	cast type	self	4
+Berserk	buff aura	name	self	157
+Berserker Rage	buff aura	name	self	5
+Berserking	buff aura	name	self	1
+Binding Heal	heal glow	name	self	33
+Bite	bite	name	melee	314
+Black Arrow	bolt	name	target	16
+Blade Twisting	strike	corrected by hand	self	16
+Bladestorm	aura	cast type	self	45
+Blast Wave	bolt	name	self	81
+Blazing Speed	aura	cast type	self	5
+Blessing of Sanctuary	spell	cast type	target	2
+Blind	spell	cast type	target	52
+Blizzard	spell	cast type	target	25
+Blood Boil	aura	cast type	self	169
+Blood Fury	aura	cast type	self	1
+Blood Presence	aura	cast type	self	17
+Blood Strike	bolt	cast type	ranged	119
+Bloodlust	aura	cast type	self	20
+Bone Shield	buff aura	name	self	44
+Bullheaded	aura	cast type	self	11
+Call of the Wild	aura	cast type	self	2
+Cannibalize	bolt	cast type	ranged	12
+Carrion Feeder	bolt	cast type	ranged	83
+Chain Heal	heal glow	name(ambiguous: heal glow/bolt)	self	103
+Chain Lightning	bolt	name	ranged	330
+Chains of Ice	bolt	name	target	4
+Chaos Bolt	bolt	name	ranged	87
+Charge	charge/dash	name	ranged	984
+Cheap Shot	bolt	name	melee	29
+Chimera Shot	bolt	name	ranged	80
+Circle of Healing	heal glow	name	self	8
+Claw	claw	name	melee	1142
+Cleanse Spirit	bolt	cast type	ranged	1
+Cleave	strike	cast type	melee	577
+Cloak of Shadows	bolt	name	self	1
+Cold Blood	aura	cast type	self	53
+Combustion	aura	cast type	self	4
+Concussion Blow	strike	cast type	melee	198
+Concussive Shot	bolt	name	target	3
+Cone of Cold	aura	cast type	self	145
+Conflagrate	spell	cast type	target	82
+Consecration	aura	cast type	self	3
+Corruption	spell	cast type	target	12
+Counterattack	strike	cast type	melee	58
+Counterspell	bolt	cast type	ranged	20
+Crusader Strike	strike	cast type	melee	9
+Curse of Agony	spell	corrected by hand	target	3
+Curse of Exhaustion	spell	corrected by hand	target	8
+Curse of the Elements	spell	corrected by hand	target	36
+Cyclone	spell	cast type	target	5
+Dampen Magic	spell	cast type	target	6
+Dash	charge/dash	name	self	92
+Deadly Throw	bolt	cast type	ranged	188
+Death Strike	bolt	cast type	ranged	138
+Death and Decay	spell	cast type	target	45
+Deathchill	aura	cast type	self	28
+Deep Freeze	spell	cast type	target	9
+Demon Armor	aura	cast type	self	13
+Demon Charge	charge/dash	name	ranged	82
+Demoralizing Screech	buff aura	name	melee	32
+Deterrence	aura	cast type	self	9
+Devastate	strike	cast type	melee	67
+Disarm	strike	cast type	melee	77
+Dive	charge/dash	name	self	10
+Divine Favor	aura	cast type	self	4
+Divine Plea	aura	cast type	self	4
+Divine Storm	aura	cast type	self	9
+Dragon's Breath	breath/spray	name	self	45
+Drain Soul	beam	corrected by hand	target	66
+Earth Shield	aura	corrected by hand	target	55
+Earth Shock	bolt	corrected by hand	ranged	254
+Elemental Mastery	aura	cast type	self	37
+Enraged Regeneration	heal glow	name(ambiguous: heal glow/buff aura)	self	99
+Entangling Roots	web/trap	name	target	10
+Envenom	strike	corrected by hand	melee	95
+Eviscerate	strike	cast type	melee	39
+Execute	strike	cast type	melee	524
+Exorcism	bolt	cast type	ranged	5
+Explosive Shot	bolt	name	target	60
+Expose Armor	strike	cast type	melee	36
+Fade	aura	cast type	self	8
+Faerie Fire	bolt	name	target	21
+Faerie Fire (Feral)	bolt	name	target	114
+Fan of Knives	aura	cast type	self	118
+Fear	spell	cast type	target	30
+Feint	strike	cast type	melee	53
+Fel Armor	aura	cast type	self	13
+Felfire	bolt	name	ranged	14
+Feral Charge - Bear	charge/dash	name	ranged	16
+Ferocious Bite	bite	name	melee	668
+Fire Blast	bolt	name	ranged	10
+Fire Breath	breath/spray	name(ambiguous: breath/spray/bolt)	target	3
+Fire Nova	bolt	name	ranged	30
+Fire Ward	buff aura	name(ambiguous: buff aura/bolt)	self	17
+Fireball	bolt	name	target	45
+Flame Shock	bolt	corrected by hand	target	288
+Flamestrike	spell	corrected by hand	target	8
+Frenzied Regeneration	heal glow	name	self	379
+Frost Armor	bolt	name	self	37
+Frost Nova	bolt	name	self	71
+Frost Presence	bolt	name	self	26
+Frost Shock	bolt	corrected by hand	ranged	200
+Frost Strike	bolt	name	ranged	103
+Frostbolt	bolt	name	ranged	37
+Frostfire Bolt	bolt	name	target	3
+Froststorm Breath	breath/spray	name(ambiguous: breath/spray/bolt)	ranged	8
+Furious Howl	buff aura	name	self	33
+Garrote	strike	cast type	melee	46
+Ghostly Strike	strike	cast type	melee	207
+Gift of the Naaru	aura	cast type	self	2
+Gnaw	strike	cast type	melee	136
+Gore	bite	name	melee	18
+Gouge	strike	cast type	melee	101
+Guardian Spirit	aura	cast type	self	1
+Hammer of Wrath	bolt	cast type	ranged	7
+Hammer of the Righteous	bolt	cast type	ranged	3
+Hamstring	strike	cast type	melee	39
+Haunt	bolt	cast type	ranged	57
+Healing Touch	heal glow	name	self	1
+Healing Wave	heal glow	name	self	8
+Health Funnel	beam	corrected by hand	self	18
+Heart Strike	strike	cast type	melee	59
+Heart of the Phoenix	aura	cast type	self	44
+Hellfire	bolt	name	self	40
+Hemorrhage	strike	cast type	melee	257
+Heroic Fury	aura	cast type	self	17
+Heroic Strike	strike	cast type	melee	488
+Heroic Throw	bolt	cast type	ranged	392
+Hex	spell	cast type	target	40
+Hibernate	spell	cast type	target	3
+Holy Fire	bolt	name	target	80
+Holy Light	bolt	name	self	1
+Holy Nova	bolt	name	self	49
+Holy Shock	bolt	name	ranged	4
+Holy Wrath	bolt	name	self	12
+Horn of Winter	aura	cast type	self	4
+Howl of Terror	buff aura	name	self	13
+Howling Blast	buff aura	name(ambiguous: buff aura/bolt)	ranged	92
+Huddle	aura	cast type	self	12
+Hunger For Blood	bolt	cast type	ranged	30
+Hungering Cold	aura	cast type	self	14
+Hunter's Mark	spell	cast type	target	10
+Hurricane	spell	cast type	target	43
+Ice Lance	bolt	name	ranged	8
+Icebound Fortitude	aura	cast type	self	22
+Icy Touch	bolt	cast type	ranged	60
+Icy Veins	aura	cast type	self	9
+Immolate	spell	cast type	target	35
+Immolation	aura	cast type	self	53
+Immolation Aura	buff aura	name	self	11
+Incinerate	bolt	cast type	ranged	23
+Inner Fire	bolt	name	self	8
+Insect Swarm	spell	cast type	target	9
+Intimidating Shout	buff aura	name	target	197
+Intimidation	spell	cast type	target	19
+Judgement of Blood	bolt	cast type	ranged	5
+Judgement of Command	bolt	cast type	ranged	2
+Judgement of Righteousness	bolt	cast type	ranged	2
+Kick	strike	cast type	melee	22
+Kill Shot	bolt	name	ranged	42
+Killing Spree	spell	cast type	target	121
+Lacerate	bite	name	melee	654
+Last Stand	aura	cast type	self	323
+Lava Burst	bolt	name	ranged	110
+Lava Lash	strike	cast type	melee	124
+Lick Your Wounds	heal glow	name	self	142
+Lifebloom	aura	cast type	self	1
+Lightning Bolt	bolt	name	ranged	30
+Lightning Breath	breath/spray	name(ambiguous: breath/spray/bolt)	ranged	17
+Living Bomb	bolt	cast type	ranged	1
+Mage Armor	aura	cast type	self	6
+Maim	strike	cast type	melee	324
+Mangle	claw	name	ranged	304
+Maul	bite	name	melee	28
+Mend Pet	heal glow	name	self	48
+Mind Blast	bolt	name	ranged	26
+Mind Control	spell	cast type	target	4
+Mind Flay	bolt	cast type	ranged	17
+Mind Freeze	strike	cast type	melee	57
+Mind Sear	spell	cast type	target	10
+Mocking Blow	strike	cast type	melee	294
+Molten Armor	aura	cast type	self	1
+Mongoose Bite	bite	name	melee	33
+Moonfire	bolt	name	target	61
+Mortal Strike	strike	cast type	melee	131
+Multi-Shot	bolt	name	ranged	21
+Nether Shock	bolt	corrected by hand	ranged	6
+Obliterate	bolt	cast type	ranged	14
+Overpower	strike	cast type	melee	33
+Pain Suppression	aura	cast type	self	9
+Penance	bolt	cast type	ranged	24
+Pestilence	strike	cast type	melee	30
+Piercing Howl	buff aura	name	self	52
+Pin	web/trap	name	melee	14
+Plague Strike	bolt	cast type	ranged	85
+Poison Spit	breath/spray	name(ambiguous: breath/spray/web/trap)	target	2
+Polymorph	spell	cast type	target	4
+Pounce Bleed	claw	name(ambiguous: claw/web/trap)	melee	66
+Power Infusion	spell	cast type	target	2
+Prowl	aura	cast type	self	29
+Psychic Scream	aura	cast type	self	4
+Pummel	strike	cast type	melee	392
+Purge	bolt	cast type	ranged	5
+Pyroblast	bolt	name	target	2
+Rain of Fire	bolt	name	target	4
+Rake	claw	name	melee	166
+Rapid Fire	bolt	name	self	6
+Raptor Strike	strike	cast type	melee	24
+Ravage	claw	name	melee	12
+Reflective Shield	buff aura	name	ranged	21
+Rejuvenation	heal glow	name	self	91
+Rend	bite	name	melee	134
+Renew	heal glow	name	self	12
+Revenge	strike	cast type	melee	59
+Riposte	strike	cast type	melee	10
+Riptide	aura	cast type	self	42
+Roar of Sacrifice	buff aura	name	target	17
+Rupture	strike	cast type	melee	7
+Sacred Shield	buff aura	name	target	10
+Safeguard	aura	cast type	self	9
+Savage Rend	bite	name(ambiguous: bite/claw)	melee	35
+Scatter Shot	bolt	name	target	25
+Scorpid Poison	web/trap	name	melee	6
+Scorpid Sting	web/trap	name	target	4
+Scourge Strike	strike	cast type	melee	58
+Seal of Righteousness	aura	cast type	self	2
+Searing Pain	bolt	cast type	ranged	11
+Second Wind	aura	cast type	self	58
+Serenity Dust	aura	cast type	self	3
+Serpent Sting	web/trap	name	target	17
+Shackle Undead	spell	cast type	target	4
+Shadow Bolt	bolt	name	ranged	2
+Shadow Cleave	bolt	name	melee	15
+Shadow Word: Death	bolt	name	ranged	8
+Shadowfury	bolt	name	target	15
+Shadowstep	bolt	name	target	21
+Shamanistic Rage	buff aura	name	self	59
+Shattering Throw	bolt	cast type	ranged	199
+Shield Bash	buff aura	name	melee	38
+Shield Block	buff aura	name	self	4
+Shield Slam	strike	corrected by hand	melee	24
+Shield Wall	buff aura	name	self	1
+Shield of Righteousness	buff aura	name	melee	1
+Shiv	strike	cast type	melee	238
+Shockwave	stomp	name	self	92
+Silence	spell	cast type	target	10
+Silencing Shot	bolt	name	ranged	3
+Slam	strike	corrected by hand	ranged	249
+Slow	spell	cast type	target	4
+Smack	strike	cast type	melee	41
+Smite	bolt	cast type	ranged	14
+Snatch	strike	cast type	melee	24
+Sonic Blast	bolt	name	target	12
+Spore Cloud	spell	cast type	target	3
+Sprint	aura	cast type	self	18
+Stampede	strike	cast type	melee	4
+Starfire	bolt	name	ranged	25
+Sting	web/trap	name	melee	7
+Stoneform	aura	cast type	self	4
+Stormstrike	strike	cast type	melee	76
+Strangulate	spell	cast type	target	37
+Survival Instincts	aura	cast type	self	7
+Swipe	claw	name	melee	33
+Swipe (Bear)	claw	name	ranged	9
+Swoop	charge/dash	name	target	48
+Tendon Rip	strike	cast type	melee	17
+Thunder Clap	aura	cast type	self	104
+Thunderstomp	stomp	name	melee	308
+Thunderstorm	aura	cast type	self	33
+Tidal Force	aura	cast type	self	34
+Tranquilizing Shot	bolt	name	ranged	3
+Trueshot Aura	buff aura	name(ambiguous: buff aura/bolt)	self	1
+Turn Evil	spell	cast type	target	3
+Typhoon	bolt	cast type	ranged	13
+Unholy Blight	bolt	name	target	9
+Unholy Presence	bolt	name	self	4
+Vampiric Blood	aura	corrected by hand	self	136
+Vampiric Embrace	aura	corrected by hand	self	46
+Vanish	aura	cast type	self	4
+Venom Web Spray	breath/spray	name(ambiguous: breath/spray/bolt/web/trap)	target	3
+Victory Rush	strike	corrected by hand	melee	137
+Vigilance	bolt	name	target	13
+Volley	spell	cast type	target	16
+Web	web/trap	name	target	4
+Whirlwind	aura	cast type	self	78
+Will of the Forsaken	aura	cast type	self	2
+Wind Shear	bolt	cast type	ranged	24
+Wing Clip	strike	cast type	melee	2
+Wolverine Bite	bite	name	melee	108
+Wrath	bolt	cast type	ranged	2

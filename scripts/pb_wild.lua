@@ -82,14 +82,14 @@ end
 
 -- Where a wild pet appears: a random spot 5-50 yd from its mob (the user wants them spread out, not stacked on the mob). The ground there must exist and sit within
 -- MAX_DZ of the mob's height (rejects cliffs, lake beds, spots under a roof/overhang); up to 8 tries, otherwise the old close spot (3 yd) so a spawn never fails.
-local MIN_DIST, MAX_DIST, MAX_DZ, TRIES = 5, 50, 5, 8
+local MIN_DIST, MAX_DIST, MAX_DZ, TRIES = 5, 50, 2.5, 8   -- MAX_DZ: the terrain only has to be roughly level with the mob (the creature then settles on the REAL floor, verified -1.5..+3 yd)
 local function SpawnSpot(mx, my, mz, height, rand)
     rand = rand or math.random
     for _ = 1, TRIES do
         local ang, dist = rand() * 6.2832, MIN_DIST + rand() * (MAX_DIST - MIN_DIST)
         local x, y = mx + math.cos(ang) * dist, my + math.sin(ang) * dist
         local ok, h = pcall(height, x, y)
-        if ok and h and h > -1000 and math.abs(h - mz) <= MAX_DZ then return x, y, h + 0.1 end
+        if ok and h and h > -1000 and math.abs(h - mz) <= MAX_DZ then return x, y, mz + 1.0 end   -- spawn a yard above the mob's height; the heightmap is NOT the floor in mines/caves, the movement system finds the real one
     end
     local ang = rand() * 6.2832
     return mx + math.cos(ang) * 3, my + math.sin(ang) * 3, mz
@@ -98,18 +98,25 @@ end
 local function Spawn(player, species, mob, types)
     local map = player:GetMapId()
     local x, y, z = SpawnSpot(mob:GetX(), mob:GetY(), mob:GetZ(), function(px, py) local m = mob:GetMap(); return m and m:GetHeight(px, py, 1) end)
-    local obj = PerformIngameSpawn(1, species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)
+    local obj = PerformIngameSpawn(1, D.StandIn(species) or species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)   -- a stand-in clone is BORN at the pet scale (template DisplayScale): no full-size flash
     if not obj then return end
+    local birthScale = obj:GetScale()   -- read BEFORE any SetScale: what the client gets in the create packet
     local g = obj:GetGUIDLow()
-    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = map, x = x, y = y, z = z, born = os.time(), types = types }   -- registered first, configured after
+    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = map, x = x, y = y, z = z, born = os.time(), types = types, birthScale = birthScale, birthLevel = obj:GetLevel(), birthDisplay = obj:GetDisplayId() }   -- registered first, configured after
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)                 -- friendly to everyone
-    pcall(function() obj:SetScale(Store.Scale(species)) end)
-    CreateLuaEvent(function() local o = wild[g] and Obj(wild[g]); if o then pcall(function() o:SetScale(Store.Scale(species)) end) end end, 700, 1)   -- once more shortly after the spawn
+    -- NO SetLevel: stand-in clones are level 80 on purpose (any level change on a visible creature plays the level-up animation). The wild pet's real level lives in wild[g].level (menu, blips, battle).
+    local bornDisplay = obj:GetDisplayId()
+    local wantScale = Store.ScaleOf(species, bornDisplay)   -- the scale of the model that spawned (each template model row carries its own DisplayScale)
+    wild[g].wantScale = wantScale
+    pcall(function() obj:SetScale(wantScale) end)
+    CreateLuaEvent(function() local o = wild[g] and Obj(wild[g]); if o then pcall(function() o:SetScale(wantScale) end) end end, 700, 1)   -- once more shortly after the spawn
     pcall(function() local d = obj:GetDisplayId(); if d and d > 0 then wild[g].display = d end end)   -- the skin the player SEES is the skin they can recruit
     pcall(function() obj:SetNPCFlags(1) end)                 -- gossip: right-click works
     pcall(function() obj:SetPhaseMask(1, true) end)
+    pcall(function() obj:MoveTo(1, x, y, z, true) end)   -- settle on the real floor
     pcall(function() obj:MoveRandom(3) end)
+    return obj
 end
 
 -- strategy A: the real critter itself becomes the wild pet (no duplicate next to it)
@@ -191,7 +198,7 @@ local function Tick()
         local live = Obj(w)
         if live then w.x, w.y = live:GetX(), live:GetY() end   -- a wandering critter moves
         if live and not w.adopted and (w.rescale or 0) < 3 then   -- the pet-sized scale again for the first ticks after the spawn (some pets showed full size for a while)
-            w.rescale = (w.rescale or 0) + 1; pcall(function() live:SetScale(Store.Scale(w.species)) end)
+            w.rescale = (w.rescale or 0) + 1; pcall(function() live:SetScale(w.wantScale or Store.Scale(w.species)) end)
         end
         local near = false
         for _, pl in ipairs(players) do
@@ -276,6 +283,7 @@ for species, sp in pairs(D.species) do
     if sp.wild then
         RegisterCreatureGossipEvent(species, 1, OnHello)
         RegisterCreatureGossipEvent(species, 2, OnSelect)
+        if D.StandIn(species) then RegisterCreatureGossipEvent(D.StandIn(species), 1, OnHello); RegisterCreatureGossipEvent(D.StandIn(species), 2, OnSelect) end
     end
 end
 
@@ -285,5 +293,137 @@ PB_WILD.SpawnSpot = SpawnSpot
 PB_WILD.BlipTick, PB_WILD.Scanned, PB_WILD.Cleaned = BlipTick, scanned, cleaned
 PB_WILD.Tick, PB_WILD.Count = Tick, function() local n = 0; for _ in pairs(wild) do n = n + 1 end; return n end
 PB_WILD.OnHello, PB_WILD.OnSelect, PB_WILD.Wild = OnHello, OnSelect, wild
+
+-- .pbcheck (GM only): spawns 8 wild pets around the caller through the REAL spawn path, then reports PASS/FAIL per pet in the chat: born at the pet scale (no full-size flash) and settled on a floor
+-- (height within 4 yd of the caller). The pets stay 25 s so you can look, then are removed. Run it anywhere (e.g. inside a mine).
+local function CheckSet()
+    local ids = {}
+    for sp, d in pairs(D.species) do if d.wild and D.StandIn(sp) then ids[#ids + 1] = sp end end
+    table.sort(ids, function(a, b) return Store.Scale(a) < Store.Scale(b) end)
+    local pick, seen = {}, {}
+    local function add(sp) if sp and not seen[sp] and D.species[sp] then seen[sp] = true; pick[#pick + 1] = sp end end
+    add(ids[1]); add(ids[#ids]); add(43); add(6827)   -- 6827 = Crab: 4 very different models
+    for _, q in ipairs({ 0.25, 0.5, 0.75, 0.9 }) do add(ids[math.max(1, math.floor(#ids * q))]) end
+    return pick
+end
+local function RunCheck(player)
+    local pg = player:GetGUID()
+    local px, py, pz = player:GetX(), player:GetY(), player:GetZ()
+    local made = {}
+    for _, sp in ipairs(CheckSet()) do
+        for _ = 1, 2 do   -- twice: a species with several models shows a random one
+            local ok, obj = pcall(Spawn, player, sp, player, { sp })
+            if ok and obj then made[#made + 1] = { sp = sp, g = obj:GetGUIDLow() } else player:SendBroadcastMessage("[pbcheck] FAIL spawn " .. D.species[sp].name .. " " .. tostring(obj)) end
+        end
+    end
+    print("[pbcheck] start"); player:SendBroadcastMessage("[pbcheck] spawned " .. #made .. " wild pets near you, measuring...")
+    CreateLuaEvent(function()
+        local pl = GetPlayerByGUID(pg); if not pl then return end
+        local fails = 0
+        for _, m in ipairs(made) do
+            local w = wild[m.g]; local o = w and Obj(w)
+            if not o then fails = fails + 1; pl:SendBroadcastMessage("[pbcheck] FAIL " .. D.species[m.sp].name .. ": pet gone")
+            else
+                local want, born, z = Store.ScaleOf(m.sp, w.birthDisplay), w.birthScale or -1, o:GetZ()
+                local width = Store.SizeOf(m.sp, w.birthDisplay)
+                local okS, okZ = math.abs(born - want) < 0.01 and o:GetLevel() == w.birthLevel and (not width or (D.species[m.sp].companion and width <= 0.91) or math.abs(width - 0.53) < 0.01), math.abs(z - pz) < 4
+                if not (okS and okZ) then fails = fails + 1 end
+                local line = string.format("[pbcheck] %s %-24s born-scale %.2f (want %.2f)  size %.2f yd  height %+.1f vs you", (okS and okZ) and "PASS" or "FAIL", D.species[m.sp].name, born, want, width or 0, z - pz); pl:SendBroadcastMessage(line); print(line)
+            end
+        end
+        local sum = fails == 0 and ("[pbcheck] ALL " .. #made .. " PASS") or ("[pbcheck] " .. fails .. " FAILED (of " .. #made .. ")"); pl:SendBroadcastMessage(sum); print(sum)
+    end, 3000, 1)
+    CreateLuaEvent(function() for _, m in ipairs(made) do pcall(Remove, m.g, false, false, "pbcheck") end end, 25000, 1)
+end
+PB_WILD.Check = RunCheck
+RegisterPlayerEvent(42, function(_, player, command)
+    if not player or not command or not command:match("^pbcheck%s*$") then return end
+    if player:GetGMRank() < 2 then return end
+    RunCheck(player)
+end)
+
+
+-- .pbsize <species id> (GM only): a size calibration lineup 4 yd in front of you, left to right: the Mine Spider (the reference you approved) and the species at 4 scales: x1 (what the formula says),
+-- x0.5, x0.25, x0.1. Look at which one matches the spider; the chat says the order. Removed after 90 s.
+local function RunSize(player, sp)
+    local d = D.species[sp]
+    if not (d and D.StandIn(sp)) then player:SendBroadcastMessage("[pbsize] unknown species " .. tostring(sp)) return end
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
+    local list = { { 43, nil, "Mine Spider (reference)" } }
+    for _, f in ipairs({ 1, 0.5, 0.25, 0.1 }) do list[#list + 1] = { sp, f, d.name .. " x" .. f } end
+    for i, e in ipairs(list) do
+        local off = (i - 3) * 2.2
+        local px, py = x + fx * 4 + lx * off, y + fy * 4 + ly * off
+        local obj = PerformIngameSpawn(1, D.StandIn(e[1]), player:GetMapId(), 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
+        if obj then
+            pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+            local disp = obj:GetDisplayId()
+            local sc = Store.ScaleOf(e[1], disp) * (e[2] or 1)
+            pcall(function() obj:SetScale(sc) end)
+            pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
+            pcall(function() obj:RegisterEvent(function(ev, dl, n, c) c:DespawnOrUnsummon(0) end, 90000, 1) end)   -- removed after 90 s
+            local line = string.format("[pbsize] %d. %s  scale %.3f  display %s", i, e[3], sc, tostring(disp)); player:SendBroadcastMessage(line); print(line)
+        end
+    end
+    player:SendBroadcastMessage("[pbsize] left to right as listed. Which one matches the spider?")
+end
+PB_WILD.Size = RunSize
+RegisterPlayerEvent(42, function(_, player, command)
+    local id = command and command:match("^pbsize%s+(%d+)%s*$")
+    if not player or not id then return end
+    if player:GetGMRank() < 2 then return end
+    RunSize(player, tonumber(id))
+end)
+
+-- .pbcrab (GM only): spawns ONLY the Crab (species 6827) 4 yd in front of you at its computed scale (screenshot it next to your character). Removed after 90 s.
+local function RunCrab(player)
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local obj = PerformIngameSpawn(1, D.StandIn(6827), player:GetMapId(), 0, x + math.cos(o) * 4, y + math.sin(o) * 4, z + 1.0, o + 3.14159, false, 0, 1)
+    if not obj then player:SendBroadcastMessage("[pbcrab] spawn failed") return end
+    pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+    local sc = Store.ScaleOf(6827, obj:GetDisplayId())
+    pcall(function() obj:SetScale(sc) end)
+    pcall(function() obj:MoveTo(1, x + math.cos(o) * 4, y + math.sin(o) * 4, z + 1.0, true) end)
+    pcall(function() obj:RegisterEvent(function(ev, d, n, c) c:DespawnOrUnsummon(0) end, 90000, 1) end)
+    local line = string.format("[pbcrab] Crab spawned in front of you, scale %.3f, display %s (removed in 90 s)", sc, tostring(obj:GetDisplayId())); player:SendBroadcastMessage(line); print(line)
+end
+PB_WILD.Crab = RunCrab
+RegisterPlayerEvent(42, function(_, player, command)
+    if not player or not command or not command:match("^pbcrab%s*$") then return end
+    if player:GetGMRank() < 2 then return end
+    RunCrab(player)
+end)
+
+-- .pbk (GM only): display-scale calibration grid. Pets whose client display scale k runs from 0.1 to 0.8 (the client seems to ignore a tiny k: the Crab, k=0.1, was drawn ~10x too big), each at its
+-- COMPUTED scale, 4 columns x 3 rows in front of you, nearest row first, left to right as listed in the chat. If k were honored they would all look the same size. Removed after 120 s.
+local KSAMPLES = { { 6827, 0.1 }, { 1512, 0.1 }, { 1553, 0.15 }, { 1513, 0.2 }, { 3251, 0.25 }, { 1554, 0.3 }, { 30, 0.4 }, { 43, 0.55 }, { 3461, 0.5 }, { 113, 0.6 }, { 1120, 0.8 }, { 299, 0.4 } }
+local function RunK(player)
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
+    for i, e in ipairs(KSAMPLES) do
+        local sp = e[1]
+        if D.species[sp] and D.StandIn(sp) then
+            local col, row = (i - 1) % 4, math.floor((i - 1) / 4)
+            local px, py = x + fx * (7 + row * 5) + lx * (col - 1.5) * 4.5, y + fy * (7 + row * 5) + ly * (col - 1.5) * 4.5
+            local obj = PerformIngameSpawn(1, D.StandIn(sp), player:GetMapId(), 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
+            if obj then
+                pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+                local sc = Store.ScaleOf(sp, obj:GetDisplayId())
+                pcall(function() obj:SetScale(sc) end)
+                pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
+                pcall(function() obj:RegisterEvent(function(ev, d, n, c) c:DespawnOrUnsummon(0) end, 120000, 1) end)
+                local line = string.format("[pbk] %d. %s  client display scale %.2f  our scale %.3f", i, D.species[sp].name, e[2], sc); player:SendBroadcastMessage(line); print(line)
+            end
+        end
+    end
+    player:SendBroadcastMessage("[pbk] nearest row first, left to right. Take ONE screenshot with all of them in view.")
+end
+PB_WILD.K = RunK
+RegisterPlayerEvent(42, function(_, player, command)
+    if not player or not command or not command:match("^pbk%s*$") then return end
+    if player:GetGMRank() < 2 then return end
+    RunK(player)
+end)
 print("[pb_wild] loaded")
 return true

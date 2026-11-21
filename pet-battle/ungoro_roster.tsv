@@ -1,7 +1,7 @@
 # ungoro pet roster (map 1 box x -8000..-6100, y -2700..-300, mobs level <= 57, rank 0, no npcflag/citizen/guard names; include Y/N by gen_zone.py). Same columns as elwynn_roster.tsv.
 # archetype is obsolete (retail kits now).
 include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
-Y	10541	Krakle's Thermometer	1	Critter	0	0	5	7804	Melee		
+N	10541	Krakle's Thermometer	1	Critter	0	0	5	7804	Melee		excluded 2026-11-21: quest NPC (Un'Goro thermometer), not a pet
 Y	9600	Parrot	1	Critter	0	0	11	8816	Melee		
 Y	2914	Snake	1	Critter	0	0	17	1206	Melee		already a species
 Y	1420	Toad	1	Critter	0	0	37	901	Melee		already a species

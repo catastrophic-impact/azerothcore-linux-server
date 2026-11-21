@@ -996,7 +996,6 @@ D.species = {
     [215] = { name = "Defias Night Runner", retail = 1803, wild = true, icon = "INV_Misc_Bandana_03" },
     [3] = { name = "Flesh Eater", retail = 2553, wild = true, icon = "Spell_Nature_NullifyDisease" },
     -- ---- Ashenvale roster (retail pet levels 4-5; kits hand-picked, ashenvale_picks.tsv)
-    [6145] = { name = "School of Fish", retail = 417, wild = true, icon = "Ability_Druid_Dash" },
     [4009] = { name = "Raging Cliff Stormer", retail = 1542, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [3816] = { name = "Wild Buck", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [3812] = { name = "Clattering Crawler", retail = 388, wild = true, icon = "Ability_Hunter_Pet_Crab" },
@@ -1292,7 +1291,6 @@ D.species = {
     [4150] = { name = "Saltstone Gazer", retail = 89, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     [4143] = { name = "Sparkleshell Snapper", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Wolf" },
     -- ---- Un'Goro Crater roster (retail pet levels 15-16; kits hand-picked, ungoro_picks.tsv)
-    [10541] = { name = "Krakle's Thermometer", retail = 417, wild = true, icon = "Ability_Druid_Dash" },
     [9600] = { name = "Parrot", retail = 385, wild = true, icon = "Ability_Druid_Dash" },
     [6509] = { name = "Bloodpetal Lasher", retail = 204, wild = true, icon = "Spell_Nature_HealingWay" },
     [9165] = { name = "Fledgling Pterrordax", retail = 1470, wild = true, icon = "Ability_Hunter_Pet_Bat" },

@@ -112,8 +112,8 @@ damage-vuln-p3-cd0	0	G009	5	keep	163,1093,1681,1796,2023	Starts a stampede, caus
 damage-vuln-p3-cd0#2	0	G016	4	keep	198,706,870,1002	Starts a Zergling Rush, causing X damage on the first round, X on the second round, and X on the third round. Opponents struck by the rush take X% increased damage for N rounds. Zergling Rush continues for X rounds.
 damage-vuln-p3-cd0#3	0	G241	1	keep	581	Flocks the target, causing X damage on the first round, X on the second round, and X on the third round. Lasts X rounds. Opponents struck by the flock take X% increased damage for N rounds.
 damage-vuln-p5-cd0	0	G403	1	keep	1773	Swarms the target, causing X damage every round. Lasts X rounds. Opponents struck by the flock take X% increased damage for N rounds.
-damageshield-cd0	0	G166	1	engine-gap	318	Deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-defense-cd0	0	G165	1	engine-gap	315	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-cd0	0	G166	1	keep	318	Deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-defense-cd0	0	G165	1	keep	315	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
 defense-cd0	0	G010	5	keep	310,431,436,597,1045	Reduces up to X damage from each attack against you. Lasts N rounds.
 dmgup-accup-cd0	0	G353	1	keep	1232	Calls upon Anzu's power, increasing damage and accuracy of your active pet by X% for N |4round:rounds.
 dmgup-twostep-cd0	0	G053	2	keep	297,459	First use: Increases your damage dealt by 10%. Second use: Blasts the target with a surge of water, dealing X damage.
@@ -133,14 +133,14 @@ dot-cd0#7	0	G255	1	engine-gap	632	The target is stung, dealing X X damage every 
 dot-cd0#8	0	G269	1	engine-gap	743	A creeping fungus infects the target, causing X damage each round for N |4round:rounds. Deals additional damage in Moonlight.
 dot-cd0#9	0	G344	1	keep	1087	Excretes toxin from the user's pores for N |4round:rounds, dealing 5% of the target's max health as damage when they attack you.
 dot-object-delayed-cd0	0	G086	2	objects	636,1072	Throws a sticky grenade at the target. After 3 rounds, the grenade detonates, dealing X damage. An enemy pet can only be affected by one sticky grenade at a time.
-dot-vuln-cd0	0	G174	1	engine-gap	369	Spits Poison goo onto the target, dealing X damage each round and increasing damage taken by X% for N rounds.
+dot-vuln-cd0	0	G174	1	keep	369	Spits Poison goo onto the target, dealing X damage each round and increasing damage taken by X% for N rounds.
 heal-p0-cd0	0	G108	2	keep	1336,1338	Relish in your dominance as the greatest stuffed animal ever.
 hot-cd0	0	G149	1	keep	254	Fills the area with peace, causing your active pet to restore X health every round. Lasts N rounds. Persists through pet swaps.
 hot-cd0#2	0	G154	1	engine-gap	268	Restores X healing every round. Lasts N rounds. Twice as effective in sunny weather.
 hot-cd0#3	0	G180	1	keep	396	Restores X health to your active pet every round for N |4round:rounds. Persists through pet swaps.
 hot-cd0#4	0	G220	1	keep	511	Fills the area with a healing mist, causing your front pet to restore X health every round. Lasts N rounds. Persists through pet swaps.
 hot-dot-cd0	0	G138	1	keep	212	Deals X damage per round for N |4round:rounds and heals the user for X.
-hot-typechange-cd0	0	G237	1	engine-gap	574	Restores X health every round for N rounds. While healing, your type is transformed into .
+hot-typechange-cd0	0	G237	1	keep	574	Restores X health every round for N rounds. While healing, your type is transformed into .
 multihit-conditional-p10-cd0	0	G004	14	keep	184,193,202,228,360,394,441,455,617,713,789,1027,1840,2433	Flings 1-2 Quills at the enemy, dealing X damage per hit. Hits an additional time if the user attacks first.
 multihit-conditional-p10-cd0#2	0	G511	1	keep	2402	Slowly snaps at the enemy 1-2 times, dealing X damage per hit. Hits an additional time if the user attacks last.
 multihit-conditional-p15-cd0	0	G065	2	keep	412,504	Deals X damage plus X additional damage if the user attacks first.
@@ -218,7 +218,7 @@ damage-p9-cd2	2	G325	1	keep	1031	Brings forth jadefire lightning to deal X damag
 damage-speeddown-dmgdown-p15-cd2	2	G383	1	keep	1556	Deals X damage and reduces the target's speed by X% and damage done by X% for N rounds.
 damage-stunchance-p20-cd2	2	G280	1	keep	775	Fires a perfumed arrow, dealing X damage and has a X% chance to stun the target for N rounds.
 damage-untargetable-delayed-p16-cd2	2	G551	1	keep	2483	Defy gravity, leaping high up in the air and becoming unattackable for one round. On the next round, pound the ground, dealing X damage to the enemy and half that damage to their backline pets.
-damageshield-conditional-cd2	2	G341	1	engine-gap	1073	Deals X damage each time you take direct damage. Effectiveness is tripled for N rounds if this ability is used while already active. Lasts N rounds.
+damageshield-conditional-cd2	2	G341	1	keep	1073	Deals X damage each time you take direct damage. Effectiveness is tripled for N rounds if this ability is used while already active. Lasts N rounds.
 dmgup-cd2	2	G324	1	keep	1029	Increases the damage of your next attack made within N rounds by X%.
 dot-conditional-cd2	2	G282	1	engine-gap	786	Chills the air around the enemy, causing them to be afflicted with Frostbite each round for N |4round:rounds. Frostbite's damage grows until the pet is swapped. Blistering Cold lasts for N rounds. Persists through pet swaps.
 dot-object-cd2	2	G268	1	objects	710	Builds a turret that assaults the enemy team's front pet, dealing X damage each round. Each turret lasts N rounds.
@@ -299,8 +299,8 @@ damage-weather-p27-cd3	3	G136	1	keep	206	Deals X damage and causes a Blizzard fo
 damage-weather-p8-cd3	3	G321	1	keep	1013	Deals X damage to enemy team and causes a Blizzard for N rounds. Deals additional damage against targets already Chilled. During a Blizzard, all pets are considered Chilled.
 damage-weather-p9-cd3	3	G335	1	keep	1051	Poisons the clouds with acid, dealing X damage to all enemies. The acid quickly disperses and calls down a cleansing rain for N rounds. During a cleansing rain, the duration of hostile damage over time effects is reduced by 1 round and Aquatic abilities deal 25% more damage.
 damageshield-cd3	3	G532	1	engine-gap	2435	Deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-defense-cd3	3	G479	1	engine-gap	2324	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-reflectpct-cd3	3	G347	1	engine-gap	1105	The user is shielded, dealing 50% of the damage they take to their attacker for N rounds.
+damageshield-defense-cd3	3	G479	1	keep	2324	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-reflectpct-cd3	3	G347	1	keep	1105	The user is shielded, dealing 50% of the damage they take to their attacker for N rounds.
 defense-cd3	3	G142	1	keep	225	The user shrugs off attacks, reducing all damage taken by 50% for 2 rounds.
 dmgup-cd3	3	G045	2	keep	208,1720	Increases the damage of your next attack made within N rounds by X%.
 dmgup-cd3#2	3	G210	1	engine-gap	488	Increases the damage done by your active pet by X% for N rounds.
@@ -315,7 +315,7 @@ heal-dot-weather-p30-cd3	3	G546	1	engine-gap	2466	Restores X health to the user 
 heal-p12-cd3	3	G054	2	keep	298,1736	Sings an inspiring song, which restores X health to all allies.
 heal-p20-cd3	3	G014	4	keep	168,173,1078,1933	Restores X health plus half of the last hit taken by the user.
 heal-p24-cd3	3	G228	1	keep	533	Rebuilds broken pets, restoring X health to itself, and half that amount to other mechanical allies.
-heal-p24-cd3#2	3	G299	1	engine-gap	922	Calls upon the healing streams, restoring X health to the user, and half that to other aquatic allies.
+heal-p24-cd3#2	3	G299	1	keep	922	Calls upon the healing streams, restoring X health to the user, and half that to other aquatic allies.
 heal-p28-cd3	3	G080	2	keep	576,611	Restores X health and increases the maximum health of your active pet by X per level for N rounds.
 heal-p30-cd3	3	G023	3	keep	123,573,1065	Restores X health to the user.
 heal-weather-p9-cd3	3	G144	1	keep	230	Restores X health to your team and calls down a cleansing rain for N rounds. During a cleansing rain, the duration of hostile damage over time effects is reduced by 1 round and Aquatic abilities deal 25% more damage.
@@ -348,7 +348,7 @@ damage-drain-dot-p10-cd4	4	G270	1	keep	745	Plants a seed in the target, instantl
 damage-drain-healtakenup-weather-p6-cd4	4	G050	2	keep	258,979	Deals X damage to all enemy pets, restores X health to all allies and turns the weather into Moonlight for N |4round:rounds. During Moonlight, all pets receive 25% additional healing and Magic abilities deal 10% additional damage.
 damage-drain-p20-cd4	4	G101	2	keep	1016,2403	Deals X damage. The user is healed for X% of the damage dealt.
 damage-forceswap-p10-cd4	4	G033	3	keep	780,1356,1963	Deals X damage and forces the opponent's lowest health pet to swap into battle.
-damage-forceswap-p10-cd4#2	4	G413	1	engine-gap	1944	Deals X damage and forces the opponent's highest health pet to swap into battle.
+damage-forceswap-p10-cd4#2	4	G413	1	keep	1944	Deals X damage and forces the opponent's highest health pet to swap into battle.
 damage-forceswap-p10-cd4#3	4	G443	1	keep	2214	Deals X damage and forces the opponent's lowest health pet to swap into battle.
 damage-forceswap-p50-cd4	4	G547	1	keep	2469	Deals X damage and forces the opponent's lowest health pet to swap into battle.
 damage-goesfirst-p7-cd4	4	G179	1	keep	387	Pounds the ground, dealing X damage to the enemy and half that damage to their backline pets. Tantrum continues for X rounds and can affect enemies underground.
@@ -376,10 +376,10 @@ damage-untargetable-delayed-p30-cd4#5	4	G249	1	engine-gap	612	Fly up high, becom
 damage-untargetable-p25-cd4	4	G538	1	keep	2453	Strikes the enemy for X damage, then rapidly retreats, becoming unattackable for one round.
 damage-untargetable-p30-cd4	4	G242	1	keep	588	Fly up high, becoming unattackable for one turn. On the next turn, you attack, dealing X damage.
 damage-vuln-p5-cd4	4	G298	1	keep	921	Hunt in a party of raptors, causing X damage. Opponents struck by the hunting party take X% increased damage for N rounds. Hunting Party continues for X rounds.
-damageshield-cd4	4	G290	1	engine-gap	906	Deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-cd4#2	4	G308	1	engine-gap	945	Deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-cd4#3	4	G389	1	engine-gap	1598	Deals X damage each time you take direct damage. Lasts N rounds.
-damageshield-defense-cd4	4	G294	1	engine-gap	914	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-cd4	4	G290	1	keep	906	Deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-cd4#2	4	G308	1	keep	945	Deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-cd4#3	4	G389	1	keep	1598	Deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-defense-cd4	4	G294	1	keep	914	Reduces up to X damage from each attack against you and deals X damage each time you take direct damage. Lasts N rounds.
 defense-cd4	4	G024	3	keep	165,392,1733	The user lowers its body close to the ground, reducing all damage taken by 50% for N rounds.
 defense-cd4#2	4	G349	1	keep	1112	The user becomes surprisingly resilient, reducing all damage taken by 50% for N rounds.
 defense-cd4#3	4	G391	1	keep	1627	Reduces up to X damage from each attack against your active pet. Lasts N rounds.
@@ -416,7 +416,7 @@ damage-accdown-healtakendown-weather-p45-cd5	5	G150	1	keep	256	A shadow falls ac
 damage-accdown-p25-cd5	5	G510	1	keep	2396	Throws fel ashes into the target's eyes, dealing X damage and reducing their hit chance by X% for N rounds.
 damage-dmgup-p30-cd5	5	G309	1	keep	957	Evolve, dealing X damage and mutating the user, increasing the damage they deal by X% for N |4round:rounds.
 damage-dot-p5-cd5	5	G415	1	keep	1954	Instantly deals X damage to the enemy team and Poisons the enemy team for X additional X damage per round for N |4round:rounds.
-damage-forceswap-p20-cd5	5	G198	1	engine-gap	457	Deals X damage and forces the opponent's highest health pet to swap into battle.
+damage-forceswap-p20-cd5	5	G198	1	keep	457	Deals X damage and forces the opponent's highest health pet to swap into battle.
 damage-forceswap-p20-cd5#2	5	G396	1	keep	1756	Deals X damage and forces the opponent's lowest health pet to swap into battle.
 damage-noswap-p30-cd5	5	G291	1	keep	909	Sends a paralyzing shock through the target, dealing X damage. The target cannot swap for N rounds.
 damage-noswap-recharge-p50-cd5	5	G244	1	keep	593	Instantly deals X damage. The user must recharge for two |4round:rounds afterwards. While recharging, you cannot perform any other actions.
@@ -426,13 +426,13 @@ damage-p40-cd5#2	5	G394	1	keep	1717	Unleashes all remaining charge, dealing X da
 damage-recharge-p50-cd5	5	G137	1	keep	209	Instantly deals X Mechanical damage. The user must recharge for two rounds afterwards. While recharging, you cannot perform any other actions.
 damage-stunchance-p40-cd5	5	G111	2	keep	1536,2512	Deals X damage and has a 25% chance to stun the target.
 damage-swap-dot-p15-cd5	5	G541	1	keep	2456	Instantly deals X damage and Poisons the target for X additional X damage per round for N |4round:rounds. At the end of the round, the opponent's lowest health pet is swapped into battle.
-damage-swapself-p12-cd5	5	G424	1	engine-gap	1989	Deals X damage to the enemy team and swaps the user with your highest health pet.
+damage-swapself-p12-cd5	5	G424	1	keep	1989	Deals X damage to the enemy team and swaps the user with your highest health pet.
 damage-swapself-vuln-p12-cd5	5	G552	1	engine-gap	2484	Deals X damage to the enemy team and swaps the user with your highest health pet. Opponents struck by Fight and Flight take X% increased damage for N rounds.
 damage-untargetable-delayed-p40-cd5	5	G514	1	keep	2407	Submerges into a puddle of ooze, becoming unattackable for one round. On the next round, you attack, dealing X damage.
 damage-weather-p15-cd5	5	G183	1	keep	404	A Solar Beam strikes all enemies, dealing X damage and transforms the weather into a sunny day for N rounds. During a sunny day, the maximum health of all pets is increased by X%. and healing done is increased by X%.
-damage-weather-p45-cd5	5	G135	1	engine-gap	204	Deals X damage and causes a Lightning Storm for N rounds. During a Lightning Storm, all pets deal X bonus X damage on each attack and Mechanical abilities deal 25% additional damage.
+damage-weather-p45-cd5	5	G135	1	keep	204	Deals X damage and causes a Lightning Storm for N rounds. During a Lightning Storm, all pets deal X bonus X damage on each attack and Mechanical abilities deal 25% additional damage.
 damage-weather-p45-cd5#2	5	G199	1	keep	460	Deals X damage and transforms the weather into a sunny day for N rounds. During a sunny day, the maximum health of all pets is increased by X% and healing done is increased by X%.
-damageshield-cd5	5	G395	1	engine-gap	1754	Deals X damage each time you take direct damage. Lasts N rounds.
+damageshield-cd5	5	G395	1	keep	1754	Deals X damage each time you take direct damage. Lasts N rounds.
 defense-cd5	5	G311	1	keep	960	Reduces up to X damage from each attack against you. Lasts N rounds.
 defense-cd5#2	5	G366	1	keep	1380	Reduces up to X damage from each attack against you. Lasts N rounds.
 delayed-cd5	5	G248	1	engine-gap	606	Launches an elementium bolt at the enemy team. After N rounds, the bolt strikes, causing the current enemy pet to take X damage and become stunned for N rounds.
@@ -476,10 +476,10 @@ dot-object-cd6	6	G553	1	objects	2489	Places a shadow trap onto the ground. Oppon
 heal-p45-cd6	6	G376	1	keep	1466	The caster enters a stone state and restores X health each turn for 3 turns.
 stun-speedup-dodge-goesfirst-delayed-cd6	6	G544	1	keep	2460	Draws upon the power of the user's shell to defend against all attacks for the current round and the next round. User cannot act while projecting the shield. This ability always goes first.
 swapin-resetcooldowns-cd6	6	G407	1	engine-gap	1905	The next pet you swap in will have all of its cooldowns reset.
-swapself-heal-p25-cd6	6	G540	1	engine-gap	2455	Instantly heals all allies for X. At the end of the round, the user swaps automatically with your highest health pet.
+swapself-heal-p25-cd6	6	G540	1	keep	2455	Instantly heals all allies for X. At the end of the round, the user swaps automatically with your highest health pet.
 avoidswap-cd7	7	G512	1	keep	2405	The caster returns to death, avoiding the opponent's attack. The user then swaps automatically with your lowest health pet.
-avoidswap-cd8	8	G079	2	engine-gap	568,1583	The user feigns death, avoiding the opponent's attack. The user then swaps automatically with your highest health pet.
-avoidswap-cd8#2	8	G106	2	engine-gap	1125,1936	The user jumps through a magical portal, avoiding the opponent's attack. The user then swaps automatically with your highest health pet.
+avoidswap-cd8	8	G079	2	keep	568,1583	The user feigns death, avoiding the opponent's attack. The user then swaps automatically with your highest health pet.
+avoidswap-cd8#2	8	G106	2	keep	1125,1936	The user jumps through a magical portal, avoiding the opponent's attack. The user then swaps automatically with your highest health pet.
 block-cd8	8	G303	1	keep	934	A bubble surrounds you, blocking the next two attacks.
 block-object-cd8	8	G169	1	objects	334	Creates a wooden decoy that protects your team from two attacks.
 dodge-cd8	8	G342	1	keep	1084	The user fades away, avoiding the opponent's attack. The user then swaps with a random pet.

@@ -1045,6 +1045,27 @@ local function FX38(X, f)
         pet.auras = {}; SyncMax(pet)
 end
 
+-- Swap (145), as a normal effect of the turn (Portal / Feign Death use 145 as a PROC and are handled elsewhere): after the hit, a pet swaps with the HIGHEST health living pet of its team.
+-- A 158 earlier in the same turn means the target is the OPPONENT (Sweep, Retrieve: "forces the opponent's highest health pet to swap into battle"); without it the USER swaps out
+-- (Shell Rush, Fight and Flight: "swaps the user with your highest health pet"). Same event shape as Nether Gate / Portal.
+local function FX145(X, f)
+    local b, ev, s, tgt, pet = X.b, X.ev, X.s, X.tgt, X.pet
+    local enemy = false
+    for _, g in ipairs(X.turn.fx) do if g == f then break end; if g.prop == 158 then enemy = true end end
+    local side = enemy and Other(s) or s
+    local cand = {}
+    for i2, q in ipairs(b[side]) do if q.hp > 0 and i2 ~= b.active[side] then cand[#cand + 1] = i2 end end
+    table.sort(cand, function(x, y) local hx, hy = b[side][x].hp, b[side][y].hp; if hx ~= hy then return hx > hy end return x < y end)
+    local ok
+    if enemy then ok = X.landed and tgt.hp > 0 and Mod(tgt, "swapOutLock") == 0 else ok = pet.hp > 0 and Mod(pet, "swapOutLock") == 0 end
+    if ok and #cand > 0 then
+        local from = b.active[side]; b[side][from].channel = nil
+        b.active[side] = cand[1]
+        ev[#ev + 1] = { k = "swap", side = side, from = from, idx = b.active[side], free = true, forced = true }
+        Detonate(b, ev, side)
+    end
+end
+
 -- Nether Gate (107): forces an opponent's pet to swap into battle (a random living one); Death Grip (139): the LOWEST health living pet
 local function FX39(X, f)
     local p = f.p
@@ -1147,6 +1168,8 @@ local EFFECTS = {
       FX38 },
     { function(f, X) local p = f.p; return f.prop == 107 or f.prop == 139 end,
       FX39 },
+    { function(f, X) return f.prop == 145 end,
+      FX145 },
     { function(f, X) local p = f.p; return not (INERT[f.prop] or DAMAGE[f.prop] or f.prop == 384 or f.prop == 385) end,
       FX40 },
 }

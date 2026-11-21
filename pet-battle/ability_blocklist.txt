@@ -17,7 +17,6 @@
 461	retail story text
 529	engine conformance (test_abilities)
 572	status label audit (audit_labels)
-574	engine conformance (test_abilities)
 600	status label audit (audit_labels)
 601	status label audit (audit_labels)
 602	status label audit (audit_labels)
@@ -50,7 +49,6 @@
 909	status label audit (audit_labels)
 910	status label audit (audit_labels)
 921	status label audit (audit_labels)
-922	known gap
 938	status label audit (audit_labels)
 942	status label audit (audit_labels)
 980	aura text/describe
@@ -142,7 +140,6 @@
 218	ability visual vs flavored name (test_ability_vis)
 513	ability visual vs flavored name (test_ability_vis)
 624	ability visual vs flavored name (test_ability_vis)
-369	ability visual vs flavored name (test_ability_vis)
 2062	ability visual vs flavored name (test_ability_vis)
 488	damaging aura shown as a buff (audit_labels BUFF THAT HURTS: aura 487 Blood Presence)
 2071	ability visual vs flavored name (test_ability_vis)

@@ -80,3 +80,5 @@ SetDuration=Aura (not probe-able here; the freeze tick works live)
 IsBot=Player (verified live: probe counted 300 bots)
 GetItemCount=Player
 RemoveItem=Player
+RegisterEvent=Creature (verified live 2026-11-21: callback gets eventId, delay, repeats, creature)
+GetScale=Creature (verified live 2026-11-21)

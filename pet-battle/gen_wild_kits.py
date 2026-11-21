@@ -80,13 +80,21 @@ GLAB = {}
 if os.path.exists('pet-battle/name_aliases.tsv'):
     for l in open('pet-battle/name_aliases.tsv', encoding='utf-8'):
         f = l.rstrip('\n').split('\t')
-        if not l.startswith('#') and len(f) >= 4: ALIAS.append((f[0], f[1], f[2], f[3], f[4] if len(f) > 4 else ''))
+        if not l.startswith('#') and len(f) >= 4: ALIAS.append((f[0], f[1], f[2], f[3], f[4] if len(f) > 4 else '', f[5] if len(f) > 5 else '', f[6] if len(f) > 6 else '', f[7] if len(f) > 7 else ''))
     for l in list(open('pet-battle/golden_effects.tsv', encoding='utf-8'))[1:]:
         f = l.split('\t'); GLAB[f[2]] = f[0]
-def alias(sname, icon, ename, bid):
+CTYPE = {}
+if os.path.exists('pet-battle/creature_types.tsv'):
+    for l in open('pet-battle/creature_types.tsv'):
+        f = l.split()
+        if len(f) == 2 and f[0].isdigit(): CTYPE[f[0]] = f[1]
+def alias(sname, icon, ename, bid, fam='', entry=''):
     lab = GLAB.get(bid[1:], '')
-    for sp, keep, eff, new, nicon in ALIAS:
+    for sp, keep, eff, new, nicon, famre, crre, cts in ALIAS:
         if sp != sname: continue
+        if famre and not re.search('^(' + famre + ')$', fam): continue   # optional 6th column: only for pets of these families
+        if cts and CTYPE.get(str(entry)) not in cts.split(','): continue   # optional 8th column: only creatures of these creature types (1,2,8 = animals)
+        if crre and not re.search(crre, ename, re.I): continue   # optional 7th column: only for creatures whose name matches
         if keep and re.search(keep, ename, re.I): continue
         if eff and not re.search(eff, lab): continue
         return new, (nicon or icon)
@@ -103,7 +111,7 @@ for realm, entry, name, fam, theme, arch, stats, *slots in rows:
     kit, names, ren = [], set(), {}
     for (slot, lvl), s in zip(LV, slots):
         b, aid, g, sname, spid, mode, icon = s.split('|')
-        sname, icon = alias(sname, icon, name, b)
+        sname, icon = alias(sname, icon, name, b, fam, entry)
         po = P_OWN.get((slot, lvl >= 10), 0.55)
         if rng.random() < po or not off[pf]: af = pf
         else:

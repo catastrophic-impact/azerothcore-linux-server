@@ -21,6 +21,7 @@ a0=src.index('local EFFECTS = {'); b0=src.index('\n}\n',a0)
 SUP=set(re.findall(r'f\.prop == (\d+)',src[a0:b0]))
 for t in('DAMAGE','APPLY','INERT'): SUP|=set(re.findall(r'\[(\d+)\]',re.search(r'local %s = \{(.*?)\}'%t,src).group(1)))
 SUP|={'384','385'}; BLOCK={'248','358','363','112','86','45','145'}
+VERIFIED=set(l.split('\t')[0].strip() for l in open('pet-battle/verified_gap_abilities.txt') if l.strip() and not l.startswith('#')) if os.path.exists('pet-battle/verified_gap_abilities.txt') else set()   # engine-gap abilities proven by the test layer (see that file)
 bl={l.split('\t')[0].strip() for l in open('pet-battle/ability_blocklist.txt') if l.strip() and not l.startswith('#')}
 # blocked for a REAL reason (2026-11-19: label-audit-only blocks were re-probed and pass; the audit blocklist entries no longer park an effect)
 bl_real={l.split('\t')[0].strip() for l in open('pet-battle/ability_blocklist.txt') if l.strip() and not l.startswith('#') and 'status label audit' not in l}
@@ -218,6 +219,7 @@ for r in rows:
     elif ps & BLOCK or not ps <= SUP: st_ = 'engine-gap'
     elif set(ids) & REAL_FAIL or all(i in bl_real for i in ids): st_ = 'engine-gap'   # 2026-11-19: probed, the engine really gets these wrong (delayed bolt never lands, block aura, backline/aoe targeting, restores)
     else: st_ = 'keep'
+    if st_ == 'engine-gap' and set(ids) <= VERIFIED: st_ = 'keep'   # every ability of the effect passed the ability tests with its distinctive mechanic checked
     lab, pts = label(a)
     full = '%s%s-cd%s' % (lab, ('-' + pts) if pts else '', r[1])
     seen[full] += 1

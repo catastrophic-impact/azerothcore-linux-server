@@ -4,11 +4,11 @@
 -- Usage (host): luajit pet-battle/sim_skill_kits.lua [pairings per level] [seed] [existing]      "existing" = the shipped wild species instead of the composed ones
 package.path = "scripts/?.lua;" .. package.path
 local D = require("pb_data"); require("pb_retail"); local Rules = require("pb_rules"); local C = require("pb_core")
-local N = tonumber(arg and arg[1]) or 2000; local SEED = tonumber(arg and arg[2]) or 7; local existing = arg and arg[3] == "existing"
+local N = tonumber(arg and arg[1]) or 2000; local SEED = tonumber(arg and arg[2]) or 7; local existing = arg and arg[3] == "existing"; local ALL = arg and arg[3] == "all"   -- "all": every wild species with its CURRENT (golden) kit
 local haveSyn = false; for _, sp in pairs(D.species) do if sp.synthetic then haveSyn = true; break end end
 if not existing and not haveSyn then dofile("pet-battle/.s/wild_kits.lua") end   -- the composed kits are normally loaded by pb_data itself (scripts/pb_wild_kits.lua)
 local LEVELS = { 10, 20 }
-local ids = {}; for e, s in pairs(D.species) do if (existing and s.wild and not s.synthetic) or (not existing and s.synthetic) then ids[#ids + 1] = e end end; table.sort(ids)
+local ids = {}; for e, s in pairs(D.species) do if ALL and s.wild then ids[#ids + 1] = e elseif (existing and s.wild and not s.synthetic) or (not existing and not ALL and s.synthetic) then ids[#ids + 1] = e end end; table.sort(ids)
 local T0, lastPrint = os.clock(), os.clock()
 local function status(msg) if os.clock() - lastPrint >= 45 then lastPrint = os.clock(); print(string.format("[%4.0fs] %s", os.clock() - T0, msg)); io.stdout:flush() end end
 local function mkrng(seed)

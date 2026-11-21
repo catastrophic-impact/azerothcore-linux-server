@@ -361,7 +361,36 @@ for entry, sp in pairs(D.species) do
     SCALE[entry] = sp.scale or (sp.companion and 1.0) or ScaleFor(   -- companion creatures (cubs, cats, squirrels) are ALREADY pet sized: shrinking them to a normal creature's size made the Dun Morogh Cub microscopic
         q and q:GetFloat(0) or 0, q and q:GetFloat(1) or 0)
 end
-function Store.Scale(entry) return SCALE[entry] or 0.4 end
+-- ONE PET SIZE: every pet is scaled so its TRUE visible size S is PET_SIZE yards. S = sqrt(mean of the top / side / front silhouette areas) measured from the real model mesh in the client
+-- archives (pet-battle/gen_model_size.py -> gen_scale_caps.py -> scripts/pb_scale_caps.lua, third value), times the display scale: the same S looks the same size for a cube-like gorilla
+-- and a leggy spider (a bounding box does not: it counts empty space). PET_SIZE = the median size of the 3.3.5 companion pets (0.53). Companions keep their natural size, capped at COMP_MAX.
+-- A species whose mesh could not be measured falls back to the old radius-based scale above.
+local PET_SIZE, COMP_MAX, MIN_S, MAX_S = 0.53, 0.9, 0.02, 8.0
+local DIM = require("pb_scale_caps")
+function Store.Scale(entry)
+    local d = DIM[entry]
+    local S = d and d[3] or 0
+    if S <= 0.01 then return SCALE[entry] or 0.4 end
+    local sp = D.species[entry]
+    local sc
+    if sp and sp.companion then sc = sp.scale or 1.0; if S * sc > COMP_MAX then sc = COMP_MAX / S end
+    else sc = PET_SIZE / S end
+    return math.max(MIN_S, math.min(MAX_S, sc))
+end
+function Store.Width(entry) local d = DIM[entry]; return d and d[3] > 0.01 and d[3] * Store.Scale(entry) or nil end   -- the true visible size S in yards
+-- The scale FOLLOWS THE MODEL ON SCREEN: a species can show several models (the Crab has 4 of very different size), so the size comes from the creature DISPLAY id actually worn
+-- (pb_scale_displays.lua), falling back to the species default.
+local DSZ = require("pb_scale_displays")
+function Store.ScaleOf(entry, display)
+    local S = display and DSZ[display]
+    if not S or S <= 0.01 then return Store.Scale(entry) end
+    local sp = D.species[entry]
+    local sc
+    if sp and sp.companion then sc = sp.scale or 1.0; if S * sc > COMP_MAX then sc = COMP_MAX / S end
+    else sc = PET_SIZE / S end
+    return math.max(MIN_S, math.min(MAX_S, sc))
+end
+function Store.SizeOf(entry, display) local S = display and DSZ[display]; if S and S > 0.01 then return S * Store.ScaleOf(entry, display) end return Store.Width(entry) end   -- true visible size in yards
 
 -- ---------------------------------------------------------------- FOLLOWER: the summoned pet that walks behind you
 -- One per player. Desired only while: alive, not mounted, normal world phase (garrison = Menagerie instead), not in a battle.
@@ -405,7 +434,7 @@ local function SpawnFollower(player, f)
     local disp = Store.PetDisplay(player, f.species)
     if disp > 0 then pcall(function() obj:SetDisplayId(disp) end)   -- the follower wears the pet's real skin
     else local okd, d = pcall(function() return obj:GetDisplayId() end); if okd and d and d > 0 then Store.SetDisplay(player, f.species, d) end end
-    pcall(function() obj:SetScale(Store.Scale(f.species)) end)
+    do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(f.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS
     pcall(function() obj:SetPhaseMask(1, true) end)
     Pace(obj, player)
     pcall(function() obj:MoveFollow(player, 1.8, 2.6) end)

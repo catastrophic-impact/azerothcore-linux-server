@@ -74,3 +74,28 @@
 3100 602  # restore:dot-cd5
 3218 2458  # restore:dot-cd5#3
 3408 2482  # restore:speeddown-cd5
+# --- 2026-11-21 verified gap abilities (see verified_gap_abilities.txt): one retail species per ability; explicit ids = only those abilities are tested ---
+460 318  # verified gap
+741 315  # verified gap
+286 369  # verified gap
+390 574  # verified gap
+1337 1073  # verified gap
+2734 2324  # verified gap
+1364 1105  # verified gap
+1206 922  # verified gap
+1179 906  # verified gap
+1204 945  # verified gap
+2383 1598  # verified gap
+1185 914  # verified gap
+116 204  # verified gap
+1955 1754  # verified gap
+3204 2455  # verified gap
+528 568  # verified gap
+1805 1583  # verified gap
+1365 1125  # verified gap
+666 1936  # verified gap
+# --- 2026-11-21 swap (145) abilities, pinned after FX145 was implemented ---
+213 457  # verified gap (swap 145)
+2048 1944  # verified gap (swap 145)
+2143 1989  # verified gap (swap 145)
+3417 2484  # verified gap (swap 145)

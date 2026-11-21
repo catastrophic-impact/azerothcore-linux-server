@@ -50,6 +50,7 @@ out.append('R.stateNames = { %s }' % ', '.join('[%s] = "%s"' % (k, v) for k, v i
 out.append('R.states = {}')
 for a in sorted(need, key=int):
     if abst.get(a): out.append('R.states[%s] = { %s }' % (a, ', '.join('%s = %d' % (k, v) for k, v in sorted(abst[a].items()))))
+TEXT_FIX = {'2432': '[StandardAccuracy(1,1)] |cffffffffHit Chance|r  A vengeful attack that deals [petTypeName(abilityPetType())] damage equal to 150% of the last hit taken by the user.'}  # retail Power is 150, retail text says 'equal'
 for a in sorted(need, key=int):
     A = ab[a]; turns = []
     for t in sorted(tu[a], key=lambda t: int(t['OrderIndex'])):
@@ -58,7 +59,7 @@ for a in sorted(need, key=int):
             eff_used.add(e['BattlePetEffectPropertiesID'])
             es.append('{ prop = %s, aura = %s, p = { %s } }' % (e['BattlePetEffectPropertiesID'], e['AuraBattlePetAbilityID'], ', '.join(e['Param_%d' % i] for i in range(6))))
         turns.append('{ turn = %s, event = %s, fx = { %s } }' % (t['TurnTypeEnum'], t['EventTypeEnum'], ', '.join(es)))
-    out.append('R.abilities[%s] = { name = %s, family = %d, cd = %s, text = %s, turns = { %s } }' % (a, q(A['Name_lang']), int(A['PetTypeEnum']), A['Cooldown'], q(A['Description_lang']), ', '.join(turns)))
+    out.append('R.abilities[%s] = { name = %s, family = %d, cd = %s, text = %s, turns = { %s } }' % (a, q(A['Name_lang']), int(A['PetTypeEnum']), A['Cooldown'], q(TEXT_FIX.get(a, A['Description_lang'])), ', '.join(turns)))
 for p in sorted(eff_used, key=int):
     P = pr[p]
     out.append('R.effects[%s] = { %s }' % (p, ', '.join(q(P['ParamLabel_%d' % i]) for i in range(6) if P['ParamLabel_%d' % i])))

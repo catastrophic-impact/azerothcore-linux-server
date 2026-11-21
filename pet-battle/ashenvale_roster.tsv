@@ -2,7 +2,7 @@
 # archetype is obsolete (retail kits now).
 include	entry	name	levels	type	family	rank	spawns	display	archetype	abilities	notes
 N	16781	Midsummer Celebrant	1-60	Humanoid	0	0	8	16412	Melee		npcflag 1
-Y	6145	School of Fish	1	Critter	0	0	7	4878	Melee		
+N	6145	School of Fish	1	Critter	0	0	7	4878	Melee		excluded 2026-11-21: ambient swimming fish swarm, not a battle pet
 Y	1412	Squirrel	1	Critter	0	0	16	134	Melee		already a species
 Y	883	Deer	5	Critter	0	0	21	347	Melee		already a species
 Y	4009	Raging Cliff Stormer	18-19	Beast	0	0	11	1538	Melee		

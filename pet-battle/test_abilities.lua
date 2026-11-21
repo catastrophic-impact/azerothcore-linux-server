@@ -14,6 +14,9 @@ local function check(name, claim, ok, detail)
 end
 local function unchecked_(name, why) unchecked[#unchecked + 1] = name .. ": " .. why end
 
+-- KNOWN ENGINE GAP (2026-11-21): effect 145 (swap) is not implemented in pb_core: Sweep 457 / Retrieve 1944 (force the enemy's HIGHEST health pet in) and Shell Rush 1989 / Fight and Flight 2484 (swap the user out after the hit) hit but never swap.
+-- Claims 67/68 below prove it; they are reported as UNCHECKED for these ids until the engine implements 145 (then delete this table). These abilities are NOT in the playable pool (golden status engine-gap).
+local KNOWN_GAP_145 = {}   -- 2026-11-21: effect 145 implemented (FX145 in pb_core), so the swap claims 67/68 now run for Sweep, Retrieve, Shell Rush, Fight and Flight
 -- dice: a constant roll clamped into range. 6 = every chance proc / hit lands and nothing crits (crit needs <= 5), 100 = every chance fails, 50 = 50% things land
 local function dice(v) return function(a, b) return math.max(a, math.min(b, v)) end end
 local PASS = { id = 0, name = "Pass", icon = "x", tip = "", cd = 0, turns = { { fx = {} } } }
@@ -827,6 +830,84 @@ for _, ab in ipairs(byName) do
             local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); local back = 0
             for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "P" and x.tside == "E" then back = back + x.dmg end end
             check(name, "the attacker takes " .. ssN .. " back", math.abs(back - ssN) <= 3, "reflected " .. back)
+        end
+        -- 67. "forces the opponent's HIGHEST health pet to swap into battle" (Sweep, Retrieve): the highest-health living enemy bench pet comes in
+        if desc:find("forces the opponent's highest health pet to swap") then
+            checked = checked + 1
+            local rng = dice(6); local mk = function(frac) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; q.hp = math.floor(q.max * frac); return q end
+            local user = mk(1); user.abil = { ab }; user.speed = 100; local e1, e2, e3 = mk(1), mk(0.6), mk(0.9); e1.speed = 1
+            local b = C.NewBattle({ user }, { e1, e2, e3 }, rng); C.Round(b, "A1", "A1")
+            if KNOWN_GAP_145[ab.id] then unchecked_(name, "known gap: effect 145 forced swap (highest health) not implemented") else check(name, "pulls the HIGHEST health living enemy into battle (index 3)", b.active.E == 3, "active " .. b.active.E) end
+        end
+        -- 68. "Deals X damage to the enemy team and swaps the user with your highest health pet" (Shell Rush, Fight and Flight): after the hit the user swaps with the highest-health ally
+        if desc:find("swaps the user with your highest health pet") then
+            checked = checked + 1
+            local rng = dice(6); local mk = function(frac) local q = C.NewPet(721, 10, { 1, 1, 1 }, rng, { quality = 2 }); q.abil = { PASS }; q.cd = { 0, 0, 0 }; q.hp = math.floor(q.max * frac); return q end
+            local user = mk(1); user.abil = { ab }; user.speed = 100; local p2, p3 = mk(0.5), mk(0.9); local e = mk(1); e.speed = 1
+            local b = C.NewBattle({ user, p2, p3 }, { e }, rng); C.Round(b, "A1", "A1")
+            if KNOWN_GAP_145[ab.id] then unchecked_(name, "known gap: effect 145 swap-self after the hit not implemented") else check(name, "swaps the user with the highest-health ally (index 3)", b.active.P == 3, "active " .. b.active.P) end
+        end
+        -- 69. damage shields lasting 2+ rounds ("deals N damage each time you take direct damage. Lasts M rounds", Thorns, Fire Shield ...; claim 66 covers the 1-round form): the attacker takes N back
+        local shN = (not desc:find("Lasts 1 round")) and tonumber(desc:match("[Dd]eals (%d+) %a+ damage each time you take direct damage%. Lasts"))
+        if shN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); local back = 0
+            for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "P" and x.tside == "E" then back = back + x.dmg end end
+            check(name, "the attacker takes " .. shN .. " back from the shield", math.abs(back - shN) <= 3, "reflected " .. back)
+        end
+        -- 70. "Reduces up to N damage from each attack against you" (Spiked Skin, Spiked Shell, Spirit Spikes): a hit on the shielded user is smaller by min(N, hit)
+        local rdN = tonumber(desc:match("[Rr]educes up to (%d+) damage from each attack against you"))
+        if rdN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local function hitOnUser(shield)
+                local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); if not shield then a.abil = { PASS }; a.cd = { 0, 0, 0 } end
+                local taken = 0; for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "E" and x.tside == "P" then taken = taken + x.dmg end end
+                return taken
+            end
+            local base, withShield = hitOnUser(false), hitOnUser(true)
+            check(name, "a hit on the shielded user is reduced by up to " .. rdN, base > 0 and math.abs(withShield - math.max(0, base - rdN)) <= 1, base .. " -> " .. withShield)
+        end
+        -- 71. "dealing N% of the damage they take to their attacker" (Reflective Shield): the attacker takes N% of the hit back
+        local rpN = tonumber(desc:match("dealing (%d+)%% of the damage they take to their attacker"))
+        if rpN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local b, a, e = setup(ab, { attackerFirst = true, enemyAbility = scratch }); local hit, back = 0, 0
+            for _, x in ipairs(C.Round(b, "A1", "A1")) do
+                if x.k == "dmg" and x.side == "E" and x.tside == "P" then hit = hit + x.dmg elseif x.k == "dmg" and x.side == "P" and x.tside == "E" then back = back + x.dmg end
+            end
+            check(name, "the attacker takes " .. rpN .. "% of the hit back", hit > 0 and math.abs(back - math.floor(hit * rpN / 100)) <= 1, "hit " .. hit .. " back " .. back)
+        end
+        -- 72. "increasing damage taken by N%" on the ENEMY (Acidic Goo): the user's next direct hit on it is N% bigger
+        local vtN, vtD = desc:match("increasing damage taken by (%d+)%% for (%d+) round")
+        vtN = (tonumber(vtD) or 0) >= 2 and tonumber(vtN) or nil   -- a 1-round debuff is gone before the user's NEXT round (Call the Pack); only 2+ round debuffs are checked this way
+        if vtN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local function nextHit(apply)
+                local b, a, e = setup(ab, { attackerFirst = true }); if not apply then a.abil = { PASS }; a.cd = { 0, 0, 0 } end
+                C.Round(b, "A1", "A1"); a.abil = { scratch }; a.cd = { 0, 0, 0 }
+                local d = 0; for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "P" and x.tside == "E" then d = d + x.dmg end end
+                return d
+            end
+            local base, boosted = nextHit(false), nextHit(true)
+            check(name, "the next hit on the target is " .. vtN .. "% bigger", base > 0 and math.abs(boosted - math.floor(base * (100 + vtN) / 100 + 0.5)) <= 1, base .. " -> " .. boosted)
+        end
+        -- 73. "Increases the damage done by your active pet by N%" (Amplify Magic): the user's next hit is N% bigger
+        local duN = tonumber(desc:match("[Ii]ncreases the damage done by your active pet by (%d+)%%"))
+        if duN then
+            checked = checked + 1
+            local scratch; for _, k in ipairs(C.Kit(721)) do if k.ability.retailName == "Scratch" then scratch = k.ability end end
+            local function nextHit(apply)
+                local b, a, e = setup(ab, { attackerFirst = true }); if not apply then a.abil = { PASS }; a.cd = { 0, 0, 0 } end
+                C.Round(b, "A1", "A1"); a.abil = { scratch }; a.cd = { 0, 0, 0 }
+                local d = 0; for _, x in ipairs(C.Round(b, "A1", "A1")) do if x.k == "dmg" and x.side == "P" and x.tside == "E" then d = d + x.dmg end end
+                return d
+            end
+            local base, boosted = nextHit(false), nextHit(true)
+            check(name, "the user's next hit is " .. duN .. "% bigger", base > 0 and math.abs(boosted - math.floor(base * (100 + duN) / 100 + 0.5)) <= 1, base .. " -> " .. boosted)
         end
         if checked == 0 then unchecked_(name, desc:sub(1, 150)) end
     end

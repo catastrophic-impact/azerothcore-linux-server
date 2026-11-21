@@ -101,12 +101,9 @@ local function Sweep(player, range)
     return n
 end
 
-local function Ground(b, x, y, z)
-    local pl = GetPlayer(b)
-    local ok, h = pcall(function() return pl:GetMap():GetHeight(x, y, b.phase) end)
-    if ok and h and h > -1000 and math.abs(h - z) < 8 then return h + 0.1 end
-    return z
-end
+-- NO terrain query: the heightmap is not the floor in mines/caves/buildings (it sank the pets). Pets are spawned a yard above the player's own height and the movement system settles them
+-- on the real floor (SpawnPet below reads the settled height back into b.pos). Verified live: outdoors, mine floors.
+local function Ground(b, x, y, z) return z + 1.0 end
 local function Layout(b, pl)
     local x, y, z, o = pl:GetX(), pl:GetY(), pl:GetZ(), pl:GetO()
     local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
@@ -189,10 +186,14 @@ local function SpawnPet(b, s, idx)
             if s == "P" then local pl = GetPlayer(b); if pl then Store.SetDisplay(pl, pet.species, d) end end
         end
     end
-    pcall(function() obj:SetScale(SCALE[pet.species] or 0.4) end)
+    do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(pet.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS (a species can wear several models)
     pcall(function() obj:SetMaxHealth(1000); obj:SetHealth(1000) end)   -- real spells hit it for presentation: a tiny creature must not die from the transient damage (pb_cast sets the exact health afterwards)
     pcall(function() obj:SetPhaseMask(b.phase, true) end)
     pcall(function() obj:SetHomePosition(p[1], p[2], p[3], p[4]) end)
+    pcall(function() obj:MoveTo(1, p[1], p[2], p[3], true) end)   -- settle on the real floor
+    pcall(function() obj:RegisterEvent(function(ev, d, n, c)       -- read the settled height back so every later MoveTo / home position uses the real floor
+        local z = c:GetZ(); if z and math.abs(z - p[3]) < 4 then p[3] = z; pcall(function() c:SetHomePosition(p[1], p[2], z, p[4]) end) end
+    end, 800, 1) end)
     Fx(obj, FX_SPAWN, 1200)
 end
 local function Despawn(b, s, fx)
@@ -240,7 +241,7 @@ local function SendPet(b, s, i)
         entry = PREVIEW_BASE + p.display
         SHOP_PRIME.SendAs(pl, entry, p.species, p.display)
     end
-    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, TYPE_ICON[p.family] or p.icon, p.quality or 1, entry, math.floor(SCALE[p.species] * 100 + 0.5), p.name))   -- the pet TYPE icon (no 3D model in the battle frames)
+    Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, TYPE_ICON[p.family] or p.icon, p.quality or 1, entry, math.floor(Store.ScaleOf(p.species, p.display) * 100 + 0.5), p.name))   -- the scale of the model the pet really wears (same value SpawnPet sets)   -- the pet TYPE icon (no 3D model in the battle frames)
 end
 local function SendTags(b, s, stat)   -- stat = the snapshot an engine event carries (state at THAT moment); nil = current state. Structured: label~icon~turns~stacks~bad;...
     local str = stat and stat[s] or b.api.StatusString(b.eng[s][b.eng.active[s]])

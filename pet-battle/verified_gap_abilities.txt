@@ -1,0 +1,24 @@
+# 2026-11-21 engine-gap abilities VERIFIED by the ability test layer (test_abilities.lua, PB_LEGACY=1, claims 66-73 + older claims): golden_effects.py treats an effect as playable (keep) when ALL its abilities are listed here.
+# Each ability is pinned in pinned_species.txt so its checks keep running. Format: ability id <TAB> effect label
+318	damageshield-cd0
+315	damageshield-defense-cd0
+369	dot-vuln-cd0
+574	hot-typechange-cd0
+1073	damageshield-conditional-cd2
+2324	damageshield-defense-cd3
+1105	damageshield-reflectpct-cd3
+922	heal-p24-cd3#2
+906	damageshield-cd4
+945	damageshield-cd4#2
+1598	damageshield-cd4#3
+914	damageshield-defense-cd4
+204	damage-weather-p45-cd5
+1754	damageshield-cd5
+2455	swapself-heal-p25-cd6
+568	avoidswap-cd8
+1583	avoidswap-cd8
+1125	avoidswap-cd8#2
+1936	avoidswap-cd8#2
+457	damage-forceswap-p20-cd5
+1944	damage-forceswap-p10-cd4#2
+1989	damage-swapself-p12-cd5
