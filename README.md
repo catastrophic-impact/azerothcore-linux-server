@@ -10,10 +10,10 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 
 | Piece | What it is |
 |---|---|
-| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of pets that hang out and stroll about, Alliance, Horde and neutral NPCs, immortal wandering **wildlife** (about 680 animals across every hunter pet family), and thousands of decor objects with a preview-grid placement window. Decor per garrison is capped (default 1000, shown in the window as `Placed n/max`; set `maxDecor` in `acore_settings.lua`). Includes **Curator mode** (GM level 3+) to sort, rename, price and re-centre decor in game. |
+| **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of pets that hang out and stroll about, Alliance, Horde and neutral NPCs, immortal wandering **wildlife** (about 680 animals across every hunter pet family), and thousands of decor objects with a preview-grid placement window. Decor per garrison is capped (default 1000, shown in the window as `Placed n/max`; set `maxDecor` in `acore_settings.lua`). Includes **Curator mode** (GM level 3+) to sort, rename, price and re-centre decor in game. Decor names and categories have been cleaned up by identifying each model from rendered pictures (not from its file name), with new categories such as Herbs, Ore Nodes and Bridges & Docks. |
 | **Jukebox** | ~1000 game tracks, your own **playlists**, and **Play Random Songs**; works on its own with `/jukebox` (plays for you only). With Garrison installed too, the jukebox NPC plays music for everyone inside a garrison: guests can pick songs, and the garrison owner can set a **Default** song or playlist that plays by itself whenever nothing else is playing. |
 | **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
-| **Pet Battles** | Open-world, turn-based pet battles modelled on retail: tiny wild pets appear next to the real creatures of the open-world zones (Elwynn, Dun Morogh, Durotar, Westfall, Teldrassil, Mulgore, Tirisfal Glades, Eversong Woods, Azuremyst Isle, Silverpine Forest, Darkshore, Loch Modan, Redridge Mountains, Ghostlands, Bloodmyst Isle, Duskwood, Wetlands, Arathi Highlands, Hillsbrad Foothills, The Hinterlands, Searing Gorge, Badlands, Burning Steppes, Ashenvale, Stonetalon Mountains, Desolace, Feralas, Tanaris, Thousand Needles, Un'Goro Crater, Silithus, Blasted Lands, Deadwind Pass, Eastern and Western Plaguelands, Stranglethorn Vale, Swamp of Sorrows, Azshara, The Barrens, Dustwallow Marsh, Felwood, Winterspring, Alterac Mountains, Moonglade; 1849 species including 239 collectible companion pets). Right-click one to challenge it, capture it, and manage your pets and teams in the `/pets` journal (filters by family, quality and zone, collected / not collected, drag-and-drop teams, and a Feed button: food from your bags makes a hurt pet well fed, healing 10% every 2 seconds for 20 seconds). Ten families with a strong/weak ring and passives, breeds, qualities, weather and cooldowns. Playerbots are excluded. |
+| **Pet Battles** | Open-world, turn-based pet battles modelled on retail. Tiny wild pets appear next to the real creatures of the open-world zones of Azeroth, Outland and Northrend (**about 3,400 species across 61 zones**, including 239 collectible companion pets), at the size of a companion pet. Right-click one to challenge it, capture it, and manage your pets and teams in the `/pets` journal (filters by family, quality and zone, collected / not collected with where-to-find, search, drag-and-drop teams, rename, and a Feed button: food from your bags makes a hurt pet well fed, healing 10% every 2 seconds for 20 seconds). The numbers come from retail: stats, breeds, qualities, cooldowns and the effect of every ability, and **a player pet only ever gets builds and stats that a retail species a player can obtain has** (never boss, tamer or legendary kits). Names, icons and animations come from real 3.3.5 class and hunter-pet spells, picked to fit each creature. Ten families with a strong/weak ring and passives, weather, forced swaps, damage shields and more. Playerbots are excluded. The battle rules and every ability are covered by an automated test suite (`pet-battle/run_tests.sh`). |
 | **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
 | **Free training** | Optional TUI switches (Options tab, on by default) that make class-trainer spells and the riding skills cost no gold; levels and quests are unchanged and switching off restores the prices. Part of the TUI, not a script. |
 | **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
@@ -34,12 +34,24 @@ AzerothCore (the [Playerbot fork](https://github.com/mod-playerbots/azerothcore-
 | [mod-rndbot-buffs](https://github.com/Rockhopper1776/mod-rndbot-buffs) | Idle bots buff nearby real players |
 | [mod-gm-realmfirst-fix](https://github.com/Haeniken/mod-gm-realmfirst-fix) | Stops GM accounts from earning Realm First achievements |
 
+## Quick start: from nothing to playing
+
+You need a Linux PC, and your **own legal WoW 3.3.5a (build 12340) client** on the machine you play from (it is not included).
+
+1. **Install.** `git clone https://github.com/catastrophic-impact/azerothcore-linux-server.git && cd azerothcore-linux-server && ./install.sh`. Answer the questions (all defaults are fine) and create at least one **player account** when asked. The build takes a while and downloads the game data; the result is a self-contained `azerothcore-server/` folder.
+2. **Start the server.** `cd azerothcore-server && ./acore-admin`, then on the **Server** tab press `s`. Wait for the services to show as running.
+3. **Point your client at it.** In the client's `realmlist.wtf` (in `Data/enUS/`) put `set realmlist <server address>`: `127.0.0.1` if you play on the same machine, or the server's LAN address (the TUI's **Config** tab: `l` fills in localhost, `d` detects the LAN address).
+4. **Get the addons into the client.** The server does not install anything into a client by itself. In the TUI's **Config** tab press `p`: it builds `client-patch/client-patch-<date>.zip` (and `.tar.gz`) in the server folder, laid out so it unpacks straight into a WoW client folder. **Every player** (you and anyone you invite) unzips that file into their own WoW client folder, so the addons land in `Interface/AddOns`; give it to friends however you like (file share, chat). Rebuild and re-share it after you update the addons. It contains `AcoreLib` (required), the addons of the components you installed, and the **Minimap Drawer** (`/mmd`, one button that holds all your minimap icons) which is always included. The folder also contains the GM-only `wotlk_garrison_admin` tool; players do not need it. Prefer copying by hand? The same folders are in the server folder's `client-addons/`. After adding addons, log out fully and back in, and check **AddOns** on the character screen.
+5. **Log in** with the account you created and play. Add more accounts or GM levels any time on the TUI's **Accounts** tab.
+
+In game: the garrison portal is at the Stormwind Mage Tower; `/pets` opens the pet journal, `/jukebox` the music player, `/bots` the bot manager, and `/mmd` the minimap drawer. When you are done, quit the TUI with `q`: it stops the servers safely first.
+
 ## Install the full server (Linux)
 
 Needs `distrobox`, `git`, `curl` and podman or docker.
 
 ```
-git clone <this repo> && cd <repo> && ./install.sh
+git clone https://github.com/catastrophic-impact/azerothcore-linux-server.git && cd azerothcore-linux-server && ./install.sh
 ```
 
 It asks which components to install (all **on** by default), whether to use our **recommended settings** (XP x4, 300 playerbots, active auction bot, faster skills/reputation, relaxed instances) or plain AzerothCore defaults (`--stock-settings`), an optional server name, and the player accounts to create, then builds everything inside an Ubuntu 22.04 distrobox and writes a **self-contained server folder** (nothing is written to your home or `~/.config`). Unattended: `--yes`, with `--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking --no-pets` to leave things out, `--accounts FILE` (lines of `name password gmlevel`).
@@ -52,7 +64,7 @@ Run the admin TUI from the server folder: `./acore-admin`
 - **Backups** (`o` opens the backups folder): the only automatic backup is the install-time **master** (`backups/fresh`, pinned at the top, cannot be deleted in the TUI). Restore, reset and module changes ask "create a backup first?"; running servers are stopped safely (with an in-game countdown) and started again for you.
 - Press `?` for the key list. Tabs are clickable. Quit (`q`) asks for confirmation and stops the servers safely first.
 
-Copy the folders in `client-addons/` into your client's `Interface/AddOns`. The garrison portal and the garrison jukebox NPC only work for players who have the matching addon installed (each addon tells the server it is present when you enter the world; after installing one, `/reload`).
+Players get our addons by unpacking the client patch zip the TUI builds (Config tab, `p`) into their WoW client folder, or by copying the folders in the server folder's `client-addons/` into `Interface/AddOns` by hand. The garrison portal and the garrison jukebox NPC only work for players who have the matching addon installed (each addon tells the server it is present when you enter the world; after installing one, `/reload`).
 
 ## Use the addons on your own server
 
@@ -92,7 +104,7 @@ Download the repo, then in your server folder:
    | Garrison | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` and every `garrison_<name>.lua` (config, items, economy, store, locations, spawn, session, portal, placement, ghost, menagerie, wildlife, props, perks, gm) |
    | Jukebox in a garrison | `garrison_jukebox.lua` (the addon alone needs no server script) |
    | Shop | `shop_server.lua`, `shop_catalog.lua`, `shop_prime.lua` |
-   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `shop_prime.lua` and `custom-sql/016_pet_standins.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
+   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_vis.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua`, `shop_prime.lua` and `custom-sql/016_pet_standins.sql` + `017_pet_standin_scale.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
    | Bot Manager | `bot_manager.lua` |
    | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
 
@@ -105,7 +117,7 @@ Tip: take a backup first (TUI Backups tab, `b`).
 
 ## Layout
 
-`scripts/` server-side ALE Lua · `addons/` client addons · `custom-sql/` database content · `tui/` admin TUI (Go) · `tools/` generators and installer parts · `config-overrides/` server tuning · `patches/` core patches · `modules.lock` pinned versions.
+`scripts/` server-side ALE Lua · `addons/` client addons · `custom-sql/` database content · `tui/` admin TUI (Go) · `tools/` generators and installer parts · `config-overrides/` server tuning · `patches/` core patches · `modules.lock` pinned versions. `pet-battle/` pet battle data generators, simulations and tests (`pet-battle/run_tests.sh`) · `tools/m2_sheets.py` renders doodad / building models into numbered contact sheets, and `tools/apply_garrison_ids.py` applies reviewed names and categories to the garrison catalog with an undo file.
 
 ## License
 

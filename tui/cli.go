@@ -136,6 +136,18 @@ func runCLI(args []string) bool {
 			msg, err = applyModules("")
 		case "undo":
 			msg, err = undoModules()
+		case "add": // modules add <https git url>   (source only; run `modules apply` to rebuild)
+			if len(args) < 3 {
+				err = fmt.Errorf("usage: modules add <https git url>")
+			} else {
+				msg, err = addModule(args[2])
+			}
+		case "remove": // modules remove <name>
+			if len(args) < 3 {
+				err = fmt.Errorf("usage: modules remove <name>")
+			} else {
+				msg, err = removeModule(args[2])
+			}
 		case "enable", "disable":
 			man := loadManifest()
 			for i := range man.Mods {

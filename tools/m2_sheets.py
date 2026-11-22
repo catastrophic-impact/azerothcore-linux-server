@@ -3,7 +3,7 @@
 Extracts each .m2 + 00.skin + its BLP textures from the client MPQs (tools via claude_tools/mpqlib.py), rasterises with a numpy z-buffer (3/4 view, texture + simple light)
 and tiles N models per sheet with a number label; writes a sheet index (number -> kind, name, model) next to each sheet.
 Needs numpy + Pillow: run with cache/venv314/bin/python on the HOST (cache/venv is stale since the host python moved to 3.14).
-usage: m2_sheets.py <client Data dir> <list.tsv> <out dir> [per-sheet=16]
+usage: m2_sheets.py <client Data dir> <list.tsv> <out dir> [per-sheet=16] [cols=4] [cell px=256] [offset=0]
   list.tsv = one item per line: kind<TAB>name<TAB>model path (.m2); M2 and WMO models are rendered; anything else is listed in the index as NO-MODEL-TYPE."""
 import os, struct, sys, math
 import numpy as np
@@ -12,6 +12,7 @@ proj = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(proj, 'claude_tools'))
 from mpqlib import Mpq
 data, lst, out = sys.argv[1:4]; PER = int(sys.argv[4]) if len(sys.argv) > 4 else 16
+COLS = int(sys.argv[5]) if len(sys.argv) > 5 else 4; CELL = int(sys.argv[6]) if len(sys.argv) > 6 else 256; OFFSET = int(sys.argv[7]) if len(sys.argv) > 7 else 0   # OFFSET = items before this slice (global numbering, sheet names)
 os.makedirs(out, exist_ok=True)
 m = Mpq(data, os.path.join(proj, 'cache', 'models'), host=[])
 
@@ -165,24 +166,24 @@ for kind, name, model in rows:
 m.fetch(sorted(tex_need), verbose=False); m.reindex()
 try: FONT = ImageFont.truetype('DejaVuSans-Bold.ttf', 22)
 except Exception: FONT = ImageFont.load_default()
-S = 256; cols = 4; sheets = 0; index = []
+S = CELL; cols = COLS; sheets = 0; index = []
 for s0 in range(0, len(rows), PER):
     chunk = rows[s0:s0 + PER]; sheets += 1
     rws = (len(chunk) + cols - 1) // cols
     sheet = Image.new('RGB', (cols * S, rws * S), (30, 30, 34)); dr = ImageDraw.Draw(sheet)
     for i, (kind, name, model) in enumerate(chunk):
-        num = s0 + i + 1; t = parsed.get(kind)
+        num = OFFSET + s0 + i + 1; t = parsed.get(kind)
         if t:
             try:
                 im = render(t, 384).resize((S, S), Image.LANCZOS); sheet.paste(im, ((i % cols) * S, (i // cols) * S)); status = 'ok'
             except Exception as e: status = 'RENDER-FAIL'
         else: status = 'NO-MODEL-TYPE' if not model.lower().endswith(('.m2', '.mdx', '.mdl', '.wmo')) else 'NO-DATA'
         ox, oy = (i % cols) * S, (i // cols) * S
-        dr.rectangle([ox, oy, ox + 52, oy + 30], fill=(0, 0, 0)); dr.text((ox + 4, oy + 2), str(num), fill=(255, 230, 80), font=FONT)
+        dr.rectangle([ox, oy, ox + 56, oy + 30], fill=(0, 0, 0)); dr.text((ox + 4, oy + 2), str(num), fill=(255, 230, 80), font=FONT)
         dr.rectangle([ox, oy, ox + S - 1, oy + S - 1], outline=(70, 70, 80))
         if status != 'ok': dr.text((ox + 60, oy + S // 2), status, fill=(255, 90, 90), font=FONT)
         index.append((num, kind, name, model, status))
-    sheet.save(os.path.join(out, 'sheet_%03d.png' % sheets))
+    sheet.save(os.path.join(out, 'sheet_%04d.png' % (OFFSET // PER + sheets)))
 with open(os.path.join(out, 'index.tsv'), 'w') as fh:
     fh.write('num\tkind\tname\tmodel\tstatus\n'); [fh.write('\t'.join(map(str, r)) + '\n') for r in index]
 print('sheets', sheets, 'items', len(index), 'not rendered', sum(1 for r in index if r[4] != 'ok'))

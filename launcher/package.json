@@ -1,0 +1,16 @@
+{
+  "name": "acore-launcher",
+  "productName": "AzerothCore Launcher",
+  "version": "0.1.0",
+  "description": "Portable desktop launcher for the AzerothCore Linux portable server: everything the admin TUI does, plus installing / removing our client addons.",
+  "main": "main.js",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "scripts": {
+    "start": "./run.sh",
+    "test": "node test/run.js"
+  },
+  "devDependencies": {
+    "electron": "45.2.3"
+  }
+}

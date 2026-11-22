@@ -55,15 +55,18 @@ if '--undo' in args:
     print('undone', len(rows)); sys.exit(0)
 
 prop = args[0]; tiers = set(args[args.index('--tiers') + 1].split(',')) if '--tiers' in args else {'A'}
-rows = [r for r in csv.DictReader(open(prop), delimiter='\t') if r.get('tier') in tiers and r.get('new name')]
+rows = [r for r in csv.DictReader(open(prop), delimiter='\t') if r.get('tier') in tiers and (r.get('new name') or r.get('category'))]   # a row with no new name only moves the item
 undo, db_items, skipped, applied = [], [], [], 0
 for r in rows:
     k = r['kind']; name = clean(r['new name']); cat = remap(name, r['category'])
     cur = a['categories'].get(k, '(base)'); exp = r.get('old category', None)
     ok = {exp, '(base)'} | ({'Unsorted', 'Removed'} if exp == 'Unsorted' else set())   # the generator shows a stale 'Removed' on whole-building WMOs as Unsorted
     if exp and cur not in ok: skipped.append((k, cur, exp)); continue
-    undo.append((k, cur, a['names'].get(k, ''), cat, name))
-    a['categories'][k] = cat; a['names'][k] = name; db_items.append((k, cat, name)); applied += 1
+    oldname = a['names'].get(k, '')
+    undo.append((k, cur, oldname, cat, name or oldname))
+    a['categories'][k] = cat
+    if name: a['names'][k] = name
+    db_items.append((k, cat, name or oldname)); applied += 1
 need = sorted({c for _, c, _ in db_items if c not in a['cats']})
 for c in need:
     if c not in NEW_CATS: print('UNKNOWN CATEGORY (not added):', c); sys.exit(1)

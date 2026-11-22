@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AzerothCore Launcher</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <aside id="side">
+    <div id="brand">AzerothCore<small>Launcher</small></div>
+    <nav id="nav"></nav>
+    <div id="sidefoot"><div id="chips"></div><div id="rootinfo"></div></div>
+  </aside>
+  <main id="main">
+    <div id="banner" hidden></div>
+    <section id="view"></section>
+    <div id="opbar" hidden>
+      <div id="opHead"><span id="opSpin"></span><b id="opTitle"></b><span id="opState"></span><button id="opClose" class="ghost" hidden>Close</button></div>
+      <pre id="opLog"></pre>
+    </div>
+  </main>
+  <div id="toasts"></div>
+  <div id="modal" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
