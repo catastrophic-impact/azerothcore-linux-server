@@ -6,7 +6,8 @@ set -euo pipefail
 HERE="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"; cd "$HERE"
 mkdir -p dist
 tar czf dist/payload.tgz --exclude='*.pyc' install.sh modules.lock tools/rebuild.sh tools/components.sh tools/apply_overrides.py tools/wotlk_garrison_admin patches config-overrides scripts addons custom-sql deps \
-    tui/*.go tui/go.mod tui/go.sum
+    tui/*.go tui/go.mod tui/go.sum \
+    launcher/main.js launcher/preload.js launcher/package.json launcher/run.sh launcher/fetch-electron.sh launcher/acore-launcher.sh launcher/lib launcher/renderer
 cat > dist/acore-install.sh <<'STUB'
 #!/usr/bin/env bash
 # Self-extracting AzerothCore (Playerbot fork) portable-server installer. Extracts to ./.acore-work, runs, then cleans up.

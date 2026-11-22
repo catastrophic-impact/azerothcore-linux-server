@@ -23,7 +23,7 @@ say(){ printf '\n\033[1;33m== %s\033[0m\n' "$*"; }
 bx(){ distrobox enter "$BOX" -- bash -c "$*"; }
 
 say "0/9 host checks"
-for c in distrobox git curl; do command -v $c >/dev/null || { echo "missing on host: $c"; exit 1; }; done
+command -v distrobox >/dev/null || { echo "missing on host: distrobox"; exit 1; }   # the ONLY host requirement besides podman/docker: every other tool runs inside the build box
 command -v podman >/dev/null || command -v docker >/dev/null || { echo "need podman or docker for distrobox"; exit 1; }
 # ---- questions (all asked up front, so the long build can run unattended) ----
 INTERACTIVE=0; [ -t 0 ] && [ "$ASSUME_YES" = 0 ] && INTERACTIVE=1
@@ -56,7 +56,7 @@ say "1/9 build box '$BOX' (Ubuntu 22.04, home $BOXHOME)"
 if ! distrobox list 2>/dev/null | grep -qw "$BOX"; then
   mkdir -p "$BOXHOME"; distrobox create --yes --name "$BOX" --image ubuntu:22.04 --home "$BOXHOME"
 fi
-bx 'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq git rsync cmake make gcc g++ clang libssl-dev zlib1g-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev libmysqlclient-dev wget curl p7zip-full unzip xz-utils libaio-dev numactl file pkg-config ccache >/dev/null'
+bx 'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq git rsync cmake make gcc g++ clang libssl-dev zlib1g-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev libmysqlclient-dev wget curl p7zip-full unzip xz-utils python3 ca-certificates libaio-dev numactl file pkg-config ccache >/dev/null'
 bx '[ -x ~/go-sdk/bin/go ] || { V=$(curl -s "https://go.dev/dl/?mode=json" | grep -m1 -o "go[0-9.]*linux-amd64.tar.gz" ); curl -sL https://go.dev/dl/$V -o ~/go.tgz && mkdir -p ~/go-sdk && tar -xzf ~/go.tgz -C ~/go-sdk --strip-components=1 && rm ~/go.tgz; }; ~/go-sdk/bin/go version'
 
 say "2/9 core source (vendored in deps/core, pinned by modules.lock)"
@@ -66,7 +66,7 @@ bx "mkdir -p ~/src/azerothcore-wotlk && rsync -a --delete --exclude=/build '$HER
   || { echo "Could not copy deps/core into the build box."; exit 1; }
 
 say "3/9 module sources -> $DEST/modules (no git history; pinned)"
-python3 - "$HERE" "$DEST" <<'PY'
+bx "python3 - '$HERE' '$DEST'" <<'PY'
 import sys,os,subprocess,json,shutil
 here,dest=sys.argv[1:3]; mods=[]
 for l in open(os.path.join(here,'modules.lock')):
@@ -97,10 +97,16 @@ printf '[mysqld]\nbind-address=127.0.0.1\nport=3308\nmysqlx=OFF\nskip-log-bin\nm
 say "5/9 build admin TUI"
 bx "cd '$HERE/tui' && export PATH=\$HOME/go-sdk/bin:\$PATH && CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o '$DEST/acore-admin' ."
 
+say "5b/9 desktop launcher (portable Electron, no Node needed; top-level ./acore-launcher)"
+mkdir -p "$DEST/launcher"
+( cd "$HERE/launcher" && tar cf - --exclude=./node_modules --exclude=./data --exclude=./electron --exclude=./test --exclude=./setup.sh . ) | tar xf - -C "$DEST/launcher"
+cp -f "$HERE/launcher/acore-launcher.sh" "$DEST/acore-launcher"; chmod +x "$DEST/acore-launcher"
+bx "bash '$DEST/launcher/fetch-electron.sh' '$DEST/launcher' '$CACHE'" || echo "WARNING: could not fetch Electron (offline?). The server works; run  $DEST/launcher/fetch-electron.sh  later, or use ./acore-admin."
+
 say "6/9 build server + modules (long on first run: ~1.5h cold; ccache speeds repeats)"
 bx "bash '$DEST/tools/rebuild.sh' '$DEST'" | tee "$DEST/logs/install-build.log" | awk 'NR%40==1 || /==|error|FAILED|REBUILD_OK/'
 grep -q REBUILD_OK "$DEST/logs/install-build.log" || { echo "build failed, see $DEST/logs/install-build.log"; exit 1; }
-python3 - "$DEST" <<'PY'
+bx "python3 - '$DEST'" <<'PY'
 import json,sys; f=sys.argv[1]+'/modules/modules.json'; d=json.load(open(f))
 for m in d['mods']: m['built']=m['enabled']
 json.dump(d,open(f,'w'),indent=1)
@@ -108,10 +114,10 @@ PY
 bx "mkdir -p '$DEST/source/data' && cp -a ~/src/azerothcore-wotlk/data/sql '$DEST/source/data/'"
 
 say "7/9 MySQL 8.4 + client data (cached in $CACHE)"
-[ -s "$CACHE/mysql.tar.xz" ] || curl -L --fail -o "$CACHE/mysql.tar.xz" "$MYSQL_URL"
-[ -s "$CACHE/Data.zip" ] || curl -L --fail -o "$CACHE/Data.zip" "$DATA_URL"
-[ -x "$DEST/mysql/bin/mysqld" ] || { mkdir -p "$DEST/mysql" && tar -xf "$CACHE/mysql.tar.xz" -C "$DEST/mysql" --strip-components=1; }
-[ -d "$DEST/data/maps" ] || { mkdir -p "$DEST/data" && unzip -q -o "$CACHE/Data.zip" -d "$DEST/data"; }
+[ -s "$CACHE/mysql.tar.xz" ] || bx "curl -L --fail -o '$CACHE/mysql.tar.xz' '$MYSQL_URL'"
+[ -s "$CACHE/Data.zip" ] || bx "curl -L --fail -o '$CACHE/Data.zip' '$DATA_URL'"
+[ -x "$DEST/mysql/bin/mysqld" ] || { mkdir -p "$DEST/mysql" && bx "tar -xf '$CACHE/mysql.tar.xz' -C '$DEST/mysql' --strip-components=1"; }
+[ -d "$DEST/data/maps" ] || { mkdir -p "$DEST/data" && bx "unzip -q -o '$CACHE/Data.zip' -d '$DEST/data'"; }
 bx "export LD_LIBRARY_PATH='$DEST/mysql/lib/private':'$DEST/mysql/lib'; for f in mysqld mysql mysqldump mysqladmin; do ldd '$DEST/mysql/bin/'\$f; done | awk '/=> \\//{print \$3}' | grep -vE '/(libc|libm|libdl|libpthread|librt|libresolv|libutil)\.so' | grep -v '$DEST' | sort -u | while read l; do [ -e '$DEST/libs/'\$(basename \$l) ] || cp -L \$l '$DEST/libs/'; done"
 bx "ldd '$DEST/bin/worldserver' | grep 'not found' || true"
 
@@ -155,4 +161,4 @@ fi
 say "9/9 done"
 distrobox stop --yes "$BOX" >/dev/null 2>&1 || true
 [ "$CLEAN" = 1 ] && { distrobox rm --force --yes "$BOX" >/dev/null 2>&1 || true; echo "build box removed (the TUI's module rebuilds need it; re-run install.sh to recreate)"; }
-echo "Server folder: $DEST"; echo "Run:  cd '$DEST' && ./acore-admin"
+echo "Server folder: $DEST"; echo "Run:  cd '$DEST' && ./acore-launcher     (desktop window; the text admin is ./acore-admin)"

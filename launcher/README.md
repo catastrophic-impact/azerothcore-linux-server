@@ -9,10 +9,11 @@ redirected into `launcher/data/`; `run.sh` points the `XDG_*` variables there to
 Delete the folder and nothing is left behind. (`launcher/data/` and `launcher/node_modules/` are git-ignored.)
 
 ## Use
-1. Put the `launcher/` folder inside the server folder (next to `acore-admin`), or run it from this repo (it then uses `../release`).
-   Another server folder: `ACORE_ROOT=/path/to/server ./run.sh`.
-2. One-time: `./setup.sh` installs Electron into `launcher/node_modules` (needs Node.js 20+ / npm; inside a distrobox with Node it works too).
-3. `./run.sh` starts the launcher.
+Installed server folder: run `./acore-launcher` (top level, next to `acore-admin`). The installer puts this `launcher/` folder inside the server
+folder and fetches a portable Electron into `launcher/electron` (`fetch-electron.sh`, curl + python3 only; re-run it to repair). No Node needed.
+
+Dev checkout: `./setup.sh` installs Electron via npm into `node_modules` (needs Node.js 20+), then `./run.sh` (uses `../release`; another
+server folder: `ACORE_ROOT=/path/to/server ./run.sh`).
 
 ## Tabs (the TUI's tabs plus one)
 | Tab | What it does |
