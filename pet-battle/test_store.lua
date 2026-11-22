@@ -7,7 +7,7 @@ local function eq(a, b, m) if a ~= b then error((m or "") .. " expected " .. tos
 function CharDBExecute() end; function CharDBQuery() return nil end; function WorldDBQuery() return nil end
 function RegisterPlayerEvent() end; function GetPlayersInWorld() return {} end; function CreateLuaEvent() end
 local sent = {}
-SHOP_PRIME = { SendOne = function(_, entry, display) sent[#sent + 1] = entry .. ":" .. display end }
+package.loaded["acore_prime"] = { Register = function() end, SetDisplayResolver = function() end, Enable = function() end, SendOne = function(_, entry, display) sent[#sent + 1] = entry .. ":" .. display end }
 local handlers, outbox = {}, {}
 package.loaded["acore_msg"] = { On = function(m, a, f) handlers[m .. "|" .. a] = f end, Send = function(_, m, a, payload) outbox[#outbox + 1] = { m = m, a = a, p = tostring(payload) } end }
 local D, Eng = require("pb_data"), require("pb_core")

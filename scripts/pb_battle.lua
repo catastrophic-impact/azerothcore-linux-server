@@ -237,9 +237,9 @@ local function SendPet(b, s, i)
     local p = b.eng[s][i]
     local entry = p.species
     local pl = GetPlayer(b)
-    if p.display and p.display > 0 and pl and SHOP_PRIME and SHOP_PRIME.SendAs then
+    if p.display and p.display > 0 and pl then
         entry = PREVIEW_BASE + p.display
-        SHOP_PRIME.SendAs(pl, entry, p.species, p.display)
+        require("acore_prime").SendAs(pl, entry, p.species, p.display)
     end
     Send(b, "st", string.format("%s,%d,%d,%d,%d,%s,%d,%d,%d,%s", s, i, p.level, p.hp, p.max, TYPE_ICON[p.family] or p.icon, p.quality or 1, entry, math.floor(Store.ScaleOf(p.species, p.display) * 100 + 0.5), p.name))   -- the scale of the model the pet really wears (same value SpawnPet sets)   -- the pet TYPE icon (no 3D model in the battle frames)
 end

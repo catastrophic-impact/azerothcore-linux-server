@@ -1,6 +1,7 @@
 -- Garrison module 8/14: the portal NPC-object (Stormwind Mage Tower for Alliance, Orgrimmar for Horde; same menu, either faction may use either). A player without a garrison picks one of the enabled locations
 -- (price: acore_settings garrison.cost); a player with one can enter it, visit a group member's, or abandon it (everything placed is lost, no refund).
 -- Ownership is one location per account (dc_garrison_owner, cached in G.owners).
+local IsBot = require("acore_util").IsBot
 return function(G)
     local Msg, store, cfg, Say, dbg = G.Msg, G.store, G.cfg, G.Say, G.dbg
     local Loc, active, inside = G.locations.Get, G.active, G.inside
@@ -31,7 +32,7 @@ return function(G)
             local grp = player:GetGroup()
             if grp then
                 for _, m in pairs(grp:GetMembers()) do
-                    if m and not m:IsBot() and m:GetGUIDLow() ~= player:GetGUIDLow() then
+                    if m and not IsBot(m) and m:GetGUIDLow() ~= player:GetGUIDLow() then
                         local o = inside[m:GetGUIDLow()]
                         if o and o ~= account then player:GossipMenuAddItem(0, "Visit " .. m:GetName() .. "'s garrison", 0, INT_VISIT + o, false) end
                     end

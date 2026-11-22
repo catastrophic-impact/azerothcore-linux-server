@@ -17,7 +17,7 @@ if [ "$TIER" = auto ]; then
 fi
 rank=1; case "$TIER" in ui) rank=1;; server) rank=2;; quick) rank=3;; full) rank=4;; *) echo "unknown tier $TIER"; exit 2;; esac
 fail=0
-for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_vis.lua scripts/pb_store.lua scripts/shop_prime.lua scripts/pb_battle.lua scripts/pb_wild.lua pet-battle/lab/pb_fxlab.lua addons/wotlk_petbattle/Battle.lua addons/wotlk_pets/Pets.lua addons/wotlk_pets/WildBlips.lua; do
+for f in scripts/pb_data.lua scripts/pb_rules.lua scripts/pb_core.lua scripts/pb_retail.lua scripts/pb_vis.lua scripts/pb_store.lua scripts/acore_prime.lua scripts/acore_bus.lua scripts/pb_battle.lua scripts/pb_wild.lua pet-battle/lab/pb_fxlab.lua addons/wotlk_petbattle/Battle.lua addons/wotlk_pets/Pets.lua addons/wotlk_pets/WildBlips.lua; do
   luajit -bl "$f" >/dev/null || { echo "SYNTAX FAIL $f"; fail=1; }
 done
 [ $rank -ge 2 ] && { luajit pet-battle/test_store.lua || fail=1; }

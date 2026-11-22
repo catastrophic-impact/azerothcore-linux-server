@@ -6,6 +6,7 @@
 --     25% of current level's XP, level-scaled gold, level-scaled satchel (same as the old script).
 -- * Leaving a dungeon/raid resets Hearthstone cooldown (old behaviour; switch below).
 -- ============================================================
+local IsBot = require("acore_util").IsBot
 local Msg = require("acore_msg")
 local Settings = require("acore_settings")
 local RW = Settings.rewards or {}
@@ -111,7 +112,7 @@ local function OnKill(event, killer, creature)
     local lfg = group and group:IsLFGGroup() or false
     local members = group and group:GetMembers() or { killer }
     for _, m in pairs(members) do
-        if m and not m:IsBot() and m:IsInWorld() and m:GetMapId() == killer:GetMapId() and m:GetInstanceId() == killer:GetInstanceId() then
+        if m and not IsBot(m) and m:IsInWorld() and m:GetMapId() == killer:GetMapId() and m:GetInstanceId() == killer:GetInstanceId() then
             Reward(m, isFinal, lfg)
         else
             dbg("skipped", m and m:GetName() or "?")
@@ -123,7 +124,7 @@ RegisterPlayerEvent(7, OnKill)   -- PLAYER_EVENT_ON_KILL_CREATURE
 -- ---- hearthstone reset when leaving an instance ----
 local inInstance = {}
 local function OnMapChange(event, player)
-    if player:IsBot() then return end
+    if IsBot(player) then return end
     local g = player:GetGUIDLow()
     local map = player:GetMap()
     local nowIn = map and (map:IsDungeon() or map:IsRaid()) or false

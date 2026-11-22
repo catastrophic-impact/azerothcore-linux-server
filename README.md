@@ -89,12 +89,14 @@ Players get our addons by unpacking the client patch zip the TUI builds (Config 
 
 You need an AzerothCore server with [mod-ale](https://github.com/azerothcore/mod-ale) (Bot Manager also needs mod-playerbots).
 
-1. Copy the scripts of the pieces you want from `scripts/` to your `lua_scripts/` folder. Always include `acore_msg.lua` and `acore_settings.lua`. The files per component are listed in [`tools/components.sh`](tools/components.sh).
+1. Copy the scripts of the pieces you want from `scripts/` to your `lua_scripts/` folder. Always include `acore_msg.lua`, `acore_prime.lua`, `acore_bus.lua`, `acore_util.lua` and `acore_settings.lua`. The files per component are listed in [`tools/components.sh`](tools/components.sh).
 2. Run the matching `custom-sql/*.sql` files (they select their own database). Re-running is safe.
 3. Copy the matching folders from `addons/` (always `AcoreLib`; the garrison admin tool is `tools/wotlk_garrison_admin`) into each player's `Interface/AddOns`.
 4. Restart the server or run `reload ale`, then `/reload` in game.
 
 Settings live in `scripts/acore_settings.lua` (garrison options such as the decor limit `maxDecor` are in its `garrison` table).
+
+**Each piece stands alone.** Garrison, Jukebox, Shop, Pet Battles, Bot Manager and Timewalking do not read each other's code or data; they share only the small core scripts (`acore_*.lua`). A piece that needs something from another one asks the core (`acore_prime` registers a piece's own creatures for 3D previews, `acore_bus` passes events such as "the Shop taught a companion pet", `acore_util.IsBot` is safe on servers without mod-playerbots). Install any subset and the rest simply stays inactive. `bash tools/test_independence.sh` proves it: it loads every piece alone, next to only the core, and fails if one reaches into another. If you add your own piece, use the same rule: talk through the core, never `require` a sibling piece.
 
 ## Get the newest addons (client side)
 
@@ -119,11 +121,11 @@ Download the repo, then in your server folder:
 
    | Piece | Scripts |
    |---|---|
-   | Always | `acore_msg.lua` |
+   | Always | `acore_msg.lua`, `acore_prime.lua`, `acore_bus.lua`, `acore_util.lua` (shared core: messaging, 3D-preview priming, a tiny event bus, small helpers) |
    | Garrison | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` and every `garrison_<name>.lua` (config, items, economy, store, locations, spawn, session, portal, placement, ghost, menagerie, wildlife, props, perks, gm) |
    | Jukebox in a garrison | `garrison_jukebox.lua` (the addon alone needs no server script) |
-   | Shop | `shop_server.lua`, `shop_catalog.lua`, `shop_prime.lua` |
-   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_vis.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua`, `shop_prime.lua` and `custom-sql/016_pet_standins.sql` + `017_pet_standin_scale.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
+   | Shop | `shop_server.lua`, `shop_catalog.lua` |
+   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_vis.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua` and `custom-sql/016_pet_standins.sql` + `017_pet_standin_scale.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
    | Bot Manager | `bot_manager.lua` |
    | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
 

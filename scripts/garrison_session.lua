@@ -2,6 +2,7 @@
 -- login / logout / map-change handling and the phase-bit allocation. This is the only module that changes a player's phase for a garrison.
 -- Other modules plug in through the hooks (G.OnEnter / OnLeave / OnClose / OnTick / OnLogin, set up in garrison.lua); they never edit this file.
 -- A script reload forgets who is inside but players keep their phase: HealStrays() puts anyone left in one of our bits back to normal.
+local IsBot = require("acore_util").IsBot
 return function(G)
     local Msg, store, cfg, Say, dbg = G.Msg, G.store, G.cfg, G.Say, G.dbg
     local Loc, active, inside = G.locations.Get, G.active, G.inside
@@ -24,7 +25,7 @@ return function(G)
     local function GroupHasBots(player)
         local grp = player:GetGroup()
         if not grp then return false end
-        for _, m in pairs(grp:GetMembers()) do if m and m:IsBot() then return true end end
+        for _, m in pairs(grp:GetMembers()) do if m and IsBot(m) then return true end end
         return false
     end
     -- Companions (playerbots) are separate players: they must share the owner's phase or the owner cannot see them in the garrison (and they
@@ -32,7 +33,7 @@ return function(G)
     -- the owner left) go back to normal. Keyed by phase bit, so another player's bots in a different phase are never touched.
     local function GroupBots(player)
         local out, grp = {}, player:GetGroup()
-        if grp then for _, m in pairs(grp:GetMembers()) do if m and m:IsBot() then out[#out + 1] = m end end end
+        if grp then for _, m in pairs(grp:GetMembers()) do if m and IsBot(m) then out[#out + 1] = m end end end
         return out
     end
     local function PhaseBots(player, h, loc)

@@ -84,7 +84,7 @@ package.loaded["acore_msg"] = { On = function() end, Send = function(_, module, 
     if #text > 240 then problem("addon message too long (" .. #text .. " > 240, dropped by Msg.Send): " .. text:sub(1, 90)) end
     sent[#sent + 1] = { action = action, payload = tostring(payload or ""), module = module }
 end }
-SHOP_PRIME = { SendAs = function() end, SendOne = function() end }
+package.loaded["acore_prime"] = { Register = function() end, SetDisplayResolver = function() end, Enable = function() end, SendAs = function() end, SendOne = function() end }
 dofile("scripts/pb_battle.lua")
 do   -- watch the engine events the playback receives: which acts are pure utility (the only ones that may play the utility glow)
     local Eng = require("pb_core"); local origRound = Eng.Round

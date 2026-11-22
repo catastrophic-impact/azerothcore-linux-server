@@ -5,6 +5,10 @@
 local Msg = require("acore_msg")
 local Catalog = require("shop_catalog")
 local Settings = require("acore_settings")
+local Prime = require("acore_prime")
+local Bus = require("acore_bus")
+Prime.Register("shop", Catalog.npcs or {})   -- the shop's own 3D-preview creatures
+Prime.Enable("shop")
 local SH = Settings.shop
 local GOLD_MODE = SH.currency == "gold"
 local TICKET = SH.item or 19182
@@ -61,7 +65,7 @@ Msg.On("shop", "buy", function(player, payload)
         return Msg.Send(player, "shop", "res", id .. ";Not enough funds")
     end
     if GOLD_MODE then player:ModifyMoney(-price) else player:RemoveItem(TICKET, price) end
-    if e.spell then player:LearnSpell(e.spell); pcall(function() require("pb_store").SyncCompanions(player) end) end   -- a bought companion pet goes straight into the pet journal
+    if e.spell then player:LearnSpell(e.spell); Bus.Emit("companion_learned", player) end   -- Pet Battles (if installed) puts a bought companion straight into the pet journal
     if e.item and not e.spell then player:AddItem(e.item, e.count or 1) end
     Msg.Send(player, "shop", "res", id .. ";OK")
     Msg.Send(player, "shop", "bal", Balance(player))

@@ -9,6 +9,11 @@ local Eng = require("pb_core")
 if PB_STORE then return PB_STORE end   -- the server runs every script AND require() may load it again: keep ONE instance (one cache)
 local Store = {}
 PB_STORE = Store
+local Prime = require("acore_prime")   -- Pet Battles registers its own species for the 3D previews; the core service does the sending
+Prime.Register("pets", function() local t = {}; for entry in pairs(D.species or {}) do t[#t + 1] = entry end; return t end)
+Prime.SetDisplayResolver(function(player, entry) return Store.PetDisplay and Store.PetDisplay(player, entry) or 0 end)   -- a battle pet shows the skin YOU own
+Prime.Enable("pbj")
+require("acore_bus").On("companion_learned", function(player) Store.SyncCompanions(player) end, "pets")   -- the Shop taught a companion: straight into the journal
 local Info   -- forward declaration (defined below, used by the XP code)
 local TEAMS = 3
 local cache = {}   -- guidLow -> { pets = { [species] = {level, xp, a = {1,1,1}} }, teams = { [n] = {s1,s2,s3} }, active = 1 }
@@ -126,7 +131,7 @@ function Store.AddPet(player, species, level, picks, quality, display)
     c.pets[species] = { level = level or 1, xp = 0, a = { (picks and picks[1]) or 1, (picks and picks[2]) or 1, (picks and picks[3]) or 1 },
                         quality = math.max(1, math.min(4, quality or 1)), display = display or 0 }
     SavePet(g, species, c.pets[species])
-    if (display or 0) > 0 and SHOP_PRIME and SHOP_PRIME.SendOne then SHOP_PRIME.SendOne(player, species, display) end   -- the journal preview shows THIS skin
+    if (display or 0) > 0 then Prime.SendOne(player, species, display) end   -- the journal preview shows THIS skin
     return true
 end
 -- CAPTURE (retail trap): the captured pet keeps its level, quality and skin. One per species: a better version (quality, then level) replaces the owned one, otherwise the capture is released.
@@ -146,7 +151,7 @@ function Store.SetDisplay(player, species, display)
     local g = player:GetGUIDLow(); local p = Load(g).pets[species]
     if p and (p.display or 0) == 0 and display and display > 0 then
         p.display = display; SavePet(g, species, p)
-        if SHOP_PRIME and SHOP_PRIME.SendOne then SHOP_PRIME.SendOne(player, species, display) end
+        Prime.SendOne(player, species, display)
     end
 end
 
@@ -483,8 +488,7 @@ end)
 Msg.On("pbj", "dismiss", function(player) SetFollower(player, 0) end)
 
 function Store.IsHuman(player)   -- playerbots (300 of them) never get pet features: no wild pets, no saved followers, no database lookups
-    local ok, bot = pcall(function() return player:IsBot() end)
-    return not (ok and bot)
+    return not require("acore_util").IsBot(player)
 end
 local function Restore(player)   -- login / script load: bring the last summoned pet back
     if not Store.IsHuman(player) then return end

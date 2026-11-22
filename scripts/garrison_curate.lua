@@ -8,6 +8,7 @@
 --                                              ccadd|name   ccren|old~new   ccdel|name   ccprice|name~amount
 --                            server -> client  curgm|0/1   currev|N   curd|N;<record>   curfull|i/n;<records>   curbad|   (a client behind the revision asks curget)
 -- records:  i~kind~cat~name~price (empty field = not overridden)   f~model~vs~vy~vz~vr   k (the category list below is custom)   c~name~price   r~rev
+local IsBot = require("acore_util").IsBot
 return function(G)
     local Msg, BY_KIND = G.Msg, G.BY_KIND
     local BASE = require("garrison_catalog")
@@ -124,7 +125,7 @@ return function(G)
         return recs
     end
     local function Players(fn)
-        for _, p in pairs(GetPlayersInWorld() or {}) do if p and not p:IsBot() then fn(p) end end
+        for _, p in pairs(GetPlayersInWorld() or {}) do if p and not IsBot(p) then fn(p) end end
     end
     local function SendFullChunks(player)
         local parts, cur = {}, ""

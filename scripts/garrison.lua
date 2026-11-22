@@ -49,6 +49,12 @@ for _, part in ipairs(PARTS) do
         end
     end
 end
+-- 3D previews: the garrison registers ITS OWN creatures with the core priming service (nothing from the other addons)
+do
+    local Prime = require("acore_prime")
+    Prime.Register("garrison", function() local ok, C = pcall(require, "garrison_catalog"); return ok and C and C.npcs or {} end)
+    Prime.Enable("house")
+end
 if rawget(_G, "GARRISON_TEST") then ACORE_G = G end   -- the test harness (tools/test_garrison.lua) reads the shared table
 G.HealStrays()
 local bits = {}

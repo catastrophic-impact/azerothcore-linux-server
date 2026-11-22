@@ -7,6 +7,7 @@
 -- Other scripts: local Msg = require("acore_msg"); Msg.On("shop", "buy", function(player, payload) ... end)
 -- ============================================================
 
+local IsBot = require("acore_util").IsBot
 ACORE = ACORE or {}
 if ACORE.Msg then return ACORE.Msg end   -- already loaded (safe against double load)
 
@@ -68,7 +69,7 @@ end)
 RegisterPlayerEvent(4, function(event, player) HAS[player:GetGUIDLow()] = nil end)   -- logout
 CreateLuaEvent(function()
     for _, p in pairs(GetPlayersInWorld() or {}) do
-        if p and not p:IsBot() then Msg.Send(p, "core", "who", "") end
+        if p and not IsBot(p) then Msg.Send(p, "core", "who", "") end
     end
 end, 3000, 1)
 

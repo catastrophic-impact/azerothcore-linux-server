@@ -5,6 +5,7 @@
 -- Bots are never teleported by this script (playerbots follow their master on their own).
 -- Fixed from the old script: leftover debug print, hard-coded Ragefire teleport for groups, hard-coded DB guid.
 -- ============================================================
+local IsBot = require("acore_util").IsBot
 local Settings = require("acore_settings")
 local NPC_ENTRY = (Settings.dungeonTeleporter and Settings.dungeonTeleporter.npc) or 0
 if NPC_ENTRY == 0 then return true end
@@ -158,7 +159,7 @@ local function Teleport(player, dest)
     local group = player:GetGroup()
     if group and group:IsLeader(player:GetGUID()) then
         for _, member in pairs(group:GetMembers()) do
-            if member and not member:IsBot() then member:Teleport(dest[2], dest[3], dest[4], dest[5], dest[6]) end
+            if member and not IsBot(member) then member:Teleport(dest[2], dest[3], dest[4], dest[5], dest[6]) end
         end
     else
         player:Teleport(dest[2], dest[3], dest[4], dest[5], dest[6])
