@@ -1,8 +1,22 @@
-# Portable AzerothCore server + garrison / jukebox / shop / bot addons
+# Portable AzerothCore server + playerbots, garrisons, pet battles and more
 
-A one-script installer for a self-contained **WotLK 3.3.5a** AzerothCore server (Playerbot fork, 9 modules), an admin TUI, and a set of **open-source ALE (Lua) systems with matching client addons**: player housing ("garrison"), jukebox, shop, bot manager and Timewalking-style dungeon extras.
+A **one-script build** of a self-contained **WotLK 3.3.5a** server for yourself, your family and your friends: AzerothCore with playerbots, plus a set of custom systems (phased **garrisons**, **pet battles**, a **jukebox**, a **shop**, **Timewalking-style dungeon rewards**, a **bot manager**, an **admin launcher**) that are all open source. It is **not** a public server: you build it, you own it, and you can take the finished folder to another computer. Nothing in it is there to exploit players.
 
-> **Status: the addons are work in progress, but playable.** Expect rough edges; issues and pull requests welcome.
+> **Status: playable, with rough edges.** Much of this has been worked on heavily and is playable, but the pet and garrison content is large (about 3,400 pet species, thousands of garrison objects) and still being balanced and audited. Issues and pull requests welcome.
+
+**Built for Linux (x86-64).** The installer builds inside an Ubuntu 22.04 [distrobox](https://github.com/89luca89/distrobox), so the only thing your machine needs is distrobox with podman or docker. Developed and tested on a Steam Deck. For Windows you would have to port the scripts yourself.
+
+**Made with Claude.** This was developed with Claude Code over weeks, with a great deal of manual testing and tedious work alongside it, not from a single prompt.
+
+## Screenshots
+
+| | |
+|---|---|
+| <img src="images/garrisonplacing.png" alt="Placing an object in your garrison" width="420"><br>**Garrison**: stand where you want it and place it | <img src="images/garrisonui.png" alt="Garrison window" width="420"><br>**Garrison window**: thousands of objects and NPCs, categories, preview |
+| <img src="images/petbattle.png" alt="A pet battle in the open world" width="420"><br>**Pet battles** in the open world | <img src="images/petjournal.png" alt="Pet journal" width="420"><br>**Pet journal** (`/pets`): about 3,400 species, real retail-style abilities |
+| <img src="images/botmanager.png" alt="Bot manager" width="420"><br>**Bot Manager** (`/bots`) | <img src="images/jukebox.png" alt="Jukebox" width="420"><br>**Jukebox**: playlists, and shared music in a garrison |
+| <img src="images/shop.png" alt="Shop" width="420"><br>**Shop**: forgotten pets, mounts and toys | <img src="images/dwarer.png" alt="Minimap drawer" width="420"><br>**Minimap Drawer** (`/mmd`): all addon icons in one place |
+| <img src="images/launcher1.png" alt="Launcher, server tab" width="420"><br>**Launcher**: start, stop, back up | <img src="images/launcher2.png" alt="Launcher, accounts tab" width="420"><br>**Launcher**: accounts, modules, client addons |
 
 ## Why the addons are different
 
@@ -12,11 +26,15 @@ Other player-housing and garrison projects for 3.3.5 usually need core changes, 
 |---|---|
 | **Garrison** | Your own phased garrison (pick a location at the Stormwind Mage Tower portal; every location has one fixed area shared by all players): place trainers, vendors, a Menagerie of pets that hang out and stroll about, Alliance, Horde and neutral NPCs, immortal wandering **wildlife** (about 680 animals across every hunter pet family), and thousands of decor objects with a preview-grid placement window. Decor per garrison is capped (default 1000, shown in the window as `Placed n/max`; set `maxDecor` in `acore_settings.lua`). Includes **Curator mode** (GM level 3+) to sort, rename, price and re-centre decor in game. Decor names and categories have been cleaned up by identifying each model from rendered pictures (not from its file name), with new categories such as Herbs, Ore Nodes and Bridges & Docks. |
 | **Jukebox** | ~1000 game tracks, your own **playlists**, and **Play Random Songs**; works on its own with `/jukebox` (plays for you only). With Garrison installed too, the jukebox NPC plays music for everyone inside a garrison: guests can pick songs, and the garrison owner can set a **Default** song or playlist that plays by itself whenever nothing else is playing. |
-| **Shop** | Pets, mounts, toys and services bought with Darkmoon Prize Tickets (or gold). |
-| **Pet Battles** | Open-world, turn-based pet battles modelled on retail. Tiny wild pets appear next to the real creatures of the open-world zones of Azeroth, Outland and Northrend (**about 3,400 species across 61 zones**, including 239 collectible companion pets), at the size of a companion pet. Right-click one to challenge it, capture it, and manage your pets and teams in the `/pets` journal (filters by family, quality and zone, collected / not collected with where-to-find, search, drag-and-drop teams, rename, and a Feed button: food from your bags makes a hurt pet well fed, healing 10% every 2 seconds for 20 seconds). The numbers come from retail: stats, breeds, qualities, cooldowns and the effect of every ability, and **a player pet only ever gets builds and stats that a retail species a player can obtain has** (never boss, tamer or legendary kits). Names, icons and animations come from real 3.3.5 class and hunter-pet spells, picked to fit each creature. Ten families with a strong/weak ring and passives, weather, forced swaps, damage shields and more. Playerbots are excluded. The battle rules and every ability are covered by an automated test suite (`pet-battle/run_tests.sh`). |
-| **Bot Manager** | `/bots` window to build companion bot parties by class, spec and role. (Needs mod-playerbots.) |
+| **Shop** | An in-game shop for things you can no longer get in the game, such as TCG-era pets and toys and old mounts, plus services. You pay with any item you choose (we use Darkmoon Prize Tickets, earned from Timewalking) or with gold: one setting in `acore_settings.lua`. |
+| **Pet Battles** | Open-world, turn-based pet battles modelled on retail. Tiny wild pets appear next to the real creatures of the open-world zones of Azeroth, Outland and Northrend (**about 3,400 species across 61 zones**, including 239 collectible companion pets), at the size of a companion pet. Right-click one to challenge it, capture it, and manage your pets and teams in the `/pets` journal (filters by family, quality and zone, collected / not collected with where-to-find, search, drag-and-drop teams, and a Feed button: food from your bags makes a hurt pet well fed, healing 10% every 2 seconds for 20 seconds). The numbers come from retail: stats, breeds, qualities, cooldowns and the effect of every ability, and **a player pet only ever gets builds and stats that a retail species a player can obtain has** (never boss, tamer or legendary kits). Names, icons and animations come from real 3.3.5 class and hunter-pet spells, picked to fit each creature. Ten families with a strong/weak ring and passives, weather, forced swaps, damage shields and more. Playerbots are excluded. Known limitation: pets cannot be renamed yet. The battle rules and every ability are covered by an automated test suite (`pet-battle/run_tests.sh`). |
+| **Bot Manager** | `/bots` window to add temporary companion bots: pick a class and spec, add a random tank / healer / DPS, or press **Fill Group** to complete the party for you. Companions follow you into your garrison, and are dismissed when the last real player leaves the group. (Needs mod-playerbots.) |
 | **Free training** | Optional TUI switches (Options tab, on by default) that make class-trainer spells and the riding skills cost no gold; levels and quests are unchanged and switching off restores the prices. Part of the TUI, not a script. |
-| **Timewalking** | Dungeon Teleporter NPC, extra boss rewards + XP, free Hearthstone after leaving a dungeon. |
+| **Timewalking** | Works alongside **mod-autobalance**, which keeps old dungeons relevant. Every boss gives bonus rewards (the item is yours to choose in `acore_settings.lua`, default Darkmoon Prize Tickets: 2 per boss, 5 for a final boss). Final bosses also give bonus XP, gold and a level-appropriate satchel, the way Dungeon Finder does, but only when you did **not** queue through Dungeon Finder. A **Dungeon Teleporter** NPC takes you and your group to the entrance of any dungeon or raid, and your Hearthstone is free again after you leave a dungeon. |
+| **Transmog** | Slot-based transmogrification from mod-transmog-plus, with an optional client window (`Transmog` addon) instead of the old NPC dialog. Our patch keeps playerbots from filling your appearance collection. |
+| **Auction house** | The AH bot (mod-ah-bot-plus) is set up for you at install: account, character and settings. |
+| **Minimap Drawer** | `/mmd`: one minimap button that holds all your addon icons, so they stop piling up around the minimap. |
+| **Launcher and admin** | A desktop launcher (`./acore-launcher`) and a text UI (`./acore-admin`) with the same features: start / stop, logs, accounts, backups and restore, module toggles and rebuild, and installing / removing our addons in your WoW folder. |
 
 ## What the installer builds
 
@@ -48,7 +66,7 @@ In game: the garrison portal is at the Stormwind Mage Tower; `/pets` opens the p
 
 ## Install the full server (Linux)
 
-Needs `distrobox`, `git`, `curl` and podman or docker.
+Needs `distrobox` and podman or docker (plus `git` to clone this repo). Everything else (compilers, Python, curl, Go) is installed **inside** the build box, never on your system.
 
 ```
 git clone https://github.com/catastrophic-impact/azerothcore-linux-server.git && cd azerothcore-linux-server && ./install.sh
@@ -119,6 +137,17 @@ Tip: take a backup first (TUI Backups tab, `b`).
 ## Layout
 
 `scripts/` server-side ALE Lua · `addons/` client addons · `custom-sql/` database content · `tui/` admin TUI (Go) · `tools/` generators and installer parts · `config-overrides/` server tuning · `patches/` core patches · `modules.lock` pinned versions. `pet-battle/` pet battle data generators, simulations and tests (`pet-battle/run_tests.sh`) · `tools/m2_sheets.py` renders doodad / building models into numbered contact sheets, and `tools/apply_garrison_ids.py` applies reviewed names and categories to the garrison catalog with an undo file.
+
+## What the installer downloads
+
+Server source and all modules are vendored in `deps/` at pinned commits, so nothing is cloned at install time. The installer downloads: the Ubuntu 22.04 image and packages (inside the build box), the Go toolchain and its modules (to build the admin TUI), MySQL 8.4 from dev.mysql.com, the client map data from the [wowgaming/client-data](https://github.com/wowgaming/client-data) release, and Electron from its official GitHub release (checksum verified). None of our code sends telemetry or contacts anything else; all of it is readable in this repo.
+
+## Notes and known limits
+
+* **Linux only, x86-64.** The finished server folder bundles its own MySQL and libraries and runs on any modern x86-64 Linux; the desktop launcher also needs the usual desktop libraries (GTK, NSS), and `./acore-admin` works on machines without a desktop.
+* **Balance and content are still being audited.** With this many pets and garrison models, some pets may not belong, some may be missing, and some garrison objects are unrealistic (you can place a whole Stormwind if you want to). Pets cannot be renamed yet.
+* **Open source on purpose.** Take the addons, the installer or the admin app and use them as you see fit; any custom system you do not want can be left out at install time (`--no-garrison --no-jukebox --no-shop --no-bots --no-timewalking --no-pets`).
+* **Planned:** a bounty system, a better GM admin tool built on the garrison work, more custom pets (bosses as pets, possibly sold in the shop), and maybe an in-game card mini game.
 
 ## License
 
