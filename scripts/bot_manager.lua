@@ -216,6 +216,51 @@ Msg.On("bots", "removeall", function(player)
     Say(player, "All companions removed.")
 end)
 
+-- Companions only belong in a party with a real player. When the LAST real player leaves (or the party is disbanded) the bots would
+-- stay logged in, standing around the world: dismiss them with the same command the Remove button uses, a moment later (the group
+-- change is still being processed, and playerbots logs bots out on its own threads). Only the bots that were in that group are
+-- named, so the player's other bots (alts logged in by hand) are never touched. If the player logged out, playerbots handles it.
+local function DismissLater(humanGuid, names)
+    CreateLuaEvent(function()
+        local p = GetPlayerByGUID(humanGuid)
+        if not p or p:IsBot() then return end
+        for _, name in ipairs(names) do p:RunCommand(".playerbots bot remove " .. name) end
+        queues[p:GetGUIDLow()] = nil
+        SendList(p); RefreshLater(p, { 1500, 4000 })
+        Say(p, "Your companions were dismissed because the group has no real players left.")
+    end, 1200, 1)
+end
+
+local function DismissIfAbandoned(group, leaverLow, leaverGuid)
+    local humans, bots = 0, {}
+    for _, m in pairs(group:GetMembers()) do
+        if m then
+            if m:IsBot() then bots[#bots + 1] = m
+            elseif m:GetGUIDLow() ~= leaverLow then humans = humans + 1 end
+        end
+    end
+    if humans > 0 or #bots == 0 then return end   -- another real player is still there: the bots stay with them
+    local names = {}
+    for _, b in ipairs(bots) do
+        names[#names + 1] = b:GetName()
+        removing[b:GetGUIDLow()] = os.time() + 20; botRole[b:GetGUIDLow()] = nil   -- hidden from the list while they log out
+    end
+    DismissLater(leaverGuid, names)
+end
+
+RegisterGroupEvent(3, function(event, group, guid)   -- a member left or was removed
+    local who = guid and GetPlayerByGUID(guid)
+    if not who or who:IsBot() then return end
+    DismissIfAbandoned(group, who:GetGUIDLow(), who:GetGUID())
+end)
+RegisterGroupEvent(5, function(event, group)         -- the group was disbanded: if one real player was in it, its bots go too
+    local only
+    for _, m in pairs(group:GetMembers()) do
+        if m and not m:IsBot() then if only then return end; only = m end
+    end
+    if only then DismissIfAbandoned(group, only:GetGUIDLow(), only:GetGUID()) end
+end)
+
 -- NOTE: group membership is never changed from Lua (playerbots logs bots in/out on worker threads); offline companions are
 -- removed from the party by the ADDON via UninviteUnit, the normal game path.
 -- keep companions with their player (from botmanv2): summon bots that fell behind, except in battlegrounds/arenas

@@ -27,6 +27,28 @@ return function(G)
         for _, m in pairs(grp:GetMembers()) do if m and m:IsBot() then return true end end
         return false
     end
+    -- Companions (playerbots) are separate players: they must share the owner's phase or the owner cannot see them in the garrison (and they
+    -- would stand in the normal world). Bots of the group that are inside the garrison area get its phase bit; bots outside it (or after
+    -- the owner left) go back to normal. Keyed by phase bit, so another player's bots in a different phase are never touched.
+    local function GroupBots(player)
+        local out, grp = {}, player:GetGroup()
+        if grp then for _, m in pairs(grp:GetMembers()) do if m and m:IsBot() then out[#out + 1] = m end end end
+        return out
+    end
+    local function PhaseBots(player, h, loc)
+        for _, b in ipairs(GroupBots(player)) do
+            local inArea = b:GetMapId() == loc.map and G.locations.Inside(loc, b:GetX(), b:GetY())
+            local mask = b:GetPhaseMask()
+            if inArea then
+                if mask ~= h.bit then b:SetPhaseMask(h.bit, true) end
+            elseif mask == h.bit then
+                b:SetPhaseMask(1, true)
+            end
+        end
+    end
+    local function UnphaseBots(player, h)
+        for _, b in ipairs(GroupBots(player)) do if b:GetPhaseMask() == h.bit then b:SetPhaseMask(1, true) end end
+    end
     local function SendToHub(player) local hub = HubFor(player); player:Teleport(hub.map, hub.x, hub.y, hub.z + 1, hub.o) end
 
     local StartPoll
@@ -90,6 +112,7 @@ return function(G)
         arriving[guidLow], asking[guidLow] = nil, nil
         local h = active[owner]
         if player then
+            if h then UnphaseBots(player, h) end
             player:SetPhaseMask(1, true)
             Msg.Send(player, "house", "head", "0")   -- closes an open /garrison window
         end
@@ -122,6 +145,7 @@ return function(G)
                 end
             end
             if asking[g] then asking[g] = nil; Msg.Send(player, "house", "leavecancel", "") end   -- walked back in by themselves
+            PhaseBots(player, h, loc)   -- companions follow the owner into the garrison phase (a teleport / summon can drop it: checked every second)
             if player:GetPhaseMask() ~= h.bit and not player:IsGM() then
                 Leave(g, player, "phase")              -- phase got reset (e.g. .gm off): treat it as having left the garrison
                 Say(player, "You have left your garrison.")

@@ -186,6 +186,24 @@ land(p); clock = clock + 12; poll()
 check(p.phase ~= 1 and msgs(p, "leaveask") == 0, "inside the area: no prompt, still phased")
 check(p.rest > 0, "rested XP accumulates inside (" .. p.rest .. ")")
 
+-- companions (playerbots) are separate players: they must share the owner's phase inside the garrison, and only there
+local bot = { phase = 1, map = p.map, x = -8981.65, y = 855.01 }   -- still at the Mage Tower: outside the garrison area
+function bot:IsBot() return true end
+function bot:GetGUIDLow() return 900 end
+function bot:GetMapId() return self.map end
+function bot:GetX() return self.x end
+function bot:GetY() return self.y end
+function bot:GetPhaseMask() return self.phase end
+function bot:SetPhaseMask(m) self.phase = m end
+local grp = { GetMembers = function() return { p, bot } end }
+p.GetGroup = function() return grp end
+poll(); check(bot.phase == 1, "a companion outside the garrison area keeps the normal phase")
+bot.x, bot.y = p.x, p.y; poll()
+check(bot.phase == p.phase and bot.phase ~= 1, "a companion that follows the owner into the garrison gets the same phase (" .. tostring(bot.phase) .. " vs " .. tostring(p.phase) .. ")")
+bot.phase = 1; poll(); check(bot.phase == p.phase, "a companion whose phase was dropped by a teleport / summon is put back within a second")
+bot.x = bot.x + 400; poll(); check(bot.phase == 1, "a companion that walks out of the garrison area goes back to the normal phase")
+bot.x = p.x; poll(); check(bot.phase == p.phase, "and gets the garrison phase again when it comes back")
+
 -- walk out -> countdown -> back inside resets it -> out again -> countdown runs out
 p.x = -1860.9 + 105; poll()
 check(msgs(p, "house|leaveask|5") == 1, "outside the radius: the 5 second countdown starts (sent once)")
@@ -197,6 +215,8 @@ clock = clock + 3; poll(); check(p.phase ~= 1, "after 3 of 5 seconds the player 
 clock = clock + 3; poll()
 check(p.phase == 1 and p.flags == 0, "countdown over: back to the normal phase, resting flag removed")
 check(p.tele and p.tele[2] == -8981.65, "countdown over: sent to the Mage Tower")
+check(bot.phase == 1, "the owner leaves the garrison: the companion goes back to the normal phase too")
+p.GetGroup = function() return nil end
 land(p)
 
 -- keep running during the countdown: forced out
