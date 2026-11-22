@@ -14,6 +14,18 @@ if ACORE.Msg then return ACORE.Msg end   -- already loaded (safe against double 
 local Msg = { PREFIX = "ACORE", handlers = {}, WHISPER = 7 }
 ACORE.Msg = Msg
 
+-- Startup check: the ALE functions our scripts rely on. A server whose ALE build lacks one gets ONE clear line here instead of silent failures later.
+ACORE.TESTED_WITH = "mod-ale 84b85cc"
+do
+    local missing = {}
+    for _, fn in ipairs({ "RegisterServerEvent", "RegisterPlayerEvent", "WorldDBQuery", "CharDBQuery", "CharDBExecute", "CreatePacket", "GetPlayersInWorld" }) do
+        if _G[fn] == nil then missing[#missing + 1] = fn end
+    end
+    if #missing > 0 then
+        print("[ACORE] WARNING: this ALE build does not provide: " .. table.concat(missing, ", ") .. ". Our scripts were built and tested with " .. ACORE.TESTED_WITH .. "; some features may not work.")
+    end
+end
+
 local MAX_LEN = 240
 
 function Msg.On(module, action, fn)

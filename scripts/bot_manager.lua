@@ -4,6 +4,8 @@
 -- then their spec is set by whispering "talents spec <spec>". All input is validated against the tables below.
 -- Messages (module "bots"): list | add class:spec | role Tank/Healer/DPS | fill both/tank/healer/dps | remove <name> | removeall
 -- ============================================================
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Bot Manager] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Msg = require("acore_msg")
 
 local CFG = { MAX_GROUP = 5, DK_MIN_LEVEL = 55, SYNC = true, SYNC_MS = 5000 }

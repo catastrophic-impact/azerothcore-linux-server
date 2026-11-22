@@ -2,6 +2,8 @@
 -- Tables (acore_characters): dc_battlepet(guid, species, level, xp, a1, a2, a3)   dc_battleteam(guid, team, slot, species)   dc_battleplayer(guid, active_team)
 -- Client -> server: pbj|list  pbj|abil|<species>  pbj|setabil|<species>,<slot>,<opt>  pbj|setteam|<team>,<s1>,<s2>,<s3>  pbj|active|<team>
 -- Server -> client: pbj|pet|..., pbj|team|..., pbj|active|n, pbj|done, pbj|abl|...
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Pet Battles] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Msg = require("acore_msg")
 local D = require("pb_data")
 local Eng = require("pb_core")

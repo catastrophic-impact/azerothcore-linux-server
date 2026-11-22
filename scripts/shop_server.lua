@@ -2,6 +2,8 @@
 -- Shop (server side). Client addon: addons/DadShop. All purchases are validated here.
 -- Currency: Darkmoon Faire Prize Ticket (item 19182). Catalog is data in shop_catalog.lua.
 -- ============================================================
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Shop] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Msg = require("acore_msg")
 local Catalog = require("shop_catalog")
 local Settings = require("acore_settings")

@@ -5,6 +5,8 @@
 -- Bots are never teleported by this script (playerbots follow their master on their own).
 -- Fixed from the old script: leftover debug print, hard-coded Ragefire teleport for groups, hard-coded DB guid.
 -- ============================================================
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Timewalking (teleporter)] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local IsBot = require("acore_util").IsBot
 local Settings = require("acore_settings")
 local NPC_ENTRY = (Settings.dungeonTeleporter and Settings.dungeonTeleporter.npc) or 0

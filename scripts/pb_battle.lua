@@ -2,6 +2,8 @@
 -- 1 pet out, 2 benched (swap costs the turn), enemy sends one pet at a time. Pets are shrunk real creatures next to the player.
 -- Client -> server: pbt|start, pbt|cmd|A1..A3 / S2,S3, pbt|rec|<enemy idx>, pbt|skiprec, pbt|quit, pbt|fx|<spellId>
 -- Server -> client: pbt|begin, st, abil, in, act, hp, tag, fnt, turn, msg, end, recruit, rmsg, done
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Pet Battles] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Msg = require("acore_msg")
 local D = require("pb_data")
 local Eng = require("pb_core")   -- the retail-based battle engine

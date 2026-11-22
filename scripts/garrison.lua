@@ -15,6 +15,8 @@
 --          G.OnTick(fn(player, h, now))   once a second per occupant that is inside the area
 --          G.OnLogin(fn(player, wasInsideGarrison))     G.OnStray(fn(player))   found in a garrison phase without being inside (after a reload)
 -- ============================================================
+-- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
+for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Garrison] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Settings = require("acore_settings")
 if Settings.garrison and Settings.garrison.enabled == false then return true end
 
