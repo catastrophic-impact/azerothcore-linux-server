@@ -103,8 +103,9 @@ for it in cfg['items']:
     else:
         if e not in gob: missing.append(it['kind']); continue
         nm, dp, ty = gob[e]
-        if go_model.get(dp, '').lower().endswith('.wmo') and it.get('multi'):   # whole-building WMOs draw now (type 14, custom-sql/014): all of them go to Unsorted for review
-            it['category'] = 'Unsorted'; it['hid'] = True; wmo_items.append(it['kind'])
+        if go_model.get(dp, '').lower().endswith('.wmo') and it.get('multi'):   # whole-building WMOs draw now (type 14, custom-sql/014): they go to Unsorted for review UNLESS a curator already gave them a real category
+            _ac = (_a.get('categories', {}) if os.path.exists(_af) else {}).get(it['kind'])
+            if _ac in (None, '', 'Removed', 'Unsorted'): it['category'] = 'Unsorted'; it['hid'] = True; wmo_items.append(it['kind'])
         if it.get('theme') is not None and not it.get('fx') and BOUNDS and go_model.get(dp, '').lower() not in BOUNDS:
             nobounds.append(it['kind']); continue     # sheet decor whose model has no measurable geometry = particle/FX emitter
         items.append(dict(it, label=it.get('name') or nm, detail='', model=go_model.get(dp, ''), human=0))
