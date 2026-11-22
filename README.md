@@ -90,11 +90,20 @@ Players get our addons by unpacking the client patch zip the TUI builds (Config 
 You need an AzerothCore server with [mod-ale](https://github.com/azerothcore/mod-ale) (Bot Manager also needs mod-playerbots).
 
 1. Copy the scripts of the pieces you want from `scripts/` to your `lua_scripts/` folder. Always include `acore_msg.lua`, `acore_prime.lua`, `acore_bus.lua`, `acore_util.lua` and `acore_settings.lua`. The files per component are listed in [`tools/components.sh`](tools/components.sh).
-2. Run the matching `custom-sql/*.sql` files (they select their own database). Re-running is safe.
+2. Run the matching `custom-sql/*.sql` files. They are written for databases named `acore_world` and `acore_characters`; if yours are called something else, use the helper: `custom-sql/apply.sh --world YOURWORLD --characters YOURCHARS --only 002,008 -- -uUSER -p` (everything after `--` goes to the mysql client; `--dry-run` lists what would run, `--only` takes the file number prefixes of the pieces you want, see `tools/components.sh`). It swaps the names on the fly and never edits the files. Re-running is safe. A few files (the wildlife and pet stand-ins) copy rows from the stock `creature_template`, so run them against a world database that already has the normal AzerothCore data. The Lua scripts need no database names: they use the databases your server is already configured with.
 3. Copy the matching folders from `addons/` (always `AcoreLib`; the garrison admin tool is `tools/wotlk_garrison_admin`) into each player's `Interface/AddOns`.
 4. Restart the server or run `reload ale`, then `/reload` in game.
 
 Settings live in `scripts/acore_settings.lua` (garrison options such as the decor limit `maxDecor` are in its `garrison` table).
+
+**Removing a piece cleanly.** Stop the server and delete that piece's scripts first (while they are installed they would just create their data again), take a backup, then run the matching removal file through the same helper, and start the server again:
+
+```
+custom-sql/apply.sh --remove garrison,pets,timewalking -- -uUSER -p
+custom-sql/apply.sh --remove-data garrison,pets --yes -- -uUSER -p
+```
+
+`--remove` deletes the templates, spawns and helper tables the piece added (only entries in our own ID ranges) and puts the 113 stock decor objects the garrison re-typed back to their original type. `--remove-data` additionally deletes **the players' data**: their garrisons, placed decor and pets. It cannot be undone, so it needs `--yes`; characters who logged out inside a garrison are moved to their hearthstone location first. Jukebox, Shop and Bot Manager add nothing to the database. Timewalking owns the Dungeon Teleporter NPC (entry 900001), which the garrison only lists in its catalog. Companion pet spells players bought in the shop stay learned.
 
 **Each piece stands alone.** Garrison, Jukebox, Shop, Pet Battles, Bot Manager and Timewalking do not read each other's code or data; they share only the small core scripts (`acore_*.lua`). A piece that needs something from another one asks the core (`acore_prime` registers a piece's own creatures for 3D previews, `acore_bus` passes events such as "the Shop taught a companion pet", `acore_util.IsBot` is safe on servers without mod-playerbots). Install any subset and the rest simply stays inactive. `bash tools/test_independence.sh` proves it: it loads every piece alone, next to only the core, and fails if one reaches into another. If you add your own piece, use the same rule: talk through the core, never `require` a sibling piece.
 
