@@ -231,6 +231,42 @@ do
     check(errx ~= nil, "a failing height lookup does not break the spawn")
 end
 
+-- wild TEAMS: a 3-pet team = the challenged pet + 2 others drawn from the WHOLE zone (not only what stands nearby), different species, all at the same level
+do
+    local D2 = require("pb_data"); local ZS = require("pb_zone_species")
+    local W = PB_WILD
+    check(type(W.BuildEnemies) == "function", "PB_WILD.BuildEnemies is exposed")
+    local zid                                   -- a zone with real 3-pet fights (pet level 3+: Elwynn pets are level 1-2 and fight alone) and a big roster
+    for id, z in pairs(D2.zones) do if z.lo >= 5 and ZS[z.name] and #ZS[z.name] >= 20 and (not zid or id < zid) then zid = id end end
+    assert(zid, "no suitable zone in the data")
+    local zname = D2.zones[zid].name; local inzone = {}; for _, sp in ipairs(ZS[zname]) do inzone[sp] = true end
+    local main = ZS[zname][1]
+    -- the 'seen nearby' list is ONE other species: the old code could only ever pick that one (or the main species) for the two extras
+    local w = { species = main, level = D2.zones[zid].maxMob, zone = zid, types = { main, ZS[zname][2] } }
+    local seenOther, bad, dup, wrongLv, solo = {}, 0, 0, 0, 0
+    for _ = 1, 400 do
+        local t = W.BuildEnemies(w)
+        if #t ~= 3 then bad = bad + 1 else
+            if t[1].species ~= main then bad = bad + 1 end
+            if t[2].species == t[3].species or t[2].species == main or t[3].species == main then dup = dup + 1 end
+            for i = 2, 3 do
+                if not inzone[t[i].species] then bad = bad + 1 end
+                seenOther[t[i].species] = true
+                if t[i].level ~= t[1].level then wrongLv = wrongLv + 1 end
+            end
+        end
+    end
+    local kinds = 0; for _ in pairs(seenOther) do kinds = kinds + 1 end
+    check(bad == 0, "every extra pet belongs to the zone (" .. bad .. " bad teams)")
+    check(dup == 0, "the 3 pets are 3 different species (" .. dup .. " teams with a repeat)")
+    check(wrongLv == 0, "the extra pets have the challenged pet's level")
+    check(kinds >= 20, "the extras come from across the whole zone, not just what stands nearby (" .. kinds .. " different species over 400 teams, zone has " .. #ZS[zname] .. ")")
+    -- level 1-2 pets still fight alone; an unknown zone falls back to the species seen nearby
+    local lowT = W.BuildEnemies({ species = ZS[D2.zones[12].name][1], level = 1, zone = 12, types = {} }); check(#lowT == 1, "a level 1-2 wild pet still fights alone")
+    local fb = W.BuildEnemies({ species = main, level = D2.zones[zid].maxMob, zone = 99999, types = { main, ZS[zname][2], ZS[zname][3] } })
+    check(#fb == 3 and (fb[2].species == ZS[zname][2] or fb[2].species == ZS[zname][3]), "an unknown zone falls back to the species seen nearby")
+end
+
 print(string.format("wild: %d checks passed, %d failed", passes, #fails))
 for _, f in ipairs(fails) do print("  FAIL " .. f) end
 os.exit(#fails == 0 and 0 or 1)

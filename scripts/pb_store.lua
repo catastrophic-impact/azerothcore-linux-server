@@ -290,10 +290,9 @@ function Store.Feed(player, species, entry)
     player:RemoveItem(entry, 1)
     p.hp, p.hpAt = cur, now; p.fed = { from = now, to = now + D.FED_SECONDS }   -- start from the health the pet has right now (a re-feed restarts the buff)
     SavePet(guid, species, p)
-    local low, pushes = guid, 0
+    local low, pguid = guid, player:GetGUID()   -- the Player OBJECT is invalid once this call returns (ALE): keep only the GUID value and find the player again in the timer
     CreateLuaEvent(function()   -- the journal shows the health climbing: one refresh per step while the buff runs
-        pushes = pushes + 1
-        local pl = GetPlayerByGUID and GetPlayerByGUID(player:GetGUID())
+        local pl = GetPlayerByGUID and GetPlayerByGUID(pguid)
         local cp = Load(low).pets[species]
         if pl and cp then pcall(Msg.Send, pl, "pbj", "pet", Info(species, cp)) end
     end, D.FED_STEP * 1000, math.floor(D.FED_SECONDS / D.FED_STEP) + 1)

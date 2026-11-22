@@ -136,7 +136,7 @@ Download the repo, then in your server folder:
    | Garrison | `garrison.lua`, `garrison_catalog.lua`, `garrison_anims.lua` and every `garrison_<name>.lua` (config, items, economy, store, locations, spawn, session, portal, placement, ghost, menagerie, wildlife, props, perks, gm) |
    | Jukebox in a garrison | `garrison_jukebox.lua` (the addon alone needs no server script) |
    | Shop | `shop_server.lua`, `shop_catalog.lua` |
-   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_vis.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua` and `custom-sql/016_pet_standins.sql` + `017_pet_standin_scale.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
+   | Pet Battles | `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_core.lua`, `pb_vis.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua`, `pb_zone_species.lua` and `custom-sql/016_pet_standins.sql` + `017_pet_standin_scale.sql` (the pet stand-in creature templates; applied by the TUI on every start, so restart the servers from the TUI once) |
    | Bot Manager | `bot_manager.lua` |
    | Timewalking | `dungeon_teleporter.lua`, `darkmoon_tickets.lua` |
 

@@ -150,6 +150,30 @@ test("feeding: not food, drinks, missing item, full health, unowned pet and a ru
     Store.SetHp(42, FEEDSP[502], 100); PB_BATTLE = { InBattle = function() return true end }; eq((Store.Feed(feeder, FEEDSP[502], 1002)), false, "in battle"); PB_BATTLE = nil
     os.time = realTime
 end)
+test("feeding: the journal gets a fresh pet message at every 2 s step, even though ALE invalidates the Player object once the call returns", function()
+    -- real ALE: a Player userdata kept past the end of the call is INVALID (calling a method on it raises 'bad self ... invalidated object'); a GUID value stays good.
+    local live = true; local GUID = {}
+    local p6 = setmetatable({ GetItemCount = function(_, e) return bag[e] or 0 end, RemoveItem = function(_, e, n) bag[e] = bag[e] - n end,
+        GetGUID = function() if not live then error("calling 'GetGUID' on bad self (Player expected, got pointer to nonexisting (invalidated) object)") end return GUID end },
+        { __index = player })
+    local sp = FEEDSP[504]; Store.AddPet(player, sp, 10, nil, 1, 0); at(6000); Store.SetHp(42, sp, 100)
+    local events, savedCS, savedGP = {}, CreateLuaEvent, GetPlayerByGUID
+    function CreateLuaEvent(fn, delay, repeats) events[#events + 1] = { fn = fn, delay = delay, repeats = repeats } end
+    function GetPlayerByGUID(g) if g == GUID then return player end end   -- the stored GUID value finds the online player again
+    outbox = {}
+    local ok, msg = Store.Feed(p6, sp, 1002); eq(ok, true, msg)
+    live = false                                    -- the call has returned: the Player object is now invalid
+    eq(#events, 1, "one timed push registered"); eq(events[1].delay, 2000, "every 2 s"); eq(events[1].repeats, 11, "for the whole buff plus one")
+    local curs = {}
+    for k = 1, events[1].repeats do
+        at(6000 + 2 * k); outbox = {}
+        local okc, err = pcall(events[1].fn); eq(okc, true, "push " .. k .. " raised: " .. tostring(err))
+        local m = outbox[1]; truthy(m and m.m == "pbj" and m.a == "pet", "push " .. k .. " sent no pbj|pet message")
+        curs[#curs + 1] = tonumber(m.p:match("^%d+,%d+,%d+,%d+,%d+,%d+,%a+,[^,]+,%d+,%d+,%d+,(%d+)"))
+    end
+    truthy(curs[1] > 100, "the first push already shows healing"); truthy(curs[5] > curs[1], "health keeps climbing"); truthy(curs[10] >= curs[5], "never goes down")
+    CreateLuaEvent, GetPlayerByGUID = savedCS, savedGP; os.time = realTime
+end)
 test("feeding: a battle result or a level up cancels the remaining buff; feeding again restarts it", function()
     local p = pet(503, 10, 100, 5000); Store.Feed(feeder, FEEDSP[503], 1002)
     at(5004); local mid = Store.PetHp(FEEDSP[503], p, 5004); truthy(mid > 100, "buff running")
