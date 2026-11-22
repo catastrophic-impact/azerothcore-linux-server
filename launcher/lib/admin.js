@@ -309,7 +309,7 @@ class Admin {
     let total = 0;
     for (const t of GARRISON_PLAYER_TABLES) {
       try {
-        const o = await this.sql(`DELETE t FROM ${t} t LEFT JOIN acore_auth.account a ON a.id = t.account WHERE a.id IS NULL; SELECT ROW_COUNT()`);
+        const o = await this.sql(`DELETE FROM ${t} WHERE account NOT IN (SELECT id FROM acore_auth.account); SELECT ROW_COUNT()`);
         total += parseInt(o, 10) || 0;
       } catch (e) { if (!/exist/.test(e.message)) throw new Error(`${t}: ${e.message}`); }
     }

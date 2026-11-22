@@ -24,7 +24,7 @@ var (
 	cOK     = lipgloss.NewStyle().Foreground(lipgloss.Color("42"))
 )
 
-var tabNames = []string{"Server", "Output", "Logs", "Backups", "Modules", "Config", "Accounts", "Options"}
+var tabNames = []string{"Server", "Output", "Logs", "Backups", "Modules", "Config", "Accounts", "Options", "Client"}
 
 const (
 	tServer = iota
@@ -35,6 +35,7 @@ const (
 	tConfig
 	tAccounts
 	tDebug
+	tClient
 )
 
 type tickMsg time.Time
@@ -82,11 +83,12 @@ type model struct {
 	mode    mode
 	input   textinput.Model
 
-	mods modState
-	acct acctState
-	dbg  debugState
-	help bool
-	ask  askState
+	mods   modState
+	client clientState
+	acct   acctState
+	dbg    debugState
+	help   bool
+	ask    askState
 
 	logFilter  string
 	logErrOnly bool
@@ -111,6 +113,7 @@ func newModel() model {
 	m.spin = spinner.New(spinner.WithSpinner(spinner.MiniDot))
 	m.spin.Style = lipgloss.NewStyle().Foreground(lipgloss.Color("0"))
 	m.mods = newModState()
+	m.client = newClientState()
 	m.acct = newAcctState()
 	return m
 }
@@ -280,6 +283,9 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 	if m.mods.capturing() {
 		return m.modsKey(k)
 	}
+	if m.tab == tClient && (m.client.capturing() || m.client.mode != cmNone) {
+		return m.clientKey(k)
+	}
 	if m.tab == tAccounts && (m.acct.capturing() || m.acct.mode == amDelete) {
 		return m.acctKey(k)
 	}
@@ -298,7 +304,7 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 	case "shift+tab", "left":
 		m.tab = (m.tab + len(tabNames) - 1) % len(tabNames)
 		return m.onTab()
-	case "1", "2", "3", "4", "5", "6", "7", "8":
+	case "1", "2", "3", "4", "5", "6", "7", "8", "9":
 		m.tab = int(s[0] - '1')
 		return m.onTab()
 	}
@@ -368,6 +374,8 @@ func (m model) onKey(k tea.KeyMsg) (tea.Model, tea.Cmd) {
 		return m.acctKey(k)
 	case tDebug:
 		return m.debugKey(k)
+	case tClient:
+		return m.clientKey(k)
 	case tConfig:
 		if s == "p" {
 			return m, m.startOp("building client patch archive", func() (string, error) { return buildClientPatch() })
@@ -446,6 +454,8 @@ func (m model) onTab() (tea.Model, tea.Cmd) {
 		m.mods.refresh()
 	case tAccounts:
 		m.acct.refresh()
+	case tClient:
+		m.client.refresh()
 	case tConfig:
 		if m.st.MySQL {
 			if out, err := sql("select address,localaddress from acore_auth.realmlist where id=1"); err == nil {
@@ -597,6 +607,8 @@ func (m model) View() string {
 			body.WriteString(m.viewConfig())
 		case tAccounts:
 			body.WriteString(m.viewAccounts())
+		case tClient:
+			body.WriteString(m.viewClient())
 		case tDebug:
 			body.WriteString(m.viewDebug())
 		}
@@ -859,7 +871,7 @@ func (m model) readLog() []string {
 }
 
 func (m model) onMouse(v tea.MouseMsg) (tea.Model, tea.Cmd) {
-	if m.mode != mNone || m.help || m.mods.capturing() || m.acct.capturing() {
+	if m.mode != mNone || m.help || m.mods.capturing() || m.acct.capturing() || m.client.capturing() {
 		return m, nil
 	}
 	switch {

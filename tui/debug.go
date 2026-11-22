@@ -249,7 +249,7 @@ func cleanOrphanGarrisons() (string, error) {
 	}
 	total := 0
 	for _, t := range garrisonPlayerTables {
-		out, err := sql("DELETE t FROM " + t + " t LEFT JOIN acore_auth.account a ON a.id = t.account WHERE a.id IS NULL; SELECT ROW_COUNT()")
+		out, err := sql("DELETE FROM " + t + " WHERE account NOT IN (SELECT id FROM acore_auth.account); SELECT ROW_COUNT()") // single-table form: the alias form needs a default database (error 1046)
 		if err != nil {
 			if strings.Contains(out, "exist") {
 				continue

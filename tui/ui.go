@@ -143,6 +143,8 @@ func tabHints(tab int) string {
 		return hint("b", "full backup", "p", "player backup", "↵", "restore", "d", "delete", "o", "browse folder", "r", "refresh")
 	case tDebug:
 		return hint("↑↓", "select", "space", "toggle", "c", "clear mysqld.log", "C", "empty disabled logs", "w", "empty garrison data", "o", "clean deleted accounts")
+	case tClient:
+		return hint("f", "WoW folder", "i/↵", "install", "a", "install all", "x", "remove", "X", "remove all", "w", "realmlist.wtf")
 	case tConfig:
 		return hint("e", "edit", "d", "detect LAN", "l", "localhost", "p", "client patch")
 	}
@@ -199,7 +201,7 @@ func confirmBox(title, body, keys string) string {
 
 func (m model) helpView() string {
 	rows := [][2]string{
-		{"tab / ← →", "next / previous screen"}, {"1-8", "jump to a screen (or click the tab)"},
+		{"tab / ← →", "next / previous screen"}, {"1-9", "jump to a screen (or click the tab)"},
 		{"↑ ↓ / j k", "move in lists (mouse wheel works too)"}, {"?", "this help"},
 		{"q / Ctrl+C", "quit (safely stops the servers first, asks to confirm)"},
 		{"Server", "s start · x safe stop · m MySQL · R reset"},
@@ -208,7 +210,9 @@ func (m model) helpView() string {
 		{"Backups", "b full · p player · enter restore · d delete · o browse folder"},
 		{"Modules", "space toggle · enter apply · a add · x remove · u undo"},
 		{"Accounts", "n new · d delete · g GM level · p password · / search"},
-		{"Options", "space toggle · c clear mysqld.log"},
+		{"Options", "space toggle · c clear mysqld.log · C empty disabled logs · w wipe garrison data · o clean deleted accounts"},
+		{"Config", "e edit realmlist · d detect LAN · l localhost · p build client patch"},
+		{"Client", "f WoW folder · i install/update · a install all · x remove · X remove all · w realmlist.wtf"},
 	}
 	var b strings.Builder
 	b.WriteString(sKey.Render("Keys") + "\n\n")
@@ -236,7 +240,7 @@ func (m model) footer() string {
 	if w < 20 {
 		w = 80
 	}
-	global := hint("tab / 1-8", "switch", "?", "help", "q", "quit")
+	global := hint("tab / 1-9", "switch", "?", "help", "q", "quit")
 	h := tabHints(m.tab)
 	if h != "" {
 		h += sFooter.Render("   │   ")

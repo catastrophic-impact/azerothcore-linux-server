@@ -13,14 +13,15 @@ local Info   -- forward declaration (defined below, used by the XP code)
 local TEAMS = 3
 local cache = {}   -- guidLow -> { pets = { [species] = {level, xp, a = {1,1,1}} }, teams = { [n] = {s1,s2,s3} }, active = 1 }
 
-CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battlepet (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, level TINYINT UNSIGNED NOT NULL DEFAULT 1, xp INT UNSIGNED NOT NULL DEFAULT 0, a1 TINYINT NOT NULL DEFAULT 1, a2 TINYINT NOT NULL DEFAULT 1, a3 TINYINT NOT NULL DEFAULT 1, quality TINYINT UNSIGNED NOT NULL DEFAULT 1, display INT UNSIGNED NOT NULL DEFAULT 0, hp INT UNSIGNED NOT NULL DEFAULT 0, hp_at INT UNSIGNED NOT NULL DEFAULT 0, PRIMARY KEY (guid, species)) ENGINE=InnoDB")
+-- synchronous on purpose: the SHOW COLUMNS check below runs right away, and on a FRESH database an async CREATE has not run yet (error 1146 aborts worldserver)
+CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battlepet (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, level TINYINT UNSIGNED NOT NULL DEFAULT 1, xp INT UNSIGNED NOT NULL DEFAULT 0, a1 TINYINT NOT NULL DEFAULT 1, a2 TINYINT NOT NULL DEFAULT 1, a3 TINYINT NOT NULL DEFAULT 1, quality TINYINT UNSIGNED NOT NULL DEFAULT 1, display INT UNSIGNED NOT NULL DEFAULT 0, hp INT UNSIGNED NOT NULL DEFAULT 0, hp_at INT UNSIGNED NOT NULL DEFAULT 0, PRIMARY KEY (guid, species)) ENGINE=InnoDB")
 -- older installs: add the columns that came later (hp 0 = full health)
 for _, c in ipairs({ { "quality", "TINYINT UNSIGNED NOT NULL DEFAULT 1" }, { "display", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp", "INT UNSIGNED NOT NULL DEFAULT 0" }, { "hp_at", "INT UNSIGNED NOT NULL DEFAULT 0" } }) do
     if not CharDBQuery("SHOW COLUMNS FROM dc_battlepet LIKE '" .. c[1] .. "'") then CharDBExecute("ALTER TABLE dc_battlepet ADD COLUMN " .. c[1] .. " " .. c[2]) end
 end
-CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battleteam (guid INT UNSIGNED NOT NULL, team TINYINT UNSIGNED NOT NULL, slot TINYINT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid, team, slot)) ENGINE=InnoDB")
-CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battlefollower (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid)) ENGINE=InnoDB")
-CharDBExecute("CREATE TABLE IF NOT EXISTS dc_battleplayer (guid INT UNSIGNED NOT NULL, active_team TINYINT UNSIGNED NOT NULL DEFAULT 1, PRIMARY KEY (guid)) ENGINE=InnoDB")
+CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battleteam (guid INT UNSIGNED NOT NULL, team TINYINT UNSIGNED NOT NULL, slot TINYINT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid, team, slot)) ENGINE=InnoDB")
+CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battlefollower (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid)) ENGINE=InnoDB")
+CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battleplayer (guid INT UNSIGNED NOT NULL, active_team TINYINT UNSIGNED NOT NULL DEFAULT 1, PRIMARY KEY (guid)) ENGINE=InnoDB")
 
 local function Load(guid)
     if cache[guid] then return cache[guid] end

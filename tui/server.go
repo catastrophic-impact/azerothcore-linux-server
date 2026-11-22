@@ -58,8 +58,17 @@ func findPID(exe string) int {
 		if _, err := fmt.Sscanf(e.Name(), "%d", &pid); err != nil {
 			continue
 		}
-		if l, err := os.Readlink(fmt.Sprintf("/proc/%d/exe", pid)); err == nil && l == exe {
-			return pid
+		if l, err := os.Readlink(fmt.Sprintf("/proc/%d/exe", pid)); err == nil {
+			if l == exe {
+				return pid
+			}
+			continue
+		}
+		// /proc/<pid>/exe is unreadable inside containers / distroboxes / hidepid mounts: fall back to the command line (argv[0])
+		if b, err := os.ReadFile(fmt.Sprintf("/proc/%d/cmdline", pid)); err == nil {
+			if i := strings.IndexByte(string(b), 0); i > 0 && string(b[:i]) == exe {
+				return pid
+			}
 		}
 	}
 	return 0
@@ -83,7 +92,12 @@ func mysqlCmd(args ...string) *exec.Cmd {
 }
 
 func sql(q string) (string, error) {
-	out, err := mysqlCmd("-N", "-B", "-e", q).CombinedOutput()
+	c := mysqlCmd("-N", "-B", "-e", q)
+	if len(q) > 100000 { // one command-line argument is capped at 128 KiB by the kernel (E2BIG, empty error): big generated files go through stdin
+		c = mysqlCmd("-N", "-B")
+		c.Stdin = strings.NewReader(q)
+	}
+	out, err := c.CombinedOutput()
 	return strings.TrimSpace(string(out)), err
 }
 

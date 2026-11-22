@@ -125,6 +125,69 @@ func runCLI(args []string) bool {
 		}
 	case "confs": // generate missing confs; `confs reset` rebuilds ALL from stock + config-overrides (discards manual edits)
 		err = applyOverridesMode(len(args) > 1 && args[1] == "reset")
+	case "client": // client [status | set <folder> | install [names|all] | remove [names|all] | realmlist <address>]: our addons in a WoW client folder
+		sub := "status"
+		if len(args) > 1 {
+			sub = args[1]
+		}
+		cp := loadClientPath()
+		var done []string
+		pick := func() []string { // names given, or "all" = every addon except the GM-only admin tool
+			if len(args) > 2 && args[2] != "all" {
+				return args[2:]
+			}
+			var n []string
+			for _, a := range listOurAddons() {
+				if !a.GMOnly || (len(args) > 2 && args[1] == "remove") {
+					n = append(n, a.Name)
+				}
+			}
+			return n
+		}
+		switch sub {
+		case "set":
+			if len(args) < 3 {
+				err = fmt.Errorf("usage: client set <WoW client folder>")
+			} else {
+				var r string
+				if r, err = setClientFolder(args[2]); err == nil {
+					fmt.Println("client folder:", r)
+				}
+			}
+		case "install":
+			if done, err = installAddons(cp, pick()); err == nil {
+				fmt.Println("installed/updated:", strings.Join(done, ", "))
+			}
+		case "remove":
+			var warn string
+			if done, warn, err = removeAddons(cp, pick()); err == nil {
+				fmt.Println("removed:", strings.Join(done, ", "))
+				if warn != "" {
+					fmt.Println("warning:", warn)
+				}
+			}
+		case "realmlist":
+			if len(args) < 3 {
+				for _, l := range readClientRealmlist(cp) {
+					fmt.Println(l)
+				}
+			} else {
+				var files []string
+				if files, err = setClientRealmlist(cp, args[2]); err == nil {
+					fmt.Println("realmlist.wtf updated:", strings.Join(files, ", "))
+				}
+			}
+		default:
+			c, cerr, rows := addonStates(cp)
+			if cerr != nil {
+				fmt.Println("client folder:", cerr)
+			} else {
+				fmt.Println("client folder:", c.Root)
+			}
+			for _, r := range rows {
+				fmt.Printf("%-24s %-9s %s\n", r.Name, r.State, r.Title)
+			}
+		}
 	case "modules": // modules apply | undo | list
 		sub := ""
 		if len(args) > 1 {
