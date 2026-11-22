@@ -114,8 +114,8 @@ PY
 bx "mkdir -p '$DEST/source/data' && cp -a ~/src/azerothcore-wotlk/data/sql '$DEST/source/data/'"
 
 say "7/9 MySQL 8.4 + client data (cached in $CACHE)"
-[ -s "$CACHE/mysql.tar.xz" ] || bx "curl -L --fail -o '$CACHE/mysql.tar.xz' '$MYSQL_URL'"
-[ -s "$CACHE/Data.zip" ] || bx "curl -L --fail -o '$CACHE/Data.zip' '$DATA_URL'"
+[ -s "$CACHE/mysql.tar.xz" ] || { bx "curl -L --fail -C - --retry 3 -o '$CACHE/mysql.tar.xz.part' '$MYSQL_URL'" && mv -f "$CACHE/mysql.tar.xz.part" "$CACHE/mysql.tar.xz"; }   # .part: an interrupted download is never mistaken for a finished one
+[ -s "$CACHE/Data.zip" ] || { bx "curl -L --fail -C - --retry 3 -o '$CACHE/Data.zip.part' '$DATA_URL'" && mv -f "$CACHE/Data.zip.part" "$CACHE/Data.zip"; }   # .part: an interrupted download is never mistaken for a finished one
 [ -x "$DEST/mysql/bin/mysqld" ] || { mkdir -p "$DEST/mysql" && bx "tar -xf '$CACHE/mysql.tar.xz' -C '$DEST/mysql' --strip-components=1"; }
 [ -d "$DEST/data/maps" ] || { mkdir -p "$DEST/data" && bx "unzip -q -o '$CACHE/Data.zip' -d '$DEST/data'"; }
 bx "export LD_LIBRARY_PATH='$DEST/mysql/lib/private':'$DEST/mysql/lib'; for f in mysqld mysql mysqldump mysqladmin; do ldd '$DEST/mysql/bin/'\$f; done | awk '/=> \\//{print \$3}' | grep -vE '/(libc|libm|libdl|libpthread|librt|libresolv|libutil)\.so' | grep -v '$DEST' | sort -u | while read l; do [ -e '$DEST/libs/'\$(basename \$l) ] || cp -L \$l '$DEST/libs/'; done"
