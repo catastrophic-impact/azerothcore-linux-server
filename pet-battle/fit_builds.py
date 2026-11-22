@@ -63,6 +63,12 @@ for s, v in sp.items():
         cd0 = lambda g: int((re.search(r'-cd(\d+)', EFF.get(g, ('-cd9',))[0]) or [0, 9])[1])
         if all(EFF.get(g, ('', [], ''))[2] in OK_STATUS for g in ids) and any(cd0(g) < 2 for g in v[0]): BUILDS.setdefault(ids, []).append(s)   # a level-1 pet needs one basic ability with cooldown < 2 (test_l1_kits)
 
+# RULE (user 2026-11-22): player pets only get builds + stat spreads of retail species a player can obtain (SourceTypeEnum >= 0); bosses, tamers, legendary/NPC-only pets never.
+_spc_src = {r['ID']: int(r['SourceTypeEnum']) for r in csv.DictReader(open(d + 'BattlePetSpecies.csv', encoding='utf8'))}
+for _ids in list(BUILDS):
+    BUILDS[_ids] = [s for s in BUILDS[_ids] if _spc_src.get(s, -1) >= 0]
+    if not BUILDS[_ids]: del BUILDS[_ids]
+
 
 def effect_fit(g, ents):
     lab, toks, st, basic = EFF[g]

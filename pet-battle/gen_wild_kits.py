@@ -178,6 +178,9 @@ for _, c in ipairs(CL) do   -- FAMILY CLONES: the same ability with another dama
     local map = { [base] = cid }; chain(base, fam, map, 1)
     -- the description text names auras by id inside [..] (Fx() only accepts an aura the ability really applies): follow the remapped ids
     local text = b.text and b.text:gsub("%[[^%]]*%]", function(expr) return (expr:gsub("%f[%d](%d+)%f[%D]", function(n) local m = map[tonumber(n)]; return m and tostring(m) or n end)) end) or b.text
+    -- a type-override aura (Nature's Ward) names the type it turns the pet INTO in [School()]: that type does not follow the clone's damage family
+    local ovr = false; for _, t in ipairs(b.turns) do for _, f in ipairs(t.fx) do if f.aura and R.states[f.aura] and R.states[f.aura].Special_TypeOverride then ovr = true end end end
+    if ovr and text then local FN = { "Humanoid", "Dragonkin", "Flying", "Undead", "Critter", "Magic", "Elemental", "Beast", "Aquatic", "Mechanical" }; text = text:gsub("%[School%(%)%]", FN[(b.family or 0) + 1] or "Magic") end
     local a = { name = b.name, family = fam, cd = b.cd, text = text, base = base, turns = {} }
     for i, t in ipairs(b.turns) do
         local fx = {}

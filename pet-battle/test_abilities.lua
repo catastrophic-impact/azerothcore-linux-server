@@ -546,7 +546,7 @@ for _, ab in ipairs(byName) do
                 if boostedAb then
                     local function dmgWith(weather) local evs = run(boostedAb, { prep = function(bb) if weather then bb.weather = { id = weatherAura, left = 5 } end end }); local d = dmgEvents(evs, "P")[1]; return d and d.dmg or 0 end
                     local plain, w = dmgWith(false), dmgWith(true)
-                    local flatBonus = (weatherAura == 203) and 20 or 0   -- Lightning Storm also adds a flat bonus per attack (checked separately below)
+                    local flatBonus = (weatherAura == 203 or st.Weather_LightningStorm) and 20 or 0   -- Lightning Storm also adds a flat bonus per attack (checked separately below)
                     local exp = plain * (100 + st.Mod_PetTypeDamageDealtPercent) / 100
                     check(name, fam .. " abilities deal +" .. st.Mod_PetTypeDamageDealtPercent .. "% in this weather (" .. boostedAb.retailName .. ")", plain > 0 and w >= exp - 2 and w <= exp + 2 + flatBonus, plain .. " -> " .. w)
                 else unchecked_(name, "no family-" .. tostring(fam) .. " damage ability found to test the weather bonus") end
