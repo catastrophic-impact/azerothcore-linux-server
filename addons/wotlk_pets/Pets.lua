@@ -30,6 +30,9 @@ local function PetOf(sp)
     local x = dexCache[sp]; if not x then x = { dex = true, name = d[1], family = d[2], icon = d[3], level = 0, quality = 1 }; dexCache[sp] = x end
     return x
 end
+-- FAVORITES: a star on each row; kept per character in WotlkPetsDB.fav (saved by the client, no server data)
+local function FavSet() WotlkPetsDB = WotlkPetsDB or {}; WotlkPetsDB.fav = WotlkPetsDB.fav or {}; local k = (GetRealmName() or "") .. ":" .. (UnitName("player") or ""); WotlkPetsDB.fav[k] = WotlkPetsDB.fav[k] or {}; return WotlkPetsDB.fav[k] end
+local function IsFav(sp) return FavSet()[sp] and true or false end
 local function InTeam(sp) for n = 1, 3 do for i = 1, 3 do if S.teams[n][i] == sp then return true end end end return false end
 -- one pet against the whole filter: search (space separated words, ALL must match the name or the family), family menu, quality toggles, "in a team"
 local function PetPasses(p, sp, F)
@@ -47,6 +50,7 @@ local function PetPasses(p, sp, F)
     if v == "collected" and p.dex then return false end
     if v == "missing" and not p.dex then return false end
     if v == "team" and not InTeam(sp) then return false end
+    if v == "fav" and not IsFav(sp) then return false end
     return true
 end
 local function Sorted()
@@ -122,7 +126,7 @@ local function BuildList()
     end)
     ZText(); zdd.Text = ZText; filterBtns[#filterBtns + 1] = zdd
     -- view: collected / not collected / in a team (single choice, like retail's collected checkboxes)
-    local VIEWS = { { "all", "All pets" }, { "collected", "Collected" }, { "missing", "Not collected" }, { "team", "In a team" } }
+    local VIEWS = { { "all", "All pets" }, { "collected", "Collected" }, { "missing", "Not collected" }, { "team", "In a team" }, { "fav", "Favorites" } }
     local vdd = CreateFrame("Frame", "WotlkPetsViewDD", frame, "UIDropDownMenuTemplate"); vdd:SetPoint("TOPLEFT", 4, -154); UIDropDownMenu_SetWidth(vdd, 90)
     local function VText() for _, v in ipairs(VIEWS) do if v[1] == S.view then UIDropDownMenu_SetText(vdd, v[2]) end end end
     UIDropDownMenu_Initialize(vdd, function()
@@ -194,8 +198,13 @@ local function Row(i)
     r.icon = r:CreateTexture(nil, "ARTWORK"); r.icon:SetSize(32, 32); r.icon:SetPoint("LEFT", 4, 0)
     r.name = r:CreateFontString(nil, "OVERLAY", "GameFontNormal"); r.name:SetPoint("TOPLEFT", r.icon, "TOPRIGHT", 8, -2); r.name:SetJustifyH("LEFT"); r.name:SetWidth(150); r.name:SetHeight(14)
     r.sub = r:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); r.sub:SetPoint("BOTTOMLEFT", r.icon, "BOTTOMRIGHT", 8, 2)
-    r.lvl = r:CreateFontString(nil, "OVERLAY", "GameFontHighlight"); r.lvl:SetPoint("RIGHT", -8, 0)
+    r.lvl = r:CreateFontString(nil, "OVERLAY", "GameFontHighlight"); r.lvl:SetPoint("BOTTOMRIGHT", -8, 4)
     r:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square")
+    r.fav = CreateFrame("Button", nil, r); r.fav:SetSize(16, 16); r.fav:SetPoint("TOPRIGHT", -4, -3)
+    r.fav.tex = r.fav:CreateTexture(nil, "OVERLAY"); r.fav.tex:SetAllPoints(); r.fav.tex:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcons"); r.fav.tex:SetTexCoord(0, 0.25, 0, 0.25)   -- the yellow star
+    r.fav:SetScript("OnClick", function(self) local sp = self:GetParent().sp; local f = FavSet(); f[sp] = (not f[sp]) or nil; Refresh() end)
+    r.fav:SetScript("OnEnter", function(self) GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(IsFav(self:GetParent().sp) and "Remove from favorites" or "Add to favorites"); GameTooltip:Show() end)
+    r.fav:SetScript("OnLeave", function() GameTooltip:Hide() end)
     r:SetScript("OnClick", function(self) S.sel = self.sp; S.tab = 1; S.asked[self.sp] = nil; Refresh() end)
     r:SetScript("OnEnter", function(self) local p = PetOf(self.sp); if p then PetTip(self, p, self.sp) end end)
     r:SetScript("OnLeave", function() GameTooltip:Hide() end)
@@ -427,6 +436,7 @@ function Bind(offset)
             r:ClearAllPoints(); r:SetPoint("TOPLEFT", 0, -(idx - 1) * ROW_H)
             r.sp = sp; r:Show(); r.icon:SetTexture(Icon(p)); r.icon:SetDesaturated(p.dex and true or false);             r.name:SetText(p.name)
             if p.dex then r.name:SetTextColor(0.6, 0.6, 0.6); r.lvl:SetText("") else r.name:SetTextColor(unpack(QCOL[p.quality or 1])); r.lvl:SetText(p.level) end
+            local fv = IsFav(sp); r.fav.tex:SetDesaturated(not fv); r.fav.tex:SetAlpha(fv and 1 or 0.35)
             r.sub:SetText(p.family .. (p.dex and "  |cff999999not collected|r" or "") .. (S.follow == sp and "  |cff66ff66(following)|r" or "")); Color(r.sub, p.family); ShowIf(r.sel, S.sel == sp)
         elseif rows[i] then rows[i]:Hide() end
     end
@@ -444,7 +454,7 @@ function Refresh()
     local total = 0; for _ in pairs(S.pets) do total = total + 1 end
     if S.view ~= "collected" and S.view ~= "team" and WotlkPetDex then for sp in pairs(WotlkPetDex) do if not S.pets[sp] then total = total + 1 end end end
     frame.count:SetText(#list == total and (total .. " pets") or (#list .. " of " .. total .. " pets"))
-    S.emptyTxt:SetText(#list > 0 and "" or (total == 0 and "You have no battle pets yet. Capture wild pets in battle." or "No pet matches the filters. Use Clear filters."))
+    S.emptyTxt:SetText(#list > 0 and "" or (S.view == "fav" and not next(FavSet()) and "No favorites yet. Click the star on a pet to add it." or (total == 0 and "You have no battle pets yet. Capture wild pets in battle." or "No pet matches the filters. Use Clear filters.")))
     for _, dd in ipairs(filterBtns) do dd.Text() end
     ShowIf(paneP, S.tab == 1); ShowIf(paneT, S.tab == 2)
     for i, t in ipairs(tabs) do if i == S.tab then t:LockHighlight() else t:UnlockHighlight() end end

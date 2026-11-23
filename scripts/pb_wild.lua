@@ -14,9 +14,9 @@ local Msg = require("acore_msg")
 local TICK_MS = 5000            -- the fill/despawn tick: cheap, because a player whose area is full (or who stands still with nothing to spawn) costs no world scan at all
 local BLIP_MS = 1000            -- minimap blips for the wild pets around each player (only players that have any)
 local SEARCH = 60               -- how far from a player real mobs are looked for
-local SPACING = 90              -- at most one wild pet per species within this distance of each other
+local SPACING = 110             -- at most one wild pet per species within this distance of each other
 local MAX_AREA = 3              -- at most this many wild pets within SPACING of a player, all of DIFFERENT species (user: up to 3, never 2-3 of a kind)
-local COOLDOWN = 90             -- seconds before the species re-appears around that spot after a battle
+local COOLDOWN = 150            -- seconds before the species re-appears around that spot after a battle
 local LIFETIME = 600            -- an untouched wild pet disappears after this many seconds
 local LEAVE = 90                -- ...or when no player has been within this distance for AWAY_GRACE seconds (running past and coming back must not wipe the area)
 local AWAY_GRACE = 60
@@ -97,10 +97,12 @@ local function SpawnSpot(mx, my, mz, height, rand)
     return mx + math.cos(ang) * 3, my + math.sin(ang) * 3, mz
 end
 
+local SETTLE_DEPTH, SETTLE_MS = 40, 3000   -- how far underground a wild pet is born (yd) and how long it stays there (ms) while the client finishes its full-size-then-shrink moment
 local function Spawn(player, species, mob, types)
     local map = player:GetMapId()
     local x, y, z = SpawnSpot(mob:GetX(), mob:GetY(), mob:GetZ(), function(px, py) local m = mob:GetMap(); return m and m:GetHeight(px, py, 1) end)
-    local obj = PerformIngameSpawn(1, D.StandIn(species) or species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)   -- a stand-in clone is BORN at the pet scale (template DisplayScale): no full-size flash
+    local ori = math.random() * 6.2832
+    local obj = PerformIngameSpawn(1, D.StandIn(species) or species, map, 0, x, y, z - SETTLE_DEPTH, ori, false, 0, 1)   -- the client always draws a new model at full size for a moment: it is BORN far underground (hidden by the terrain) and lifted to its spot once it has finished shrinking
     if not obj then return end
     local bornDisplay = Store.Dress(obj, species)   -- the stand-in is born INVISIBLE; the real skin is swapped on at once (the client then applies k the predictable swap way)
     local birthScale = obj:GetScale()
@@ -116,8 +118,12 @@ local function Spawn(player, species, mob, types)
     pcall(function() local d = obj:GetDisplayId(); if d and d > 0 then wild[g].display = d end end)   -- the skin the player SEES is the skin they can recruit
     pcall(function() obj:SetNPCFlags(1) end)                 -- gossip: right-click works
     pcall(function() obj:SetPhaseMask(1, true) end)
-    pcall(function() obj:MoveTo(1, x, y, z, true) end)   -- settle on the real floor
-    pcall(function() obj:MoveRandom(3) end)
+    CreateLuaEvent(function()   -- settled: lift it to its real spot (nothing is visible of the full-size moment), then let it settle on the floor and wander
+        local o = wild[g] and Obj(wild[g]); if not o then return end
+        pcall(function() o:NearTeleport(x, y, z, ori) end)
+        pcall(function() o:MoveTo(1, x, y, z, true) end)   -- settle on the real floor
+        pcall(function() o:MoveRandom(3) end)
+    end, SETTLE_MS, 1)
     return obj
 end
 
@@ -235,7 +241,7 @@ local function BlipTick()
                     local live = Obj(w); if live then w.x, w.y = live:GetX(), live:GetY(); dx, dy = w.x - px, w.y - py end
                 end
                 if w.map == map and dx * dx + dy * dy < SPACING * SPACING and #parts < MAX_AREA + 2 then
-                    parts[#parts + 1] = string.format("%d,%d,%d,%d,%s", math.floor(dx + 0.5), math.floor(dy + 0.5), w.species, w.level or 1, D.species[w.species].name)
+                    parts[#parts + 1] = string.format("%.1f,%.1f,%d,%d,%s", dx, dy, w.species, w.level or 1, D.species[w.species].name)
                 end
             end
             local low = pl:GetGUIDLow()

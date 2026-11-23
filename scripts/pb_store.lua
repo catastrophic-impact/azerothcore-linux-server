@@ -421,7 +421,7 @@ end
 function Store.SizeOf(entry, display) local S = display and DSZ[display]; if S and S > 0.01 then return S * Store.ScaleOf(entry, display) end return Store.Width(entry) end   -- true visible size in yards
 
 -- ---------------------------------------------------------------- FOLLOWER: the summoned pet that walks behind you
--- One per player. Desired only while: alive, not mounted, normal world phase (garrison = Menagerie instead), not in a battle.
+-- One per player. Desired only while: alive, not mounted, not in a battle. It follows its owner through phases.
 -- A single 2 s tick keeps it right (respawns it after a teleport / zone change / dismount). Not saved to the world DB.
 local follow = {}        -- guidLow -> { species, obj = creature guid, map = id }
 local suppressed = {}    -- guidLow -> true while a battle runs
@@ -431,6 +431,7 @@ local FOLLOW_LEAVE = 22  -- farther than this (or other map) = respawn next to t
 -- GMs have the "all phases" mask (0xFFFFFFFF) instead of 1: that still counts as the normal world; garrison phases are single other bits
 local function NormalWorld(player) local m = player:GetPhaseMask(); return m == 1 or m < 0 or m >= 0x7FFFFFFF end
 Store.NormalWorld = NormalWorld
+function Store.FollowPhase(player) if NormalWorld(player) then return 1 end return player:GetPhaseMask() end   -- the phase a follower must be in to be seen with its owner
 
 function Store.IsFollower(low) for _, f in pairs(follow) do if f.low == low then return true end end return false end   -- low = numeric low guid (GUID objects never compare equal)
 function Store.SetSuppressed(player, on) suppressed[player:GetGUIDLow()] = on or nil end
@@ -453,19 +454,39 @@ end
 
 local function SpawnFollower(player, f)
     local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local ph = Store.FollowPhase(player)   -- the pet lives in whatever phase its owner is in
     local px, py = x - math.cos(o) * 2 + math.cos(o + 1.57) * 1, y - math.sin(o) * 2 + math.sin(o + 1.57) * 1
-    local obj = PerformIngameSpawn(1, D.StandIn(f.species) or f.species, player:GetMapId(), 0, px, py, z, o, false, 0, 1)   -- the pet-sized clone (DisplayScale from custom-sql/017): the real template spawned FULL size and shrank
+    -- EVERY follower is born far underground and lifted to its spot after 3 s, with a small portal marking the spot: the client's first draw of a model is always full size, so that moment happens hidden by the terrain
+    local sz, gz = z, z
+    do local okh, gh = pcall(function() return player:GetMap():GetHeight(px, py, z) end); gz = math.min(z, (okh and gh and gh > -1000) and gh or z); sz = gz - 40 end
+    local obj = PerformIngameSpawn(1, D.StandIn(f.species) or f.species, player:GetMapId(), 0, px, py, sz, o, false, 0, ph)
     if not obj then return end
     f.obj, f.low, f.map = obj:GetGUID(), obj:GetGUIDLow(), player:GetMapId()     -- registered immediately, configured after
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)
     local disp = Store.PetDisplay(player, f.species)
-    local worn = Store.Dress(obj, f.species, disp)   -- the follower wears the pet's real skin (swapped on over the invisible stand-in)
-    if disp <= 0 and worn then Store.SetDisplay(player, f.species, worn) end
-    do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(f.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS
-    pcall(function() obj:SetPhaseMask(1, true) end)
-    Pace(obj, player)
-    pcall(function() obj:MoveFollow(player, 1.8, 2.6) end)
+    do
+        local d = (disp and disp > 0) and disp or Store.PickDisplay(f.species)
+        local sc = Store.ScaleOf(f.species, d)
+        Store.Dress(obj, f.species, d)
+        pcall(function() obj:SetScale(sc) end)
+        if not (disp and disp > 0) and d then Store.SetDisplay(player, f.species, d) end
+        f.holdUntil = os.time() + 5
+        local okp, portal = pcall(function() return PerformIngameSpawn(2, 142074, player:GetMapId(), 0, px, py, gz, o, false, 0, ph) end)   -- 142074 Bly's Escape Portal: the warlock portal look (display 1327), type 5 = decoration, not clickable, template size 1 (179705 was 1.5)
+        local portalG = okp and portal and portal:GetGUID() or nil
+        local low, fm, pg = obj:GetGUIDLow(), player:GetMapId(), f.pguid
+        CreateLuaEvent(function()
+            local map = GetMapById(fm, 0); local o2 = map and f.obj and map:GetWorldObject(f.obj)
+            if portalG then local pm = GetMapById(fm, 0); local pg2 = pm and pm:GetWorldObject(portalG); if pg2 then pcall(function() pg2:RemoveFromWorld(false) end) end end
+            local pl = GetPlayerByGUID(pg)
+            if not o2 or o2:GetGUIDLow() ~= low or not pl then return end
+            local x2, y2, z2, r2 = pl:GetX(), pl:GetY(), pl:GetZ(), pl:GetO()
+            pcall(function() o2:NearTeleport(x2 - math.cos(r2) * 2 + math.cos(r2 + 1.57), y2 - math.sin(r2) * 2 + math.sin(r2 + 1.57), z2, r2) end)
+            pcall(function() o2:CastSpell(o2, 12244, true) end)   -- Poof (instant, checked by check_fx.py)
+            Pace(o2, pl)
+            pcall(function() o2:MoveFollow(pl, 1.8, 2.6) end)
+        end, 3000, 1)
+    end
 end
 
 local function Tick()
@@ -475,12 +496,15 @@ local function Tick()
         local pl = GetPlayerByGUID(f.pguid)
         if not pl then Despawn(f); follow[g] = nil
         else
-            local want = pl:IsAlive() and not pl:IsMounted() and NormalWorld(pl) and not suppressed[g]
+            local want = pl:IsAlive() and not pl:IsMounted() and not suppressed[g]
             local obj
             if f.obj then local map = GetMapById(f.map, 0); obj = map and map:GetWorldObject(f.obj) end
             if not want then Despawn(f)
+            elseif f.holdUntil and os.time() < f.holdUntil and obj then   -- still settling underground: leave it alone
             elseif not obj or pl:GetMapId() ~= f.map or pl:GetDistance(obj) > FOLLOW_LEAVE then Despawn(f); SpawnFollower(pl, f)
             else
+                local ph = Store.FollowPhase(pl); local okm, cur = pcall(function() return obj:GetPhaseMask() end)
+                if okm and cur ~= ph then pcall(function() obj:SetPhaseMask(ph, true) end) end   -- owner changed phase (garrison, quest phase...): the pet goes along
                 Pace(obj, pl)
                 if pl:GetDistance(obj) > 4 then pcall(function() obj:MoveFollow(pl, 1.8, 2.6) end) end
             end
@@ -522,7 +546,7 @@ local function Restore(player)   -- login / script load: bring the last summoned
         if c.pets[q:GetUInt32(0)] then SetFollower(player, q:GetUInt32(0)) end
     end
 end
-RegisterPlayerEvent(3, function(_, player) pcall(Store.SyncCompanions, player); Restore(player) end)   -- login: companions the character already knows are in the journal
+RegisterPlayerEvent(3, function(_, player) pcall(Store.SyncCompanions, player); if Store.IsHuman(player) then SetFollower(player, 0) end end)   -- login: companions the character already knows are in the journal; every pet is DISMISSED (saved follower cleared) so nothing is left over from the last session. A script reload still restores it (Restore below)
 RegisterPlayerEvent(4, function(_, player)   -- logout: remove the follower
     local g = player:GetGUIDLow()
     if follow[g] then Despawn(follow[g]); follow[g] = nil end

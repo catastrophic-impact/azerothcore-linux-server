@@ -45,7 +45,7 @@ Frenzied Regeneration		heal-accup-critup	Stand Firm			\bram\b|\b(buck|stag)\b
 Berserk		dmgup-twostep	Rut Fury			\bram\b|\b(buck|stag)\b
 Lick Your Wounds		^heal-p\d+-cd\d+$	Graze			\bram\b|\b(buck|stag)\b
 Rejuvenation		heal-weather	Mountain Mist			\bram\b|\b(buck|stag)\b
-Wolverine Bite			Butt			\bcow\b
+Wolverine Bite			Head Butt			\bcow\b
 Thunderstomp			Hoof Stomp			\bcow\b
 Frenzied Regeneration		heal-accup-critup	Herd Instinct			\bcow\b
 Berserk		dmgup-twostep	Stampede Rush			\bcow\b

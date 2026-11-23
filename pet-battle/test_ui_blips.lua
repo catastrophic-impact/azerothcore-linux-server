@@ -6,6 +6,7 @@ local handlers = {}
 AcoreLib = { On = function(m, a, f) handlers[m .. "|" .. a] = f end }
 local now = 100; function GetTime() return now end
 local zoom = 3
+local speed, face = 0, 0; function GetUnitSpeed() return speed end; function GetPlayerFacing() return face end
 local function proxy() return setmetatable({}, { __index = function(t, k) return function() return t end end }) end
 Minimap = setmetatable({ GetZoom = function() return zoom end, SetZoom = function(_, z) zoom = z end, GetWidth = function() return 140 end, GetFrameLevel = function() return 1 end }, { __index = function() return function() end end })
 local cv = { minimapZoom = "3", minimapInsideZoom = "3", rotateMinimap = "0" }
@@ -60,5 +61,25 @@ ent.func(); ok(WotlkPetsDB.blips == false and not B.Blips()[1].shown, "unticking
 handlers["pbw|pets"]("10,10,5,1,Rabbit"); ok(not B.Blips()[1].shown, "new messages do not show blips while off")
 menuAdds = {}; initfn(); ok(menuAdds[#menuAdds].checked == false, "menu shows it unticked")
 SlashCmdList["PETBLIPS"](); ok(WotlkPetsDB.blips == true and B.Blips()[1].shown, "/petblips turns them back on")
+-- dead reckoning: walking towards a pet moves its blip closer without waiting for the next list
+handlers["pbw|pets"]("50,0,299,3,Young Wolf;0,50,69,7,Timber Wolf;-50,0,5,1,Rabbit")   -- north, west, south
+for _, f in ipairs(frames) do if f.scripts.OnUpdate then driver = f end end
+local bl2 = B.Blips(); local y0, x0, ys0 = bl2[1].y, bl2[2].x, bl2[3].y
+speed, face = 10, 0   -- running north at 10 yd/s for 1 s (ten 0.1 s frames)
+for _ = 1, 10 do driver.scripts.OnUpdate(driver, 0.1) end
+ok(bl2[1].y < y0 - 1, "running north: the pet to the north gets closer (" .. y0 .. " -> " .. bl2[1].y .. ")")
+ok(bl2[3].y < ys0 - 1, "running north: the pet to the south gets farther (further down)")
+near(bl2[2].x, x0, "running north: the pet to the west keeps its side")
+local ybefore = bl2[1].y
+handlers["pbw|pets"]("50,0,299,3,Young Wolf")
+near(bl2[1].y, ybefore, "a fresh list does not make the blip jump: it continues from where it was drawn")
+speed = 0; for _ = 1, 40 do driver.scripts.OnUpdate(driver, 0.05) end
+near(bl2[1].y, y0, "standing still: the correction has eased out and the blip sits on the new list's position")
+speed, face = 10, math.pi / 2   -- running WEST
+handlers["pbw|pets"]("0,50,69,7,Timber Wolf"); local xw = bl2[1].x
+for _ = 1, 10 do driver.scripts.OnUpdate(driver, 0.1) end
+ok(bl2[1].x > xw + 1, "running west: the pet to the west gets closer (towards the centre)")
+speed = 0
+
 print(string.format("ui blips: %d assertions, %d failures", passes + fails, fails))
 os.exit(fails == 0 and 0 or 1)

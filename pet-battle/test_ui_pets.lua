@@ -20,7 +20,7 @@ local function new(kind, name, parent)
 end
 for _, m in ipairs({ "SetSize", "SetPoint", "SetAutoFocus", "ClearFocus", "SetTextColor", "SetWidth", "SetHeight", "SetJustifyH", "SetBackdrop", "SetBackdropBorderColor",
     "SetAllPoints", "SetTexture", "SetVertexColor", "SetHighlightTexture", "RegisterForDrag", "RegisterForClicks", "SetFrameStrata", "ClearAllPoints", "SetMovable", "EnableMouse",
-    "SetCreature", "SetPortraitZoom", "SetFrameLevel", "SetAlpha", "IsShown", "Show", "GetWidth", "GetHeight", "HighlightText", "SetRotation", "SetDesaturated", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues", "SetValue", "StartMoving", "StopMovingOrSizing", "AddLineX" }) do
+    "SetCreature", "SetPortraitZoom", "SetFrameLevel", "SetAlpha", "IsShown", "Show", "GetWidth", "GetHeight", "HighlightText", "SetRotation", "SetDesaturated", "SetTexCoord", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues", "SetValue", "StartMoving", "StopMovingOrSizing", "AddLineX" }) do
     M[m] = function(self, ...) self["last_" .. m] = { ... } end
 end
 function M:GetFrameLevel() return 1 end
@@ -102,6 +102,8 @@ local function installStub()
     function IsMouseButtonDown() return mouseDown end
     DEFAULT_CHAT_FRAME = { AddMessage = function(_, t) chat[#chat + 1] = t end }
     function GetCursorPosition() return 100, 200 end
+    function GetRealmName() return "TestRealm" end; function UnitName() return "Tester" end
+    WotlkPetsDB = { fav = { ["TestRealm:Tester"] = { [1] = true, [5] = true, [101] = true } } }   -- the client loads the saved variable before the addon runs: favorites 1 (Young Wolf), 5 (Fire Imp), 101 (uncollected Alpha Crab)
     function MouseIsOver(f) return over[f] == true end
     function GetTime() return 100 end
     SlashCmdList, UISpecialFrames = {}, {}
@@ -242,6 +244,12 @@ local CASES2 = {   -- universe: 12 owned pets + 5 uncollected pseudo pets (101-1
     { "view absent behaves like all", { filter = "", family = {}, qual = {} }, "1,2,3,4,5,6,7,8,9,10,11,12,101,102,103,104,105" },
     { "view collected hides uncollected pets", { view = "collected", filter = "", family = {}, qual = {} }, "1,2,3,4,5,6,7,8,9,10,11,12" },
     { "view missing shows only uncollected pets", { view = "missing", filter = "", family = {}, qual = {} }, "101,102,103,104,105" },
+    { "view fav lists favorites incl. uncollected", { view = "fav", filter = "", family = {}, qual = {} }, "1,5,101" },
+    { "view fav AND search 'wolf'", { view = "fav", filter = "wolf", family = {}, qual = {} }, "1" },
+    { "view fav AND family Elemental", { view = "fav", family = set("Elemental"), filter = "", qual = {} }, "5" },
+    { "view fav AND search 'crab' (uncollected favorite)", { view = "fav", filter = "crab", family = {}, qual = {} }, "101" },
+    { "view fav AND quality 1 drops the uncollected one", { view = "fav", qual = set(1), filter = "", family = {} }, "1,5" },
+    { "view fav AND search with no match -> empty", { view = "fav", filter = "zzz", family = {}, qual = {} }, "" },
     { "view team: only team pets (1,3,5)", { view = "team", filter = "", family = {}, qual = {} }, "1,3,5" },
     { "view missing AND family Beast", { view = "missing", family = set("Beast"), filter = "", qual = {} }, "102,103" },
     { "view collected AND family Beast", { view = "collected", family = set("Beast"), filter = "", qual = {} }, "1,2,9" },
@@ -310,6 +318,7 @@ local function build(o)   -- full reimplementation with switches
         if v == "missing" and not p.dex and not o.missingKeepsOwned then return false end
         if v == "team" then local inT = false; for t = 1, 3 do for i = 1, 3 do if S.teams[t][i] == sp then inT = true end end end
             if o.invTeam then inT = not inT end; if not inT then return false end end
+        if v == "fav" then local fv = WotlkPetsDB.fav["TestRealm:Tester"][sp] and true or false; if o.invFav then fv = not fv end; if not fv then return false end end
         return true
     end
 end
@@ -333,6 +342,7 @@ local MUT = {
     ["missing view still shows owned pets"] = function() return build({ missingKeepsOwned = true }) end,
     ["quality filter lets uncollected pets through"] = function() return build({ dexQual = true }) end,
     ["view=team inverted"] = function() return build({ invTeam = true }) end,
+    ["view=fav inverted"] = function() return build({ invFav = true }) end,
     ["everything passes"] = function() return function() return true end end,
     ["nothing passes"] = function() return function() return false end end,
 }
@@ -378,7 +388,7 @@ ok(fm[2].isNotRadio and not fm[2].checked, "family entries are check boxes, unti
 local qm = OPENMENU_(qdd)
 eq(#qm, 5, "quality menu: 'All qualities' + 4"); eq(qm[1].text, "All qualities", "first quality entry is 'All qualities'"); ok(qm[4].text:find("Rare", 1, true), "quality entries carry the quality name")
 local vm = OPENMENU_(vdd)
-eq(#vm, 4, "view menu has 4 entries"); eq(vm[1].text .. "|" .. vm[2].text .. "|" .. vm[3].text .. "|" .. vm[4].text, "All pets|Collected|Not collected|In a team", "view menu labels")
+eq(#vm, 5, "view menu has 5 entries"); eq(vm[1].text .. "|" .. vm[2].text .. "|" .. vm[3].text .. "|" .. vm[4].text .. "|" .. vm[5].text, "All pets|Collected|Not collected|In a team|Favorites", "view menu labels")
 ok(vm[1].checked == true and vm[2].checked == false, "view menu ticks the current view (All pets)")
 local cb4 = closed; vm[2].func(); eq(S.view, "collected", "choosing Collected sets S.view"); eq(vdd.ddtext, "Collected", "view text 'Collected'"); eq(closed, cb4 + 1, "choosing a view closes the menus"); ok(OPENMENU_(vdd)[2].checked == true and OPENMENU_(vdd)[1].checked == false, "reopened view menu ticks Collected (single choice)")
 vm[3].func(); eq(S.view, "missing", "choosing Not collected sets S.view"); eq(vdd.ddtext, "Not collected", "view text 'Not collected'"); vm[1].func(); eq(S.view, "all", "back to all")
@@ -434,6 +444,19 @@ OPENMENU_(zdd, 2, "Eastern Kingdoms")[3].func(); fm[3].func(); setView(4); qm[2]
 ok(S.zone and next(S.family) and next(S.qual) and S.view == "team", "all filters incl. zone set before Clear")
 fire(btn("Clear filters"), "OnClick")
 eq(S.zone, nil, "Clear resets the zone"); eq(zdd.ddtext, "All zones", "Clear resets the zone text"); eq(frame.count.text, "12 pets", "Clear restores the count with zone filter")
+---------------------------------------------------------------- favorites: the star on a row
+do
+    local r = rowFor(3); local key = "TestRealm:Tester"
+    ok(r.fav and r.fav.scripts.OnClick, "row has a favorite star button")
+    ok(not WotlkPetsDB.fav[key][3], "pet 3 starts not favorite"); eq(r.fav.tex.last_SetAlpha[1], 0.35, "not favorite: dimmed star")
+    fire(r.fav, "OnClick"); ok(WotlkPetsDB.fav[key][3] == true, "clicking the star favorites the pet (saved in WotlkPetsDB)")
+    eq(rowFor(3).fav.tex.last_SetAlpha[1], 1, "favorite: full star"); eq(rowFor(3).fav.tex.last_SetDesaturated[1], false, "favorite: coloured star")
+    ok(S.sel ~= 3, "clicking the star does not select the pet")
+    fire(rowFor(3).fav, "OnClick"); ok(not WotlkPetsDB.fav[key][3], "clicking again removes the favorite")
+    eq(rowFor(1).fav.tex.last_SetAlpha[1], 1, "pet 1 (saved favorite) shows a full star")
+end
+reset(1)
+
 -- tooltips: 'Found in' line
 local function lines() return table.concat(GameTooltip.lines, " / ") end
 fire(rowFor(10), "OnEnter"); ok(lines():find("Found in: Elwynn Forest, Duskwood, Westfall +2 more", 1, true), "row tooltip: 5 zones -> first three and '+2 more': " .. lines())

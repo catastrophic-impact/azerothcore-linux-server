@@ -449,6 +449,7 @@ local function Setup()
     end)
     AcoreLib.On("pbt", "got", function(p) local q, name = p:match("^(%d),(.+)$"); if name then CollectedFx(name, tonumber(q)) end end)
     AcoreLib.On("pbt", "abil", function(p)
+        local clr = p:match("^(%d)|$"); if clr then S.abil[tonumber(clr)] = nil; Refresh(); return end   -- the active pet has no ability in this slot
         local slot, icon, name, tip, cd = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)$")
         if slot then S.abil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd) }; Refresh() end
     end)
@@ -458,6 +459,7 @@ local function Setup()
         if s then S.info[s] = { name = name, strong = strong, weak = weak, hurtBy = hurtBy, resists = resists } end
     end)
     AcoreLib.On("pbt", "eabil", function(p)
+        local clr = p:match("^(%d)|$"); if clr then S.eabil[tonumber(clr)] = nil; return end
         local slot, icon, name, tip, cd, left = p:match("^(%d)|([^#]*)#([^#]*)#([^#]*)#(%d+)#(%d+)$")
         if slot then S.eabil[tonumber(slot)] = { icon = icon, name = name, tip = tip, cd = tonumber(cd), cdLeft = tonumber(left) } end
     end)

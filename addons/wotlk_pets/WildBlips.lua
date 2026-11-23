@@ -48,16 +48,18 @@ local function Blip(i)
 end
 
 local data = {}   -- { north, west, species, level, name }
-local function Draw()
+local shiftN, shiftW = 0, 0   -- how far YOU walked (yards north / west) since the server's last list: the offsets in the list were measured from where you stood then
+local env   -- radius / blip box size, read from the minimap 10 times a second (not every frame)
+local function Draw(refresh)
     if not Enabled() then for i = 1, #blips do blips[i]:Hide() end return end
-    local zoom = Minimap:GetZoom()
-    local radius = (Indoors() and INDOOR or OUTDOOR)[zoom + 1] or 100
-    local px = (Minimap:GetWidth() or 140) / 2 - 6
-    local rot = GetCVar("rotateMinimap") == "1"
-    local facing = rot and GetPlayerFacing and GetPlayerFacing() or nil
+    if refresh or not env then
+        local zoom = Minimap:GetZoom()
+        env = { radius = (Indoors() and INDOOR or OUTDOOR)[zoom + 1] or 100, px = (Minimap:GetWidth() or 140) / 2 - 6, rot = GetCVar("rotateMinimap") == "1" }
+    end
+    local facing = env.rot and GetPlayerFacing and GetPlayerFacing() or nil
     for i, e in ipairs(data) do
         local b = Blip(i)
-        local x, y, edge = Place(e[1], e[2], radius, px, facing)
+        local x, y, edge = Place(e[1] - shiftN + (e[6] or 0), e[2] - shiftW + (e[7] or 0), env.radius, env.px, facing)   -- e[6], e[7]: the correction of the last list, easing out
         b:ClearAllPoints(); b:SetPoint("CENTER", Minimap, "CENTER", x, y); b:SetAlpha(edge and 0.55 or 1)
         b.name, b.level = e[5], e[4]; b:Show()
     end
@@ -66,26 +68,43 @@ end
 
 local driver = CreateFrame("Frame")
 for _, ev in ipairs({ "MINIMAP_UPDATE_ZOOM", "ZONE_CHANGED_INDOORS", "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED" }) do driver:RegisterEvent(ev) end
-driver:SetScript("OnEvent", function() dirty = true end)
+driver:SetScript("OnEvent", function() dirty = true; env = nil end)
 driver:SetScript("OnUpdate", function(self, dt)
     if #data == 0 then return end
+    local v = GetUnitSpeed and GetUnitSpeed("player") or 0   -- dead reckoning: the blips stay put in the WORLD while you run, instead of sliding with you until the next list
+    if v > 0 and GetPlayerFacing then
+        local f = GetPlayerFacing()
+        if f then shiftN = shiftN + v * math.cos(f) * dt; shiftW = shiftW + v * math.sin(f) * dt end   -- facing 0 = north, growing towards the west
+    end
+    local k = math.exp(-8 * dt)   -- the jump a new list would cause is eased out over ~0.3 s
+    for _, e in ipairs(data) do if e[6] then e[6], e[7] = e[6] * k, e[7] * k end end
     self.t = (self.t or 0) + dt
-    if self.t < 0.1 then return end
-    self.t = 0
-    if GetTime() > expire then data = {}; Draw(); return end   -- the server stopped talking (left the zone): no stale blips
-    Draw()
+    if self.t >= 0.1 then   -- 10x a second: the cheap checks (stale list, minimap zoom / rotation)
+        self.t = 0
+        if GetTime() > expire then data = {}; Draw(true); return end   -- the server stopped talking (left the zone): no stale blips
+        Draw(true)
+    else
+        Draw(false)   -- every other frame: smooth motion
+    end
 end)
 
 AcoreLib.On("pbw", "pets", function(p)
-    data = {}
+    local prev = {}   -- where each species' blip is DRAWN right now (yards), so the new list continues from there instead of jumping
+    for _, e in ipairs(data) do prev[e[3]] = { e[1] - shiftN + (e[6] or 0), e[2] - shiftW + (e[7] or 0) } end
+    data = {}; shiftN, shiftW = 0, 0   -- a fresh list is measured from where you stand now
     if p ~= "none" then
         for entry in p:gmatch("[^;]+") do
-            local n, w, sp, lv, name = entry:match("^(%-?%d+),(%-?%d+),(%d+),(%d+),(.+)$")
-            if n then data[#data + 1] = { tonumber(n), tonumber(w), tonumber(sp), tonumber(lv), name } end
+            local n, w, sp, lv, name = entry:match("^(%-?[%d%.]+),(%-?[%d%.]+),(%d+),(%d+),(.+)$")
+            if n then
+                local e = { tonumber(n), tonumber(w), tonumber(sp), tonumber(lv), name }
+                local o = prev[e[3]]
+                if o then local cn, cw = o[1] - e[1], o[2] - e[2]; if math.abs(cn) < 25 and math.abs(cw) < 25 then e[6], e[7] = cn, cw end end   -- a bigger jump is a real teleport: snap
+                data[#data + 1] = e
+            end
         end
     end
     expire = GetTime() + 6
-    Draw()
+    Draw(true)
 end)
 
 -- the minimap TRACKING menu (the magnifier button) gets a "Wild Pets" tick box; /petblips does the same from the chat line

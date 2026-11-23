@@ -160,10 +160,19 @@ EnsureStandIns()
 
 local PickDisplay = Store.PickDisplay   -- random model row of the species
 
+-- A new model is always drawn at full size for a moment: every battle pet is BORN SETTLE_DEPTH yards underground (hidden by the terrain) with a small portal on the ground where it will stand,
+-- and is lifted to its spot after SETTLE_MS, when the portal closes. Everything that waits on the pet (turn offer, next event) is pushed back by SETTLE_MS.
+local SETTLE_MS, SETTLE_DEPTH, PORTAL_GO = 3000, 40, 142074   -- 142074 Bly's Escape Portal: the warlock portal look, a type-5 decoration (nothing to click)
+local function ClearPortal(b, s)
+    local g = b.portal and b.portal[s]; if not g then return end
+    b.portal[s] = nil
+    local m = GetMapById(b.map, 0); local go = m and m:GetWorldObject(g)
+    if go then pcall(function() go:RemoveFromWorld(false) end) end
+end
 local function SpawnPet(b, s, idx)
     local pet = b.eng[s][idx]; local p = b.pos[s]
     local sp = D.species[pet.species]
-    local obj = PerformIngameSpawn(1, D.StandIn(pet.species) or pet.species, b.map, 0, p[1], p[2], p[3], p[4], false, 0, b.phase)
+    local obj = PerformIngameSpawn(1, D.StandIn(pet.species) or pet.species, b.map, 0, p[1], p[2], p[3] - SETTLE_DEPTH, p[4], false, 0, b.phase)
     if not obj then return end
     b.guid[s] = obj:GetGUID(); b.low[s] = obj:GetGUIDLow()
     pcall(function() obj:SetReactState(0) end)
@@ -177,14 +186,24 @@ local function SpawnPet(b, s, idx)
     do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(pet.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS (a species can wear several models)
     pcall(function() obj:SetMaxHealth(1000); obj:SetHealth(1000) end)   -- real spells hit it for presentation: a tiny creature must not die from the transient damage (pb_cast sets the exact health afterwards)
     pcall(function() obj:SetPhaseMask(b.phase, true) end)
-    pcall(function() obj:SetHomePosition(p[1], p[2], p[3], p[4]) end)
-    pcall(function() obj:MoveTo(1, p[1], p[2], p[3], true) end)   -- settle on the real floor
-    pcall(function() obj:RegisterEvent(function(ev, d, n, c)       -- read the settled height back so every later MoveTo / home position uses the real floor
-        local z = c:GetZ(); if z and math.abs(z - p[3]) < 4 then p[3] = z; pcall(function() c:SetHomePosition(p[1], p[2], z, p[4]) end) end
-    end, 800, 1) end)
-    Fx(obj, FX_SPAWN, 1200)
+    b.portal = b.portal or {}; ClearPortal(b, s)
+    local okp, go = pcall(function() return PerformIngameSpawn(2, PORTAL_GO, b.map, 0, p[1], p[2], p[3], p[4], false, 0, b.phase) end)
+    if okp and go then b.portal[s] = go:GetGUID() end
+    local low = obj:GetGUIDLow()
+    After(SETTLE_MS, function()   -- settled: close the portal and lift the pet to its spot
+        ClearPortal(b, s)
+        local o = GetObj(b, s); if not o or o:GetGUIDLow() ~= low then return end
+        pcall(function() o:NearTeleport(p[1], p[2], p[3], p[4]) end)
+        pcall(function() o:SetHomePosition(p[1], p[2], p[3], p[4]) end)
+        pcall(function() o:MoveTo(1, p[1], p[2], p[3], true) end)   -- settle on the real floor
+        pcall(function() o:RegisterEvent(function(ev, d, n, c)       -- read the settled height back so every later MoveTo / home position uses the real floor
+            local z = c:GetZ(); if z and math.abs(z - p[3]) < 4 then p[3] = z; pcall(function() c:SetHomePosition(p[1], p[2], z, p[4]) end) end
+        end, 800, 1) end)
+        Fx(o, FX_SPAWN, 1200)
+    end)
 end
 local function Despawn(b, s, fx)
+    ClearPortal(b, s)
     local obj = GetObj(b, s)
     if obj then
         if fx then Fx(obj, FX_POOF, 600) end
@@ -202,6 +221,7 @@ local function Cap(text, n)   -- wire-safe text (no separators) cut at a sentenc
 end
 local function SendAbilities(b)
     local pet = b.eng.P[b.eng.active.P]
+    for slot = 1, 3 do Send(b, "abil", slot .. "|") end   -- clear the whole bar every time, then load the pet that is in (a pet with fewer abilities left the previous pet's, e.g. Chew Cud, on the bar)
     for slot, a in ipairs(pet.abil) do
         local nm = Cap(a.name, 30); local room = math.min(170, 240 - (#("pbt|abil|" .. slot .. "|") + #a.icon + #nm + #tostring(a.cd) + 4))   -- addon messages are limited to 240 characters: flavored spell names and icons are longer than retail's
         Send(b, "abil", slot .. "|" .. a.icon .. "#" .. nm .. "#" .. Cap(a.tip, room) .. "#" .. a.cd)
@@ -215,6 +235,7 @@ local function SendInfo(b)
         Send(b, "info", table.concat({ s, f.name, f.strong, f.weak, f.hurtBy, f.resists }, "|"))
     end
     local e = b.eng.E[b.eng.active.E]
+    for slot = 1, 3 do Send(b, "eabil", slot .. "|") end   -- same for the enemy's abilities
     for slot = 1, 3 do
         local a = e.abil[slot]
         if a then Send(b, "eabil", slot .. "|" .. a.icon .. "#" .. Cap(a.name, 30) .. "#" .. Cap(a.tip, 150) .. "#" .. a.cd .. "#" .. (e.cd[slot] or 0)) end
@@ -536,13 +557,13 @@ function Play(b, ev, i, status)
         Send(b, "msg", (sd == "P" and not e.forced) and ("Go, " .. eng.P[e.idx].name .. "!") or (eng[sd][e.idx].name .. " is forced into battle!"))
         Despawn(b, sd, true)
         After(700, function() SpawnPet(b, sd, e.idx); Send(b, "in", sd .. "," .. e.idx); if sd == "P" then SendAbilities(b) end; SendTags(b, sd) end)
-        nxt(1600)
+        nxt(1600 + SETTLE_MS)
     elseif e.k == "weather" then
         Send(b, "weather", e.id .. "|" .. e.turns .. "|" .. (e.name or ""))
         nxt(e.id ~= 0 and 500 or 100)
     elseif e.k == "spawn" then
         SpawnPet(b, e.side, e.idx); Send(b, "in", e.side .. "," .. e.idx); SendTags(b, e.side)
-        nxt(1400)
+        nxt(1400 + SETTLE_MS)
     elseif e.k == "end" then
         End(b, e.result)
     else nxt(0) end
@@ -589,7 +610,7 @@ local function Start(player, enemies, teamOverride)
     SendAbilities(b)
     After(300, function() SpawnPet(b, "P", 1); Send(b, "in", "P,1") end)
     After(1300, function() SpawnPet(b, "E", 1); Send(b, "in", "E,1") end)
-    After(2600, function() SendTags(b, "P"); SendTags(b, "E"); SendTurn(b, false) end)
+    After(2600 + SETTLE_MS, function() SendTags(b, "P"); SendTags(b, "E"); SendTurn(b, false) end)   -- both pets are up (the second lifts at 1300 + SETTLE_MS)
     return true
 end
 -- Watchdog: no battle may live forever. Ends battles whose player left / died / changed map / walked away, and battles that wait for a move for

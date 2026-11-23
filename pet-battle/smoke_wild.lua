@@ -78,7 +78,7 @@ local calls0 = RANGE_CALLS or 0; tick(); tick(); check((RANGE_CALLS or 0) == cal
 -- MINIMAP BLIPS: offsets in yards (north, west) of the pets in the area, with species, level and name
 SENT = {}; W.BlipTick()
 local bl = SENT[#SENT]; check(bl and bl.m == "pbw" and bl.a == "pets", "blip message sent to the player")
-local nb = 0; for e in (bl and bl.p or ""):gmatch("[^;]+") do nb = nb + 1; check(e:match("^%-?%d+,%-?%d+,%d+,%d+,.+$") ~= nil, "blip entry format: " .. e) end
+local nb = 0; for e in (bl and bl.p or ""):gmatch("[^;]+") do nb = nb + 1; check(e:match("^%-?%d+%.%d,%-?%d+%.%d,%d+,%d+,.+$") ~= nil, "blip entry format: " .. e) end
 check(nb == 3, "one blip per wild pet in the area, got " .. nb)
 check(#(bl and bl.p or "") < 240, "blip message fits one addon message")
 local list = {}; for g, w in pairs(W.Wild) do list[w.species] = g end

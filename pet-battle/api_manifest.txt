@@ -82,3 +82,6 @@ GetItemCount=Player
 RemoveItem=Player
 RegisterEvent=Creature (verified live 2026-11-21: callback gets eventId, delay, repeats, creature)
 GetScale=Creature (verified live 2026-11-21)
+NearTeleport=Creature/Player
+SetPhaseMask=Creature/GameObject
+GetPhaseMask=Creature/Player
