@@ -96,7 +96,7 @@ You need an AzerothCore server with [mod-ale](https://github.com/azerothcore/mod
 
 Settings live in `scripts/acore_settings.lua` (garrison options such as the decor limit `maxDecor` are in its `garrison` table).
 
-**Pet Battles on your own server, the short version** (no need to clone or build anything: download just these files from the repo; stock AzerothCore with mod-ale is the target, but it is only tested on this project's server so far):
+**Pet Battles on your own server, the short version** (no need to clone or build anything: download just these files from the repo; stock AzerothCore with mod-ale is the target, but it has **not been tested on any other server** yet):
 
 1. Server `lua_scripts/`: `acore_msg.lua`, `acore_prime.lua`, `acore_bus.lua`, `acore_util.lua`, `acore_settings.lua` and the pet scripts `pb_data.lua`, `pb_retail.lua`, `pb_rules.lua`, `pb_vis.lua`, `pb_core.lua`, `pb_battle.lua`, `pb_cast.lua`, `pb_wild.lua`, `pb_store.lua`, `pb_wild_kits.lua`, `pb_scale_caps.lua`, `pb_scale_displays.lua`, `pb_zone_species.lua` (all in `scripts/`).
 2. Database: apply `custom-sql/016_pet_standins.sql` and `custom-sql/017_pet_standin_scale.sql` (in that order) with `custom-sql/apply.sh` (see above). The pets are drawn from invisible "stand-in" creatures that get the real model at spawn, and the second file gives them creature family 0; both are what makes every pet the same size.
