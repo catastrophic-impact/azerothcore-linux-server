@@ -342,7 +342,7 @@ local function RunCheck(player)
             else
                 local want, born, z = Store.ScaleOf(m.sp, w.birthDisplay), o:GetScale(), o:GetZ()
                 local width = Store.SizeOf(m.sp, w.birthDisplay)
-                local okS, okZ = math.abs(born - want) < 0.01 and o:GetLevel() == w.birthLevel and (not width or (D.species[m.sp].companion and width <= 0.91) or math.abs(width - 0.53) < 0.01), math.abs(z - pz) < 4
+                local okS, okZ = math.abs(born - want) < 0.01 and o:GetLevel() == w.birthLevel and (not width or D.species[m.sp].companion or math.abs(width - 0.53) < 0.01), math.abs(z - pz) < 4
                 if not (okS and okZ) then fails = fails + 1 end
                 local line = string.format("[pbcheck] %s %-24s born-scale %.2f (want %.2f)  size %.2f yd  height %+.1f vs you", (okS and okZ) and "PASS" or "FAIL", D.species[m.sp].name, born, want, width or 0, z - pz); pl:SendBroadcastMessage(line); print(line)
             end

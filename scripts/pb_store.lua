@@ -370,9 +370,9 @@ for entry, sp in pairs(D.species) do
 end
 -- ONE PET SIZE: every pet is scaled so its TRUE visible size S is PET_SIZE yards. S = sqrt(mean of the top / side / front silhouette areas) measured from the real model mesh in the client
 -- archives (pet-battle/gen_model_size.py -> gen_scale_caps.py -> scripts/pb_scale_caps.lua, third value), times the display scale: the same S looks the same size for a cube-like gorilla
--- and a leggy spider (a bounding box does not: it counts empty space). PET_SIZE = the median size of the 3.3.5 companion pets (0.53). Companions keep their natural size, capped at COMP_MAX.
+-- and a leggy spider (a bounding box does not: it counts empty space). PET_SIZE = the median size of the 3.3.5 companion pets (0.53). Companions keep their natural size (never resized).
 -- A species whose mesh could not be measured falls back to the old radius-based scale above.
-local PET_SIZE, COMP_MAX, MIN_S, MAX_S = 0.53, 0.9, 0.02, 8.0
+local PET_SIZE, MIN_S, MAX_S = 0.53, 0.02, 8.0
 -- SWAP-ONLY DRAWING (2026-11-23, measured): the client treats a display differently when a creature is CREATED with it (k unpredictable: some models follow, some ignore) and when it is SWAPPED on
 -- with SetDisplayId over a different display (k_eff = max(k, 0.63), the same for every model). Every stand-in template is therefore INVISIBLE (display 11686, custom-sql/017) and every spawn
 -- site dresses it with the pet's real display right away (Store.Dress), so the scale formula only needs the swap rule (gen_scale_caps.py EFF).
@@ -400,7 +400,7 @@ function Store.Scale(entry)
     if S <= 0.01 then return SCALE[entry] or 0.4 end
     local sp = D.species[entry]
     local sc
-    if sp and sp.companion then sc = sp.scale or 1.0; if S * sc > COMP_MAX then sc = COMP_MAX / S end
+    if sp and sp.companion then sc = sp.scale or 1.0   -- companions are REAL creatures: always their natural size, never resized
     else sc = PET_SIZE / S end
     return math.max(MIN_S, math.min(MAX_S, sc))
 end
@@ -413,7 +413,7 @@ function Store.ScaleOf(entry, display)
     if not S or S <= 0.01 then return Store.Scale(entry) end
     local sp = D.species[entry]
     local sc
-    if sp and sp.companion then sc = sp.scale or 1.0; if S * sc > COMP_MAX then sc = COMP_MAX / S end
+    if sp and sp.companion then sc = sp.scale or 1.0   -- companions are REAL creatures: always their natural size, never resized
     else sc = PET_SIZE / S end
     sc = math.max(MIN_S, math.min(MAX_S, sc))
     return sc

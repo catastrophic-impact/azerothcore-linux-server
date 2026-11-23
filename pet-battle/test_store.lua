@@ -199,13 +199,13 @@ test("pet size: tall thin models are capped by HEIGHT, not scaled up past their 
         local sc = S(m[1], m[2]); truthy(m[2] * sc <= 0.95, "final height " .. m[2] * sc .. " for reach " .. m[2])
     end
 end)
-test("pet size: every pet has the same true visible size; companions keep their natural size (capped); the Dun Morogh Cub was microscopic", function()
+test("pet size: every pet has the same true visible size; companions keep their natural size (never resized); the Dun Morogh Cub was microscopic", function()
     local DIM = require("pb_scale_caps"); local n, m = 0, 0
     for entry, sp in pairs(D.species) do
         local d = DIM[entry]
         if d and d[3] > 0.01 then
             local S = d[3]
-            if sp.companion then n = n + 1; local base = sp.scale or 1.0; if S * base > 0.9 then base = 0.9 / S end; eq(math.max(0.02, math.min(8.0, base)), Store.Scale(entry), sp.name)
+            if sp.companion then n = n + 1; local base = sp.scale or 1.0; eq(math.max(0.02, math.min(8.0, base)), Store.Scale(entry), sp.name)
             else
                 local want = 0.53 / S; eq(math.max(0.02, math.min(8.0, want)), Store.Scale(entry), sp.name)
                 if want >= 0.02 and want <= 8.0 then m = m + 1; truthy(math.abs(Store.Width(entry) - 0.53) < 0.001, sp.name .. " true size " .. tostring(Store.Width(entry))) end
