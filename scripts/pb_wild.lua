@@ -102,13 +102,13 @@ local function Spawn(player, species, mob, types)
     local x, y, z = SpawnSpot(mob:GetX(), mob:GetY(), mob:GetZ(), function(px, py) local m = mob:GetMap(); return m and m:GetHeight(px, py, 1) end)
     local obj = PerformIngameSpawn(1, D.StandIn(species) or species, map, 0, x, y, z, math.random() * 6.2832, false, 0, 1)   -- a stand-in clone is BORN at the pet scale (template DisplayScale): no full-size flash
     if not obj then return end
-    local birthScale = obj:GetScale()   -- read BEFORE any SetScale: what the client gets in the create packet
+    local bornDisplay = Store.Dress(obj, species)   -- the stand-in is born INVISIBLE; the real skin is swapped on at once (the client then applies k the predictable swap way)
+    local birthScale = obj:GetScale()
     local g = obj:GetGUIDLow()
-    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = map, x = x, y = y, z = z, born = os.time(), types = types, birthScale = birthScale, birthLevel = obj:GetLevel(), birthDisplay = obj:GetDisplayId() }   -- registered first, configured after
+    wild[g] = { guid = obj:GetGUID(), species = species, level = mob:GetLevel(), zone = player:GetZoneId(), map = map, x = x, y = y, z = z, born = os.time(), types = types, birthScale = birthScale, birthLevel = obj:GetLevel(), birthDisplay = bornDisplay }   -- registered first, configured after
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)                 -- friendly to everyone
     -- NO SetLevel: stand-in clones are level 80 on purpose (any level change on a visible creature plays the level-up animation). The wild pet's real level lives in wild[g].level (menu, blips, battle).
-    local bornDisplay = obj:GetDisplayId()
     local wantScale = Store.ScaleOf(species, bornDisplay)   -- the scale of the model that spawned (each template model row carries its own DisplayScale)
     wild[g].wantScale = wantScale
     pcall(function() obj:SetScale(wantScale) end)
@@ -340,7 +340,7 @@ local function RunCheck(player)
             local w = wild[m.g]; local o = w and Obj(w)
             if not o then fails = fails + 1; pl:SendBroadcastMessage("[pbcheck] FAIL " .. D.species[m.sp].name .. ": pet gone")
             else
-                local want, born, z = Store.ScaleOf(m.sp, w.birthDisplay), w.birthScale or -1, o:GetZ()
+                local want, born, z = Store.ScaleOf(m.sp, w.birthDisplay), o:GetScale(), o:GetZ()
                 local width = Store.SizeOf(m.sp, w.birthDisplay)
                 local okS, okZ = math.abs(born - want) < 0.01 and o:GetLevel() == w.birthLevel and (not width or (D.species[m.sp].companion and width <= 0.91) or math.abs(width - 0.53) < 0.01), math.abs(z - pz) < 4
                 if not (okS and okZ) then fails = fails + 1 end
@@ -374,7 +374,7 @@ local function RunSize(player, sp)
         local obj = PerformIngameSpawn(1, D.StandIn(e[1]), player:GetMapId(), 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
         if obj then
             pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
-            local disp = obj:GetDisplayId()
+            local disp = Store.Dress(obj, e[1]) or obj:GetDisplayId()
             local sc = Store.ScaleOf(e[1], disp) * (e[2] or 1)
             pcall(function() obj:SetScale(sc) end)
             pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
@@ -392,11 +392,166 @@ RegisterPlayerEvent(42, function(_, player, command)
     RunSize(player, tonumber(id))
 end)
 
+-- .pbkd [set] (GM only): DISPLAY-SCALE TEST. Each set is real species that share ONE mesh but have different client display scales k (CreatureDisplayInfo x ModelData; the value is listed in chat).
+-- They are all spawned with the SAME object scale (0.3), 7 yd in front of you, LEFT to RIGHT in the order listed, spaced 2 yd. If the client ignores k they are all the SAME size; wherever it
+-- applies k they differ. Sets: wolf (k 0.40-2.50), scorpion (0.25-3.00, covers below AND above 1), crab (0.10-2.50, covers below 0.22), ogre (1.00-2.65), flagsA / flagsB (4 same-mesh pairs each, one per client model class), shrink (k below 1 on three meshes). Removed after 90 s. .pbkd alone = wolf.
+local KD_SETS = {
+    wolf     = { { 299, 0.40 }, { 69, 0.55 }, { 213, 0.85 }, { 565, 1.00 }, { 2729, 1.30 }, { 20330, 2.50 } },
+    scorpion = { { 33198, 0.25 }, { 15959, 0.55 }, { 3127, 1.00 }, { 4699, 1.30 }, { 5988, 1.50 }, { 9698, 1.75 }, { 21864, 3.00 } },
+    crab     = { { 9700, 0.10 }, { 15927, 0.50 }, { 830, 1.00 }, { 1088, 1.50 }, { 23929, 2.50 } },
+    ogre     = { { 889, 1.00 }, { 212, 1.30 }, { 5229, 1.60 }, { 18260, 2.00 }, { 5977, 2.50 }, { 19948, 2.65 } },
+    -- one PAIR per client model class (ModelData.Flags in the name): the same mesh at k=1.0 and at a bigger k. Different size inside a pair = that class honors k; same size = it ignores k.
+    -- pairs left to right: Panther/Sabercat (flags 16), Rabid Dire Wolf/Bloodmaul Battle Worg (16), Venomtail/Scorchshell Pincer (1, control), Splinter Fist Ogre/Dreadmaul Mauler (0)
+    -- SHRINK test: does a model shrink when k < 1? Wolf mesh (flags 16) k 0.40/0.55/0.85/1.0, cat mesh (flags 16) k 0.35/0.50/0.70/1.0, scorpion mesh (flags 1, honors k < 1) k 0.55/1.0. Left to right in that order.
+    shrink   = { { 299, 0.40 }, { 69, 0.55 }, { 213, 0.85 }, { 565, 1.00 }, { 15926, 0.35 }, { 7430, 0.50 }, { 1199, 0.70 }, { 736, 1.00 }, { 15959, 0.55 }, { 3127, 1.00 } },
+    flagsA   = { { 736, 1.00 }, { 21723, 2.00 }, { 565, 1.00 }, { 20330, 2.50 }, { 3127, 1.00 }, { 21864, 3.00 }, { 889, 1.00 }, { 5977, 2.50 } },
+    -- pairs: Deathstrike Tarantula/Giant Darkfang Spider (flags 2), Enraged Rock Elemental/Sundered Thunderer (3), Lost Whelp/Flamescale Broodling (9), Fleshripper/Giant Buzzard (10)
+    flagsB   = { { 769, 1.00 }, { 4415, 1.50 }, { 2791, 1.00 }, { 18882, 2.50 }, { 1043, 1.00 }, { 7049, 2.00 }, { 1109, 1.00 }, { 2831, 1.50 } },
+}
+local function RunKD(player, set)
+    local list = KD_SETS[set or "wolf"]
+    if not list then player:SendBroadcastMessage("[pbkd] sets: wolf, scorpion, crab, ogre, flagsA, flagsB, shrink") return end
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
+    local n = #list
+    for i, e in ipairs(list) do
+        local off = ((n + 1) / 2 - i) * (n > 9 and 1.5 or n > 7 and 1.7 or 2.0)            -- i = 1 is the LEFTmost
+        local ahead = n > 9 and 8 or 7
+        local px, py = x + fx * ahead + lx * off, y + fy * ahead + ly * off
+        local sid = D.StandIn(e[1])
+        local obj = sid and PerformIngameSpawn(1, sid, player:GetMapId(), 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
+        if obj then
+            pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+            pcall(function() obj:SetScale(0.3) end)
+            pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
+            pcall(function() obj:RegisterEvent(function(ev, dl, nn, c) c:DespawnOrUnsummon(0) end, 90000, 1) end)
+            local line = string.format("[pbkd] %d. %s  display scale k=%.2f  object scale 0.3  display %s", i, D.species[e[1]].name, e[2], tostring(obj:GetDisplayId())); player:SendBroadcastMessage(line); print(line)
+        end
+    end
+    player:SendBroadcastMessage("[pbkd] left to right as listed. Same size = the client ignores k; growing with k = it applies it.")
+end
+PB_WILD.KD = RunKD
+RegisterPlayerEvent(42, function(_, player, command)
+    local set = command and command:match("^pbkd%s*(%a*)%s*$")
+    if not player or not set then return end
+    if player:GetGMRank() < 2 then return end
+    RunKD(player, set ~= "" and set or nil)
+end)
+
+-- .pbmeasure [first] [count] (GM only, DEV): SIZE MEASUREMENT RUN. Stand still on flat ground, camera fixed. Takes one EMPTY baseline screenshot, then repeats: spawn 20 wild pets in a row 10 yd ahead at their
+-- real scale (same path as .pbsize), screenshot, despawn. The client addon tools/wotlk_pbmeasure takes the screenshots when it sees the "[pbm] shot N" chat line. Every pet is logged to logs/pbm.tsv
+-- (shot, slot, offset yd, ahead yd, species, name, display, scale). `.pbmeasure file` = only the species ids listed in logs/pbm_ids.txt; pet-battle/measure_sizes.py diffs each shot against the baseline and measures every pet. Species are taken in id order from #first.
+local PBM_N, PBM_AHEAD, PBM_GAP = 14, 10, 2.0
+local function RunMeasure(player, first, count, fromFile)
+    local ids = {}
+    if fromFile then   -- logs/pbm_ids.txt: one species id per line (re-check only the pets you corrected)
+        local f = io.open("logs/pbm_ids.txt", "r")
+        if f then for l in f:lines() do local sp = tonumber(l:match("%d+")); if sp and D.species[sp] and D.StandIn(sp) then ids[#ids + 1] = sp end end; f:close() end
+    else
+        for sp, d in pairs(D.species) do if d.wild and D.StandIn(sp) then ids[#ids + 1] = sp end end
+        table.sort(ids)
+    end
+    first = first or 1
+    local last = math.min(#ids, first + (count or #ids) - 1)
+    local pg, map = player:GetGUID(), player:GetMapId()
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
+    local function Say(t) local pl = GetPlayerByGUID(pg); if pl then pl:SendBroadcastMessage(t) end end
+    local function Log(line) local f = io.open("logs/pbm.tsv", "a"); if f then f:write(line, "\n"); f:close() end end
+    local i, shot = first, 0
+    local function Batch()
+        if i > last then Say("[pbm] done"); return end
+        shot = shot + 1
+        local n = 0
+        for j = 1, PBM_N do
+            local sp = ids[i]; if not sp then break end
+            i = i + 1
+            local off = (j - (PBM_N + 1) / 2) * PBM_GAP
+            local px, py = x + fx * PBM_AHEAD + lx * off, y + fy * PBM_AHEAD + ly * off
+            local obj = PerformIngameSpawn(1, D.StandIn(sp), map, 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
+            if obj then
+                n = n + 1
+                pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+                local disp = Store.Dress(obj, sp) or obj:GetDisplayId()
+                local sc = Store.ScaleOf(sp, disp)
+                pcall(function() obj:SetScale(sc) end)
+                pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
+                pcall(function() obj:RegisterEvent(function(ev, dl, nn, c) c:DespawnOrUnsummon(0) end, 4700, 1) end)
+                Log(string.format("%d\t%d\t%.2f\t%d\t%d\t%s\t%s\t%.4f", shot, j, off, PBM_AHEAD, sp, D.species[sp].name, tostring(disp), sc))
+            end
+        end
+        CreateLuaEvent(function() Say("[pbm] shot " .. shot) end, 3500, 1)
+        CreateLuaEvent(Batch, 5600, 1)
+    end
+    Log("RUN\t" .. os.time() .. "\tfirst " .. first .. "\tlast " .. last .. "\tspecies " .. #ids)
+    Say("[pbm] start " .. (last - first + 1) .. " species")
+    CreateLuaEvent(function() Say("[pbm] shot 0") end, 1500, 1)   -- empty baseline
+    CreateLuaEvent(Batch, 4000, 1)
+end
+PB_WILD.Measure = RunMeasure
+RegisterPlayerEvent(42, function(_, player, command)
+    if not player or not command or not command:match("^pbmeasure") then return end
+    if player:GetGMRank() < 2 then return end
+    local a, b = command:match("^pbmeasure%s+(%d+)%s+(%d+)")
+    local fromFile = command:match("^pbmeasure%s+file%s*$") ~= nil
+    if fromFile or command:match("^pbmeasure%s+all%s*$") then a, b = 1, nil elseif not a then a, b = 1, 40 end   -- no numbers = a 40-species test; "all" = everything
+    player:SendBroadcastMessage("[pbm] got command '" .. command .. "' -> first " .. tostring(a) .. " count " .. tostring(b or "all"))
+    RunMeasure(player, tonumber(a), tonumber(b), fromFile)
+end)
+
+-- .pbpair (GM only, DEV): does the client HONOR a display's scale k < 1? For every "dispA dispB k" line in logs/pbpair_ids.txt (A = a display with k < 1, B = a k = 1 display of the SAME model) spawns both
+-- side by side at the same object scale (0.3), 7 pairs per shot ("[pbm] shot N" for the screenshot addon). Same size = the client ignores k; A smaller by about k = it honors it. Log: logs/pbpair.tsv.
+RegisterPlayerEvent(42, function(_, player, command)
+    if not player or not command or not command:match("^pbpair") then return end
+    if player:GetGMRank() < 2 then return end
+    local from, cnt = command:match("^pbpair%s+(%d+)%s+(%d+)")
+    local pairs_ = {}
+    local f = io.open("logs/pbpair_ids.txt", "r")
+    if f then for l in f:lines() do local a, b, k, sp, tg = l:match("(%d+)%s+(%d+)%s+([%d.]+)%s*(%d*)%s*(%d*)"); if a then pairs_[#pairs_ + 1] = { tonumber(a), tonumber(b), tonumber(k), tonumber(sp), tonumber(tg) } end end; f:close() end
+    local first = tonumber(from) or 1; local last = math.min(#pairs_, first + (tonumber(cnt) or #pairs_) - 1)
+    local pg, map = player:GetGUID(), player:GetMapId()
+    local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
+    local fx, fy, lx, ly = math.cos(o), math.sin(o), -math.sin(o), math.cos(o)
+    local function Say(t) local pl = GetPlayerByGUID(pg); if pl then pl:SendBroadcastMessage(t) end end
+    local function Log(line) local fh = io.open("logs/pbpair.tsv", "a"); if fh then fh:write(line, "\n"); fh:close() end end
+    local base = D.StandIn(43)
+    local i, shot = first, 0
+    local function Batch()
+        if i > last then Say("[pbm] done"); return end
+        shot = shot + 1
+        for j = 1, 7 do
+            local pr = pairs_[i]; if not pr then break end
+            i = i + 1
+            for m = 0, 1 do
+                local off = (j - 4) * 3.4 + (m == 0 and -0.9 or 0.9)
+                local px, py = x + fx * 10 + lx * off, y + fy * 10 + ly * off
+                local created = (m == 0 and pr[4] and pr[4] > 0)   -- 4th field = species: A is CREATED from that stand-in template (its own display), not swapped
+                local obj = PerformIngameSpawn(1, created and D.StandIn(pr[4]) or ((pr[5] and pr[5] > 0 and D.StandIn(pr[5])) or base), map, 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
+                if obj then
+                    pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
+                    if not created then pcall(function() obj:SetDisplayId(pr[1 + m]) end) end
+                    pcall(function() obj:SetScale(0.3) end)
+                    pcall(function() obj:MoveTo(1, px, py, z + 1.0, true) end)
+                    pcall(function() obj:RegisterEvent(function(ev, dl, nn, c) c:DespawnOrUnsummon(0) end, 4700, 1) end)
+                end
+            end
+            Log(string.format("%d\t%d\t%d\t%d\t%.3f", shot, j, pr[1], pr[2], pr[3]))
+        end
+        CreateLuaEvent(function() Say("[pbm] shot " .. shot) end, 3500, 1)
+        CreateLuaEvent(Batch, 5600, 1)
+    end
+    Log("RUN\t" .. os.time() .. "\t" .. first .. "\t" .. last)
+    Say("[pbm] start pairs " .. first .. "-" .. last)
+    CreateLuaEvent(function() Say("[pbm] shot 0") end, 1500, 1)
+    CreateLuaEvent(Batch, 4000, 1)
+end)
+
 -- .pbcrab (GM only): spawns ONLY the Crab (species 6827) 4 yd in front of you at its computed scale (screenshot it next to your character). Removed after 90 s.
 local function RunCrab(player)
     local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
     local obj = PerformIngameSpawn(1, D.StandIn(6827), player:GetMapId(), 0, x + math.cos(o) * 4, y + math.sin(o) * 4, z + 1.0, o + 3.14159, false, 0, 1)
     if not obj then player:SendBroadcastMessage("[pbcrab] spawn failed") return end
+    Store.Dress(obj, 6827)
     pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
     local sc = Store.ScaleOf(6827, obj:GetDisplayId())
     pcall(function() obj:SetScale(sc) end)
@@ -424,6 +579,7 @@ local function RunK(player)
             local px, py = x + fx * (7 + row * 5) + lx * (col - 1.5) * 4.5, y + fy * (7 + row * 5) + ly * (col - 1.5) * 4.5
             local obj = PerformIngameSpawn(1, D.StandIn(sp), player:GetMapId(), 0, px, py, z + 1.0, o + 3.14159, false, 0, 1)
             if obj then
+                Store.Dress(obj, sp)
                 pcall(function() obj:SetReactState(0); obj:SetFaction(35); obj:SetUnitFlags(0) end)
                 local sc = Store.ScaleOf(sp, obj:GetDisplayId())
                 pcall(function() obj:SetScale(sc) end)

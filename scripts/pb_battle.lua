@@ -126,7 +126,7 @@ local function EnsureStandIns()
     if not q then return end
     repeat cols[#cols + 1] = q:GetString(0) until not q:NextRow()
     local ZERO = { difficulty_entry_1 = 0, difficulty_entry_2 = 0, difficulty_entry_3 = 0, KillCredit1 = 0, KillCredit2 = 0, npcflag = 0, unit_flags = 0, unit_flags2 = 0, dynamicflags = 0,
-                   lootid = 0, pickpocketloot = 0, skinloot = 0, gossip_menu_id = 0, mingold = 0, maxgold = 0, VehicleId = 0, PetSpellDataId = 0, flags_extra = 0, ["rank"] = 0, MovementType = 0, type_flags = 0, faction = 35 }
+                   lootid = 0, pickpocketloot = 0, skinloot = 0, gossip_menu_id = 0, mingold = 0, maxgold = 0, VehicleId = 0, PetSpellDataId = 0, flags_extra = 0, ["rank"] = 0, MovementType = 0, type_flags = 0, faction = 35, family = 0 }   -- family 0: the 3.3.5 client otherwise raises a creature's size to its CREATURE FAMILY scale (CreatureFamily.dbc), which overrode the display scale k
     WorldDBExecute("UPDATE creature_template SET `type` = 1 WHERE entry >= 9000000 AND entry < 9100000 AND `type` = 12")   -- clones made before this rule
     local made = 0
     local have = {}   -- ONE bulk query instead of one SELECT per species on every script load (the species list grows into the thousands)
@@ -143,7 +143,7 @@ local function EnsureStandIns()
                 else sel[#sel + 1] = "`" .. c .. "`" end
             end
             WorldDBExecute("INSERT INTO creature_template (`" .. table.concat(cols, "`,`") .. "`) SELECT " .. table.concat(sel, ",") .. " FROM creature_template WHERE entry = " .. species)
-            WorldDBExecute("INSERT IGNORE INTO creature_template_model (CreatureID, Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild) SELECT " .. id .. ", Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild FROM creature_template_model WHERE CreatureID = " .. species)
+            WorldDBExecute("INSERT IGNORE INTO creature_template_model (CreatureID, Idx, CreatureDisplayID, DisplayScale, Probability, VerifiedBuild) SELECT " .. id .. ", Idx, 11686, 1, Probability, VerifiedBuild FROM creature_template_model WHERE CreatureID = " .. species)   -- INVISIBLE (11686): the real skin is swapped on at spawn (Store.Dress)
             made = made + 1
         end
     end
@@ -158,18 +158,7 @@ local function EnsureStandIns()
 end
 EnsureStandIns()
 
-local displayCache = {}
-local function PickDisplay(species)   -- random model row of the species (the same rows the stand-in clone carries)
-    local list = displayCache[species]
-    if not list then
-        list = {}
-        local q = WorldDBQuery and WorldDBQuery("SELECT CreatureDisplayID FROM creature_template_model WHERE CreatureID = " .. species .. " ORDER BY Idx")
-        if q then repeat list[#list + 1] = q:GetUInt32(0) until not q:NextRow() end
-        displayCache[species] = list
-    end
-    if #list == 0 then return nil end
-    return list[math.random(1, #list)]
-end
+local PickDisplay = Store.PickDisplay   -- random model row of the species
 
 local function SpawnPet(b, s, idx)
     local pet = b.eng[s][idx]; local p = b.pos[s]
@@ -180,13 +169,10 @@ local function SpawnPet(b, s, idx)
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetUnitFlags(0) end)   -- the cats (and other companion templates) carry IMMUNE_TO_PC|IMMUNE_TO_NPC (768): spells then never land on them, so no hit visual / sound / animation for EITHER side
     pcall(function() obj:SetFaction(35) end)   -- friendly to everyone: no mob, guard or player attacks it. (A PERMANENT hostile pair does not work: every pair that can hurt each other is also attacked by real mobs, e.g. a whole murloc camp joined a battle.)
-    if pet.display and pet.display > 0 then pcall(function() obj:SetDisplayId(pet.display) end)   -- the skin this pet really has
-    else
-        local okd, d = pcall(function() return obj:GetDisplayId() end)
-        if okd and d and d > 0 then
-            pet.display = d   -- remembered: recruiting an enemy pet keeps ITS skin, and your own pet never changes skin by chance
-            if s == "P" then local pl = GetPlayer(b); if pl then Store.SetDisplay(pl, pet.species, d) end end
-        end
+    local worn = Store.Dress(obj, pet.species, pet.display)   -- the skin this pet really has (swapped on over the invisible stand-in)
+    if not (pet.display and pet.display > 0) and worn then
+        pet.display = worn   -- remembered: recruiting an enemy pet keeps ITS skin, and your own pet never changes skin by chance
+        if s == "P" then local pl = GetPlayer(b); if pl then Store.SetDisplay(pl, pet.species, worn) end end
     end
     do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(pet.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS (a species can wear several models)
     pcall(function() obj:SetMaxHealth(1000); obj:SetHealth(1000) end)   -- real spells hit it for presentation: a tiny creature must not die from the transient damage (pb_cast sets the exact health afterwards)

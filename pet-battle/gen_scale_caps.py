@@ -6,8 +6,9 @@ Usage (project root): python3 -I pet-battle/gen_scale_caps.py"""
 import struct, re
 CDI = 'pet-battle/.s/cdbc/DBFilesclient/Creaturedisplayinfo.dbc'; CMD = 'pet-battle/.s/cdbc/DBFilesclient/Creaturemodeldata.dbc'   # the client's patched DBC (not the server's copy)
 # MEASURED in game 2026-11-21 (.pbk grid screenshot): the 3.3.5 client ignores a display scale below ~0.22 (Crab / Duskbats with 0.1-0.2 were drawn 5-10x too big; 0.25 and up are honored)
-MIN_K = 0.22
-def EFF(k): return k if k >= MIN_K else 1.0
+# CLIENT RULE (found 2026-11-23): the 3.3.5 client draws a creature at objectScale x max(display k x model scale, CreatureFamily scale at its level). A stand-in template with family 0 has no
+# family floor, so the file's real k applies exactly (the old "0.63 clamp" was the Mine Spider family's 0.6 floor, the Crab's "ignored k" its 1.4 floor). custom-sql/017 sets family 0.
+def EFF(k): return k
 def rows(p):
     d = open(p, 'rb').read(); m, n, f, rs, ss = struct.unpack('<4sIIII', d[:20]); body = d[20:20 + n * rs]
     for i in range(n): yield struct.unpack('<%dI' % f, body[i * rs:(i + 1) * rs])

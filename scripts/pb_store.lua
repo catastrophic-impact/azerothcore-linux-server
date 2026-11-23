@@ -373,6 +373,26 @@ end
 -- and a leggy spider (a bounding box does not: it counts empty space). PET_SIZE = the median size of the 3.3.5 companion pets (0.53). Companions keep their natural size, capped at COMP_MAX.
 -- A species whose mesh could not be measured falls back to the old radius-based scale above.
 local PET_SIZE, COMP_MAX, MIN_S, MAX_S = 0.53, 0.9, 0.02, 8.0
+-- SWAP-ONLY DRAWING (2026-11-23, measured): the client treats a display differently when a creature is CREATED with it (k unpredictable: some models follow, some ignore) and when it is SWAPPED on
+-- with SetDisplayId over a different display (k_eff = max(k, 0.63), the same for every model). Every stand-in template is therefore INVISIBLE (display 11686, custom-sql/017) and every spawn
+-- site dresses it with the pet's real display right away (Store.Dress), so the scale formula only needs the swap rule (gen_scale_caps.py EFF).
+local displayCache = {}
+function Store.PickDisplay(species)   -- a random model row of the species' real template (the models the stand-in used to carry)
+    local list = displayCache[species]
+    if not list then
+        list = {}
+        local q = WorldDBQuery and WorldDBQuery("SELECT CreatureDisplayID FROM creature_template_model WHERE CreatureID = " .. species .. " ORDER BY Idx")
+        if q then repeat list[#list + 1] = q:GetUInt32(0) until not q:NextRow() end
+        displayCache[species] = list
+    end
+    if #list == 0 then return nil end
+    return list[math.random(1, #list)]
+end
+function Store.Dress(obj, species, display)   -- swap the invisible stand-in to the pet's real skin (display given, or a random one of the species); returns the display worn
+    local d = (display and display > 0) and display or Store.PickDisplay(species)
+    if d and d > 0 then pcall(function() obj:SetDisplayId(d) end); return d end
+    return nil
+end
 local DIM = require("pb_scale_caps")
 function Store.Scale(entry)
     local d = DIM[entry]
@@ -395,7 +415,8 @@ function Store.ScaleOf(entry, display)
     local sc
     if sp and sp.companion then sc = sp.scale or 1.0; if S * sc > COMP_MAX then sc = COMP_MAX / S end
     else sc = PET_SIZE / S end
-    return math.max(MIN_S, math.min(MAX_S, sc))
+    sc = math.max(MIN_S, math.min(MAX_S, sc))
+    return sc
 end
 function Store.SizeOf(entry, display) local S = display and DSZ[display]; if S and S > 0.01 then return S * Store.ScaleOf(entry, display) end return Store.Width(entry) end   -- true visible size in yards
 
@@ -433,14 +454,14 @@ end
 local function SpawnFollower(player, f)
     local x, y, z, o = player:GetX(), player:GetY(), player:GetZ(), player:GetO()
     local px, py = x - math.cos(o) * 2 + math.cos(o + 1.57) * 1, y - math.sin(o) * 2 + math.sin(o + 1.57) * 1
-    local obj = PerformIngameSpawn(1, f.species, player:GetMapId(), 0, px, py, z, o, false, 0, 1)
+    local obj = PerformIngameSpawn(1, D.StandIn(f.species) or f.species, player:GetMapId(), 0, px, py, z, o, false, 0, 1)   -- the pet-sized clone (DisplayScale from custom-sql/017): the real template spawned FULL size and shrank
     if not obj then return end
     f.obj, f.low, f.map = obj:GetGUID(), obj:GetGUIDLow(), player:GetMapId()     -- registered immediately, configured after
     pcall(function() obj:SetReactState(0) end)
     pcall(function() obj:SetFaction(35) end)
     local disp = Store.PetDisplay(player, f.species)
-    if disp > 0 then pcall(function() obj:SetDisplayId(disp) end)   -- the follower wears the pet's real skin
-    else local okd, d = pcall(function() return obj:GetDisplayId() end); if okd and d and d > 0 then Store.SetDisplay(player, f.species, d) end end
+    local worn = Store.Dress(obj, f.species, disp)   -- the follower wears the pet's real skin (swapped on over the invisible stand-in)
+    if disp <= 0 and worn then Store.SetDisplay(player, f.species, worn) end
     do local okd2, d2 = pcall(function() return obj:GetDisplayId() end); pcall(function() obj:SetScale(Store.ScaleOf(f.species, okd2 and d2 or nil)) end) end   -- the scale of the model it WEARS
     pcall(function() obj:SetPhaseMask(1, true) end)
     Pace(obj, player)
