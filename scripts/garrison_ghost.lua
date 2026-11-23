@@ -42,7 +42,7 @@ return function(G)
         else g.still = (g.still or 0) + 1 end
         g.px, g.py, g.po = px, py, po
         if g.still < STILL_TICKS then GhostKill(g); return end
-        local moved = not g.guid or math.abs(x - g.x) > 0.15 or math.abs(y - g.y) > 0.15 or math.abs(z - g.z) > 0.15 or math.abs(go - g.o) > 0.03
+        local moved = not g.guid or math.abs(x - g.x) > 0.15 or math.abs(y - g.y) > 0.15 or math.abs(z - g.z) > 0.03 or math.abs(go - g.o) > 0.03
         if not moved then return end
         GhostKill(g)
         g.x, g.y, g.z, g.o = x, y, z, go
@@ -62,6 +62,9 @@ return function(G)
             end
         end
     end
+
+    -- "reload ale" throws the ghost table away: remove the preview objects first, or they stay in the world as orphans nobody can delete
+    RegisterServerEvent(16, function() for _, g in pairs(ghosts) do pcall(GhostKill, g) end end)   -- LUA_STATE_CLOSE
 
     Msg.On("house", "pstart", function(player, kind)
         local h = MyHouse(player)
@@ -91,9 +94,9 @@ return function(G)
         local g = ghosts[player:GetGUIDLow()]; local n = tonumber(amount)
         if g and n then g.rot = (g.rot + math.rad(math.max(-180, math.min(180, n)))) % (2 * math.pi) end
     end)
-    Msg.On("house", "pup", function(player, amount)   -- relative change of the height above the ground in yards, clamped -5..20 (negative = sunk into the ground)
+    Msg.On("house", "pup", function(player, amount)   -- relative change of the height above the ground in yards, clamped -5..40 (negative = sunk into the ground); one step up to 10 (the Up / Down step menu)
         local g = ghosts[player:GetGUIDLow()]; local n = tonumber(amount)
-        if g and n then g.dz = math.max(-5, math.min(20, g.dz + math.max(-5, math.min(5, n)))) end
+        if g and n then g.dz = math.max(-5, math.min(40, g.dz + math.max(-10, math.min(10, n)))) end
     end)
     Msg.On("house", "pconfirm", function(player)
         local low = player:GetGUIDLow()

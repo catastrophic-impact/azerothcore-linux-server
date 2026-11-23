@@ -86,3 +86,32 @@ timer:SetScript("OnUpdate", function()
     if msgUntil > 0 and t > msgUntil then msgUntil = 0; if G.ui.msgText then G.ui.msgText:SetText("") end end
     if clearUntil > 0 and t > clearUntil then clearUntil = 0; if G.ui.clearBtn then G.ui.clearBtn:SetText("Remove all decor") end end
 end)
+
+-- Step sizes, shared by the Placed-tab pad and the live placement bar (same lists, same saved choice, so both always agree).
+-- HEIGHTS = how far Up / Down moves (yards; a player is about 2 yards tall); MOVES = { yards for Left/Right/Away/Closer, degrees for Turn }.
+G.HEIGHTS = { { 0.1, "Fine: 0.1 yd" }, { 0.5, "Small: 0.5 yd" }, { 1, "Medium: 1 yd" }, { 2, "Player height: 2 yd" }, { 5, "Large: 5 yd" }, { 10, "Very large: 10 yd" } }
+G.MOVES = { { 0.1, 2, "Fine: 0.1 yd, 2 deg" }, { 0.5, 5, "Normal: 0.5 yd, 5 deg" }, { 2, 15, "Large: 2 yd, 15 deg" }, { 5, 45, "Huge: 5 yd, 45 deg" } }
+local function Pick(key, list, default)
+    local i = WotlkGarrisonDB and WotlkGarrisonDB[key]
+    return (i and list[i]) and i or default
+end
+function G.HeightIdx() return Pick("hstep", G.HEIGHTS, 2) end
+function G.MoveIdx() return Pick("mstep", G.MOVES, 2) end
+function G.HeightStep() return G.HEIGHTS[G.HeightIdx()][1] end
+function G.MoveStep() local m = G.MOVES[G.MoveIdx()]; return m[1], m[2] end
+-- a combo box over `list` (entries { ..., label }) that reads / saves the chosen index under WotlkGarrisonDB[key]
+function G.StepMenu(parent, name, width, list, key, get)
+    local dd = CreateFrame("Frame", name, parent, "UIDropDownMenuTemplate"); UIDropDownMenu_SetWidth(dd, width)
+    local function Text() UIDropDownMenu_SetText(dd, list[get()][#list[get()]]) end
+    UIDropDownMenu_Initialize(dd, function()
+        for i, e in ipairs(list) do
+            local info = UIDropDownMenu_CreateInfo(); info.text = e[#e]; info.checked = (get() == i)
+            info.func = function() WotlkGarrisonDB = WotlkGarrisonDB or {}; WotlkGarrisonDB[key] = i; Text(); if G.RefreshStepMenus then G.RefreshStepMenus() end end
+            UIDropDownMenu_AddButton(info)
+        end
+    end)
+    dd.Update = Text; dd:SetScript("OnShow", Text); Text()
+    G.stepMenus = G.stepMenus or {}; G.stepMenus[#G.stepMenus + 1] = dd
+    return dd
+end
+function G.RefreshStepMenus() for _, d in ipairs(G.stepMenus or {}) do d.Update() end end

@@ -45,4 +45,10 @@ handlers["house|curd"]("5;i~d1~Beds~Sofa~2"); check(d1.cat == "Beds" and d1.name
 handlers["house|curfull"]("1/1;r~9;k;c~Zed~4;c~Beds~0;c~Unsorted~0;c~Removed~0;i~d2~Zed~~")
 check(G.TabDef("objects").cats[1] == "Beds" and G.TabDef("objects").cats[2] == "Zed" and d2.cat == "Zed" and d2.price == 5 and d1.cat == "Unsorted" and WotlkGarrisonDB.cur.rev == 9, "a full sync replaces categories, items and revision")
 G.st.curator = false; G.ApplyCur(); check(d1.hidden == true, "without the GM right everything hidden stays hidden")
+-- step menus shared by the Placed pad and the placement bar
+WotlkGarrisonDB = {}
+check(G.HeightStep() == 0.5 and G.HeightIdx() == 2, "default height step is 0.5 yd, as before")
+WotlkGarrisonDB.hstep = 4; check(G.HeightStep() == 2, "saved choice 4 = player height, 2 yd")
+WotlkGarrisonDB.hstep = 99; check(G.HeightStep() == 0.5, "a bad saved index falls back to the default")
+WotlkGarrisonDB.mstep = 1; local mv, dg = G.MoveStep(); check(mv == 0.1 and dg == 2, "fine move step")
 print(string.format("%d checks, %d failed", checks, fails)); os.exit(fails == 0 and 0 or 1)

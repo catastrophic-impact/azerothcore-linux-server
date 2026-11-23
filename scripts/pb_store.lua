@@ -1,7 +1,7 @@
 -- Pet battle STORAGE + journal server side (module "pbj"). One row per owned species per character (a duplicate recruit REPLACES it).
 -- Tables (acore_characters): dc_battlepet(guid, species, level, xp, a1, a2, a3)   dc_battleteam(guid, team, slot, species)   dc_battleplayer(guid, active_team)
--- Client -> server: pbj|list  pbj|abil|<species>  pbj|setabil|<species>,<slot>,<opt>  pbj|setteam|<team>,<s1>,<s2>,<s3>  pbj|active|<team>
--- Server -> client: pbj|pet|..., pbj|team|..., pbj|active|n, pbj|done, pbj|abl|...
+-- Client -> server: pbj|list  pbj|abil|<species>  pbj|setabil|<species>,<slot>,<opt>  pbj|setteam|<team>,<s1>,<s2>,<s3>  pbj|active|<team>  pbj|addteam  pbj|delteam|<team>
+-- Server -> client: pbj|pet|..., pbj|nteams|n, pbj|team|..., pbj|active|n, pbj|done, pbj|abl|...
 -- Needs: mod-ale (built and tested with commit 84b85cc) and the shared core scripts acore_*.lua in the same lua_scripts folder.
 for _, m in ipairs({ "acore_msg", "acore_prime", "acore_bus", "acore_util", "acore_settings" }) do if not pcall(require, m) then print("[Pet Battles] DISABLED: the shared core script " .. m .. ".lua is missing from lua_scripts (copy all acore_*.lua files, see the README)"); return true end end
 local Msg = require("acore_msg")
@@ -17,7 +17,7 @@ Prime.SetDisplayResolver(function(player, entry) return Store.PetDisplay and Sto
 Prime.Enable("pbj")
 require("acore_bus").On("companion_learned", function(player) Store.SyncCompanions(player) end, "pets")   -- the Shop taught a companion: straight into the journal
 local Info   -- forward declaration (defined below, used by the XP code)
-local TEAMS = 3
+local TEAMS, MAX_TEAMS = 3, 30   -- every player starts with 3 teams and can add more (up to MAX_TEAMS; the addon mirrors it)
 local cache = {}   -- guidLow -> { pets = { [species] = {level, xp, a = {1,1,1}} }, teams = { [n] = {s1,s2,s3} }, active = 1 }
 
 -- synchronous on purpose: the SHOW COLUMNS check below runs right away, and on a FRESH database an async CREATE has not run yet (error 1146 aborts worldserver)
@@ -29,12 +29,17 @@ end
 CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battleteam (guid INT UNSIGNED NOT NULL, team TINYINT UNSIGNED NOT NULL, slot TINYINT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid, team, slot)) ENGINE=InnoDB")
 CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battlefollower (guid INT UNSIGNED NOT NULL, species INT UNSIGNED NOT NULL, PRIMARY KEY (guid)) ENGINE=InnoDB")
 CharDBQuery("CREATE TABLE IF NOT EXISTS dc_battleplayer (guid INT UNSIGNED NOT NULL, active_team TINYINT UNSIGNED NOT NULL DEFAULT 1, PRIMARY KEY (guid)) ENGINE=InnoDB")
+if not CharDBQuery("SHOW COLUMNS FROM dc_battleplayer LIKE 'n_teams'") then CharDBExecute("ALTER TABLE dc_battleplayer ADD COLUMN n_teams TINYINT UNSIGNED NOT NULL DEFAULT 3") end
 
 local function Load(guid)
     if cache[guid] then return cache[guid] end
     local c = { pets = {}, teams = {}, active = 1 }
-    for n = 1, TEAMS do c.teams[n] = { 0, 0, 0 } end
-    local q = CharDBQuery("SELECT species, level, xp, a1, a2, a3, quality, display, hp, hp_at FROM dc_battlepet WHERE guid=" .. guid)
+    local q = CharDBQuery("SELECT active_team, n_teams FROM dc_battleplayer WHERE guid=" .. guid)
+    local nTeams = TEAMS
+    if q then c.active = q:GetUInt32(0); nTeams = math.max(TEAMS, math.min(MAX_TEAMS, q:GetUInt32(1))) end
+    for n = 1, nTeams do c.teams[n] = { 0, 0, 0 } end
+    if not (c.teams[c.active]) then c.active = 1 end
+    q = CharDBQuery("SELECT species, level, xp, a1, a2, a3, quality, display, hp, hp_at FROM dc_battlepet WHERE guid=" .. guid)
     if q then repeat
         c.pets[q:GetUInt32(0)] = { level = q:GetUInt32(1), xp = q:GetUInt32(2), a = { q:GetUInt32(3), q:GetUInt32(4), q:GetUInt32(5) },
                                    quality = math.max(1, q:GetUInt32(6)), display = q:GetUInt32(7), hp = q:GetUInt32(8) > 0 and q:GetUInt32(8) or nil, hpAt = q:GetUInt32(9) }
@@ -44,8 +49,6 @@ local function Load(guid)
         local t, sl = q:GetUInt32(0), q:GetUInt32(1)
         if c.teams[t] and sl >= 1 and sl <= 3 then c.teams[t][sl] = q:GetUInt32(2) end
     until not q:NextRow() end
-    q = CharDBQuery("SELECT active_team FROM dc_battleplayer WHERE guid=" .. guid)
-    if q then c.active = q:GetUInt32(0) end
     cache[guid] = c
     return c
 end
@@ -222,6 +225,14 @@ local function SaveTeam(g, n, sl)
     CharDBExecute("DELETE FROM dc_battleteam WHERE guid=" .. g .. " AND team=" .. n)
     for i = 1, 3 do if sl[i] ~= 0 then CharDBExecute(string.format("INSERT INTO dc_battleteam (guid, team, slot, species) VALUES (%d,%d,%d,%d)", g, n, i, sl[i])) end end
 end
+local function SavePlayer(g, c)
+    CharDBExecute(string.format("REPLACE INTO dc_battleplayer (guid, active_team, n_teams) VALUES (%d,%d,%d)", g, c.active, #c.teams))
+end
+local function SendTeams(player, c)
+    Msg.Send(player, "pbj", "nteams", #c.teams)
+    for n = 1, #c.teams do Msg.Send(player, "pbj", "team", n .. "," .. c.teams[n][1] .. "," .. c.teams[n][2] .. "," .. c.teams[n][3]) end
+    Msg.Send(player, "pbj", "active", c.active)
+end
 function Store.ActiveTeam(player)
     local g = player:GetGUIDLow(); local c = Load(g)
     -- no team set up yet: use (and save) the three highest level pets so a battle is never a dead end
@@ -258,8 +269,7 @@ end
 local function SendAll(player)
     local c = Load(player:GetGUIDLow())
     for sp, p in pairs(c.pets) do if D.species[sp] then Msg.Send(player, "pbj", "pet", Info(sp, p)) end end
-    for n = 1, TEAMS do Msg.Send(player, "pbj", "team", n .. "," .. c.teams[n][1] .. "," .. c.teams[n][2] .. "," .. c.teams[n][3]) end
-    Msg.Send(player, "pbj", "active", c.active)
+    SendTeams(player, c)
     Msg.Send(player, "pbj", "follow", Store.Follower and Store.Follower(player) or 0)
     Msg.Send(player, "pbj", "done", "")
 end
@@ -328,7 +338,7 @@ Msg.On("pbj", "setabil", function(player, payload)
     Msg.Send(player, "pbj", "pet", Info(sp, c.pets[sp]))
 end)
 Msg.On("pbj", "setteam", function(player, payload)
-    local n, a, b, d = payload:match("^(%d),(%d+),(%d+),(%d+)$"); n = tonumber(n)
+    local n, a, b, d = payload:match("^(%d+),(%d+),(%d+),(%d+)$"); n = tonumber(n)
     local g = player:GetGUIDLow(); local c = Load(g)
     if not (n and c.teams[n]) then return end
     local sl, seen = { tonumber(a), tonumber(b), tonumber(d) }, {}
@@ -344,8 +354,23 @@ Msg.On("pbj", "active", function(player, payload)
     local n = tonumber(payload); local g = player:GetGUIDLow(); local c = Load(g)
     if not (n and c.teams[n]) then return end
     c.active = n
-    CharDBExecute(string.format("REPLACE INTO dc_battleplayer (guid, active_team) VALUES (%d,%d)", g, n))
+    SavePlayer(g, c)
     Msg.Send(player, "pbj", "active", n)
+end)
+Msg.On("pbj", "addteam", function(player)
+    local g = player:GetGUIDLow(); local c = Load(g)
+    if #c.teams >= MAX_TEAMS then return end
+    c.teams[#c.teams + 1] = { 0, 0, 0 }
+    SavePlayer(g, c); SendTeams(player, c)
+end)
+Msg.On("pbj", "delteam", function(player, payload)   -- later teams move up one number; the last team can never be deleted
+    local n = tonumber(payload); local g = player:GetGUIDLow(); local c = Load(g)
+    if not (n and c.teams[n]) or #c.teams <= 1 then return end
+    table.remove(c.teams, n)
+    if c.active == n then c.active = math.min(n, #c.teams) elseif c.active > n then c.active = c.active - 1 end
+    CharDBExecute("DELETE FROM dc_battleteam WHERE guid=" .. g .. " AND team>=" .. n)
+    for k = n, #c.teams do SaveTeam(g, k, c.teams[k]) end
+    SavePlayer(g, c); SendTeams(player, c)
 end)
 RegisterPlayerEvent(4, function(_, player) cache[player:GetGUIDLow()] = nil end)   -- logout
 

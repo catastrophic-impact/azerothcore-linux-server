@@ -368,7 +368,7 @@ local function reset(tab)
     handlers["pbj|done"]()
     sent = {}
 end
-local function drop(target) over = {}; if target == "outside" then return end; over[frame] = true; if target ~= "window" then over[target] = true end end
+local function drop(target) over = {}; if target == "outside" then return end; over[frame] = true; if target ~= "window" then over[target] = true; over[WotlkPets.PaneT().scroll] = true end end
 
 ---------------------------------------------------------------- (4) filters through the real UI: row order, count, empty state
 reset(1)
@@ -663,6 +663,18 @@ ok(slot(1, 1):IsVisible(), "slots visible on the Teams tab"); S.tab = 1; handler
 S.tab = 2; handlers["pbj|done"]()
 local actBtn; for _, f in ipairs(created) do if f.kind == "Button" and f.text == "Make active" then actBtn = f; break end end
 fire(actBtn, "OnClick"); eq(sentOf("active")[1], "2", "Make active sends the team number"); eq(S.active, 2, "active team updated")
+
+-- more than 3 teams: the server announces the count, the pane grows and scrolls
+local P = WotlkPets.PaneT()
+local newBtn; for _, f in ipairs(created) do if f.kind == "Button" and f.text == "+ New team" then newBtn = f end end
+sent = {}; fire(newBtn, "OnClick"); eq(sent[1].a, "addteam", "+ New team asks the server")
+handlers["pbj|nteams"]("5"); handlers["pbj|team"]("5,1,0,0"); handlers["pbj|done"]()
+eq(#S.teams, 5, "5 teams after the server says so"); eq(S.teams[5][1], 1, "team 5 filled (two-digit-safe team message)")
+ok(P.box[5] and P.box[5]:IsShown(), "box 5 built and shown"); eq(P.holder.h or P.holder.height, 5 * 116 + 32, "scroll content grows with the teams")
+drop(P.box[5].slot[2]); fire(rowFor(2), "OnDragStart"); fire(rowFor(2), "OnDragStop")
+eq(S.teams[5][2], 2, "a pet can be dropped into team 5")
+local delBtn = P.box[4].del; sent = {}; fire(delBtn, "OnClick"); eq(#sent, 0, "Delete asks to confirm first"); fire(delBtn, "OnClick"); eq(sent[1].a .. "," .. sent[1].p, "delteam,4", "second click deletes")
+handlers["pbj|nteams"]("4"); handlers["pbj|done"](); ok(not P.box[5]:IsShown(), "box 5 hidden after a delete")
 
 ---------------------------------------------------------------- zone globals may be nil (PetPasses guards them)
 do

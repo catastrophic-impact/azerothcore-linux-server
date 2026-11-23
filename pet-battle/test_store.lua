@@ -29,6 +29,21 @@ test("the journal ability list: every ability of every species has a clean, comp
         end
     end
 end)
+test("teams: 3 to start, add up to 30, delete shifts the later ones and the active team", function()
+    local function count() outbox = {}; handlers["pbj|addteam"](player, ""); for _, o in ipairs(outbox) do if o.a == "nteams" then return tonumber(o.p) end end end
+    eq(count(), 4, "first add -> 4 teams")
+    for _ = 5, 30 do count() end   -- ends at exactly 30
+    eq(count(), nil, "at 30 teams nothing more is added")
+    Store.AddPet(player, 721, 1, { 1, 1, 1 }, 1, 0)
+    handlers["pbj|setteam"](player, "12,721,0,0"); handlers["pbj|active"](player, "12")
+    outbox = {}; handlers["pbj|delteam"](player, "5")
+    local n, act; for _, o in ipairs(outbox) do if o.a == "nteams" then n = o.p end if o.a == "active" then act = o.p end end
+    eq(n, "29", "one team fewer"); eq(act, "11", "active team 12 moved up to 11")
+    local t11; for _, o in ipairs(outbox) do if o.a == "team" and o.p:match("^11,") then t11 = o.p end end
+    eq(t11, "11,721,0,0", "the team moved up with its pets")
+    for _ = 1, 28 do handlers["pbj|delteam"](player, "1") end   -- 29 -> 1
+    outbox = {}; handlers["pbj|delteam"](player, "1"); eq(#outbox, 0, "the last team cannot be deleted")
+end)
 test("a recruited pet keeps its quality and skin, starts at full health", function()
     Store.AddPet(player, 721, 1, { 1, 2, 1 }, 3, 777)
     local p = Store.Pets(player)[721]

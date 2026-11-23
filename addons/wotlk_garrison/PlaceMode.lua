@@ -21,7 +21,7 @@ end
 
 local function Build()
     local bar = CreateFrame("Frame", "WotlkGarrisonPlaceBar", UIParent)
-    bar:SetSize(528, 96); bar:SetPoint("BOTTOM", 0, 140); bar:SetFrameStrata("DIALOG"); bar:EnableMouse(true)
+    bar:SetSize(528, 126); bar:SetPoint("BOTTOM", 0, 140); bar:SetFrameStrata("DIALOG"); bar:EnableMouse(true)
     bar:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", tile = true, tileSize = 32, edgeSize = 24, insets = { left = 6, right = 6, top = 6, bottom = 6 } })
     AcoreLib.Solid(bar, 9)
     bar.title = bar:CreateFontString(nil, "OVERLAY", "GameFontNormal"); bar.title:SetPoint("TOP", 0, -12)
@@ -37,8 +37,10 @@ local function Build()
     B("Turn R", 56, 230, function() AcoreLib.Send("house", "prot", "15") end)
     B("Nearer", 56, 296, function() AcoreLib.Send("house", "pdist", "-1") end)
     B("Further", 56, 356, function() AcoreLib.Send("house", "pdist", "1") end)
-    B("Up", 40, 422, function() AcoreLib.Send("house", "pup", "0.5") end)      -- height above the ground
-    B("Down", 48, 466, function() AcoreLib.Send("house", "pup", "-0.5") end)
+    B("Up", 40, 422, function() AcoreLib.Send("house", "pup", tostring(G.HeightStep())) end)      -- height above the ground, by the chosen step
+    B("Down", 48, 466, function() AcoreLib.Send("house", "pup", tostring(-G.HeightStep())) end)
+    local hl = bar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); hl:SetPoint("BOTTOMLEFT", 170, 50); hl:SetText("Up / Down step:")
+    G.StepMenu(bar, "WotlkGarrisonPlaceHeight", 130, G.HEIGHTS, "hstep", G.HeightIdx):SetPoint("BOTTOMLEFT", 252, 40)
     bar:SetScript("OnHide", function(self) ClearOverrideBindings(self) end)
     local stillSince, sent, lastFace
     bar:SetScript("OnUpdate", function()

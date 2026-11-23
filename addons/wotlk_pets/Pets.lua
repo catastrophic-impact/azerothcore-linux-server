@@ -33,7 +33,7 @@ end
 -- FAVORITES: a star on each row; kept per character in WotlkPetsDB.fav (saved by the client, no server data)
 local function FavSet() WotlkPetsDB = WotlkPetsDB or {}; WotlkPetsDB.fav = WotlkPetsDB.fav or {}; local k = (GetRealmName() or "") .. ":" .. (UnitName("player") or ""); WotlkPetsDB.fav[k] = WotlkPetsDB.fav[k] or {}; return WotlkPetsDB.fav[k] end
 local function IsFav(sp) return FavSet()[sp] and true or false end
-local function InTeam(sp) for n = 1, 3 do for i = 1, 3 do if S.teams[n][i] == sp then return true end end end return false end
+local function InTeam(sp) for n = 1, #S.teams do for i = 1, 3 do if S.teams[n][i] == sp then return true end end end return false end
 -- one pet against the whole filter: search (space separated words, ALL must match the name or the family), family menu, quality toggles, "in a team"
 local function PetPasses(p, sp, F)
     local name, fam = p.name:lower(), p.family:lower()
@@ -182,7 +182,7 @@ function EndDrag()
     local d = S.drag; CancelDrag(); if not d then return end
     local hit
     if paneT and paneT:IsShown() then
-        for n = 1, 3 do for i = 1, 3 do if paneT.box[n].slot[i]:IsVisible() and MouseIsOver(paneT.box[n].slot[i]) then hit = { n, i } end end end
+        if MouseIsOver(paneT.scroll) then for n = 1, #S.teams do local box = paneT.box[n]; if box and box:IsShown() then for i = 1, 3 do if MouseIsOver(box.slot[i]) then hit = { n, i } end end end end end
     end
     if hit then PlaceInTeam(hit[1], hit[2], d.sp, d.fromTeam, d.fromSlot)
     elseif d.fromTeam and not (frame and MouseIsOver(frame)) then PlaceInTeam(d.fromTeam, d.fromSlot, 0); DEFAULT_CHAT_FRAME:AddMessage("|cffffd100[Pets]|r " .. (S.pets[d.sp] and S.pets[d.sp].name or "Pet") .. " removed from team " .. d.fromTeam .. ".") end   -- a pet dragged out of its slot and dropped away from the window: removed
@@ -374,44 +374,61 @@ function PlaceInTeam(n, i, sp, fromTeam, fromSlot)
     Refresh()
 end
 
+local BOX_H, MAX_TEAMS = 116, 30   -- MAX_TEAMS mirrors the server (pb_store.lua)
+local function MakeBox(n)
+    local box = CreateFrame("Frame", nil, paneT.holder); box:SetSize(450, 108); box:SetPoint("TOPLEFT", 0, -(n - 1) * BOX_H); box:SetBackdrop(BACKDROP)
+    box.title = box:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge"); box.title:SetPoint("TOPLEFT", 14, -10)
+    box.act = CreateFrame("Button", nil, box, "UIPanelButtonTemplate"); box.act:SetSize(100, 22); box.act:SetPoint("TOPRIGHT", -80, -8)
+    box.act:SetScript("OnClick", function() S.active = n; AcoreLib.Send("pbj", "active", n); Refresh() end)
+    box.del = CreateFrame("Button", nil, box, "UIPanelButtonTemplate"); box.del:SetSize(60, 22); box.del:SetPoint("TOPRIGHT", -12, -8); box.del:SetText("Delete")
+    box.del:SetScript("OnClick", function()   -- two clicks: the first one only asks "Sure?"
+        if box.armed then box.armed = false; AcoreLib.Send("pbj", "delteam", n) else box.armed = true; box.del:SetText("Sure?") end
+    end)
+    box.del:SetScript("OnLeave", function() if box.armed then box.armed = false; box.del:SetText("Delete") end end)
+    box.slot = {}
+    for i = 1, 3 do
+        local b = CreateFrame("Button", nil, box); b:SetSize(136, 52); b:SetPoint("TOPLEFT", 14 + (i - 1) * 144, -42); b:SetBackdrop(BACKDROP)
+        b:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        b.icon = b:CreateTexture(nil, "ARTWORK"); b.icon:SetSize(36, 36); b.icon:SetPoint("LEFT", 8, 0)
+        b.name = b:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); b.name:SetPoint("TOPLEFT", b.icon, "TOPRIGHT", 6, -1); b.name:SetWidth(82); b.name:SetHeight(22); b.name:SetJustifyH("LEFT")
+        b.sub = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall"); b.sub:SetPoint("BOTTOMLEFT", b.icon, "BOTTOMRIGHT", 6, 1)
+        b.empty = b:CreateFontString(nil, "OVERLAY", "GameFontDisable"); b.empty:SetPoint("CENTER"); b.empty:SetText("Empty")
+        b:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square")
+        b:SetScript("OnClick", function(_, button)   -- pets move by drag and drop only; a plain click does nothing, right-click empties the slot
+            if button == "RightButton" and S.teams[n][i] ~= 0 then PlaceInTeam(n, i, 0) end
+        end)
+        b:SetScript("OnEnter", function() local sp = S.teams[n][i]; local p = sp ~= 0 and S.pets[sp]; if p then PetTip(b, p, sp) end end)
+        b:SetScript("OnLeave", function() GameTooltip:Hide() end)
+        b:RegisterForDrag("LeftButton")
+        b:SetScript("OnDragStart", function() StartDrag(S.teams[n][i], n, i) end)
+        b:SetScript("OnDragStop", function() EndDrag() end)
+        box.slot[i] = b
+    end
+    return box
+end
+
 local function BuildTeams()
     paneT = CreateFrame("Frame", nil, frame); paneT:SetPoint("TOPLEFT", 296, -62); paneT:SetPoint("BOTTOMRIGHT", -20, 16)
     paneT.hint = paneT:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall"); paneT.hint:SetPoint("TOPLEFT", 4, 0); paneT.hint:SetWidth(470); paneT.hint:SetJustifyH("LEFT")
-    paneT.hint:SetText("Drag a pet from the list into a slot. Drag between slots to swap or move pets, or drag a pet out of the window to remove it. Right-click a slot to empty it.")
+    paneT.hint:SetText("Drag a pet from the list into a slot. Drag between slots to swap or move pets, or drag a pet out of the window to remove it. Right-click a slot to empty it. Scroll for more teams.")
+    paneT.scroll = CreateFrame("ScrollFrame", "WotlkPetsTeamScroll", paneT, "UIPanelScrollFrameTemplate")
+    paneT.scroll:SetPoint("TOPLEFT", 0, -48); paneT.scroll:SetPoint("BOTTOMRIGHT", -26, 0)
+    paneT.holder = CreateFrame("Frame", nil, paneT.scroll); paneT.holder:SetSize(450, 10); paneT.scroll:SetScrollChild(paneT.holder)
+    paneT.new = CreateFrame("Button", nil, paneT.holder, "UIPanelButtonTemplate"); paneT.new:SetSize(140, 24); paneT.new:SetText("+ New team")
+    paneT.new:SetScript("OnClick", function() AcoreLib.Send("pbj", "addteam", "") end)
     paneT.box = {}
-    for n = 1, 3 do
-        local box = CreateFrame("Frame", nil, paneT); box:SetSize(474, 108); box:SetPoint("TOPLEFT", 0, -48 - (n - 1) * 116); box:SetBackdrop(BACKDROP)
-        box.title = box:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge"); box.title:SetPoint("TOPLEFT", 14, -10); box.title:SetText("Team " .. n)
-        box.act = CreateFrame("Button", nil, box, "UIPanelButtonTemplate"); box.act:SetSize(110, 22); box.act:SetPoint("TOPRIGHT", -12, -8)
-        box.act:SetScript("OnClick", function() S.active = n; AcoreLib.Send("pbj", "active", n); Refresh() end)
-        box.slot = {}
-        for i = 1, 3 do
-            local b = CreateFrame("Button", nil, box); b:SetSize(140, 52); b:SetPoint("TOPLEFT", 14 + (i - 1) * 150, -42); b:SetBackdrop(BACKDROP)
-            b:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-            b.icon = b:CreateTexture(nil, "ARTWORK"); b.icon:SetSize(36, 36); b.icon:SetPoint("LEFT", 8, 0)
-            b.name = b:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); b.name:SetPoint("TOPLEFT", b.icon, "TOPRIGHT", 6, -1); b.name:SetWidth(86); b.name:SetHeight(22); b.name:SetJustifyH("LEFT")
-            b.sub = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall"); b.sub:SetPoint("BOTTOMLEFT", b.icon, "BOTTOMRIGHT", 6, 1)
-            b.empty = b:CreateFontString(nil, "OVERLAY", "GameFontDisable"); b.empty:SetPoint("CENTER"); b.empty:SetText("Empty")
-            b:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square")
-            b:SetScript("OnClick", function(_, button)   -- pets move by drag and drop only; a plain click does nothing, right-click empties the slot
-                if button == "RightButton" and S.teams[n][i] ~= 0 then PlaceInTeam(n, i, 0) end
-            end)
-            b:SetScript("OnEnter", function() local sp = S.teams[n][i]; local p = sp ~= 0 and S.pets[sp]; if p then PetTip(b, p, sp) end end)
-            b:SetScript("OnLeave", function() GameTooltip:Hide() end)
-            b:RegisterForDrag("LeftButton")
-            b:SetScript("OnDragStart", function() StartDrag(S.teams[n][i], n, i) end)
-            b:SetScript("OnDragStop", function() EndDrag() end)
-            box.slot[i] = b
-        end
-        paneT.box[n] = box
-    end
+    for n = 1, #S.teams do paneT.box[n] = MakeBox(n) end
 end
 
 local function RefreshTeams()
-    for n = 1, 3 do
-        local box = paneT.box[n]
+    local count = #S.teams
+    for n = 1, count do
+        if not paneT.box[n] then paneT.box[n] = MakeBox(n) end
+        local box = paneT.box[n]; box:Show()
+        box.title:SetText("Team " .. n)
         box.act:SetText(S.active == n and "ACTIVE" or "Make active")
         if S.active == n then box.act:Disable(); box.title:SetTextColor(0.4, 1, 0.4) else box.act:Enable(); box.title:SetTextColor(1, 0.82, 0) end
+        box.armed = false; box.del:SetText("Delete"); ShowIf(box.del, count > 1)
         for i = 1, 3 do
             local b, sp = box.slot[i], S.teams[n][i]
             local p = sp ~= 0 and S.pets[sp]
@@ -422,6 +439,9 @@ local function RefreshTeams()
             else b:SetBackdropBorderColor(0.4, 0.4, 0.4) end
         end
     end
+    for n = count + 1, #paneT.box do paneT.box[n]:Hide() end
+    paneT.new:ClearAllPoints(); paneT.new:SetPoint("TOPLEFT", 0, -count * BOX_H); ShowIf(paneT.new, count < MAX_TEAMS)
+    paneT.holder:SetHeight(count * BOX_H + 32)
 end
 
 ---------------------------------------------------------------- shell
@@ -487,7 +507,13 @@ AcoreLib.On("pbj", "pet", function(p)
     S.pets[Num(sp)] = { level = Num(lv), xp = Num(xp), a = { Num(a1), Num(a2), Num(a3) }, family = family, icon = icon, hp = Num(hp), dmg = Num(dmg), quality = Num(q), cur = Num(cur), need = Num(need), name = name }
     Soon()
 end)
-AcoreLib.On("pbj", "team", function(p) local n, a, b, c = p:match("^(%d),(%d+),(%d+),(%d+)$"); if n then S.teams[Num(n)] = { Num(a), Num(b), Num(c) }; Soon() end end)
+AcoreLib.On("pbj", "team", function(p) local n, a, b, c = p:match("^(%d+),(%d+),(%d+),(%d+)$"); if n then S.teams[Num(n)] = { Num(a), Num(b), Num(c) }; Soon() end end)
+AcoreLib.On("pbj", "nteams", function(p)   -- how many teams the player has (the server sends it before the teams)
+    local n = Num(p); if not n or n < 1 then return end
+    while #S.teams < n do S.teams[#S.teams + 1] = { 0, 0, 0 } end
+    while #S.teams > n do S.teams[#S.teams] = nil end
+    Soon()
+end)
 AcoreLib.On("pbj", "follow", function(p) S.follow = Num(p); Soon() end)
 AcoreLib.On("pbj", "active", function(p) S.active = Num(p); Soon() end)
 AcoreLib.On("pbj", "done", function() S.syncing = false; Refresh() end)
@@ -500,7 +526,7 @@ AcoreLib.On("pbj", "abl", function(p)
 end)
 AcoreLib.On("pbj", "primed", function() S.primed = true; modelFor = nil; Refresh() end)
 
-WotlkPets = { S = S, PetPasses = PetPasses, StartDrag = StartDrag, EndDrag = EndDrag, CancelDrag = CancelDrag, PlaceInTeam = function(...) return PlaceInTeam(...) end }   -- the one global (tests)
+WotlkPets = { S = S, PetPasses = PetPasses, StartDrag = StartDrag, PaneT = function() return paneT end, EndDrag = EndDrag, CancelDrag = CancelDrag, PlaceInTeam = function(...) return PlaceInTeam(...) end }   -- the one global (tests)
 
 SLASH_PETS1 = "/pets"; SLASH_PETS2 = "/petjournal"
 SlashCmdList["PETS"] = function()
